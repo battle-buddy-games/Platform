@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting - Battle Buddy Platform</title>
+  <meta name="description" content="Redirecting your authentication back to the Battle Buddy Platform.">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="apple-touch-icon" href="./favicon.png">
+  <meta property="og:title" content="Redirecting - Battle Buddy Platform">
+  <meta property="og:description" content="Redirecting your authentication back to the Battle Buddy Platform.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Battle Buddy Platform">
+  <meta property="og:image" content="./favicon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Redirecting - Battle Buddy Platform">
+  <meta name="twitter:description" content="Redirecting your authentication back to the Battle Buddy Platform.">
+  <meta name="twitter:image" content="./favicon.png">
+  <link rel="stylesheet" href="./gateway-shared.css">
+  <link rel="stylesheet" href="./gateway-callback.css">
+</head>
+<body>
+  <div class="callback-container">
+    <div class="spinner"></div>
+    <h1>Redirecting...</h1>
+    <p class="subtitle" id="countdownMessage">Please wait while we redirect you.</p>
+    <div id="countdownContainer" style="display: block; margin-top: 24px; text-align: center;">
+      <p style="margin-bottom: 16px; font-size: 18px; font-weight: 600;" id="countdownText">5</p>
+      <p style="margin-top: 8px; font-size: 14px; color: rgba(255, 255, 255, 0.7);">Redirecting in <span id="countdownSeconds">5</span> seconds...</p>
+      <div style="display: flex; gap: 12px; justify-content: center; align-items: center; margin-top: 16px;">
+        <button id="pausePlayButton" class="modal-button secondary" onclick="toggleCountdown()" style="width: auto; padding: 8px 24px; display: flex; align-items: center; gap: 6px;">
+          <svg id="pauseIcon" viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
+            <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+          </svg>
+          <svg id="playIcon" viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor; display: none;">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+          <span id="pausePlayText">Pause</span>
+        </button>
+        <button class="modal-button secondary" onclick="cancelRedirect()" style="width: auto; padding: 8px 24px;">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./gateway-shared.js"></script>
+  <script>
+    // Countdown state
+    let countdownInterval = null;
+    let countdownPaused = false;
+    let remainingTime = 5;
+    let redirectUrl = null;
+
+    // Toggle countdown pause/play
+    window.toggleCountdown = function() {
+      countdownPaused = !countdownPaused;
+
+      const pauseIcon = document.getElementById('pauseIcon');
+      const playIcon = document.getElementById('playIcon');
+      const pausePlayText = document.getElementById('pausePlayText');
+
+      if (pauseIcon && playIcon && pausePlayText) {
+        if (countdownPaused) {
+          pauseIcon.style.display = 'none';
+          playIcon.style.display = 'block';
+          pausePlayText.textContent = 'Resume';
+        } else {
+          pauseIcon.style.display = 'block';
+          playIcon.style.display = 'none';
+          pausePlayText.textContent = 'Pause';
+        }
+      }
+    };
+
+    // Cancel redirect
+    window.cancelRedirect = function() {
+      if (countdownInterval) {
+        clearInterval(countdownInterval);
+        countdownInterval = null;
+      }
+
+      const countdownContainer = document.getElementById('countdownContainer');
+      if (countdownContainer) {
+        countdownContainer.style.display = 'none';
+      }
+
+      const countdownMessage = document.getElementById('countdownMessage');
+      if (countdownMessage) {
+        countdownMessage.textContent = 'Redirect cancelled. You can close this page.';
+      }
+    };
+
+    // Start countdown
+    function startCountdown(url, message) {
+      redirectUrl = url;
+      remainingTime = 5;
+
+      const countdownText = document.getElementById('countdownText');
+      const countdownSeconds = document.getElementById('countdownSeconds');
+      const countdownMessage = document.getElementById('countdownMessage');
+
+      if (countdownMessage && message) {
+        countdownMessage.textContent = message;
+      }
+
+      countdownInterval = setInterval(() => {
+        if (countdownPaused) {
+          return;
+        }
+
+        remainingTime--;
+
+        if (countdownText) countdownText.textContent = remainingTime.toString();
+        if (countdownSeconds) countdownSeconds.textContent = remainingTime.toString();
+
+        if (remainingTime <= 0) {
+          clearInterval(countdownInterval);
+          window.location.href = redirectUrl;
+        }
+      }, 1000);
+    }
+
+    // Initialize
+    (function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const targetUrl = urlParams.get('target');
+      const token = urlParams.get('token');
+      const message = urlParams.get('message') || 'Redirecting...';
+
+      if (!targetUrl) {
+        console.error('No target URL provided');
+        document.getElementById('countdownMessage').textContent = 'Error: No redirect target specified.';
+        return;
+      }
+
+      // Build the final redirect URL with token if present
+      const finalUrl = new URL(targetUrl, window.location.href);
+      if (token) {
+        finalUrl.searchParams.set('token', token);
+      }
+
+      console.log('Starting redirect to:', finalUrl.toString());
+      startCountdown(finalUrl.toString(), message);
+    })();
+  </script>
+</body>
+</html>

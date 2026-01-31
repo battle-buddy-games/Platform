@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Battle Buddy Platform Gateway</title>
+  <meta name="description" content="Entry point to the Battle Buddy Platform Gateway. You will be redirected shortly.">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="apple-touch-icon" href="./favicon.png">
+  <meta property="og:title" content="Battle Buddy Platform Gateway">
+  <meta property="og:description" content="Entry point to the Battle Buddy Platform Gateway. You will be redirected shortly.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Battle Buddy Platform">
+  <meta property="og:image" content="./favicon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Battle Buddy Platform Gateway">
+  <meta name="twitter:description" content="Entry point to the Battle Buddy Platform Gateway. You will be redirected shortly.">
+  <meta name="twitter:image" content="./favicon.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    .redirect-container {
+      text-align: center;
+      background: rgba(26, 26, 46, 0.9);
+      border-radius: 16px;
+      padding: 48px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      max-width: 500px;
+      width: 90%;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-top-color: #667eea;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 24px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .timer {
+      font-size: 48px;
+      font-weight: 700;
+      margin: 24px 0;
+      color: #667eea;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .message {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .link {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .link:hover {
+      color: #764ba2;
+      border-bottom-color: #764ba2;
+    }
+
+    .controls {
+      margin-top: 16px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .pause-btn,
+    .skip-btn {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #ffffff;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+      transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.2s ease;
+    }
+
+    .pause-btn:hover,
+    .skip-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+      opacity: 0.95;
+    }
+
+    .pause-btn:active,
+    .skip-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 480px) {
+      .redirect-container {
+        padding: 32px 24px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .timer {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="redirect-container">
+    <div class="spinner"></div>
+    <h1>Loading Gateway...</h1>
+    <div class="timer" id="countdown">5</div>
+    <p class="message">
+      You will be redirected automatically to the Battle Buddy Platform Gateway in <span id="seconds">5</span> seconds.
+    </p>
+    <p class="message">
+      If you are not redirected, <a href="./gateway.html" class="link">click here</a>.
+    </p>
+    <div class="controls">
+      <button type="button" id="pauseBtn" class="pause-btn">Pause timer</button>
+      <button type="button" id="skipBtn" class="skip-btn">Skip now</button>
+    </div>
+  </div>
+
+  <script src="./gateway-shared.js"></script>
+  <script>
+    const redirectUrl = './gateway.html';
+    let countdown = 5;
+    let isPaused = false;
+    let countdownIntervalId = null;
+
+    const countdownElement = document.getElementById('countdown');
+    const secondsElement = document.getElementById('seconds');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const skipBtn = document.getElementById('skipBtn');
+
+    function renderCountdown() {
+      countdownElement.textContent = countdown;
+      secondsElement.textContent = countdown;
+    }
+
+    function startCountdown() {
+      // Avoid multiple intervals
+      if (countdownIntervalId !== null) return;
+
+      countdownIntervalId = setInterval(() => {
+        if (isPaused) {
+          return;
+        }
+
+        if (countdown <= 0) {
+          clearInterval(countdownIntervalId);
+          countdownIntervalId = null;
+          window.location.href = redirectUrl;
+          return;
+        }
+
+        countdown--;
+        renderCountdown();
+      }, 1000);
+    }
+
+    pauseBtn.addEventListener('click', () => {
+      isPaused = !isPaused;
+      pauseBtn.textContent = isPaused ? 'Resume timer' : 'Pause timer';
+    });
+
+    skipBtn.addEventListener('click', () => {
+      window.location.href = redirectUrl;
+    });
+
+    // Initial render and start countdown when page loads
+    renderCountdown();
+    startCountdown();
+  </script>
+</body>
+</html>

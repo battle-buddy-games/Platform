@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Authentication Remembered - Battle Buddy Platform</title>
+  <meta name="description" content="Your authentication has been remembered. You will be redirected shortly.">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="apple-touch-icon" href="./favicon.png">
+  <meta property="og:title" content="Authentication Remembered - Battle Buddy Platform">
+  <meta property="og:description" content="Your authentication has been remembered. You will be redirected shortly.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Battle Buddy Platform">
+  <meta property="og:image" content="./favicon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Authentication Remembered - Battle Buddy Platform">
+  <meta name="twitter:description" content="Your authentication has been remembered. You will be redirected shortly.">
+  <meta name="twitter:image" content="./favicon.png">
+  <link rel="stylesheet" href="./gateway-shared.css">
+  <link rel="stylesheet" href="./gateway-callback.css">
+</head>
+<body>
+  <div class="callback-container">
+    <div class="spinner"></div>
+    <h1 id="titleText">Authentication Remembered!</h1>
+    <p class="subtitle" id="countdownMessage">Your sign-in has been remembered. Redirecting...</p>
+    <div id="countdownContainer" style="display: none; margin-top: 24px; text-align: center;">
+      <p style="margin-bottom: 16px; font-size: 18px; font-weight: 600;" id="countdownText">3</p>
+      <p style="margin-top: 8px; font-size: 14px; color: rgba(255, 255, 255, 0.7);">Redirecting in <span id="countdownSeconds">3</span> seconds...</p>
+      <div style="display: flex; gap: 12px; justify-content: center; align-items: center; margin-top: 16px;">
+        <button id="pausePlayButton" class="modal-button secondary" onclick="toggleCountdown()" style="width: auto; padding: 8px 24px; display: flex; align-items: center; gap: 6px;">
+          <svg id="pauseIcon" viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor; display: none;">
+            <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+          </svg>
+          <svg id="playIcon" viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+          <span id="pausePlayText">Pause</span>
+        </button>
+        <button class="modal-button primary" onclick="skipCountdown()" style="width: auto; padding: 8px 24px;">
+          Skip
+        </button>
+        <button class="modal-button secondary" onclick="cancelRedirect()" style="width: auto; padding: 8px 24px;">
+          Stay Here
+        </button>
+      </div>
+    </div>
+    <div id="successIcon" style="display: none; margin: 24px auto; width: 64px; height: 64px; border-radius: 50%; background: rgba(76, 175, 80, 0.2); align-items: center; justify-content: center;">
+      <svg viewBox="0 0 24 24" style="width: 40px; height: 40px; fill: #4CAF50;">
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Error Modal -->
+  <div id="errorModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Error</h2>
+        <button class="modal-close" onclick="closeErrorModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="errorModalBody"></div>
+      <div class="modal-actions">
+        <button class="modal-button secondary" onclick="closeErrorModal()">Close</button>
+        <button class="modal-button primary" onclick="copyErrorToClipboard()">Copy Error</button>
+        <button class="modal-button secondary" onclick="window.location.href='./gateway.html'">Back to Sign In</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./gateway-shared.js"></script>
+  <script src="./auth-success.js"></script>
+</body>
+</html>
+

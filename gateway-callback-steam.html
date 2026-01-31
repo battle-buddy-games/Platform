@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steam Authentication - Battle Buddy Platform</title>
+  <meta name="description" content="Processing your Steam authentication for the Battle Buddy Platform.">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="apple-touch-icon" href="./favicon.png">
+  <meta property="og:title" content="Steam Authentication - Battle Buddy Platform">
+  <meta property="og:description" content="Processing your Steam authentication for the Battle Buddy Platform.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Battle Buddy Platform">
+  <meta property="og:image" content="./favicon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Steam Authentication - Battle Buddy Platform">
+  <meta name="twitter:description" content="Processing your Steam authentication for the Battle Buddy Platform.">
+  <meta name="twitter:image" content="./favicon.png">
+  <link rel="stylesheet" href="./gateway-shared.css">
+  <link rel="stylesheet" href="./gateway-callback.css">
+  <style>
+    /* Additional styles for the new API-based flow */
+    .callback-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    #resultContainer {
+      margin-top: 32px;
+    }
+
+    .user-info-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: left;
+      margin-bottom: 24px;
+    }
+
+    .user-info-card .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .user-info-card .avatar-placeholder {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .user-info-card .user-details {
+      flex: 1;
+    }
+
+    .user-info-card .username {
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .user-info-card .email {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 4px;
+    }
+
+    .user-info-card .provider {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .user-info-card .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      font-size: 11px;
+      font-weight: 600;
+      border-radius: 4px;
+      margin-top: 8px;
+    }
+
+    .user-info-card .badge.new-user {
+      background: rgba(76, 175, 80, 0.2);
+      color: #81c784;
+      border: 1px solid rgba(76, 175, 80, 0.3);
+    }
+
+    .user-info-card .badge.returning {
+      background: rgba(33, 150, 243, 0.2);
+      color: #64b5f6;
+      border: 1px solid rgba(33, 150, 243, 0.3);
+    }
+
+    .info-section {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      text-align: left;
+      margin-bottom: 24px;
+    }
+
+    .info-section h3 {
+      margin: 0 0 16px 0;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-row .label {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+      min-width: 120px;
+    }
+
+    .info-row .value {
+      flex: 1;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .info-row .value.mono {
+      font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+      font-size: 12px;
+    }
+
+    .copy-btn {
+      padding: 4px 10px;
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      color: rgba(255, 255, 255, 0.8);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .copy-btn.copied {
+      background: rgba(76, 175, 80, 0.2);
+      border-color: rgba(76, 175, 80, 0.4);
+      color: #81c784;
+    }
+
+    .copy-btn.full-width {
+      width: 100%;
+      padding: 10px;
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    .error-card {
+      background: rgba(211, 47, 47, 0.1);
+      border: 1px solid rgba(211, 47, 47, 0.3);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .error-card .error-icon {
+      color: #ef5350;
+      margin-bottom: 16px;
+    }
+
+    .error-card .error-code {
+      font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+      font-size: 14px;
+      color: #ef5350;
+      background: rgba(211, 47, 47, 0.1);
+      padding: 4px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .error-card .error-description {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .error-card .error-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .btn-primary, .btn-secondary {
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #1b2838 0%, #2a475e 100%);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(27, 40, 56, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    #countdownContainer {
+      margin-top: 24px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .countdown-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 16px;
+    }
+
+    .countdown-buttons button {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #successSection, #errorSection {
+      display: none;
+    }
+
+    .manual-redirect {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="callback-container">
+    <!-- Status Section -->
+    <div class="spinner"></div>
+    <h1 id="authStatus">Processing Steam Authentication...</h1>
+    <p class="subtitle" id="authMessage">Please wait while we authenticate your account.</p>
+
+    <!-- Result Container (shown after API call completes) -->
+    <div id="resultContainer" style="display: none;">
+      <!-- Success Section -->
+      <div id="successSection">
+        <div id="userInfo">
+          <!-- User info card will be rendered here -->
+        </div>
+        <div id="tokenInfo">
+          <!-- Token details will be rendered here -->
+        </div>
+      </div>
+
+      <!-- Error Section -->
+      <div id="errorSection">
+        <div id="errorInfo">
+          <!-- Error details will be rendered here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Countdown Container (shown on success) -->
+    <div id="countdownContainer" style="display: none;">
+      <p style="margin: 0 0 8px 0; font-size: 14px; color: rgba(255, 255, 255, 0.7);">
+        Redirecting to platform in <span id="countdownSeconds" style="font-weight: 600; color: #fff;">5</span> seconds...
+      </p>
+      <p id="countdownText" style="display: none;">5</p>
+      <div class="countdown-buttons">
+        <button class="btn-secondary" onclick="toggleCountdown()">
+          <svg id="pauseIcon" viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
+            <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+          </svg>
+          <svg id="playIcon" viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor; display: none;">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+          <span id="pausePlayText">Pause</span>
+        </button>
+        <button class="btn-primary" onclick="skipCountdown()">Skip</button>
+        <button class="btn-secondary" onclick="cancelRedirect()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./gateway-shared.js"></script>
+  <script src="./gateway-callback-api.js"></script>
+  <script>
+    // Initialize the callback page for Steam
+    document.addEventListener('DOMContentLoaded', function() {
+      initCallbackPage('steam');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In - Battle Buddy Platform Gateway</title>
+  <meta name="description" content="Sign in to the Battle Buddy Platform Gateway to access games, tools, and services.">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="apple-touch-icon" href="./favicon.png">
+  <meta property="og:title" content="Battle Buddy Platform Gateway - Sign In">
+  <meta property="og:description" content="Sign in to the Battle Buddy Platform Gateway to access games, tools, and services.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Battle Buddy Platform">
+  <meta property="og:image" content="./favicon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Battle Buddy Platform Gateway - Sign In">
+  <meta name="twitter:description" content="Sign in to the Battle Buddy Platform Gateway to access games, tools, and services.">
+  <meta name="twitter:image" content="./favicon.png">
+  <link rel="stylesheet" href="./gateway-shared.css">
+  <link rel="stylesheet" href="./gateway.css">
+</head>
+<body>
+  <div style="display: flex; justify-content: center; align-items: flex-start; flex-wrap: nowrap;" class="main-layout-container">
+    <div style="position: relative; display: inline-block;">
+      <div class="sign-in-container">
+      <h1>Battle Buddy Platform Gateway</h1>
+      
+      <!-- Previous Sign-In Found - Countdown -->
+      <div id="previousSignInContainer" style="display: none;">
+        <p class="subtitle" id="countdownMessage">Previous sign in found, signing in...</p>
+        <div style="margin: 24px 0; text-align: center;">
+          <div class="spinner" style="margin: 0 auto;"></div>
+          <p style="margin-top: 16px; font-size: 18px; font-weight: 600;" id="countdownText">5</p>
+        </div>
+        <div style="margin-top: 24px;">
+          <button class="modal-button secondary" onclick="cancelAutoSignIn()" style="width: 100%;">
+            Cancel
+          </button>
+        </div>
+      </div>
+
+      <!-- Auto Sign-In Countdown -->
+      <div id="autoSignInContainer" style="display: none;">
+        <p class="subtitle" id="autoSignInMessage">Auto sign in starting...</p>
+        <div style="margin: 24px 0; text-align: center;">
+          <div class="spinner" style="margin: 0 auto;"></div>
+          <p style="margin-top: 16px; font-size: 18px; font-weight: 600;" id="autoSignInCountdownText">5</p>
+          <p style="margin-top: 8px; font-size: 14px; color: rgba(255, 255, 255, 0.6); display: none;" id="autoSignInPausedIndicator">(paused)</p>
+        </div>
+        <div style="margin-top: 24px; display: flex; gap: 8px; flex-wrap: wrap;">
+          <button class="modal-button secondary" onclick="window.cancelAutoSignInCountdown()" style="flex: 1; min-width: 100px;">
+            Cancel
+          </button>
+          <button class="modal-button" id="autoSignInPauseResumeButton" onclick="window.pauseAutoSignInCountdown()" style="flex: 1; min-width: 100px; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3);">
+            Pause
+          </button>
+          <button class="modal-button primary" onclick="window.skipAutoSignInCountdown()" style="flex: 1; min-width: 100px;">
+            Skip
+          </button>
+        </div>
+      </div>
+      
+      <!-- No Previous Sign-In - Show Options -->
+      <div id="noSignInContainer">
+        <p style="margin: 12px 0; padding: 8px 12px; background: rgba(255, 255, 255, 0.05); border-left: 3px solid rgba(255, 255, 255, 0.3); border-radius: 4px; font-size: 12px; color: rgba(255, 255, 255, 0.7); line-height: 1.4; display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: rgba(255, 255, 255, 0.5); flex-shrink: 0;">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+          </svg>
+          <span>Create account or sign in to existing account.</span>
+        </p>
+        
+        <div class="button-group">
+      <a href="javascript:void(0)" class="auth-button google" data-provider="google" onclick="handleSignIn('google'); return false;">
+        <svg viewBox="0 0 24 24">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        Google Sign In
+      </a>
+
+      <a href="javascript:void(0)" class="auth-button discord" data-provider="discord" onclick="handleSignIn('discord'); return false;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
+          <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+        </svg>
+        Discord Sign In
+      </a>
+
+      <a href="javascript:void(0)" class="auth-button steam" data-provider="steam" onclick="handleSignIn('steam'); return false;">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+          <path d="M8.5 9.5c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5z"/>
+          <path d="M12 6c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"/>
+        </svg>
+        Steam Sign In
+      </a>
+
+      <a href="javascript:void(0)" class="auth-button github" data-provider="github" onclick="handleSignIn('github'); return false;">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+        GitHub Sign In
+      </a>
+
+      <!-- Sign in with Stored Token Button -->
+      <div id="storedTokenSignInContainer" style="display: none; margin-top: 8px;">
+        <a href="javascript:void(0)" class="auth-button stored-token" data-provider="stored-token" onclick="handleSignInWithStoredToken(); return false;">
+          <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+          </svg>
+          Saved Token Sign In
+        </a>
+      </div>
+
+      <!-- Token Status Indicator -->
+      <div id="tokenStatusContainer" style="margin-top: 16px; display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.7); font-size: 14px; line-height: 1.5;">
+        <span id="tokenStatusText" style="text-align: center;">
+          Checking for saved sign-in...
+        </span>
+      </div>
+
+        <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+          <a href="javascript:void(0)" class="auth-button skip" data-provider="skip" onclick="handleSkipSignIn(); return false;" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);">
+            <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            (Skip Sign in) Open Platform
+          </a>
+        </div>
+
+      </div>
+
+      <div class="health-checks-panel" style="position: absolute; top: 80px; right: 100%; margin-right: 12px; min-width: 220px; max-width: 260px; background: rgba(26, 26, 46, 0.9); border-radius: 16px; padding: 24px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); opacity: 0.9; z-index: 1000;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h3 style="margin: 0; font-size: 14px; font-weight: 600; color: rgba(255, 255, 255, 0.85); letter-spacing: 0.03em; text-transform: uppercase;">Health Checks</h3>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div id="healthCheckCountdown" style="font-size: 11px; color: rgba(255, 255, 255, 0.5); min-width: 30px; text-align: right;">30s</div>
+            <button id="refreshHealthChecks" onclick="refreshHealthChecks()" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; padding: 6px 10px; cursor: pointer; color: rgba(255, 255, 255, 0.8); font-size: 12px; display: flex; align-items: center; gap: 4px; transition: all 0.2s;" title="Refresh health checks">
+              <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: currentColor;" id="refreshIcon">
+                <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+              </svg>
+              Refresh
+            </button>
+          </div>
+        </div>
+        <div id="healthChecksContainer" style="display: flex; flex-direction: column; gap: 12px;">
+          <div id="cloudServiceHealth" style="display: flex; align-items: center; gap: 8px; padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <div id="cloudServiceStatus" style="width: 20px; height: 20px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: currentColor; display: none;" id="cloudServiceCheckmark">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+            </div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, 0.9);">Cloud Service</div>
+              <div style="font-size: 9px; color: rgba(255, 255, 255, 0.4); margin-top: 1px;">cloud tunnel</div>
+              <div id="cloudServiceStatusText" style="font-size: 11px; color: rgba(255, 255, 255, 0.6); margin-top: 2px;">Checking...</div>
+              <div id="cloudServiceVersion" style="font-size: 9px; color: rgba(255, 255, 255, 0.4); margin-top: 2px; font-family: monospace;"></div>
+            </div>
+          </div>
+          <div id="agentStatusHealth" style="display: flex; align-items: center; gap: 8px; padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <div id="agentStatusStatus" style="width: 20px; height: 20px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: currentColor; display: none;" id="agentStatusCheckmark">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+            </div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, 0.9);">Agent Service</div>
+              <div style="font-size: 9px; color: rgba(255, 255, 255, 0.4); margin-top: 1px;">cloud tunnel</div>
+              <div id="agentStatusStatusText" style="font-size: 11px; color: rgba(255, 255, 255, 0.6); margin-top: 2px;">Checking...</div>
+            </div>
+          </div>
+          <div id="signalrHealth" style="display: flex; align-items: center; gap: 8px; padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <div id="signalrStatus" style="width: 20px; height: 20px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: currentColor; display: none;" id="signalrCheckmark">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+            </div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, 0.9);">SignalR Service</div>
+              <div style="font-size: 9px; color: rgba(255, 255, 255, 0.4); margin-top: 1px;">unified with Cloud</div>
+              <div id="signalrStatusText" style="font-size: 11px; color: rgba(255, 255, 255, 0.6); margin-top: 2px;">Checking...</div>
+              <div id="signalrConnectionCount" style="font-size: 10px; color: rgba(255, 255, 255, 0.5); margin-top: 2px; display: none; font-weight: 500;">Connections: -</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="environment-selector-panel" style="display: none; position: absolute; top: 400px; right: 100%; margin-right: 12px; min-width: 220px; max-width: 260px; background: rgba(26, 26, 46, 0.9); border-radius: 16px; padding: 24px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); opacity: 0.9; z-index: 1000;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h3 style="margin: 0; font-size: 14px; font-weight: 600; color: rgba(255, 255, 255, 0.85); letter-spacing: 0.03em; text-transform: uppercase;">Environment</h3>
+        </div>
+        <div id="environmentSelectorContainer" style="display: flex; flex-direction: column; gap: 8px;">
+          <select id="environmentSelector" style="width: 100%; padding: 10px 12px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; color: rgba(255, 255, 255, 0.9); font-size: 13px; font-family: inherit; cursor: pointer; outline: none; transition: all 0.2s;">
+            <option value="develop">Develop</option>
+            <option value="staging">Staging</option>
+            <option value="test">Test</option>
+            <option value="production">Production</option>
+          </select>
+          <div id="environmentInfo" style="padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <div style="font-size: 11px; color: rgba(255, 255, 255, 0.6); margin-top: 4px; word-break: break-all; font-family: monospace;" id="environmentUrl">-</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-links-panel" style="position: absolute; top: 80px; left: 100%; margin-left: 12px; width: 260px; background: rgba(26, 26, 46, 0.9); border-radius: 16px; padding: 24px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); opacity: 0.9; z-index: 1000;">
+        <h3 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: rgba(255, 255, 255, 0.85); letter-spacing: 0.03em; text-transform: uppercase;">Quick Links</h3>
+        <div class="quick-links-tabs" role="tablist" aria-label="Quick links panels">
+          <button type="button" class="quick-links-tab-button active" data-quick-links-tab="links" role="tab" aria-selected="true">Quick Links</button>
+          <button type="button" class="quick-links-tab-button" data-quick-links-tab="options" role="tab" aria-selected="false">Options</button>
+        </div>
+        <div class="quick-links-tab-panel" data-quick-links-panel="options" role="tabpanel">
+          <div class="quick-links-options">
+            <label class="quick-links-option disabled-option">
+              <input
+                type="checkbox"
+                checked
+                disabled
+              />
+              <span>Remember me</span>
+            </label>
+            <label class="quick-links-option">
+              <input
+                type="checkbox"
+                id="preferPortalCheckbox"
+                checked
+              />
+              <span>Prefer Portal</span>
+            </label>
+            <label class="quick-links-option developer-option" style="display: none;">
+              <input
+                type="checkbox"
+                id="preferTokenCheckbox"
+              />
+              <span>Prefer Long Remember Token</span>
+            </label>
+            <label class="quick-links-option">
+              <input
+                type="checkbox"
+                id="preferAutoSignInCheckbox"
+              />
+              <span>Prefer Auto Sign In</span>
+            </label>
+            <label class="quick-links-option">
+              <input
+                type="checkbox"
+                id="skipCountdownCheckbox"
+              />
+              <span>Skip Countdown</span>
+            </label>
+            <label class="quick-links-option developer-option" style="display: none;">
+              <input
+                type="checkbox"
+                id="debugModeCheckbox"
+              />
+              <span>Debug Mode</span>
+            </label>
+            <div id="debugEditLinkContainer" style="display: none; margin-top: 6px;">
+              <a
+                id="debugEditLink"
+                href="https://github.com/frostebite/WebPlatform/blob/main/github-pages-deploy/gateway.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="quick-links-edit-link"
+                title="View gateway.html on GitHub"
+              >
+                <svg viewBox="0 0 24 24" style="width: 12px; height: 12px; fill: currentColor;">
+                  <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zm2.92 2.83H5v-.92l9.06-9.06.92.92-9.06 9.06zM20.71 7.04a1 1 0 0 0 0-1.41L18.37 3.29a1 1 0 0 0-1.41 0l-1.5 1.5 3.75 3.75 1.5-1.5z"/>
+                </svg>
+                Edit gateway.html
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="quick-links-tab-panel active" data-quick-links-panel="links" role="tabpanel">
+        <div class="button-group">
+          <div class="more-sign-in-menu-container" style="margin-bottom: 8px;">
+            <div class="more-sign-in-menu-trigger" role="button" tabindex="0" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); font-size: 13px; padding: 8px 12px; display: flex; align-items: center; justify-content: flex-start; text-align: left; border-radius: 8px; cursor: pointer; position: relative;">
+              <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor; margin-right: 8px;">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+              </svg>
+              <span>More Sign In</span>
+              <svg viewBox="0 0 24 24" class="more-sign-in-menu-arrow" style="width: 16px; height: 16px; fill: currentColor; margin-left: auto;">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+              </svg>
+            </div>
+            <div class="more-sign-in-menu-dropdown">
+              <a href="javascript:void(0)" class="auth-button token more-sign-in-menu-item" data-provider="token" onclick="handleTokenSignIn(); return false;" style="background: rgba(100, 200, 255, 0.2); border: 1px solid rgba(100, 200, 255, 0.4); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                </svg>
+                New Token Sign In
+              </a>
+              <a href="steam://launch/2153520/option1/" class="auth-button steamapp more-sign-in-menu-item" data-provider="steam-sdk" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;" title="Sign in with Steam SDK">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+                  <path d="M8.5 9.5c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5z"/>
+                  <path d="M15.5 9.5c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5z"/>
+                  <path d="M12 6c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"/>
+                </svg>
+                Steam SDK Sign In
+              </a>
+              <a href="steam://launch/2153520/option2/" class="auth-button github more-sign-in-menu-item" data-provider="github-sdk" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;" title="Sign in with GitHub SDK">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                GitHub SDK Sign In
+              </a>
+            </div>
+          </div>
+          <div class="github-actions-menu-container" style="margin-bottom: 8px;">
+            <div class="github-actions-menu-trigger" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); font-size: 13px; padding: 8px 12px; display: flex; align-items: center; justify-content: flex-start; text-align: left; border-radius: 8px; cursor: pointer; position: relative;">
+              <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor; margin-right: 8px;">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              <span>GitHub Actions</span>
+              <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor; margin-left: auto;" class="github-actions-menu-arrow">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+              </svg>
+            </div>
+            <div class="github-actions-menu-dropdown">
+              <a href="https://github.com/frostebite/WebPlatform/actions" target="_blank" rel="noopener noreferrer" class="auth-button github-actions-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                WebPlatform Actions
+              </a>
+              <a href="https://github.com/frostebite/GameClient/actions" target="_blank" rel="noopener noreferrer" class="auth-button github-actions-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                GameClient Actions
+              </a>
+            </div>
+          </div>
+          <div class="external-links-menu-container" style="margin-bottom: 8px;">
+            <div class="external-links-menu-trigger" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); font-size: 13px; padding: 8px 12px; display: flex; align-items: center; justify-content: flex-start; text-align: left; border-radius: 8px; cursor: pointer; position: relative;">
+              <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor; margin-right: 8px;">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              <span>External Links</span>
+              <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor; margin-left: auto;" class="external-links-menu-arrow">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+              </svg>
+            </div>
+            <div class="external-links-menu-dropdown">
+              <a href="http://192.168.0.243:8081/" target="_blank" rel="noopener noreferrer" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                Local Platform
+              </a>
+              <a href="http://192.168.0.243:3000/" target="_blank" rel="noopener noreferrer" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                </svg>
+                Grafana
+              </a>
+              <a href="#" id="cloudTunnelLink" target="_blank" rel="noopener noreferrer" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"/>
+                </svg>
+                Cloud Tunnel
+              </a>
+              <a href="https://www.meshy.ai/@fisher_m_uksf" target="_blank" rel="noopener noreferrer" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                </svg>
+                Meshy
+              </a>
+              <a href="https://suno.com/@frostebite" target="_blank" rel="noopener noreferrer" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                </svg>
+                Suno
+              </a>
+              <a href="#" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                </svg>
+                LMStudio
+              </a>
+              <a href="http://192.168.0.251:9090" target="_blank" rel="noopener noreferrer" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                </svg>
+                InvokeAI
+              </a>
+              <a href="http://192.168.0.251:8000" target="_blank" rel="noopener noreferrer" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                </svg>
+                ComfyUI
+              </a>
+            </div>
+          </div>
+          <div class="steam-menu-container" style="margin-bottom: 8px;">
+            <div class="steam-menu-trigger" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); font-size: 13px; padding: 8px 12px; display: flex; align-items: center; justify-content: flex-start; text-align: left; border-radius: 8px; cursor: pointer; position: relative;">
+              <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor; margin-right: 8px;">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+                <path d="M8.5 9.5c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5z"/>
+                <path d="M12 6c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"/>
+              </svg>
+              <span>Steam</span>
+              <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor; margin-left: auto;" class="steam-menu-arrow">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+              </svg>
+            </div>
+            <div class="steam-menu-dropdown">
+              <a href="javascript:void(0)" class="auth-button steam-menu-item disabled" style="opacity: 0.5; cursor: not-allowed; pointer-events: none; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;" title="Coming soon">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                Launch AOO
+              </a>
+              <a href="steam://launch/2153520/" class="auth-button steam-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                Launch AOO SDK
+              </a>
+              <a href="steam://launch/3687660/" class="auth-button steam-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                Launch TOW
+              </a>
+              <a href="steam://launch/365670/" class="auth-button steam-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                Launch Blender
+              </a>
+              <a href="javascript:void(0)" class="auth-button steam-menu-item disabled" style="opacity: 0.5; cursor: not-allowed; pointer-events: none; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;" title="Coming soon">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                Launch Blender SDK
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="remembered-tokens-panel" style="display: none; position: absolute; top: 400px; left: 100%; margin-left: 12px; width: 260px; background: rgba(26, 26, 46, 0.9); border-radius: 16px; padding: 24px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); opacity: 0.9; z-index: 1000;">
+        <h3 style="margin: 0 0 16px 0; font-size: 14px; font-weight: 600; color: rgba(255, 255, 255, 0.85); letter-spacing: 0.03em; text-transform: uppercase;">Remembered Tokens</h3>
+        
+        <!-- Remembered Tokens List -->
+        <div id="rememberedTokensContainer" style="display: none;">
+          <div id="rememberedTokensList" style="display: flex; flex-direction: column; gap: 12px;">
+            <!-- Tokens will be dynamically inserted here -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Token Sign-In Modal -->
+  <div id="tokenModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Sign in with Token</h2>
+        <button class="modal-close" onclick="closeTokenModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom: 16px; color: rgba(255, 255, 255, 0.8);">Enter your authentication token to sign in:</p>
+        <input 
+          type="text" 
+          id="tokenInput" 
+          placeholder="Enter your token here" 
+          style="width: 100%; padding: 12px; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; background: rgba(255, 255, 255, 0.1); color: #ffffff; font-size: 14px; font-family: inherit; box-sizing: border-box;"
+          autocomplete="off"
+        />
+        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; color: rgba(255, 255, 255, 0.8); font-size: 14px; margin-top: 12px;">
+          <input 
+            type="checkbox" 
+            id="rememberTokenCheckbox"
+            style="width: 16px; height: 16px; cursor: pointer;"
+          />
+          <span>Remember this token</span>
+        </label>
+        <p style="margin-top: 12px; font-size: 12px; color: rgba(255, 255, 255, 0.6);">Your token will be securely sent to the authentication server.</p>
+      </div>
+      <div class="modal-actions">
+        <button class="modal-button secondary" onclick="closeTokenModal()">Cancel</button>
+        <button class="modal-button primary" onclick="submitToken()">Sign In</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Error Modal -->
+  <div id="errorModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Error</h2>
+        <button class="modal-close" onclick="closeErrorModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="errorModalBody"></div>
+      <div class="modal-actions">
+        <button class="modal-button secondary" onclick="closeErrorModal()">Close</button>
+        <button class="modal-button primary" onclick="copyErrorToClipboard()">Copy Error</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./gateway-shared.js"></script>
+  <script src="./gateway.js"></script>
+</body>
+</html>

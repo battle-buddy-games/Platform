@@ -1,0 +1,554 @@
+/* Gateway-specific styles */
+
+/* Gateway-specific button group - scoped to gateway.html */
+.sign-in-container .button-group,
+.quick-links-panel .button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: visible;
+}
+
+.quick-links-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.quick-links-tab-button {
+  flex: 1;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-links-tab-button.active {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.quick-links-tab-panel {
+  display: none;
+}
+
+.quick-links-tab-panel.active {
+  display: block;
+}
+
+.quick-links-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.quick-links-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+}
+
+.quick-links-option input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.quick-links-option.disabled-option {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.quick-links-option.disabled-option input {
+  cursor: not-allowed;
+}
+
+.quick-links-edit-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.auth-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.auth-button:hover::before {
+  left: 100%;
+}
+
+.auth-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.auth-button:active {
+  transform: translateY(0);
+}
+
+.auth-button.google {
+  background: #4285f4;
+}
+
+.auth-button.google:hover {
+  background: #357ae8;
+}
+
+.auth-button.discord {
+  background: #5865f2;
+}
+
+.auth-button.discord:hover {
+  background: #4752c4;
+}
+
+.auth-button.steam {
+  background: #171a21;
+  border: 1px solid #66c0f4;
+}
+
+.auth-button.steam:hover {
+  background: #1b2838;
+  border-color: #66c0f4;
+}
+
+.auth-button.steamapp {
+  background: #171a21;
+  border: 1px solid #66c0f4;
+}
+
+.auth-button.steamapp.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  background: #171a21;
+  border-color: rgba(102, 192, 244, 0.3);
+}
+
+.auth-button.steamapp.disabled:hover {
+  background: #171a21;
+  border-color: rgba(102, 192, 244, 0.3);
+  transform: none;
+  box-shadow: none;
+}
+
+.auth-button.github {
+  background: #24292e;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.auth-button.github:hover {
+  background: #2f363d;
+}
+
+.auth-button.token {
+  background: rgba(100, 200, 255, 0.2);
+  border: 1px solid rgba(100, 200, 255, 0.4);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.auth-button.token:hover {
+  background: rgba(100, 200, 255, 0.3);
+  border-color: rgba(100, 200, 255, 0.6);
+  color: #ffffff;
+}
+
+.auth-button.skip {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.auth-button.skip:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.auth-button.stored-token {
+  background: rgba(76, 175, 80, 0.2);
+  border: 1px solid rgba(76, 175, 80, 0.4);
+  color: rgba(129, 199, 132, 0.95);
+}
+
+.auth-button.stored-token:hover {
+  background: rgba(76, 175, 80, 0.3);
+  border-color: rgba(76, 175, 80, 0.6);
+  color: #81c784;
+}
+
+.auth-button svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* More Sign In Foldout Menu */
+.more-sign-in-menu-container {
+  position: relative;
+}
+
+.more-sign-in-menu-trigger {
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.more-sign-in-menu-container.menu-open .more-sign-in-menu-trigger,
+.more-sign-in-menu-trigger:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.more-sign-in-menu-arrow {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.more-sign-in-menu-container.menu-open .more-sign-in-menu-arrow {
+  transform: rotate(180deg);
+}
+
+.more-sign-in-menu-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding-top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.more-sign-in-menu-container.menu-open .more-sign-in-menu-dropdown {
+  max-height: 300px;
+  opacity: 1;
+  padding-top: 4px;
+  pointer-events: auto;
+}
+
+.more-sign-in-menu-item {
+  margin-bottom: 0 !important;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.more-sign-in-menu-item:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Health Check Refresh Button */
+#refreshHealthChecks:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-1px);
+}
+
+#refreshHealthChecks:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+#refreshHealthChecks:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Quick Links Panel - ensure dropdowns are visible */
+/* Scoped to gateway.html only */
+body .quick-links-panel {
+  overflow: visible;
+}
+
+/* External Links Foldout Menu */
+.external-links-menu-container {
+  position: relative;
+}
+
+.external-links-menu-trigger {
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.external-links-menu-container.menu-open .external-links-menu-trigger,
+.external-links-menu-trigger:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.external-links-menu-arrow {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.external-links-menu-container.menu-open .external-links-menu-arrow {
+  transform: rotate(180deg);
+}
+
+.external-links-menu-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding-top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.external-links-menu-container.menu-open .external-links-menu-dropdown {
+  max-height: 300px;
+  opacity: 1;
+  padding-top: 4px;
+  pointer-events: auto;
+}
+
+.external-links-menu-item {
+  margin-bottom: 0 !important;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.external-links-menu-item:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* GitHub Actions Foldout Menu */
+.github-actions-menu-container {
+  position: relative;
+}
+
+.github-actions-menu-trigger {
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.github-actions-menu-container.menu-open .github-actions-menu-trigger,
+.github-actions-menu-trigger:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.github-actions-menu-arrow {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.github-actions-menu-container.menu-open .github-actions-menu-arrow {
+  transform: rotate(180deg);
+}
+
+.github-actions-menu-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding-top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.github-actions-menu-container.menu-open .github-actions-menu-dropdown {
+  max-height: 300px;
+  opacity: 1;
+  padding-top: 4px;
+  pointer-events: auto;
+}
+
+.github-actions-menu-item {
+  margin-bottom: 0 !important;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.github-actions-menu-item:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Steam Foldout Menu */
+.steam-menu-container {
+  position: relative;
+}
+
+.steam-menu-trigger {
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.steam-menu-container.menu-open .steam-menu-trigger,
+.steam-menu-trigger:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.steam-menu-arrow {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.steam-menu-container.menu-open .steam-menu-arrow {
+  transform: rotate(180deg);
+}
+
+.steam-menu-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding-top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.steam-menu-container.menu-open .steam-menu-dropdown {
+  max-height: 300px;
+  opacity: 1;
+  padding-top: 4px;
+  pointer-events: auto;
+}
+
+.steam-menu-item {
+  margin-bottom: 0 !important;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.steam-menu-item:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Remembered Tokens Panel - smooth animation */
+.remembered-tokens-panel {
+  transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1), left 0.3s cubic-bezier(0.4, 0, 0.2, 1), margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive: Stack Quick Links and Health Checks vertically on smaller widths */
+@media (max-width: 1200px) {
+  /* Change parent container to allow vertical stacking */
+  .main-layout-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 24px !important;
+    padding: 20px !important;
+  }
+  
+  /* Make the inner container also stack vertically */
+  .main-layout-container > div {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 24px !important;
+    width: 100% !important;
+    max-width: 420px !important;
+  }
+  
+  /* Reset absolute positioning for panels on small screens */
+  .health-checks-panel,
+  .environment-selector-panel,
+  .quick-links-panel,
+  .remembered-tokens-panel {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    min-width: auto !important;
+  }
+  
+  /* Ensure environment selector panel displays when shown on small screens */
+  .environment-selector-panel[style*="display: block"] {
+    display: block !important;
+  }
+  
+  /* Stack panels vertically - health checks first, then environment selector, then quick links, then remembered tokens */
+  .health-checks-panel {
+    order: 2;
+  }
+  
+  .environment-selector-panel {
+    order: 3;
+  }
+  
+  .quick-links-panel {
+    order: 4;
+  }
+  
+  .remembered-tokens-panel {
+    order: 5;
+    margin-top: 24px !important;
+  }
+  
+  /* Ensure sign-in container is first */
+  .sign-in-container {
+    order: 1;
+  }
+  
+  /* Add spacing between checkboxes and health checks panel in narrow view */
+  #noSignInContainer > div:last-child {
+    margin-bottom: 32px !important;
+  }
+}

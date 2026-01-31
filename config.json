@@ -1,0 +1,46 @@
+{
+  "github": {
+    "clientId": "Ov23liXpQBh8YbkP2AIy",
+    "redirectUri": "https://battle-buddy-games.github.io/Web-Test/gateway-callback-github.html",
+    "scope": "user:email"
+  },
+  "google": {
+    "clientId": "94692902434-d832f25lj9m98ikuil8cbtcbnjh4d866.apps.googleusercontent.com",
+    "redirectUri": "https://battle-buddy-games.github.io/Web-Test/gateway-callback-google.html",
+    "scope": "profile email"
+  },
+  "discord": {
+    "clientId": "949786696860434443",
+    "redirectUri": "https://battle-buddy-games.github.io/Web-Test/gateway-callback-discord.html",
+    "scope": "identify email"
+  },
+  "backend": {
+    "callbackEndpoint": "/Authentication/github/callback"
+  },
+  "cloudflareTunnels": [
+    {
+      "name": "cloud",
+      "address": "https://vip-javascript-alot-nightlife.trycloudflare.com"
+    },
+    {
+      "name": "local-cloud",
+      "address": "http://192.168.0.243:8081"
+    },
+    {
+      "name": "staging-cloud",
+      "address": "http://192.168.0.251:8201"
+    },
+    {
+      "name": "test-cloud",
+      "address": "http://192.168.0.251:8301"
+    },
+    {
+      "name": "develop-cloud",
+      "address": "http://192.168.0.251:8101"
+    },
+    {
+      "name": "production-local",
+      "address": "http://192.168.0.251:8081"
+    }
+  ]
+}
