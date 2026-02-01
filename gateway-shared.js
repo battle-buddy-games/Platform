@@ -903,3 +903,155 @@ window.addEventListener('beforeunload', function() {
   }
   sendFrontendErrors();
 });
+
+// =============================================================================
+// SERVICE WORKER REGISTRATION (OPTIONAL - WIP/EXPERIMENTAL)
+// Tracks known tunnel addresses and shows friendly message for stale tunnels
+// =============================================================================
+
+const SW_INSTALLED_KEY = 'platform_sw_installed';
+
+// Check if service worker is installed
+function isServiceWorkerInstalled() {
+  try {
+    return localStorage.getItem(SW_INSTALLED_KEY) === 'true' && 'serviceWorker' in navigator;
+  } catch {
+    return false;
+  }
+}
+
+// Install service worker
+async function installPlatformServiceWorker() {
+  if (!('serviceWorker' in navigator)) {
+    console.warn('[Platform SW] Service workers not supported');
+    return { success: false, error: 'Service workers not supported' };
+  }
+
+  try {
+    const registration = await navigator.serviceWorker.register('./platform-sw.js', {
+      scope: './'
+    });
+
+    console.log('[Platform SW] Registered with scope:', registration.scope);
+    localStorage.setItem(SW_INSTALLED_KEY, 'true');
+
+    // Wait for the service worker to be active
+    if (registration.installing) {
+      await new Promise((resolve) => {
+        registration.installing.addEventListener('statechange', function() {
+          if (this.state === 'activated') {
+            resolve();
+          }
+        });
+      });
+    }
+
+    // Register current tunnels from config
+    if (CONFIG?.cloudflareTunnels) {
+      // Small delay to ensure SW is ready
+      await new Promise(resolve => setTimeout(resolve, 100));
+      for (const tunnel of CONFIG.cloudflareTunnels) {
+        await registerTunnelWithServiceWorker(tunnel.name, tunnel.address);
+      }
+      console.log('[Platform SW] Registered', CONFIG.cloudflareTunnels.length, 'tunnels');
+    }
+
+    return { success: true, registration };
+  } catch (error) {
+    console.error('[Platform SW] Registration failed:', error);
+    return { success: false, error: error.message };
+  }
+}
+
+// Uninstall service worker
+async function uninstallPlatformServiceWorker() {
+  if (!('serviceWorker' in navigator)) {
+    return { success: false, error: 'Service workers not supported' };
+  }
+
+  try {
+    const registrations = await navigator.serviceWorker.getRegistrations();
+    for (const registration of registrations) {
+      if (registration.active?.scriptURL?.includes('platform-sw.js')) {
+        await registration.unregister();
+        console.log('[Platform SW] Unregistered:', registration.scope);
+      }
+    }
+
+    localStorage.removeItem(SW_INSTALLED_KEY);
+    return { success: true };
+  } catch (error) {
+    console.error('[Platform SW] Unregistration failed:', error);
+    return { success: false, error: error.message };
+  }
+}
+
+// Register a tunnel with the service worker
+async function registerTunnelWithServiceWorker(name, address) {
+  if (!navigator.serviceWorker?.controller) {
+    // Try to get the registration and its active worker
+    const registrations = await navigator.serviceWorker.getRegistrations();
+    const swReg = registrations.find(r => r.active?.scriptURL?.includes('platform-sw.js'));
+    if (!swReg?.active) {
+      return { success: false, error: 'No active service worker' };
+    }
+
+    return new Promise((resolve) => {
+      const channel = new MessageChannel();
+      channel.port1.onmessage = (event) => resolve(event.data);
+      swReg.active.postMessage(
+        { type: 'REGISTER_TUNNEL', name, address },
+        [channel.port2]
+      );
+    });
+  }
+
+  return new Promise((resolve) => {
+    const channel = new MessageChannel();
+    channel.port1.onmessage = (event) => resolve(event.data);
+
+    navigator.serviceWorker.controller.postMessage(
+      { type: 'REGISTER_TUNNEL', name, address },
+      [channel.port2]
+    );
+  });
+}
+
+// Get known tunnels from service worker
+async function getKnownTunnelsFromServiceWorker() {
+  if (!navigator.serviceWorker?.controller) {
+    const registrations = await navigator.serviceWorker.getRegistrations();
+    const swReg = registrations.find(r => r.active?.scriptURL?.includes('platform-sw.js'));
+    if (!swReg?.active) {
+      return { success: false, error: 'No active service worker' };
+    }
+
+    return new Promise((resolve) => {
+      const channel = new MessageChannel();
+      channel.port1.onmessage = (event) => resolve(event.data);
+      swReg.active.postMessage(
+        { type: 'GET_KNOWN_TUNNELS' },
+        [channel.port2]
+      );
+    });
+  }
+
+  return new Promise((resolve) => {
+    const channel = new MessageChannel();
+    channel.port1.onmessage = (event) => resolve(event.data);
+
+    navigator.serviceWorker.controller.postMessage(
+      { type: 'GET_KNOWN_TUNNELS' },
+      [channel.port2]
+    );
+  });
+}
+
+// Export for use in gateway.html and other files
+window.platformSW = {
+  isInstalled: isServiceWorkerInstalled,
+  install: installPlatformServiceWorker,
+  uninstall: uninstallPlatformServiceWorker,
+  registerTunnel: registerTunnelWithServiceWorker,
+  getKnownTunnels: getKnownTunnelsFromServiceWorker
+};
