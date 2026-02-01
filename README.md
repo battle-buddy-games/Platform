@@ -1,6 +1,6 @@
 # GitHub Pages Deployment Folder
 
-This folder contains static and dynamically generated content that will be deployed to the `battle-buddy-games/Web-Test` repository for GitHub Pages hosting.
+This folder contains static and dynamically generated content that will be deployed to the `battle-buddy-games/Platform` repository for GitHub Pages hosting.
 
 ## Purpose
 
@@ -17,7 +17,7 @@ All URLs and configuration values are stored in `config.json` for easy managemen
 {
   "github": {
     "clientId": "Your GitHub OAuth App Client ID",
-    "redirectUri": "https://battle-buddy-games.github.io/Web-Test/gateway.html",
+    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway.html",
     "scope": "user:email"
   },
   "backend": {
@@ -55,7 +55,7 @@ The `cloudflareTunnels` array contains named Cloudflare tunnel configurations. E
 The deployment is automated via the `github-pages-deployment.yml` GitHub Actions workflow, which:
 
 1. Monitors this folder for changes
-2. Clones the target repository (`battle-buddy-games/Web-Test`)
+2. Clones the target repository (`battle-buddy-games/Platform`)
 3. Replaces all content in the target repository root (except the `.github` folder)
 4. Commits and pushes changes to trigger GitHub Pages deployment
 
