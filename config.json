@@ -1,17 +1,17 @@
 {
   "github": {
     "clientId": "Ov23liXpQBh8YbkP2AIy",
-    "redirectUri": "https://battle-buddy-games.github.io/Web-Test/gateway-callback-github.html",
+    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
     "scope": "user:email"
   },
   "google": {
     "clientId": "94692902434-d832f25lj9m98ikuil8cbtcbnjh4d866.apps.googleusercontent.com",
-    "redirectUri": "https://battle-buddy-games.github.io/Web-Test/gateway-callback-google.html",
+    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-google.html",
     "scope": "profile email"
   },
   "discord": {
     "clientId": "949786696860434443",
-    "redirectUri": "https://battle-buddy-games.github.io/Web-Test/gateway-callback-discord.html",
+    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-discord.html",
     "scope": "identify email"
   },
   "backend": {

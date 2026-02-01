@@ -33,7 +33,7 @@ async function loadConfig() {
     // Use fallback values if config fails to load (for gateway.html only)
     if (typeof CONFIG.github !== 'undefined') {
       CONFIG.github.clientId = CONFIG.github.clientId || 'Ov23liXpQBh8YbkP2AIy';
-      CONFIG.github.redirectUri = CONFIG.github.redirectUri || 'https://battle-buddy-games.github.io/Web-Test/gateway-callback-github.html';
+      CONFIG.github.redirectUri = CONFIG.github.redirectUri || 'https://battle-buddy-games.github.io/Platform/gateway-callback-github.html';
     }
     return false;
   }

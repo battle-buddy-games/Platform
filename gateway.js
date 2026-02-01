@@ -241,7 +241,7 @@ window.handleSignIn = function handleSignIn(provider) {
     // Validate that redirectUri is set and contains the correct callback file
     if (!callbackUrl || typeof callbackUrl !== 'string') {
       console.error('redirectUri not configured in config.json');
-      showErrorModal('Configuration Error', 'GitHub redirectUri not configured in config.json. Please set it to: https://battle-buddy-games.github.io/Web-Test/gateway-callback-github.html');
+      showErrorModal('Configuration Error', 'GitHub redirectUri not configured in config.json. Please set it to: https://battle-buddy-games.github.io/Platform/gateway-callback-github.html');
       restoreSignInForm();
       return;
     }
@@ -264,7 +264,7 @@ window.handleSignIn = function handleSignIn(provider) {
       new URL(callbackUrl);
     } catch (e) {
       console.error('Invalid redirectUri in config.json:', callbackUrl);
-      showErrorModal('Configuration Error', `Invalid redirectUri in config.json: ${callbackUrl}. Please set it to: https://battle-buddy-games.github.io/Web-Test/gateway-callback-github.html`);
+      showErrorModal('Configuration Error', `Invalid redirectUri in config.json: ${callbackUrl}. Please set it to: https://battle-buddy-games.github.io/Platform/gateway-callback-github.html`);
       restoreSignInForm();
       return;
     }
@@ -273,7 +273,7 @@ window.handleSignIn = function handleSignIn(provider) {
     
     // Ensure callbackUrl is exactly what's in config.json (no modifications)
     // This MUST match what's registered in GitHub OAuth App settings
-    const expectedUrl = "https://battle-buddy-games.github.io/Web-Test/gateway-callback-github.html";
+    const expectedUrl = "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html";
     if (callbackUrl !== expectedUrl) {
       console.warn('Callback URL does not match expected URL!');
       console.warn('Expected:', expectedUrl);
@@ -290,7 +290,7 @@ window.handleSignIn = function handleSignIn(provider) {
     // prompt=login forces re-authentication, which generates a new authorization code
     const params = new URLSearchParams({
       client_id: CONFIG.github.clientId,
-      redirect_uri: callbackUrl, // MUST be: https://battle-buddy-games.github.io/Web-Test/gateway-callback-github.html
+      redirect_uri: callbackUrl, // MUST be: https://battle-buddy-games.github.io/Platform/gateway-callback-github.html
       scope: CONFIG.github.scope || 'user:email', // Default scope if not configured
       state: state,
       prompt: 'login' // Force GitHub to show login page and generate completely new code
@@ -439,7 +439,7 @@ window.handleSignIn = function handleSignIn(provider) {
     // Validate that redirectUri is set
     if (!callbackUrl || typeof callbackUrl !== 'string') {
       console.error('redirectUri not configured in config.json');
-      showErrorModal('Configuration Error', 'Google redirectUri not configured in config.json. Please set it to: https://battle-buddy-games.github.io/Web-Test/gateway-callback-google.html');
+      showErrorModal('Configuration Error', 'Google redirectUri not configured in config.json. Please set it to: https://battle-buddy-games.github.io/Platform/gateway-callback-google.html');
       restoreSignInForm();
       return;
     }
@@ -461,7 +461,7 @@ window.handleSignIn = function handleSignIn(provider) {
       new URL(callbackUrl);
     } catch (e) {
       console.error('Invalid redirectUri in config.json:', callbackUrl);
-      showErrorModal('Configuration Error', `Invalid redirectUri in config.json: ${callbackUrl}. Please set it to: https://battle-buddy-games.github.io/Web-Test/gateway-callback-google.html`);
+      showErrorModal('Configuration Error', `Invalid redirectUri in config.json: ${callbackUrl}. Please set it to: https://battle-buddy-games.github.io/Platform/gateway-callback-google.html`);
       restoreSignInForm();
       return;
     }
@@ -470,7 +470,7 @@ window.handleSignIn = function handleSignIn(provider) {
     
     // CRITICAL: Ensure callbackUrl is exactly what's in config.json (no modifications)
     // This MUST match what's registered in Google OAuth App settings
-    const expectedUrl = "https://battle-buddy-games.github.io/Web-Test/gateway-callback-google.html";
+    const expectedUrl = "https://battle-buddy-games.github.io/Platform/gateway-callback-google.html";
     if (callbackUrl !== expectedUrl) {
       console.warn('Callback URL does not match expected URL!');
       console.warn('Expected:', expectedUrl);
@@ -484,7 +484,7 @@ window.handleSignIn = function handleSignIn(provider) {
     const scope = CONFIG.google.scope || 'profile email';
     const params = new URLSearchParams({
       client_id: CONFIG.google.clientId,
-      redirect_uri: callbackUrl, // MUST be: https://battle-buddy-games.github.io/Web-Test/gateway-callback-google.html
+      redirect_uri: callbackUrl, // MUST be: https://battle-buddy-games.github.io/Platform/gateway-callback-google.html
       response_type: 'code',
       scope: scope,
       state: state,
@@ -572,7 +572,7 @@ window.handleSignIn = function handleSignIn(provider) {
     // Validate that redirectUri is set
     if (!callbackUrl || typeof callbackUrl !== 'string') {
       console.error('redirectUri not configured in config.json');
-      showErrorModal('Configuration Error', 'Discord redirectUri not configured in config.json. Please set it to: https://battle-buddy-games.github.io/Web-Test/gateway-callback-discord.html');
+      showErrorModal('Configuration Error', 'Discord redirectUri not configured in config.json. Please set it to: https://battle-buddy-games.github.io/Platform/gateway-callback-discord.html');
       restoreSignInForm();
       return;
     }
@@ -594,7 +594,7 @@ window.handleSignIn = function handleSignIn(provider) {
       new URL(callbackUrl);
     } catch (e) {
       console.error('Invalid redirectUri in config.json:', callbackUrl);
-      showErrorModal('Configuration Error', `Invalid redirectUri in config.json: ${callbackUrl}. Please set it to: https://battle-buddy-games.github.io/Web-Test/gateway-callback-discord.html`);
+      showErrorModal('Configuration Error', `Invalid redirectUri in config.json: ${callbackUrl}. Please set it to: https://battle-buddy-games.github.io/Platform/gateway-callback-discord.html`);
       restoreSignInForm();
       return;
     }
