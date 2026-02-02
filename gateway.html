@@ -60,6 +60,64 @@
         </div>
       </div>
       
+      <!-- Service Worker Install Mode -->
+      <div id="serviceWorkerInstallContainer" style="display: none;">
+        <h2 style="margin-bottom: 16px;">Install Service Worker</h2>
+        <p class="subtitle" style="margin-bottom: 24px;">The service worker enables automatic tunnel detection and offline caching for the platform.</p>
+
+        <div id="swInstallStatus" style="margin: 24px 0; text-align: center;">
+          <div id="swInstallPending">
+            <div class="spinner" style="margin: 0 auto;"></div>
+            <p style="margin-top: 16px; color: rgba(255, 255, 255, 0.8);">Checking service worker status...</p>
+          </div>
+          <div id="swInstallReady" style="display: none;">
+            <svg viewBox="0 0 24 24" style="width: 48px; height: 48px; fill: #4CAF50; margin-bottom: 12px;">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <p style="color: rgba(100, 255, 100, 0.9);">Ready to install</p>
+          </div>
+          <div id="swInstallSuccess" style="display: none;">
+            <svg viewBox="0 0 24 24" style="width: 48px; height: 48px; fill: #4CAF50; margin-bottom: 12px;">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <p style="color: rgba(100, 255, 100, 0.9);" id="swSuccessMessage">Service worker installed successfully!</p>
+          </div>
+          <div id="swInstallError" style="display: none;">
+            <svg viewBox="0 0 24 24" style="width: 48px; height: 48px; fill: #f44336; margin-bottom: 12px;">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            <p style="color: rgba(255, 100, 100, 0.9);" id="swErrorMessage">Installation failed</p>
+          </div>
+          <div id="swNotSupported" style="display: none;">
+            <svg viewBox="0 0 24 24" style="width: 48px; height: 48px; fill: #ff9800; margin-bottom: 12px;">
+              <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+            </svg>
+            <p style="color: rgba(255, 200, 100, 0.9);">Service workers are not supported in this browser.</p>
+          </div>
+          <div id="swAlreadyInstalled" style="display: none;">
+            <svg viewBox="0 0 24 24" style="width: 48px; height: 48px; fill: #4CAF50; margin-bottom: 12px;">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <p style="color: rgba(100, 255, 100, 0.9);">Service worker is already installed.</p>
+          </div>
+        </div>
+
+        <div class="button-group" style="margin-top: 24px;">
+          <button id="swInstallBtn" class="auth-button" onclick="doServiceWorkerInstall()" style="background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%); border: none; width: 100%;">
+            <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;">
+              <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+            </svg>
+            Install Service Worker
+          </button>
+          <button class="auth-button" onclick="closeServiceWorkerInstall()" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); width: 100%; margin-top: 8px;">
+            <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+            Close
+          </button>
+        </div>
+      </div>
+
       <!-- No Previous Sign-In - Show Options -->
       <div id="noSignInContainer">
         <p style="margin: 12px 0; padding: 8px 12px; background: rgba(255, 255, 255, 0.05); border-left: 3px solid rgba(255, 255, 255, 0.3); border-radius: 4px; font-size: 12px; color: rgba(255, 255, 255, 0.7); line-height: 1.4; display: flex; align-items: center; gap: 8px;">

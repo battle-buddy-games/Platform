@@ -2616,6 +2616,12 @@ window.addEventListener('DOMContentLoaded', async () => {
   await loadConfig();
   saveOriginalSignInHTML();
 
+  // Check for service worker install mode (#install-sw hash)
+  if (window.location.hash === '#install-sw') {
+    showServiceWorkerInstallUI();
+    return; // Don't proceed with normal initialization
+  }
+
   // Initially disable sign-in buttons until health check passes
   // isCloudServiceHealthy starts as false, so this will disable buttons
   updateSignInButtonStates();
@@ -4158,10 +4164,10 @@ function startHealthCheckAutoRefresh() {
   if (healthCheckAutoRefreshInterval) {
     clearInterval(healthCheckAutoRefreshInterval);
   }
-  
+
   // Start countdown
   startHealthCheckCountdown();
-  
+
   // Set up auto-refresh
   healthCheckAutoRefreshInterval = setInterval(() => {
     performHealthChecks().then(() => {
@@ -4170,3 +4176,149 @@ function startHealthCheckAutoRefresh() {
     });
   }, HEALTH_CHECK_REFRESH_INTERVAL * 1000);
 }
+
+// =============================================================================
+// SERVICE WORKER INSTALL UI FUNCTIONS
+// =============================================================================
+
+// Show the service worker install UI
+function showServiceWorkerInstallUI() {
+  console.log('[Service Worker Install] Hash #install-sw detected, showing install UI');
+
+  // Hide all other containers
+  const noSignInContainer = document.getElementById('noSignInContainer');
+  const previousSignInContainer = document.getElementById('previousSignInContainer');
+  const autoSignInContainer = document.getElementById('autoSignInContainer');
+  const swContainer = document.getElementById('serviceWorkerInstallContainer');
+
+  if (noSignInContainer) noSignInContainer.style.display = 'none';
+  if (previousSignInContainer) previousSignInContainer.style.display = 'none';
+  if (autoSignInContainer) autoSignInContainer.style.display = 'none';
+
+  // Show service worker install container
+  if (swContainer) {
+    swContainer.style.display = 'block';
+
+    // Check service worker support and status
+    checkServiceWorkerStatus();
+  }
+
+  // Hide the side panels (health checks, quick links)
+  const healthPanel = document.querySelector('.health-checks-panel');
+  const quickLinksPanel = document.querySelector('.quick-links-panel');
+  const rememberedTokensPanel = document.querySelector('.remembered-tokens-panel');
+
+  if (healthPanel) healthPanel.style.display = 'none';
+  if (quickLinksPanel) quickLinksPanel.style.display = 'none';
+  if (rememberedTokensPanel) rememberedTokensPanel.style.display = 'none';
+}
+
+// Check service worker status and update UI accordingly
+function checkServiceWorkerStatus() {
+  const pendingEl = document.getElementById('swInstallPending');
+  const readyEl = document.getElementById('swInstallReady');
+  const successEl = document.getElementById('swInstallSuccess');
+  const errorEl = document.getElementById('swInstallError');
+  const notSupportedEl = document.getElementById('swNotSupported');
+  const alreadyInstalledEl = document.getElementById('swAlreadyInstalled');
+  const installBtn = document.getElementById('swInstallBtn');
+
+  // Hide all status elements
+  [pendingEl, readyEl, successEl, errorEl, notSupportedEl, alreadyInstalledEl].forEach(el => {
+    if (el) el.style.display = 'none';
+  });
+
+  // Check browser support
+  if (!('serviceWorker' in navigator)) {
+    if (notSupportedEl) notSupportedEl.style.display = 'block';
+    if (installBtn) installBtn.style.display = 'none';
+    return;
+  }
+
+  // Check if already installed
+  if (isServiceWorkerInstalled()) {
+    if (alreadyInstalledEl) alreadyInstalledEl.style.display = 'block';
+    if (installBtn) {
+      installBtn.textContent = 'Already Installed';
+      installBtn.disabled = true;
+      installBtn.style.opacity = '0.6';
+    }
+    return;
+  }
+
+  // Ready to install
+  if (readyEl) readyEl.style.display = 'block';
+  if (installBtn) {
+    installBtn.disabled = false;
+    installBtn.style.opacity = '1';
+  }
+}
+
+// Perform service worker installation
+async function doServiceWorkerInstall() {
+  console.log('[Service Worker Install] Starting installation...');
+
+  const pendingEl = document.getElementById('swInstallPending');
+  const readyEl = document.getElementById('swInstallReady');
+  const successEl = document.getElementById('swInstallSuccess');
+  const errorEl = document.getElementById('swInstallError');
+  const successMessage = document.getElementById('swSuccessMessage');
+  const errorMessage = document.getElementById('swErrorMessage');
+  const installBtn = document.getElementById('swInstallBtn');
+
+  // Hide ready state, show pending
+  if (readyEl) readyEl.style.display = 'none';
+  if (pendingEl) {
+    pendingEl.style.display = 'block';
+    const pendingText = pendingEl.querySelector('p');
+    if (pendingText) pendingText.textContent = 'Installing service worker...';
+  }
+  if (installBtn) installBtn.disabled = true;
+
+  try {
+    // Use the installPlatformServiceWorker function from gateway-shared.js
+    const result = await installPlatformServiceWorker();
+
+    if (pendingEl) pendingEl.style.display = 'none';
+
+    if (result.success) {
+      console.log('[Service Worker Install] Installation successful');
+      if (successEl) successEl.style.display = 'block';
+      if (successMessage) successMessage.textContent = 'Service worker installed successfully! You can close this tab.';
+      if (installBtn) {
+        installBtn.textContent = 'Installed';
+        installBtn.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
+      }
+    } else {
+      console.error('[Service Worker Install] Installation failed:', result.error);
+      if (errorEl) errorEl.style.display = 'block';
+      if (errorMessage) errorMessage.textContent = 'Installation failed: ' + (result.error || 'Unknown error');
+      if (installBtn) {
+        installBtn.disabled = false;
+        installBtn.textContent = 'Retry Installation';
+      }
+    }
+  } catch (error) {
+    console.error('[Service Worker Install] Installation error:', error);
+    if (pendingEl) pendingEl.style.display = 'none';
+    if (errorEl) errorEl.style.display = 'block';
+    if (errorMessage) errorMessage.textContent = 'Installation error: ' + error.message;
+    if (installBtn) {
+      installBtn.disabled = false;
+      installBtn.textContent = 'Retry Installation';
+    }
+  }
+}
+
+// Close service worker install UI and return to normal gateway
+function closeServiceWorkerInstall() {
+  // Remove the hash from URL
+  window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
+
+  // Reload the page to show normal sign-in UI
+  window.location.reload();
+}
+
+// Make functions globally accessible
+window.doServiceWorkerInstall = doServiceWorkerInstall;
+window.closeServiceWorkerInstall = closeServiceWorkerInstall;
