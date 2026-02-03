@@ -20,7 +20,7 @@
   "cloudflareTunnels": [
     {
       "name": "cloud",
-      "address": "https://vip-javascript-alot-nightlife.trycloudflare.com"
+      "address": "https://doctor-boring-sentences-tvs.trycloudflare.com"
     },
     {
       "name": "local-cloud",
