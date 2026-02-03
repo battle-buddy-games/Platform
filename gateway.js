@@ -53,6 +53,26 @@ function updateSignInButtonStates() {
     setButtonState(storedTokenButton, isCloudServiceHealthy);
   }
 
+  // Also handle remembered tokens sign-in buttons
+  const rememberedTokenSignInButtons = document.querySelectorAll('.remembered-token-signin-btn');
+  rememberedTokenSignInButtons.forEach(button => {
+    setButtonState(button, isCloudServiceHealthy);
+  });
+
+  // Also handle the clickable left section of remembered tokens (which triggers sign-in)
+  const rememberedTokenClickables = document.querySelectorAll('.remembered-token-clickable');
+  rememberedTokenClickables.forEach(clickable => {
+    if (isCloudServiceHealthy) {
+      clickable.style.opacity = '1';
+      clickable.style.pointerEvents = 'auto';
+      clickable.style.cursor = 'pointer';
+    } else {
+      clickable.style.opacity = '0.5';
+      clickable.style.pointerEvents = 'none';
+      clickable.style.cursor = 'not-allowed';
+    }
+  });
+
   // Update a visual indicator for user feedback
   const tokenStatusContainer = document.getElementById('tokenStatusContainer');
   const statusText = document.getElementById('tokenStatusText');
@@ -1911,6 +1931,7 @@ function updateRememberedTokensList() {
     item.style.cssText = 'display: flex; align-items: center; justify-content: space-between; padding: 12px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; gap: 12px;';
     
     const leftSection = document.createElement('div');
+    leftSection.className = 'remembered-token-clickable';
     leftSection.style.cssText = 'flex: 1; min-width: 0; cursor: pointer;';
     leftSection.onclick = () => signInWithRememberedToken(tokenData.id);
     
@@ -1930,6 +1951,7 @@ function updateRememberedTokensList() {
     rightSection.style.cssText = 'display: flex; align-items: center; gap: 8px; flex-shrink: 0;';
     
     const signInButton = document.createElement('button');
+    signInButton.className = 'remembered-token-signin-btn';
     signInButton.title = 'Sign In';
     signInButton.innerHTML = '<svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;"><path d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h6v-2H4V8h6V4zm8 0h-6v2h6v10h-6v2h6c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm-1 9l-4-4v3H7v2h6v3l4-4z"/></svg>';
     signInButton.style.cssText = 'background: rgba(76, 175, 80, 0.3); border: 1px solid rgba(76, 175, 80, 0.5); border-radius: 4px; padding: 6px; color: rgba(255, 255, 255, 0.9); cursor: pointer; display: flex; align-items: center; justify-content: center; min-width: 28px; height: 28px;';
@@ -1949,12 +1971,15 @@ function updateRememberedTokensList() {
     
     rightSection.appendChild(signInButton);
     rightSection.appendChild(forgetButton);
-    
+
     item.appendChild(leftSection);
     item.appendChild(rightSection);
-    
+
     list.appendChild(item);
   });
+
+  // Apply health check state to newly created buttons
+  updateSignInButtonStates();
 }
 
 // Sign in with stored token (uses most recent remembered token)
