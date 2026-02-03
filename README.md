@@ -1,1 +1,1 @@
- # Battle Buddy Platform Gateway
+# Battle Buddy Platform Gateway
