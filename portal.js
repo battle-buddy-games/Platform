@@ -211,6 +211,25 @@ function showToast(title, message, type = 'info') {
   }, 5000);
 }
 
+// Register all config tunnels with the service worker so it can track them
+async function registerTunnelsWithServiceWorker() {
+  if (!window.platformSW?.isInstalled()) return;
+
+  try {
+    const tunnels = CONFIG?.cloudflareTunnels;
+    if (!tunnels || tunnels.length === 0) return;
+
+    for (const tunnel of tunnels) {
+      if (tunnel.name && tunnel.address) {
+        await window.platformSW.registerTunnel(tunnel.name, tunnel.address);
+      }
+    }
+    console.log(`[Portal] Registered ${tunnels.length} tunnels with service worker`);
+  } catch (e) {
+    console.warn('[Portal] Failed to register tunnels with service worker:', e);
+  }
+}
+
 // 404 detection, config polling, and health checking
 let pollingInterval = null;
 let countdownInterval = null;
@@ -795,6 +814,9 @@ async function loadTunnel() {
     tunnelBaseUrl = configTunnelUrl;
     console.log('Using tunnel URL from config:', tunnelBaseUrl);
   }
+
+  // Register all known tunnels with the service worker (if installed)
+  registerTunnelsWithServiceWorker();
 
   const iframe = document.getElementById('tunnelFrame');
 

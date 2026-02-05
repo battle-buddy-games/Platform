@@ -157,6 +157,27 @@ self.addEventListener('fetch', (event) => {
                     }
                 }
 
+                // 502/503 - platform is offline (likely update in progress)
+                if (response.status === 502 || response.status === 503) {
+                    const tunnel = await isKnownTunnel(url);
+                    if (tunnel) {
+                        console.log('[Platform SW] Tunnel returned', response.status, ':', tunnel.name, tunnel.address);
+
+                        // Only intercept navigation requests (HTML pages)
+                        // Let API/resource requests return the raw error
+                        if (event.request.mode === 'navigate') {
+                            return new Response(
+                                generateUpdateInProgressPage(tunnel, response.status),
+                                {
+                                    status: response.status,
+                                    statusText: response.statusText,
+                                    headers: { 'Content-Type': 'text/html' }
+                                }
+                            );
+                        }
+                    }
+                }
+
                 return response;
             } catch (error) {
                 // Fetch failed - check if this is a known tunnel
@@ -368,6 +389,195 @@ function generateOfflinePage(tunnel) {
 
         <p class="hint">Tip: Use the Portal page instead of direct tunnel URLs for automatic reconnection.</p>
     </div>
+</body>
+</html>`;
+}
+
+function generateUpdateInProgressPage(tunnel, statusCode) {
+    const tunnelName = tunnel?.name || 'Unknown';
+    const tunnelAddress = tunnel?.address || 'Unknown address';
+    const lastSeen = tunnel?.lastSeen ? new Date(tunnel.lastSeen).toLocaleString() : 'Unknown';
+
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Offline - Update in Progress</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        .icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #ffc857;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+        p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .spinner-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 25px 0;
+        }
+        .spinner {
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255,200,87,0.3);
+            border-top-color: #ffc857;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .spinner-text {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+        }
+        .tunnel-info {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+            text-align: left;
+        }
+        .tunnel-info div {
+            margin-bottom: 10px;
+        }
+        .tunnel-info div:last-child {
+            margin-bottom: 0;
+        }
+        .tunnel-info strong {
+            color: rgba(255,255,255,0.6);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .tunnel-info code {
+            display: block;
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            font-size: 13px;
+            color: #fff;
+            word-break: break-all;
+            margin-top: 4px;
+        }
+        .actions {
+            margin-top: 30px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-primary {
+            background: #5865F2;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #4752c4;
+        }
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.15);
+        }
+        .countdown {
+            margin-top: 20px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">&#x1F504;</div>
+        <h1>Platform Offline</h1>
+        <p>An update is in progress. Please wait, it will be back shortly.</p>
+
+        <div class="spinner-row">
+            <div class="spinner"></div>
+            <span class="spinner-text" id="statusText">Waiting for service to come back online...</span>
+        </div>
+
+        <div class="tunnel-info">
+            <div>
+                <strong>Environment</strong>
+                <code>${tunnelName}</code>
+            </div>
+            <div>
+                <strong>Address</strong>
+                <code>${tunnelAddress}</code>
+            </div>
+            <div>
+                <strong>Status</strong>
+                <code>${statusCode} ${statusCode === 502 ? 'Bad Gateway' : 'Service Unavailable'}</code>
+            </div>
+            <div>
+                <strong>Last Seen Working</strong>
+                <code>${lastSeen}</code>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button onclick="location.reload()" class="btn btn-primary">Retry Now</button>
+            <a href="./gateway.html" class="btn btn-secondary">Go to Gateway</a>
+        </div>
+
+        <p class="countdown" id="countdown">Auto-retry in <strong id="countdownNum">15</strong> seconds</p>
+    </div>
+
+    <script>
+        let seconds = 15;
+        const countdownEl = document.getElementById('countdownNum');
+        const statusEl = document.getElementById('statusText');
+        const timer = setInterval(() => {
+            seconds--;
+            if (countdownEl) countdownEl.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(timer);
+                if (statusEl) statusEl.textContent = 'Retrying...';
+                location.reload();
+            }
+        }, 1000);
+    </script>
 </body>
 </html>`;
 }
