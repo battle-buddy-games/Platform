@@ -3264,13 +3264,43 @@ window.addEventListener('DOMContentLoaded', async () => {
           const dateB = new Date(b.rememberedAt || 0);
           return dateB - dateA; // Newest first
         });
-        
+
         const mostRecentToken = sortedTokens[0];
         if (mostRecentToken && mostRecentToken.id) {
-          console.log('Prefer auto sign-in enabled, starting countdown with most recent token');
-          // Start auto sign-in countdown
-          startAutoSignInCountdown(mostRecentToken.id);
-          return; // Don't show normal sign-in UI
+          console.log('Prefer auto sign-in enabled, waiting for health check before countdown');
+
+          // Show "checking services" message while waiting for health check
+          const prevContainer = document.getElementById('previousSignInContainer');
+          const noContainer = document.getElementById('noSignInContainer');
+          const countdownMsg = document.getElementById('countdownMessage');
+          const countdownNum = document.getElementById('countdownText');
+
+          if (prevContainer) prevContainer.style.display = 'block';
+          if (noContainer) noContainer.style.display = 'none';
+          if (countdownMsg) countdownMsg.textContent = 'Checking service health before sign in...';
+          if (countdownNum) countdownNum.style.display = 'none';
+
+          // Run health checks first - auto sign-in must wait for service availability
+          await performHealthChecks();
+          startHealthCheckAutoRefresh();
+
+          // Check if user clicked Cancel during the health check wait
+          const wasCanceled = prevContainer && prevContainer.style.display === 'none';
+
+          if (wasCanceled) {
+            console.log('Auto sign-in canceled by user during health check');
+          } else if (isCloudServiceHealthy) {
+            // Service is healthy, proceed with auto sign-in countdown
+            if (prevContainer) prevContainer.style.display = 'none';
+            if (countdownNum) countdownNum.style.display = '';
+            startAutoSignInCountdown(mostRecentToken.id);
+          } else {
+            // Service is not healthy, redirect to normal sign-in page
+            console.log('Cloud service unhealthy, canceling auto sign-in');
+            if (prevContainer) prevContainer.style.display = 'none';
+            if (noContainer) noContainer.style.display = 'block';
+          }
+          return; // Health checks already initialized, don't run again below
         }
       }
     }
