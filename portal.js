@@ -427,18 +427,24 @@ function stopPolling() {
 // Show connection failure popup with polling for new address
 function showConnectionFailure(title, message) {
   if (connectionFailureDetected) return; // Already showing failure popup
-  
+
   connectionFailureDetected = true;
   const overlay = document.getElementById('connectionFailureOverlay');
+  const titleElement = document.getElementById('connectionFailureTitle');
   const messageElement = document.getElementById('connectionFailureMessage');
   const pauseBtn = document.getElementById('pauseRetryBtn');
   const retryNowBtn = document.getElementById('retryNowBtn');
-  
+
   if (!overlay || !messageElement) return;
-  
+
   overlay.classList.remove('hidden');
   isRetryPaused = false;
   pauseBtn.textContent = 'Pause Search';
+
+  // Update the title dynamically
+  if (titleElement && title) {
+    titleElement.textContent = title;
+  }
   
   // Update message to indicate polling for new address
   const baseMessage = message || 'Failed to connect to the tunnel.';
@@ -1001,7 +1007,13 @@ async function loadTunnel() {
         const bodyText = iframeDoc.body?.innerText?.toLowerCase() || '';
         const title = iframeDoc.title?.toLowerCase() || '';
         
-        if (title.includes('error') || bodyText.includes('failed to load') || 
+        // Check for 502 Bad Gateway (platform offline / update in progress)
+        if (bodyText.includes('502') && (bodyText.includes('bad gateway') || bodyText.includes('gateway'))) {
+          showConnectionFailure('Platform Offline', 'The platform is currently offline — an update is in progress. Please wait, it will be back shortly.');
+          return;
+        }
+
+        if (title.includes('error') || bodyText.includes('failed to load') ||
             bodyText.includes('connection refused') || bodyText.includes('network error') ||
             bodyText.includes('this site can\'t be reached') || bodyText.includes('dns_probe_finished_nxdomain') ||
             bodyText.includes('530') || bodyText.includes('refused to connect')) {
@@ -1285,20 +1297,26 @@ async function loadTunnel() {
     
     // Only intercept errors related to iframe/tunnel loading
     const errorMessage = args.join(' ').toLowerCase();
+    const is502Error = errorMessage.includes('502');
     const isRelevantError = (
-      errorMessage.includes('530') || 
+      is502Error ||
+      errorMessage.includes('530') ||
       (errorMessage.includes('x-frame-options') && errorMessage.includes('frame')) ||
       errorMessage.includes('refused to connect') ||
       (errorMessage.includes('failed to load resource') && (errorMessage.includes('tunnel') || errorMessage.includes('cloudflare') || errorMessage.includes('trycloudflare'))) ||
       (errorMessage.includes('network error') && iframeLoadStarted)
     );
-    
+
     if (isRelevantError && !connectionFailureDetected && !iframeLoadCompleted && iframeLoadStarted) {
       // Debounce to avoid multiple triggers
       setTimeout(() => {
         if (!iframeLoadCompleted && !connectionFailureDetected) {
+          let failureTitle = 'Connection Error';
           let failureMessage = 'Failed to connect to the tunnel.';
-          if (errorMessage.includes('530')) {
+          if (is502Error) {
+            failureTitle = 'Platform Offline';
+            failureMessage = 'The platform is currently offline — an update is in progress. Please wait, it will be back shortly.';
+          } else if (errorMessage.includes('530')) {
             failureMessage = 'The tunnel server returned error 530. Searching for a new cloud address...';
           } else if (errorMessage.includes('x-frame-options')) {
             failureMessage = 'The tunnel server is blocking iframe embedding. Searching for a new cloud address...';
@@ -1307,7 +1325,7 @@ async function loadTunnel() {
           } else {
             failureMessage = 'Connection failed. Searching for a new cloud address...';
           }
-          showConnectionFailure('Connection Error', failureMessage);
+          showConnectionFailure(failureTitle, failureMessage);
         }
       }, 1500); // Delay to avoid false positives and allow for successful load
     }
@@ -1318,19 +1336,25 @@ async function loadTunnel() {
     // Only handle errors if they're related to our iframe
     const errorMessage = (event.message || '').toLowerCase();
     const errorSource = (event.filename || '').toLowerCase();
+    const is502 = errorMessage.includes('502');
     const isIframeRelated = (
-      errorSource.includes('tunnel') || 
+      errorSource.includes('tunnel') ||
       errorSource.includes('cloudflare') ||
       errorSource.includes('trycloudflare') ||
+      (is502 && iframeLoadStarted) ||
       (errorMessage.includes('530') && iframeLoadStarted) ||
       (errorMessage.includes('refused') && iframeLoadStarted) ||
       (errorMessage.includes('failed to load') && iframeLoadStarted)
     );
-    
+
     if (isIframeRelated && !connectionFailureDetected && !iframeLoadCompleted && iframeLoadStarted) {
       setTimeout(() => {
         if (!iframeLoadCompleted && !connectionFailureDetected) {
-          showConnectionFailure('Connection Error', 'Failed to connect to the tunnel. Please check if the tunnel is running.');
+          if (is502) {
+            showConnectionFailure('Platform Offline', 'The platform is currently offline — an update is in progress. Please wait, it will be back shortly.');
+          } else {
+            showConnectionFailure('Connection Error', 'Failed to connect to the tunnel. Please check if the tunnel is running.');
+          }
         }
       }, 1500);
     }
