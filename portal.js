@@ -1080,6 +1080,20 @@ async function loadTunnel() {
           // Ignore errors - iframe might not accept messages
         }
       }
+
+      // Send portal info to iframe so it can rewrite links for portal-aware right-click behavior
+      if (iframe.contentWindow) {
+        try {
+          const portalBaseUrl = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '');
+          iframe.contentWindow.postMessage({
+            type: 'portal-info',
+            portalBaseUrl: portalBaseUrl,
+            portalPageUrl: window.location.origin + window.location.pathname
+          }, '*');
+        } catch (e) {
+          // Ignore errors
+        }
+      }
     }, 100);
     
     // Set up periodic URL updates and sign-in detection (for cross-origin iframes)
