@@ -118,8 +118,8 @@ window.restoreSignInForm = function restoreSignInForm() {
     // Re-attach event listeners if needed
     attachSignInListeners();
   } else {
-    // Fallback: reload the page
-    window.location.href = window.location.pathname;
+    // Fallback: reload the page, preserving URL params (link mode, provider, returnUrl etc)
+    window.location.href = window.location.pathname + window.location.search;
   }
 };
 
@@ -2659,6 +2659,48 @@ function initQuickLinksTabs() {
 
 // Initialize: Load config and check for previous sign-in
 window.addEventListener('DOMContentLoaded', async () => {
+  // CRITICAL: Check for link mode FIRST, before loadConfig or any other initialization.
+  // This prevents any other code path from stripping URL params or triggering auto sign-in.
+  const earlyParams = new URLSearchParams(window.location.search);
+  const earlyLinkParam = earlyParams.get('link');
+  const earlyLinkingMode = earlyParams.get('linkingModeEnabled');
+  const earlyProvider = earlyParams.get('provider');
+  const earlyLinkProvider = earlyLinkParam || (earlyLinkingMode === 'true' ? earlyProvider : null);
+
+  if (earlyLinkProvider) {
+    console.log('[EARLY LINK] Link mode detected before loadConfig, provider:', earlyLinkProvider);
+
+    // Store link mode in localStorage immediately
+    try {
+      localStorage.setItem('linkingModeEnabled', 'true');
+      localStorage.setItem('oauth_link_mode', 'true');
+      localStorage.setItem('oauth_link_provider', earlyLinkProvider);
+      const earlyReturnUrl = earlyParams.get('returnUrl');
+      if (earlyReturnUrl) {
+        localStorage.setItem('oauth_return_url', earlyReturnUrl);
+      }
+    } catch (e) {
+      console.error('[EARLY LINK] Failed to store linking mode:', e);
+    }
+
+    // Send debug analytics before anything else
+    if (typeof sendDebugEventNow === 'function') {
+      sendDebugEventNow('EARLY_LINK_MODE_DETECTED', {
+        provider: earlyLinkProvider,
+        returnUrl: earlyParams.get('returnUrl'),
+        url: window.location.href
+      });
+    }
+
+    // Load config, then immediately start OAuth for the link provider
+    await loadConfig();
+    saveOriginalSignInHTML();
+    console.log('[EARLY LINK] Config loaded, starting OAuth flow for', earlyLinkProvider);
+    handleSignIn(earlyLinkProvider);
+    console.log('[EARLY LINK] handleSignIn returned, exiting DOMContentLoaded');
+    return; // Skip ALL other initialization
+  }
+
   // Send debug analytics at the very start of initialization (before loadConfig)
   if (typeof sendDebugEventNow === 'function') {
     sendDebugEventNow('GATEWAY_INIT_START', {
