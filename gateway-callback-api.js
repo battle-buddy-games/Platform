@@ -274,11 +274,13 @@ function getStepTitle(step) {
 
 // Show success result
 function showSuccess(result) {
-  // Check if this was link mode and update the message accordingly
-  let isLinkMode = false;
-  try {
-    isLinkMode = localStorage.getItem('linkingModeEnabled') === 'true' || localStorage.getItem('oauth_link_mode') === 'true';
-  } catch (e) {}
+  // Check if this was link mode from API response or localStorage
+  let isLinkMode = result.userInfo?.wasLinked === true;
+  if (!isLinkMode) {
+    try {
+      isLinkMode = localStorage.getItem('linkingModeEnabled') === 'true' || localStorage.getItem('oauth_link_mode') === 'true';
+    } catch (e) {}
+  }
 
   // Check if this is a long token response (createToken mode)
   const hasLongToken = result.hasLongToken && result.longToken;
@@ -287,7 +289,8 @@ function showSuccess(result) {
   if (hasLongToken) {
     successMessage = 'Long-lived token created! Save your token below before continuing.';
   } else if (isLinkMode) {
-    successMessage = 'Account successfully linked! You will be redirected shortly.';
+    const providerName = (result.userInfo?.provider || authState.provider || 'Account').charAt(0).toUpperCase() + (result.userInfo?.provider || authState.provider || 'account').slice(1);
+    successMessage = `${providerName} account successfully linked! You will be redirected shortly.`;
   } else {
     successMessage = 'Your account has been authenticated. You will be redirected shortly.';
   }
@@ -314,7 +317,7 @@ function showSuccess(result) {
           <div class="username">${escapeHtml(ui.username || 'Unknown')}</div>
           ${ui.email ? `<div class="email">${escapeHtml(ui.email)}</div>` : ''}
           <div class="provider">via ${escapeHtml(ui.provider || authState.provider)}</div>
-          ${ui.isNewUser ? '<div class="badge new-user">New Account Created</div>' : '<div class="badge returning">Welcome Back</div>'}
+          ${ui.wasLinked ? '<div class="badge linked">Account Linked</div>' : (ui.isNewUser ? '<div class="badge new-user">New Account Created</div>' : '<div class="badge returning">Welcome Back</div>')}
         </div>
       </div>
     `;

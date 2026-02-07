@@ -2855,7 +2855,17 @@ window.addEventListener('DOMContentLoaded', async () => {
       console.warn('Failed to clear linking mode:', e);
     }
   }
-  
+
+  // Check for ?provider= parameter (regular sign-in from Login page, NOT link mode)
+  // This auto-triggers sign-in for the specified provider without enabling link mode
+  if (provider && linkingModeEnabled !== 'true' && !linkingModeParams.get('link')) {
+    console.log('Auto sign-in provider detected from URL:', provider);
+    setTimeout(() => {
+      console.log('Auto-triggering sign-in for provider:', provider);
+      handleSignIn(provider);
+    }, 500);
+  }
+
   // Check for successful token sign-in redirect (from backend after successful authentication)
   // This happens when backend redirects back to gateway.html after successful token authentication
   const tokenSignInTarget = urlParams.get('tokenSignInTarget');
