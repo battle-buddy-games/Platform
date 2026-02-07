@@ -195,8 +195,8 @@ window.handleSignIn = function handleSignIn(provider) {
     if (isLinkMode) {
       localStorage.setItem('oauth_link_mode', 'true');
       localStorage.setItem('oauth_link_provider', provider);
-      if (returnUrlForLink) {
-        localStorage.setItem('oauth_return_url', returnUrlForLink);
+      if (returnUrl) {
+        localStorage.setItem('oauth_return_url', returnUrl);
       }
       console.log('Stored link mode in localStorage');
     } else {
