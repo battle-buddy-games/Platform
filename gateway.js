@@ -1544,10 +1544,11 @@ function showOAuthSignInCountdown(provider, authUrl, callbackUrl, additionalInfo
     console.warn('Failed to store OAuth sign-in attempt marker:', e);
   }
 
-  // Check if skip countdown is enabled
+  // Check if skip countdown is enabled, or if we're in link mode (link mode always skips countdown)
   const skipCountdown = localStorage.getItem('skipCountdown') === 'true';
-  if (skipCountdown) {
-    console.log(`Skip countdown enabled, redirecting to ${providerName} immediately...`);
+  const isInLinkMode = localStorage.getItem('oauth_link_mode') === 'true';
+  if (skipCountdown || isInLinkMode) {
+    console.log(`${isInLinkMode ? 'Link mode' : 'Skip countdown'} enabled, redirecting to ${providerName} immediately...`);
     window.location.href = authUrl;
     return;
   }
