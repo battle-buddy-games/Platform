@@ -21,7 +21,9 @@ let authState = {
   countdownRemaining: 5,
   countdownInterval: null,
   debugEnabled: false,
-  backendUrl: null
+  backendUrl: null,
+  isLinkMode: false,
+  linkReturnUrl: null
 };
 
 // Initialize callback page
@@ -218,6 +220,12 @@ async function exchangeCodeForToken() {
           expiresIn: result.expiresIn
         });
       }
+      // CRITICAL: Store link mode state on authState BEFORE showSuccess() clears localStorage.
+      // showSuccess() clears linkingModeEnabled and oauth_link_mode from localStorage,
+      // but buildRedirectUrl() needs these values later to construct the correct redirect.
+      authState.isLinkMode = linkMode;
+      authState.linkReturnUrl = linkReturnUrl;
+      console.log('[CallbackAPI] Stored link mode on authState:', { isLinkMode: linkMode, linkReturnUrl });
       showSuccess(result);
     } else {
       if (authState.debugEnabled) {
@@ -584,16 +592,31 @@ async function performRedirect(token) {
 
 function buildRedirectUrl(token) {
   // Check if this is link mode - link mode should always go through the backend
-  // to set the session cookie and then redirect back to the profile page
-  let isLinkMode = false;
-  let linkReturnUrl = null;
-  try {
-    isLinkMode = localStorage.getItem('linkingModeEnabled') === 'true' || localStorage.getItem('oauth_link_mode') === 'true';
-    linkReturnUrl = localStorage.getItem('oauth_return_url');
-  } catch (e) {}
+  // to set the session cookie and then redirect back to the profile page.
+  // CRITICAL: Use authState (set before showSuccess cleared localStorage) as primary source.
+  // showSuccess() clears oauth_link_mode/linkingModeEnabled from localStorage before this runs,
+  // so reading from localStorage here would always return false.
+  let isLinkMode = authState.isLinkMode || false;
+  let linkReturnUrl = authState.linkReturnUrl || null;
+
+  // Fallback to localStorage only if authState wasn't set (shouldn't happen, but defensive)
+  if (!isLinkMode) {
+    try {
+      isLinkMode = localStorage.getItem('linkingModeEnabled') === 'true' || localStorage.getItem('oauth_link_mode') === 'true';
+      linkReturnUrl = linkReturnUrl || localStorage.getItem('oauth_return_url');
+    } catch (e) {}
+  }
+
+  // Also try oauth_return_url from localStorage if we have link mode but no return URL yet
+  if (isLinkMode && !linkReturnUrl) {
+    try {
+      linkReturnUrl = localStorage.getItem('oauth_return_url');
+    } catch (e) {}
+  }
 
   if (isLinkMode && linkReturnUrl) {
-    // Link mode: go through backend to set cookie, then redirect to profile page
+    // Link mode: ALWAYS go through backend to set cookie, then redirect to profile page.
+    // This must bypass preferPortal - linking requires the backend to set the auth cookie.
     console.log('[CallbackAPI] Link mode - redirecting to backend with returnUrl:', linkReturnUrl);
     // Clean up the return URL after reading it
     try { localStorage.removeItem('oauth_return_url'); } catch (e) {}
@@ -774,11 +797,16 @@ function getRedirectUri() {
 
 function getReturnUrl() {
   // Check if this is link mode - link mode has its own return URL (back to profile page)
+  // CRITICAL: Use authState as primary source since showSuccess() clears localStorage before this runs.
+  if (authState.isLinkMode && authState.linkReturnUrl) {
+    console.log('[CallbackAPI] Link mode return URL from authState:', authState.linkReturnUrl);
+    return authState.linkReturnUrl;
+  }
   try {
     const linkReturnUrl = localStorage.getItem('oauth_return_url');
     const isLinkMode = localStorage.getItem('linkingModeEnabled') === 'true' || localStorage.getItem('oauth_link_mode') === 'true';
     if (isLinkMode && linkReturnUrl) {
-      console.log('[CallbackAPI] Link mode return URL:', linkReturnUrl);
+      console.log('[CallbackAPI] Link mode return URL from localStorage:', linkReturnUrl);
       return linkReturnUrl;
     }
   } catch (e) {
