@@ -108,7 +108,7 @@ async function exchangeCodeForToken() {
   }
 
   // Check if this is a link mode request (linking OAuth provider to existing account)
-  // Link mode is encoded in state as "link:{provider}:{randomState}" or can be in localStorage
+  // Link mode can be detected from: state prefix, URL params, or localStorage
   let linkMode = false;
   let linkReturnUrl = null;
 
@@ -116,6 +116,16 @@ async function exchangeCodeForToken() {
   if (authState.state && authState.state.startsWith('link:')) {
     linkMode = true;
     console.log('[CallbackAPI] Link mode detected from state:', authState.state);
+  }
+
+  // Check URL params for link=true (set by backend OnRedirectToIdentityProvider when
+  // the user initiated linking from the profile settings page via /Authentication/SteamWeb)
+  if (!linkMode) {
+    const callbackParams = new URLSearchParams(window.location.search);
+    if (callbackParams.get('link') === 'true') {
+      linkMode = true;
+      console.log('[CallbackAPI] Link mode detected from URL parameter link=true');
+    }
   }
 
   // Also check localStorage (set by gateway.html when coming from profile linking)
@@ -129,19 +139,33 @@ async function exchangeCodeForToken() {
     console.warn('[CallbackAPI] Error checking localStorage for link mode:', e);
   }
 
-  // Get stored gateway token for account linking (cross-origin auth)
+  // Get link token for account linking (cross-origin auth)
   // Since cookies don't work cross-origin, we pass the token directly
   let linkToken = null;
   if (linkMode) {
+    // Check URL params first (set by backend OnRedirectToIdentityProvider for /Authentication/SteamWeb flow)
     try {
-      linkToken = localStorage.getItem('bb_gateway_token');
+      const callbackParams = new URLSearchParams(window.location.search);
+      linkToken = callbackParams.get('linkToken');
       if (linkToken) {
-        console.log('[CallbackAPI] Link mode: found stored gateway token for account linking');
-      } else {
-        console.warn('[CallbackAPI] Link mode: no stored gateway token found, linking may fail');
+        console.log('[CallbackAPI] Link mode: found linkToken from URL parameter');
       }
     } catch (e) {
-      console.warn('[CallbackAPI] Error getting gateway token for link mode:', e);
+      console.warn('[CallbackAPI] Error getting linkToken from URL params:', e);
+    }
+
+    // Fall back to localStorage (set by gateway.html when coming from profile linking)
+    if (!linkToken) {
+      try {
+        linkToken = localStorage.getItem('bb_gateway_token');
+        if (linkToken) {
+          console.log('[CallbackAPI] Link mode: found stored gateway token for account linking');
+        } else {
+          console.warn('[CallbackAPI] Link mode: no stored gateway token found, linking may fail');
+        }
+      } catch (e) {
+        console.warn('[CallbackAPI] Error getting gateway token for link mode:', e);
+      }
     }
   }
 
