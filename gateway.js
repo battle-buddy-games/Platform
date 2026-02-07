@@ -214,10 +214,14 @@ window.handleSignIn = function handleSignIn(provider) {
   const container = document.querySelector('.sign-in-container');
   if (container) {
     const providerName = provider.charAt(0).toUpperCase() + provider.slice(1);
+    const linkHeading = isLinkMode ? `Linking ${providerName} Account...` : 'Redirecting...';
+    const linkSubtitle = isLinkMode
+      ? `Please wait while we redirect you to ${providerName} to link your account.`
+      : `Please wait while we redirect you to ${providerName} to sign in.`;
     container.innerHTML = `
       <div class="spinner"></div>
-      <h1>Redirecting...</h1>
-      <p class="subtitle">Please wait while we redirect you to ${providerName} authentication.</p>
+      <h1>${linkHeading}</h1>
+      <p class="subtitle">${linkSubtitle}</p>
       <div style="margin-top: 24px;">
         <button class="modal-button secondary" onclick="restoreSignInForm()" style="width: 100%;">
           Cancel
@@ -1580,10 +1584,17 @@ function showOAuthSignInCountdown(provider, authUrl, callbackUrl, additionalInfo
     
     infoHtml += `<p style="margin: 0; font-size: 12px; color: rgba(255, 255, 255, 0.6); word-break: break-all;">${authUrl}</p>`;
     
+    const isCountdownLinkMode = localStorage.getItem('oauth_link_mode') === 'true';
+    const countdownHeading = isCountdownLinkMode
+      ? `Linking ${providerName} Account...`
+      : `Redirecting to ${providerName}...`;
+    const countdownMessage = isCountdownLinkMode
+      ? `Preparing to redirect to ${providerName} to link your account. After authorizing, you'll be redirected back and your ${providerName} account will be linked.`
+      : `Preparing to redirect to ${providerName} to sign in. After authentication, you'll be redirected back through our callback handlers.`;
     container.innerHTML = `
       <div class="spinner"></div>
-      <h1>Redirecting to ${providerName}...</h1>
-      <p class="message">Preparing to redirect to ${providerName} for authentication. After authentication, you'll be redirected back through our callback handlers.</p>
+      <h1>${countdownHeading}</h1>
+      <p class="message">${countdownMessage}</p>
       <div style="margin-top: 16px; padding: 12px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
         ${infoHtml}
       </div>
