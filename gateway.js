@@ -3261,8 +3261,15 @@ window.addEventListener('DOMContentLoaded', async () => {
   if (checkPreviousSignIn()) {
     // Check if auto sign-in is preferred
     // Allow bypassing with ?noauto=1 URL parameter (useful if stuck in redirect loop)
-    const noAutoParam = new URLSearchParams(window.location.search).get('noauto');
-    const preferAutoSignIn = localStorage.getItem('preferAutoSignIn') === 'true' && noAutoParam !== '1';
+    // Skip auto sign-in when linking an account or when a specific provider sign-in was requested
+    const autoSignInParams = new URLSearchParams(window.location.search);
+    const noAutoParam = autoSignInParams.get('noauto');
+    const hasLinkParam = autoSignInParams.has('link') || autoSignInParams.get('linkingModeEnabled') === 'true';
+    const hasProviderParam = autoSignInParams.has('provider') && !hasLinkParam;
+    const preferAutoSignIn = localStorage.getItem('preferAutoSignIn') === 'true'
+      && noAutoParam !== '1'
+      && !hasLinkParam
+      && !hasProviderParam;
 
     if (preferAutoSignIn) {
       // Get most recent token
