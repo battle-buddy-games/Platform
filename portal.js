@@ -80,39 +80,13 @@ let hasReceivedPostMessage = false; // Track if we've ever received a postMessag
 const URL_UPDATE_DEBOUNCE_MS = 300; // Minimum time between URL updates
 const POSTMESSAGE_PRIORITY_MS = 2000; // PostMessage updates take priority for 2 seconds
 
-// Track iframe load state for error detection
-let iframeLoadStarted = false;
+// Track iframe load state
 let iframeLoadCompleted = false;
-let iframeLoadError = false;
 
-// Detect network errors when iframe fails to load
-async function detectIframeLoadFailure(targetUrl) {
-  // Wait a bit for the iframe to start loading
-  await new Promise(resolve => setTimeout(resolve, 3000));
-  
-  // If iframe hasn't loaded and we haven't detected an error yet
-  if (!iframeLoadCompleted && !iframeLoadError && iframeLoadStarted) {
-    try {
-      // Try to fetch the URL to check if it's accessible
-      const iframe = document.getElementById('tunnelFrame');
-      const testUrl = iframe?.src || targetUrl;
-      if (testUrl) {
-        const response = await fetch(testUrl, { 
-          method: 'HEAD', 
-          mode: 'no-cors',
-          cache: 'no-cache'
-        });
-        // If we can't check due to CORS, we'll rely on other detection methods
-      }
-    } catch (fetchError) {
-      console.error('Network error detected:', fetchError);
-      if (!iframeLoadError && !connectionFailureDetected) {
-        iframeLoadError = true;
-        showConnectionFailure('Network Error', `Failed to connect to ${tunnelBaseUrl || 'the tunnel'}. The tunnel may be unavailable.`);
-      }
-    }
-  }
-}
+// Periodic health check system (like gateway.js)
+let healthCheckInterval = null;
+let lastHealthyTunnelAddress = '';
+const HEALTH_CHECK_INTERVAL_MS = 30000; // 30 seconds
 
 // Helper function to update parent URL with iframe path
 function updateParentUrl(iframePath, usePushState = false) {
@@ -243,68 +217,47 @@ let retryCountdownSeconds = 10;
 let isRetryPaused = false;
 let connectionFailureDetected = false;
 
-// Check if iframe content indicates a 404 error
-async function checkFor404() {
-  const iframe = document.getElementById('tunnelFrame');
-  if (!iframe) return false;
-  
-  try {
-    // Try to access iframe content (may fail due to cross-origin)
-    const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
-    if (iframeDoc) {
-      // Check for common 404 indicators
-      const bodyText = iframeDoc.body?.innerText?.toLowerCase() || '';
-      const title = iframeDoc.title?.toLowerCase() || '';
-      const url = iframe.contentWindow.location.href;
-      
-      if (title.includes('404') || bodyText.includes('404') || 
-          bodyText.includes('not found') || bodyText.includes('page not found') ||
-          url.includes('404')) {
-        return true;
-      }
-    }
-  } catch (e) {
-    // Cross-origin - can't access iframe content directly
-    // Try to fetch the URL directly to check for 404
-    try {
-      const response = await fetch(iframe.src, { method: 'HEAD', mode: 'no-cors' });
-      // If we can't check due to CORS, we'll rely on other methods
-    } catch (fetchError) {
-      // Can't check due to CORS - assume it might be a 404 if polling is needed
-    }
-  }
-  
-  return false;
-}
-
-// Health check for tunnel address
+// Health check for tunnel address using /api/HealthCheck/system (like gateway.js)
 async function checkTunnelHealth(address) {
   if (!address) return false;
-  
-  try {
-    const healthUrl = `${address.replace(/\/$/, '')}/health`;
-    const response = await fetch(healthUrl, { 
-      method: 'GET',
-      mode: 'no-cors',
-      cache: 'no-cache'
-    });
-    
-    // If we get a response (even with no-cors), it's likely working
-    // For CORS-restricted responses, we'll try the main URL
-    return true;
-  } catch (e) {
-    // Try the main URL as fallback
-    try {
-      const response = await fetch(address, { 
-        method: 'HEAD',
-        mode: 'no-cors',
-        cache: 'no-cache'
-      });
-      return true;
-    } catch (e2) {
-      console.log(`Health check failed for ${address}:`, e2);
-      return false;
+
+  const cleanBaseUrl = address.replace(/\/$/, '');
+  const healthUrl = `${cleanBaseUrl}/api/HealthCheck/system`;
+
+  // Suppress console errors during health check to avoid noise
+  const originalConsoleError = console.error;
+  console.error = (...args) => {
+    const errorStr = args.join(' ');
+    if (errorStr.includes('CORS') ||
+        errorStr.includes('Access-Control-Allow-Origin') ||
+        errorStr.includes('502') ||
+        errorStr.includes('Bad Gateway') ||
+        errorStr.includes('ERR_FAILED') ||
+        errorStr.includes('ERR_ABORTED') ||
+        errorStr.includes('Failed to fetch')) {
+      return; // Suppress expected health check errors
     }
+    originalConsoleError.apply(console, args);
+  };
+
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+
+    const response = await fetch(healthUrl, {
+      method: 'GET',
+      headers: { 'Accept': 'application/json, text/plain, */*' },
+      signal: controller.signal,
+      mode: 'cors'
+    });
+
+    clearTimeout(timeoutId);
+    return response.ok;
+  } catch (e) {
+    // Network error, timeout, or abort
+    return false;
+  } finally {
+    console.error = originalConsoleError;
   }
 }
 
@@ -443,6 +396,92 @@ function stopPolling() {
   }
 }
 
+// =====================================================================
+// PERIODIC HEALTH CHECK SYSTEM (ported from gateway.js)
+// Proactively detects outages and config.json tunnel address changes
+// =====================================================================
+
+// Perform a periodic health check: reload config.json and check tunnel health
+async function performPeriodicHealthCheck() {
+  // Don't run health checks if we're already in failure/recovery mode
+  if (connectionFailureDetected) return;
+
+  // Don't run if tunnel isn't loaded yet
+  if (!tunnelBaseUrl) return;
+
+  try {
+    // 1. Reload config.json to detect tunnel address changes
+    const response = await fetch('./config.json?t=' + Date.now());
+    if (!response.ok) {
+      console.log('[Health Check] Failed to reload config.json');
+      return;
+    }
+
+    const newConfig = await response.json();
+    CONFIG = newConfig;
+
+    const cloudTunnel = getTunnelForPreferredEnvironment() || newConfig.cloudflareTunnels?.find(t => t.name === 'cloud');
+    if (!cloudTunnel || !cloudTunnel.address) {
+      console.log('[Health Check] No cloud tunnel in config');
+      return;
+    }
+
+    const newAddress = cloudTunnel.address.replace(/\/$/, '');
+
+    // 2. Check if tunnel address changed in config.json
+    if (newAddress !== tunnelBaseUrl) {
+      console.log(`[Health Check] Tunnel address changed: ${tunnelBaseUrl} -> ${newAddress}`);
+
+      // Verify the new address is healthy before switching
+      const isHealthy = await checkTunnelHealth(newAddress);
+      if (isHealthy) {
+        console.log('[Health Check] New tunnel address is healthy, starting countdown');
+        showToast('Tunnel Address Changed', 'A new tunnel address has been detected. Switching...', 'info');
+        startCountdown(newAddress);
+      } else {
+        console.log('[Health Check] New tunnel address not healthy yet, will retry next cycle');
+      }
+      return;
+    }
+
+    // 3. Address hasn't changed - check health of current tunnel
+    const isHealthy = await checkTunnelHealth(tunnelBaseUrl);
+    if (!isHealthy) {
+      console.log('[Health Check] Current tunnel is unhealthy');
+      lastHealthyTunnelAddress = tunnelBaseUrl;
+      showConnectionFailure('Platform Offline', 'The platform is currently offline — an update may be in progress. Searching for a new address...');
+    }
+
+  } catch (error) {
+    console.warn('[Health Check] Error during periodic health check:', error);
+  }
+}
+
+// Start periodic health checks
+function startPeriodicHealthChecks() {
+  stopPeriodicHealthChecks(); // Clear any existing interval
+
+  console.log(`[Health Check] Starting periodic health checks every ${HEALTH_CHECK_INTERVAL_MS / 1000}s`);
+
+  // Run first health check after a delay (let iframe load first)
+  setTimeout(() => {
+    performPeriodicHealthCheck();
+  }, HEALTH_CHECK_INTERVAL_MS);
+
+  // Then run periodically
+  healthCheckInterval = setInterval(() => {
+    performPeriodicHealthCheck();
+  }, HEALTH_CHECK_INTERVAL_MS);
+}
+
+// Stop periodic health checks
+function stopPeriodicHealthChecks() {
+  if (healthCheckInterval) {
+    clearInterval(healthCheckInterval);
+    healthCheckInterval = null;
+  }
+}
+
 // Show connection failure popup with polling for new address
 function showConnectionFailure(title, message) {
   if (connectionFailureDetected) return; // Already showing failure popup
@@ -519,9 +558,7 @@ function retryConnection() {
   
   // Reset flags
   connectionFailureDetected = false;
-  iframeLoadError = false;
   iframeLoadCompleted = false;
-  iframeLoadStarted = false;
   
   // Show loading overlay
   const loadingOverlay = document.getElementById('loadingOverlay');
@@ -626,25 +663,19 @@ function refreshToNewAddress(newAddress) {
   }
   
   // Reset load state flags
-  iframeLoadStarted = false;
   iframeLoadCompleted = false;
-  iframeLoadError = false;
-  
+
   // Reload iframe
   iframe.src = targetUrl;
   currentIframePath = subpagePath;
-  
+
   showToast('New Address Found', 'Connecting to new cloud address...', 'success');
-  
+
   // Show loading overlay
   const loadingOverlay = document.getElementById('loadingOverlay');
   if (loadingOverlay) {
     loadingOverlay.classList.remove('hidden');
   }
-  
-  // Restart load detection
-  iframeLoadStarted = true;
-  detectIframeLoadFailure(targetUrl);
 }
 
 function updateUrlFromIframe() {
@@ -973,27 +1004,13 @@ async function loadTunnel() {
   }
 
   // Hide loading overlay when iframe loads
-  iframe.onload = async () => {
+  iframe.onload = () => {
     console.log('Tunnel loaded successfully');
-    
-    // Wait a moment to check if content actually loaded (handles cases where onload fires but content fails)
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Check if we can access the iframe content (indicates successful load)
-    let contentAccessible = false;
-    try {
-      const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
-      if (iframeDoc && iframeDoc.body) {
-        contentAccessible = true;
-      }
-    } catch (e) {
-      // Cross-origin - can't check directly, but onload firing usually means it loaded
-      // However, we should still check for errors via other means
-      contentAccessible = true; // Assume accessible if cross-origin (we can't verify)
-    }
-    
-    // If content is accessible, reset connection failure flag
-    if (contentAccessible && connectionFailureDetected) {
+
+    iframeLoadCompleted = true;
+
+    // Reset connection failure flag if it was set (successful load clears failure state)
+    if (connectionFailureDetected) {
       connectionFailureDetected = false;
       const failureOverlay = document.getElementById('connectionFailureOverlay');
       if (failureOverlay) {
@@ -1004,74 +1021,25 @@ async function loadTunnel() {
         retryCountdownInterval = null;
       }
     }
-    
-    iframeLoadCompleted = true;
-    
+
     // Check if iframe navigated to gateway.html
     if (checkForSignInRedirect()) {
       return; // Page is redirecting, don't continue
     }
-    
-    // Check for 404 errors
-    const is404 = await checkFor404();
-    if (is404) {
-      console.warn('404 error detected in iframe');
-      showToast('Page Not Found', 'The requested page could not be found. Searching for a new tunnel address...', 'error');
-      startPolling();
-      return;
-    }
-    
-    // Check for other load failures by examining iframe content
-    try {
-      const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
-      if (iframeDoc) {
-        // Check for error pages (common patterns)
-        const bodyText = iframeDoc.body?.innerText?.toLowerCase() || '';
-        const title = iframeDoc.title?.toLowerCase() || '';
-        
-        // Check for 502 Bad Gateway (platform offline / update in progress)
-        if (bodyText.includes('502') && (bodyText.includes('bad gateway') || bodyText.includes('gateway'))) {
-          showConnectionFailure('Platform Offline', 'The platform is currently offline — an update is in progress. Please wait, it will be back shortly.');
-          return;
-        }
 
-        if (title.includes('error') || bodyText.includes('failed to load') ||
-            bodyText.includes('connection refused') || bodyText.includes('network error') ||
-            bodyText.includes('this site can\'t be reached') || bodyText.includes('dns_probe_finished_nxdomain') ||
-            bodyText.includes('530') || bodyText.includes('refused to connect')) {
-          showConnectionFailure('Load Error', 'The page failed to load properly. Please check your connection.');
-          return;
-        }
-      }
-    } catch (e) {
-      // Cross-origin - can't check content directly
-      // For cross-origin, we'll rely on console error detection and timeout
-      // If onload fired but we can't verify content, wait a bit more to see if errors appear
-      setTimeout(() => {
-        // If we still have connection failure detected, it means errors were caught
-        // Otherwise, assume it loaded successfully
-        if (!connectionFailureDetected) {
-          const overlay = document.getElementById('loadingOverlay');
-          if (overlay) {
-            overlay.classList.add('hidden');
-          }
-        }
-      }, 2000);
-      return; // Exit early for cross-origin case
-    }
-    
+    // Hide loading overlay
     const overlay = document.getElementById('loadingOverlay');
     setTimeout(() => {
       if (overlay) {
         overlay.classList.add('hidden');
       }
     }, 500);
-    
+
     // Try to update URL from iframe location immediately
     // Use a small delay to ensure iframe content is fully loaded
     setTimeout(() => {
       updateUrlFromIframe();
-      
+
       // For cross-origin iframes, request initial URL via postMessage
       if (isIframeCrossOrigin && iframe.contentWindow) {
         try {
@@ -1095,66 +1063,46 @@ async function loadTunnel() {
         }
       }
     }, 100);
-    
+
+    // Start periodic health checks now that iframe has loaded successfully
+    startPeriodicHealthChecks();
+
     // Set up periodic URL updates and sign-in detection (for cross-origin iframes)
-    // We'll also listen for postMessage events
-    // Reduced frequency to prevent flickering - only check when needed
     const urlUpdateInterval = setInterval(() => {
       if (checkForSignInRedirect()) {
         clearInterval(urlUpdateInterval);
         clearInterval(srcCheckInterval);
         return; // Page is redirecting, stop checking
       }
-      
+
       // Skip URL updates if we're currently updating to prevent loops
       if (isUpdatingUrl) {
         return;
       }
-      
+
       // For cross-origin SPAs that use postMessage, skip src-attribute based updates
-      // They cause flickering because src doesn't change for client-side routing
       if (!(isIframeCrossOrigin && hasReceivedPostMessage)) {
-        // Only check iframe src occasionally (MutationObserver handles most cases)
-        // Try to update from iframe location (less frequently now)
         updateUrlFromIframe();
       }
-      
+
       // For cross-origin iframes, try to request URL update via postMessage
-      // This works if the iframe content listens for 'get-url' messages
-      // Reduced frequency to prevent excessive messages
       if (isIframeCrossOrigin && iframe.contentWindow) {
         try {
-          // Only request URL update occasionally to avoid spam
-          const randomDelay = Math.random() * 500; // Random delay between 0-500ms to spread out requests
+          const randomDelay = Math.random() * 500;
           setTimeout(() => {
             if (!isUpdatingUrl && iframe.contentWindow) {
               iframe.contentWindow.postMessage({ type: 'get-url' }, '*');
             }
           }, randomDelay);
         } catch (e) {
-          // Ignore errors - iframe might not accept messages
+          // Ignore errors
         }
       }
-    }, 1000); // Reduced to 1 second to prevent flickering
+    }, 1000);
   };
 
   // Reset load state
-  iframeLoadStarted = false;
   iframeLoadCompleted = false;
-  iframeLoadError = false;
-  
-  // Handle iframe load errors
-  iframe.onerror = (event) => {
-    console.error('Iframe error event:', event);
-    if (!iframeLoadError && !connectionFailureDetected) {
-      iframeLoadError = true;
-      showConnectionFailure('Failed to Load', `Could not load page at ${tunnelBaseUrl || 'the tunnel'}. Please check if the tunnel is running.`);
-    }
-  };
-  
-  // Start failure detection
-  iframeLoadStarted = true;
-  detectIframeLoadFailure(targetUrl);
 
   // Listen for postMessage from iframe (if the iframe content supports it)
   window.addEventListener('message', (event) => {
@@ -1287,114 +1235,27 @@ async function loadTunnel() {
     }, 200);
   });
 
-  // Timeout fallback - if iframe doesn't load within 10 seconds, show error
+  // Timeout fallback - if iframe doesn't load within 15 seconds, run an immediate health check
   setTimeout(() => {
     const overlay = document.getElementById('loadingOverlay');
     if (overlay && !overlay.classList.contains('hidden') && !iframeLoadCompleted && !connectionFailureDetected) {
-      iframeLoadError = true;
-      showConnectionFailure('Loading Timeout', `The tunnel at ${tunnelBaseUrl || 'the tunnel'} is taking too long to respond. Please check if the tunnel is accessible.`);
+      console.log('[Portal] Initial load timeout - running immediate health check');
+      performPeriodicHealthCheck();
     }
-  }, 10000);
-  
-  // Listen for resource loading errors (works for same-origin iframes)
-  // Note: Cross-origin iframes won't trigger these events, but we handle that case
-  iframe.addEventListener('error', (event) => {
-    console.error('Iframe resource error:', event);
-    if (!iframeLoadError && !connectionFailureDetected) {
-      iframeLoadError = true;
-      // Check if this is a critical error (530, connection refused, etc.)
-      const errorTarget = event.target || event.srcElement;
-      if (errorTarget && errorTarget.tagName === 'IFRAME') {
-        showConnectionFailure('Connection Error', 'Failed to connect to the tunnel. Searching for a new cloud address...');
-      } else {
-        showToast('Resource Error', 'Failed to load resources from the tunnel. The connection may be unstable.', 'error');
-      }
-    }
-  }, true); // Use capture phase to catch errors
-  
+  }, 15000);
+
   // Monitor for network connectivity issues
   window.addEventListener('online', () => {
-    if (iframeLoadError) {
-      showToast('Connection Restored', 'Network connection has been restored. You may need to refresh the page.', 'info');
-    }
+    showToast('Connection Restored', 'Network connection restored. Running health check...', 'info');
+    // Run an immediate health check when coming back online
+    performPeriodicHealthCheck();
   });
-  
+
   window.addEventListener('offline', () => {
     if (!connectionFailureDetected) {
       showConnectionFailure('Connection Lost', 'Network connection has been lost. Please check your internet connection.');
     }
   });
-  
-  // Listen for console errors that might indicate connection failures
-  // This helps catch errors like 530, X-Frame-Options, and "refused to connect"
-  const originalConsoleError = console.error;
-  console.error = function(...args) {
-    originalConsoleError.apply(console, args);
-    
-    // Only intercept errors related to iframe/tunnel loading
-    const errorMessage = args.join(' ').toLowerCase();
-    const is502Error = errorMessage.includes('502');
-    const isRelevantError = (
-      is502Error ||
-      errorMessage.includes('530') ||
-      (errorMessage.includes('x-frame-options') && errorMessage.includes('frame')) ||
-      errorMessage.includes('refused to connect') ||
-      (errorMessage.includes('failed to load resource') && (errorMessage.includes('tunnel') || errorMessage.includes('cloudflare') || errorMessage.includes('trycloudflare'))) ||
-      (errorMessage.includes('network error') && iframeLoadStarted)
-    );
-
-    if (isRelevantError && !connectionFailureDetected && !iframeLoadCompleted && iframeLoadStarted) {
-      // Debounce to avoid multiple triggers
-      setTimeout(() => {
-        if (!iframeLoadCompleted && !connectionFailureDetected) {
-          let failureTitle = 'Connection Error';
-          let failureMessage = 'Failed to connect to the tunnel.';
-          if (is502Error) {
-            failureTitle = 'Platform Offline';
-            failureMessage = 'The platform is currently offline — an update is in progress. Please wait, it will be back shortly.';
-          } else if (errorMessage.includes('530')) {
-            failureMessage = 'The tunnel server returned error 530. Searching for a new cloud address...';
-          } else if (errorMessage.includes('x-frame-options')) {
-            failureMessage = 'The tunnel server is blocking iframe embedding. Searching for a new cloud address...';
-          } else if (errorMessage.includes('refused to connect')) {
-            failureMessage = 'Connection was refused. Searching for a new cloud address...';
-          } else {
-            failureMessage = 'Connection failed. Searching for a new cloud address...';
-          }
-          showConnectionFailure(failureTitle, failureMessage);
-        }
-      }, 1500); // Delay to avoid false positives and allow for successful load
-    }
-  };
-  
-  // Also listen for unhandled errors related to iframe
-  window.addEventListener('error', (event) => {
-    // Only handle errors if they're related to our iframe
-    const errorMessage = (event.message || '').toLowerCase();
-    const errorSource = (event.filename || '').toLowerCase();
-    const is502 = errorMessage.includes('502');
-    const isIframeRelated = (
-      errorSource.includes('tunnel') ||
-      errorSource.includes('cloudflare') ||
-      errorSource.includes('trycloudflare') ||
-      (is502 && iframeLoadStarted) ||
-      (errorMessage.includes('530') && iframeLoadStarted) ||
-      (errorMessage.includes('refused') && iframeLoadStarted) ||
-      (errorMessage.includes('failed to load') && iframeLoadStarted)
-    );
-
-    if (isIframeRelated && !connectionFailureDetected && !iframeLoadCompleted && iframeLoadStarted) {
-      setTimeout(() => {
-        if (!iframeLoadCompleted && !connectionFailureDetected) {
-          if (is502) {
-            showConnectionFailure('Platform Offline', 'The platform is currently offline — an update is in progress. Please wait, it will be back shortly.');
-          } else {
-            showConnectionFailure('Connection Error', 'Failed to connect to the tunnel. Please check if the tunnel is running.');
-          }
-        }
-      }, 1500);
-    }
-  }, true);
 }
 
 // Space bar detection for showing history panel
