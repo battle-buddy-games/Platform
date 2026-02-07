@@ -1553,6 +1553,15 @@ function showOAuthSignInCountdown(provider, authUrl, callbackUrl, additionalInfo
   const isInLinkMode = localStorage.getItem('oauth_link_mode') === 'true';
   if (skipCountdown || isInLinkMode) {
     console.log(`${isInLinkMode ? 'Link mode' : 'Skip countdown'} enabled, redirecting to ${providerName} immediately...`);
+    // Send debug analytics before redirect (sendBeacon survives page navigation)
+    if (typeof sendDebugEventNow === 'function') {
+      sendDebugEventNow('OAUTH_REDIRECT_IMMEDIATE', {
+        provider: provider,
+        isLinkMode: isInLinkMode,
+        skipCountdown: skipCountdown,
+        authUrl: authUrl.substring(0, 100) + '...'
+      });
+    }
     window.location.href = authUrl;
     return;
   }
@@ -2650,6 +2659,19 @@ function initQuickLinksTabs() {
 
 // Initialize: Load config and check for previous sign-in
 window.addEventListener('DOMContentLoaded', async () => {
+  // Send debug analytics at the very start of initialization (before loadConfig)
+  if (typeof sendDebugEventNow === 'function') {
+    sendDebugEventNow('GATEWAY_INIT_START', {
+      url: window.location.href,
+      search: window.location.search,
+      hasLinkParam: new URLSearchParams(window.location.search).has('link'),
+      hasProviderParam: new URLSearchParams(window.location.search).has('provider'),
+      preferAutoSignIn: localStorage.getItem('preferAutoSignIn'),
+      oauthLinkMode: localStorage.getItem('oauth_link_mode'),
+      linkingModeEnabled: localStorage.getItem('linkingModeEnabled')
+    });
+  }
+
   await loadConfig();
   saveOriginalSignInHTML();
 
@@ -2843,6 +2865,17 @@ window.addEventListener('DOMContentLoaded', async () => {
     console.log('Link mode detected for provider:', linkProvider);
     console.log('Return URL:', returnUrlForLink);
 
+    // Send debug analytics BEFORE any redirect (fire-and-forget via sendBeacon)
+    if (typeof sendDebugEventNow === 'function') {
+      sendDebugEventNow('LINK_MODE_DETECTED', {
+        provider: linkProvider,
+        returnUrl: returnUrlForLink,
+        linkParam: linkParam,
+        linkingModeEnabled: linkingModeEnabled,
+        urlProvider: provider
+      });
+    }
+
     try {
       localStorage.setItem('linkingModeEnabled', 'true');
       localStorage.setItem('oauth_link_mode', 'true');
@@ -2857,6 +2890,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     // Start the OAuth flow immediately - skip all other initialization
     console.log('Link mode: starting OAuth flow for', linkProvider);
     handleSignIn(linkProvider);
+    console.log('Link mode: handleSignIn returned, exiting DOMContentLoaded');
     return; // Skip health checks, auto sign-in, everything else
   }
 
@@ -3278,11 +3312,28 @@ window.addEventListener('DOMContentLoaded', async () => {
     const autoSignInParams = new URLSearchParams(window.location.search);
     const noAutoParam = autoSignInParams.get('noauto');
     const hasLinkParam = autoSignInParams.has('link') || autoSignInParams.get('linkingModeEnabled') === 'true';
+    const hasLinkInStorage = localStorage.getItem('oauth_link_mode') === 'true' || localStorage.getItem('linkingModeEnabled') === 'true';
     const hasProviderParam = autoSignInParams.has('provider') && !hasLinkParam;
-    const preferAutoSignIn = localStorage.getItem('preferAutoSignIn') === 'true'
+    const preferAutoSignInRaw = localStorage.getItem('preferAutoSignIn') === 'true';
+    const preferAutoSignIn = preferAutoSignInRaw
       && noAutoParam !== '1'
       && !hasLinkParam
+      && !hasLinkInStorage
       && !hasProviderParam;
+
+    // Debug analytics: track auto sign-in decision
+    if (typeof sendDebugEventNow === 'function') {
+      sendDebugEventNow('AUTO_SIGNIN_DECISION', {
+        checkPreviousSignIn: true,
+        preferAutoSignInRaw: preferAutoSignInRaw,
+        preferAutoSignInFinal: preferAutoSignIn,
+        noAutoParam: noAutoParam,
+        hasLinkParam: hasLinkParam,
+        hasLinkInStorage: hasLinkInStorage,
+        hasProviderParam: hasProviderParam,
+        url: window.location.href
+      });
+    }
 
     if (preferAutoSignIn) {
       // Get most recent token
@@ -3298,6 +3349,15 @@ window.addEventListener('DOMContentLoaded', async () => {
         const mostRecentToken = sortedTokens[0];
         if (mostRecentToken && mostRecentToken.id) {
           console.log('Prefer auto sign-in enabled, waiting for health check before countdown');
+
+          // Debug analytics: auto sign-in is STARTING
+          if (typeof sendDebugEventNow === 'function') {
+            sendDebugEventNow('AUTO_SIGNIN_STARTING', {
+              tokenId: mostRecentToken.id,
+              tokenType: mostRecentToken.tokenType || 'one-time',
+              tokensCount: tokens.length
+            });
+          }
 
           // Show "checking services" message while waiting for health check
           const prevContainer = document.getElementById('previousSignInContainer');

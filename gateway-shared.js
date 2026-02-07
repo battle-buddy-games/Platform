@@ -519,7 +519,7 @@ async function sendConsoleMessagesToBackend() {
         const localStorageItems = {};
         for (let i = 0; i < localStorage.length; i++) {
           const key = localStorage.key(i);
-          if (key && (key.includes('oauth') || key.includes('auth') || key.includes('state') || key.includes('token') || key.includes('debug'))) {
+          if (key && (key.includes('oauth') || key.includes('auth') || key.includes('state') || key.includes('token') || key.includes('debug') || key.includes('link') || key.includes('prefer') || key.includes('skip'))) {
             try {
               const value = localStorage.getItem(key);
               // Truncate sensitive values
@@ -630,6 +630,53 @@ function scheduleLogSend() {
     sendConsoleMessagesToBackend();
     sendLogsTimeout = null;
   }, LOG_BATCH_DELAY_MS);
+}
+
+// Send a debug analytics event immediately (synchronous, fire-and-forget via sendBeacon)
+// Used at critical flow decision points (link mode, auto sign-in) that redirect before batched logs can send
+function sendDebugEventNow(eventName, data = {}) {
+  if (!isDebugModeEnabled()) return;
+
+  try {
+    const backendUrl = getBackendDebugUrl();
+    if (!backendUrl) return;
+
+    // Collect current localStorage state for link/auth/preference keys
+    const storageSnapshot = {};
+    try {
+      const keysToCapture = ['preferAutoSignIn', 'preferPortal', 'preferToken', 'skipCountdown',
+        'linkingModeEnabled', 'oauth_link_mode', 'oauth_link_provider', 'oauth_return_url',
+        'bb_gateway_token', 'oauth_state', 'oauth_provider'];
+      keysToCapture.forEach(key => {
+        const val = localStorage.getItem(key);
+        if (val !== null) {
+          storageSnapshot[key] = (key.includes('token') && val.length > 20) ? val.substring(0, 20) + '...' : val;
+        }
+      });
+    } catch (e) {}
+
+    const payload = {
+      Page: typeof getPageName === 'function' ? getPageName() : 'gateway',
+      Url: window.location.href,
+      Path: window.location.pathname,
+      Parameters: Object.fromEntries(new URLSearchParams(window.location.search)),
+      DebugMode: true,
+      Provider: data.provider || null,
+      Messages: [{
+        Level: 'info',
+        Message: `[FLOW EVENT] ${eventName} | ${JSON.stringify({ ...data, storageSnapshot })}`,
+        Timestamp: new Date().toISOString()
+      }],
+      ClientState: { event: eventName, ...data, storageSnapshot }
+    };
+
+    const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(backendUrl, blob);
+    }
+  } catch (e) {
+    // Silently fail
+  }
 }
 
 // Override console methods to capture and send messages when debug mode is enabled
