@@ -2826,7 +2826,8 @@ window.addEventListener('DOMContentLoaded', async () => {
   const linkProvider = linkParam || (linkingModeEnabled === 'true' ? provider : null);
 
   if (linkProvider) {
-    // Link mode - set storage and auto-trigger sign-in for the provider
+    // Link mode - set storage and immediately start OAuth for the provider
+    // This must run before any auto sign-in or health check UI can interfere
     console.log('Link mode detected for provider:', linkProvider);
     console.log('Return URL:', returnUrlForLink);
 
@@ -2837,16 +2838,17 @@ window.addEventListener('DOMContentLoaded', async () => {
       if (returnUrlForLink) {
         localStorage.setItem('oauth_return_url', returnUrlForLink);
       }
-      console.log('Link mode storage set, auto-triggering sign-in');
-
-      setTimeout(() => {
-        console.log('Auto-triggering sign-in for link provider:', linkProvider);
-        handleSignIn(linkProvider);
-      }, 500);
     } catch (e) {
       console.error('Failed to store linking mode:', e);
     }
-  } else if (!linkingModeEnabled) {
+
+    // Start the OAuth flow immediately - skip all other initialization
+    console.log('Link mode: starting OAuth flow for', linkProvider);
+    handleSignIn(linkProvider);
+    return; // Skip health checks, auto sign-in, everything else
+  }
+
+  if (!linkingModeEnabled) {
     // No link parameters at all - clear any stale linking mode
     try {
       localStorage.removeItem('linkingModeEnabled');
@@ -2858,13 +2860,11 @@ window.addEventListener('DOMContentLoaded', async () => {
   }
 
   // Check for ?provider= parameter (regular sign-in from Login page, NOT link mode)
-  // This auto-triggers sign-in for the specified provider without enabling link mode
-  if (provider && !linkProvider) {
-    console.log('Auto sign-in provider detected from URL:', provider);
-    setTimeout(() => {
-      console.log('Auto-triggering sign-in for provider:', provider);
-      handleSignIn(provider);
-    }, 500);
+  // This must also run immediately and skip all other initialization
+  if (provider) {
+    console.log('Provider sign-in requested from URL:', provider);
+    handleSignIn(provider);
+    return; // Skip health checks, auto sign-in, everything else
   }
 
   // Check for successful token sign-in redirect (from backend after successful authentication)
