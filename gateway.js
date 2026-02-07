@@ -2812,45 +2812,46 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
   }
   
-  // Check for linking mode enabled URL parameter
-  // If linkingModeEnabled=true is present, set storage property to enable linking mode
-  // If linkingModeEnabled parameter does not exist, clear linking mode (set to false or remove)
+  // Check for linking mode URL parameters
+  // Supports two formats:
+  //   ?link=discord&returnUrl=...  (from Settings page link buttons)
+  //   ?linkingModeEnabled=true&provider=discord&returnUrl=...  (legacy format)
   const linkingModeParams = new URLSearchParams(window.location.search);
   const linkingModeEnabled = linkingModeParams.get('linkingModeEnabled');
+  const linkParam = linkingModeParams.get('link');
   const provider = linkingModeParams.get('provider');
   const returnUrlForLink = linkingModeParams.get('returnUrl');
-  
-  if (linkingModeEnabled === 'true') {
-    // Linking mode enabled - set storage property
-    console.log('Linking mode enabled detected for provider:', provider);
+
+  // Determine the link provider from either format
+  const linkProvider = linkParam || (linkingModeEnabled === 'true' ? provider : null);
+
+  if (linkProvider) {
+    // Link mode - set storage and auto-trigger sign-in for the provider
+    console.log('Link mode detected for provider:', linkProvider);
     console.log('Return URL:', returnUrlForLink);
-    
+
     try {
       localStorage.setItem('linkingModeEnabled', 'true');
-      if (provider) {
-        localStorage.setItem('oauth_link_provider', provider);
-      }
+      localStorage.setItem('oauth_link_mode', 'true');
+      localStorage.setItem('oauth_link_provider', linkProvider);
       if (returnUrlForLink) {
         localStorage.setItem('oauth_return_url', returnUrlForLink);
       }
-      console.log('Linking mode enabled - storage property set');
-      
-      // Auto-trigger sign-in for the specified provider if provided
-      if (provider) {
-        setTimeout(() => {
-          console.log('Auto-triggering sign-in for linking mode provider:', provider);
-          handleSignIn(provider);
-        }, 500); // Small delay to ensure page is fully loaded
-      }
+      console.log('Link mode storage set, auto-triggering sign-in');
+
+      setTimeout(() => {
+        console.log('Auto-triggering sign-in for link provider:', linkProvider);
+        handleSignIn(linkProvider);
+      }, 500);
     } catch (e) {
       console.error('Failed to store linking mode:', e);
     }
-  } else {
-    // Linking mode parameter does not exist - clear linking mode
-    // Set to false or remove entirely (removing is cleanest)
+  } else if (!linkingModeEnabled) {
+    // No link parameters at all - clear any stale linking mode
     try {
       localStorage.removeItem('linkingModeEnabled');
-      console.log('Linking mode removed or set false - to allow normal sign-in flow');
+      localStorage.removeItem('oauth_link_mode');
+      localStorage.removeItem('oauth_link_provider');
     } catch (e) {
       console.warn('Failed to clear linking mode:', e);
     }
@@ -2858,7 +2859,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   // Check for ?provider= parameter (regular sign-in from Login page, NOT link mode)
   // This auto-triggers sign-in for the specified provider without enabling link mode
-  if (provider && linkingModeEnabled !== 'true' && !linkingModeParams.get('link')) {
+  if (provider && !linkProvider) {
     console.log('Auto sign-in provider detected from URL:', provider);
     setTimeout(() => {
       console.log('Auto-triggering sign-in for provider:', provider);
