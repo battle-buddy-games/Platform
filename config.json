@@ -20,7 +20,7 @@
   "cloudflareTunnels": [
     {
       "name": "cloud",
-      "address": "https://switches-establishing-laptop-calvin.trycloudflare.com"
+      "address": "https://engines-retired-newest-lance.trycloudflare.com"
     },
     {
       "name": "local-cloud",
