@@ -2657,6 +2657,63 @@ function initQuickLinksTabs() {
   activateTab(initiallyActive ? initiallyActive.dataset.quickLinksTab : tabButtons[0].dataset.quickLinksTab);
 }
 
+/**
+ * Resolve a quick link ID to a target URL.
+ * Supports steam launches, portal subpages, and external links.
+ * IDs are case-insensitive.
+ */
+function resolveQuickLink(id) {
+  const key = (id || '').toLowerCase().replace(/[\s_-]/g, '');
+
+  // Steam launch links
+  const steamLinks = {
+    'aoosdk':     'steam://launch/2153520/',
+    'aoo':        'steam://launch/2153520/',
+    'tow':        'steam://launch/3687660/',
+    'blender':    'steam://launch/365670/',
+  };
+  if (steamLinks[key]) return steamLinks[key];
+
+  // Portal subpage links (dashboard tools and pages)
+  const portalSubpages = {
+    'dashboard':      '/Dashboard',
+    'dashboardhome':  '/Dashboard?activeToolName=DashboardHome',
+    'servers':        '/Home/Servers',
+    'campaigns':      '/Home/CampaignServers',
+    'forum':          '/Home/Forum',
+    'news':           '/Home/News',
+    'status':         '/Home/Status',
+    'about':          '/Home/About',
+  };
+  if (portalSubpages[key]) {
+    return './portal.html?subpage=' + encodeURIComponent(portalSubpages[key]);
+  }
+
+  // External links
+  const externalLinks = {
+    'localplatform':  'http://192.168.0.243:8081/',
+    'grafana':        'http://192.168.0.243:3000/',
+    'meshy':          'https://www.meshy.ai/@fisher_m_uksf',
+    'suno':           'https://suno.com/@frostebite',
+    'invokeai':       'http://192.168.0.251:9090',
+    'comfyui':        'http://192.168.0.251:8000',
+    'webplatformactions': 'https://github.com/frostebite/WebPlatform/actions',
+    'gameclientactions':  'https://github.com/frostebite/GameClient/actions',
+  };
+  if (externalLinks[key]) return externalLinks[key];
+
+  // Cloud tunnel link
+  if (key === 'cloudtunnel' || key === 'cloud' || key === 'tunnel') {
+    const tunnel = getTunnelForPreferredEnvironment();
+    if (tunnel && tunnel.address) return tunnel.address;
+  }
+
+  // Portal link (just open portal.html)
+  if (key === 'portal') return './portal.html';
+
+  return null;
+}
+
 // Initialize: Load config and check for previous sign-in
 window.addEventListener('DOMContentLoaded', async () => {
   // CRITICAL: Check for link mode FIRST, before loadConfig or any other initialization.
@@ -2716,6 +2773,18 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   await loadConfig();
   saveOriginalSignInHTML();
+
+  // Check for open-link parameter — immediately navigate to the matching quick link
+  const openLinkParam = earlyParams.get('open-link');
+  if (openLinkParam) {
+    const resolved = resolveQuickLink(openLinkParam);
+    if (resolved) {
+      console.log('[OPEN-LINK] Resolved quick link:', openLinkParam, '->', resolved);
+      window.location.href = resolved;
+      return;
+    }
+    console.warn('[OPEN-LINK] Unknown quick link:', openLinkParam);
+  }
 
   // Check for service worker install mode (#install-sw hash)
   if (window.location.hash === '#install-sw') {
