@@ -231,6 +231,29 @@ const UPDATING_STAGES = [
   { threshold: 1800, estimate: null, label: 'Platform Offline',          state: 'offline' },     // 30 min -> offline
 ];
 
+// Recent release info detected from config.json
+let detectedRelease = null;
+const RELEASE_RECENCY_MS = 30 * 60 * 1000; // Consider releases within 30 minutes as "current"
+
+// Check config.json for a recent release
+function checkForRecentRelease() {
+  if (!CONFIG || !CONFIG.releases || CONFIG.releases.length === 0) return null;
+
+  const now = Date.now();
+  // Check the most recent release
+  const latest = CONFIG.releases[CONFIG.releases.length - 1];
+  if (!latest || !latest.timestamp) return null;
+
+  const releaseTime = new Date(latest.timestamp).getTime();
+  if (isNaN(releaseTime)) return null;
+
+  const ageMs = now - releaseTime;
+  if (ageMs <= RELEASE_RECENCY_MS) {
+    return latest;
+  }
+  return null;
+}
+
 // Health check for tunnel address using /api/HealthCheck/system (like gateway.js)
 async function checkTunnelHealth(address) {
   if (!address) return false;
@@ -295,42 +318,49 @@ function formatCountdown(seconds) {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
+// Get the current stage index (0-5) based on elapsed time
+function getUpdatingStageIndex(elapsed) {
+  for (let i = UPDATING_STAGES.length - 1; i >= 0; i--) {
+    if (elapsed >= UPDATING_STAGES[i].threshold) return i;
+  }
+  return 0;
+}
+
 // Update the staged updating UI (called every second by the timer)
 function updateUpdatingUI() {
   if (!connectionFailureDetected) return;
 
   updatingElapsedSeconds++;
-  const stage = getUpdatingStage(updatingElapsedSeconds);
+  const stageIndex = getUpdatingStageIndex(updatingElapsedSeconds);
+  const stage = UPDATING_STAGES[stageIndex];
 
   const titleEl = document.getElementById('connectionFailureTitle');
   const messageEl = document.getElementById('connectionFailureMessage');
   const timeEl = document.getElementById('updatingTimeRemaining');
-  const progressBar = document.getElementById('updatingProgressBar');
   const extraMsg = document.getElementById('updatingExtraMessage');
   const contentEl = document.querySelector('.updating-content');
-  const iconEl = document.getElementById('updatingIcon');
-  const countdownArea = document.getElementById('updatingCountdown');
 
   if (titleEl) titleEl.textContent = stage.label;
 
-  // Compute remaining time
+  // Update countdown time in spinner
   if (stage.estimate !== null) {
     const remaining = Math.max(0, stage.estimate - updatingElapsedSeconds);
     if (timeEl) timeEl.textContent = formatCountdown(remaining);
-    if (countdownArea) countdownArea.style.display = '';
-
-    // Progress bar: percentage within current stage
-    const stageStart = stage.threshold;
-    const stageEnd = stage.estimate;
-    const stageElapsed = updatingElapsedSeconds - stageStart;
-    const stageDuration = stageEnd - stageStart;
-    const pct = Math.min(100, (stageElapsed / stageDuration) * 100);
-    if (progressBar) progressBar.style.width = pct + '%';
   } else {
-    // Offline stage - no countdown
     if (timeEl) timeEl.textContent = '--:--';
-    if (progressBar) progressBar.style.width = '100%';
   }
+
+  // Update step dots - mark completed and active
+  const steps = document.querySelectorAll('.updating-steps .step');
+  const stepLines = document.querySelectorAll('.updating-steps .step-line');
+  steps.forEach((step, i) => {
+    step.classList.remove('active', 'completed');
+    if (i < stageIndex) step.classList.add('completed');
+    else if (i === stageIndex) step.classList.add('active');
+  });
+  stepLines.forEach((line, i) => {
+    line.classList.toggle('completed', i < stageIndex);
+  });
 
   // Update state classes
   if (contentEl) {
@@ -339,15 +369,17 @@ function updateUpdatingUI() {
     if (stage.state === 'offline') contentEl.classList.add('state-offline');
   }
 
-  // Update icon
-  if (iconEl) {
-    iconEl.textContent = stage.state === 'offline' ? '✕' : '⟳';
-  }
-
   // Update subtitle message
   if (messageEl) {
     if (stage.state === 'updating') {
-      messageEl.textContent = 'An update may be in progress. Checking for availability...';
+      if (detectedRelease) {
+        const releaseLabel = detectedRelease.version || '';
+        const releaseDesc = detectedRelease.title || '';
+        messageEl.innerHTML = 'Deploying update' + (releaseLabel ? ' <strong>' + releaseLabel + '</strong>' : '')
+          + (releaseDesc ? ' &mdash; ' + releaseDesc : '') + '. Please wait...';
+      } else {
+        messageEl.textContent = 'An update may be in progress. Checking for availability...';
+      }
     } else if (stage.state === 'warning') {
       messageEl.textContent = 'This is taking longer than expected.';
     } else if (stage.state === 'offline') {
@@ -384,6 +416,15 @@ async function pollConfigAndHealth() {
 
     const newConfig = await response.json();
     CONFIG = newConfig;
+
+    // Re-check for recent release info (may appear after config.json is updated mid-wait)
+    if (connectionFailureDetected && !detectedRelease) {
+      detectedRelease = checkForRecentRelease();
+      if (detectedRelease) {
+        console.log('[Portal] Release detected during polling:', detectedRelease);
+      }
+    }
+
     const cloudTunnel = getTunnelForPreferredEnvironment() || newConfig.cloudflareTunnels?.find(t => t.name === 'cloud');
 
     if (!cloudTunnel || !cloudTunnel.address) {
@@ -543,10 +584,10 @@ function startPeriodicHealthChecks() {
 
   console.log(`[Health Check] Starting periodic health checks every ${HEALTH_CHECK_INTERVAL_MS / 1000}s`);
 
-  // Run first health check after a delay (let iframe load first)
+  // Run first periodic health check after 10s (immediate check already happens in iframe.onload)
   setTimeout(() => {
     performPeriodicHealthCheck();
-  }, HEALTH_CHECK_INTERVAL_MS);
+  }, 10000);
 
   // Then run periodically
   healthCheckInterval = setInterval(() => {
@@ -583,10 +624,8 @@ function showConnectionFailure(title, message) {
   const titleEl = document.getElementById('connectionFailureTitle');
   const messageEl = document.getElementById('connectionFailureMessage');
   const timeEl = document.getElementById('updatingTimeRemaining');
-  const progressBar = document.getElementById('updatingProgressBar');
   const extraMsg = document.getElementById('updatingExtraMessage');
   const contentEl = document.querySelector('.updating-content');
-  const iconEl = document.getElementById('updatingIcon');
   const retryNowBtn = document.getElementById('retryNowBtn');
 
   if (!overlay) return;
@@ -597,9 +636,28 @@ function showConnectionFailure(title, message) {
   if (titleEl) titleEl.textContent = 'Platform Updating';
   if (messageEl) messageEl.textContent = 'An update may be in progress. Checking for availability...';
   if (timeEl) timeEl.textContent = formatCountdown(300);
-  if (progressBar) progressBar.style.width = '0%';
   if (extraMsg) { extraMsg.classList.add('hidden'); extraMsg.classList.remove('offline'); }
-  if (iconEl) iconEl.textContent = '⟳';
+
+  // Reset step dots
+  document.querySelectorAll('.updating-steps .step').forEach((step, i) => {
+    step.classList.remove('active', 'completed');
+    if (i === 0) step.classList.add('active');
+  });
+  document.querySelectorAll('.updating-steps .step-line').forEach(line => {
+    line.classList.remove('completed');
+  });
+
+  // Check for a recent release in config.json
+  detectedRelease = checkForRecentRelease();
+  if (detectedRelease) {
+    console.log('[Portal] Recent release detected:', detectedRelease);
+    if (messageEl) {
+      const releaseLabel = detectedRelease.version || '';
+      const releaseDesc = detectedRelease.title || '';
+      messageEl.innerHTML = 'Deploying update' + (releaseLabel ? ' <strong>' + releaseLabel + '</strong>' : '')
+        + (releaseDesc ? ' &mdash; ' + releaseDesc : '') + '. Please wait...';
+    }
+  }
 
   // Setup retry button
   if (retryNowBtn) {
@@ -1145,6 +1203,16 @@ async function loadTunnel() {
       }
     }, 100);
 
+    // Run an immediate health check to catch 502/Bad Gateway responses
+    // (Cloudflare 502 pages still trigger iframe.onload as valid HTML)
+    checkTunnelHealth(tunnelBaseUrl).then(isHealthy => {
+      if (!isHealthy && !connectionFailureDetected) {
+        console.log('[Portal] Iframe loaded but tunnel is unhealthy (likely 502) - showing updating overlay');
+        lastHealthyTunnelAddress = tunnelBaseUrl;
+        showConnectionFailure();
+      }
+    });
+
     // Start periodic health checks now that iframe has loaded successfully
     startPeriodicHealthChecks();
 
@@ -1316,14 +1384,13 @@ async function loadTunnel() {
     }, 200);
   });
 
-  // Timeout fallback - if iframe doesn't load within 15 seconds, run an immediate health check
+  // Timeout fallback - if iframe doesn't load within 5 seconds, run an immediate health check
   setTimeout(() => {
-    const overlay = document.getElementById('loadingOverlay');
-    if (overlay && !overlay.classList.contains('hidden') && !iframeLoadCompleted && !connectionFailureDetected) {
-      console.log('[Portal] Initial load timeout - running immediate health check');
+    if (!iframeLoadCompleted && !connectionFailureDetected) {
+      console.log('[Portal] Initial load timeout (5s) - running immediate health check');
       performPeriodicHealthCheck();
     }
-  }, 15000);
+  }, 5000);
 
   // Monitor for network connectivity issues
   window.addEventListener('online', () => {

@@ -204,9 +204,15 @@ iframe {
 }
 
 .countdown-content p {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 24px;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.countdown-content p strong {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
 }
 
 #countdownSeconds {
@@ -250,58 +256,130 @@ iframe {
 
 /* Platform updating overlay styles */
 .updating-content {
-  max-width: 420px;
+  max-width: 460px;
 }
 
-.updating-icon {
-  font-size: 40px;
-  margin-bottom: 12px;
-  animation: updating-spin 2s linear infinite;
-  display: inline-block;
-  color: #667eea;
+/* Circular spinner with countdown inside */
+.updating-spinner {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
 }
 
-@keyframes updating-spin {
+.spinner-svg {
+  width: 100%;
+  height: 100%;
+  animation: spinner-rotate 2s linear infinite;
+}
+
+.spinner-arc {
+  stroke-dasharray: 126;
+  stroke-dashoffset: 90;
+  stroke: url(#spinnerGradient);
+  transition: stroke 0.4s ease;
+}
+
+@keyframes spinner-rotate {
   to { transform: rotate(360deg); }
 }
 
-.updating-countdown {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 20px;
+@keyframes gradient-shift {
+  0% { stop-color: #667eea; }
+  50% { stop-color: #a78bfa; }
+  100% { stop-color: #667eea; }
 }
 
-.countdown-label {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.6);
+@keyframes ripple-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(102, 126, 234, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0); }
 }
 
-.updating-time {
-  font-size: 28px;
+.spinner-time {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
   font-weight: 700;
   color: #667eea;
   font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
 }
 
-.updating-progress {
-  width: 100%;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
-  margin-bottom: 20px;
-  overflow: hidden;
+/* Step progress bar */
+.updating-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: 20px 0;
+  padding: 0 8px;
 }
 
-.updating-progress-bar {
-  height: 100%;
+.updating-steps .step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.updating-steps .step-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+}
+
+.updating-steps .step.active .step-dot {
   background: #667eea;
-  border-radius: 2px;
-  transition: width 1s linear;
-  width: 0%;
+  border-color: #667eea;
+  animation: ripple-pulse 2s ease-in-out infinite;
 }
 
+.updating-steps .step.completed .step-dot {
+  background: #667eea;
+  border-color: #667eea;
+}
+
+.updating-steps .step-label {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.35);
+  white-space: nowrap;
+  transition: color 0.4s ease;
+}
+
+.updating-steps .step.active .step-label,
+.updating-steps .step.completed .step-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.updating-steps .step-line {
+  flex: 1;
+  height: 2px;
+  min-width: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 0 4px;
+  margin-bottom: 22px;
+  transition: background 0.4s ease;
+}
+
+.updating-steps .step-line.completed {
+  background: linear-gradient(90deg, #667eea, #a78bfa, #667eea);
+  background-size: 200% 100%;
+  animation: shimmer-line 2s ease-in-out infinite;
+}
+
+@keyframes shimmer-line {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Extra message box */
 .updating-extra-message {
   background: rgba(255, 193, 7, 0.1);
   border: 1px solid rgba(255, 193, 7, 0.3);
@@ -332,8 +410,12 @@ iframe {
   color: #8fa0f0;
 }
 
-/* Warning state - icon turns amber */
-.updating-content.state-warning .updating-icon {
+/* Warning state */
+.updating-content.state-warning .spinner-arc {
+  stroke: #ffc107;
+}
+
+.updating-content.state-warning .spinner-time {
   color: #ffc107;
 }
 
@@ -341,29 +423,45 @@ iframe {
   color: #ffc107;
 }
 
-.updating-content.state-warning .updating-time {
-  color: #ffc107;
-}
-
-.updating-content.state-warning .updating-progress-bar {
+.updating-content.state-warning .step.active .step-dot {
   background: #ffc107;
+  border-color: #ffc107;
+  animation: ripple-pulse-warning 2s ease-in-out infinite;
 }
 
-/* Offline state - icon turns red, stops spinning */
-.updating-content.state-offline .updating-icon {
-  color: #ff6b6b;
+@keyframes ripple-pulse-warning {
+  0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 193, 7, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+}
+
+/* Offline state */
+.updating-content.state-offline .spinner-svg {
   animation: none;
+}
+
+.updating-content.state-offline .spinner-arc {
+  stroke: #ff6b6b;
+  stroke-dashoffset: 0;
+}
+
+.updating-content.state-offline .spinner-time {
+  color: #ff6b6b;
 }
 
 .updating-content.state-offline h2 {
   color: #ff6b6b;
 }
 
-.updating-content.state-offline .updating-time {
-  color: #ff6b6b;
+.updating-content.state-offline .step.active .step-dot {
+  background: #ff6b6b;
+  border-color: #ff6b6b;
+  animation: ripple-pulse-offline 2s ease-in-out infinite;
 }
 
-.updating-content.state-offline .updating-progress-bar {
-  background: #ff6b6b;
+@keyframes ripple-pulse-offline {
+  0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 107, 107, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
 }
 

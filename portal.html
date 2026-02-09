@@ -45,17 +45,39 @@
   <!-- Platform updating / offline overlay -->
   <div id="connectionFailureOverlay" class="countdown-overlay hidden">
     <div class="countdown-content updating-content">
-      <div id="updatingIcon" class="updating-icon">⟳</div>
+      <div id="updatingSpinner" class="updating-spinner">
+        <svg viewBox="0 0 50 50" class="spinner-svg">
+          <defs>
+            <linearGradient id="spinnerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#667eea">
+                <animate attributeName="stop-color" values="#667eea;#a78bfa;#667eea" dur="3s" repeatCount="indefinite"/>
+              </stop>
+              <stop offset="100%" style="stop-color:#a78bfa">
+                <animate attributeName="stop-color" values="#a78bfa;#667eea;#a78bfa" dur="3s" repeatCount="indefinite"/>
+              </stop>
+            </linearGradient>
+          </defs>
+          <circle cx="25" cy="25" r="20" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="4"/>
+          <circle cx="25" cy="25" r="20" fill="none" stroke="url(#spinnerGradient)" stroke-width="4" stroke-linecap="round" class="spinner-arc"/>
+        </svg>
+        <span id="updatingTimeRemaining" class="spinner-time">5:00</span>
+      </div>
       <h2 id="connectionFailureTitle">Platform Updating</h2>
-      <p id="connectionFailureMessage">The platform is loading. Please wait...</p>
-      <div id="updatingCountdown" class="updating-countdown">
-        <span class="countdown-label">Estimated wait:</span>
-        <span id="updatingTimeRemaining" class="updating-time">5:00</span>
+      <p id="connectionFailureMessage">An update may be in progress. Checking for availability...</p>
+      <div id="updatingSteps" class="updating-steps">
+        <div class="step active" data-step="0"><span class="step-dot"></span><span class="step-label">5 min</span></div>
+        <div class="step-line"></div>
+        <div class="step" data-step="1"><span class="step-dot"></span><span class="step-label">10 min</span></div>
+        <div class="step-line"></div>
+        <div class="step" data-step="2"><span class="step-dot"></span><span class="step-label">15 min</span></div>
+        <div class="step-line"></div>
+        <div class="step" data-step="3"><span class="step-dot"></span><span class="step-label">20 min</span></div>
+        <div class="step-line"></div>
+        <div class="step" data-step="4"><span class="step-dot"></span><span class="step-label">Warning</span></div>
+        <div class="step-line"></div>
+        <div class="step" data-step="5"><span class="step-dot"></span><span class="step-label">Offline</span></div>
       </div>
       <div id="updatingExtraMessage" class="updating-extra-message hidden"></div>
-      <div id="updatingProgress" class="updating-progress">
-        <div id="updatingProgressBar" class="updating-progress-bar"></div>
-      </div>
       <div class="countdown-buttons">
         <button id="retryNowBtn" class="countdown-button primary">Retry Now</button>
       </div>
