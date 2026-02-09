@@ -79,6 +79,12 @@
       "title": "[",
       "timestamp": "2026-02-09T16:16:00Z",
       "environment": "production"
+    },
+    {
+      "version": "build-84cdb28",
+      "title": "Rename Art Hub to Assets Hub",
+      "timestamp": "2026-02-09T17:21:09Z",
+      "environment": "production"
     }
   ]
 }
