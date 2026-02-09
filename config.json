@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-d75930a",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-09T02:01:29Z",
-      "environment": "production"
-    },
-    {
       "version": "build-f62866e",
       "title": "Merge Music Dashboard into Art Hub as a tab",
       "timestamp": "2026-02-09T14:36:37Z",
@@ -102,6 +96,12 @@
       "version": "build-5b4ff18",
       "title": "Add Connect tab to Drives tool with WebDAV/HTTP endpoint status and setup ins...",
       "timestamp": "2026-02-09T18:28:23Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-fb79a78",
+      "title": "Route command execution feedback through navbar sparkles menu instead of toas...",
+      "timestamp": "2026-02-09T18:46:10Z",
       "environment": "production"
     }
   ]
