@@ -281,12 +281,13 @@ let updatingStartTime = null;       // When the updating flow started
 let updatingTotalSeconds = 300;     // Current estimate in seconds (starts at 5 min)
 let updatingElapsedSeconds = 0;     // How many seconds have elapsed
 const UPDATING_STAGES = [
-  { threshold: 0,    estimate: 300,  label: 'Platform Updating',         state: 'updating' },
-  { threshold: 300,  estimate: 600,  label: 'Platform Updating',         state: 'updating' },   // 5 min -> extend to 10
-  { threshold: 600,  estimate: 900,  label: 'Platform Updating',         state: 'updating' },   // 10 min -> extend to 15
-  { threshold: 900,  estimate: 1200, label: 'Platform Updating',         state: 'updating' },   // 15 min -> extend to 20
-  { threshold: 1200, estimate: 1800, label: 'Possible Problem Detected', state: 'warning' },    // 20 min -> warning
-  { threshold: 1800, estimate: null, label: 'Platform Offline',          state: 'offline' },     // 30 min -> offline
+  { threshold: 0,    estimate: 120,  label: 'Platform Updating',         state: 'updating',  speedNote: 'Great update speed' },       // 0 -> 2 min
+  { threshold: 120,  estimate: 300,  label: 'Platform Updating',         state: 'updating',  speedNote: 'Great update speed' },       // 2 min -> 5 min
+  { threshold: 300,  estimate: 600,  label: 'Platform Updating',         state: 'updating',  speedNote: 'Update speed OK' },          // 5 min -> 10 min
+  { threshold: 600,  estimate: 900,  label: 'Platform Updating',         state: 'updating',  speedNote: 'Update speed OK' },          // 10 min -> 15 min
+  { threshold: 900,  estimate: 1200, label: 'Platform Updating',         state: 'updating',  speedNote: 'Speed will be improved' },   // 15 min -> 20 min
+  { threshold: 1200, estimate: 1800, label: 'Possible Problem Detected', state: 'warning',   speedNote: 'Speed will be improved' },   // 20 min -> warning
+  { threshold: 1800, estimate: null, label: 'Platform Offline',          state: 'offline',   speedNote: null },                        // 30 min -> offline
 ];
 
 // Recent release info detected from config.json
@@ -433,13 +434,26 @@ function updateUpdatingUI() {
       if (detectedRelease) {
         const releaseLabel = detectedRelease.version || '';
         const releaseDesc = detectedRelease.title || '';
-        messageEl.innerHTML = 'Deploying update' + (releaseLabel ? ' <strong>' + releaseLabel + '</strong>' : '')
+        let html = 'Deploying update' + (releaseLabel ? ' <strong>' + releaseLabel + '</strong>' : '')
           + (releaseDesc ? ' &mdash; ' + releaseDesc : '') + '. Please wait...';
+        if (stage.speedNote) {
+          html += '<br><span style="font-size: 12px; color: rgba(255,255,255,0.45); font-style: italic;">' + stage.speedNote + '</span>';
+        }
+        messageEl.innerHTML = html;
       } else {
-        messageEl.textContent = 'An update may be in progress. Checking for availability...';
+        let text = 'An update may be in progress. Checking for availability...';
+        if (stage.speedNote) {
+          messageEl.innerHTML = text + '<br><span style="font-size: 12px; color: rgba(255,255,255,0.45); font-style: italic;">' + stage.speedNote + '</span>';
+        } else {
+          messageEl.textContent = text;
+        }
       }
     } else if (stage.state === 'warning') {
-      messageEl.textContent = 'This is taking longer than expected.';
+      let html = 'This is taking longer than expected.';
+      if (stage.speedNote) {
+        html += '<br><span style="font-size: 12px; color: rgba(255,193,7,0.7); font-style: italic;">' + stage.speedNote + '</span>';
+      }
+      messageEl.innerHTML = html;
     } else if (stage.state === 'offline') {
       messageEl.textContent = 'The platform could not be reached.';
     }
@@ -675,8 +689,27 @@ function showConnectionFailure(title, message) {
   if (typeof trackGatewayEvent === 'function') trackGatewayEvent('portal_tunnel_failed', { error: title });
 
   connectionFailureDetected = true;
-  updatingElapsedSeconds = 0;
-  updatingStartTime = Date.now();
+
+  // Check for a recent release in config.json FIRST, so we can use its timestamp
+  detectedRelease = checkForRecentRelease();
+
+  // If a release was detected, start the timer from the release timestamp
+  // so we show the real elapsed time since the deployment began, not since
+  // the user opened the page or noticed the failure.
+  if (detectedRelease && detectedRelease.timestamp) {
+    const releaseTime = new Date(detectedRelease.timestamp).getTime();
+    if (!isNaN(releaseTime)) {
+      updatingStartTime = releaseTime;
+      updatingElapsedSeconds = Math.floor((Date.now() - releaseTime) / 1000);
+      console.log('[Portal] Timer starting from release timestamp, already elapsed:', updatingElapsedSeconds + 's');
+    } else {
+      updatingStartTime = Date.now();
+      updatingElapsedSeconds = 0;
+    }
+  } else {
+    updatingStartTime = Date.now();
+    updatingElapsedSeconds = 0;
+  }
 
   const overlay = document.getElementById('connectionFailureOverlay');
   const titleEl = document.getElementById('connectionFailureTitle');
@@ -688,25 +721,38 @@ function showConnectionFailure(title, message) {
 
   if (!overlay) return;
 
-  // Reset to initial state
+  // Determine initial stage from elapsed time
+  const initialStage = getUpdatingStage(updatingElapsedSeconds);
+
+  // Reset to appropriate state
   overlay.classList.remove('hidden');
-  if (contentEl) contentEl.classList.remove('state-warning', 'state-offline');
-  if (titleEl) titleEl.textContent = 'Platform Updating';
+  if (contentEl) {
+    contentEl.classList.remove('state-warning', 'state-offline');
+    if (initialStage.state === 'warning') contentEl.classList.add('state-warning');
+    if (initialStage.state === 'offline') contentEl.classList.add('state-offline');
+  }
+  if (titleEl) titleEl.textContent = initialStage.label;
   if (messageEl) messageEl.textContent = 'An update may be in progress. Checking for availability...';
-  if (timeEl) timeEl.textContent = formatCountdown(300);
+  if (initialStage.estimate !== null) {
+    const remaining = Math.max(0, initialStage.estimate - updatingElapsedSeconds);
+    if (timeEl) timeEl.textContent = formatCountdown(remaining);
+  } else {
+    if (timeEl) timeEl.textContent = '--:--';
+  }
   if (extraMsg) { extraMsg.classList.add('hidden'); extraMsg.classList.remove('offline'); }
 
-  // Reset step dots
+  // Set step dots to match current elapsed position
+  const initialStageIndex = getUpdatingStageIndex(updatingElapsedSeconds);
   document.querySelectorAll('.updating-steps .step').forEach((step, i) => {
     step.classList.remove('active', 'completed');
-    if (i === 0) step.classList.add('active');
+    if (i < initialStageIndex) step.classList.add('completed');
+    else if (i === initialStageIndex) step.classList.add('active');
   });
-  document.querySelectorAll('.updating-steps .step-line').forEach(line => {
-    line.classList.remove('completed');
+  document.querySelectorAll('.updating-steps .step-line').forEach((line, i) => {
+    line.classList.toggle('completed', i < initialStageIndex);
   });
 
-  // Check for a recent release in config.json
-  detectedRelease = checkForRecentRelease();
+  // Update subtitle with release info if detected
   if (detectedRelease) {
     console.log('[Portal] Recent release detected:', detectedRelease);
     if (messageEl) {

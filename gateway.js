@@ -102,6 +102,53 @@ function updateSignInButtonStates() {
   }
 }
 
+// Render recent releases feed in the health checks panel
+function renderReleasesFeed() {
+  const container = document.getElementById('releasesFeedContainer');
+  if (!container) return;
+
+  const releases = CONFIG && CONFIG.releases;
+  if (!releases || releases.length === 0) {
+    container.innerHTML = '<div style="font-size: 11px; color: rgba(255, 255, 255, 0.4);">No releases found</div>';
+    return;
+  }
+
+  // Show last 5 releases, newest first
+  const recent = releases.slice(-5).reverse();
+  const now = Date.now();
+
+  container.innerHTML = recent.map(function(rel) {
+    const version = rel.version || 'unknown';
+    const title = rel.title || '';
+    const env = rel.environment || '';
+    const ts = rel.timestamp ? new Date(rel.timestamp) : null;
+
+    // Format relative time
+    let timeStr = '';
+    if (ts && !isNaN(ts.getTime())) {
+      const diffMs = now - ts.getTime();
+      const diffMin = Math.floor(diffMs / 60000);
+      const diffHr = Math.floor(diffMs / 3600000);
+      const diffDay = Math.floor(diffMs / 86400000);
+      if (diffMin < 1) timeStr = 'just now';
+      else if (diffMin < 60) timeStr = diffMin + 'm ago';
+      else if (diffHr < 24) timeStr = diffHr + 'h ago';
+      else timeStr = diffDay + 'd ago';
+    }
+
+    // Truncate long titles
+    const displayTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
+
+    return '<div style="padding: 6px 8px; background: rgba(255, 255, 255, 0.03); border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.06);">'
+      + '<div style="display: flex; justify-content: space-between; align-items: center; gap: 4px;">'
+      + '<span style="font-size: 10px; font-family: monospace; color: rgba(102, 126, 234, 0.9); font-weight: 600; white-space: nowrap;">' + version + '</span>'
+      + (timeStr ? '<span style="font-size: 9px; color: rgba(255, 255, 255, 0.35); white-space: nowrap;">' + timeStr + '</span>' : '')
+      + '</div>'
+      + (displayTitle ? '<div style="font-size: 10px; color: rgba(255, 255, 255, 0.55); margin-top: 2px; line-height: 1.3; word-break: break-word;" title="' + title.replace(/"/g, '&quot;') + '">' + displayTitle + '</div>' : '')
+      + '</div>';
+  }).join('');
+}
+
 // Save original sign-in HTML on page load
 function saveOriginalSignInHTML() {
   const container = document.querySelector('.sign-in-container');
@@ -2806,7 +2853,10 @@ window.addEventListener('DOMContentLoaded', async () => {
   
   // Update tunnel links from config
   updateTunnelLinks();
-  
+
+  // Render recent releases feed
+  renderReleasesFeed();
+
   // Update environment selector after CONFIG loads
   updateEnvironmentUrl();
   
