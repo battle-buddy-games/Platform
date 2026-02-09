@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-3b8a93e",
-      "title": "Register GatewayAnalyticsService in DI container",
-      "timestamp": "2026-02-09T01:46:08Z",
-      "environment": "production"
-    },
-    {
       "version": "build-d75930a",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-09T02:01:29Z",
@@ -102,6 +96,12 @@
       "version": "build-6ef9114",
       "title": "Skip development build when not deploying to develop environment",
       "timestamp": "2026-02-09T18:02:07Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-5b4ff18",
+      "title": "Add Connect tab to Drives tool with WebDAV/HTTP endpoint status and setup ins...",
+      "timestamp": "2026-02-09T18:28:23Z",
       "environment": "production"
     }
   ]
