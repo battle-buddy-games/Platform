@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-f62866e",
-      "title": "Merge Music Dashboard into Art Hub as a tab",
-      "timestamp": "2026-02-09T14:36:37Z",
-      "environment": "production"
-    },
-    {
       "version": "build-3ac4aac",
       "title": "p",
       "timestamp": "2026-02-09T14:42:05Z",
@@ -102,6 +96,12 @@
       "version": "build-fb79a78",
       "title": "Route command execution feedback through navbar sparkles menu instead of toas...",
       "timestamp": "2026-02-09T18:46:10Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-698ade1",
+      "title": "stability",
+      "timestamp": "2026-02-09T19:16:56Z",
       "environment": "production"
     }
   ]
