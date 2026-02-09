@@ -185,6 +185,64 @@ function showToast(title, message, type = 'info') {
   }, 5000);
 }
 
+// Apply page metadata from iframe to the portal document (for bookmarks/tabs)
+function applyPageMeta(meta) {
+  if (!meta) return;
+
+  // Update document title
+  if (meta.title) {
+    document.title = meta.title;
+  }
+
+  // Update meta description
+  if (meta.description) {
+    let descEl = document.querySelector('meta[name="description"]');
+    if (descEl) {
+      descEl.setAttribute('content', meta.description);
+    }
+  }
+
+  // Update Open Graph tags
+  if (meta.ogTitle) {
+    let el = document.querySelector('meta[property="og:title"]');
+    if (el) el.setAttribute('content', meta.ogTitle);
+  }
+  if (meta.ogDescription) {
+    let el = document.querySelector('meta[property="og:description"]');
+    if (el) el.setAttribute('content', meta.ogDescription);
+  }
+  if (meta.ogImage) {
+    let el = document.querySelector('meta[property="og:image"]');
+    if (el) el.setAttribute('content', meta.ogImage);
+  }
+
+  // Update Twitter card tags
+  if (meta.ogTitle) {
+    let el = document.querySelector('meta[name="twitter:title"]');
+    if (el) el.setAttribute('content', meta.ogTitle);
+  }
+  if (meta.ogDescription) {
+    let el = document.querySelector('meta[name="twitter:description"]');
+    if (el) el.setAttribute('content', meta.ogDescription);
+  }
+  if (meta.ogImage) {
+    let el = document.querySelector('meta[name="twitter:image"]');
+    if (el) el.setAttribute('content', meta.ogImage);
+  }
+
+  // Update favicon
+  if (meta.favicon) {
+    let iconEl = document.querySelector('link[rel="icon"]');
+    if (iconEl) {
+      iconEl.setAttribute('href', meta.favicon);
+    }
+    let appleIconEl = document.querySelector('link[rel="apple-touch-icon"]');
+    if (appleIconEl) {
+      appleIconEl.setAttribute('href', meta.favicon);
+    }
+  }
+}
+
 // Register all config tunnels with the service worker so it can track them
 async function registerTunnelsWithServiceWorker() {
   if (!window.platformSW?.isInstalled()) return;
@@ -1304,15 +1362,20 @@ async function loadTunnel() {
         if (!newPath.startsWith('/')) {
           newPath = '/' + newPath;
         }
-        
+
         // Check if navigating to gateway.html
         if (newPath.includes('gateway.html') || (event.data.url && event.data.url.includes('gateway.html'))) {
           console.log('PostMessage detected gateway.html navigation, redirecting whole page');
           window.location.href = './gateway.html';
           return;
         }
-        
-        // Only update if path changed and we're not already updating
+
+        // Apply page metadata for bookmarks/tabs (always, even if path unchanged)
+        if (event.data.meta) {
+          applyPageMeta(event.data.meta);
+        }
+
+        // Only update URL if path changed and we're not already updating
         if (newPath !== currentIframePath && !isUpdatingUrl) {
           console.log(`URL change detected from postMessage (${messageType}): ${currentIframePath} -> ${newPath}`);
           hasReceivedPostMessage = true; // Mark that we've received postMessages (indicates SPA)
