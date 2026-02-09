@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-3ac4aac",
-      "title": "p",
-      "timestamp": "2026-02-09T14:42:05Z",
-      "environment": "production"
-    },
-    {
       "version": "build-6bc372e",
       "title": "Fix ControllerBase.File shadowing System.IO.File in Infrastructure.cs",
       "timestamp": "2026-02-09T15:35:50Z",
@@ -102,6 +96,12 @@
       "version": "build-698ade1",
       "title": "stability",
       "timestamp": "2026-02-09T19:16:56Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-eb66bc6",
+      "title": "Fix UTF-8 BOM encoding in nginx config and state files for PowerShell 5.1",
+      "timestamp": "2026-02-09T19:41:22Z",
       "environment": "production"
     }
   ]
