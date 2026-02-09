@@ -164,6 +164,7 @@ function attachSignInListeners() {
 // Define function and immediately attach to window for inline handlers
 window.handleSignIn = function handleSignIn(provider) {
   console.log('handleSignIn called with provider:', provider);
+  if (typeof trackGatewayEvent === 'function') trackGatewayEvent('sign_in_click', { provider: provider });
 
   // Check if we're in link mode (from URL parameter, localStorage, or linkingModeEnabled)
   const urlParams = new URLSearchParams(window.location.search);
@@ -985,6 +986,7 @@ function initEnvironmentSelector() {
     performHealthChecks();
     
     console.log('Environment changed to:', selectedEnv);
+    if (typeof trackGatewayEvent === 'function') trackGatewayEvent('environment_changed', { environment: selectedEnv });
   });
 }
 
@@ -2819,6 +2821,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     preferPortalCheckbox.addEventListener('change', (e) => {
       localStorage.setItem('preferPortal', e.target.checked ? 'true' : 'false');
       console.log('Prefer portal setting saved:', e.target.checked);
+      if (typeof trackGatewayEvent === 'function') trackGatewayEvent('setting_changed', { setting: 'preferPortal', value: e.target.checked });
     });
   }
 
@@ -2833,6 +2836,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     preferTokenCheckbox.addEventListener('change', (e) => {
       localStorage.setItem('preferToken', e.target.checked ? 'true' : 'false');
       console.log('Prefer token setting saved:', e.target.checked);
+      if (typeof trackGatewayEvent === 'function') trackGatewayEvent('setting_changed', { setting: 'preferToken', value: e.target.checked });
     });
   }
 
@@ -2847,6 +2851,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     preferAutoSignInCheckbox.addEventListener('change', (e) => {
       localStorage.setItem('preferAutoSignIn', e.target.checked ? 'true' : 'false');
       console.log('Prefer auto sign in setting saved:', e.target.checked);
+      if (typeof trackGatewayEvent === 'function') trackGatewayEvent('setting_changed', { setting: 'preferAutoSignIn', value: e.target.checked });
     });
   }
 
@@ -2861,6 +2866,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     skipCountdownCheckbox.addEventListener('change', (e) => {
       localStorage.setItem('skipCountdown', e.target.checked ? 'true' : 'false');
       console.log('Skip countdown setting saved:', e.target.checked);
+      if (typeof trackGatewayEvent === 'function') trackGatewayEvent('setting_changed', { setting: 'skipCountdown', value: e.target.checked });
     });
   }
 
@@ -2895,6 +2901,7 @@ window.addEventListener('DOMContentLoaded', async () => {
       if (typeof setDebugMode === 'function') {
         setDebugMode(e.target.checked);
         console.log('Debug mode setting saved:', e.target.checked);
+        if (typeof trackGatewayEvent === 'function') trackGatewayEvent('setting_changed', { setting: 'debugMode', value: e.target.checked });
       }
     });
   }
@@ -4411,6 +4418,7 @@ window.refreshHealthChecks = function refreshHealthChecks() {
     }
     // Restart countdown after refresh
     startHealthCheckCountdown();
+    if (typeof trackGatewayEvent === 'function') trackGatewayEvent('health_check_refreshed', {});
   });
 };
 

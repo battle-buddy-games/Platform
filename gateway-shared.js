@@ -1102,3 +1102,139 @@ window.platformSW = {
   registerTunnel: registerTunnelWithServiceWorker,
   getKnownTunnels: getKnownTunnelsFromServiceWorker
 };
+
+// =============================================================================
+// GATEWAY ANALYTICS — Persistent event tracking for gateway pages
+// Tracks page loads, sign-in clicks, settings changes, health checks, etc.
+// Events are batched and sent to /api/GatewayAnalytics for SQLite persistence.
+// =============================================================================
+
+const GATEWAY_ANALYTICS_VISITOR_KEY = 'gateway_analytics_visitor_id';
+const _gatewayAnalyticsQueue = [];
+let _gatewayAnalyticsTimeout = null;
+const GATEWAY_ANALYTICS_BATCH_DELAY_MS = 3000;
+
+// Get or create a semi-persistent visitor ID (survives page reloads, not localStorage clears)
+function getOrCreateVisitorId() {
+  try {
+    let visitorId = localStorage.getItem(GATEWAY_ANALYTICS_VISITOR_KEY);
+    if (!visitorId) {
+      visitorId = crypto.randomUUID ? crypto.randomUUID() :
+        'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+          var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+          return v.toString(16);
+        });
+      localStorage.setItem(GATEWAY_ANALYTICS_VISITOR_KEY, visitorId);
+    }
+    return visitorId;
+  } catch (e) {
+    return 'anonymous';
+  }
+}
+
+// Get the analytics endpoint URL (reuses existing tunnel resolution)
+function getGatewayAnalyticsUrl() {
+  try {
+    const sessionTunnelUrl = getTrackingTunnelUrlFromSession();
+    if (sessionTunnelUrl) {
+      return `${sessionTunnelUrl.replace(/\/$/, '')}/api/GatewayAnalytics`;
+    }
+
+    const preferredEnv = getPreferredEnvironmentForTracking();
+    const preferredTunnel = getTunnelForEnvironmentName(preferredEnv);
+    if (preferredTunnel?.address) {
+      return `${preferredTunnel.address.replace(/\/$/, '')}/api/GatewayAnalytics`;
+    }
+
+    const productionTunnel = CONFIG?.cloudflareTunnels?.find(t => t.name === 'cloud');
+    if (productionTunnel?.address) {
+      return `${productionTunnel.address.replace(/\/$/, '')}/api/GatewayAnalytics`;
+    }
+  } catch (e) {
+    // Silently fail
+  }
+  return null;
+}
+
+// Track a gateway analytics event
+function trackGatewayEvent(eventType, eventData = {}) {
+  try {
+    _gatewayAnalyticsQueue.push({
+      eventType: eventType,
+      eventData: JSON.stringify(eventData),
+      timestamp: new Date().toISOString()
+    });
+
+    // Limit queue size
+    if (_gatewayAnalyticsQueue.length > 100) {
+      _gatewayAnalyticsQueue.shift();
+    }
+
+    // Schedule batch send
+    if (_gatewayAnalyticsTimeout) {
+      clearTimeout(_gatewayAnalyticsTimeout);
+    }
+    _gatewayAnalyticsTimeout = setTimeout(flushGatewayAnalytics, GATEWAY_ANALYTICS_BATCH_DELAY_MS);
+  } catch (e) {
+    // Analytics should never break the page
+  }
+}
+
+// Flush queued events to backend
+function flushGatewayAnalytics() {
+  if (_gatewayAnalyticsQueue.length === 0) return;
+
+  const analyticsUrl = getGatewayAnalyticsUrl();
+  if (!analyticsUrl) return;
+
+  const eventsToSend = _gatewayAnalyticsQueue.splice(0);
+
+  try {
+    const payload = {
+      visitorId: getOrCreateVisitorId(),
+      page: getPageName(),
+      events: eventsToSend
+    };
+
+    if (navigator.sendBeacon) {
+      const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+      navigator.sendBeacon(analyticsUrl, blob);
+    } else {
+      fetch(analyticsUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true
+      }).catch(() => {});
+    }
+  } catch (e) {
+    // Restore events on failure
+    _gatewayAnalyticsQueue.unshift(...eventsToSend);
+    if (_gatewayAnalyticsQueue.length > 100) {
+      _gatewayAnalyticsQueue.length = 100;
+    }
+  }
+}
+
+// Auto-track page_load on every page
+function _autoTrackPageLoad() {
+  trackGatewayEvent('page_load', {
+    referrer: document.referrer || '',
+    viewportWidth: window.innerWidth,
+    viewportHeight: window.innerHeight
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', _autoTrackPageLoad);
+} else {
+  _autoTrackPageLoad();
+}
+
+// Flush pending analytics on page unload
+window.addEventListener('beforeunload', function() {
+  if (_gatewayAnalyticsTimeout) {
+    clearTimeout(_gatewayAnalyticsTimeout);
+  }
+  flushGatewayAnalytics();
+});

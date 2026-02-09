@@ -36,6 +36,9 @@ async function initCallbackPage(provider) {
   // Parse URL parameters
   const params = new URLSearchParams(window.location.search);
 
+  // Track callback received
+  if (typeof trackGatewayEvent === 'function') trackGatewayEvent('callback_received', { provider: provider, hasCode: !!params.get('code'), hasError: !!params.get('error') });
+
   // Steam uses OpenID which passes openid.claimed_id, not code
   if (provider === 'steam') {
     const claimedId = params.get('openid.claimed_id');
@@ -104,6 +107,8 @@ async function initCallbackPage(provider) {
 // Exchange OAuth code for one-time token via API
 async function exchangeCodeForToken() {
   updateUI('exchanging', 'Exchanging authorization code with server...');
+  var _exchangeStartTime = Date.now();
+  if (typeof trackGatewayEvent === 'function') trackGatewayEvent('token_exchange_start', { provider: authState.provider });
 
   if (authState.debugEnabled) {
     await sendDebugStep('exchange_started', { provider: authState.provider });
@@ -213,6 +218,7 @@ async function exchangeCodeForToken() {
     });
 
     if (result.success) {
+      if (typeof trackGatewayEvent === 'function') trackGatewayEvent('token_exchange_success', { provider: authState.provider, responseTimeMs: Date.now() - _exchangeStartTime });
       if (authState.debugEnabled) {
         await sendDebugStep('exchange_success', {
           username: result.userInfo?.username,
@@ -234,10 +240,12 @@ async function exchangeCodeForToken() {
           description: result.errorDescription
         });
       }
+      if (typeof trackGatewayEvent === 'function') trackGatewayEvent('token_exchange_error', { provider: authState.provider, error: result.error || 'unknown_error' });
       showError(result.error || 'unknown_error', result.errorDescription || 'Authentication failed.');
     }
   } catch (error) {
     console.error('[CallbackAPI] Exchange error:', error);
+    if (typeof trackGatewayEvent === 'function') trackGatewayEvent('token_exchange_error', { provider: authState.provider, error: error.message });
     if (authState.debugEnabled) {
       await sendDebugStep('exchange_exception', { message: error.message });
     }
@@ -580,6 +588,8 @@ window.cancelRedirect = function() {
 };
 
 async function performRedirect(token) {
+  if (typeof trackGatewayEvent === 'function') trackGatewayEvent('redirect_to_platform', { provider: authState.provider });
+  if (typeof flushGatewayAnalytics === 'function') flushGatewayAnalytics();
   if (authState.debugEnabled) {
     await sendDebugStep('redirect_started', { hasToken: !!token });
   }

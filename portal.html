@@ -42,13 +42,21 @@
     </div>
   </div>
 
-  <!-- Connection failure overlay with polling status -->
+  <!-- Platform updating / offline overlay -->
   <div id="connectionFailureOverlay" class="countdown-overlay hidden">
-    <div class="countdown-content">
-      <h2 id="connectionFailureTitle">Connection Failed</h2>
-      <p id="connectionFailureMessage">Failed to connect to the tunnel. Searching for new cloud address and checking health...</p>
+    <div class="countdown-content updating-content">
+      <div id="updatingIcon" class="updating-icon">⟳</div>
+      <h2 id="connectionFailureTitle">Platform Updating</h2>
+      <p id="connectionFailureMessage">The platform is loading. Please wait...</p>
+      <div id="updatingCountdown" class="updating-countdown">
+        <span class="countdown-label">Estimated wait:</span>
+        <span id="updatingTimeRemaining" class="updating-time">5:00</span>
+      </div>
+      <div id="updatingExtraMessage" class="updating-extra-message hidden"></div>
+      <div id="updatingProgress" class="updating-progress">
+        <div id="updatingProgressBar" class="updating-progress-bar"></div>
+      </div>
       <div class="countdown-buttons">
-        <button id="pauseRetryBtn" class="countdown-button">Pause Search</button>
         <button id="retryNowBtn" class="countdown-button primary">Retry Now</button>
       </div>
     </div>

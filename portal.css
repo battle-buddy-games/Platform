@@ -248,3 +248,122 @@ iframe {
   border-color: #5568d3;
 }
 
+/* Platform updating overlay styles */
+.updating-content {
+  max-width: 420px;
+}
+
+.updating-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+  animation: updating-spin 2s linear infinite;
+  display: inline-block;
+  color: #667eea;
+}
+
+@keyframes updating-spin {
+  to { transform: rotate(360deg); }
+}
+
+.updating-countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.countdown-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.updating-time {
+  font-size: 28px;
+  font-weight: 700;
+  color: #667eea;
+  font-variant-numeric: tabular-nums;
+}
+
+.updating-progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.updating-progress-bar {
+  height: 100%;
+  background: #667eea;
+  border-radius: 2px;
+  transition: width 1s linear;
+  width: 0%;
+}
+
+.updating-extra-message {
+  background: rgba(255, 193, 7, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: left;
+}
+
+.updating-extra-message.hidden {
+  display: none;
+}
+
+.updating-extra-message.offline {
+  background: rgba(255, 107, 107, 0.1);
+  border-color: rgba(255, 107, 107, 0.3);
+}
+
+.updating-extra-message a {
+  color: #667eea;
+  text-decoration: underline;
+}
+
+.updating-extra-message a:hover {
+  color: #8fa0f0;
+}
+
+/* Warning state - icon turns amber */
+.updating-content.state-warning .updating-icon {
+  color: #ffc107;
+}
+
+.updating-content.state-warning h2 {
+  color: #ffc107;
+}
+
+.updating-content.state-warning .updating-time {
+  color: #ffc107;
+}
+
+.updating-content.state-warning .updating-progress-bar {
+  background: #ffc107;
+}
+
+/* Offline state - icon turns red, stops spinning */
+.updating-content.state-offline .updating-icon {
+  color: #ff6b6b;
+  animation: none;
+}
+
+.updating-content.state-offline h2 {
+  color: #ff6b6b;
+}
+
+.updating-content.state-offline .updating-time {
+  color: #ff6b6b;
+}
+
+.updating-content.state-offline .updating-progress-bar {
+  background: #ff6b6b;
+}
+

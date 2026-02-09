@@ -217,6 +217,20 @@ let retryCountdownSeconds = 10;
 let isRetryPaused = false;
 let connectionFailureDetected = false;
 
+// Platform updating staged countdown system
+let updatingTimerInterval = null;
+let updatingStartTime = null;       // When the updating flow started
+let updatingTotalSeconds = 300;     // Current estimate in seconds (starts at 5 min)
+let updatingElapsedSeconds = 0;     // How many seconds have elapsed
+const UPDATING_STAGES = [
+  { threshold: 0,    estimate: 300,  label: 'Platform Updating',         state: 'updating' },
+  { threshold: 300,  estimate: 600,  label: 'Platform Updating',         state: 'updating' },   // 5 min -> extend to 10
+  { threshold: 600,  estimate: 900,  label: 'Platform Updating',         state: 'updating' },   // 10 min -> extend to 15
+  { threshold: 900,  estimate: 1200, label: 'Platform Updating',         state: 'updating' },   // 15 min -> extend to 20
+  { threshold: 1200, estimate: 1800, label: 'Possible Problem Detected', state: 'warning' },    // 20 min -> warning
+  { threshold: 1800, estimate: null, label: 'Platform Offline',          state: 'offline' },     // 30 min -> offline
+];
+
 // Health check for tunnel address using /api/HealthCheck/system (like gateway.js)
 async function checkTunnelHealth(address) {
   if (!address) return false;
@@ -261,96 +275,163 @@ async function checkTunnelHealth(address) {
   }
 }
 
-// Update connection failure message with polling status
-function updateConnectionFailureMessage(status) {
-  const messageElement = document.getElementById('connectionFailureMessage');
-  if (!messageElement || !connectionFailureDetected) return;
-  
-  const baseMessage = 'Failed to connect to the tunnel.';
-  if (status) {
-    messageElement.innerHTML = `${baseMessage}<br><br>${status}`;
+// Get the current updating stage based on elapsed time
+function getUpdatingStage(elapsed) {
+  let stage = UPDATING_STAGES[0];
+  for (let i = UPDATING_STAGES.length - 1; i >= 0; i--) {
+    if (elapsed >= UPDATING_STAGES[i].threshold) {
+      stage = UPDATING_STAGES[i];
+      break;
+    }
+  }
+  return stage;
+}
+
+// Format seconds as M:SS
+function formatCountdown(seconds) {
+  if (seconds < 0) seconds = 0;
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
+// Update the staged updating UI (called every second by the timer)
+function updateUpdatingUI() {
+  if (!connectionFailureDetected) return;
+
+  updatingElapsedSeconds++;
+  const stage = getUpdatingStage(updatingElapsedSeconds);
+
+  const titleEl = document.getElementById('connectionFailureTitle');
+  const messageEl = document.getElementById('connectionFailureMessage');
+  const timeEl = document.getElementById('updatingTimeRemaining');
+  const progressBar = document.getElementById('updatingProgressBar');
+  const extraMsg = document.getElementById('updatingExtraMessage');
+  const contentEl = document.querySelector('.updating-content');
+  const iconEl = document.getElementById('updatingIcon');
+  const countdownArea = document.getElementById('updatingCountdown');
+
+  if (titleEl) titleEl.textContent = stage.label;
+
+  // Compute remaining time
+  if (stage.estimate !== null) {
+    const remaining = Math.max(0, stage.estimate - updatingElapsedSeconds);
+    if (timeEl) timeEl.textContent = formatCountdown(remaining);
+    if (countdownArea) countdownArea.style.display = '';
+
+    // Progress bar: percentage within current stage
+    const stageStart = stage.threshold;
+    const stageEnd = stage.estimate;
+    const stageElapsed = updatingElapsedSeconds - stageStart;
+    const stageDuration = stageEnd - stageStart;
+    const pct = Math.min(100, (stageElapsed / stageDuration) * 100);
+    if (progressBar) progressBar.style.width = pct + '%';
   } else {
-    messageElement.innerHTML = `${baseMessage}<br><br>Searching for new cloud address and checking health...`;
+    // Offline stage - no countdown
+    if (timeEl) timeEl.textContent = '--:--';
+    if (progressBar) progressBar.style.width = '100%';
+  }
+
+  // Update state classes
+  if (contentEl) {
+    contentEl.classList.remove('state-warning', 'state-offline');
+    if (stage.state === 'warning') contentEl.classList.add('state-warning');
+    if (stage.state === 'offline') contentEl.classList.add('state-offline');
+  }
+
+  // Update icon
+  if (iconEl) {
+    iconEl.textContent = stage.state === 'offline' ? '✕' : '⟳';
+  }
+
+  // Update subtitle message
+  if (messageEl) {
+    if (stage.state === 'updating') {
+      messageEl.textContent = 'An update may be in progress. Checking for availability...';
+    } else if (stage.state === 'warning') {
+      messageEl.textContent = 'This is taking longer than expected.';
+    } else if (stage.state === 'offline') {
+      messageEl.textContent = 'The platform could not be reached.';
+    }
+  }
+
+  // Show extra message for warning and offline states
+  const platformNotice = 'The platform is hosted on powerful game servers and is not available at all times, '
+    + 'however we aim to provide regular coverage most days. If you need better uptime let us know. '
+    + 'Please check back soon or <a href="https://discord.gg/vMvjHWcR3k" target="_blank" rel="noopener">share feedback with us</a>.';
+
+  if (extraMsg) {
+    if (stage.state === 'warning' || stage.state === 'offline') {
+      extraMsg.innerHTML = platformNotice;
+      extraMsg.classList.remove('hidden');
+      extraMsg.classList.toggle('offline', stage.state === 'offline');
+    } else {
+      extraMsg.classList.add('hidden');
+    }
   }
 }
 
 // Poll config.json and check tunnel health for cloud service
+// Note: This no longer updates the UI directly - the staged timer handles all UI updates
 async function pollConfigAndHealth() {
   try {
-    // Update status message
-    updateConnectionFailureMessage('Checking config.json for cloud address...');
-    
     // Reload config
     const response = await fetch('./config.json?t=' + Date.now());
     if (!response.ok) {
       console.log('Failed to reload config');
-      updateConnectionFailureMessage('Failed to load config.json. Retrying...');
       return false;
     }
-    
+
     const newConfig = await response.json();
-    // Update CONFIG to use in getTunnelForPreferredEnvironment
     CONFIG = newConfig;
     const cloudTunnel = getTunnelForPreferredEnvironment() || newConfig.cloudflareTunnels?.find(t => t.name === 'cloud');
-    
+
     if (!cloudTunnel || !cloudTunnel.address) {
       console.log('No cloud tunnel in config');
-      updateConnectionFailureMessage('No cloud tunnel found in config.json. Retrying...');
       return false;
     }
-    
+
     const newAddress = cloudTunnel.address.replace(/\/$/, '');
-    
-    // If address changed or is different from current, check health
+
+    // If address changed, check health of the new address
     if (newAddress !== currentTunnelAddress && newAddress !== tunnelBaseUrl) {
       console.log(`New cloud tunnel address found: ${newAddress}`);
-      updateConnectionFailureMessage(`Found new address: ${newAddress}<br>Checking health...`);
-      
-      // Check health of the new address
+
       const isHealthy = await checkTunnelHealth(newAddress);
-      
+
       if (isHealthy) {
         console.log(`New cloud tunnel address is healthy: ${newAddress}`);
-        updateConnectionFailureMessage(`New address is healthy! Connecting...`);
-        
-        // If we're in connection failure mode, automatically retry with new address
+
         if (connectionFailureDetected) {
-          console.log('Connection failure detected - automatically retrying with new healthy address');
+          console.log('Auto-retrying with new healthy address');
           stopPolling();
+          stopUpdatingTimer();
           refreshToNewAddress(newAddress);
           return true;
         } else {
-          // Otherwise show countdown (for 404 case)
-          showToast('New Tunnel Found', `A new tunnel address has been detected and is ready.`, 'success');
+          showToast('New Tunnel Found', 'A new tunnel address has been detected and is ready.', 'success');
           startCountdown(newAddress);
           return true;
         }
       } else {
         console.log(`New cloud tunnel address is not healthy yet: ${newAddress}`);
-        updateConnectionFailureMessage(`New address found but not healthy yet. Retrying...`);
         return false;
       }
     } else if (newAddress === tunnelBaseUrl) {
       // Same address - check if it's now healthy
-      updateConnectionFailureMessage(`Checking current address health...`);
       const isHealthy = await checkTunnelHealth(newAddress);
       if (isHealthy && connectionFailureDetected) {
         console.log('Current tunnel address is now healthy - retrying');
-        updateConnectionFailureMessage(`Current address is now healthy! Connecting...`);
         stopPolling();
+        stopUpdatingTimer();
         retryConnection();
         return true;
-      } else {
-        updateConnectionFailureMessage(`Current address still not healthy. Checking for new address...`);
       }
-    } else {
-      updateConnectionFailureMessage(`No address change detected. Checking health...`);
     }
-    
+
     return false;
   } catch (error) {
     console.error('Error polling config:', error);
-    updateConnectionFailureMessage(`Error: ${error.message}. Retrying...`);
     return false;
   }
 }
@@ -372,18 +453,17 @@ function startPolling() {
 // Start polling specifically for cloud address (used when connection fails)
 function startPollingForCloudAddress() {
   if (pollingInterval) return; // Already polling
-  
+
   console.log('Starting cloud address polling...');
-  
-  // Poll every 3 seconds for faster recovery
+
+  // Poll every 10 seconds - the staged timer handles UI so no flickering
   pollingInterval = setInterval(async () => {
     const foundHealthy = await pollConfigAndHealth();
     if (foundHealthy) {
-      // pollConfigAndHealth will handle the retry, so we can stop polling
       stopPolling();
     }
-  }, 3000);
-  
+  }, 10000);
+
   // Also poll immediately
   pollConfigAndHealth();
 }
@@ -482,90 +562,88 @@ function stopPeriodicHealthChecks() {
   }
 }
 
-// Show connection failure popup with polling for new address
+// Stop the staged updating timer
+function stopUpdatingTimer() {
+  if (updatingTimerInterval) {
+    clearInterval(updatingTimerInterval);
+    updatingTimerInterval = null;
+  }
+}
+
+// Show the staged "Platform Updating" overlay and start the countdown
 function showConnectionFailure(title, message) {
-  if (connectionFailureDetected) return; // Already showing failure popup
+  if (connectionFailureDetected) return; // Already showing
+  if (typeof trackGatewayEvent === 'function') trackGatewayEvent('portal_tunnel_failed', { error: title });
 
   connectionFailureDetected = true;
+  updatingElapsedSeconds = 0;
+  updatingStartTime = Date.now();
+
   const overlay = document.getElementById('connectionFailureOverlay');
-  const titleElement = document.getElementById('connectionFailureTitle');
-  const messageElement = document.getElementById('connectionFailureMessage');
-  const pauseBtn = document.getElementById('pauseRetryBtn');
+  const titleEl = document.getElementById('connectionFailureTitle');
+  const messageEl = document.getElementById('connectionFailureMessage');
+  const timeEl = document.getElementById('updatingTimeRemaining');
+  const progressBar = document.getElementById('updatingProgressBar');
+  const extraMsg = document.getElementById('updatingExtraMessage');
+  const contentEl = document.querySelector('.updating-content');
+  const iconEl = document.getElementById('updatingIcon');
   const retryNowBtn = document.getElementById('retryNowBtn');
 
-  if (!overlay || !messageElement) return;
+  if (!overlay) return;
 
+  // Reset to initial state
   overlay.classList.remove('hidden');
-  isRetryPaused = false;
-  pauseBtn.textContent = 'Pause Search';
+  if (contentEl) contentEl.classList.remove('state-warning', 'state-offline');
+  if (titleEl) titleEl.textContent = 'Platform Updating';
+  if (messageEl) messageEl.textContent = 'An update may be in progress. Checking for availability...';
+  if (timeEl) timeEl.textContent = formatCountdown(300);
+  if (progressBar) progressBar.style.width = '0%';
+  if (extraMsg) { extraMsg.classList.add('hidden'); extraMsg.classList.remove('offline'); }
+  if (iconEl) iconEl.textContent = '⟳';
 
-  // Update the title dynamically
-  if (titleElement && title) {
-    titleElement.textContent = title;
+  // Setup retry button
+  if (retryNowBtn) {
+    retryNowBtn.onclick = () => {
+      retryConnection();
+    };
   }
-  
-  // Update message to indicate polling for new address
-  const baseMessage = message || 'Failed to connect to the tunnel.';
-  messageElement.innerHTML = `${baseMessage}<br><br>Searching for new cloud address and checking health...`;
-  
-  // Clear any existing retry countdown (if any)
-  if (retryCountdownInterval) {
-    clearInterval(retryCountdownInterval);
-    retryCountdownInterval = null;
-  }
-  
-  // Setup pause button to pause/resume polling
-  pauseBtn.onclick = () => {
-    isRetryPaused = !isRetryPaused;
-    pauseBtn.textContent = isRetryPaused ? 'Resume Search' : 'Pause Search';
-    if (isRetryPaused) {
-      stopPolling();
-      messageElement.innerHTML = `${baseMessage}<br><br><em>Search paused. Click "Resume Search" to continue.</em>`;
-    } else {
-      startPollingForCloudAddress();
-      messageElement.innerHTML = `${baseMessage}<br><br>Searching for new cloud address and checking health...`;
-    }
-  };
-  
-  // Setup retry now button to retry with current address
-  retryNowBtn.onclick = () => {
-    retryConnection();
-  };
-  
-  // Start polling for new cloud address immediately
+
+  // Start the 1-second UI update timer
+  stopUpdatingTimer();
+  updatingTimerInterval = setInterval(updateUpdatingUI, 1000);
+
+  // Start background polling for healthy tunnel (every 10 seconds - no UI flickering)
   startPollingForCloudAddress();
-  
-  // Show toast as well
-  showToast(title || 'Connection Failed', message || 'Failed to connect to the tunnel. Searching for new address...', 'error');
 }
 
 // Retry connection
 function retryConnection() {
-  // Stop polling if active
+  // Stop polling and updating timer
   stopPolling();
-  
+  stopUpdatingTimer();
+
   // Hide failure overlay
   const overlay = document.getElementById('connectionFailureOverlay');
   if (overlay) {
     overlay.classList.add('hidden');
   }
-  
+
   // Clear retry countdown
   if (retryCountdownInterval) {
     clearInterval(retryCountdownInterval);
     retryCountdownInterval = null;
   }
-  
+
   // Reset flags
   connectionFailureDetected = false;
   iframeLoadCompleted = false;
-  
+
   // Show loading overlay
   const loadingOverlay = document.getElementById('loadingOverlay');
   if (loadingOverlay) {
     loadingOverlay.classList.remove('hidden');
   }
-  
+
   // Reload the tunnel
   loadTunnel();
 }
@@ -626,16 +704,17 @@ function refreshToNewAddress(newAddress) {
   if (failureOverlay) {
     failureOverlay.classList.add('hidden');
   }
-  
+
   // Hide countdown overlay if showing
   const countdownOverlay = document.getElementById('countdownOverlay');
   if (countdownOverlay) {
     countdownOverlay.classList.add('hidden');
   }
-  
-  // Stop polling
+
+  // Stop polling and updating timer
   stopPolling();
-  
+  stopUpdatingTimer();
+
   // Reset connection failure flag
   connectionFailureDetected = false;
   
@@ -1006,12 +1085,14 @@ async function loadTunnel() {
   // Hide loading overlay when iframe loads
   iframe.onload = () => {
     console.log('Tunnel loaded successfully');
+    if (typeof trackGatewayEvent === 'function') trackGatewayEvent('portal_tunnel_connected', { tunnelUrl: tunnelBaseUrl });
 
     iframeLoadCompleted = true;
 
     // Reset connection failure flag if it was set (successful load clears failure state)
     if (connectionFailureDetected) {
       connectionFailureDetected = false;
+      stopUpdatingTimer();
       const failureOverlay = document.getElementById('connectionFailureOverlay');
       if (failureOverlay) {
         failureOverlay.classList.add('hidden');
