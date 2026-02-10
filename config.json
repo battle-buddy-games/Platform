@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-698ade1",
-      "title": "stability",
-      "timestamp": "2026-02-09T19:16:56Z",
-      "environment": "production"
-    },
-    {
       "version": "build-eb66bc6",
       "title": "Fix UTF-8 BOM encoding in nginx config and state files for PowerShell 5.1",
       "timestamp": "2026-02-09T19:41:22Z",
@@ -102,6 +96,12 @@
       "version": "build-89b7006",
       "title": "Fix build errors: named tuple in AssetLibraryIndexService + register service ...",
       "timestamp": "2026-02-10T02:57:52Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-182efa1",
+      "title": "w",
+      "timestamp": "2026-02-10T03:03:12Z",
       "environment": "production"
     }
   ]
