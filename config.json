@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-6bc372e",
-      "title": "Fix ControllerBase.File shadowing System.IO.File in Infrastructure.cs",
-      "timestamp": "2026-02-09T15:35:50Z",
-      "environment": "production"
-    },
-    {
       "version": "build-6eef9f5",
       "title": "[",
       "timestamp": "2026-02-09T16:16:00Z",
@@ -102,6 +96,12 @@
       "version": "build-eb66bc6",
       "title": "Fix UTF-8 BOM encoding in nginx config and state files for PowerShell 5.1",
       "timestamp": "2026-02-09T19:41:22Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-0359b9c",
+      "title": "Fix GITHUB_OUTPUT encoding: replace echo >> with .NET AppendAllText",
+      "timestamp": "2026-02-10T02:05:31Z",
       "environment": "production"
     }
   ]
