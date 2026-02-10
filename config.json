@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-6eef9f5",
-      "title": "[",
-      "timestamp": "2026-02-09T16:16:00Z",
-      "environment": "production"
-    },
-    {
       "version": "build-84cdb28",
       "title": "Rename Art Hub to Assets Hub",
       "timestamp": "2026-02-09T17:21:09Z",
@@ -102,6 +96,12 @@
       "version": "build-0359b9c",
       "title": "Fix GITHUB_OUTPUT encoding: replace echo >> with .NET AppendAllText",
       "timestamp": "2026-02-10T02:05:31Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-18d582a",
+      "title": "Fix database wipe in blue-green deployment: DATABASE_NAME env var was ignored",
+      "timestamp": "2026-02-10T02:16:25Z",
       "environment": "production"
     }
   ]
