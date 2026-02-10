@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-18d582a",
-      "title": "Fix database wipe in blue-green deployment: DATABASE_NAME env var was ignored",
-      "timestamp": "2026-02-10T02:16:25Z",
-      "environment": "production"
-    },
-    {
       "version": "build-4931ea6",
       "title": "Fix uploads path for blue-green deployment: use UPLOADS_PATH env var",
       "timestamp": "2026-02-10T02:24:20Z",
@@ -102,6 +96,12 @@
       "version": "build-5977576",
       "title": "w",
       "timestamp": "2026-02-10T16:53:01Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-631f23d",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-02-10T16:58:34Z",
       "environment": "production"
     }
   ]
