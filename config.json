@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-ff27693",
-      "title": "w",
-      "timestamp": "2026-02-10T02:52:07Z",
-      "environment": "production"
-    },
-    {
       "version": "build-89b7006",
       "title": "Fix build errors: named tuple in AssetLibraryIndexService + register service ...",
       "timestamp": "2026-02-10T02:57:52Z",
@@ -102,6 +96,12 @@
       "version": "build-0b28742",
       "title": "Prevent duplicate agent services (Discord) during blue-green cutover",
       "timestamp": "2026-02-10T17:47:07Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-dc4a479",
+      "title": "Show blue-green deployment slot in website footer",
+      "timestamp": "2026-02-10T18:31:46Z",
       "environment": "production"
     }
   ]
