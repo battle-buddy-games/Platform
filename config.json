@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-6ef9114",
-      "title": "Skip development build when not deploying to develop environment",
-      "timestamp": "2026-02-09T18:02:07Z",
-      "environment": "production"
-    },
-    {
       "version": "build-5b4ff18",
       "title": "Add Connect tab to Drives tool with WebDAV/HTTP endpoint status and setup ins...",
       "timestamp": "2026-02-09T18:28:23Z",
@@ -102,6 +96,12 @@
       "version": "build-4a34abe",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-10T02:30:10Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-e40cca4",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-02-10T02:48:33Z",
       "environment": "production"
     }
   ]
