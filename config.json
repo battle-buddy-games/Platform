@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-182efa1",
-      "title": "w",
-      "timestamp": "2026-02-10T03:03:12Z",
-      "environment": "production"
-    },
-    {
       "version": "build-e02058e",
       "title": "w",
       "timestamp": "2026-02-10T12:59:12Z",
@@ -102,6 +96,12 @@
       "version": "build-3d9cfe0",
       "title": "w",
       "timestamp": "2026-02-10T18:37:21Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-0290c29",
+      "title": "Reorganize dashboard tools: extract Notifications, decompose CommunityConsole...",
+      "timestamp": "2026-02-10T19:59:59Z",
       "environment": "production"
     }
   ]
