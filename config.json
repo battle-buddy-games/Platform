@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-e40cca4",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-10T02:48:33Z",
-      "environment": "production"
-    },
-    {
       "version": "build-ff27693",
       "title": "w",
       "timestamp": "2026-02-10T02:52:07Z",
@@ -102,6 +96,12 @@
       "version": "build-790ee9c",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-10T17:30:25Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-0b28742",
+      "title": "Prevent duplicate agent services (Discord) during blue-green cutover",
+      "timestamp": "2026-02-10T17:47:07Z",
       "environment": "production"
     }
   ]
