@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-0290c29",
-      "title": "Reorganize dashboard tools: extract Notifications, decompose CommunityConsole...",
-      "timestamp": "2026-02-10T19:59:59Z",
-      "environment": "production"
-    },
-    {
       "version": "build-951c66c",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-10T20:11:50Z",
@@ -102,6 +96,12 @@
       "version": "build-883f98e",
       "title": "Add user notification system with navbar dropdown, Profile tab, and chat inte...",
       "timestamp": "2026-02-10T22:24:22Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-ac50513",
+      "title": "Add command history browsing with clickable results and output viewing",
+      "timestamp": "2026-02-10T22:42:53Z",
       "environment": "production"
     }
   ]
