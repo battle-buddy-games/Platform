@@ -9,40 +9,7 @@
   overflow: visible;
 }
 
-.quick-links-tabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.quick-links-tab-button {
-  flex: 1;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.quick-links-tab-button.active {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
-  color: #ffffff;
-}
-
-.quick-links-tab-panel {
-  display: none;
-}
-
-.quick-links-tab-panel.active {
-  display: block;
-}
+/* (tabs removed - options moved to foldout dropdown) */
 
 .quick-links-options {
   display: flex;
@@ -350,7 +317,7 @@ body .quick-links-panel {
 }
 
 .external-links-menu-container.menu-open .external-links-menu-dropdown {
-  max-height: 300px;
+  max-height: 500px;
   opacity: 1;
   padding-top: 4px;
   pointer-events: auto;
@@ -366,32 +333,32 @@ body .quick-links-panel {
   border-color: rgba(255, 255, 255, 0.3) !important;
 }
 
-/* GitHub Actions Foldout Menu */
-.github-actions-menu-container {
+/* Options Foldout Menu */
+.options-menu-container {
   position: relative;
 }
 
-.github-actions-menu-trigger {
+.options-menu-trigger {
   color: rgba(255, 255, 255, 0.9);
   transition: all 0.2s ease;
   user-select: none;
 }
 
-.github-actions-menu-container.menu-open .github-actions-menu-trigger,
-.github-actions-menu-trigger:hover {
+.options-menu-container.menu-open .options-menu-trigger,
+.options-menu-trigger:hover {
   background: rgba(255, 255, 255, 0.12) !important;
   border-color: rgba(255, 255, 255, 0.25) !important;
 }
 
-.github-actions-menu-arrow {
+.options-menu-arrow {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.github-actions-menu-container.menu-open .github-actions-menu-arrow {
+.options-menu-container.menu-open .options-menu-arrow {
   transform: rotate(180deg);
 }
 
-.github-actions-menu-dropdown {
+.options-menu-dropdown {
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -405,77 +372,11 @@ body .quick-links-panel {
   transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding-top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.github-actions-menu-container.menu-open .github-actions-menu-dropdown {
-  max-height: 300px;
+.options-menu-container.menu-open .options-menu-dropdown {
+  max-height: 350px;
   opacity: 1;
   padding-top: 4px;
   pointer-events: auto;
-}
-
-.github-actions-menu-item {
-  margin-bottom: 0 !important;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.github-actions-menu-item:hover {
-  background: rgba(255, 255, 255, 0.15) !important;
-  border-color: rgba(255, 255, 255, 0.3) !important;
-}
-
-/* Steam Foldout Menu */
-.steam-menu-container {
-  position: relative;
-}
-
-.steam-menu-trigger {
-  color: rgba(255, 255, 255, 0.9);
-  transition: all 0.2s ease;
-  user-select: none;
-}
-
-.steam-menu-container.menu-open .steam-menu-trigger,
-.steam-menu-trigger:hover {
-  background: rgba(255, 255, 255, 0.12) !important;
-  border-color: rgba(255, 255, 255, 0.25) !important;
-}
-
-.steam-menu-arrow {
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.steam-menu-container.menu-open .steam-menu-arrow {
-  transform: rotate(180deg);
-}
-
-.steam-menu-dropdown {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  padding-top: 0;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  position: relative;
-  z-index: 2;
-  pointer-events: none;
-  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding-top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.steam-menu-container.menu-open .steam-menu-dropdown {
-  max-height: 300px;
-  opacity: 1;
-  padding-top: 4px;
-  pointer-events: auto;
-}
-
-.steam-menu-item {
-  margin-bottom: 0 !important;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.steam-menu-item:hover {
-  background: rgba(255, 255, 255, 0.15) !important;
-  border-color: rgba(255, 255, 255, 0.3) !important;
 }
 
 /* Remembered Tokens Panel - smooth animation */

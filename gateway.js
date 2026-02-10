@@ -2551,12 +2551,11 @@ function smoothUpdateRememberedTokensPosition() {
 // Close all foldout menus except the specified one
 function closeAllMenusExcept(exceptContainer) {
   const allMenuContainers = [
-    '.external-links-menu-container',
-    '.github-actions-menu-container',
-    '.steam-menu-container',
-    '.more-sign-in-menu-container'
+    '.options-menu-container',
+    '.more-sign-in-menu-container',
+    '.external-links-menu-container'
   ];
-  
+
   allMenuContainers.forEach(selector => {
     const menu = document.querySelector(selector);
     if (menu && menu !== exceptContainer) {
@@ -2567,109 +2566,40 @@ function closeAllMenusExcept(exceptContainer) {
 
 // Initialize foldout menus with click handlers
 function initializeFoldoutMenus() {
-  // Handle External Links menu
-  const externalLinksMenuTrigger = document.querySelector('.external-links-menu-trigger');
-  const externalLinksMenuContainer = document.querySelector('.external-links-menu-container');
-  if (externalLinksMenuTrigger && externalLinksMenuContainer) {
-    externalLinksMenuTrigger.addEventListener('click', (e) => {
+  // Generic helper to wire up a foldout menu
+  function setupFoldoutMenu(containerSelector, itemSelector) {
+    const trigger = document.querySelector(containerSelector + ' > :first-child');
+    const container = document.querySelector(containerSelector);
+    if (!trigger || !container) return;
+
+    trigger.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      const isOpening = !externalLinksMenuContainer.classList.contains('menu-open');
-      closeAllMenusExcept(isOpening ? externalLinksMenuContainer : null);
-      externalLinksMenuContainer.classList.toggle('menu-open');
-      // Smoothly update remembered tokens panel position during menu animation
+      const isOpening = !container.classList.contains('menu-open');
+      closeAllMenusExcept(isOpening ? container : null);
+      container.classList.toggle('menu-open');
       smoothUpdateRememberedTokensPosition();
     });
 
-    // Prevent clicks on dropdown items from closing the menu
-    const externalLinksMenuItems = externalLinksMenuContainer.querySelectorAll('.external-links-menu-item');
-    externalLinksMenuItems.forEach(item => {
-      item.addEventListener('click', (e) => {
-        e.stopPropagation();
+    if (itemSelector) {
+      container.querySelectorAll(itemSelector).forEach(item => {
+        item.addEventListener('click', (e) => { e.stopPropagation(); });
       });
-    });
+    }
   }
 
-  // Handle GitHub Actions menu
-  const githubActionsMenuTrigger = document.querySelector('.github-actions-menu-trigger');
-  const githubActionsMenuContainer = document.querySelector('.github-actions-menu-container');
-  if (githubActionsMenuTrigger && githubActionsMenuContainer) {
-    githubActionsMenuTrigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const isOpening = !githubActionsMenuContainer.classList.contains('menu-open');
-      closeAllMenusExcept(isOpening ? githubActionsMenuContainer : null);
-      githubActionsMenuContainer.classList.toggle('menu-open');
-      // Smoothly update remembered tokens panel position during menu animation
-      smoothUpdateRememberedTokensPosition();
-    });
-    
-    // Prevent clicks on dropdown items from closing the menu
-    const githubActionsMenuItems = githubActionsMenuContainer.querySelectorAll('.github-actions-menu-item');
-    githubActionsMenuItems.forEach(item => {
-      item.addEventListener('click', (e) => {
-        e.stopPropagation();
-      });
-    });
-  }
-
-  // Handle Steam menu
-  const steamMenuTrigger = document.querySelector('.steam-menu-trigger');
-  const steamMenuContainer = document.querySelector('.steam-menu-container');
-  if (steamMenuTrigger && steamMenuContainer) {
-    steamMenuTrigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const isOpening = !steamMenuContainer.classList.contains('menu-open');
-      closeAllMenusExcept(isOpening ? steamMenuContainer : null);
-      steamMenuContainer.classList.toggle('menu-open');
-      // Smoothly update remembered tokens panel position during menu animation
-      smoothUpdateRememberedTokensPosition();
-    });
-    
-    // Prevent clicks on dropdown items from closing the menu
-    const steamMenuItems = steamMenuContainer.querySelectorAll('.steam-menu-item');
-    steamMenuItems.forEach(item => {
-      item.addEventListener('click', (e) => {
-        e.stopPropagation();
-      });
-    });
-  }
-
-  // Handle More Sign In menu
-  const moreSignInMenuTrigger = document.querySelector('.more-sign-in-menu-trigger');
-  const moreSignInMenuContainer = document.querySelector('.more-sign-in-menu-container');
-  if (moreSignInMenuTrigger && moreSignInMenuContainer) {
-    moreSignInMenuTrigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const isOpening = !moreSignInMenuContainer.classList.contains('menu-open');
-      closeAllMenusExcept(isOpening ? moreSignInMenuContainer : null);
-      moreSignInMenuContainer.classList.toggle('menu-open');
-      // Smoothly update remembered tokens panel position during menu animation
-      smoothUpdateRememberedTokensPosition();
-    });
-
-    // Prevent clicks on dropdown items from closing the menu
-    const moreSignInMenuItems = moreSignInMenuContainer.querySelectorAll('.more-sign-in-menu-item');
-    moreSignInMenuItems.forEach(item => {
-      item.addEventListener('click', (e) => {
-        e.stopPropagation();
-      });
-    });
-  }
+  setupFoldoutMenu('.options-menu-container', '.quick-links-option');
+  setupFoldoutMenu('.more-sign-in-menu-container', '.more-sign-in-menu-item');
+  setupFoldoutMenu('.external-links-menu-container', '.external-links-menu-item');
 
   // Close menus when clicking outside
   document.addEventListener('click', (e) => {
-    // Check if click is outside all menu containers
-    const isOutsideAllMenus = !e.target.closest('.external-links-menu-container') &&
-                              !e.target.closest('.github-actions-menu-container') &&
-                              !e.target.closest('.steam-menu-container') &&
-                              !e.target.closest('.more-sign-in-menu-container');
-    
+    const isOutsideAllMenus = !e.target.closest('.options-menu-container') &&
+                              !e.target.closest('.more-sign-in-menu-container') &&
+                              !e.target.closest('.external-links-menu-container');
+
     if (isOutsideAllMenus) {
       closeAllMenusExcept(null);
-      // Smoothly update remembered tokens panel position during menu animation
       smoothUpdateRememberedTokensPosition();
     }
   });

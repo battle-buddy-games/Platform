@@ -270,75 +270,54 @@
 
       <div class="quick-links-panel" style="position: absolute; top: 80px; left: 100%; margin-left: 12px; width: 260px; background: rgba(26, 26, 46, 0.9); border-radius: 16px; padding: 24px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); opacity: 0.9; z-index: 1000;">
         <h3 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: rgba(255, 255, 255, 0.85); letter-spacing: 0.03em; text-transform: uppercase;">Quick Links</h3>
-        <div class="quick-links-tabs" role="tablist" aria-label="Quick links panels">
-          <button type="button" class="quick-links-tab-button active" data-quick-links-tab="links" role="tab" aria-selected="true">Quick Links</button>
-          <button type="button" class="quick-links-tab-button" data-quick-links-tab="options" role="tab" aria-selected="false">Options</button>
-        </div>
-        <div class="quick-links-tab-panel" data-quick-links-panel="options" role="tabpanel">
-          <div class="quick-links-options">
-            <label class="quick-links-option disabled-option">
-              <input
-                type="checkbox"
-                checked
-                disabled
-              />
-              <span>Remember me</span>
-            </label>
-            <label class="quick-links-option">
-              <input
-                type="checkbox"
-                id="preferPortalCheckbox"
-                checked
-              />
-              <span>Prefer Portal</span>
-            </label>
-            <label class="quick-links-option developer-option" style="display: none;">
-              <input
-                type="checkbox"
-                id="preferTokenCheckbox"
-              />
-              <span>Prefer Long Remember Token</span>
-            </label>
-            <label class="quick-links-option">
-              <input
-                type="checkbox"
-                id="preferAutoSignInCheckbox"
-              />
-              <span>Prefer Auto Sign In</span>
-            </label>
-            <label class="quick-links-option">
-              <input
-                type="checkbox"
-                id="skipCountdownCheckbox"
-              />
-              <span>Skip Countdown</span>
-            </label>
-            <label class="quick-links-option developer-option" style="display: none;">
-              <input
-                type="checkbox"
-                id="debugModeCheckbox"
-              />
-              <span>Debug Mode</span>
-            </label>
-            <div id="debugEditLinkContainer" style="display: none; margin-top: 6px;">
-              <a
-                id="debugEditLink"
-                href="https://github.com/frostebite/WebPlatform/blob/main/github-pages-deploy/gateway.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="quick-links-edit-link"
-                title="View gateway.html on GitHub"
-              >
-                <svg viewBox="0 0 24 24" style="width: 12px; height: 12px; fill: currentColor;">
-                  <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zm2.92 2.83H5v-.92l9.06-9.06.92.92-9.06 9.06zM20.71 7.04a1 1 0 0 0 0-1.41L18.37 3.29a1 1 0 0 0-1.41 0l-1.5 1.5 3.75 3.75 1.5-1.5z"/>
-                </svg>
-                Edit gateway.html
-              </a>
+        <div class="button-group">
+          <div class="options-menu-container" style="margin-bottom: 8px;">
+            <div class="options-menu-trigger" role="button" tabindex="0" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); font-size: 13px; padding: 8px 12px; display: flex; align-items: center; justify-content: flex-start; text-align: left; border-radius: 8px; cursor: pointer; position: relative;">
+              <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor; margin-right: 8px;">
+                <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+              </svg>
+              <span>Options</span>
+              <svg viewBox="0 0 24 24" class="options-menu-arrow" style="width: 16px; height: 16px; fill: currentColor; margin-left: auto;">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+              </svg>
+            </div>
+            <div class="options-menu-dropdown">
+              <div class="quick-links-options" style="padding: 8px 4px;">
+                <label class="quick-links-option disabled-option">
+                  <input type="checkbox" checked disabled />
+                  <span>Remember me</span>
+                </label>
+                <label class="quick-links-option">
+                  <input type="checkbox" id="preferPortalCheckbox" checked />
+                  <span>Prefer Portal</span>
+                </label>
+                <label class="quick-links-option developer-option" style="display: none;">
+                  <input type="checkbox" id="preferTokenCheckbox" />
+                  <span>Prefer Long Remember Token</span>
+                </label>
+                <label class="quick-links-option">
+                  <input type="checkbox" id="preferAutoSignInCheckbox" />
+                  <span>Prefer Auto Sign In</span>
+                </label>
+                <label class="quick-links-option">
+                  <input type="checkbox" id="skipCountdownCheckbox" />
+                  <span>Skip Countdown</span>
+                </label>
+                <label class="quick-links-option developer-option" style="display: none;">
+                  <input type="checkbox" id="debugModeCheckbox" />
+                  <span>Debug Mode</span>
+                </label>
+                <div id="debugEditLinkContainer" style="display: none; margin-top: 6px;">
+                  <a id="debugEditLink" href="https://github.com/frostebite/WebPlatform/blob/main/github-pages-deploy/gateway.html" target="_blank" rel="noopener noreferrer" class="quick-links-edit-link" title="View gateway.html on GitHub">
+                    <svg viewBox="0 0 24 24" style="width: 12px; height: 12px; fill: currentColor;">
+                      <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zm2.92 2.83H5v-.92l9.06-9.06.92.92-9.06 9.06zM20.71 7.04a1 1 0 0 0 0-1.41L18.37 3.29a1 1 0 0 0-1.41 0l-1.5 1.5 3.75 3.75 1.5-1.5z"/>
+                    </svg>
+                    Edit gateway.html
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="quick-links-tab-panel active" data-quick-links-panel="links" role="tabpanel">
-        <div class="button-group">
           <div class="more-sign-in-menu-container" style="margin-bottom: 8px;">
             <div class="more-sign-in-menu-trigger" role="button" tabindex="0" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); font-size: 13px; padding: 8px 12px; display: flex; align-items: center; justify-content: flex-start; text-align: left; border-radius: 8px; cursor: pointer; position: relative;">
               <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor; margin-right: 8px;">
@@ -373,35 +352,10 @@
               </a>
             </div>
           </div>
-          <div class="github-actions-menu-container" style="margin-bottom: 8px;">
-            <div class="github-actions-menu-trigger" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); font-size: 13px; padding: 8px 12px; display: flex; align-items: center; justify-content: flex-start; text-align: left; border-radius: 8px; cursor: pointer; position: relative;">
-              <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor; margin-right: 8px;">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-              <span>GitHub Actions</span>
-              <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor; margin-left: auto;" class="github-actions-menu-arrow">
-                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
-              </svg>
-            </div>
-            <div class="github-actions-menu-dropdown">
-              <a href="https://github.com/frostebite/WebPlatform/actions" target="_blank" rel="noopener noreferrer" class="auth-button github-actions-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
-                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                WebPlatform Actions
-              </a>
-              <a href="https://github.com/frostebite/GameClient/actions" target="_blank" rel="noopener noreferrer" class="auth-button github-actions-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
-                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                GameClient Actions
-              </a>
-            </div>
-          </div>
           <div class="external-links-menu-container" style="margin-bottom: 8px;">
             <div class="external-links-menu-trigger" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); font-size: 13px; padding: 8px 12px; display: flex; align-items: center; justify-content: flex-start; text-align: left; border-radius: 8px; cursor: pointer; position: relative;">
               <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor; margin-right: 8px;">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
               </svg>
               <span>External Links</span>
               <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor; margin-left: auto;" class="external-links-menu-arrow">
@@ -409,23 +363,47 @@
               </svg>
             </div>
             <div class="external-links-menu-dropdown">
-              <a href="http://192.168.0.243:8081/" target="_blank" rel="noopener noreferrer" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+              <a href="https://github.com/frostebite/WebPlatform/actions" target="_blank" rel="noopener noreferrer" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                WebPlatform Actions
+              </a>
+              <a href="https://github.com/frostebite/GameClient/actions" target="_blank" rel="noopener noreferrer" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                GameClient Actions
+              </a>
+              <a href="javascript:void(0)" class="auth-button external-links-menu-item disabled" style="opacity: 0.5; cursor: not-allowed; pointer-events: none; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;" title="Coming soon">
                 <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                 </svg>
-                Local Platform
+                Launch AOO
               </a>
-              <a href="http://192.168.0.243:3000/" target="_blank" rel="noopener noreferrer" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+              <a href="steam://launch/2153520/" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
                 <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
-                  <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                 </svg>
-                Grafana
+                Launch AOO SDK
               </a>
-              <a href="#" id="cloudTunnelLink" target="_blank" rel="noopener noreferrer" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+              <a href="steam://launch/3687660/" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
                 <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"/>
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                 </svg>
-                Cloud Tunnel
+                Launch TOW
+              </a>
+              <a href="steam://launch/365670/" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                Launch Blender
+              </a>
+              <a href="javascript:void(0)" class="auth-button external-links-menu-item disabled" style="opacity: 0.5; cursor: not-allowed; pointer-events: none; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;" title="Coming soon">
+                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                Launch Blender SDK
               </a>
               <a href="https://www.meshy.ai/@fisher_m_uksf" target="_blank" rel="noopener noreferrer" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
                 <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
@@ -439,72 +417,8 @@
                 </svg>
                 Suno
               </a>
-              <a href="#" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
-                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                </svg>
-                LMStudio
-              </a>
-              <a href="http://192.168.0.251:9090" target="_blank" rel="noopener noreferrer" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
-                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                </svg>
-                InvokeAI
-              </a>
-              <a href="http://192.168.0.251:8000" target="_blank" rel="noopener noreferrer" class="auth-button external-links-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
-                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                </svg>
-                ComfyUI
-              </a>
             </div>
           </div>
-          <div class="steam-menu-container" style="margin-bottom: 8px;">
-            <div class="steam-menu-trigger" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); font-size: 13px; padding: 8px 12px; display: flex; align-items: center; justify-content: flex-start; text-align: left; border-radius: 8px; cursor: pointer; position: relative;">
-              <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor; margin-right: 8px;">
-                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
-                <path d="M8.5 9.5c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5z"/>
-                <path d="M12 6c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"/>
-              </svg>
-              <span>Steam</span>
-              <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor; margin-left: auto;" class="steam-menu-arrow">
-                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
-              </svg>
-            </div>
-            <div class="steam-menu-dropdown">
-              <a href="javascript:void(0)" class="auth-button steam-menu-item disabled" style="opacity: 0.5; cursor: not-allowed; pointer-events: none; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;" title="Coming soon">
-                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
-                Launch AOO
-              </a>
-              <a href="steam://launch/2153520/" class="auth-button steam-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
-                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
-                Launch AOO SDK
-              </a>
-              <a href="steam://launch/3687660/" class="auth-button steam-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
-                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
-                Launch TOW
-              </a>
-              <a href="steam://launch/365670/" class="auth-button steam-menu-item" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;">
-                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
-                Launch Blender
-              </a>
-              <a href="javascript:void(0)" class="auth-button steam-menu-item disabled" style="opacity: 0.5; cursor: not-allowed; pointer-events: none; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); margin-top: 4px; font-size: 13px; padding: 8px 12px; justify-content: flex-start; text-align: left; border-radius: 8px;" title="Coming soon">
-                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
-                Launch Blender SDK
-              </a>
-            </div>
-          </div>
-        </div>
         </div>
       </div>
 
