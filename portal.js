@@ -952,8 +952,10 @@ function updateUrlFromIframe() {
       
       // Check if iframe navigated to gateway.html
       if (iframePath.includes('gateway.html') || iframeLocation.href.includes('gateway.html')) {
-        console.log('Iframe navigated to gateway.html, redirecting whole page');
-        window.location.href = './gateway.html';
+        // Preserve URL params (e.g. ?link=google&returnUrl=...) when redirecting
+        const gatewaySearch = iframeLocation.search || '';
+        console.log('Iframe navigated to gateway.html, redirecting whole page' + (gatewaySearch ? ' with params: ' + gatewaySearch : ''));
+        window.location.href = './gateway.html' + gatewaySearch;
         return;
       }
     } catch (e) {
@@ -1170,8 +1172,11 @@ async function loadTunnel() {
       
       // Check if new src contains gateway.html
       if (currentSrc.includes('gateway.html')) {
-        console.log('Iframe src contains gateway.html, redirecting whole page');
-        window.location.href = './gateway.html';
+        // Preserve URL params (e.g. ?link=google&returnUrl=...) when redirecting
+        let gatewaySearch = '';
+        try { gatewaySearch = new URL(currentSrc).search || ''; } catch (e) {}
+        console.log('Iframe src contains gateway.html, redirecting whole page' + (gatewaySearch ? ' with params: ' + gatewaySearch : ''));
+        window.location.href = './gateway.html' + gatewaySearch;
         return;
       }
       
@@ -1216,9 +1221,10 @@ async function loadTunnel() {
           
           // Check if iframe navigated to gateway.html
           if (iframePath.includes('gateway.html') || iframeUrl.includes('gateway.html')) {
-            console.log('Iframe navigated to gateway.html, redirecting whole page');
-            // Redirect whole page to gateway.html
-            window.location.href = './gateway.html';
+            // Preserve URL params (e.g. ?link=google&returnUrl=...) when redirecting
+            const gatewaySearch = iframeLocation.search || '';
+            console.log('Iframe navigated to gateway.html, redirecting whole page' + (gatewaySearch ? ' with params: ' + gatewaySearch : ''));
+            window.location.href = './gateway.html' + gatewaySearch;
             return true;
           }
         } catch (e) {
@@ -1233,8 +1239,11 @@ async function loadTunnel() {
       if (isIframeCrossOrigin) {
         const iframeSrc = iframe.src;
         if (iframeSrc && iframeSrc.includes('gateway.html')) {
-          console.log('Iframe src contains gateway.html, redirecting whole page');
-          window.location.href = './gateway.html';
+          // Preserve URL params (e.g. ?link=google&returnUrl=...) when redirecting
+          let gatewaySearch = '';
+          try { gatewaySearch = new URL(iframeSrc).search || ''; } catch (e) {}
+          console.log('Iframe src contains gateway.html, redirecting whole page' + (gatewaySearch ? ' with params: ' + gatewaySearch : ''));
+          window.location.href = './gateway.html' + gatewaySearch;
           return true;
         }
       }
@@ -1411,8 +1420,16 @@ async function loadTunnel() {
 
         // Check if navigating to gateway.html
         if (newPath.includes('gateway.html') || (event.data.url && event.data.url.includes('gateway.html'))) {
-          console.log('PostMessage detected gateway.html navigation, redirecting whole page');
-          window.location.href = './gateway.html';
+          // Preserve URL params (e.g. ?link=google&returnUrl=...) when redirecting
+          let gatewaySearch = '';
+          try {
+            const sourceUrl = event.data.url || newPath;
+            if (sourceUrl.includes('?')) {
+              gatewaySearch = sourceUrl.substring(sourceUrl.indexOf('?'));
+            }
+          } catch (e) {}
+          console.log('PostMessage detected gateway.html navigation, redirecting whole page' + (gatewaySearch ? ' with params: ' + gatewaySearch : ''));
+          window.location.href = './gateway.html' + gatewaySearch;
           return;
         }
 

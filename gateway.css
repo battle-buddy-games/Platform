@@ -275,6 +275,7 @@
 /* Scoped to gateway.html only */
 body .quick-links-panel {
   overflow: visible;
+  transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* External Links Foldout Menu */
@@ -379,6 +380,39 @@ body .quick-links-panel {
   pointer-events: auto;
 }
 
+/* Recent Releases Panel */
+.recent-releases-panel {
+  transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.releases-scroll-area {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.releases-scroll-area::-webkit-scrollbar {
+  width: 5px;
+}
+
+.releases-scroll-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.releases-scroll-area::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.releases-scroll-area::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
 /* Remembered Tokens Panel - smooth animation */
 .remembered-tokens-panel {
   transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1), left 0.3s cubic-bezier(0.4, 0, 0.2, 1), margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -408,6 +442,7 @@ body .quick-links-panel {
   /* Reset absolute positioning for panels on small screens */
   .health-checks-panel,
   .environment-selector-panel,
+  .recent-releases-panel,
   .quick-links-panel,
   .remembered-tokens-panel {
     position: relative !important;
@@ -419,28 +454,37 @@ body .quick-links-panel {
     max-width: 420px !important;
     min-width: auto !important;
   }
-  
+
   /* Ensure environment selector panel displays when shown on small screens */
   .environment-selector-panel[style*="display: block"] {
     display: block !important;
   }
-  
-  /* Stack panels vertically - health checks first, then environment selector, then quick links, then remembered tokens */
+
+  /* Stack panels vertically */
   .health-checks-panel {
     order: 2;
   }
-  
+
   .environment-selector-panel {
     order: 3;
   }
-  
-  .quick-links-panel {
+
+  .recent-releases-panel {
     order: 4;
   }
-  
-  .remembered-tokens-panel {
+
+  .quick-links-panel {
     order: 5;
+  }
+
+  .remembered-tokens-panel {
+    order: 6;
     margin-top: 24px !important;
+  }
+
+  /* On mobile, limit releases scroll height */
+  .releases-scroll-area {
+    max-height: 40vh;
   }
   
   /* Ensure sign-in container is first */

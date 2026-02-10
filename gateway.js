@@ -2486,65 +2486,61 @@ function updateTokenStatus() {
 }
 
 // Position remembered tokens panel below Quick Links panel
-function positionRememberedTokensPanel() {
-  const rememberedTokensPanel = document.querySelector('.remembered-tokens-panel');
+function positionRightSidePanels() {
+  const releasesPanel = document.querySelector('.recent-releases-panel');
   const quickLinksPanel = document.querySelector('.quick-links-panel');
-  
-  if (rememberedTokensPanel && quickLinksPanel) {
-    // Check if we're on a mobile screen (max-width: 1200px)
-    // On mobile, panels use relative positioning and stack naturally, so skip absolute positioning
-    const isMobile = window.matchMedia('(max-width: 1200px)').matches;
-    
-    if (isMobile) {
-      // On mobile, panels are already positioned relatively and stack naturally
-      // Just ensure the panel is visible if it has tokens
-      return;
+  const rememberedTokensPanel = document.querySelector('.remembered-tokens-panel');
+
+  // On mobile, panels use relative positioning and stack naturally
+  const isMobile = window.matchMedia('(max-width: 1200px)').matches;
+  if (isMobile) return;
+
+  requestAnimationFrame(() => {
+    const gap = 12;
+
+    // Position quick-links below recent-releases
+    if (releasesPanel && quickLinksPanel && releasesPanel.offsetHeight > 0) {
+      const releasesBottom = releasesPanel.offsetTop + releasesPanel.offsetHeight;
+      quickLinksPanel.style.top = `${releasesBottom + gap}px`;
     }
-    
-    // Use requestAnimationFrame for smooth updates on desktop
-    requestAnimationFrame(() => {
-      if (quickLinksPanel.offsetHeight > 0) {
-        const quickLinksBottom = quickLinksPanel.offsetTop + quickLinksPanel.offsetHeight;
-        const gap = 12; // Gap between panels
-        rememberedTokensPanel.style.top = `${quickLinksBottom + gap}px`;
-        rememberedTokensPanel.style.left = quickLinksPanel.style.left;
-        rememberedTokensPanel.style.marginLeft = quickLinksPanel.style.marginLeft;
-      }
-    });
-  }
+
+    // Position remembered-tokens below quick-links
+    if (rememberedTokensPanel && quickLinksPanel && quickLinksPanel.offsetHeight > 0) {
+      const quickLinksBottom = quickLinksPanel.offsetTop + quickLinksPanel.offsetHeight;
+      rememberedTokensPanel.style.top = `${quickLinksBottom + gap}px`;
+      rememberedTokensPanel.style.left = quickLinksPanel.style.left;
+      rememberedTokensPanel.style.marginLeft = quickLinksPanel.style.marginLeft;
+    }
+  });
 }
 
-// Smoothly update remembered tokens panel position during menu animation
+// Backward-compatible alias
+function positionRememberedTokensPanel() {
+  positionRightSidePanels();
+}
+
+// Smoothly update right-side panel positions during menu animation
 function smoothUpdateRememberedTokensPosition() {
-  const rememberedTokensPanel = document.querySelector('.remembered-tokens-panel');
-  if (!rememberedTokensPanel || rememberedTokensPanel.style.display === 'none') {
-    return;
-  }
-  
   // On mobile, panels use relative positioning and stack naturally, so skip smooth updates
   const isMobile = window.matchMedia('(max-width: 1200px)').matches;
-  if (isMobile) {
-    return;
-  }
-  
+  if (isMobile) return;
+
   // Update position multiple times during the 300ms animation for smooth movement
   const startTime = Date.now();
   const duration = 300; // Match the menu dropdown transition duration
   const updateInterval = 16; // ~60fps
-  
+
   const updatePosition = () => {
     const elapsed = Date.now() - startTime;
-    positionRememberedTokensPanel();
-    
+    positionRightSidePanels();
+
     if (elapsed < duration) {
       setTimeout(updatePosition, updateInterval);
     } else {
-      // Final update after animation completes
-      positionRememberedTokensPanel();
+      positionRightSidePanels();
     }
   };
-  
-  // Start updating immediately
+
   updatePosition();
 }
 
@@ -2715,6 +2711,14 @@ window.addEventListener('DOMContentLoaded', async () => {
       if (earlyReturnUrl) {
         localStorage.setItem('oauth_return_url', earlyReturnUrl);
       }
+      // Store linkToken as bb_gateway_token for cross-origin account linking auth.
+      // The callback-api.js reads this and sends it to the backend exchange-code endpoint
+      // so the backend can identify which existing user to link the new provider to.
+      const earlyLinkToken = earlyParams.get('linkToken');
+      if (earlyLinkToken) {
+        localStorage.setItem('bb_gateway_token', earlyLinkToken);
+        console.log('[EARLY LINK] Stored linkToken as bb_gateway_token for cross-origin auth');
+      }
     } catch (e) {
       console.error('[EARLY LINK] Failed to store linking mode:', e);
     }
@@ -2786,6 +2790,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   // Render recent releases feed
   renderReleasesFeed();
+
+  // Position right-side panels (quick-links below releases, remembered-tokens below quick-links)
+  positionRightSidePanels();
 
   // Update environment selector after CONFIG loads
   updateEnvironmentUrl();
@@ -2980,6 +2987,12 @@ window.addEventListener('DOMContentLoaded', async () => {
       localStorage.setItem('oauth_link_provider', linkProvider);
       if (returnUrlForLink) {
         localStorage.setItem('oauth_return_url', returnUrlForLink);
+      }
+      // Store linkToken as bb_gateway_token for cross-origin account linking auth
+      const lateLinkToken = linkingModeParams.get('linkToken');
+      if (lateLinkToken) {
+        localStorage.setItem('bb_gateway_token', lateLinkToken);
+        console.log('Link mode: Stored linkToken as bb_gateway_token for cross-origin auth');
       }
     } catch (e) {
       console.error('Failed to store linking mode:', e);
