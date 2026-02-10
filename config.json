@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-160da70",
-      "title": "Rename Rclone Hub to Drives",
-      "timestamp": "2026-02-09T17:46:41Z",
-      "environment": "production"
-    },
-    {
       "version": "build-4a96f58",
       "title": "p",
       "timestamp": "2026-02-09T17:55:04Z",
@@ -102,6 +96,12 @@
       "version": "build-4931ea6",
       "title": "Fix uploads path for blue-green deployment: use UPLOADS_PATH env var",
       "timestamp": "2026-02-10T02:24:20Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-7b687d7",
+      "title": "p",
+      "timestamp": "2026-02-10T02:27:43Z",
       "environment": "production"
     }
   ]
