@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-631f23d",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-10T16:58:34Z",
-      "environment": "production"
-    },
-    {
       "version": "build-a818b10",
       "title": "w",
       "timestamp": "2026-02-10T17:15:30Z",
@@ -102,6 +96,12 @@
       "version": "build-1e8c009",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-10T20:27:31Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-507c9c3",
+      "title": "Consolidate Media and News into PlatformContent dashboard tool",
+      "timestamp": "2026-02-10T20:35:58Z",
       "environment": "production"
     }
   ]
