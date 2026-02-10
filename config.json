@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-dc4a479",
-      "title": "Show blue-green deployment slot in website footer",
-      "timestamp": "2026-02-10T18:31:46Z",
-      "environment": "production"
-    },
-    {
       "version": "build-3d9cfe0",
       "title": "w",
       "timestamp": "2026-02-10T18:37:21Z",
@@ -102,6 +96,12 @@
       "version": "build-aec92b4",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-10T21:48:31Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-9d100e7",
+      "title": "Comprehensive Notifications dashboard tool with alerts, preferences, and history",
+      "timestamp": "2026-02-10T22:09:07Z",
       "environment": "production"
     }
   ]
