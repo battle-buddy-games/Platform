@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-84cdb28",
-      "title": "Rename Art Hub to Assets Hub",
-      "timestamp": "2026-02-09T17:21:09Z",
-      "environment": "production"
-    },
-    {
       "version": "build-160da70",
       "title": "Rename Rclone Hub to Drives",
       "timestamp": "2026-02-09T17:46:41Z",
@@ -102,6 +96,12 @@
       "version": "build-18d582a",
       "title": "Fix database wipe in blue-green deployment: DATABASE_NAME env var was ignored",
       "timestamp": "2026-02-10T02:16:25Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-4931ea6",
+      "title": "Fix uploads path for blue-green deployment: use UPLOADS_PATH env var",
+      "timestamp": "2026-02-10T02:24:20Z",
       "environment": "production"
     }
   ]
