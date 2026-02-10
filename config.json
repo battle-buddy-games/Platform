@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-0359b9c",
-      "title": "Fix GITHUB_OUTPUT encoding: replace echo >> with .NET AppendAllText",
-      "timestamp": "2026-02-10T02:05:31Z",
-      "environment": "production"
-    },
-    {
       "version": "build-18d582a",
       "title": "Fix database wipe in blue-green deployment: DATABASE_NAME env var was ignored",
       "timestamp": "2026-02-10T02:16:25Z",
@@ -102,6 +96,12 @@
       "version": "build-e02058e",
       "title": "w",
       "timestamp": "2026-02-10T12:59:12Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-5977576",
+      "title": "w",
+      "timestamp": "2026-02-10T16:53:01Z",
       "environment": "production"
     }
   ]
