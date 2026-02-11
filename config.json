@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-6618e32",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-10T21:41:28Z",
-      "environment": "production"
-    },
-    {
       "version": "build-aec92b4",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-10T21:48:31Z",
@@ -102,6 +96,12 @@
       "version": "build-1c7b31f",
       "title": "Fix Razor compilation error in Platform_Themes.cshtml",
       "timestamp": "2026-02-11T21:15:07Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-700fe68",
+      "title": "Fix Discord server dropdown not showing current selection",
+      "timestamp": "2026-02-11T21:40:46Z",
       "environment": "production"
     }
   ]
