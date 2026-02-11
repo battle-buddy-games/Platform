@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-1e8c009",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-10T20:27:31Z",
-      "environment": "production"
-    },
-    {
       "version": "build-507c9c3",
       "title": "Consolidate Media and News into PlatformContent dashboard tool",
       "timestamp": "2026-02-10T20:35:58Z",
@@ -102,6 +96,12 @@
       "version": "build-4aa393d",
       "title": "Document Notification System and Command History in CLAUDE.md",
       "timestamp": "2026-02-11T01:55:54Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-61789ce",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-02-11T02:35:01Z",
       "environment": "production"
     }
   ]
