@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-aec92b4",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-10T21:48:31Z",
-      "environment": "production"
-    },
-    {
       "version": "build-9d100e7",
       "title": "Comprehensive Notifications dashboard tool with alerts, preferences, and history",
       "timestamp": "2026-02-10T22:09:07Z",
@@ -102,6 +96,12 @@
       "version": "build-700fe68",
       "title": "Fix Discord server dropdown not showing current selection",
       "timestamp": "2026-02-11T21:40:46Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-754e7e1",
+      "title": "Show info banner when All Servers defaults to a single guild",
+      "timestamp": "2026-02-11T21:44:08Z",
       "environment": "production"
     }
   ]
