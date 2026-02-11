@@ -1,108 +1,108 @@
 {
-  "github": {
-    "clientId": "Ov23liXpQBh8YbkP2AIy",
-    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
-    "scope": "user:email"
-  },
-  "google": {
-    "clientId": "94692902434-d832f25lj9m98ikuil8cbtcbnjh4d866.apps.googleusercontent.com",
-    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-google.html",
-    "scope": "profile email"
-  },
-  "discord": {
-    "clientId": "949786696860434443",
-    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-discord.html",
-    "scope": "identify email"
-  },
-  "backend": {
-    "callbackEndpoint": "/Authentication/github/callback"
-  },
-  "cloudflareTunnels": [
-    {
-      "name": "cloud",
-      "address": "https://melissa-broadway-brakes-defence.trycloudflare.com"
-    },
-    {
-      "name": "local-cloud",
-      "address": "http://192.168.0.243:8081"
-    },
-    {
-      "name": "staging-cloud",
-      "address": "http://192.168.0.251:8201"
-    },
-    {
-      "name": "test-cloud",
-      "address": "http://192.168.0.251:8301"
-    },
-    {
-      "name": "develop-cloud",
-      "address": "http://192.168.0.251:8101"
-    },
-    {
-      "name": "production-local",
-      "address": "http://192.168.0.251:8081"
-    }
-  ],
-  "releases": [
-    {
-      "version": "build-507c9c3",
-      "title": "Consolidate Media and News into PlatformContent dashboard tool",
-      "timestamp": "2026-02-10T20:35:58Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-e41faad",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-10T20:47:18Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-6bb48ee",
-      "title": "w",
-      "timestamp": "2026-02-10T21:32:20Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-6618e32",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-10T21:41:28Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-aec92b4",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-10T21:48:31Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-9d100e7",
-      "title": "Comprehensive Notifications dashboard tool with alerts, preferences, and history",
-      "timestamp": "2026-02-10T22:09:07Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-883f98e",
-      "title": "Add user notification system with navbar dropdown, Profile tab, and chat inte...",
-      "timestamp": "2026-02-10T22:24:22Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-ac50513",
-      "title": "Add command history browsing with clickable results and output viewing",
-      "timestamp": "2026-02-10T22:42:53Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-4aa393d",
-      "title": "Document Notification System and Command History in CLAUDE.md",
-      "timestamp": "2026-02-11T01:55:54Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-61789ce",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-11T02:35:01Z",
-      "environment": "production"
-    }
-  ]
+    "github":  {
+                   "clientId":  "Ov23liXpQBh8YbkP2AIy",
+                   "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
+                   "scope":  "user:email"
+               },
+    "google":  {
+                   "clientId":  "94692902434-d832f25lj9m98ikuil8cbtcbnjh4d866.apps.googleusercontent.com",
+                   "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-google.html",
+                   "scope":  "profile email"
+               },
+    "discord":  {
+                    "clientId":  "949786696860434443",
+                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-discord.html",
+                    "scope":  "identify email"
+                },
+    "backend":  {
+                    "callbackEndpoint":  "/Authentication/github/callback"
+                },
+    "cloudflareTunnels":  [
+                              {
+                                  "name":  "cloud",
+                                  "address":  "https://melissa-broadway-brakes-defence.trycloudflare.com"
+                              },
+                              {
+                                  "name":  "local-cloud",
+                                  "address":  "http://192.168.0.243:8081"
+                              },
+                              {
+                                  "name":  "staging-cloud",
+                                  "address":  "http://192.168.0.251:8201"
+                              },
+                              {
+                                  "name":  "test-cloud",
+                                  "address":  "http://192.168.0.251:8301"
+                              },
+                              {
+                                  "name":  "develop-cloud",
+                                  "address":  "http://192.168.0.251:8101"
+                              },
+                              {
+                                  "name":  "production-local",
+                                  "address":  "http://192.168.0.251:8081"
+                              }
+                          ],
+    "releases":  [
+                     {
+                         "version":  "build-507c9c3",
+                         "title":  "Consolidate Media and News into PlatformContent dashboard tool",
+                         "timestamp":  "2026-02-10T20:35:58Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e41faad",
+                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
+                         "timestamp":  "2026-02-10T20:47:18Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6bb48ee",
+                         "title":  "w",
+                         "timestamp":  "2026-02-10T21:32:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6618e32",
+                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
+                         "timestamp":  "2026-02-10T21:41:28Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-aec92b4",
+                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
+                         "timestamp":  "2026-02-10T21:48:31Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9d100e7",
+                         "title":  "Comprehensive Notifications dashboard tool with alerts, preferences, and history",
+                         "timestamp":  "2026-02-10T22:09:07Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-883f98e",
+                         "title":  "Add user notification system with navbar dropdown, Profile tab, and chat inte...",
+                         "timestamp":  "2026-02-10T22:24:22Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ac50513",
+                         "title":  "Add command history browsing with clickable results and output viewing",
+                         "timestamp":  "2026-02-10T22:42:53Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4aa393d",
+                         "title":  "Document Notification System and Command History in CLAUDE.md",
+                         "timestamp":  "2026-02-11T01:55:54Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-61789ce",
+                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
+                         "timestamp":  "2026-02-11T02:35:01Z",
+                         "environment":  "production"
+                     }
+                 ]
 }
