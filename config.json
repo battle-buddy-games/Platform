@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-883f98e",
-      "title": "Add user notification system with navbar dropdown, Profile tab, and chat inte...",
-      "timestamp": "2026-02-10T22:24:22Z",
-      "environment": "production"
-    },
-    {
       "version": "build-ac50513",
       "title": "Add command history browsing with clickable results and output viewing",
       "timestamp": "2026-02-10T22:42:53Z",
@@ -102,6 +96,12 @@
       "version": "build-5348cf5",
       "title": "Fix Configuration tabs, jQuery error, and notification/activity table creation",
       "timestamp": "2026-02-11T23:07:55Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-0e203e4",
+      "title": "Fix Projects Tasks tab: merge Task Manager into main view, remove ProjectV2",
+      "timestamp": "2026-02-11T23:20:09Z",
       "environment": "production"
     }
   ]
