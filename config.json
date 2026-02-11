@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-9d100e7",
-      "title": "Comprehensive Notifications dashboard tool with alerts, preferences, and history",
-      "timestamp": "2026-02-10T22:09:07Z",
-      "environment": "production"
-    },
-    {
       "version": "build-883f98e",
       "title": "Add user notification system with navbar dropdown, Profile tab, and chat inte...",
       "timestamp": "2026-02-10T22:24:22Z",
@@ -102,6 +96,12 @@
       "version": "build-754e7e1",
       "title": "Show info banner when All Servers defaults to a single guild",
       "timestamp": "2026-02-11T21:44:08Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-5348cf5",
+      "title": "Fix Configuration tabs, jQuery error, and notification/activity table creation",
+      "timestamp": "2026-02-11T23:07:55Z",
       "environment": "production"
     }
   ]
