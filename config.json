@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-951c66c",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-10T20:11:50Z",
-      "environment": "production"
-    },
-    {
       "version": "build-1e8c009",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-10T20:27:31Z",
@@ -102,6 +96,12 @@
       "version": "build-ac50513",
       "title": "Add command history browsing with clickable results and output viewing",
       "timestamp": "2026-02-10T22:42:53Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-4aa393d",
+      "title": "Document Notification System and Command History in CLAUDE.md",
+      "timestamp": "2026-02-11T01:55:54Z",
       "environment": "production"
     }
   ]
