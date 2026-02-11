@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-ac50513",
-      "title": "Add command history browsing with clickable results and output viewing",
-      "timestamp": "2026-02-10T22:42:53Z",
-      "environment": "production"
-    },
-    {
       "version": "build-4aa393d",
       "title": "Document Notification System and Command History in CLAUDE.md",
       "timestamp": "2026-02-11T01:55:54Z",
@@ -102,6 +96,12 @@
       "version": "build-0e203e4",
       "title": "Fix Projects Tasks tab: merge Task Manager into main view, remove ProjectV2",
       "timestamp": "2026-02-11T23:20:09Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-c126563",
+      "title": "Fix Discord tool 401 crash and Razor tag helper build error",
+      "timestamp": "2026-02-11T23:34:30Z",
       "environment": "production"
     }
   ]
