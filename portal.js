@@ -281,13 +281,12 @@ let updatingStartTime = null;       // When the updating flow started
 let updatingTotalSeconds = 300;     // Current estimate in seconds (starts at 5 min)
 let updatingElapsedSeconds = 0;     // How many seconds have elapsed
 const UPDATING_STAGES = [
-  { threshold: 0,    estimate: 120,  label: 'Platform Updating',         state: 'updating',  speedNote: 'Great update speed' },       // 0 -> 2 min
-  { threshold: 120,  estimate: 300,  label: 'Platform Updating',         state: 'updating',  speedNote: 'Great update speed' },       // 2 min -> 5 min
-  { threshold: 300,  estimate: 600,  label: 'Platform Updating',         state: 'updating',  speedNote: 'Update speed OK' },          // 5 min -> 10 min
-  { threshold: 600,  estimate: 900,  label: 'Platform Updating',         state: 'updating',  speedNote: 'Update speed OK' },          // 10 min -> 15 min
-  { threshold: 900,  estimate: 1200, label: 'Platform Updating',         state: 'updating',  speedNote: 'Speed will be improved' },   // 15 min -> 20 min
-  { threshold: 1200, estimate: 1800, label: 'Possible Problem Detected', state: 'warning',   speedNote: 'Speed will be improved' },   // 20 min -> warning
-  { threshold: 1800, estimate: null, label: 'Platform Offline',          state: 'offline',   speedNote: null },                        // 30 min -> offline
+  { threshold: 0,    label: 'Platform Updating',         state: 'updating', barIndex: 0 },   // Fast: 0-2 min
+  { threshold: 120,  label: 'Platform Updating',         state: 'updating', barIndex: 1 },   // Normal: 2-5 min
+  { threshold: 300,  label: 'Platform Updating',         state: 'updating', barIndex: 2 },   // Slow: 5-15 min
+  { threshold: 900,  label: 'Platform Updating',         state: 'warning',  barIndex: 3 },   // Concerning: 15-20 min
+  { threshold: 1200, label: 'Possible Problem Detected', state: 'warning',  barIndex: 4 },   // Problem: 20+ min
+  { threshold: 1800, label: 'Platform Offline',          state: 'offline',  barIndex: 4 },   // Offline: 30+ min
 ];
 
 // Recent release info detected from config.json
@@ -401,24 +400,16 @@ function updateUpdatingUI() {
 
   if (titleEl) titleEl.textContent = stage.label;
 
-  // Update countdown time in spinner
-  if (stage.estimate !== null) {
-    const remaining = Math.max(0, stage.estimate - updatingElapsedSeconds);
-    if (timeEl) timeEl.textContent = formatCountdown(remaining);
-  } else {
-    if (timeEl) timeEl.textContent = '--:--';
-  }
+  // Update elapsed time in spinner (count UP)
+  if (timeEl) timeEl.textContent = formatCountdown(updatingElapsedSeconds);
 
-  // Update step dots - mark completed and active
-  const steps = document.querySelectorAll('.updating-steps .step');
-  const stepLines = document.querySelectorAll('.updating-steps .step-line');
-  steps.forEach((step, i) => {
-    step.classList.remove('active', 'completed');
-    if (i < stageIndex) step.classList.add('completed');
-    else if (i === stageIndex) step.classList.add('active');
-  });
-  stepLines.forEach((line, i) => {
-    line.classList.toggle('completed', i < stageIndex);
+  // Update bar segments - mark completed and active
+  const segments = document.querySelectorAll('.updating-steps-bar .bar-segment');
+  const activeBarIndex = stage.barIndex;
+  segments.forEach((seg, i) => {
+    seg.classList.remove('active', 'completed');
+    if (i < activeBarIndex) seg.classList.add('completed');
+    else if (i === activeBarIndex) seg.classList.add('active');
   });
 
   // Update state classes
@@ -434,26 +425,13 @@ function updateUpdatingUI() {
       if (detectedRelease) {
         const releaseLabel = detectedRelease.version || '';
         const releaseDesc = detectedRelease.title || '';
-        let html = 'Deploying update' + (releaseLabel ? ' <strong>' + releaseLabel + '</strong>' : '')
+        messageEl.innerHTML = 'Deploying update' + (releaseLabel ? ' <strong>' + releaseLabel + '</strong>' : '')
           + (releaseDesc ? ' &mdash; ' + releaseDesc : '') + '. Please wait...';
-        if (stage.speedNote) {
-          html += '<br><span style="font-size: 12px; color: rgba(255,255,255,0.45); font-style: italic;">' + stage.speedNote + '</span>';
-        }
-        messageEl.innerHTML = html;
       } else {
-        let text = 'An update may be in progress. Checking for availability...';
-        if (stage.speedNote) {
-          messageEl.innerHTML = text + '<br><span style="font-size: 12px; color: rgba(255,255,255,0.45); font-style: italic;">' + stage.speedNote + '</span>';
-        } else {
-          messageEl.textContent = text;
-        }
+        messageEl.textContent = 'An update may be in progress. Checking for availability...';
       }
     } else if (stage.state === 'warning') {
-      let html = 'This is taking longer than expected.';
-      if (stage.speedNote) {
-        html += '<br><span style="font-size: 12px; color: rgba(255,193,7,0.7); font-style: italic;">' + stage.speedNote + '</span>';
-      }
-      messageEl.innerHTML = html;
+      messageEl.textContent = 'This is taking longer than expected.';
     } else if (stage.state === 'offline') {
       messageEl.textContent = 'The platform could not be reached.';
     }
@@ -733,23 +711,16 @@ function showConnectionFailure(title, message) {
   }
   if (titleEl) titleEl.textContent = initialStage.label;
   if (messageEl) messageEl.textContent = 'An update may be in progress. Checking for availability...';
-  if (initialStage.estimate !== null) {
-    const remaining = Math.max(0, initialStage.estimate - updatingElapsedSeconds);
-    if (timeEl) timeEl.textContent = formatCountdown(remaining);
-  } else {
-    if (timeEl) timeEl.textContent = '--:--';
-  }
+  // Show elapsed time (count up)
+  if (timeEl) timeEl.textContent = formatCountdown(updatingElapsedSeconds);
   if (extraMsg) { extraMsg.classList.add('hidden'); extraMsg.classList.remove('offline'); }
 
-  // Set step dots to match current elapsed position
-  const initialStageIndex = getUpdatingStageIndex(updatingElapsedSeconds);
-  document.querySelectorAll('.updating-steps .step').forEach((step, i) => {
-    step.classList.remove('active', 'completed');
-    if (i < initialStageIndex) step.classList.add('completed');
-    else if (i === initialStageIndex) step.classList.add('active');
-  });
-  document.querySelectorAll('.updating-steps .step-line').forEach((line, i) => {
-    line.classList.toggle('completed', i < initialStageIndex);
+  // Set bar segments to match current elapsed position
+  const activeBarIndex = initialStage.barIndex;
+  document.querySelectorAll('.updating-steps-bar .bar-segment').forEach((seg, i) => {
+    seg.classList.remove('active', 'completed');
+    if (i < activeBarIndex) seg.classList.add('completed');
+    else if (i === activeBarIndex) seg.classList.add('active');
   });
 
   // Update subtitle with release info if detected

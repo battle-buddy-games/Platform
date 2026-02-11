@@ -256,7 +256,7 @@ iframe {
 
 /* Platform updating overlay styles */
 .updating-content {
-  max-width: 460px;
+  max-width: 520px;
 }
 
 /* Circular spinner with countdown inside */
@@ -308,75 +308,74 @@ iframe {
   letter-spacing: 0.02em;
 }
 
-/* Step progress bar */
-.updating-steps {
+/* Quality range bar */
+.updating-steps-bar {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
+  gap: 3px;
   margin: 20px 0;
-  padding: 0 8px;
+  padding: 0 4px;
 }
 
-.updating-steps .step {
+.bar-segment {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  flex-shrink: 0;
+  gap: 0;
+  position: relative;
+  opacity: 0.35;
+  transition: opacity 0.4s ease;
 }
 
-.updating-steps .step-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+.bar-segment .bar-fill {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
   transition: all 0.4s ease;
 }
 
-.updating-steps .step.active .step-dot {
-  background: #667eea;
-  border-color: #667eea;
-  animation: ripple-pulse 2s ease-in-out infinite;
-}
-
-.updating-steps .step.completed .step-dot {
-  background: #667eea;
-  border-color: #667eea;
-}
-
-.updating-steps .step-label {
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.35);
+.bar-segment .bar-label {
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 8px;
   white-space: nowrap;
+  transition: color 0.4s ease;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.bar-segment .bar-range {
+  font-size: 10px;
+  margin-top: 2px;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.4);
   transition: color 0.4s ease;
 }
 
-.updating-steps .step.active .step-label,
-.updating-steps .step.completed .step-label {
-  color: rgba(255, 255, 255, 0.8);
+/* Segment colors */
+.seg-fast .bar-fill    { background: #4caf50; }
+.seg-normal .bar-fill  { background: #667eea; }
+.seg-slow .bar-fill    { background: #ffc107; }
+.seg-concern .bar-fill { background: #ff9800; }
+.seg-problem .bar-fill { background: #ff6b6b; }
+
+/* Active segment */
+.bar-segment.active {
+  opacity: 1;
 }
 
-.updating-steps .step-line {
-  flex: 1;
-  height: 2px;
-  min-width: 20px;
-  background: rgba(255, 255, 255, 0.12);
-  margin: 0 4px;
-  margin-bottom: 22px;
-  transition: background 0.4s ease;
+.bar-segment.active .bar-fill {
+  height: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
 }
 
-.updating-steps .step-line.completed {
-  background: linear-gradient(90deg, #667eea, #a78bfa, #667eea);
-  background-size: 200% 100%;
-  animation: shimmer-line 2s ease-in-out infinite;
+/* Completed (passed) segments */
+.bar-segment.completed {
+  opacity: 0.65;
 }
 
-@keyframes shimmer-line {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+.bar-segment.completed .bar-fill {
+  height: 6px;
 }
 
 /* Extra message box */
@@ -423,10 +422,8 @@ iframe {
   color: #ffc107;
 }
 
-.updating-content.state-warning .step.active .step-dot {
-  background: #ffc107;
-  border-color: #ffc107;
-  animation: ripple-pulse-warning 2s ease-in-out infinite;
+.updating-content.state-warning .bar-segment.active .bar-fill {
+  box-shadow: 0 0 14px rgba(255, 193, 7, 0.3);
 }
 
 @keyframes ripple-pulse-warning {
@@ -453,10 +450,8 @@ iframe {
   color: #ff6b6b;
 }
 
-.updating-content.state-offline .step.active .step-dot {
-  background: #ff6b6b;
-  border-color: #ff6b6b;
-  animation: ripple-pulse-offline 2s ease-in-out infinite;
+.updating-content.state-offline .bar-segment.active .bar-fill {
+  box-shadow: 0 0 14px rgba(255, 107, 107, 0.3);
 }
 
 @keyframes ripple-pulse-offline {
