@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-cedd327",
-      "title": "fix",
-      "timestamp": "2026-02-12T21:15:52Z",
-      "environment": "production"
-    },
-    {
       "version": "build-1564dc6",
       "title": "fix",
       "timestamp": "2026-02-12T21:20:44Z",
@@ -102,6 +96,12 @@
       "version": "build-3a8ec08",
       "title": "Refresh Drives Overview tab to summarize Internal Drives and Platform Drives",
       "timestamp": "2026-02-12T23:11:15Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-4a80a01",
+      "title": "Fix Three.js CORS errors and make hero area use main background",
+      "timestamp": "2026-02-12T23:18:35Z",
       "environment": "production"
     }
   ]
