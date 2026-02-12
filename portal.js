@@ -668,25 +668,19 @@ function showConnectionFailure(title, message) {
 
   connectionFailureDetected = true;
 
-  // Check for a recent release in config.json FIRST, so we can use its timestamp
+  // Check for a recent release in config.json for display context (version, title)
   detectedRelease = checkForRecentRelease();
 
-  // If a release was detected, start the timer from the release timestamp
-  // so we show the real elapsed time since the deployment began, not since
-  // the user opened the page or noticed the failure.
-  if (detectedRelease && detectedRelease.timestamp) {
-    const releaseTime = new Date(detectedRelease.timestamp).getTime();
-    if (!isNaN(releaseTime)) {
-      updatingStartTime = releaseTime;
-      updatingElapsedSeconds = Math.floor((Date.now() - releaseTime) / 1000);
-      console.log('[Portal] Timer starting from release timestamp, already elapsed:', updatingElapsedSeconds + 's');
-    } else {
-      updatingStartTime = Date.now();
-      updatingElapsedSeconds = 0;
-    }
-  } else {
-    updatingStartTime = Date.now();
-    updatingElapsedSeconds = 0;
+  // Always start the timer from when we actually detect the failure.
+  // The release timestamp in config.json is recorded early in the deployment
+  // pipeline (before the service restarts), so it leads the actual outage by
+  // several minutes. Starting from detection time gives users an accurate
+  // sense of how long they've been waiting.
+  updatingStartTime = Date.now();
+  updatingElapsedSeconds = 0;
+
+  if (detectedRelease) {
+    console.log('[Portal] Release detected:', detectedRelease.version, '- timer starting from detection time (not release timestamp)');
   }
 
   const overlay = document.getElementById('connectionFailureOverlay');
