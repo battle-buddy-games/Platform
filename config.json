@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-2502e42",
-      "title": "Fix DashboardPins 500 error and deploy NSSM restart failure",
-      "timestamp": "2026-02-11T20:41:51Z",
-      "environment": "production"
-    },
-    {
       "version": "build-247ef14",
       "title": "Fix theme background image reliability, add theme previews, cap Discord retry...",
       "timestamp": "2026-02-11T20:53:46Z",
@@ -102,6 +96,12 @@
       "version": "build-14a8824",
       "title": "Drives Remotes tab: separate platform-managed and host remotes",
       "timestamp": "2026-02-12T00:21:44Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-7270d97",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-02-12T00:26:26Z",
       "environment": "production"
     }
   ]
