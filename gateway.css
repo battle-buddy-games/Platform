@@ -380,9 +380,111 @@ body .quick-links-panel {
   pointer-events: auto;
 }
 
-/* Recent Releases Panel */
-.recent-releases-panel {
+/* Status Panel (combined Releases + Health Checks) */
+.status-panel {
   transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.status-panel-tab:hover {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.status-panel-tab.active {
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-bottom-color: rgba(102, 126, 234, 0.9) !important;
+}
+
+/* Active Release Card */
+.release-card-active {
+  padding: 10px;
+  background: rgba(102, 126, 234, 0.08);
+  border-radius: 8px;
+  border: 1px solid rgba(102, 126, 234, 0.25);
+}
+
+.release-card-active .release-active-label {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(102, 126, 234, 0.85);
+  margin-bottom: 4px;
+}
+
+.release-card-active .release-version {
+  font-size: 12px;
+  font-family: monospace;
+  color: rgba(102, 126, 234, 0.95);
+  font-weight: 700;
+}
+
+.release-card-active .release-title {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 3px;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.release-card-active .release-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+  gap: 6px;
+}
+
+.release-card-active .release-time {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.release-health-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.release-health-badge.healthy {
+  background: rgba(100, 255, 100, 0.12);
+  color: rgba(100, 255, 100, 0.85);
+  border: 1px solid rgba(100, 255, 100, 0.2);
+}
+
+.release-health-badge.unhealthy {
+  background: rgba(255, 100, 100, 0.12);
+  color: rgba(255, 100, 100, 0.85);
+  border: 1px solid rgba(255, 100, 100, 0.2);
+}
+
+.release-health-badge.checking {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.release-health-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.release-health-badge.healthy .release-health-dot {
+  background: rgba(100, 255, 100, 0.8);
+}
+
+.release-health-badge.unhealthy .release-health-dot {
+  background: rgba(255, 100, 100, 0.8);
+}
+
+.release-health-badge.checking .release-health-dot {
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .releases-scroll-area {
@@ -440,9 +542,8 @@ body .quick-links-panel {
   }
   
   /* Reset absolute positioning for panels on small screens */
-  .health-checks-panel,
+  .status-panel,
   .environment-selector-panel,
-  .recent-releases-panel,
   .quick-links-panel,
   .remembered-tokens-panel {
     position: relative !important;
@@ -461,7 +562,7 @@ body .quick-links-panel {
   }
 
   /* Stack panels vertically */
-  .health-checks-panel {
+  .status-panel {
     order: 2;
   }
 
@@ -469,16 +570,12 @@ body .quick-links-panel {
     order: 3;
   }
 
-  .recent-releases-panel {
+  .quick-links-panel {
     order: 4;
   }
 
-  .quick-links-panel {
-    order: 5;
-  }
-
   .remembered-tokens-panel {
-    order: 6;
+    order: 5;
     margin-top: 24px !important;
   }
 

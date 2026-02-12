@@ -190,56 +190,71 @@
 
       </div>
 
-      <div class="health-checks-panel" style="position: absolute; top: 80px; right: 100%; margin-right: 12px; min-width: 220px; max-width: 260px; background: rgba(26, 26, 46, 0.9); border-radius: 16px; padding: 24px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); opacity: 0.9; z-index: 1000;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-          <h3 style="margin: 0; font-size: 14px; font-weight: 600; color: rgba(255, 255, 255, 0.85); letter-spacing: 0.03em; text-transform: uppercase;">Health Checks</h3>
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <div id="healthCheckCountdown" style="font-size: 11px; color: rgba(255, 255, 255, 0.5); min-width: 30px; text-align: right;">30s</div>
-            <button id="refreshHealthChecks" onclick="refreshHealthChecks()" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; padding: 6px 10px; cursor: pointer; color: rgba(255, 255, 255, 0.8); font-size: 12px; display: flex; align-items: center; gap: 4px; transition: all 0.2s;" title="Refresh health checks">
-              <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: currentColor;" id="refreshIcon">
-                <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
-              </svg>
-              Refresh
-            </button>
+      <div class="status-panel" style="position: absolute; top: 80px; right: 100%; margin-right: 12px; min-width: 240px; max-width: 280px; background: rgba(26, 26, 46, 0.9); border-radius: 16px; padding: 24px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); opacity: 0.9; z-index: 1000;">
+        <!-- Tab Bar -->
+        <div class="status-panel-tabs" style="display: flex; gap: 0; margin-bottom: 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+          <button class="status-panel-tab active" data-tab="releases" onclick="switchStatusTab('releases')" style="flex: 1; padding: 8px 4px; background: none; border: none; border-bottom: 2px solid rgba(102, 126, 234, 0.9); color: rgba(255, 255, 255, 0.9); font-size: 12px; font-weight: 600; cursor: pointer; text-transform: uppercase; letter-spacing: 0.03em; transition: all 0.2s;">Releases</button>
+          <button class="status-panel-tab" data-tab="health" onclick="switchStatusTab('health')" style="flex: 1; padding: 8px 4px; background: none; border: none; border-bottom: 2px solid transparent; color: rgba(255, 255, 255, 0.45); font-size: 12px; font-weight: 600; cursor: pointer; text-transform: uppercase; letter-spacing: 0.03em; transition: all 0.2s;">Health</button>
+        </div>
+
+        <!-- Releases Tab Content -->
+        <div id="statusTabReleases" class="status-tab-content">
+          <div id="releasesFeedContainer" class="releases-scroll-area">
+            <div style="font-size: 11px; color: rgba(255, 255, 255, 0.4);">Loading...</div>
           </div>
         </div>
-        <div id="healthChecksContainer" style="display: flex; flex-direction: column; gap: 12px;">
-          <div id="cloudServiceHealth" style="display: flex; align-items: center; gap: 8px; padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
-            <div id="cloudServiceStatus" style="width: 20px; height: 20px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: currentColor; display: none;" id="cloudServiceCheckmark">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-              </svg>
-            </div>
-            <div style="flex: 1; min-width: 0;">
-              <div style="font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, 0.9);">Cloud Service</div>
-              <div style="font-size: 9px; color: rgba(255, 255, 255, 0.4); margin-top: 1px;">cloud tunnel</div>
-              <div id="cloudServiceStatusText" style="font-size: 11px; color: rgba(255, 255, 255, 0.6); margin-top: 2px;">Checking...</div>
-              <div id="cloudServiceVersion" style="font-size: 9px; color: rgba(255, 255, 255, 0.4); margin-top: 2px; font-family: monospace;"></div>
-            </div>
-          </div>
-          <div id="agentStatusHealth" style="display: flex; align-items: center; gap: 8px; padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
-            <div id="agentStatusStatus" style="width: 20px; height: 20px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: currentColor; display: none;" id="agentStatusCheckmark">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-              </svg>
-            </div>
-            <div style="flex: 1; min-width: 0;">
-              <div style="font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, 0.9);">Agent Service</div>
-              <div style="font-size: 9px; color: rgba(255, 255, 255, 0.4); margin-top: 1px;">cloud tunnel</div>
-              <div id="agentStatusStatusText" style="font-size: 11px; color: rgba(255, 255, 255, 0.6); margin-top: 2px;">Checking...</div>
+
+        <!-- Health Checks Tab Content -->
+        <div id="statusTabHealth" class="status-tab-content" style="display: none;">
+          <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 12px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <div id="healthCheckCountdown" style="font-size: 11px; color: rgba(255, 255, 255, 0.5); min-width: 30px; text-align: right;">30s</div>
+              <button id="refreshHealthChecks" onclick="refreshHealthChecks()" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; padding: 6px 10px; cursor: pointer; color: rgba(255, 255, 255, 0.8); font-size: 12px; display: flex; align-items: center; gap: 4px; transition: all 0.2s;" title="Refresh health checks">
+                <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: currentColor;" id="refreshIcon">
+                  <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+                </svg>
+                Refresh
+              </button>
             </div>
           </div>
-          <div id="signalrHealth" style="display: flex; align-items: center; gap: 8px; padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
-            <div id="signalrStatus" style="width: 20px; height: 20px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: currentColor; display: none;" id="signalrCheckmark">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-              </svg>
+          <div id="healthChecksContainer" style="display: flex; flex-direction: column; gap: 12px;">
+            <div id="cloudServiceHealth" style="display: flex; align-items: center; gap: 8px; padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+              <div id="cloudServiceStatus" style="width: 20px; height: 20px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: currentColor; display: none;" id="cloudServiceCheckmark">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+              </div>
+              <div style="flex: 1; min-width: 0;">
+                <div style="font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, 0.9);">Cloud Service</div>
+                <div style="font-size: 9px; color: rgba(255, 255, 255, 0.4); margin-top: 1px;">cloud tunnel</div>
+                <div id="cloudServiceStatusText" style="font-size: 11px; color: rgba(255, 255, 255, 0.6); margin-top: 2px;">Checking...</div>
+                <div id="cloudServiceVersion" style="font-size: 9px; color: rgba(255, 255, 255, 0.4); margin-top: 2px; font-family: monospace;"></div>
+              </div>
             </div>
-            <div style="flex: 1; min-width: 0;">
-              <div style="font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, 0.9);">SignalR Service</div>
-              <div style="font-size: 9px; color: rgba(255, 255, 255, 0.4); margin-top: 1px;">unified with Cloud</div>
-              <div id="signalrStatusText" style="font-size: 11px; color: rgba(255, 255, 255, 0.6); margin-top: 2px;">Checking...</div>
-              <div id="signalrConnectionCount" style="font-size: 10px; color: rgba(255, 255, 255, 0.5); margin-top: 2px; display: none; font-weight: 500;">Connections: -</div>
+            <div id="agentStatusHealth" style="display: flex; align-items: center; gap: 8px; padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+              <div id="agentStatusStatus" style="width: 20px; height: 20px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: currentColor; display: none;" id="agentStatusCheckmark">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+              </div>
+              <div style="flex: 1; min-width: 0;">
+                <div style="font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, 0.9);">Agent Service</div>
+                <div style="font-size: 9px; color: rgba(255, 255, 255, 0.4); margin-top: 1px;">cloud tunnel</div>
+                <div id="agentStatusStatusText" style="font-size: 11px; color: rgba(255, 255, 255, 0.6); margin-top: 2px;">Checking...</div>
+              </div>
+            </div>
+            <div id="signalrHealth" style="display: flex; align-items: center; gap: 8px; padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+              <div id="signalrStatus" style="width: 20px; height: 20px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: currentColor; display: none;" id="signalrCheckmark">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+              </div>
+              <div style="flex: 1; min-width: 0;">
+                <div style="font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, 0.9);">SignalR Service</div>
+                <div style="font-size: 9px; color: rgba(255, 255, 255, 0.4); margin-top: 1px;">unified with Cloud</div>
+                <div id="signalrStatusText" style="font-size: 11px; color: rgba(255, 255, 255, 0.6); margin-top: 2px;">Checking...</div>
+                <div id="signalrConnectionCount" style="font-size: 10px; color: rgba(255, 255, 255, 0.5); margin-top: 2px; display: none; font-weight: 500;">Connections: -</div>
+              </div>
             </div>
           </div>
         </div>
@@ -259,13 +274,6 @@
           <div id="environmentInfo" style="padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
             <div style="font-size: 11px; color: rgba(255, 255, 255, 0.6); margin-top: 4px; word-break: break-all; font-family: monospace;" id="environmentUrl">-</div>
           </div>
-        </div>
-      </div>
-
-      <div class="recent-releases-panel" style="position: absolute; top: 80px; left: 100%; margin-left: 12px; width: 260px; background: rgba(26, 26, 46, 0.9); border-radius: 16px; padding: 24px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); opacity: 0.9; z-index: 1000;">
-        <h3 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: rgba(255, 255, 255, 0.85); letter-spacing: 0.03em; text-transform: uppercase;">Recent Releases</h3>
-        <div id="releasesFeedContainer" class="releases-scroll-area">
-          <div style="font-size: 11px; color: rgba(255, 255, 255, 0.4);">Loading...</div>
         </div>
       </div>
 

@@ -102,7 +102,70 @@ function updateSignInButtonStates() {
   }
 }
 
-// Render recent releases feed in the health checks panel
+// Switch between Releases and Health tabs in the status panel
+window.switchStatusTab = function switchStatusTab(tabName) {
+  const releasesContent = document.getElementById('statusTabReleases');
+  const healthContent = document.getElementById('statusTabHealth');
+  const tabs = document.querySelectorAll('.status-panel-tab');
+
+  tabs.forEach(function(tab) {
+    if (tab.getAttribute('data-tab') === tabName) {
+      tab.classList.add('active');
+      tab.style.borderBottomColor = 'rgba(102, 126, 234, 0.9)';
+      tab.style.color = 'rgba(255, 255, 255, 0.9)';
+    } else {
+      tab.classList.remove('active');
+      tab.style.borderBottomColor = 'transparent';
+      tab.style.color = 'rgba(255, 255, 255, 0.45)';
+    }
+  });
+
+  if (tabName === 'releases') {
+    if (releasesContent) releasesContent.style.display = '';
+    if (healthContent) healthContent.style.display = 'none';
+  } else {
+    if (releasesContent) releasesContent.style.display = 'none';
+    if (healthContent) healthContent.style.display = '';
+  }
+};
+
+// Get combined health status text and class for the health badge
+function getHealthBadgeState() {
+  // Check all three service status indicators
+  const cloudStatus = document.getElementById('cloudServiceStatus');
+  const agentStatus = document.getElementById('agentStatusStatus');
+  const signalrStatus = document.getElementById('signalrStatus');
+
+  const cloudHealthy = cloudStatus && cloudStatus.style.background && cloudStatus.style.background.indexOf('100, 255, 100') !== -1;
+  const agentHealthy = agentStatus && agentStatus.style.background && agentStatus.style.background.indexOf('100, 255, 100') !== -1;
+  const signalrHealthy = signalrStatus && signalrStatus.style.background && signalrStatus.style.background.indexOf('100, 255, 100') !== -1;
+
+  // If none have been checked yet (all still default background)
+  const cloudChecked = cloudStatus && cloudStatus.style.background && cloudStatus.style.background !== 'rgba(255, 255, 255, 0.2)';
+  const agentChecked = agentStatus && agentStatus.style.background && agentStatus.style.background !== 'rgba(255, 255, 255, 0.2)';
+
+  if (!cloudChecked && !agentChecked) {
+    return { cssClass: 'checking', label: 'Checking' };
+  }
+
+  const allHealthy = cloudHealthy && agentHealthy && signalrHealthy;
+  if (allHealthy) {
+    return { cssClass: 'healthy', label: 'All Healthy' };
+  }
+  return { cssClass: 'unhealthy', label: 'Degraded' };
+}
+
+// Update the health badge on the active release card (called after health checks complete)
+function updateActiveReleaseHealthBadge() {
+  const badge = document.getElementById('activeReleaseHealthBadge');
+  if (!badge) return;
+
+  const state = getHealthBadgeState();
+  badge.className = 'release-health-badge ' + state.cssClass;
+  badge.innerHTML = '<span class="release-health-dot"></span>' + state.label;
+}
+
+// Render recent releases feed in the status panel
 function renderReleasesFeed() {
   const container = document.getElementById('releasesFeedContainer');
   if (!container) return;
@@ -117,11 +180,11 @@ function renderReleasesFeed() {
   const recent = releases.slice(-5).reverse();
   const now = Date.now();
 
-  container.innerHTML = recent.map(function(rel) {
+  container.innerHTML = recent.map(function(rel, index) {
     const version = rel.version || 'unknown';
     const title = rel.title || '';
-    const env = rel.environment || '';
     const ts = rel.timestamp ? new Date(rel.timestamp) : null;
+    const isActive = index === 0;
 
     // Format relative time
     let timeStr = '';
@@ -139,6 +202,21 @@ function renderReleasesFeed() {
     // Truncate long titles
     const displayTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
 
+    if (isActive) {
+      // Active release - prominent card with health badge
+      var state = getHealthBadgeState();
+      return '<div class="release-card-active">'
+        + '<div class="release-active-label">Active Release</div>'
+        + '<div class="release-version">' + version + '</div>'
+        + (displayTitle ? '<div class="release-title" title="' + title.replace(/"/g, '&quot;') + '">' + displayTitle + '</div>' : '')
+        + '<div class="release-meta">'
+        + (timeStr ? '<span class="release-time">' + timeStr + '</span>' : '<span></span>')
+        + '<span id="activeReleaseHealthBadge" class="release-health-badge ' + state.cssClass + '"><span class="release-health-dot"></span>' + state.label + '</span>'
+        + '</div>'
+        + '</div>';
+    }
+
+    // Older releases - compact style
     return '<div style="padding: 6px 8px; background: rgba(255, 255, 255, 0.03); border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.06);">'
       + '<div style="display: flex; justify-content: space-between; align-items: center; gap: 4px;">'
       + '<span style="font-size: 10px; font-family: monospace; color: rgba(102, 126, 234, 0.9); font-weight: 600; white-space: nowrap;">' + version + '</span>'
@@ -925,12 +1003,12 @@ function hideDeveloperOptions() {
 // Show environment selector panel
 function showEnvironmentSelector() {
   const panel = document.querySelector('.environment-selector-panel');
-  const healthChecksPanel = document.querySelector('.health-checks-panel');
-  
+  const statusPanel = document.querySelector('.status-panel');
+
   if (panel) {
-    // Calculate position below health checks panel
-    if (healthChecksPanel && healthChecksPanel.offsetHeight > 0) {
-      const healthChecksBottom = healthChecksPanel.offsetTop + healthChecksPanel.offsetHeight;
+    // Calculate position below status panel
+    if (statusPanel && statusPanel.offsetHeight > 0) {
+      const healthChecksBottom = statusPanel.offsetTop + statusPanel.offsetHeight;
       const gap = 12; // Gap between panels
       panel.style.top = `${healthChecksBottom + gap}px`;
     }
@@ -2487,7 +2565,6 @@ function updateTokenStatus() {
 
 // Position remembered tokens panel below Quick Links panel
 function positionRightSidePanels() {
-  const releasesPanel = document.querySelector('.recent-releases-panel');
   const quickLinksPanel = document.querySelector('.quick-links-panel');
   const rememberedTokensPanel = document.querySelector('.remembered-tokens-panel');
 
@@ -2497,12 +2574,6 @@ function positionRightSidePanels() {
 
   requestAnimationFrame(() => {
     const gap = 12;
-
-    // Position quick-links below recent-releases
-    if (releasesPanel && quickLinksPanel && releasesPanel.offsetHeight > 0) {
-      const releasesBottom = releasesPanel.offsetTop + releasesPanel.offsetHeight;
-      quickLinksPanel.style.top = `${releasesBottom + gap}px`;
-    }
 
     // Position remembered-tokens below quick-links
     if (rememberedTokensPanel && quickLinksPanel && quickLinksPanel.offsetHeight > 0) {
@@ -4348,6 +4419,9 @@ async function performHealthChecks() {
       signalrStatusTextElement.style.color = 'rgba(255, 100, 100, 0.8)';
     }
   }
+
+  // Update the health badge on the active release card
+  updateActiveReleaseHealthBadge();
 }
 
 // Start countdown timer for auto-refresh
@@ -4460,12 +4534,12 @@ function showServiceWorkerInstallUI() {
     checkServiceWorkerStatus();
   }
 
-  // Hide the side panels (health checks, quick links)
-  const healthPanel = document.querySelector('.health-checks-panel');
+  // Hide the side panels (status panel, quick links)
+  const statusPanel = document.querySelector('.status-panel');
   const quickLinksPanel = document.querySelector('.quick-links-panel');
   const rememberedTokensPanel = document.querySelector('.remembered-tokens-panel');
 
-  if (healthPanel) healthPanel.style.display = 'none';
+  if (statusPanel) statusPanel.style.display = 'none';
   if (quickLinksPanel) quickLinksPanel.style.display = 'none';
   if (rememberedTokensPanel) rememberedTokensPanel.style.display = 'none';
 }
