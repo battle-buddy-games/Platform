@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-61789ce",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-11T02:35:01Z",
-      "environment": "production"
-    },
-    {
       "version": "build-2502e42",
       "title": "Fix DashboardPins 500 error and deploy NSSM restart failure",
       "timestamp": "2026-02-11T20:41:51Z",
@@ -102,6 +96,12 @@
       "version": "build-b3f8107",
       "title": "Add pyenv-win Python detection for LlamaIndex and Git Mirror infrastructure tab",
       "timestamp": "2026-02-12T00:16:29Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-14a8824",
+      "title": "Drives Remotes tab: separate platform-managed and host remotes",
+      "timestamp": "2026-02-12T00:21:44Z",
       "environment": "production"
     }
   ]
