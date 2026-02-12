@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-5bed70d",
-      "title": "Add CI telemetry query endpoint and dashboard section",
-      "timestamp": "2026-02-12T19:57:09Z",
-      "environment": "production"
-    },
-    {
       "version": "build-636b6ad",
       "title": "fix",
       "timestamp": "2026-02-12T20:39:53Z",
@@ -102,6 +96,12 @@
       "version": "build-7fa76fa",
       "title": "Restructure Drives dashboard: promote Platform Drives to top-level tab, renam...",
       "timestamp": "2026-02-12T23:00:50Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-9242737",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-02-12T23:05:20Z",
       "environment": "production"
     }
   ]
