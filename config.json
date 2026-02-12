@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-b3f8107",
-      "title": "Add pyenv-win Python detection for LlamaIndex and Git Mirror infrastructure tab",
-      "timestamp": "2026-02-12T00:16:29Z",
-      "environment": "production"
-    },
-    {
       "version": "build-14a8824",
       "title": "Drives Remotes tab: separate platform-managed and host remotes",
       "timestamp": "2026-02-12T00:21:44Z",
@@ -102,6 +96,12 @@
       "version": "build-4bdc7ee",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-12T14:22:04Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-383efbe",
+      "title": "w",
+      "timestamp": "2026-02-12T14:51:46Z",
       "environment": "production"
     }
   ]
