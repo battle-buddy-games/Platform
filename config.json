@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-e210ab9",
-      "title": "Add CI Cache tab to Drives dashboard Drive Inspector",
-      "timestamp": "2026-02-12T18:52:29Z",
-      "environment": "production"
-    },
-    {
       "version": "build-5bed70d",
       "title": "Add CI telemetry query endpoint and dashboard section",
       "timestamp": "2026-02-12T19:57:09Z",
@@ -102,6 +96,12 @@
       "version": "build-7e49621",
       "title": "Remove Runtime from standalone tool listing",
       "timestamp": "2026-02-12T22:52:18Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-7fa76fa",
+      "title": "Restructure Drives dashboard: promote Platform Drives to top-level tab, renam...",
+      "timestamp": "2026-02-12T23:00:50Z",
       "environment": "production"
     }
   ]
