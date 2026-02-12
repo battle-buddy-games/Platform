@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-14a8824",
-      "title": "Drives Remotes tab: separate platform-managed and host remotes",
-      "timestamp": "2026-02-12T00:21:44Z",
-      "environment": "production"
-    },
-    {
       "version": "build-7270d97",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-12T00:26:26Z",
@@ -102,6 +96,12 @@
       "version": "build-383efbe",
       "title": "w",
       "timestamp": "2026-02-12T14:51:46Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-d75571c",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-02-12T15:04:13Z",
       "environment": "production"
     }
   ]
