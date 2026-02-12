@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-1564dc6",
-      "title": "fix",
-      "timestamp": "2026-02-12T21:20:44Z",
-      "environment": "production"
-    },
-    {
       "version": "build-b123c1e",
       "title": "fix",
       "timestamp": "2026-02-12T22:24:12Z",
@@ -102,6 +96,12 @@
       "version": "build-4a80a01",
       "title": "Fix Three.js CORS errors and make hero area use main background",
       "timestamp": "2026-02-12T23:18:35Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-ff963f3",
+      "title": "Fix Razor compile error: move variables out of else block",
+      "timestamp": "2026-02-12T23:28:43Z",
       "environment": "production"
     }
   ]
