@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-c126563",
-      "title": "Fix Discord tool 401 crash and Razor tag helper build error",
-      "timestamp": "2026-02-11T23:34:30Z",
-      "environment": "production"
-    },
-    {
       "version": "build-b3f8107",
       "title": "Add pyenv-win Python detection for LlamaIndex and Git Mirror infrastructure tab",
       "timestamp": "2026-02-12T00:16:29Z",
@@ -102,6 +96,12 @@
       "version": "build-e00190f",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-12T14:08:05Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-4bdc7ee",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-02-12T14:22:04Z",
       "environment": "production"
     }
   ]
