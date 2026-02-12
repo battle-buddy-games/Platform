@@ -683,6 +683,12 @@ function showConnectionFailure(title, message) {
     console.log('[Portal] Release detected:', detectedRelease.version, '- timer starting from detection time (not release timestamp)');
   }
 
+  // Always hide the loading overlay when showing connection failure
+  // This prevents "Loading platform..." from covering the updating modal
+  // (e.g., when user refreshes during an update and the iframe never loads)
+  const loadingOverlay = document.getElementById('loadingOverlay');
+  if (loadingOverlay) loadingOverlay.classList.add('hidden');
+
   const overlay = document.getElementById('connectionFailureOverlay');
   const titleEl = document.getElementById('connectionFailureTitle');
   const messageEl = document.getElementById('connectionFailureMessage');
@@ -1056,6 +1062,17 @@ async function loadTunnel() {
 
   // Register all known tunnels with the service worker (if installed)
   registerTunnelsWithServiceWorker();
+
+  // Proactive health check: if the tunnel is already down, skip iframe load
+  // and go straight to the updating modal. This avoids showing "Loading platform..."
+  // for 5+ seconds when the user refreshes or opens a new window during an update.
+  const preloadHealthy = await checkTunnelHealth(tunnelBaseUrl);
+  if (!preloadHealthy) {
+    console.log('[Portal] Tunnel unhealthy on initial load, showing updating overlay immediately');
+    lastHealthyTunnelAddress = tunnelBaseUrl;
+    showConnectionFailure('Platform Offline', 'The platform is currently offline — an update may be in progress. Searching for a new address...');
+    return;
+  }
 
   const iframe = document.getElementById('tunnelFrame');
 
