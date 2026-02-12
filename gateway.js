@@ -2862,7 +2862,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   // Render recent releases feed
   renderReleasesFeed();
 
-  // Position right-side panels (quick-links below releases, remembered-tokens below quick-links)
+  // Position right-side panels (remembered-tokens below quick-links)
   positionRightSidePanels();
 
   // Update environment selector after CONFIG loads
