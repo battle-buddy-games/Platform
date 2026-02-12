@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-17c309b",
-      "title": "Add theme publish/unpublish system with persistent user theme selection",
-      "timestamp": "2026-02-12T20:49:56Z",
-      "environment": "production"
-    },
-    {
       "version": "build-cedd327",
       "title": "fix",
       "timestamp": "2026-02-12T21:15:52Z",
@@ -102,6 +96,12 @@
       "version": "build-087b0bf",
       "title": "Move Rclone tab from top-level to sub-tab within Internal Drives",
       "timestamp": "2026-02-12T23:08:49Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-3a8ec08",
+      "title": "Refresh Drives Overview tab to summarize Internal Drives and Platform Drives",
+      "timestamp": "2026-02-12T23:11:15Z",
       "environment": "production"
     }
   ]
