@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-1a5abb3",
-      "title": "fix",
-      "timestamp": "2026-02-12T18:34:40Z",
-      "environment": "production"
-    },
-    {
       "version": "build-1fb43c4",
       "title": "fix",
       "timestamp": "2026-02-12T18:45:28Z",
@@ -102,6 +96,12 @@
       "version": "build-0b38f28",
       "title": "Fix Discord role linking: multi-mapping support and guild population",
       "timestamp": "2026-02-12T22:30:50Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-1b3075a",
+      "title": "Fix DiscordRoleMappingsJson missing column and complete UserToolOverride cleanup",
+      "timestamp": "2026-02-12T22:36:17Z",
       "environment": "production"
     }
   ]
