@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-e19f46a",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-12T17:11:29Z",
-      "environment": "production"
-    },
-    {
       "version": "build-4c0c17e",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-12T17:20:40Z",
@@ -102,6 +96,12 @@
       "version": "build-636b6ad",
       "title": "fix",
       "timestamp": "2026-02-12T20:39:53Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-17c309b",
+      "title": "Add theme publish/unpublish system with persistent user theme selection",
+      "timestamp": "2026-02-12T20:49:56Z",
       "environment": "production"
     }
   ]
