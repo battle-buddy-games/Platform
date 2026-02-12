@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-b123c1e",
-      "title": "fix",
-      "timestamp": "2026-02-12T22:24:12Z",
-      "environment": "production"
-    },
-    {
       "version": "build-0b38f28",
       "title": "Fix Discord role linking: multi-mapping support and guild population",
       "timestamp": "2026-02-12T22:30:50Z",
@@ -102,6 +96,12 @@
       "version": "build-ff963f3",
       "title": "Fix Razor compile error: move variables out of else block",
       "timestamp": "2026-02-12T23:28:43Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-acd1dcd",
+      "title": "fix",
+      "timestamp": "2026-02-12T23:31:50Z",
       "environment": "production"
     }
   ]
