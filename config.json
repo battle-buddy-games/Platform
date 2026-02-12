@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-5348cf5",
-      "title": "Fix Configuration tabs, jQuery error, and notification/activity table creation",
-      "timestamp": "2026-02-11T23:07:55Z",
-      "environment": "production"
-    },
-    {
       "version": "build-0e203e4",
       "title": "Fix Projects Tasks tab: merge Task Manager into main view, remove ProjectV2",
       "timestamp": "2026-02-11T23:20:09Z",
@@ -102,6 +96,12 @@
       "version": "build-6c33f6b",
       "title": "p",
       "timestamp": "2026-02-12T02:16:05Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-3c53ec5",
+      "title": "w",
+      "timestamp": "2026-02-12T02:25:07Z",
       "environment": "production"
     }
   ]
