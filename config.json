@@ -20,7 +20,7 @@
   "cloudflareTunnels": [
     {
       "name": "cloud",
-      "address": "https://stewart-lenders-amsterdam-application.trycloudflare.com"
+      "address": "https://golden-plasma-wiki-consider.trycloudflare.com"
     },
     {
       "name": "local-cloud",
