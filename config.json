@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-1b3075a",
-      "title": "Fix DiscordRoleMappingsJson missing column and complete UserToolOverride cleanup",
-      "timestamp": "2026-02-12T22:36:17Z",
-      "environment": "production"
-    },
-    {
       "version": "build-7e49621",
       "title": "Remove Runtime from standalone tool listing",
       "timestamp": "2026-02-12T22:52:18Z",
@@ -102,6 +96,12 @@
       "version": "build-69cbeff",
       "title": "fix",
       "timestamp": "2026-02-12T23:48:35Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-a9fc05f",
+      "title": "fix",
+      "timestamp": "2026-02-13T00:26:03Z",
       "environment": "production"
     }
   ]
