@@ -20,7 +20,7 @@
   "cloudflareTunnels": [
     {
       "name": "cloud",
-      "address": "https://golden-plasma-wiki-consider.trycloudflare.com"
+      "address": "https://charlie-journey-vsnet-vinyl.trycloudflare.com"
     },
     {
       "name": "local-cloud",
