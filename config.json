@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-9242737",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-12T23:05:20Z",
-      "environment": "production"
-    },
-    {
       "version": "build-087b0bf",
       "title": "Move Rclone tab from top-level to sub-tab within Internal Drives",
       "timestamp": "2026-02-12T23:08:49Z",
@@ -102,6 +96,12 @@
       "version": "build-b8dbbcf",
       "title": "fix",
       "timestamp": "2026-02-13T02:03:37Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-966aedf",
+      "title": "fix",
+      "timestamp": "2026-02-13T02:18:28Z",
       "environment": "production"
     }
   ]
