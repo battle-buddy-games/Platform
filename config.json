@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-9ffb670",
-      "title": "w",
-      "timestamp": "2026-02-13T17:46:23Z",
-      "environment": "production"
-    },
-    {
       "version": "build-163d1f3",
       "title": "w",
       "timestamp": "2026-02-13T18:59:56Z",
@@ -102,6 +96,12 @@
       "version": "build-f816aae",
       "title": "fix",
       "timestamp": "2026-02-13T22:20:04Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-ad982bc",
+      "title": "fix",
+      "timestamp": "2026-02-13T22:25:19Z",
       "environment": "production"
     }
   ]
