@@ -1,108 +1,108 @@
-﻿{
-    "github":  {
-                   "clientId":  "Ov23liXpQBh8YbkP2AIy",
-                   "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
-                   "scope":  "user:email"
-               },
-    "google":  {
-                   "clientId":  "94692902434-d832f25lj9m98ikuil8cbtcbnjh4d866.apps.googleusercontent.com",
-                   "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-google.html",
-                   "scope":  "profile email"
-               },
-    "discord":  {
-                    "clientId":  "949786696860434443",
-                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-discord.html",
-                    "scope":  "identify email"
-                },
-    "backend":  {
-                    "callbackEndpoint":  "/Authentication/github/callback"
-                },
-    "cloudflareTunnels":  [
-                              {
-                                  "name":  "cloud",
-                                  "address":  "https://armor-providence-tions-continuously.trycloudflare.com"
-                              },
-                              {
-                                  "name":  "local-cloud",
-                                  "address":  "http://192.168.0.243:8081"
-                              },
-                              {
-                                  "name":  "staging-cloud",
-                                  "address":  "http://192.168.0.251:8201"
-                              },
-                              {
-                                  "name":  "test-cloud",
-                                  "address":  "http://192.168.0.251:8301"
-                              },
-                              {
-                                  "name":  "develop-cloud",
-                                  "address":  "http://192.168.0.251:8101"
-                              },
-                              {
-                                  "name":  "production-local",
-                                  "address":  "http://192.168.0.251:8081"
-                              }
-                          ],
-    "releases":  [
-                     {
-                         "version":  "build-acd1dcd",
-                         "title":  "fix",
-                         "timestamp":  "2026-02-12T23:31:50Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-69cbeff",
-                         "title":  "fix",
-                         "timestamp":  "2026-02-12T23:48:35Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-a9fc05f",
-                         "title":  "fix",
-                         "timestamp":  "2026-02-13T00:26:03Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-67657c7",
-                         "title":  "fix",
-                         "timestamp":  "2026-02-13T01:09:16Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-b8dbbcf",
-                         "title":  "fix",
-                         "timestamp":  "2026-02-13T02:03:37Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-966aedf",
-                         "title":  "fix",
-                         "timestamp":  "2026-02-13T02:18:28Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-7416924",
-                         "title":  "fix",
-                         "timestamp":  "2026-02-13T02:27:17Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-c4ea576",
-                         "title":  "Add pull-rebase retry to source repo pushes in GitHub Pages workflow",
-                         "timestamp":  "2026-02-13T02:31:09Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-665a826",
-                         "title":  "Fix SwitchUpstream.ps1 exit code when NSSM fallback succeeds",
-                         "timestamp":  "2026-02-13T17:17:37Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-6239a1f",
-                         "title":  "w",
-                         "timestamp":  "2026-02-13T17:23:26Z",
-                         "environment":  "production"
-                     }
-                 ]
+{
+  "github": {
+    "clientId": "Ov23liXpQBh8YbkP2AIy",
+    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
+    "scope": "user:email"
+  },
+  "google": {
+    "clientId": "94692902434-d832f25lj9m98ikuil8cbtcbnjh4d866.apps.googleusercontent.com",
+    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-google.html",
+    "scope": "profile email"
+  },
+  "discord": {
+    "clientId": "949786696860434443",
+    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-discord.html",
+    "scope": "identify email"
+  },
+  "backend": {
+    "callbackEndpoint": "/Authentication/github/callback"
+  },
+  "cloudflareTunnels": [
+    {
+      "name": "cloud",
+      "address": "https://armor-providence-tions-continuously.trycloudflare.com"
+    },
+    {
+      "name": "local-cloud",
+      "address": "http://192.168.0.243:8081"
+    },
+    {
+      "name": "staging-cloud",
+      "address": "http://192.168.0.251:8201"
+    },
+    {
+      "name": "test-cloud",
+      "address": "http://192.168.0.251:8301"
+    },
+    {
+      "name": "develop-cloud",
+      "address": "http://192.168.0.251:8101"
+    },
+    {
+      "name": "production-local",
+      "address": "http://192.168.0.251:8081"
+    }
+  ],
+  "releases": [
+    {
+      "version": "build-69cbeff",
+      "title": "fix",
+      "timestamp": "2026-02-12T23:48:35Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-a9fc05f",
+      "title": "fix",
+      "timestamp": "2026-02-13T00:26:03Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-67657c7",
+      "title": "fix",
+      "timestamp": "2026-02-13T01:09:16Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-b8dbbcf",
+      "title": "fix",
+      "timestamp": "2026-02-13T02:03:37Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-966aedf",
+      "title": "fix",
+      "timestamp": "2026-02-13T02:18:28Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-7416924",
+      "title": "fix",
+      "timestamp": "2026-02-13T02:27:17Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-c4ea576",
+      "title": "Add pull-rebase retry to source repo pushes in GitHub Pages workflow",
+      "timestamp": "2026-02-13T02:31:09Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-665a826",
+      "title": "Fix SwitchUpstream.ps1 exit code when NSSM fallback succeeds",
+      "timestamp": "2026-02-13T17:17:37Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-6239a1f",
+      "title": "w",
+      "timestamp": "2026-02-13T17:23:26Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-080f88c",
+      "title": "Fix CheckTunnelHealth.ps1 exit code on git push rejection",
+      "timestamp": "2026-02-13T17:34:14Z",
+      "environment": "production"
+    }
+  ]
 }
