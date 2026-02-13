@@ -472,6 +472,16 @@ async function pollConfigAndHealth() {
       detectedRelease = checkForRecentRelease();
       if (detectedRelease) {
         console.log('[Portal] Release detected during polling:', detectedRelease);
+        // Anchor timer to release timestamp so stages reflect real deployment time
+        if (detectedRelease.timestamp) {
+          const releaseTime = new Date(detectedRelease.timestamp).getTime();
+          if (!isNaN(releaseTime)) {
+            const elapsedMs = Date.now() - releaseTime;
+            updatingStartTime = releaseTime;
+            updatingElapsedSeconds = Math.max(0, Math.floor(elapsedMs / 1000));
+            console.log('[Portal] Timer re-anchored to release timestamp (' + updatingElapsedSeconds + 's elapsed)');
+          }
+        }
       }
     }
 
@@ -671,16 +681,26 @@ function showConnectionFailure(title, message) {
   // Check for a recent release in config.json for display context (version, title)
   detectedRelease = checkForRecentRelease();
 
-  // Always start the timer from when we actually detect the failure.
-  // The release timestamp in config.json is recorded early in the deployment
-  // pipeline (before the service restarts), so it leads the actual outage by
-  // several minutes. Starting from detection time gives users an accurate
-  // sense of how long they've been waiting.
-  updatingStartTime = Date.now();
-  updatingElapsedSeconds = 0;
-
-  if (detectedRelease) {
-    console.log('[Portal] Release detected:', detectedRelease.version, '- timer starting from detection time (not release timestamp)');
+  // If a recent release is detected in config.json, use its timestamp to
+  // calculate real elapsed time so the timer survives page refreshes.
+  // Without this, refreshing the page resets the timer to 0:00 which
+  // gives no sense of actual progress through the deployment stages.
+  if (detectedRelease && detectedRelease.timestamp) {
+    const releaseTime = new Date(detectedRelease.timestamp).getTime();
+    if (!isNaN(releaseTime)) {
+      const elapsedMs = Date.now() - releaseTime;
+      updatingStartTime = releaseTime;
+      updatingElapsedSeconds = Math.max(0, Math.floor(elapsedMs / 1000));
+      console.log('[Portal] Release detected:', detectedRelease.version,
+        '- timer anchored to release timestamp (' + updatingElapsedSeconds + 's elapsed)');
+    } else {
+      updatingStartTime = Date.now();
+      updatingElapsedSeconds = 0;
+    }
+  } else {
+    // No release detected — start from detection time as fallback
+    updatingStartTime = Date.now();
+    updatingElapsedSeconds = 0;
   }
 
   // Always hide the loading overlay when showing connection failure
