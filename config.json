@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-7fa76fa",
-      "title": "Restructure Drives dashboard: promote Platform Drives to top-level tab, renam...",
-      "timestamp": "2026-02-12T23:00:50Z",
-      "environment": "production"
-    },
-    {
       "version": "build-9242737",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-12T23:05:20Z",
@@ -102,6 +96,12 @@
       "version": "build-67657c7",
       "title": "fix",
       "timestamp": "2026-02-13T01:09:16Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-b8dbbcf",
+      "title": "fix",
+      "timestamp": "2026-02-13T02:03:37Z",
       "environment": "production"
     }
   ]
