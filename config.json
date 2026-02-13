@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-7e49621",
-      "title": "Remove Runtime from standalone tool listing",
-      "timestamp": "2026-02-12T22:52:18Z",
-      "environment": "production"
-    },
-    {
       "version": "build-7fa76fa",
       "title": "Restructure Drives dashboard: promote Platform Drives to top-level tab, renam...",
       "timestamp": "2026-02-12T23:00:50Z",
@@ -102,6 +96,12 @@
       "version": "build-a9fc05f",
       "title": "fix",
       "timestamp": "2026-02-13T00:26:03Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-67657c7",
+      "title": "fix",
+      "timestamp": "2026-02-13T01:09:16Z",
       "environment": "production"
     }
   ]
