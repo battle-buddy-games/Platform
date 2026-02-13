@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-3a8ec08",
-      "title": "Refresh Drives Overview tab to summarize Internal Drives and Platform Drives",
-      "timestamp": "2026-02-12T23:11:15Z",
-      "environment": "production"
-    },
-    {
       "version": "build-4a80a01",
       "title": "Fix Three.js CORS errors and make hero area use main background",
       "timestamp": "2026-02-12T23:18:35Z",
@@ -102,6 +96,12 @@
       "version": "build-7416924",
       "title": "fix",
       "timestamp": "2026-02-13T02:27:17Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-c4ea576",
+      "title": "Add pull-rebase retry to source repo pushes in GitHub Pages workflow",
+      "timestamp": "2026-02-13T02:31:09Z",
       "environment": "production"
     }
   ]
