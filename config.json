@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-6239a1f",
-      "title": "w",
-      "timestamp": "2026-02-13T17:23:26Z",
-      "environment": "production"
-    },
-    {
       "version": "build-080f88c",
       "title": "Fix CheckTunnelHealth.ps1 exit code on git push rejection",
       "timestamp": "2026-02-13T17:34:14Z",
@@ -102,6 +96,12 @@
       "version": "build-50bc7c2",
       "title": "fix",
       "timestamp": "2026-02-13T20:12:19Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-f22e87a",
+      "title": "fix",
+      "timestamp": "2026-02-13T20:26:26Z",
       "environment": "production"
     }
   ]
