@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-c4ea576",
-      "title": "Add pull-rebase retry to source repo pushes in GitHub Pages workflow",
-      "timestamp": "2026-02-13T02:31:09Z",
-      "environment": "production"
-    },
-    {
       "version": "build-665a826",
       "title": "Fix SwitchUpstream.ps1 exit code when NSSM fallback succeeds",
       "timestamp": "2026-02-13T17:17:37Z",
@@ -102,6 +96,12 @@
       "version": "build-9c42331",
       "title": "fix",
       "timestamp": "2026-02-13T20:00:22Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-3e16c85",
+      "title": "fix",
+      "timestamp": "2026-02-13T20:07:02Z",
       "environment": "production"
     }
   ]
