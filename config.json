@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-1bb2e8b",
-      "title": "fix",
-      "timestamp": "2026-02-13T20:41:18Z",
-      "environment": "production"
-    },
-    {
       "version": "build-f816aae",
       "title": "fix",
       "timestamp": "2026-02-13T22:20:04Z",
@@ -102,6 +96,12 @@
       "version": "build-c3841ca",
       "title": "fix",
       "timestamp": "2026-02-14T03:02:56Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-c3841ca",
+      "title": "fix",
+      "timestamp": "2026-02-14T14:00:05Z",
       "environment": "production"
     }
   ]
