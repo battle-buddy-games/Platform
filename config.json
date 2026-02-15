@@ -1,108 +1,108 @@
-﻿{
-    "github":  {
-                   "clientId":  "Ov23liXpQBh8YbkP2AIy",
-                   "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
-                   "scope":  "user:email"
-               },
-    "google":  {
-                   "clientId":  "94692902434-d832f25lj9m98ikuil8cbtcbnjh4d866.apps.googleusercontent.com",
-                   "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-google.html",
-                   "scope":  "profile email"
-               },
-    "discord":  {
-                    "clientId":  "949786696860434443",
-                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-discord.html",
-                    "scope":  "identify email"
-                },
-    "backend":  {
-                    "callbackEndpoint":  "/Authentication/github/callback"
-                },
-    "cloudflareTunnels":  [
-                              {
-                                  "name":  "cloud",
-                                  "address":  "https://lone-controversy-subscriptions-competitive.trycloudflare.com"
-                              },
-                              {
-                                  "name":  "local-cloud",
-                                  "address":  "http://192.168.0.243:8081"
-                              },
-                              {
-                                  "name":  "staging-cloud",
-                                  "address":  "http://192.168.0.251:8201"
-                              },
-                              {
-                                  "name":  "test-cloud",
-                                  "address":  "http://192.168.0.251:8301"
-                              },
-                              {
-                                  "name":  "develop-cloud",
-                                  "address":  "http://192.168.0.251:8101"
-                              },
-                              {
-                                  "name":  "production-local",
-                                  "address":  "http://192.168.0.251:8081"
-                              }
-                          ],
-    "releases":  [
-                     {
-                         "version":  "build-0b0f0ea",
-                         "title":  "fix",
-                         "timestamp":  "2026-02-13T23:23:57Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-ab5193b",
-                         "title":  "fix",
-                         "timestamp":  "2026-02-13T23:59:21Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-aada8ef",
-                         "title":  "fix",
-                         "timestamp":  "2026-02-14T00:11:56Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-cfaabc2",
-                         "title":  "fix",
-                         "timestamp":  "2026-02-14T00:16:38Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-7375922",
-                         "title":  "fix",
-                         "timestamp":  "2026-02-14T00:32:50Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-60cb8c1",
-                         "title":  "fix",
-                         "timestamp":  "2026-02-14T02:17:37Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-c3841ca",
-                         "title":  "fix",
-                         "timestamp":  "2026-02-14T03:02:56Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-c3841ca",
-                         "title":  "fix",
-                         "timestamp":  "2026-02-14T14:00:05Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-8fd40f4",
-                         "title":  "t",
-                         "timestamp":  "2026-02-14T20:26:56Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-81c5d2f",
-                         "title":  "w",
-                         "timestamp":  "2026-02-14T21:55:14Z",
-                         "environment":  "production"
-                     }
-                 ]
+{
+  "github": {
+    "clientId": "Ov23liXpQBh8YbkP2AIy",
+    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
+    "scope": "user:email"
+  },
+  "google": {
+    "clientId": "94692902434-d832f25lj9m98ikuil8cbtcbnjh4d866.apps.googleusercontent.com",
+    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-google.html",
+    "scope": "profile email"
+  },
+  "discord": {
+    "clientId": "949786696860434443",
+    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-discord.html",
+    "scope": "identify email"
+  },
+  "backend": {
+    "callbackEndpoint": "/Authentication/github/callback"
+  },
+  "cloudflareTunnels": [
+    {
+      "name": "cloud",
+      "address": "https://lone-controversy-subscriptions-competitive.trycloudflare.com"
+    },
+    {
+      "name": "local-cloud",
+      "address": "http://192.168.0.243:8081"
+    },
+    {
+      "name": "staging-cloud",
+      "address": "http://192.168.0.251:8201"
+    },
+    {
+      "name": "test-cloud",
+      "address": "http://192.168.0.251:8301"
+    },
+    {
+      "name": "develop-cloud",
+      "address": "http://192.168.0.251:8101"
+    },
+    {
+      "name": "production-local",
+      "address": "http://192.168.0.251:8081"
+    }
+  ],
+  "releases": [
+    {
+      "version": "build-ab5193b",
+      "title": "fix",
+      "timestamp": "2026-02-13T23:59:21Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-aada8ef",
+      "title": "fix",
+      "timestamp": "2026-02-14T00:11:56Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-cfaabc2",
+      "title": "fix",
+      "timestamp": "2026-02-14T00:16:38Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-7375922",
+      "title": "fix",
+      "timestamp": "2026-02-14T00:32:50Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-60cb8c1",
+      "title": "fix",
+      "timestamp": "2026-02-14T02:17:37Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-c3841ca",
+      "title": "fix",
+      "timestamp": "2026-02-14T03:02:56Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-c3841ca",
+      "title": "fix",
+      "timestamp": "2026-02-14T14:00:05Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-8fd40f4",
+      "title": "t",
+      "timestamp": "2026-02-14T20:26:56Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-81c5d2f",
+      "title": "w",
+      "timestamp": "2026-02-14T21:55:14Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-7387e4f",
+      "title": "w",
+      "timestamp": "2026-02-15T17:01:56Z",
+      "environment": "production"
+    }
+  ]
 }
