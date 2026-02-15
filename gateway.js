@@ -3916,8 +3916,41 @@ async function checkAgentStatus() {
         const text = await response.text();
         
         if (text && text.trim().length > 0) {
+          const trimmedText = text.trim();
+          const isOkText = trimmedText === 'OK' || trimmedText.toLowerCase() === 'healthy';
+          if (isOkText) {
+            if (statusElement) {
+              statusElement.style.background = 'rgba(100, 255, 100, 0.3)';
+            }
+            if (checkmarkElement) {
+              checkmarkElement.style.display = 'block';
+              checkmarkElement.style.color = 'rgba(100, 255, 100, 1)';
+            }
+            if (statusTextElement) {
+              statusTextElement.textContent = 'Healthy';
+              statusTextElement.style.color = 'rgba(100, 255, 100, 0.8)';
+            }
+            return true;
+          }
+
+          const looksLikeJson = trimmedText.startsWith('{') || trimmedText.startsWith('[');
+          if (!looksLikeJson) {
+            if (statusElement) {
+              statusElement.style.background = 'rgba(100, 255, 100, 0.3)';
+            }
+            if (checkmarkElement) {
+              checkmarkElement.style.display = 'block';
+              checkmarkElement.style.color = 'rgba(100, 255, 100, 1)';
+            }
+            if (statusTextElement) {
+              statusTextElement.textContent = trimmedText;
+              statusTextElement.style.color = 'rgba(100, 255, 100, 0.8)';
+            }
+            return true;
+          }
+
           try {
-            const data = JSON.parse(text);
+            const data = JSON.parse(trimmedText);
           if (data.agentService) {
             const agentInfo = data.agentService;
             const discordInfo = agentInfo.Discord || agentInfo.discord;
