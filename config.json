@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-60cb8c1",
-      "title": "fix",
-      "timestamp": "2026-02-14T02:17:37Z",
-      "environment": "production"
-    },
-    {
       "version": "build-c3841ca",
       "title": "fix",
       "timestamp": "2026-02-14T03:02:56Z",
@@ -102,6 +96,12 @@
       "version": "build-92d632c",
       "title": "w",
       "timestamp": "2026-02-15T18:05:52Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-b8e1811",
+      "title": "p",
+      "timestamp": "2026-02-15T18:21:18Z",
       "environment": "production"
     }
   ]
