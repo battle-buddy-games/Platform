@@ -291,7 +291,11 @@ const UPDATING_STAGES = [
 
 // Recent release info detected from config.json
 let detectedRelease = null;
-const RELEASE_RECENCY_MS = 30 * 60 * 1000; // Consider releases within 30 minutes as "current"
+const RELEASE_RECENCY_MS = 2 * 60 * 60 * 1000; // Consider releases within 2 hours as "current" (deployments can take time)
+
+// localStorage keys for persisting failure state across page refreshes
+const LS_FAILURE_DETECTED_AT = 'portal_failureDetectedAt';
+const LS_FAILURE_TUNNEL = 'portal_failureTunnel';
 
 // Check config.json for a recent release
 function checkForRecentRelease() {
@@ -310,6 +314,44 @@ function checkForRecentRelease() {
     return latest;
   }
   return null;
+}
+
+// Persist failure detection time to localStorage so the timer survives page refreshes
+function persistFailureTime(timestamp, tunnelAddress) {
+  try {
+    localStorage.setItem(LS_FAILURE_DETECTED_AT, String(timestamp));
+    if (tunnelAddress) localStorage.setItem(LS_FAILURE_TUNNEL, tunnelAddress);
+  } catch (e) {
+    // localStorage unavailable (private browsing, etc.)
+  }
+}
+
+// Read persisted failure time from localStorage
+function getPersistedFailureTime() {
+  try {
+    const raw = localStorage.getItem(LS_FAILURE_DETECTED_AT);
+    if (!raw) return null;
+    const ts = Number(raw);
+    if (isNaN(ts) || ts <= 0) return null;
+    // Ignore stale persisted failures older than 2 hours
+    if (Date.now() - ts > 2 * 60 * 60 * 1000) {
+      clearPersistedFailure();
+      return null;
+    }
+    return ts;
+  } catch (e) {
+    return null;
+  }
+}
+
+// Clear persisted failure state (called when platform comes back online)
+function clearPersistedFailure() {
+  try {
+    localStorage.removeItem(LS_FAILURE_DETECTED_AT);
+    localStorage.removeItem(LS_FAILURE_TUNNEL);
+  } catch (e) {
+    // Ignore
+  }
 }
 
 // Health check for tunnel address using /api/HealthCheck/system (like gateway.js)
@@ -479,6 +521,7 @@ async function pollConfigAndHealth() {
             const elapsedMs = Date.now() - releaseTime;
             updatingStartTime = releaseTime;
             updatingElapsedSeconds = Math.max(0, Math.floor(elapsedMs / 1000));
+            persistFailureTime(releaseTime, tunnelBaseUrl);
             console.log('[Portal] Timer re-anchored to release timestamp (' + updatingElapsedSeconds + 's elapsed)');
           }
         }
@@ -681,26 +724,46 @@ function showConnectionFailure(title, message) {
   // Check for a recent release in config.json for display context (version, title)
   detectedRelease = checkForRecentRelease();
 
-  // If a recent release is detected in config.json, use its timestamp to
-  // calculate real elapsed time so the timer survives page refreshes.
-  // Without this, refreshing the page resets the timer to 0:00 which
-  // gives no sense of actual progress through the deployment stages.
+  // Determine timer start time using the best available anchor:
+  // 1. Recent release timestamp from config.json (most accurate)
+  // 2. Persisted failure detection time from localStorage (survives refresh)
+  // 3. Current time (last resort, only on first detection)
   if (detectedRelease && detectedRelease.timestamp) {
     const releaseTime = new Date(detectedRelease.timestamp).getTime();
     if (!isNaN(releaseTime)) {
       const elapsedMs = Date.now() - releaseTime;
       updatingStartTime = releaseTime;
       updatingElapsedSeconds = Math.max(0, Math.floor(elapsedMs / 1000));
+      persistFailureTime(releaseTime, tunnelBaseUrl);
       console.log('[Portal] Release detected:', detectedRelease.version,
         '- timer anchored to release timestamp (' + updatingElapsedSeconds + 's elapsed)');
     } else {
-      updatingStartTime = Date.now();
-      updatingElapsedSeconds = 0;
+      // Invalid release timestamp — try persisted time
+      const persisted = getPersistedFailureTime();
+      if (persisted) {
+        updatingStartTime = persisted;
+        updatingElapsedSeconds = Math.max(0, Math.floor((Date.now() - persisted) / 1000));
+        console.log('[Portal] Timer restored from persisted failure time (' + updatingElapsedSeconds + 's elapsed)');
+      } else {
+        updatingStartTime = Date.now();
+        updatingElapsedSeconds = 0;
+        persistFailureTime(updatingStartTime, tunnelBaseUrl);
+      }
     }
   } else {
-    // No release detected — start from detection time as fallback
-    updatingStartTime = Date.now();
-    updatingElapsedSeconds = 0;
+    // No release detected — check localStorage for persisted failure time
+    const persisted = getPersistedFailureTime();
+    if (persisted) {
+      updatingStartTime = persisted;
+      updatingElapsedSeconds = Math.max(0, Math.floor((Date.now() - persisted) / 1000));
+      console.log('[Portal] Timer restored from persisted failure time (' + updatingElapsedSeconds + 's elapsed)');
+    } else {
+      // First detection — start fresh and persist
+      updatingStartTime = Date.now();
+      updatingElapsedSeconds = 0;
+      persistFailureTime(updatingStartTime, tunnelBaseUrl);
+      console.log('[Portal] No release or persisted time — starting timer fresh');
+    }
   }
 
   // Always hide the loading overlay when showing connection failure
@@ -787,9 +850,10 @@ function retryConnection() {
     retryCountdownInterval = null;
   }
 
-  // Reset flags
+  // Reset flags and clear persisted failure state
   connectionFailureDetected = false;
   iframeLoadCompleted = false;
+  clearPersistedFailure();
 
   // Show loading overlay
   const loadingOverlay = document.getElementById('loadingOverlay');
@@ -868,9 +932,10 @@ function refreshToNewAddress(newAddress) {
   stopPolling();
   stopUpdatingTimer();
 
-  // Reset connection failure flag
+  // Reset connection failure flag and clear persisted state
   connectionFailureDetected = false;
-  
+  clearPersistedFailure();
+
   // Get current subpage from URL
   const urlParams = new URLSearchParams(window.location.search);
   const subpagePath = urlParams.get('subpage') || '/';
@@ -1265,6 +1330,7 @@ async function loadTunnel() {
     // Reset connection failure flag if it was set (successful load clears failure state)
     if (connectionFailureDetected) {
       connectionFailureDetected = false;
+      clearPersistedFailure();
       stopUpdatingTimer();
       const failureOverlay = document.getElementById('connectionFailureOverlay');
       if (failureOverlay) {
