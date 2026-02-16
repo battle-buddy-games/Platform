@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-23295a8",
-      "title": "w",
-      "timestamp": "2026-02-15T18:47:41Z",
-      "environment": "production"
-    },
-    {
       "version": "build-e765fdc",
       "title": "w",
       "timestamp": "2026-02-15T19:08:19Z",
@@ -102,6 +96,12 @@
       "version": "build-8c62c4e",
       "title": "Fix missing tables and columns: ProductAxes, ProjectPlans, ToolPlaylists, Gui...",
       "timestamp": "2026-02-16T20:05:04Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-5dfe0ad",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-02-16T20:30:57Z",
       "environment": "production"
     }
   ]
