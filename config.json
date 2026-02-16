@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-cd7ac1a",
-      "title": "w",
-      "timestamp": "2026-02-16T04:07:36Z",
-      "environment": "production"
-    },
-    {
       "version": "build-748ed4e",
       "title": "y",
       "timestamp": "2026-02-16T17:42:45Z",
@@ -102,6 +96,12 @@
       "version": "build-a942cb8",
       "title": "Fix GameClient repo name capitalization in TrackedRepoService",
       "timestamp": "2026-02-16T21:40:08Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-83c13bb",
+      "title": "w",
+      "timestamp": "2026-02-16T22:23:00Z",
       "environment": "production"
     }
   ]
