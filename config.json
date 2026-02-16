@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-ff4fc72",
-      "title": "Merge branch 'w'",
-      "timestamp": "2026-02-16T01:55:08Z",
-      "environment": "production"
-    },
-    {
       "version": "build-3805815",
       "title": "Document Tool and more",
       "timestamp": "2026-02-16T03:34:44Z",
@@ -102,6 +96,12 @@
       "version": "build-1648c70",
       "title": "Fix FBXLoader 3D preview: use direct CDN URLs instead of dynamic import map",
       "timestamp": "2026-02-16T20:52:23Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-de71ea0",
+      "title": "Fix 3D preview: add static import map for Three.js bare specifier resolution",
+      "timestamp": "2026-02-16T21:22:02Z",
       "environment": "production"
     }
   ]
