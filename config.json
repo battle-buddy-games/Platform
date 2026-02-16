@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-92d632c",
-      "title": "w",
-      "timestamp": "2026-02-15T18:05:52Z",
-      "environment": "production"
-    },
-    {
       "version": "build-b8e1811",
       "title": "p",
       "timestamp": "2026-02-15T18:21:18Z",
@@ -102,6 +96,12 @@
       "version": "build-bb40ddc",
       "title": "Fix deploy-platform build failures: Razor keyword conflict, hub ambiguity, mi...",
       "timestamp": "2026-02-16T18:43:45Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-87e83eb",
+      "title": "Fix DocumentTool RuntimeBinderException: use typed view model instead of anon...",
+      "timestamp": "2026-02-16T19:22:34Z",
       "environment": "production"
     }
   ]
