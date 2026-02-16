@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-8fd40f4",
-      "title": "t",
-      "timestamp": "2026-02-14T20:26:56Z",
-      "environment": "production"
-    },
-    {
       "version": "build-81c5d2f",
       "title": "w",
       "timestamp": "2026-02-14T21:55:14Z",
@@ -102,6 +96,12 @@
       "version": "build-e765fdc",
       "title": "w",
       "timestamp": "2026-02-15T19:08:19Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-ff4fc72",
+      "title": "Merge branch 'w'",
+      "timestamp": "2026-02-16T01:55:08Z",
       "environment": "production"
     }
   ]
