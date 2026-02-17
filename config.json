@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-7f0ee1f",
-      "title": "p",
-      "timestamp": "2026-02-17T00:14:21Z",
-      "environment": "production"
-    },
-    {
       "version": "build-90e5ec5",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-17T00:24:29Z",
@@ -102,6 +96,12 @@
       "version": "build-00cc140",
       "title": "w",
       "timestamp": "2026-02-17T21:37:49Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-b04d3a3",
+      "title": "w",
+      "timestamp": "2026-02-17T22:19:52Z",
       "environment": "production"
     }
   ]
