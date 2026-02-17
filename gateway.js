@@ -1032,7 +1032,7 @@ function getTunnelForEnvironment(envName) {
     'develop': 'develop-cloud',
     'staging': 'staging-cloud',
     'test': 'test-cloud',
-    'production': 'production-cloud'
+    'production': 'cloud'
   };
   
   const tunnelName = tunnelNameMap[envName] || 'cloud';

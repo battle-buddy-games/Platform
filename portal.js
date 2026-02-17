@@ -7,7 +7,7 @@ function getTunnelForEnvironment(envName) {
     'develop': 'cloud',           // Keep "cloud" for develop to maintain existing naming
     'staging': 'staging-cloud',
     'test': 'test-cloud',
-    'production': 'production-cloud'  // Use production-cloud, fallback to cloud for backward compatibility
+    'production': 'cloud'
   };
   
   const tunnelName = tunnelNameMap[envName] || 'cloud';
@@ -43,7 +43,7 @@ function getTunnelForPreferredEnvironment() {
 // Load configuration from config.json
 async function loadConfig() {
   try {
-    const response = await fetch('./config.json');
+    const response = await fetch('./config.json?t=' + Date.now());
     if (!response.ok) {
       throw new Error(`Failed to load config: ${response.status} ${response.statusText}`);
     }
@@ -297,23 +297,25 @@ const RELEASE_RECENCY_MS = 2 * 60 * 60 * 1000; // Consider releases within 2 hou
 const LS_FAILURE_DETECTED_AT = 'portal_failureDetectedAt';
 const LS_FAILURE_TUNNEL = 'portal_failureTunnel';
 
-// Check config.json for a recent release
-function checkForRecentRelease() {
+// Get the latest release from config.json (for timer anchoring when platform is offline)
+function getLatestRelease() {
   if (!CONFIG || !CONFIG.releases || CONFIG.releases.length === 0) return null;
 
-  const now = Date.now();
-  // Check the most recent release
   const latest = CONFIG.releases[CONFIG.releases.length - 1];
   if (!latest || !latest.timestamp) return null;
 
   const releaseTime = new Date(latest.timestamp).getTime();
   if (isNaN(releaseTime)) return null;
 
-  const ageMs = now - releaseTime;
-  if (ageMs <= RELEASE_RECENCY_MS) {
-    return latest;
-  }
-  return null;
+  return latest;
+}
+
+// Check if the latest release is recent enough to show "deploying" messaging (vs generic offline)
+function isReleaseRecent(release) {
+  if (!release || !release.timestamp) return false;
+  const releaseTime = new Date(release.timestamp).getTime();
+  if (isNaN(releaseTime)) return false;
+  return (Date.now() - releaseTime) <= RELEASE_RECENCY_MS;
 }
 
 // Persist failure detection time to localStorage so the timer survives page refreshes
@@ -464,7 +466,7 @@ function updateUpdatingUI() {
   // Update subtitle message
   if (messageEl) {
     if (stage.state === 'updating') {
-      if (detectedRelease) {
+      if (detectedRelease && isReleaseRecent(detectedRelease)) {
         const releaseLabel = detectedRelease.version || '';
         const releaseDesc = detectedRelease.title || '';
         messageEl.innerHTML = 'Deploying update' + (releaseLabel ? ' <strong>' + releaseLabel + '</strong>' : '')
@@ -509,21 +511,20 @@ async function pollConfigAndHealth() {
     const newConfig = await response.json();
     CONFIG = newConfig;
 
-    // Re-check for recent release info (may appear after config.json is updated mid-wait)
-    if (connectionFailureDetected && !detectedRelease) {
-      detectedRelease = checkForRecentRelease();
-      if (detectedRelease) {
-        console.log('[Portal] Release detected during polling:', detectedRelease);
-        // Anchor timer to release timestamp so stages reflect real deployment time
-        if (detectedRelease.timestamp) {
-          const releaseTime = new Date(detectedRelease.timestamp).getTime();
-          if (!isNaN(releaseTime)) {
-            const elapsedMs = Date.now() - releaseTime;
-            updatingStartTime = releaseTime;
-            updatingElapsedSeconds = Math.max(0, Math.floor(elapsedMs / 1000));
-            persistFailureTime(releaseTime, tunnelBaseUrl);
-            console.log('[Portal] Timer re-anchored to release timestamp (' + updatingElapsedSeconds + 's elapsed)');
-          }
+    // Re-check for release info (may appear or change after config.json is updated mid-wait)
+    if (connectionFailureDetected) {
+      const latestRelease = getLatestRelease();
+      // Re-anchor if we found a newer release than what we had
+      if (latestRelease && latestRelease.timestamp &&
+          (!detectedRelease || latestRelease.version !== detectedRelease.version)) {
+        detectedRelease = latestRelease;
+        console.log('[Portal] New release detected during polling:', detectedRelease.version);
+        const releaseTime = new Date(detectedRelease.timestamp).getTime();
+        if (!isNaN(releaseTime)) {
+          updatingStartTime = releaseTime;
+          updatingElapsedSeconds = Math.max(0, Math.floor((Date.now() - releaseTime) / 1000));
+          persistFailureTime(releaseTime, tunnelBaseUrl);
+          console.log('[Portal] Timer re-anchored to release timestamp (' + updatingElapsedSeconds + 's elapsed)');
         }
       }
     }
@@ -721,37 +722,24 @@ function showConnectionFailure(title, message) {
 
   connectionFailureDetected = true;
 
-  // Check for a recent release in config.json for display context (version, title)
-  detectedRelease = checkForRecentRelease();
+  // Always get the latest release from config.json for timer anchoring.
+  // The release timestamp is the most reliable anchor for elapsed time,
+  // regardless of age — the stage system handles early/late display states.
+  detectedRelease = getLatestRelease();
 
-  // Determine timer start time using the best available anchor:
-  // 1. Recent release timestamp from config.json (most accurate)
+  // Determine timer start time:
+  // 1. Latest release timestamp from config.json (always used if available)
   // 2. Persisted failure detection time from localStorage (survives refresh)
-  // 3. Current time (last resort, only on first detection)
+  // 3. Current time (last resort, only on first detection with no release info)
   if (detectedRelease && detectedRelease.timestamp) {
     const releaseTime = new Date(detectedRelease.timestamp).getTime();
-    if (!isNaN(releaseTime)) {
-      const elapsedMs = Date.now() - releaseTime;
-      updatingStartTime = releaseTime;
-      updatingElapsedSeconds = Math.max(0, Math.floor(elapsedMs / 1000));
-      persistFailureTime(releaseTime, tunnelBaseUrl);
-      console.log('[Portal] Release detected:', detectedRelease.version,
-        '- timer anchored to release timestamp (' + updatingElapsedSeconds + 's elapsed)');
-    } else {
-      // Invalid release timestamp — try persisted time
-      const persisted = getPersistedFailureTime();
-      if (persisted) {
-        updatingStartTime = persisted;
-        updatingElapsedSeconds = Math.max(0, Math.floor((Date.now() - persisted) / 1000));
-        console.log('[Portal] Timer restored from persisted failure time (' + updatingElapsedSeconds + 's elapsed)');
-      } else {
-        updatingStartTime = Date.now();
-        updatingElapsedSeconds = 0;
-        persistFailureTime(updatingStartTime, tunnelBaseUrl);
-      }
-    }
+    updatingStartTime = releaseTime;
+    updatingElapsedSeconds = Math.max(0, Math.floor((Date.now() - releaseTime) / 1000));
+    persistFailureTime(releaseTime, tunnelBaseUrl);
+    console.log('[Portal] Timer anchored to release', detectedRelease.version,
+      '(' + updatingElapsedSeconds + 's elapsed)');
   } else {
-    // No release detected — check localStorage for persisted failure time
+    // No release in config.json — check localStorage for persisted failure time
     const persisted = getPersistedFailureTime();
     if (persisted) {
       updatingStartTime = persisted;
@@ -806,8 +794,8 @@ function showConnectionFailure(title, message) {
     else if (i === activeBarIndex) seg.classList.add('active');
   });
 
-  // Update subtitle with release info if detected
-  if (detectedRelease) {
+  // Update subtitle with release info if detected and recent
+  if (detectedRelease && isReleaseRecent(detectedRelease)) {
     console.log('[Portal] Recent release detected:', detectedRelease);
     if (messageEl) {
       const releaseLabel = detectedRelease.version || '';
