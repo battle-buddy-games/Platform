@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-78494fa",
-      "title": "p",
-      "timestamp": "2026-02-17T19:42:53Z",
-      "environment": "production"
-    },
-    {
       "version": "build-fedf697",
       "title": "w",
       "timestamp": "2026-02-17T20:22:58Z",
@@ -102,6 +96,12 @@
       "version": "build-a7f83ca",
       "title": "w",
       "timestamp": "2026-02-18T05:04:28Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-26cfc35",
+      "title": "w",
+      "timestamp": "2026-02-18T13:29:03Z",
       "environment": "production"
     }
   ]
