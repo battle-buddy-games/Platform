@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDK Start - Battle Buddy Platform</title>
+  <meta name="description" content="Launch parameter relay for the SDK Hub.">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="apple-touch-icon" href="./favicon.png">
+  <link rel="stylesheet" href="./gateway-shared.css">
+  <link rel="stylesheet" href="./sdk-start.css">
+</head>
+<body>
+  <div class="callback-container" style="max-width: 500px;">
+    <h1>SDK Launch Relay</h1>
+
+    <!-- Connection Status -->
+    <div id="connectionStatus" class="sdk-status-panel">
+      <div class="sdk-status-indicator">
+        <div class="spinner" id="statusSpinner" style="width: 24px; height: 24px; border-width: 3px; margin: 0;"></div>
+        <span id="statusText">Waiting for SDK Hub...</span>
+      </div>
+    </div>
+
+    <!-- Pending Launch Info -->
+    <div id="pendingLaunchPanel" style="display: none;">
+      <div class="sdk-launch-card pending">
+        <div class="sdk-launch-label" id="pendingLaunchLabel">--</div>
+        <div class="sdk-launch-app" id="pendingLaunchApp">--</div>
+        <div class="sdk-launch-time" id="pendingLaunchTime">--</div>
+        <div class="sdk-launch-stale" id="pendingLaunchStale" style="display: none;">
+          This entry is older than 5 minutes. It may be from a previous session.
+        </div>
+      </div>
+    </div>
+
+    <!-- No Pending Launches -->
+    <div id="noPendingPanel" style="display: none;">
+      <p style="text-align: center; color: rgba(255, 255, 255, 0.6); margin: 24px 0;">
+        No pending launch instructions found.
+      </p>
+      <p style="text-align: center; color: rgba(255, 255, 255, 0.4); font-size: 12px;">
+        Launch an app from the <a href="./gateway.html" style="color: rgba(102, 126, 234, 0.9);">Gateway</a> first, then return here.
+      </p>
+    </div>
+
+    <!-- Success Message -->
+    <div id="successPanel" style="display: none;">
+      <div style="text-align: center; margin: 24px 0;">
+        <svg viewBox="0 0 24 24" style="width: 48px; height: 48px; fill: #4CAF50;">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+        </svg>
+        <p style="color: rgba(100, 255, 100, 0.9); margin-top: 12px;" id="successMessage">
+          Launch parameters sent to SDK Hub!
+        </p>
+        <p style="color: rgba(255, 255, 255, 0.4); font-size: 12px; margin-top: 8px;">
+          You can close this tab. The SDK Hub will proceed with the launch.
+        </p>
+      </div>
+    </div>
+
+    <!-- Error Message -->
+    <div id="errorPanel" style="display: none;">
+      <div style="text-align: center; margin: 24px 0;">
+        <svg viewBox="0 0 24 24" style="width: 48px; height: 48px; fill: #f44336;">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+        </svg>
+        <p style="color: rgba(255, 100, 100, 0.9); margin-top: 12px;" id="errorMessage">
+          Failed to connect to SDK Hub.
+        </p>
+      </div>
+    </div>
+
+    <!-- Launch History -->
+    <div id="historyPanel" style="margin-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 16px;">
+      <h3 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255, 255, 255, 0.5); margin-bottom: 12px;">Launch History</h3>
+      <div id="historyList">
+        <!-- Dynamically populated -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Error Modal (required by gateway-shared.js) -->
+  <div id="errorModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Error</h2>
+        <button class="modal-close" onclick="closeErrorModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="errorModalBody"></div>
+      <div class="modal-actions">
+        <button class="modal-button secondary" onclick="closeErrorModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./gateway-shared.js"></script>
+  <script src="./sdk-start.js"></script>
+</body>
+</html>

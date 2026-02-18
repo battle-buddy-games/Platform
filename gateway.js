@@ -102,6 +102,89 @@ function updateSignInButtonStates() {
   }
 }
 
+// ============================================================================
+// SDK Launch History - Circular Buffer in localStorage
+// Stores launch instructions when clicking Steam links (AOO SDK, TOW, Blender)
+// so that sdk-start.html can relay them to the SDK Hub over HTTP.
+// ============================================================================
+const SDK_LAUNCH_HISTORY_KEY = 'sdk_launch_history';
+const SDK_LAUNCH_HISTORY_MAX = 10;
+
+// Map steam:// URLs to app identifiers
+const STEAM_APP_MAP = {
+  'steam://launch/2153520/': { app: 'aoo-sdk', label: 'Launch AOO SDK' },
+  'steam://launch/3687660/': { app: 'tow', label: 'Launch TOW' },
+  'steam://launch/365670/':  { app: 'blender', label: 'Launch Blender' }
+};
+
+function getSdkLaunchHistory() {
+  try {
+    const raw = localStorage.getItem(SDK_LAUNCH_HISTORY_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (e) {
+    console.warn('[SDK Launch] Failed to read launch history:', e);
+    return [];
+  }
+}
+
+function saveSdkLaunchHistory(entries) {
+  try {
+    localStorage.setItem(SDK_LAUNCH_HISTORY_KEY, JSON.stringify(entries));
+  } catch (e) {
+    console.warn('[SDK Launch] Failed to save launch history:', e);
+  }
+}
+
+function addSdkLaunchEntry(app, label, steamUrl, parameters) {
+  const history = getSdkLaunchHistory();
+
+  const id = (crypto && crypto.randomUUID) ? crypto.randomUUID() :
+    'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+
+  const entry = {
+    id: id,
+    app: app,
+    label: label,
+    steamUrl: steamUrl,
+    timestamp: new Date().toISOString(),
+    completed: false,
+    completedAt: null,
+    parameters: parameters || {}
+  };
+
+  history.push(entry);
+
+  // Circular buffer: keep only the most recent MAX entries
+  while (history.length > SDK_LAUNCH_HISTORY_MAX) {
+    history.shift();
+  }
+
+  saveSdkLaunchHistory(history);
+  console.log('[SDK Launch] Added launch entry:', entry.app, entry.id);
+  return entry;
+}
+
+// Intercept clicks on steam:// launch links in the External Links dropdown
+// to store launch instructions before the Steam protocol handler fires.
+function interceptSteamLaunchLinks() {
+  const links = document.querySelectorAll('.external-links-menu-dropdown a[href^="steam://"]');
+  links.forEach(function(link) {
+    link.addEventListener('click', function() {
+      const href = link.getAttribute('href');
+      const mapping = STEAM_APP_MAP[href];
+      if (mapping) {
+        addSdkLaunchEntry(mapping.app, mapping.label, href, {});
+      }
+      // Allow the default navigation to proceed (steam:// protocol)
+    });
+  });
+}
+
 // Switch between Releases and Health tabs in the status panel
 window.switchStatusTab = function switchStatusTab(tabName) {
   const releasesContent = document.getElementById('statusTabReleases');
@@ -2834,6 +2917,13 @@ window.addEventListener('DOMContentLoaded', async () => {
     const resolved = resolveQuickLink(openLinkParam);
     if (resolved) {
       console.log('[OPEN-LINK] Resolved quick link:', openLinkParam, '->', resolved);
+      // Store launch entry for steam:// links before navigating
+      if (resolved.startsWith('steam://')) {
+        const mapping = STEAM_APP_MAP[resolved];
+        if (mapping) {
+          addSdkLaunchEntry(mapping.app, mapping.label, resolved, {});
+        }
+      }
       window.location.href = resolved;
       return;
     }
@@ -2852,6 +2942,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   // Initialize foldout menus
   initializeFoldoutMenus();
+
+  // Intercept steam:// launch links to store launch history
+  interceptSteamLaunchLinks();
 
   // Initialize quick links tabs
   initQuickLinksTabs();
