@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-f71b0e7",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-18T18:30:28Z",
-      "environment": "production"
-    },
-    {
       "version": "build-869e4b5",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-18T19:05:36Z",
@@ -102,6 +96,12 @@
       "version": "build-a726d73",
       "title": "Make voice connection non-blocking with live status updates",
       "timestamp": "2026-02-19T00:38:37Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-f528eba",
+      "title": "Fix live transcription: accumulate audio chunks before audioContext check",
+      "timestamp": "2026-02-19T00:45:02Z",
       "environment": "production"
     }
   ]
