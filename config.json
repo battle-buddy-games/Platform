@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-20c42b6",
-      "title": "Fix PsExec screenshot: use full path to powershell.exe",
-      "timestamp": "2026-02-18T22:09:05Z",
-      "environment": "production"
-    },
-    {
       "version": "build-9cd8445",
       "title": "Fix PsExec screenshot: auto-detect session, use cmd.exe launcher",
       "timestamp": "2026-02-18T22:17:41Z",
@@ -102,6 +96,12 @@
       "version": "build-f3c1890",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-19T03:38:03Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-f59adda",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-02-19T23:03:14Z",
       "environment": "production"
     }
   ]
