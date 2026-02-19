@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-045f41b",
-      "title": "Reorganize screenshot UI to prioritize PsExec capture method",
-      "timestamp": "2026-02-18T22:00:25Z",
-      "environment": "production"
-    },
-    {
       "version": "build-20c42b6",
       "title": "Fix PsExec screenshot: use full path to powershell.exe",
       "timestamp": "2026-02-18T22:09:05Z",
@@ -102,6 +96,12 @@
       "version": "build-c0b7012",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-19T03:12:16Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-f3c1890",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-02-19T03:38:03Z",
       "environment": "production"
     }
   ]
