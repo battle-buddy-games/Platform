@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-869e4b5",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-18T19:05:36Z",
-      "environment": "production"
-    },
-    {
       "version": "build-26924a4",
       "title": "w",
       "timestamp": "2026-02-18T20:27:37Z",
@@ -102,6 +96,12 @@
       "version": "build-f528eba",
       "title": "Fix live transcription: accumulate audio chunks before audioContext check",
       "timestamp": "2026-02-19T00:45:02Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-aecb9bd",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-02-19T01:16:46Z",
       "environment": "production"
     }
   ]
