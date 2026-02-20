@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-ab4e93b",
-      "title": "Fix PsExec screenshot: run ffmpeg directly, no shell intermediary",
-      "timestamp": "2026-02-18T22:46:36Z",
-      "environment": "production"
-    },
-    {
       "version": "build-85b6bce",
       "title": "Improve Discord voice connection: increase timeout, add retry",
       "timestamp": "2026-02-19T00:03:26Z",
@@ -102,6 +96,12 @@
       "version": "build-bded16d",
       "title": "w",
       "timestamp": "2026-02-20T05:43:47Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-96fcebf",
+      "title": "commit and push",
+      "timestamp": "2026-02-20T18:24:27Z",
       "environment": "production"
     }
   ]
