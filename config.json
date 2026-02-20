@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-b382b69",
-      "title": "w",
-      "timestamp": "2026-02-19T02:58:59Z",
-      "environment": "production"
-    },
-    {
       "version": "build-c0b7012",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-19T03:12:16Z",
@@ -102,6 +96,12 @@
       "version": "build-65c7242",
       "title": "w",
       "timestamp": "2026-02-20T22:26:46Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-0894175",
+      "title": "Fix SignalR 401 for SDK clients: add SignalRToken to auth policy",
+      "timestamp": "2026-02-20T22:40:56Z",
       "environment": "production"
     }
   ]
