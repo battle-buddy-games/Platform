@@ -81,3 +81,75 @@
   color: rgba(255, 255, 255, 0.35);
   white-space: nowrap;
 }
+
+/* No startup parameters card */
+.sdk-no-params-card {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 16px 0;
+  text-align: center;
+}
+
+.sdk-no-params-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sdk-no-params-hint {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* Countdown panel */
+.sdk-countdown-panel {
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sdk-countdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+}
+
+.sdk-countdown-cancel {
+  background: transparent;
+  border: 1px solid rgba(255, 100, 100, 0.4);
+  color: rgba(255, 100, 100, 0.8);
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.sdk-countdown-cancel:hover {
+  background: rgba(255, 100, 100, 0.15);
+  border-color: rgba(255, 100, 100, 0.6);
+}
+
+.sdk-countdown-track {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.sdk-countdown-bar {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(102, 126, 234, 0.7), rgba(118, 75, 162, 0.7));
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}

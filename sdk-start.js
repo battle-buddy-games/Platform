@@ -1,6 +1,7 @@
-// SDK Start - Launch Parameter Relay
+// SDK Start - SDK Launcher
 // Reads pending launch instructions from localStorage and sends them
-// to the SDK Hub's temporary HTTP listener on localhost.
+// to the SDK Hub's HTTP listener on localhost. Supports launching
+// without parameters via an interruptable countdown.
 
 const SDK_LAUNCH_HISTORY_KEY = 'sdk_launch_history';
 const POLL_INTERVAL_MS = 500;
@@ -11,6 +12,8 @@ let sdkHubPort = null;
 let pollTimer = null;
 let pollAttempts = 0;
 let pendingEntry = null;
+let countdownTimer = null;
+let countdownRemaining = 10;
 
 // ============================================================================
 // localStorage helpers (duplicated from gateway.js for independence)
@@ -93,7 +96,7 @@ function renderHistory() {
   var history = getSdkLaunchHistory().slice().reverse();
 
   if (history.length === 0) {
-    container.innerHTML = '<p style="font-size: 12px; color: rgba(255,255,255,0.4);">No launch history</p>';
+    container.innerHTML = '<p style="font-size: 12px; color: rgba(255,255,255,0.4);">No startup parameter history</p>';
     return;
   }
 
@@ -113,6 +116,127 @@ function escapeHtml(text) {
   var div = document.createElement('div');
   div.textContent = text;
   return div.innerHTML;
+}
+
+// ============================================================================
+// Countdown (no-params auto-call)
+// ============================================================================
+
+function startCountdown() {
+  countdownRemaining = 10;
+  updateCountdownUI();
+  var countdownPanel = document.getElementById('countdownPanel');
+  if (countdownPanel) countdownPanel.style.display = '';
+
+  countdownTimer = setInterval(function() {
+    countdownRemaining--;
+    updateCountdownUI();
+
+    if (countdownRemaining <= 0) {
+      clearInterval(countdownTimer);
+      countdownTimer = null;
+      beginNoParamsCall();
+    }
+  }, 1000);
+}
+
+function updateCountdownUI() {
+  var valueEl = document.getElementById('countdownValue');
+  var barEl = document.getElementById('countdownBar');
+  if (valueEl) valueEl.textContent = countdownRemaining;
+  if (barEl) barEl.style.width = (countdownRemaining / 10 * 100) + '%';
+}
+
+function cancelCountdown() {
+  if (countdownTimer) {
+    clearInterval(countdownTimer);
+    countdownTimer = null;
+  }
+  var countdownPanel = document.getElementById('countdownPanel');
+  if (countdownPanel) countdownPanel.style.display = 'none';
+  setStatus('Countdown cancelled', 'error');
+}
+
+function beginNoParamsCall() {
+  setStatus('Connecting to SDK Hub on port ' + sdkHubPort + '...', 'waiting');
+  pollAttempts = 0;
+  pollTimer = setInterval(pollSdkHubNoParams, POLL_INTERVAL_MS);
+  pollSdkHubNoParams();
+}
+
+function pollSdkHubNoParams() {
+  if (!sdkHubPort) return;
+
+  pollAttempts++;
+  if (pollAttempts > MAX_POLL_ATTEMPTS) {
+    clearInterval(pollTimer);
+    setStatus('SDK Hub did not respond (timeout)', 'error');
+    showPanel('errorPanel');
+    var errorMsg = document.getElementById('errorMessage');
+    if (errorMsg) {
+      errorMsg.textContent = 'SDK Hub did not start listening within 60 seconds. You can close this page and try again.';
+    }
+    return;
+  }
+
+  var controller = new AbortController();
+  var timeoutId = setTimeout(function() { controller.abort(); }, 2000);
+
+  fetch('http://localhost:' + sdkHubPort + '/api/sdk-start/status', {
+    method: 'GET',
+    signal: controller.signal
+  })
+  .then(function(response) {
+    clearTimeout(timeoutId);
+    if (response.ok) {
+      clearInterval(pollTimer);
+      setStatus('Connected to SDK Hub!', 'connected');
+      sendNoParamsLaunch();
+    }
+  })
+  .catch(function() {
+    clearTimeout(timeoutId);
+    // SDK Hub not ready yet, keep polling
+  });
+}
+
+function sendNoParamsLaunch() {
+  var controller = new AbortController();
+  var timeoutId = setTimeout(function() { controller.abort(); }, 5000);
+
+  fetch('http://localhost:' + sdkHubPort + '/api/sdk-start/launch', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ noParams: true }),
+    signal: controller.signal
+  })
+  .then(function(response) {
+    clearTimeout(timeoutId);
+    if (response.ok) {
+      setStatus('SDK Hub called successfully!', 'success');
+      showPanel('successPanel');
+      var successMsg = document.getElementById('successMessage');
+      if (successMsg) {
+        successMsg.textContent = 'SDK Hub started without additional parameters.';
+      }
+    } else {
+      setStatus('SDK Hub rejected the request', 'error');
+      showPanel('errorPanel');
+      var errorMsg = document.getElementById('errorMessage');
+      if (errorMsg) {
+        errorMsg.textContent = 'SDK Hub returned status ' + response.status + '. Check the SDK Hub console for details.';
+      }
+    }
+  })
+  .catch(function(e) {
+    clearTimeout(timeoutId);
+    setStatus('Failed to reach SDK Hub', 'error');
+    showPanel('errorPanel');
+    var errorMsg = document.getElementById('errorMessage');
+    if (errorMsg) {
+      errorMsg.textContent = 'Network error: ' + e.message + '. Ensure SDK Hub is still running.';
+    }
+  });
 }
 
 // ============================================================================
@@ -231,7 +355,8 @@ function initialize() {
     pollSdkHub();
   } else {
     showPanel('noPendingPanel');
-    setStatus('No pending launches', 'error');
+    setStatus('No startup parameters mounted', 'waiting');
+    startCountdown();
   }
 
   renderHistory();

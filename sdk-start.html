@@ -12,7 +12,7 @@
 </head>
 <body>
   <div class="callback-container" style="max-width: 500px;">
-    <h1>SDK Launch Relay</h1>
+    <h1>SDK Launcher</h1>
 
     <!-- Connection Status -->
     <div id="connectionStatus" class="sdk-status-panel">
@@ -34,14 +34,26 @@
       </div>
     </div>
 
-    <!-- No Pending Launches -->
+    <!-- No Startup Parameters -->
     <div id="noPendingPanel" style="display: none;">
-      <p style="text-align: center; color: rgba(255, 255, 255, 0.6); margin: 24px 0;">
-        No pending launch instructions found.
-      </p>
-      <p style="text-align: center; color: rgba(255, 255, 255, 0.4); font-size: 12px;">
-        Launch an app from the <a href="./gateway.html" style="color: rgba(102, 126, 234, 0.9);">Gateway</a> first, then return here.
-      </p>
+      <div class="sdk-no-params-card">
+        <div class="sdk-no-params-label">No startup parameters mounted</div>
+        <div class="sdk-no-params-hint">
+          SDK Hub will start without additional parameters.
+          Launch an app from the <a href="./gateway.html" style="color: rgba(102, 126, 234, 0.9);">Gateway</a> to attach parameters.
+        </div>
+      </div>
+
+      <!-- Countdown -->
+      <div id="countdownPanel" class="sdk-countdown-panel">
+        <div class="sdk-countdown-header">
+          <span id="countdownLabel">Calling SDK Hub in <strong id="countdownValue">10</strong>s</span>
+          <button id="countdownCancelBtn" class="sdk-countdown-cancel" onclick="cancelCountdown()">Cancel</button>
+        </div>
+        <div class="sdk-countdown-track">
+          <div class="sdk-countdown-bar" id="countdownBar"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Success Message -->
@@ -71,9 +83,9 @@
       </div>
     </div>
 
-    <!-- Launch History -->
+    <!-- Startup Parameter History -->
     <div id="historyPanel" style="margin-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 16px;">
-      <h3 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255, 255, 255, 0.5); margin-bottom: 12px;">Launch History</h3>
+      <h3 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255, 255, 255, 0.5); margin-bottom: 12px;">Startup Parameter History</h3>
       <div id="historyList">
         <!-- Dynamically populated -->
       </div>
