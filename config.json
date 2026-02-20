@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-a726d73",
-      "title": "Make voice connection non-blocking with live status updates",
-      "timestamp": "2026-02-19T00:38:37Z",
-      "environment": "production"
-    },
-    {
       "version": "build-f528eba",
       "title": "Fix live transcription: accumulate audio chunks before audioContext check",
       "timestamp": "2026-02-19T00:45:02Z",
@@ -102,6 +96,12 @@
       "version": "build-601fd37",
       "title": "w",
       "timestamp": "2026-02-20T19:45:38Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-a771100",
+      "title": "w",
+      "timestamp": "2026-02-20T21:19:03Z",
       "environment": "production"
     }
   ]
