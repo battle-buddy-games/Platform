@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-96fcebf",
-      "title": "commit and push",
-      "timestamp": "2026-02-20T18:24:27Z",
-      "environment": "production"
-    },
-    {
       "version": "build-601fd37",
       "title": "w",
       "timestamp": "2026-02-20T19:45:38Z",
@@ -102,6 +96,12 @@
       "version": "build-f321208",
       "title": "w",
       "timestamp": "2026-02-21T02:04:40Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-a5751be",
+      "title": "w",
+      "timestamp": "2026-02-21T02:52:50Z",
       "environment": "production"
     }
   ]
