@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-601fd37",
-      "title": "w",
-      "timestamp": "2026-02-20T19:45:38Z",
-      "environment": "production"
-    },
-    {
       "version": "build-a771100",
       "title": "w",
       "timestamp": "2026-02-20T21:19:03Z",
@@ -102,6 +96,12 @@
       "version": "build-a5751be",
       "title": "w",
       "timestamp": "2026-02-21T02:52:50Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-c739c7c",
+      "title": "Steam zero-trust auth, StudioRole claims, and branch password endpoints",
+      "timestamp": "2026-02-21T03:38:55Z",
       "environment": "production"
     }
   ]
