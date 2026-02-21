@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-bded16d",
-      "title": "w",
-      "timestamp": "2026-02-20T05:43:47Z",
-      "environment": "production"
-    },
-    {
       "version": "build-96fcebf",
       "title": "commit and push",
       "timestamp": "2026-02-20T18:24:27Z",
@@ -102,6 +96,12 @@
       "version": "build-557e418",
       "title": "Fix Whisper+Piper dashboard: mic selector, binary resolution, voice timeout",
       "timestamp": "2026-02-21T00:57:14Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-f321208",
+      "title": "w",
+      "timestamp": "2026-02-21T02:04:40Z",
       "environment": "production"
     }
   ]
