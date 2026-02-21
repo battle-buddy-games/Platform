@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-a5751be",
-      "title": "w",
-      "timestamp": "2026-02-21T02:52:50Z",
-      "environment": "production"
-    },
-    {
       "version": "build-c739c7c",
       "title": "Steam zero-trust auth, StudioRole claims, and branch password endpoints",
       "timestamp": "2026-02-21T03:38:55Z",
@@ -102,6 +96,12 @@
       "version": "build-4bcb23c",
       "title": "Add SteamBranchPasswords table creation on startup",
       "timestamp": "2026-02-21T06:34:54Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-f9dbc6a",
+      "title": "Use hardcoded shared password for all branch claims",
+      "timestamp": "2026-02-21T06:43:52Z",
       "environment": "production"
     }
   ]
