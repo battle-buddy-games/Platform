@@ -1,108 +1,108 @@
 {
-  "github": {
-    "clientId": "Ov23liXpQBh8YbkP2AIy",
-    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
-    "scope": "user:email"
-  },
-  "google": {
-    "clientId": "94692902434-d832f25lj9m98ikuil8cbtcbnjh4d866.apps.googleusercontent.com",
-    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-google.html",
-    "scope": "profile email"
-  },
-  "discord": {
-    "clientId": "949786696860434443",
-    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-discord.html",
-    "scope": "identify email"
-  },
-  "backend": {
-    "callbackEndpoint": "/Authentication/github/callback"
-  },
-  "cloudflareTunnels": [
-    {
-      "name": "cloud",
-      "address": "https://merchant-broken-rip-ebook.trycloudflare.com"
-    },
-    {
-      "name": "local-cloud",
-      "address": "http://192.168.0.243:8081"
-    },
-    {
-      "name": "staging-cloud",
-      "address": "http://192.168.0.251:8201"
-    },
-    {
-      "name": "test-cloud",
-      "address": "http://192.168.0.251:8301"
-    },
-    {
-      "name": "develop-cloud",
-      "address": "http://192.168.0.251:8101"
-    },
-    {
-      "name": "production-local",
-      "address": "http://192.168.0.251:8081"
-    }
-  ],
-  "releases": [
-    {
-      "version": "build-c8bbe0b",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-21T05:53:45Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-2d6b867",
-      "title": "w",
-      "timestamp": "2026-02-21T06:14:05Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-0236337",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-21T06:25:52Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-5de5eaa",
-      "title": "Fix AdminTokensApiController ApiExplorer crash on startup",
-      "timestamp": "2026-02-21T06:29:30Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-4bcb23c",
-      "title": "Add SteamBranchPasswords table creation on startup",
-      "timestamp": "2026-02-21T06:34:54Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-f9dbc6a",
-      "title": "Use hardcoded shared password for all branch claims",
-      "timestamp": "2026-02-21T06:43:52Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-27c114f",
-      "title": "w",
-      "timestamp": "2026-02-21T18:18:06Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-1f5c5f7",
-      "title": "w",
-      "timestamp": "2026-02-21T18:46:28Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-83de918",
-      "title": "Add CiBuildRecords and CiTestRecords table creation on startup",
-      "timestamp": "2026-02-21T18:57:14Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-e11992e",
-      "title": "p",
-      "timestamp": "2026-02-21T20:16:11Z",
-      "environment": "production"
-    }
-  ]
+    "github":  {
+                   "clientId":  "Ov23liXpQBh8YbkP2AIy",
+                   "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
+                   "scope":  "user:email"
+               },
+    "google":  {
+                   "clientId":  "94692902434-d832f25lj9m98ikuil8cbtcbnjh4d866.apps.googleusercontent.com",
+                   "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-google.html",
+                   "scope":  "profile email"
+               },
+    "discord":  {
+                    "clientId":  "949786696860434443",
+                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-discord.html",
+                    "scope":  "identify email"
+                },
+    "backend":  {
+                    "callbackEndpoint":  "/Authentication/github/callback"
+                },
+    "cloudflareTunnels":  [
+                              {
+                                  "name":  "cloud",
+                                  "address":  "https://merchant-broken-rip-ebook.trycloudflare.com"
+                              },
+                              {
+                                  "name":  "local-cloud",
+                                  "address":  "http://192.168.0.243:8081"
+                              },
+                              {
+                                  "name":  "staging-cloud",
+                                  "address":  "http://192.168.0.251:8201"
+                              },
+                              {
+                                  "name":  "test-cloud",
+                                  "address":  "http://192.168.0.251:8301"
+                              },
+                              {
+                                  "name":  "develop-cloud",
+                                  "address":  "http://192.168.0.251:8101"
+                              },
+                              {
+                                  "name":  "production-local",
+                                  "address":  "http://192.168.0.251:8081"
+                              }
+                          ],
+    "releases":  [
+                     {
+                         "version":  "build-c8bbe0b",
+                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
+                         "timestamp":  "2026-02-21T05:53:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2d6b867",
+                         "title":  "w",
+                         "timestamp":  "2026-02-21T06:14:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0236337",
+                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
+                         "timestamp":  "2026-02-21T06:25:52Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5de5eaa",
+                         "title":  "Fix AdminTokensApiController ApiExplorer crash on startup",
+                         "timestamp":  "2026-02-21T06:29:30Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4bcb23c",
+                         "title":  "Add SteamBranchPasswords table creation on startup",
+                         "timestamp":  "2026-02-21T06:34:54Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f9dbc6a",
+                         "title":  "Use hardcoded shared password for all branch claims",
+                         "timestamp":  "2026-02-21T06:43:52Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-27c114f",
+                         "title":  "w",
+                         "timestamp":  "2026-02-21T18:18:06Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1f5c5f7",
+                         "title":  "w",
+                         "timestamp":  "2026-02-21T18:46:28Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-83de918",
+                         "title":  "Add CiBuildRecords and CiTestRecords table creation on startup",
+                         "timestamp":  "2026-02-21T18:57:14Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e11992e",
+                         "title":  "p",
+                         "timestamp":  "2026-02-21T20:16:11Z",
+                         "environment":  "production"
+                     }
+                 ]
 }
