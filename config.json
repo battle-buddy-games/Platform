@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-f59adda",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-19T23:03:14Z",
-      "environment": "production"
-    },
-    {
       "version": "build-bded16d",
       "title": "w",
       "timestamp": "2026-02-20T05:43:47Z",
@@ -102,6 +96,12 @@
       "version": "build-8f611f2",
       "title": "p",
       "timestamp": "2026-02-20T23:00:36Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-557e418",
+      "title": "Fix Whisper+Piper dashboard: mic selector, binary resolution, voice timeout",
+      "timestamp": "2026-02-21T00:57:14Z",
       "environment": "production"
     }
   ]
