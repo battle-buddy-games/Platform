@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-9f61bf4",
-      "title": "w",
-      "timestamp": "2026-02-21T03:51:12Z",
-      "environment": "production"
-    },
-    {
       "version": "build-d5df379",
       "title": "w",
       "timestamp": "2026-02-21T05:05:30Z",
@@ -102,6 +96,12 @@
       "version": "build-27c114f",
       "title": "w",
       "timestamp": "2026-02-21T18:18:06Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-1f5c5f7",
+      "title": "w",
+      "timestamp": "2026-02-21T18:46:28Z",
       "environment": "production"
     }
   ]
