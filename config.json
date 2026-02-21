@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-65c7242",
-      "title": "w",
-      "timestamp": "2026-02-20T22:26:46Z",
-      "environment": "production"
-    },
-    {
       "version": "build-0894175",
       "title": "Fix SignalR 401 for SDK clients: add SignalRToken to auth policy",
       "timestamp": "2026-02-20T22:40:56Z",
@@ -102,6 +96,12 @@
       "version": "build-d5df379",
       "title": "w",
       "timestamp": "2026-02-21T05:05:30Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-7c1a8c5",
+      "title": "w",
+      "timestamp": "2026-02-21T05:37:08Z",
       "environment": "production"
     }
   ]
