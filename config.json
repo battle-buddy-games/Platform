@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-f321208",
-      "title": "w",
-      "timestamp": "2026-02-21T02:04:40Z",
-      "environment": "production"
-    },
-    {
       "version": "build-a5751be",
       "title": "w",
       "timestamp": "2026-02-21T02:52:50Z",
@@ -102,6 +96,12 @@
       "version": "build-5de5eaa",
       "title": "Fix AdminTokensApiController ApiExplorer crash on startup",
       "timestamp": "2026-02-21T06:29:30Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-4bcb23c",
+      "title": "Add SteamBranchPasswords table creation on startup",
+      "timestamp": "2026-02-21T06:34:54Z",
       "environment": "production"
     }
   ]
