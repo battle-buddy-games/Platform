@@ -113,6 +113,7 @@ const SDK_LAUNCH_HISTORY_MAX = 10;
 // Map steam:// URLs to app identifiers
 const STEAM_APP_MAP = {
   'steam://launch/2153520/': { app: 'aoo-sdk', label: 'Launch AOO SDK' },
+  'steam://launch/2153520/blender-sdk/': { app: 'blender-sdk', label: 'Launch Blender SDK' },
   'steam://launch/3687660/': { app: 'tow', label: 'Launch TOW' },
   'steam://launch/365670/':  { app: 'blender', label: 'Launch Blender' }
 };
