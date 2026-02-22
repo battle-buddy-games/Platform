@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-5cc5d89",
-      "title": "w",
-      "timestamp": "2026-02-22T17:27:13Z",
-      "environment": "production"
-    },
-    {
       "version": "build-81359f7",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-22T17:32:57Z",
@@ -102,6 +96,12 @@
       "version": "build-e7b48e5",
       "title": "Fix Document tool reliability: race conditions, lock cleanup, error feedback",
       "timestamp": "2026-02-22T20:48:13Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-900a32f",
+      "title": "Exempt /webdav from portal access lock middleware",
+      "timestamp": "2026-02-22T20:53:17Z",
       "environment": "production"
     }
   ]
