@@ -1508,6 +1508,23 @@ async function loadTunnel() {
       return;
     }
 
+    // Handle localhost proxy requests from iframe (Chrome PNA blocks localhost fetch from cross-origin iframes)
+    if (event.data && event.data.type === 'proxy-localhost-fetch') {
+      const { requestId, url } = event.data;
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 3000);
+      fetch(url, { mode: 'cors', signal: controller.signal })
+        .then(r => { clearTimeout(timeout); return r.ok ? r.text() : Promise.reject(new Error('HTTP ' + r.status)); })
+        .then(text => {
+          iframe.contentWindow.postMessage({ type: 'proxy-localhost-response', requestId, success: true, data: text }, '*');
+        })
+        .catch(err => {
+          clearTimeout(timeout);
+          iframe.contentWindow.postMessage({ type: 'proxy-localhost-response', requestId, success: false, error: err.message }, '*');
+        });
+      return;
+    }
+
     // Handle URL update messages from iframe - support multiple message formats
     if (event.data) {
       let newPath = null;
