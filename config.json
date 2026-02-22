@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-7a8badf",
-      "title": "Add Image Tools + PlatformContent integration, admin display name, and GDrive...",
-      "timestamp": "2026-02-22T05:02:41Z",
-      "environment": "production"
-    },
-    {
       "version": "build-9495c7d",
       "title": "Fix 504 timeout on Platform Drives tab by converting to async with parallel e...",
       "timestamp": "2026-02-22T05:11:35Z",
@@ -102,6 +96,12 @@
       "version": "build-b4c81ba",
       "title": "Redesign Development page with two-tab roadmap layout",
       "timestamp": "2026-02-22T18:47:33Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-dcb4e4c",
+      "title": "Add task/plan visibility, dev feed, news reactions and comments",
+      "timestamp": "2026-02-22T19:01:27Z",
       "environment": "production"
     }
   ]
