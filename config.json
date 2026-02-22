@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-a5c4840",
-      "title": "analytics",
-      "timestamp": "2026-02-22T07:01:11Z",
-      "environment": "production"
-    },
-    {
       "version": "build-ef50275",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-22T16:29:40Z",
@@ -102,6 +96,12 @@
       "version": "build-fda04ff",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-22T20:00:18Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-9d1389d",
+      "title": "Fix roadmap 500 error (missing ParentId column), fix dev feed showing empty",
+      "timestamp": "2026-02-22T20:36:17Z",
       "environment": "production"
     }
   ]
