@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-6236809",
-      "title": "Wire up Analytics Commands/MCP tabs, add Infrastructure Memory tab, Drives fi...",
-      "timestamp": "2026-02-22T18:08:04Z",
-      "environment": "production"
-    },
-    {
       "version": "build-b4c81ba",
       "title": "Redesign Development page with two-tab roadmap layout",
       "timestamp": "2026-02-22T18:47:33Z",
@@ -102,6 +96,12 @@
       "version": "build-dedd1d3",
       "title": "Exempt all programmatic endpoints from portal access lock",
       "timestamp": "2026-02-22T20:56:44Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-00c99e9",
+      "title": "Exempt remaining JSON-returning controllers from portal access lock",
+      "timestamp": "2026-02-22T21:05:02Z",
       "environment": "production"
     }
   ]
