@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-e7b48e5",
-      "title": "Fix Document tool reliability: race conditions, lock cleanup, error feedback",
-      "timestamp": "2026-02-22T20:48:13Z",
-      "environment": "production"
-    },
-    {
       "version": "build-900a32f",
       "title": "Exempt /webdav from portal access lock middleware",
       "timestamp": "2026-02-22T20:53:17Z",
@@ -102,6 +96,12 @@
       "version": "build-a75b715",
       "title": "Unified roadmap view: merge features/missions with nested enhancements/goals",
       "timestamp": "2026-02-22T22:19:12Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-ca78d99",
+      "title": "feat(dev-status): expose SDK Hub status via API, add UI indicators, and poll ...",
+      "timestamp": "2026-02-22T22:23:08Z",
       "environment": "production"
     }
   ]
