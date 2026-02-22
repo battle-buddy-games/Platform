@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-1cab51b",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-22T21:22:10Z",
-      "environment": "production"
-    },
-    {
       "version": "build-a0dd09e",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-22T21:56:35Z",
@@ -102,6 +96,12 @@
       "version": "build-bfa89bc",
       "title": "refactor(voice-session): improve Discord voice connect retry logic with expon...",
       "timestamp": "2026-02-22T23:22:42Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-2c16639",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-02-22T23:45:52Z",
       "environment": "production"
     }
   ]
