@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-1717da3",
-      "title": "drives",
-      "timestamp": "2026-02-22T03:02:43Z",
-      "environment": "production"
-    },
-    {
       "version": "build-7a8badf",
       "title": "Add Image Tools + PlatformContent integration, admin display name, and GDrive...",
       "timestamp": "2026-02-22T05:02:41Z",
@@ -102,6 +96,12 @@
       "version": "build-6236809",
       "title": "Wire up Analytics Commands/MCP tabs, add Infrastructure Memory tab, Drives fi...",
       "timestamp": "2026-02-22T18:08:04Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-b4c81ba",
+      "title": "Redesign Development page with two-tab roadmap layout",
+      "timestamp": "2026-02-22T18:47:33Z",
       "environment": "production"
     }
   ]
