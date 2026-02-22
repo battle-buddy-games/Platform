@@ -540,7 +540,7 @@ function updateUpdatingUI() {
         messageEl.innerHTML = 'Deploying update' + (releaseLabel ? ' <strong>' + releaseLabel + '</strong>' : '')
           + (releaseDesc ? ' &mdash; ' + releaseDesc : '') + '. Please wait...';
       } else {
-        messageEl.textContent = 'An update may be in progress. Checking for availability...';
+        messageEl.textContent = 'An update may be in progress. Retrying automatically...';
       }
     } else if (stage.state === 'warning') {
       messageEl.textContent = 'This is taking longer than expected.';
@@ -850,7 +850,7 @@ function showConnectionFailure(title, message) {
     if (initialStage.state === 'offline') contentEl.classList.add('state-offline');
   }
   if (titleEl) titleEl.textContent = initialStage.label;
-  if (messageEl) messageEl.textContent = 'An update may be in progress. Checking for availability...';
+  if (messageEl) messageEl.textContent = 'An update may be in progress. Retrying automatically...';
   // Show elapsed time (count up)
   if (timeEl) timeEl.textContent = formatCountdown(updatingElapsedSeconds);
   if (extraMsg) { extraMsg.classList.add('hidden'); extraMsg.classList.remove('offline'); }
