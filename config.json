@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-9495c7d",
-      "title": "Fix 504 timeout on Platform Drives tab by converting to async with parallel e...",
-      "timestamp": "2026-02-22T05:11:35Z",
-      "environment": "production"
-    },
-    {
       "version": "build-fecde3c",
       "title": "o",
       "timestamp": "2026-02-22T06:26:13Z",
@@ -102,6 +96,12 @@
       "version": "build-dcb4e4c",
       "title": "Add task/plan visibility, dev feed, news reactions and comments",
       "timestamp": "2026-02-22T19:01:27Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-31819e0",
+      "title": "Fix voice dashboard stuck connecting/disconnecting states",
+      "timestamp": "2026-02-22T19:40:19Z",
       "environment": "production"
     }
   ]
