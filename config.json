@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-31819e0",
-      "title": "Fix voice dashboard stuck connecting/disconnecting states",
-      "timestamp": "2026-02-22T19:40:19Z",
-      "environment": "production"
-    },
-    {
       "version": "build-fda04ff",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-22T20:00:18Z",
@@ -102,6 +96,12 @@
       "version": "build-1cab51b",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-22T21:22:10Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-a0dd09e",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-02-22T21:56:35Z",
       "environment": "production"
     }
   ]
