@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-fda04ff",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-22T20:00:18Z",
-      "environment": "production"
-    },
-    {
       "version": "build-9d1389d",
       "title": "Fix roadmap 500 error (missing ParentId column), fix dev feed showing empty",
       "timestamp": "2026-02-22T20:36:17Z",
@@ -102,6 +96,12 @@
       "version": "build-a0dd09e",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-22T21:56:35Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-59fdf7f",
+      "title": "Show admin actions on profile when admin views via any route",
+      "timestamp": "2026-02-22T22:04:23Z",
       "environment": "production"
     }
   ]
