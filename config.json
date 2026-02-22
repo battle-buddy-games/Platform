@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-81359f7",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-22T17:32:57Z",
-      "environment": "production"
-    },
-    {
       "version": "build-6236809",
       "title": "Wire up Analytics Commands/MCP tabs, add Infrastructure Memory tab, Drives fi...",
       "timestamp": "2026-02-22T18:08:04Z",
@@ -102,6 +96,12 @@
       "version": "build-900a32f",
       "title": "Exempt /webdav from portal access lock middleware",
       "timestamp": "2026-02-22T20:53:17Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-dedd1d3",
+      "title": "Exempt all programmatic endpoints from portal access lock",
+      "timestamp": "2026-02-22T20:56:44Z",
       "environment": "production"
     }
   ]
