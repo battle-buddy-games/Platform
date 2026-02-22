@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-b4c81ba",
-      "title": "Redesign Development page with two-tab roadmap layout",
-      "timestamp": "2026-02-22T18:47:33Z",
-      "environment": "production"
-    },
-    {
       "version": "build-dcb4e4c",
       "title": "Add task/plan visibility, dev feed, news reactions and comments",
       "timestamp": "2026-02-22T19:01:27Z",
@@ -102,6 +96,12 @@
       "version": "build-00c99e9",
       "title": "Exempt remaining JSON-returning controllers from portal access lock",
       "timestamp": "2026-02-22T21:05:02Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-89a90f8",
+      "title": "Steam OAuth: use persona name instead of steam_ID, add admin user rename",
+      "timestamp": "2026-02-22T21:18:08Z",
       "environment": "production"
     }
   ]
