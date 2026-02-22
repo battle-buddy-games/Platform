@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-1f5c5f7",
-      "title": "w",
-      "timestamp": "2026-02-21T18:46:28Z",
-      "environment": "production"
-    },
-    {
       "version": "build-83de918",
       "title": "Add CiBuildRecords and CiTestRecords table creation on startup",
       "timestamp": "2026-02-21T18:57:14Z",
@@ -102,6 +96,12 @@
       "version": "build-a5c4840",
       "title": "analytics",
       "timestamp": "2026-02-22T07:01:11Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-ef50275",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-02-22T16:29:40Z",
       "environment": "production"
     }
   ]
