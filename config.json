@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-dcd72bb",
-      "title": "w",
-      "timestamp": "2026-02-22T17:22:03Z",
-      "environment": "production"
-    },
-    {
       "version": "build-5cc5d89",
       "title": "w",
       "timestamp": "2026-02-22T17:27:13Z",
@@ -102,6 +96,12 @@
       "version": "build-e5419df",
       "title": "Fix voice dashboard stuck in CONNECTING state",
       "timestamp": "2026-02-22T20:40:02Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-e7b48e5",
+      "title": "Fix Document tool reliability: race conditions, lock cleanup, error feedback",
+      "timestamp": "2026-02-22T20:48:13Z",
       "environment": "production"
     }
   ]
