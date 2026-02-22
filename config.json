@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-ef50275",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-22T16:29:40Z",
-      "environment": "production"
-    },
-    {
       "version": "build-dcd72bb",
       "title": "w",
       "timestamp": "2026-02-22T17:22:03Z",
@@ -102,6 +96,12 @@
       "version": "build-9d1389d",
       "title": "Fix roadmap 500 error (missing ParentId column), fix dev feed showing empty",
       "timestamp": "2026-02-22T20:36:17Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-e5419df",
+      "title": "Fix voice dashboard stuck in CONNECTING state",
+      "timestamp": "2026-02-22T20:40:02Z",
       "environment": "production"
     }
   ]
