@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-dedd1d3",
-      "title": "Exempt all programmatic endpoints from portal access lock",
-      "timestamp": "2026-02-22T20:56:44Z",
-      "environment": "production"
-    },
-    {
       "version": "build-00c99e9",
       "title": "Exempt remaining JSON-returning controllers from portal access lock",
       "timestamp": "2026-02-22T21:05:02Z",
@@ -102,6 +96,12 @@
       "version": "build-9d3f549",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-22T22:35:17Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-4b86f97",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-02-22T22:46:04Z",
       "environment": "production"
     }
   ]
