@@ -256,7 +256,7 @@ iframe {
 
 /* Platform updating overlay styles */
 .updating-content {
-  max-width: 520px;
+  max-width: 540px;
 }
 
 /* Circular spinner with countdown inside */
@@ -407,6 +407,118 @@ iframe {
 
 .updating-extra-message a:hover {
   color: #8fa0f0;
+}
+
+/* Recent updates timeline */
+.recent-updates-timeline {
+  margin: 16px 0 20px;
+  text-align: left;
+}
+
+.recent-updates-timeline.hidden {
+  display: none;
+}
+
+.timeline-header {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.timeline-entries {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.timeline-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+  position: relative;
+}
+
+/* Vertical line */
+.timeline-entry::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.timeline-entry:first-child::before {
+  top: 50%;
+}
+
+.timeline-entry:last-child::before {
+  bottom: 50%;
+}
+
+.timeline-entry:only-child::before {
+  display: none;
+}
+
+/* Dot */
+.timeline-dot {
+  width: 11px;
+  height: 11px;
+  min-width: 11px;
+  border-radius: 50%;
+  background: rgba(102, 126, 234, 0.3);
+  border: 2px solid rgba(102, 126, 234, 0.5);
+  margin-top: 3px;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-entry.current .timeline-dot {
+  background: #667eea;
+  border-color: #667eea;
+  box-shadow: 0 0 8px rgba(102, 126, 234, 0.5);
+}
+
+.timeline-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.timeline-version {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Courier New', monospace;
+}
+
+.timeline-entry.current .timeline-version {
+  color: #667eea;
+}
+
+.timeline-title {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.timeline-entry.current .timeline-title {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.timeline-time {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  margin-top: 1px;
 }
 
 /* Warning state */

@@ -318,6 +318,74 @@ function isReleaseRecent(release) {
   return (Date.now() - releaseTime) <= RELEASE_RECENCY_MS;
 }
 
+// Render the recent updates timeline in the updating modal
+function renderUpdatesTimeline() {
+  const container = document.getElementById('recentUpdatesTimeline');
+  const entriesEl = document.getElementById('timelineEntries');
+  if (!container || !entriesEl) return;
+
+  const releases = CONFIG && CONFIG.releases ? CONFIG.releases : [];
+  if (releases.length === 0) {
+    container.classList.add('hidden');
+    return;
+  }
+
+  // Show most recent 5 releases, newest first
+  const recent = releases.slice(-5).reverse();
+  const latestVersion = recent[0] ? recent[0].version : null;
+
+  entriesEl.innerHTML = '';
+  recent.forEach((release) => {
+    const entry = document.createElement('div');
+    entry.className = 'timeline-entry' + (release.version === latestVersion ? ' current' : '');
+
+    const dot = document.createElement('div');
+    dot.className = 'timeline-dot';
+
+    const body = document.createElement('div');
+    body.className = 'timeline-body';
+
+    const version = document.createElement('div');
+    version.className = 'timeline-version';
+    version.textContent = release.version || '';
+
+    const title = document.createElement('div');
+    title.className = 'timeline-title';
+    title.textContent = release.title || '';
+    title.title = release.title || '';
+
+    const time = document.createElement('div');
+    time.className = 'timeline-time';
+    time.textContent = formatReleaseTime(release.timestamp);
+
+    body.appendChild(version);
+    body.appendChild(title);
+    body.appendChild(time);
+    entry.appendChild(dot);
+    entry.appendChild(body);
+    entriesEl.appendChild(entry);
+  });
+
+  container.classList.remove('hidden');
+}
+
+// Format release timestamp for timeline display
+function formatReleaseTime(timestamp) {
+  if (!timestamp) return '';
+  const date = new Date(timestamp);
+  if (isNaN(date.getTime())) return '';
+
+  const now = Date.now();
+  const diff = now - date.getTime();
+
+  if (diff < 60000) return 'Just now';
+  if (diff < 3600000) return Math.floor(diff / 60000) + 'm ago';
+  if (diff < 86400000) return Math.floor(diff / 3600000) + 'h ago';
+  if (diff < 172800000) return 'Yesterday';
+
+  return date.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+}
+
 // Persist failure detection time to localStorage so the timer survives page refreshes
 function persistFailureTime(timestamp, tunnelAddress) {
   try {
@@ -526,6 +594,7 @@ async function pollConfigAndHealth() {
           persistFailureTime(releaseTime, tunnelBaseUrl);
           console.log('[Portal] Timer re-anchored to release timestamp (' + updatingElapsedSeconds + 's elapsed)');
         }
+        renderUpdatesTimeline();
       }
     }
 
@@ -804,6 +873,9 @@ function showConnectionFailure(title, message) {
         + (releaseDesc ? ' &mdash; ' + releaseDesc : '') + '. Please wait...';
     }
   }
+
+  // Populate recent updates timeline
+  renderUpdatesTimeline();
 
   // Setup retry button
   if (retryNowBtn) {
