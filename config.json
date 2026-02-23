@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-ca78d99",
-      "title": "feat(dev-status): expose SDK Hub status via API, add UI indicators, and poll ...",
-      "timestamp": "2026-02-22T22:23:08Z",
-      "environment": "production"
-    },
-    {
       "version": "build-9d3f549",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-22T22:35:17Z",
@@ -102,6 +96,12 @@
       "version": "build-4b4010c",
       "title": "Merge remote-tracking branch 'origin/main'",
       "timestamp": "2026-02-23T20:40:43Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-f8f5d8a",
+      "title": "p",
+      "timestamp": "2026-02-23T22:04:08Z",
       "environment": "production"
     }
   ]
