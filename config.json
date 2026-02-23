@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-59fdf7f",
-      "title": "Show admin actions on profile when admin views via any route",
-      "timestamp": "2026-02-22T22:04:23Z",
-      "environment": "production"
-    },
-    {
       "version": "build-299f6c5",
       "title": "Fix double Listening",
       "timestamp": "2026-02-22T22:07:57Z",
@@ -102,6 +96,12 @@
       "version": "build-a9c3976",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-22T23:58:15Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-dcd4652",
+      "title": "refactor(ci-build-tracking): clean up deployment record handling and improve ...",
+      "timestamp": "2026-02-23T00:16:24Z",
       "environment": "production"
     }
   ]
