@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-a75b715",
-      "title": "Unified roadmap view: merge features/missions with nested enhancements/goals",
-      "timestamp": "2026-02-22T22:19:12Z",
-      "environment": "production"
-    },
-    {
       "version": "build-ca78d99",
       "title": "feat(dev-status): expose SDK Hub status via API, add UI indicators, and poll ...",
       "timestamp": "2026-02-22T22:23:08Z",
@@ -102,6 +96,12 @@
       "version": "build-06a9391",
       "title": "docs: add documentation for Invoke-AiCommit.ps1 script in CLAUDE.md fix(CiBui...",
       "timestamp": "2026-02-23T05:16:53Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-4b4010c",
+      "title": "Merge remote-tracking branch 'origin/main'",
+      "timestamp": "2026-02-23T20:40:43Z",
       "environment": "production"
     }
   ]
