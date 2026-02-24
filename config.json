@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-4b86f97",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-22T22:46:04Z",
-      "environment": "production"
-    },
-    {
       "version": "build-0e8061d",
       "title": "refactor(server): add localhost proxy support for iframe requests and auto‑pr...",
       "timestamp": "2026-02-22T23:15:36Z",
@@ -102,6 +96,12 @@
       "version": "build-b9a0cca",
       "title": "Add pub/sub event bus with CQRS scaffolding and accept-fast webhook processing",
       "timestamp": "2026-02-24T03:14:22Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-6a85d7a",
+      "title": "docs: add AGENTS.md pointer for Codex compatibility",
+      "timestamp": "2026-02-24T06:58:32Z",
       "environment": "production"
     }
   ]
