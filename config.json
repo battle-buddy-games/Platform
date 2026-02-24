@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-bfa89bc",
-      "title": "refactor(voice-session): improve Discord voice connect retry logic with expon...",
-      "timestamp": "2026-02-22T23:22:42Z",
-      "environment": "production"
-    },
-    {
       "version": "build-2c16639",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-22T23:45:52Z",
@@ -102,6 +96,12 @@
       "version": "build-86b46b0",
       "title": "skills and placeholder dashboard tool message",
       "timestamp": "2026-02-24T07:02:36Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-04c4f24",
+      "title": "feat(platform): harden Document tool, fix YAML sync, wire log retention",
+      "timestamp": "2026-02-24T21:04:55Z",
       "environment": "production"
     }
   ]
