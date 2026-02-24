@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-dcd4652",
-      "title": "refactor(ci-build-tracking): clean up deployment record handling and improve ...",
-      "timestamp": "2026-02-23T00:16:24Z",
-      "environment": "production"
-    },
-    {
       "version": "build-06a9391",
       "title": "docs: add documentation for Invoke-AiCommit.ps1 script in CLAUDE.md fix(CiBui...",
       "timestamp": "2026-02-23T05:16:53Z",
@@ -102,6 +96,12 @@
       "version": "build-d2040a0",
       "title": "fix(platform): resolve 10 navbar presence menu issues — race condition, memor...",
       "timestamp": "2026-02-24T22:06:57Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-a528842",
+      "title": "feat(changelog): add changelog v2 Phase 1 data foundation",
+      "timestamp": "2026-02-24T22:18:23Z",
       "environment": "production"
     }
   ]
