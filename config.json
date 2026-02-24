@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-0e8061d",
-      "title": "refactor(server): add localhost proxy support for iframe requests and auto‑pr...",
-      "timestamp": "2026-02-22T23:15:36Z",
-      "environment": "production"
-    },
-    {
       "version": "build-bfa89bc",
       "title": "refactor(voice-session): improve Discord voice connect retry logic with expon...",
       "timestamp": "2026-02-22T23:22:42Z",
@@ -102,6 +96,12 @@
       "version": "build-6a85d7a",
       "title": "docs: add AGENTS.md pointer for Codex compatibility",
       "timestamp": "2026-02-24T06:58:32Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-86b46b0",
+      "title": "skills and placeholder dashboard tool message",
+      "timestamp": "2026-02-24T07:02:36Z",
       "environment": "production"
     }
   ]
