@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-6a85d7a",
-      "title": "docs: add AGENTS.md pointer for Codex compatibility",
-      "timestamp": "2026-02-24T06:58:32Z",
-      "environment": "production"
-    },
-    {
       "version": "build-86b46b0",
       "title": "skills and placeholder dashboard tool message",
       "timestamp": "2026-02-24T07:02:36Z",
@@ -102,6 +96,12 @@
       "version": "build-b0465a4",
       "title": "fix(sync): Platform hardening — YAML sync silence, auth, retry, health, exclu...",
       "timestamp": "2026-02-24T23:38:17Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-d86da11",
+      "title": "chore(changelog): Phase 5 cleanup — remove old LM Studio-based changelog system",
+      "timestamp": "2026-02-24T23:43:14Z",
       "environment": "production"
     }
   ]
