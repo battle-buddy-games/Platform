@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-2c16639",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-22T23:45:52Z",
-      "environment": "production"
-    },
-    {
       "version": "build-a9c3976",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-22T23:58:15Z",
@@ -102,6 +96,12 @@
       "version": "build-04c4f24",
       "title": "feat(platform): harden Document tool, fix YAML sync, wire log retention",
       "timestamp": "2026-02-24T21:04:55Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-511beff",
+      "title": "feat(platform): add shell redirect, SDK library management, global SignalR, a...",
+      "timestamp": "2026-02-24T21:55:38Z",
       "environment": "production"
     }
   ]
