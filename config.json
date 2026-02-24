@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-9d3f549",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-22T22:35:17Z",
-      "environment": "production"
-    },
-    {
       "version": "build-4b86f97",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-22T22:46:04Z",
@@ -102,6 +96,12 @@
       "version": "build-f8f5d8a",
       "title": "p",
       "timestamp": "2026-02-23T22:04:08Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-b9a0cca",
+      "title": "Add pub/sub event bus with CQRS scaffolding and accept-fast webhook processing",
+      "timestamp": "2026-02-24T03:14:22Z",
       "environment": "production"
     }
   ]
