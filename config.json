@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-f8f5d8a",
-      "title": "p",
-      "timestamp": "2026-02-23T22:04:08Z",
-      "environment": "production"
-    },
-    {
       "version": "build-b9a0cca",
       "title": "Add pub/sub event bus with CQRS scaffolding and accept-fast webhook processing",
       "timestamp": "2026-02-24T03:14:22Z",
@@ -102,6 +96,12 @@
       "version": "build-b420180",
       "title": "feat(changelog): Phase 3 dashboard UI with commit browser, entry management, ...",
       "timestamp": "2026-02-24T22:50:33Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-b912a55",
+      "title": "feat(discord): admin link/unlink Discord users to platform accounts",
+      "timestamp": "2026-02-24T23:03:31Z",
       "environment": "production"
     }
   ]
