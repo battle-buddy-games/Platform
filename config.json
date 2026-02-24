@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-b9a0cca",
-      "title": "Add pub/sub event bus with CQRS scaffolding and accept-fast webhook processing",
-      "timestamp": "2026-02-24T03:14:22Z",
-      "environment": "production"
-    },
-    {
       "version": "build-6a85d7a",
       "title": "docs: add AGENTS.md pointer for Codex compatibility",
       "timestamp": "2026-02-24T06:58:32Z",
@@ -102,6 +96,12 @@
       "version": "build-b912a55",
       "title": "feat(discord): admin link/unlink Discord users to platform accounts",
       "timestamp": "2026-02-24T23:03:31Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-b0465a4",
+      "title": "fix(sync): Platform hardening — YAML sync silence, auth, retry, health, exclu...",
+      "timestamp": "2026-02-24T23:38:17Z",
       "environment": "production"
     }
   ]
