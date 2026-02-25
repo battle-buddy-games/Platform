@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-04c4f24",
-      "title": "feat(platform): harden Document tool, fix YAML sync, wire log retention",
-      "timestamp": "2026-02-24T21:04:55Z",
-      "environment": "production"
-    },
-    {
       "version": "build-511beff",
       "title": "feat(platform): add shell redirect, SDK library management, global SignalR, a...",
       "timestamp": "2026-02-24T21:55:38Z",
@@ -102,6 +96,12 @@
       "version": "build-ef08886",
       "title": "fix(sdk-hub): only count registered SDK clients, not browser connections",
       "timestamp": "2026-02-25T00:35:30Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-17507c6",
+      "title": "docs: strengthen production log pulling guidance for platform team",
+      "timestamp": "2026-02-25T00:59:02Z",
       "environment": "production"
     }
   ]
