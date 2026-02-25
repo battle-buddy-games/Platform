@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-f50ea97",
-      "title": "fix(dashboard): move shell status from banner to sparkles dropdown",
-      "timestamp": "2026-02-25T01:28:52Z",
-      "environment": "production"
-    },
-    {
       "version": "build-ffcfb94",
       "title": "fix(discord): block non-production Discord access in 3 unguarded paths",
       "timestamp": "2026-02-25T02:01:17Z",
@@ -102,6 +96,12 @@
       "version": "build-a7759c4",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-25T16:23:44Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-07e3f36",
+      "title": "fix(platform): fix document tool editing bug, remove quick menu, move Whisper...",
+      "timestamp": "2026-02-25T18:28:39Z",
       "environment": "production"
     }
   ]
