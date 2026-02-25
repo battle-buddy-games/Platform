@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-511beff",
-      "title": "feat(platform): add shell redirect, SDK library management, global SignalR, a...",
-      "timestamp": "2026-02-24T21:55:38Z",
-      "environment": "production"
-    },
-    {
       "version": "build-d2040a0",
       "title": "fix(platform): resolve 10 navbar presence menu issues — race condition, memor...",
       "timestamp": "2026-02-24T22:06:57Z",
@@ -102,6 +96,12 @@
       "version": "build-17507c6",
       "title": "docs: strengthen production log pulling guidance for platform team",
       "timestamp": "2026-02-25T00:59:02Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-79d637a",
+      "title": "feat(code-agent): dispatch claude -p commands to SDK Hub clients",
+      "timestamp": "2026-02-25T01:14:51Z",
       "environment": "production"
     }
   ]
