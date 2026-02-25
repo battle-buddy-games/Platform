@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-b420180",
-      "title": "feat(changelog): Phase 3 dashboard UI with commit browser, entry management, ...",
-      "timestamp": "2026-02-24T22:50:33Z",
-      "environment": "production"
-    },
-    {
       "version": "build-b912a55",
       "title": "feat(discord): admin link/unlink Discord users to platform accounts",
       "timestamp": "2026-02-24T23:03:31Z",
@@ -102,6 +96,12 @@
       "version": "build-ffcfb94",
       "title": "fix(discord): block non-production Discord access in 3 unguarded paths",
       "timestamp": "2026-02-25T02:01:17Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-2b7bc76",
+      "title": "fix(discord): add production guard to DiscordConversationsController DM endpoint",
+      "timestamp": "2026-02-25T02:05:49Z",
       "environment": "production"
     }
   ]
