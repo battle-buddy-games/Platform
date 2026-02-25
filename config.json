@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-d86da11",
-      "title": "chore(changelog): Phase 5 cleanup — remove old LM Studio-based changelog system",
-      "timestamp": "2026-02-24T23:43:14Z",
-      "environment": "production"
-    },
-    {
       "version": "build-ef08886",
       "title": "fix(sdk-hub): only count registered SDK clients, not browser connections",
       "timestamp": "2026-02-25T00:35:30Z",
@@ -102,6 +96,12 @@
       "version": "build-48be9a3",
       "title": "fix(dashboard): add StudioAgents migration and rename Team tab to Human Contr...",
       "timestamp": "2026-02-25T04:49:13Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-5743bc6",
+      "title": "feat(dashboard): cross-link About and Agents & Skills pages",
+      "timestamp": "2026-02-25T04:54:07Z",
       "environment": "production"
     }
   ]
