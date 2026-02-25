@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-17507c6",
-      "title": "docs: strengthen production log pulling guidance for platform team",
-      "timestamp": "2026-02-25T00:59:02Z",
-      "environment": "production"
-    },
-    {
       "version": "build-79d637a",
       "title": "feat(code-agent): dispatch claude -p commands to SDK Hub clients",
       "timestamp": "2026-02-25T01:14:51Z",
@@ -102,6 +96,12 @@
       "version": "build-3608dfe",
       "title": "docs(rules): restrict production log access to operations sub-team",
       "timestamp": "2026-02-25T04:59:15Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-0c2cf8b",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-02-25T05:10:29Z",
       "environment": "production"
     }
   ]
