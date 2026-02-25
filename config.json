@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-b912a55",
-      "title": "feat(discord): admin link/unlink Discord users to platform accounts",
-      "timestamp": "2026-02-24T23:03:31Z",
-      "environment": "production"
-    },
-    {
       "version": "build-b0465a4",
       "title": "fix(sync): Platform hardening — YAML sync silence, auth, retry, health, exclu...",
       "timestamp": "2026-02-24T23:38:17Z",
@@ -102,6 +96,12 @@
       "version": "build-2b7bc76",
       "title": "fix(discord): add production guard to DiscordConversationsController DM endpoint",
       "timestamp": "2026-02-25T02:05:49Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-5231c5c",
+      "title": "fix(webdav): use local rclone type for SDK LFS remote and add discovery logging",
+      "timestamp": "2026-02-25T03:01:43Z",
       "environment": "production"
     }
   ]
