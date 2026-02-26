@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-2b7bc76",
-      "title": "fix(discord): add production guard to DiscordConversationsController DM endpoint",
-      "timestamp": "2026-02-25T02:05:49Z",
-      "environment": "production"
-    },
-    {
       "version": "build-5231c5c",
       "title": "fix(webdav): use local rclone type for SDK LFS remote and add discovery logging",
       "timestamp": "2026-02-25T03:01:43Z",
@@ -102,6 +96,12 @@
       "version": "build-1723800",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-25T19:31:09Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-25a99e1",
+      "title": "refactor(local-sdk): migrate dashboard to unified backend editor polling",
+      "timestamp": "2026-02-26T02:22:32Z",
       "environment": "production"
     }
   ]
