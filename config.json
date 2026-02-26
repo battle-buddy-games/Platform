@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-5231c5c",
-      "title": "fix(webdav): use local rclone type for SDK LFS remote and add discovery logging",
-      "timestamp": "2026-02-25T03:01:43Z",
-      "environment": "production"
-    },
-    {
       "version": "build-48be9a3",
       "title": "fix(dashboard): add StudioAgents migration and rename Team tab to Human Contr...",
       "timestamp": "2026-02-25T04:49:13Z",
@@ -102,6 +96,12 @@
       "version": "build-25a99e1",
       "title": "refactor(local-sdk): migrate dashboard to unified backend editor polling",
       "timestamp": "2026-02-26T02:22:32Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-bcc5796",
+      "title": "fix(voice): clean up voice test and add proper recorder disconnect",
+      "timestamp": "2026-02-26T03:27:51Z",
       "environment": "production"
     }
   ]
