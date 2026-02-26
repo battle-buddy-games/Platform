@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-48be9a3",
-      "title": "fix(dashboard): add StudioAgents migration and rename Team tab to Human Contr...",
-      "timestamp": "2026-02-25T04:49:13Z",
-      "environment": "production"
-    },
-    {
       "version": "build-5743bc6",
       "title": "feat(dashboard): cross-link About and Agents & Skills pages",
       "timestamp": "2026-02-25T04:54:07Z",
@@ -102,6 +96,12 @@
       "version": "build-bcc5796",
       "title": "fix(voice): clean up voice test and add proper recorder disconnect",
       "timestamp": "2026-02-26T03:27:51Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-f16c1b8",
+      "title": "feat(steam): add Overview, Analytics, SDK tabs and enhance Branches/Products",
+      "timestamp": "2026-02-26T22:08:01Z",
       "environment": "production"
     }
   ]
