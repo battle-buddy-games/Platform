@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-5743bc6",
-      "title": "feat(dashboard): cross-link About and Agents & Skills pages",
-      "timestamp": "2026-02-25T04:54:07Z",
-      "environment": "production"
-    },
-    {
       "version": "build-3608dfe",
       "title": "docs(rules): restrict production log access to operations sub-team",
       "timestamp": "2026-02-25T04:59:15Z",
@@ -102,6 +96,12 @@
       "version": "build-f16c1b8",
       "title": "feat(steam): add Overview, Analytics, SDK tabs and enhance Branches/Products",
       "timestamp": "2026-02-26T22:08:01Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-766a96b",
+      "title": "feat: add directory tree navigation and file viewer for documentation",
+      "timestamp": "2026-02-26T22:19:57Z",
       "environment": "production"
     }
   ]
