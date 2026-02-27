@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-25a99e1",
-      "title": "refactor(local-sdk): migrate dashboard to unified backend editor polling",
-      "timestamp": "2026-02-26T02:22:32Z",
-      "environment": "production"
-    },
-    {
       "version": "build-bcc5796",
       "title": "fix(voice): clean up voice test and add proper recorder disconnect",
       "timestamp": "2026-02-26T03:27:51Z",
@@ -102,6 +96,12 @@
       "version": "build-6eaf506",
       "title": "feat(dashboard): re-enable browser localhost detection for Unity Editor and B...",
       "timestamp": "2026-02-27T17:15:33Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-c5249ab",
+      "title": "fix(voice): resolve leave channel semaphore deadlock and null AudioClient dis...",
+      "timestamp": "2026-02-27T18:24:19Z",
       "environment": "production"
     }
   ]
