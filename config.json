@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-766a96b",
-      "title": "feat: add directory tree navigation and file viewer for documentation",
-      "timestamp": "2026-02-26T22:19:57Z",
-      "environment": "production"
-    },
-    {
       "version": "build-e8785ea",
       "title": "feat: add Discord voice connection status indicator and auto-disconnect on pa...",
       "timestamp": "2026-02-27T03:22:22Z",
@@ -102,6 +96,12 @@
       "version": "build-419603b",
       "title": "feat: add marketing links management UI with grid/list views, search, tag fil...",
       "timestamp": "2026-02-27T19:38:42Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-fc05447",
+      "title": "feat(projects): add Overview tab with products, activity, and quick links",
+      "timestamp": "2026-02-27T22:46:31Z",
       "environment": "production"
     }
   ]
