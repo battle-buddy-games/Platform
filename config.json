@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-3608dfe",
-      "title": "docs(rules): restrict production log access to operations sub-team",
-      "timestamp": "2026-02-25T04:59:15Z",
-      "environment": "production"
-    },
-    {
       "version": "build-0c2cf8b",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-02-25T05:10:29Z",
@@ -102,6 +96,12 @@
       "version": "build-766a96b",
       "title": "feat: add directory tree navigation and file viewer for documentation",
       "timestamp": "2026-02-26T22:19:57Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-e8785ea",
+      "title": "feat: add Discord voice connection status indicator and auto-disconnect on pa...",
+      "timestamp": "2026-02-27T03:22:22Z",
       "environment": "production"
     }
   ]
