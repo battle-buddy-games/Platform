@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-a7759c4",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-02-25T16:23:44Z",
-      "environment": "production"
-    },
-    {
       "version": "build-07e3f36",
       "title": "fix(platform): fix document tool editing bug, remove quick menu, move Whisper...",
       "timestamp": "2026-02-25T18:28:39Z",
@@ -102,6 +96,12 @@
       "version": "build-329007f",
       "title": "fix(platform): fix StudioAgents and StudioSkills table creation — use direct ...",
       "timestamp": "2026-02-27T03:43:47Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-65c576c",
+      "title": "fix(platform): fix Discord roles mapping — handle failed guild loads, remove ...",
+      "timestamp": "2026-02-27T04:22:29Z",
       "environment": "production"
     }
   ]
