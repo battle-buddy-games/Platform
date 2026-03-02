@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-ea1ef53",
-      "title": "feat(dashboard): Whisper clip history, footer declutter, days-since timestamps",
-      "timestamp": "2026-02-27T16:42:33Z",
-      "environment": "production"
-    },
-    {
       "version": "build-6eaf506",
       "title": "feat(dashboard): re-enable browser localhost detection for Unity Editor and B...",
       "timestamp": "2026-02-27T17:15:33Z",
@@ -102,6 +96,12 @@
       "version": "build-9071574",
       "title": "fix(webdav): discover LFS folder via rclone remote instead of filesystem paths",
       "timestamp": "2026-03-02T09:18:33Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-67092a8",
+      "title": "fix(webdav): validate rclone config has remotes, check all remote types for LFS",
+      "timestamp": "2026-03-02T10:10:11Z",
       "environment": "production"
     }
   ]
