@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-329007f",
-      "title": "fix(platform): fix StudioAgents and StudioSkills table creation — use direct ...",
-      "timestamp": "2026-02-27T03:43:47Z",
-      "environment": "production"
-    },
-    {
       "version": "build-65c576c",
       "title": "fix(platform): fix Discord roles mapping — handle failed guild loads, remove ...",
       "timestamp": "2026-02-27T04:22:29Z",
@@ -102,6 +96,12 @@
       "version": "build-670d9b3",
       "title": "fix(drives): fully qualify System.Environment in Razor view to fix CS1061 bui...",
       "timestamp": "2026-03-02T08:22:56Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-3ef28ff",
+      "title": "fix(webdav): rclone config discovery and false-positive parsing",
+      "timestamp": "2026-03-02T08:48:43Z",
       "environment": "production"
     }
   ]
