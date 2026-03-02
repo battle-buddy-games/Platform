@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-e8785ea",
-      "title": "feat: add Discord voice connection status indicator and auto-disconnect on pa...",
-      "timestamp": "2026-02-27T03:22:22Z",
-      "environment": "production"
-    },
-    {
       "version": "build-e5281b1",
       "title": "fix(deploy): handle missing git tags gracefully in DeployToEnvironment.ps1",
       "timestamp": "2026-02-27T03:25:06Z",
@@ -102,6 +96,12 @@
       "version": "build-fc05447",
       "title": "feat(projects): add Overview tab with products, activity, and quick links",
       "timestamp": "2026-02-27T22:46:31Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-6b67377",
+      "title": "fix",
+      "timestamp": "2026-03-02T07:51:24Z",
       "environment": "production"
     }
   ]
