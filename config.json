@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-65c576c",
-      "title": "fix(platform): fix Discord roles mapping — handle failed guild loads, remove ...",
-      "timestamp": "2026-02-27T04:22:29Z",
-      "environment": "production"
-    },
-    {
       "version": "build-ea1ef53",
       "title": "feat(dashboard): Whisper clip history, footer declutter, days-since timestamps",
       "timestamp": "2026-02-27T16:42:33Z",
@@ -102,6 +96,12 @@
       "version": "build-3ef28ff",
       "title": "fix(webdav): rclone config discovery and false-positive parsing",
       "timestamp": "2026-03-02T08:48:43Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-9071574",
+      "title": "fix(webdav): discover LFS folder via rclone remote instead of filesystem paths",
+      "timestamp": "2026-03-02T09:18:33Z",
       "environment": "production"
     }
   ]
