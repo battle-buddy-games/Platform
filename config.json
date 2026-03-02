@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-c5249ab",
-      "title": "fix(voice): resolve leave channel semaphore deadlock and null AudioClient dis...",
-      "timestamp": "2026-02-27T18:24:19Z",
-      "environment": "production"
-    },
-    {
       "version": "build-dbd4272",
       "title": "feat(docs-tool): add dual editing mode — raw markdown and WYSIWYG blocks",
       "timestamp": "2026-02-27T18:59:18Z",
@@ -102,6 +96,12 @@
       "version": "build-ebcf6ef",
       "title": "fix(webdav): fallback to user rclone configs when primary config lacks LFS re...",
       "timestamp": "2026-03-02T10:44:34Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-7a541d7",
+      "title": "fix(webdav): scan C:\\Users for rclone configs when running as SYSTEM",
+      "timestamp": "2026-03-02T18:58:08Z",
       "environment": "production"
     }
   ]
