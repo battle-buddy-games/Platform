@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-e5281b1",
-      "title": "fix(deploy): handle missing git tags gracefully in DeployToEnvironment.ps1",
-      "timestamp": "2026-02-27T03:25:06Z",
-      "environment": "production"
-    },
-    {
       "version": "build-329007f",
       "title": "fix(platform): fix StudioAgents and StudioSkills table creation — use direct ...",
       "timestamp": "2026-02-27T03:43:47Z",
@@ -102,6 +96,12 @@
       "version": "build-6b67377",
       "title": "fix",
       "timestamp": "2026-03-02T07:51:24Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-670d9b3",
+      "title": "fix(drives): fully qualify System.Environment in Razor view to fix CS1061 bui...",
+      "timestamp": "2026-03-02T08:22:56Z",
       "environment": "production"
     }
   ]
