@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-fc05447",
-      "title": "feat(projects): add Overview tab with products, activity, and quick links",
-      "timestamp": "2026-02-27T22:46:31Z",
-      "environment": "production"
-    },
-    {
       "version": "build-6b67377",
       "title": "fix",
       "timestamp": "2026-03-02T07:51:24Z",
@@ -102,6 +96,12 @@
       "version": "build-fdb34d9",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-03-03T03:30:52Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-8d7e24e",
+      "title": "feat(sdk): add SDK artifact distribution backend and dashboard",
+      "timestamp": "2026-03-03T04:18:56Z",
       "environment": "production"
     }
   ]
