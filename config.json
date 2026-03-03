@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-ebcf6ef",
-      "title": "fix(webdav): fallback to user rclone configs when primary config lacks LFS re...",
-      "timestamp": "2026-03-02T10:44:34Z",
-      "environment": "production"
-    },
-    {
       "version": "build-7a541d7",
       "title": "fix(webdav): scan C:\\Users for rclone configs when running as SYSTEM",
       "timestamp": "2026-03-02T18:58:08Z",
@@ -102,6 +96,12 @@
       "version": "build-d4127dd",
       "title": "refactor(lfs): remove lfs-folderstore references from platform services",
       "timestamp": "2026-03-03T05:51:29Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-4ba766d",
+      "title": "fix(webdav): remove request size limit on PUT endpoint for LFS uploads",
+      "timestamp": "2026-03-03T06:32:23Z",
       "environment": "production"
     }
   ]
