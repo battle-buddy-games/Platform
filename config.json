@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-670d9b3",
-      "title": "fix(drives): fully qualify System.Environment in Razor view to fix CS1061 bui...",
-      "timestamp": "2026-03-02T08:22:56Z",
-      "environment": "production"
-    },
-    {
       "version": "build-3ef28ff",
       "title": "fix(webdav): rclone config discovery and false-positive parsing",
       "timestamp": "2026-03-02T08:48:43Z",
@@ -102,6 +96,12 @@
       "version": "build-dd3fd10",
       "title": "feat(dashboard): add Cognition Services tool consolidating AI tools",
       "timestamp": "2026-03-03T04:25:21Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-c815ca1",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-03-03T04:34:30Z",
       "environment": "production"
     }
   ]
