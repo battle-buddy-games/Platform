@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-9071574",
-      "title": "fix(webdav): discover LFS folder via rclone remote instead of filesystem paths",
-      "timestamp": "2026-03-02T09:18:33Z",
-      "environment": "production"
-    },
-    {
       "version": "build-67092a8",
       "title": "fix(webdav): validate rclone config has remotes, check all remote types for LFS",
       "timestamp": "2026-03-02T10:10:11Z",
@@ -102,6 +96,12 @@
       "version": "build-89a33da",
       "title": "fix(whisper-piper): resolve ffmpeg PATH for whisper and add pathvalidate depe...",
       "timestamp": "2026-03-03T04:49:50Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-ca21606",
+      "title": "fix",
+      "timestamp": "2026-03-03T05:24:29Z",
       "environment": "production"
     }
   ]
