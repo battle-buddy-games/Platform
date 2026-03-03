@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-6b67377",
-      "title": "fix",
-      "timestamp": "2026-03-02T07:51:24Z",
-      "environment": "production"
-    },
-    {
       "version": "build-670d9b3",
       "title": "fix(drives): fully qualify System.Environment in Razor view to fix CS1061 bui...",
       "timestamp": "2026-03-02T08:22:56Z",
@@ -102,6 +96,12 @@
       "version": "build-8d7e24e",
       "title": "feat(sdk): add SDK artifact distribution backend and dashboard",
       "timestamp": "2026-03-03T04:18:56Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-dd3fd10",
+      "title": "feat(dashboard): add Cognition Services tool consolidating AI tools",
+      "timestamp": "2026-03-03T04:25:21Z",
       "environment": "production"
     }
   ]
