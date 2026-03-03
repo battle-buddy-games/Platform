@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-7a541d7",
-      "title": "fix(webdav): scan C:\\Users for rclone configs when running as SYSTEM",
-      "timestamp": "2026-03-02T18:58:08Z",
-      "environment": "production"
-    },
-    {
       "version": "build-04dd52b",
       "title": "feat(dashboard): add Local SDK artifacts partial view",
       "timestamp": "2026-03-03T03:25:29Z",
@@ -102,6 +96,12 @@
       "version": "build-4ba766d",
       "title": "fix(webdav): remove request size limit on PUT endpoint for LFS uploads",
       "timestamp": "2026-03-03T06:32:23Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-8b11d70",
+      "title": "feat(platform): add Piper TTS voice management and Discord voice cancel support",
+      "timestamp": "2026-03-03T06:49:53Z",
       "environment": "production"
     }
   ]
