@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-fdb34d9",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-03-03T03:30:52Z",
-      "environment": "production"
-    },
-    {
       "version": "build-8d7e24e",
       "title": "feat(sdk): add SDK artifact distribution backend and dashboard",
       "timestamp": "2026-03-03T04:18:56Z",
@@ -102,6 +96,12 @@
       "version": "build-4b0ec4c",
       "title": "feat(drives): make rclone drive remote name configurable",
       "timestamp": "2026-03-03T07:16:37Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-651b07a",
+      "title": "fix(webdav): distinguish files from directories in PROPFIND response",
+      "timestamp": "2026-03-03T07:20:46Z",
       "environment": "production"
     }
   ]
