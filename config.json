@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-8d7e24e",
-      "title": "feat(sdk): add SDK artifact distribution backend and dashboard",
-      "timestamp": "2026-03-03T04:18:56Z",
-      "environment": "production"
-    },
-    {
       "version": "build-dd3fd10",
       "title": "feat(dashboard): add Cognition Services tool consolidating AI tools",
       "timestamp": "2026-03-03T04:25:21Z",
@@ -102,6 +96,12 @@
       "version": "build-651b07a",
       "title": "fix(webdav): distinguish files from directories in PROPFIND response",
       "timestamp": "2026-03-03T07:20:46Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-34d0f56",
+      "title": "fix(tests): pass IConfiguration to SteamScraperService in test constructors",
+      "timestamp": "2026-03-03T08:08:18Z",
       "environment": "production"
     }
   ]
