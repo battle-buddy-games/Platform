@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-c815ca1",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-03-03T04:34:30Z",
-      "environment": "production"
-    },
-    {
       "version": "build-89a33da",
       "title": "fix(whisper-piper): resolve ffmpeg PATH for whisper and add pathvalidate depe...",
       "timestamp": "2026-03-03T04:49:50Z",
@@ -102,6 +96,12 @@
       "version": "build-26564cb",
       "title": "fix(platform): restore missing types and usings removed in refactor",
       "timestamp": "2026-03-03T23:33:59Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-bb1386a",
+      "title": "fix(dashboard): fix analytics tab filter forms pointing to deleted tool URLs",
+      "timestamp": "2026-03-03T23:51:56Z",
       "environment": "production"
     }
   ]
