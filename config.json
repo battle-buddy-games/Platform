@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-dd3fd10",
-      "title": "feat(dashboard): add Cognition Services tool consolidating AI tools",
-      "timestamp": "2026-03-03T04:25:21Z",
-      "environment": "production"
-    },
-    {
       "version": "build-c815ca1",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-03-03T04:34:30Z",
@@ -102,6 +96,12 @@
       "version": "build-34d0f56",
       "title": "fix(tests): pass IConfiguration to SteamScraperService in test constructors",
       "timestamp": "2026-03-03T08:08:18Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-26564cb",
+      "title": "fix(platform): restore missing types and usings removed in refactor",
+      "timestamp": "2026-03-03T23:33:59Z",
       "environment": "production"
     }
   ]
