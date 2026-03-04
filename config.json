@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-8b11d70",
-      "title": "feat(platform): add Piper TTS voice management and Discord voice cancel support",
-      "timestamp": "2026-03-03T06:49:53Z",
-      "environment": "production"
-    },
-    {
       "version": "build-4b0ec4c",
       "title": "feat(drives): make rclone drive remote name configurable",
       "timestamp": "2026-03-03T07:16:37Z",
@@ -102,6 +96,12 @@
       "version": "build-5bdfb56",
       "title": "fix(build): resolve 3 Razor compile errors breaking CI deployment",
       "timestamp": "2026-03-04T03:23:32Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-76dd470",
+      "title": "chore(dashboard): clean up unused using directives",
+      "timestamp": "2026-03-04T03:30:23Z",
       "environment": "production"
     }
   ]
