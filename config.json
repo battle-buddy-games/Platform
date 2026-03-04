@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-26564cb",
-      "title": "fix(platform): restore missing types and usings removed in refactor",
-      "timestamp": "2026-03-03T23:33:59Z",
-      "environment": "production"
-    },
-    {
       "version": "build-bb1386a",
       "title": "fix(dashboard): fix analytics tab filter forms pointing to deleted tool URLs",
       "timestamp": "2026-03-03T23:51:56Z",
@@ -102,6 +96,12 @@
       "version": "build-eb32f2d",
       "title": "feat(signalr): add GameRelayHub for Mirror traffic relay",
       "timestamp": "2026-03-04T04:16:20Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-aa9935c",
+      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
+      "timestamp": "2026-03-04T17:14:21Z",
       "environment": "production"
     }
   ]
