@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-bb1386a",
-      "title": "fix(dashboard): fix analytics tab filter forms pointing to deleted tool URLs",
-      "timestamp": "2026-03-03T23:51:56Z",
-      "environment": "production"
-    },
-    {
       "version": "build-99e6d13",
       "title": "fix(dashboard): fix broken Razor conditional rendering in Drives tab",
       "timestamp": "2026-03-04T01:32:32Z",
@@ -102,6 +96,12 @@
       "version": "build-aa9935c",
       "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
       "timestamp": "2026-03-04T17:14:21Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-30bc092",
+      "title": "fix(navbar): resolve presence menu glitchiness from dropdown conflict and ind...",
+      "timestamp": "2026-03-04T18:40:37Z",
       "environment": "production"
     }
   ]
