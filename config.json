@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-ca21606",
-      "title": "fix",
-      "timestamp": "2026-03-03T05:24:29Z",
-      "environment": "production"
-    },
-    {
       "version": "build-d4127dd",
       "title": "refactor(lfs): remove lfs-folderstore references from platform services",
       "timestamp": "2026-03-03T05:51:29Z",
@@ -102,6 +96,12 @@
       "version": "build-99e6d13",
       "title": "fix(dashboard): fix broken Razor conditional rendering in Drives tab",
       "timestamp": "2026-03-04T01:32:32Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-999d865",
+      "title": "feat(dashboard): add WebDAV activity logging and Drives Activity tab",
+      "timestamp": "2026-03-04T01:43:04Z",
       "environment": "production"
     }
   ]
