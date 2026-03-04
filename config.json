@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-34d0f56",
-      "title": "fix(tests): pass IConfiguration to SteamScraperService in test constructors",
-      "timestamp": "2026-03-03T08:08:18Z",
-      "environment": "production"
-    },
-    {
       "version": "build-26564cb",
       "title": "fix(platform): restore missing types and usings removed in refactor",
       "timestamp": "2026-03-03T23:33:59Z",
@@ -102,6 +96,12 @@
       "version": "build-3b1b09b",
       "title": "fix(whisper): stop old MediaRecorder before starting new one in live STT chun...",
       "timestamp": "2026-03-04T03:53:04Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-eb32f2d",
+      "title": "feat(signalr): add GameRelayHub for Mirror traffic relay",
+      "timestamp": "2026-03-04T04:16:20Z",
       "environment": "production"
     }
   ]
