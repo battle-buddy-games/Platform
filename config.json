@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-4b0ec4c",
-      "title": "feat(drives): make rclone drive remote name configurable",
-      "timestamp": "2026-03-03T07:16:37Z",
-      "environment": "production"
-    },
-    {
       "version": "build-651b07a",
       "title": "fix(webdav): distinguish files from directories in PROPFIND response",
       "timestamp": "2026-03-03T07:20:46Z",
@@ -102,6 +96,12 @@
       "version": "build-76dd470",
       "title": "chore(dashboard): clean up unused using directives",
       "timestamp": "2026-03-04T03:30:23Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-033a855",
+      "title": "fix(tests): update ChatToolTests for refactored Chat API controller split",
+      "timestamp": "2026-03-04T03:42:17Z",
       "environment": "production"
     }
   ]
