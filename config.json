@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-54d1789",
-      "title": "feat(webdav): add GameLfs remote for main game LFS WebDAV access",
-      "timestamp": "2026-03-06T14:42:08Z",
-      "environment": "production"
-    },
-    {
       "version": "build-1271d09",
       "title": "fix(auth): prioritize token auth over cookie to fix API Bearer auth",
       "timestamp": "2026-03-06T15:00:30Z",
@@ -102,6 +96,12 @@
       "version": "build-6c25d39",
       "title": "feat(git-sync): implement unified git sync framework core",
       "timestamp": "2026-03-06T20:18:38Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-37091af",
+      "title": "feat(git-sync): migrate agent/skill indexing to sync framework",
+      "timestamp": "2026-03-06T20:28:03Z",
       "environment": "production"
     }
   ]
