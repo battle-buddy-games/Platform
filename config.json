@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-999d865",
-      "title": "feat(dashboard): add WebDAV activity logging and Drives Activity tab",
-      "timestamp": "2026-03-04T01:43:04Z",
-      "environment": "production"
-    },
-    {
       "version": "build-a5172ae",
       "title": "refactor(dashboard): extract Drives view business logic into DrivesInspectorS...",
       "timestamp": "2026-03-04T02:10:47Z",
@@ -102,6 +96,12 @@
       "version": "build-b65efbe",
       "title": "feat(discord): include host drive storage info in startup message",
       "timestamp": "2026-03-06T11:11:07Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-54d1789",
+      "title": "feat(webdav): add GameLfs remote for main game LFS WebDAV access",
+      "timestamp": "2026-03-06T14:42:08Z",
       "environment": "production"
     }
   ]
