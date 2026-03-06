@@ -1,108 +1,108 @@
 {
-  "github": {
-    "clientId": "Ov23liXpQBh8YbkP2AIy",
-    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
-    "scope": "user:email"
-  },
-  "google": {
-    "clientId": "94692902434-d832f25lj9m98ikuil8cbtcbnjh4d866.apps.googleusercontent.com",
-    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-google.html",
-    "scope": "profile email"
-  },
-  "discord": {
-    "clientId": "949786696860434443",
-    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-discord.html",
-    "scope": "identify email"
-  },
-  "backend": {
-    "callbackEndpoint": "/Authentication/github/callback"
-  },
-  "cloudflareTunnels": [
-    {
-      "name": "cloud",
-      "address": "https://metropolitan-divx-telling-polar.trycloudflare.com"
-    },
-    {
-      "name": "local-cloud",
-      "address": "http://192.168.0.243:8081"
-    },
-    {
-      "name": "staging-cloud",
-      "address": "http://192.168.0.251:8201"
-    },
-    {
-      "name": "test-cloud",
-      "address": "http://192.168.0.251:8301"
-    },
-    {
-      "name": "develop-cloud",
-      "address": "http://192.168.0.251:8101"
-    },
-    {
-      "name": "production-local",
-      "address": "http://192.168.0.251:8081"
-    }
-  ],
-  "releases": [
-    {
-      "version": "build-76dd470",
-      "title": "chore(dashboard): clean up unused using directives",
-      "timestamp": "2026-03-04T03:30:23Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-033a855",
-      "title": "fix(tests): update ChatToolTests for refactored Chat API controller split",
-      "timestamp": "2026-03-04T03:42:17Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-3b1b09b",
-      "title": "fix(whisper): stop old MediaRecorder before starting new one in live STT chun...",
-      "timestamp": "2026-03-04T03:53:04Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-eb32f2d",
-      "title": "feat(signalr): add GameRelayHub for Mirror traffic relay",
-      "timestamp": "2026-03-04T04:16:20Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-aa9935c",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-03-04T17:14:21Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-30bc092",
-      "title": "fix(navbar): resolve presence menu glitchiness from dropdown conflict and ind...",
-      "timestamp": "2026-03-04T18:40:37Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-b65efbe",
-      "title": "feat(discord): include host drive storage info in startup message",
-      "timestamp": "2026-03-06T11:11:07Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-54d1789",
-      "title": "feat(webdav): add GameLfs remote for main game LFS WebDAV access",
-      "timestamp": "2026-03-06T14:42:08Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-1271d09",
-      "title": "fix(auth): prioritize token auth over cookie to fix API Bearer auth",
-      "timestamp": "2026-03-06T15:00:30Z",
-      "environment": "production"
-    },
-    {
-      "version": "build-e13978f",
-      "title": "fix(auth): return 401/403 instead of 302 redirect for API and Bearer token re...",
-      "timestamp": "2026-03-06T15:10:45Z",
-      "environment": "production"
-    }
-  ]
+    "github":  {
+                   "clientId":  "Ov23liXpQBh8YbkP2AIy",
+                   "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
+                   "scope":  "user:email"
+               },
+    "google":  {
+                   "clientId":  "94692902434-d832f25lj9m98ikuil8cbtcbnjh4d866.apps.googleusercontent.com",
+                   "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-google.html",
+                   "scope":  "profile email"
+               },
+    "discord":  {
+                    "clientId":  "949786696860434443",
+                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-discord.html",
+                    "scope":  "identify email"
+                },
+    "backend":  {
+                    "callbackEndpoint":  "/Authentication/github/callback"
+                },
+    "cloudflareTunnels":  [
+                              {
+                                  "name":  "cloud",
+                                  "address":  "https://metropolitan-divx-telling-polar.trycloudflare.com"
+                              },
+                              {
+                                  "name":  "local-cloud",
+                                  "address":  "http://192.168.0.243:8081"
+                              },
+                              {
+                                  "name":  "staging-cloud",
+                                  "address":  "http://192.168.0.251:8201"
+                              },
+                              {
+                                  "name":  "test-cloud",
+                                  "address":  "http://192.168.0.251:8301"
+                              },
+                              {
+                                  "name":  "develop-cloud",
+                                  "address":  "http://192.168.0.251:8101"
+                              },
+                              {
+                                  "name":  "production-local",
+                                  "address":  "http://192.168.0.251:8081"
+                              }
+                          ],
+    "releases":  [
+                     {
+                         "version":  "build-76dd470",
+                         "title":  "chore(dashboard): clean up unused using directives",
+                         "timestamp":  "2026-03-04T03:30:23Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-033a855",
+                         "title":  "fix(tests): update ChatToolTests for refactored Chat API controller split",
+                         "timestamp":  "2026-03-04T03:42:17Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3b1b09b",
+                         "title":  "fix(whisper): stop old MediaRecorder before starting new one in live STT chun...",
+                         "timestamp":  "2026-03-04T03:53:04Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-eb32f2d",
+                         "title":  "feat(signalr): add GameRelayHub for Mirror traffic relay",
+                         "timestamp":  "2026-03-04T04:16:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-aa9935c",
+                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
+                         "timestamp":  "2026-03-04T17:14:21Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-30bc092",
+                         "title":  "fix(navbar): resolve presence menu glitchiness from dropdown conflict and ind...",
+                         "timestamp":  "2026-03-04T18:40:37Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-b65efbe",
+                         "title":  "feat(discord): include host drive storage info in startup message",
+                         "timestamp":  "2026-03-06T11:11:07Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-54d1789",
+                         "title":  "feat(webdav): add GameLfs remote for main game LFS WebDAV access",
+                         "timestamp":  "2026-03-06T14:42:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1271d09",
+                         "title":  "fix(auth): prioritize token auth over cookie to fix API Bearer auth",
+                         "timestamp":  "2026-03-06T15:00:30Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e13978f",
+                         "title":  "fix(auth): return 401/403 instead of 302 redirect for API and Bearer token re...",
+                         "timestamp":  "2026-03-06T15:10:45Z",
+                         "environment":  "production"
+                     }
+                 ]
 }
