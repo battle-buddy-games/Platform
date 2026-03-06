@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-99e6d13",
-      "title": "fix(dashboard): fix broken Razor conditional rendering in Drives tab",
-      "timestamp": "2026-03-04T01:32:32Z",
-      "environment": "production"
-    },
-    {
       "version": "build-999d865",
       "title": "feat(dashboard): add WebDAV activity logging and Drives Activity tab",
       "timestamp": "2026-03-04T01:43:04Z",
@@ -102,6 +96,12 @@
       "version": "build-30bc092",
       "title": "fix(navbar): resolve presence menu glitchiness from dropdown conflict and ind...",
       "timestamp": "2026-03-04T18:40:37Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-b65efbe",
+      "title": "feat(discord): include host drive storage info in startup message",
+      "timestamp": "2026-03-06T11:11:07Z",
       "environment": "production"
     }
   ]
