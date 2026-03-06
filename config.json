@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-b65efbe",
-      "title": "feat(discord): include host drive storage info in startup message",
-      "timestamp": "2026-03-06T11:11:07Z",
-      "environment": "production"
-    },
-    {
       "version": "build-54d1789",
       "title": "feat(webdav): add GameLfs remote for main game LFS WebDAV access",
       "timestamp": "2026-03-06T14:42:08Z",
@@ -102,6 +96,12 @@
       "version": "build-2c3415f",
       "title": "feat(changelog): implement Phase 1 core grooming workflow",
       "timestamp": "2026-03-06T17:35:46Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-6c25d39",
+      "title": "feat(git-sync): implement unified git sync framework core",
+      "timestamp": "2026-03-06T20:18:38Z",
       "environment": "production"
     }
   ]
