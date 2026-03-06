@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-e48ad61",
-      "title": "feat(forms): add FormsHub entity definitions and DbContext registration",
-      "timestamp": "2026-03-06T16:51:57Z",
-      "environment": "production"
-    },
-    {
       "version": "build-48f23c1",
       "title": "feat(forms): add FormsHub service layer",
       "timestamp": "2026-03-06T16:57:33Z",
@@ -102,6 +96,12 @@
       "version": "build-35ca311",
       "title": "docs(git-sync): add framework documentation to CLAUDE.md",
       "timestamp": "2026-03-06T20:46:21Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-5e0a78d",
+      "title": "feat(changelog): add AI grooming, player surface, and version management",
+      "timestamp": "2026-03-06T22:35:44Z",
       "environment": "production"
     }
   ]
