@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-5bdfb56",
-      "title": "fix(build): resolve 3 Razor compile errors breaking CI deployment",
-      "timestamp": "2026-03-04T03:23:32Z",
-      "environment": "production"
-    },
-    {
       "version": "build-76dd470",
       "title": "chore(dashboard): clean up unused using directives",
       "timestamp": "2026-03-04T03:30:23Z",
@@ -102,6 +96,12 @@
       "version": "build-1271d09",
       "title": "fix(auth): prioritize token auth over cookie to fix API Bearer auth",
       "timestamp": "2026-03-06T15:00:30Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-e13978f",
+      "title": "fix(auth): return 401/403 instead of 302 redirect for API and Bearer token re...",
+      "timestamp": "2026-03-06T15:10:45Z",
       "environment": "production"
     }
   ]
