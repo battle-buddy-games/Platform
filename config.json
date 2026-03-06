@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-a5172ae",
-      "title": "refactor(dashboard): extract Drives view business logic into DrivesInspectorS...",
-      "timestamp": "2026-03-04T02:10:47Z",
-      "environment": "production"
-    },
-    {
       "version": "build-5bdfb56",
       "title": "fix(build): resolve 3 Razor compile errors breaking CI deployment",
       "timestamp": "2026-03-04T03:23:32Z",
@@ -102,6 +96,12 @@
       "version": "build-54d1789",
       "title": "feat(webdav): add GameLfs remote for main game LFS WebDAV access",
       "timestamp": "2026-03-06T14:42:08Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-1271d09",
+      "title": "fix(auth): prioritize token auth over cookie to fix API Bearer auth",
+      "timestamp": "2026-03-06T15:00:30Z",
       "environment": "production"
     }
   ]
