@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-1271d09",
-      "title": "fix(auth): prioritize token auth over cookie to fix API Bearer auth",
-      "timestamp": "2026-03-06T15:00:30Z",
-      "environment": "production"
-    },
-    {
       "version": "build-e13978f",
       "title": "fix(auth): return 401/403 instead of 302 redirect for API and Bearer token re...",
       "timestamp": "2026-03-06T15:10:45Z",
@@ -102,6 +96,12 @@
       "version": "build-37091af",
       "title": "feat(git-sync): migrate agent/skill indexing to sync framework",
       "timestamp": "2026-03-06T20:28:03Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-2377ec9",
+      "title": "feat(dashboard): add grouped agent display by team hierarchy",
+      "timestamp": "2026-03-06T20:35:01Z",
       "environment": "production"
     }
   ]
