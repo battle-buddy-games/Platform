@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-aa9935c",
-      "title": "Merge branch 'main' of https://github.com/frostebite/WebPlatform",
-      "timestamp": "2026-03-04T17:14:21Z",
-      "environment": "production"
-    },
-    {
       "version": "build-30bc092",
       "title": "fix(navbar): resolve presence menu glitchiness from dropdown conflict and ind...",
       "timestamp": "2026-03-04T18:40:37Z",
@@ -102,6 +96,12 @@
       "version": "build-0f407ae",
       "title": "feat(forms): add FormsHub API controllers",
       "timestamp": "2026-03-06T17:04:08Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-95283b0",
+      "title": "feat(forms): add FormsHub dashboard tool and views",
+      "timestamp": "2026-03-06T17:11:39Z",
       "environment": "production"
     }
   ]
