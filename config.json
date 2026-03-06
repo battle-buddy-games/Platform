@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-f920688",
-      "title": "fix(deploy): add RCLONE_CONFIG env var to platform service deployment",
-      "timestamp": "2026-03-06T15:31:55Z",
-      "environment": "production"
-    },
-    {
       "version": "build-e48ad61",
       "title": "feat(forms): add FormsHub entity definitions and DbContext registration",
       "timestamp": "2026-03-06T16:51:57Z",
@@ -102,6 +96,12 @@
       "version": "build-3ee0c0c",
       "title": "feat(git-sync): add findings-to-chat and session summary sync targets",
       "timestamp": "2026-03-06T20:40:20Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-35ca311",
+      "title": "docs(git-sync): add framework documentation to CLAUDE.md",
+      "timestamp": "2026-03-06T20:46:21Z",
       "environment": "production"
     }
   ]
