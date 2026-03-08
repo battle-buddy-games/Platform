@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-2c3415f",
-      "title": "feat(changelog): implement Phase 1 core grooming workflow",
-      "timestamp": "2026-03-06T17:35:46Z",
-      "environment": "production"
-    },
-    {
       "version": "build-6c25d39",
       "title": "feat(git-sync): implement unified git sync framework core",
       "timestamp": "2026-03-06T20:18:38Z",
@@ -102,6 +96,12 @@
       "version": "build-5d3d330",
       "title": "fix(shell): create ShellRedirectRules table at startup to fix /api/shell/redi...",
       "timestamp": "2026-03-08T21:46:54Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-94f2d0c",
+      "title": "fix(webdav): increase upload size limit to 600MB and add streaming for large ...",
+      "timestamp": "2026-03-08T23:59:26Z",
       "environment": "production"
     }
   ]
