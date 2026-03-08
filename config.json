@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-95283b0",
-      "title": "feat(forms): add FormsHub dashboard tool and views",
-      "timestamp": "2026-03-06T17:11:39Z",
-      "environment": "production"
-    },
-    {
       "version": "build-2c3415f",
       "title": "feat(changelog): implement Phase 1 core grooming workflow",
       "timestamp": "2026-03-06T17:35:46Z",
@@ -102,6 +96,12 @@
       "version": "build-73c6bb3",
       "title": "fix(sdk-hub): add error logging to SdkHub.Register and enable detailed errors",
       "timestamp": "2026-03-06T23:18:54Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-5d3d330",
+      "title": "fix(shell): create ShellRedirectRules table at startup to fix /api/shell/redi...",
+      "timestamp": "2026-03-08T21:46:54Z",
       "environment": "production"
     }
   ]
