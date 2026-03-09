@@ -1,108 +1,108 @@
 {
-    "github":  {
-                   "clientId":  "Ov23liXpQBh8YbkP2AIy",
-                   "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
-                   "scope":  "user:email"
-               },
-    "google":  {
-                   "clientId":  "94692902434-d832f25lj9m98ikuil8cbtcbnjh4d866.apps.googleusercontent.com",
-                   "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-google.html",
-                   "scope":  "profile email"
-               },
-    "discord":  {
-                    "clientId":  "949786696860434443",
-                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-discord.html",
-                    "scope":  "identify email"
-                },
-    "backend":  {
-                    "callbackEndpoint":  "/Authentication/github/callback"
-                },
-    "cloudflareTunnels":  [
-                              {
-                                  "name":  "cloud",
-                                  "address":  "https://metropolitan-divx-telling-polar.trycloudflare.com"
-                              },
-                              {
-                                  "name":  "local-cloud",
-                                  "address":  "http://192.168.0.243:8081"
-                              },
-                              {
-                                  "name":  "staging-cloud",
-                                  "address":  "http://192.168.0.251:8201"
-                              },
-                              {
-                                  "name":  "test-cloud",
-                                  "address":  "http://192.168.0.251:8301"
-                              },
-                              {
-                                  "name":  "develop-cloud",
-                                  "address":  "http://192.168.0.251:8101"
-                              },
-                              {
-                                  "name":  "production-local",
-                                  "address":  "http://192.168.0.251:8081"
-                              }
-                          ],
-    "releases":  [
-                     {
-                         "version":  "build-2c3415f",
-                         "title":  "feat(changelog): implement Phase 1 core grooming workflow",
-                         "timestamp":  "2026-03-06T17:35:46Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-6c25d39",
-                         "title":  "feat(git-sync): implement unified git sync framework core",
-                         "timestamp":  "2026-03-06T20:18:38Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-37091af",
-                         "title":  "feat(git-sync): migrate agent/skill indexing to sync framework",
-                         "timestamp":  "2026-03-06T20:28:03Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-2377ec9",
-                         "title":  "feat(dashboard): add grouped agent display by team hierarchy",
-                         "timestamp":  "2026-03-06T20:35:01Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-3ee0c0c",
-                         "title":  "feat(git-sync): add findings-to-chat and session summary sync targets",
-                         "timestamp":  "2026-03-06T20:40:20Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-35ca311",
-                         "title":  "docs(git-sync): add framework documentation to CLAUDE.md",
-                         "timestamp":  "2026-03-06T20:46:21Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-5e0a78d",
-                         "title":  "feat(changelog): add AI grooming, player surface, and version management",
-                         "timestamp":  "2026-03-06T22:35:44Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-a5fe38b",
-                         "title":  "docs: update feature index and changelog documentation",
-                         "timestamp":  "2026-03-06T22:45:41Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-73c6bb3",
-                         "title":  "fix(sdk-hub): add error logging to SdkHub.Register and enable detailed errors",
-                         "timestamp":  "2026-03-06T23:18:54Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-5d3d330",
-                         "title":  "fix(shell): create ShellRedirectRules table at startup to fix /api/shell/redi...",
-                         "timestamp":  "2026-03-08T21:46:54Z",
-                         "environment":  "production"
-                     }
-                 ]
+  "github": {
+    "clientId": "Ov23liXpQBh8YbkP2AIy",
+    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
+    "scope": "user:email"
+  },
+  "google": {
+    "clientId": "94692902434-d832f25lj9m98ikuil8cbtcbnjh4d866.apps.googleusercontent.com",
+    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-google.html",
+    "scope": "profile email"
+  },
+  "discord": {
+    "clientId": "949786696860434443",
+    "redirectUri": "https://battle-buddy-games.github.io/Platform/gateway-callback-discord.html",
+    "scope": "identify email"
+  },
+  "backend": {
+    "callbackEndpoint": "/Authentication/github/callback"
+  },
+  "cloudflareTunnels": [
+    {
+      "name": "cloud",
+      "address": "https://metropolitan-divx-telling-polar.trycloudflare.com"
+    },
+    {
+      "name": "local-cloud",
+      "address": "http://192.168.0.243:8081"
+    },
+    {
+      "name": "staging-cloud",
+      "address": "http://192.168.0.251:8201"
+    },
+    {
+      "name": "test-cloud",
+      "address": "http://192.168.0.251:8301"
+    },
+    {
+      "name": "develop-cloud",
+      "address": "http://192.168.0.251:8101"
+    },
+    {
+      "name": "production-local",
+      "address": "http://192.168.0.251:8081"
+    }
+  ],
+  "releases": [
+    {
+      "version": "build-37091af",
+      "title": "feat(git-sync): migrate agent/skill indexing to sync framework",
+      "timestamp": "2026-03-06T20:28:03Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-2377ec9",
+      "title": "feat(dashboard): add grouped agent display by team hierarchy",
+      "timestamp": "2026-03-06T20:35:01Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-3ee0c0c",
+      "title": "feat(git-sync): add findings-to-chat and session summary sync targets",
+      "timestamp": "2026-03-06T20:40:20Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-35ca311",
+      "title": "docs(git-sync): add framework documentation to CLAUDE.md",
+      "timestamp": "2026-03-06T20:46:21Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-5e0a78d",
+      "title": "feat(changelog): add AI grooming, player surface, and version management",
+      "timestamp": "2026-03-06T22:35:44Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-a5fe38b",
+      "title": "docs: update feature index and changelog documentation",
+      "timestamp": "2026-03-06T22:45:41Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-73c6bb3",
+      "title": "fix(sdk-hub): add error logging to SdkHub.Register and enable detailed errors",
+      "timestamp": "2026-03-06T23:18:54Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-5d3d330",
+      "title": "fix(shell): create ShellRedirectRules table at startup to fix /api/shell/redi...",
+      "timestamp": "2026-03-08T21:46:54Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-94f2d0c",
+      "title": "fix(webdav): increase upload size limit to 600MB and add streaming for large ...",
+      "timestamp": "2026-03-08T23:59:26Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-d937d29",
+      "title": "fix(lfs): prefer Google_Drive_Streaming path for CI alignment",
+      "timestamp": "2026-03-09T01:55:46Z",
+      "environment": "production"
+    }
+  ]
 }
