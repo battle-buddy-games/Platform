@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-a5fe38b",
-      "title": "docs: update feature index and changelog documentation",
-      "timestamp": "2026-03-06T22:45:41Z",
-      "environment": "production"
-    },
-    {
       "version": "build-73c6bb3",
       "title": "fix(sdk-hub): add error logging to SdkHub.Register and enable detailed errors",
       "timestamp": "2026-03-06T23:18:54Z",
@@ -102,6 +96,12 @@
       "version": "build-6e45efd",
       "title": "feat(runners): add scheduled task watchdog for runner health monitoring",
       "timestamp": "2026-03-10T06:46:22Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-55e03ee",
+      "title": "feat(platform): add start/stop/restart to Windows service management API",
+      "timestamp": "2026-03-10T08:13:55Z",
       "environment": "production"
     }
   ]
