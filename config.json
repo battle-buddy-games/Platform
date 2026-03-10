@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-37091af",
-      "title": "feat(git-sync): migrate agent/skill indexing to sync framework",
-      "timestamp": "2026-03-06T20:28:03Z",
-      "environment": "production"
-    },
-    {
       "version": "build-2377ec9",
       "title": "feat(dashboard): add grouped agent display by team hierarchy",
       "timestamp": "2026-03-06T20:35:01Z",
@@ -102,6 +96,12 @@
       "version": "build-d937d29",
       "title": "fix(lfs): prefer Google_Drive_Streaming path for CI alignment",
       "timestamp": "2026-03-09T01:55:46Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-d471511",
+      "title": "chore: retrigger deployment after runner repair",
+      "timestamp": "2026-03-10T00:16:38Z",
       "environment": "production"
     }
   ]
