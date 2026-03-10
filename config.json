@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-2377ec9",
-      "title": "feat(dashboard): add grouped agent display by team hierarchy",
-      "timestamp": "2026-03-06T20:35:01Z",
-      "environment": "production"
-    },
-    {
       "version": "build-3ee0c0c",
       "title": "feat(git-sync): add findings-to-chat and session summary sync targets",
       "timestamp": "2026-03-06T20:40:20Z",
@@ -102,6 +96,12 @@
       "version": "build-d471511",
       "title": "chore: retrigger deployment after runner repair",
       "timestamp": "2026-03-10T00:16:38Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-c507e72",
+      "title": "feat(screen-ops): pass --no-steam --no-discord when launching sandbox builds",
+      "timestamp": "2026-03-10T00:23:00Z",
       "environment": "production"
     }
   ]
