@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-d937d29",
-      "title": "fix(lfs): prefer Google_Drive_Streaming path for CI alignment",
-      "timestamp": "2026-03-09T01:55:46Z",
-      "environment": "production"
-    },
-    {
       "version": "build-d471511",
       "title": "chore: retrigger deployment after runner repair",
       "timestamp": "2026-03-10T00:16:38Z",
@@ -102,6 +96,12 @@
       "version": "build-d066960",
       "title": "feat(discord): add 90-day activity retention, status API, and extended UI range",
       "timestamp": "2026-03-10T21:58:29Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-d9d32fe",
+      "title": "feat(discord): add activity sampling error classification, observability, and...",
+      "timestamp": "2026-03-10T22:19:46Z",
       "environment": "production"
     }
   ]
