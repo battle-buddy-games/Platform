@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-35ca311",
-      "title": "docs(git-sync): add framework documentation to CLAUDE.md",
-      "timestamp": "2026-03-06T20:46:21Z",
-      "environment": "production"
-    },
-    {
       "version": "build-5e0a78d",
       "title": "feat(changelog): add AI grooming, player surface, and version management",
       "timestamp": "2026-03-06T22:35:44Z",
@@ -102,6 +96,12 @@
       "version": "build-1f66072",
       "title": "fix(runners): add NSSM AppExit Restart and restart delay to runner services",
       "timestamp": "2026-03-10T05:51:19Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-841caa0",
+      "title": "feat(platform): add runner health watchdog service with auto-restart",
+      "timestamp": "2026-03-10T05:56:27Z",
       "environment": "production"
     }
   ]
