@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-5d3d330",
-      "title": "fix(shell): create ShellRedirectRules table at startup to fix /api/shell/redi...",
-      "timestamp": "2026-03-08T21:46:54Z",
-      "environment": "production"
-    },
-    {
       "version": "build-94f2d0c",
       "title": "fix(webdav): increase upload size limit to 600MB and add streaming for large ...",
       "timestamp": "2026-03-08T23:59:26Z",
@@ -102,6 +96,12 @@
       "version": "build-10ebb30",
       "title": "fix(document-tool): fix toolbar buttons, markdown sync, block spacing, and no...",
       "timestamp": "2026-03-10T11:02:44Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-353df59",
+      "title": "fix(platform): filter SDK Hub dashboard tab to only show sdk-hub clients",
+      "timestamp": "2026-03-10T21:53:35Z",
       "environment": "production"
     }
   ]
