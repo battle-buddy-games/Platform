@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-73c6bb3",
-      "title": "fix(sdk-hub): add error logging to SdkHub.Register and enable detailed errors",
-      "timestamp": "2026-03-06T23:18:54Z",
-      "environment": "production"
-    },
-    {
       "version": "build-5d3d330",
       "title": "fix(shell): create ShellRedirectRules table at startup to fix /api/shell/redi...",
       "timestamp": "2026-03-08T21:46:54Z",
@@ -102,6 +96,12 @@
       "version": "build-55e03ee",
       "title": "feat(platform): add start/stop/restart to Windows service management API",
       "timestamp": "2026-03-10T08:13:55Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-10ebb30",
+      "title": "fix(document-tool): fix toolbar buttons, markdown sync, block spacing, and no...",
+      "timestamp": "2026-03-10T11:02:44Z",
       "environment": "production"
     }
   ]
