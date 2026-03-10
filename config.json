@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-3ee0c0c",
-      "title": "feat(git-sync): add findings-to-chat and session summary sync targets",
-      "timestamp": "2026-03-06T20:40:20Z",
-      "environment": "production"
-    },
-    {
       "version": "build-35ca311",
       "title": "docs(git-sync): add framework documentation to CLAUDE.md",
       "timestamp": "2026-03-06T20:46:21Z",
@@ -102,6 +96,12 @@
       "version": "build-c507e72",
       "title": "feat(screen-ops): pass --no-steam --no-discord when launching sandbox builds",
       "timestamp": "2026-03-10T00:23:00Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-1f66072",
+      "title": "fix(runners): add NSSM AppExit Restart and restart delay to runner services",
+      "timestamp": "2026-03-10T05:51:19Z",
       "environment": "production"
     }
   ]
