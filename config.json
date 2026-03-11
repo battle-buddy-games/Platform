@@ -20,7 +20,7 @@
   "cloudflareTunnels": [
     {
       "name": "cloud",
-      "address": "https://fathers-nationally-supplied-guild.trycloudflare.com"
+      "address": "https://stream-compiled-freebsd-avon.trycloudflare.com"
     },
     {
       "name": "local-cloud",
