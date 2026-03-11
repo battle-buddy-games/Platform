@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-1f66072",
-      "title": "fix(runners): add NSSM AppExit Restart and restart delay to runner services",
-      "timestamp": "2026-03-10T05:51:19Z",
-      "environment": "production"
-    },
-    {
       "version": "build-841caa0",
       "title": "feat(platform): add runner health watchdog service with auto-restart",
       "timestamp": "2026-03-10T05:56:27Z",
@@ -102,6 +96,12 @@
       "version": "build-48c00cd",
       "title": "fix(platform): replace DBNull.Value in ExecuteSqlRawAsync with ADO.NET Create...",
       "timestamp": "2026-03-11T07:19:26Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-be70d29",
+      "title": "fix(platform): update Discord guild ID, fix voice cycling, add SharedResource...",
+      "timestamp": "2026-03-11T07:26:02Z",
       "environment": "production"
     }
   ]
