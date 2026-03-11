@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-d066960",
-      "title": "feat(discord): add 90-day activity retention, status API, and extended UI range",
-      "timestamp": "2026-03-10T21:58:29Z",
-      "environment": "production"
-    },
-    {
       "version": "build-d9d32fe",
       "title": "feat(discord): add activity sampling error classification, observability, and...",
       "timestamp": "2026-03-10T22:19:46Z",
@@ -102,6 +96,12 @@
       "version": "build-76dcbda",
       "title": "docs(ops): add runner server access and restart procedure to CLAUDE.md",
       "timestamp": "2026-03-11T11:12:27Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-9a16733",
+      "title": "feat(runners): add hard-reinstall action for full runner workspace reset",
+      "timestamp": "2026-03-11T12:13:54Z",
       "environment": "production"
     }
   ]
