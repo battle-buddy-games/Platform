@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-55e03ee",
-      "title": "feat(platform): add start/stop/restart to Windows service management API",
-      "timestamp": "2026-03-10T08:13:55Z",
-      "environment": "production"
-    },
-    {
       "version": "build-10ebb30",
       "title": "fix(document-tool): fix toolbar buttons, markdown sync, block spacing, and no...",
       "timestamp": "2026-03-10T11:02:44Z",
@@ -102,6 +96,12 @@
       "version": "build-c3daf10",
       "title": "fix(platform): unwrap items from API response in Projects product profiles lo...",
       "timestamp": "2026-03-11T07:45:11Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-eec4b99",
+      "title": "feat(platform): add Builds tab group to Automation tool organized by build type",
+      "timestamp": "2026-03-11T07:56:19Z",
       "environment": "production"
     }
   ]
