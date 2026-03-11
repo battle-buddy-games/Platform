@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-6e45efd",
-      "title": "feat(runners): add scheduled task watchdog for runner health monitoring",
-      "timestamp": "2026-03-10T06:46:22Z",
-      "environment": "production"
-    },
-    {
       "version": "build-55e03ee",
       "title": "feat(platform): add start/stop/restart to Windows service management API",
       "timestamp": "2026-03-10T08:13:55Z",
@@ -102,6 +96,12 @@
       "version": "build-2668db3",
       "title": "fix(platform): rename GitHub",
       "timestamp": "2026-03-11T07:39:03Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-c3daf10",
+      "title": "fix(platform): unwrap items from API response in Projects product profiles lo...",
+      "timestamp": "2026-03-11T07:45:11Z",
       "environment": "production"
     }
   ]
