@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-353df59",
-      "title": "fix(platform): filter SDK Hub dashboard tab to only show sdk-hub clients",
-      "timestamp": "2026-03-10T21:53:35Z",
-      "environment": "production"
-    },
-    {
       "version": "build-d066960",
       "title": "feat(discord): add 90-day activity retention, status API, and extended UI range",
       "timestamp": "2026-03-10T21:58:29Z",
@@ -102,6 +96,12 @@
       "version": "build-fa916fc",
       "title": "feat(platform): append process environment info to help command responses",
       "timestamp": "2026-03-11T08:26:54Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-76dcbda",
+      "title": "docs(ops): add runner server access and restart procedure to CLAUDE.md",
+      "timestamp": "2026-03-11T11:12:27Z",
       "environment": "production"
     }
   ]
