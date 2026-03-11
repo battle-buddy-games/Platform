@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-841caa0",
-      "title": "feat(platform): add runner health watchdog service with auto-restart",
-      "timestamp": "2026-03-10T05:56:27Z",
-      "environment": "production"
-    },
-    {
       "version": "build-6e45efd",
       "title": "feat(runners): add scheduled task watchdog for runner health monitoring",
       "timestamp": "2026-03-10T06:46:22Z",
@@ -102,6 +96,12 @@
       "version": "build-be70d29",
       "title": "fix(platform): update Discord guild ID, fix voice cycling, add SharedResource...",
       "timestamp": "2026-03-11T07:26:02Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-2668db3",
+      "title": "fix(platform): rename GitHub",
+      "timestamp": "2026-03-11T07:39:03Z",
       "environment": "production"
     }
   ]
