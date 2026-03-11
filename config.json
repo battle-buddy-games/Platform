@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-c507e72",
-      "title": "feat(screen-ops): pass --no-steam --no-discord when launching sandbox builds",
-      "timestamp": "2026-03-10T00:23:00Z",
-      "environment": "production"
-    },
-    {
       "version": "build-1f66072",
       "title": "fix(runners): add NSSM AppExit Restart and restart delay to runner services",
       "timestamp": "2026-03-10T05:51:19Z",
@@ -102,6 +96,12 @@
       "version": "build-16213c6",
       "title": "fix(platform): populate Unity Editor status fields in SDK dashboard",
       "timestamp": "2026-03-11T05:26:45Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-48c00cd",
+      "title": "fix(platform): replace DBNull.Value in ExecuteSqlRawAsync with ADO.NET Create...",
+      "timestamp": "2026-03-11T07:19:26Z",
       "environment": "production"
     }
   ]
