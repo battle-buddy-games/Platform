@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-10ebb30",
-      "title": "fix(document-tool): fix toolbar buttons, markdown sync, block spacing, and no...",
-      "timestamp": "2026-03-10T11:02:44Z",
-      "environment": "production"
-    },
-    {
       "version": "build-353df59",
       "title": "fix(platform): filter SDK Hub dashboard tab to only show sdk-hub clients",
       "timestamp": "2026-03-10T21:53:35Z",
@@ -102,6 +96,12 @@
       "version": "build-eec4b99",
       "title": "feat(platform): add Builds tab group to Automation tool organized by build type",
       "timestamp": "2026-03-11T07:56:19Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-fa916fc",
+      "title": "feat(platform): append process environment info to help command responses",
+      "timestamp": "2026-03-11T08:26:54Z",
       "environment": "production"
     }
   ]
