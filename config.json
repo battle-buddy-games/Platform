@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-eec4b99",
-      "title": "feat(platform): add Builds tab group to Automation tool organized by build type",
-      "timestamp": "2026-03-11T07:56:19Z",
-      "environment": "production"
-    },
-    {
       "version": "build-fa916fc",
       "title": "feat(platform): append process environment info to help command responses",
       "timestamp": "2026-03-11T08:26:54Z",
@@ -102,6 +96,12 @@
       "version": "build-c4550c7",
       "title": "feat(sdk-dashboard): add clickable file diff viewing with syntax coloring",
       "timestamp": "2026-03-12T16:31:59Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-733a275",
+      "title": "fix(platform): robust Discord activity table schema creation and error handling",
+      "timestamp": "2026-03-12T16:46:40Z",
       "environment": "production"
     }
   ]
