@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-c3daf10",
-      "title": "fix(platform): unwrap items from API response in Projects product profiles lo...",
-      "timestamp": "2026-03-11T07:45:11Z",
-      "environment": "production"
-    },
-    {
       "version": "build-eec4b99",
       "title": "feat(platform): add Builds tab group to Automation tool organized by build type",
       "timestamp": "2026-03-11T07:56:19Z",
@@ -102,6 +96,12 @@
       "version": "build-53021ce",
       "title": "fix(sdk-dashboard): use explicit repo names from submodule data in Git Graphs",
       "timestamp": "2026-03-12T15:38:57Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-c4550c7",
+      "title": "feat(sdk-dashboard): add clickable file diff viewing with syntax coloring",
+      "timestamp": "2026-03-12T16:31:59Z",
       "environment": "production"
     }
   ]
