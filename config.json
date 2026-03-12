@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-2668db3",
-      "title": "fix(platform): rename GitHub",
-      "timestamp": "2026-03-11T07:39:03Z",
-      "environment": "production"
-    },
-    {
       "version": "build-c3daf10",
       "title": "fix(platform): unwrap items from API response in Projects product profiles lo...",
       "timestamp": "2026-03-11T07:45:11Z",
@@ -102,6 +96,12 @@
       "version": "build-5ccc015",
       "title": "feat(commands): add Discord channel ingest commands",
       "timestamp": "2026-03-12T15:28:41Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-53021ce",
+      "title": "fix(sdk-dashboard): use explicit repo names from submodule data in Git Graphs",
+      "timestamp": "2026-03-12T15:38:57Z",
       "environment": "production"
     }
   ]
