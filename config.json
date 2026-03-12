@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-48c00cd",
-      "title": "fix(platform): replace DBNull.Value in ExecuteSqlRawAsync with ADO.NET Create...",
-      "timestamp": "2026-03-11T07:19:26Z",
-      "environment": "production"
-    },
-    {
       "version": "build-be70d29",
       "title": "fix(platform): update Discord guild ID, fix voice cycling, add SharedResource...",
       "timestamp": "2026-03-11T07:26:02Z",
@@ -102,6 +96,12 @@
       "version": "build-365b0a5",
       "title": "fix(sdk): correct Shell redirect password in seed data",
       "timestamp": "2026-03-12T13:42:44Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-c9628ac",
+      "title": "fix(sdk-dashboard): show all clients in Claude tab dropdown and enhance git s...",
+      "timestamp": "2026-03-12T14:41:27Z",
       "environment": "production"
     }
   ]
