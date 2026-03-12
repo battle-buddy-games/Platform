@@ -20,7 +20,7 @@
   "cloudflareTunnels": [
     {
       "name": "cloud",
-      "address": "https://stream-compiled-freebsd-avon.trycloudflare.com"
+      "address": "https://forum-cedar-least-enforcement.trycloudflare.com"
     },
     {
       "name": "local-cloud",
