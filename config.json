@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-be70d29",
-      "title": "fix(platform): update Discord guild ID, fix voice cycling, add SharedResource...",
-      "timestamp": "2026-03-11T07:26:02Z",
-      "environment": "production"
-    },
-    {
       "version": "build-2668db3",
       "title": "fix(platform): rename GitHub",
       "timestamp": "2026-03-11T07:39:03Z",
@@ -102,6 +96,12 @@
       "version": "build-c9628ac",
       "title": "fix(sdk-dashboard): show all clients in Claude tab dropdown and enhance git s...",
       "timestamp": "2026-03-12T14:41:27Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-5ccc015",
+      "title": "feat(commands): add Discord channel ingest commands",
+      "timestamp": "2026-03-12T15:28:41Z",
       "environment": "production"
     }
   ]
