@@ -20,7 +20,7 @@
   "cloudflareTunnels": [
     {
       "name": "cloud",
-      "address": "https://forum-cedar-least-enforcement.trycloudflare.com"
+      "address": "https://kitchen-roberts-durham-gently.trycloudflare.com"
     },
     {
       "name": "local-cloud",
