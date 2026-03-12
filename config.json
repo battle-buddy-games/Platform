@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-d9d32fe",
-      "title": "feat(discord): add activity sampling error classification, observability, and...",
-      "timestamp": "2026-03-10T22:19:46Z",
-      "environment": "production"
-    },
-    {
       "version": "build-16213c6",
       "title": "fix(platform): populate Unity Editor status fields in SDK dashboard",
       "timestamp": "2026-03-11T05:26:45Z",
@@ -102,6 +96,12 @@
       "version": "build-9a16733",
       "title": "feat(runners): add hard-reinstall action for full runner workspace reset",
       "timestamp": "2026-03-11T12:13:54Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-fa952d1",
+      "title": "feat(platform): add interactive Claude Code session support via dashboard",
+      "timestamp": "2026-03-12T09:24:41Z",
       "environment": "production"
     }
   ]
