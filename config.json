@@ -20,7 +20,7 @@
   "cloudflareTunnels": [
     {
       "name": "cloud",
-      "address": "https://urban-samples-successful-socket.trycloudflare.com"
+      "address": "https://fabric-warning-regulation-arthur.trycloudflare.com"
     },
     {
       "name": "local-cloud",
