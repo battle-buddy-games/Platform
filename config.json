@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-fa916fc",
-      "title": "feat(platform): append process environment info to help command responses",
-      "timestamp": "2026-03-11T08:26:54Z",
-      "environment": "production"
-    },
-    {
       "version": "build-76dcbda",
       "title": "docs(ops): add runner server access and restart procedure to CLAUDE.md",
       "timestamp": "2026-03-11T11:12:27Z",
@@ -102,6 +96,12 @@
       "version": "build-733a275",
       "title": "fix(platform): robust Discord activity table schema creation and error handling",
       "timestamp": "2026-03-12T16:46:40Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-76f4f9c",
+      "title": "feat(portals): add built-in undeletable system portals",
+      "timestamp": "2026-03-16T11:31:14Z",
       "environment": "production"
     }
   ]
