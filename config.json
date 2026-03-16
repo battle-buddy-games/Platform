@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-9a16733",
-      "title": "feat(runners): add hard-reinstall action for full runner workspace reset",
-      "timestamp": "2026-03-11T12:13:54Z",
-      "environment": "production"
-    },
-    {
       "version": "build-fa952d1",
       "title": "feat(platform): add interactive Claude Code session support via dashboard",
       "timestamp": "2026-03-12T09:24:41Z",
@@ -102,6 +96,12 @@
       "version": "build-84a6859",
       "title": "fix(lfs): use rclone alias type for local LFS remotes and add stale remote va...",
       "timestamp": "2026-03-16T11:49:21Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-273ed4e",
+      "title": "fix(lfs): add content structure validation to stale remote detection",
+      "timestamp": "2026-03-16T13:21:20Z",
       "environment": "production"
     }
   ]
