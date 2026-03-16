@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-76dcbda",
-      "title": "docs(ops): add runner server access and restart procedure to CLAUDE.md",
-      "timestamp": "2026-03-11T11:12:27Z",
-      "environment": "production"
-    },
-    {
       "version": "build-9a16733",
       "title": "feat(runners): add hard-reinstall action for full runner workspace reset",
       "timestamp": "2026-03-11T12:13:54Z",
@@ -102,6 +96,12 @@
       "version": "build-76f4f9c",
       "title": "feat(portals): add built-in undeletable system portals",
       "timestamp": "2026-03-16T11:31:14Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-84a6859",
+      "title": "fix(lfs): use rclone alias type for local LFS remotes and add stale remote va...",
+      "timestamp": "2026-03-16T11:49:21Z",
       "environment": "production"
     }
   ]
