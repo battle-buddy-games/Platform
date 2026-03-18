@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-365b0a5",
-      "title": "fix(sdk): correct Shell redirect password in seed data",
-      "timestamp": "2026-03-12T13:42:44Z",
-      "environment": "production"
-    },
-    {
       "version": "build-c9628ac",
       "title": "fix(sdk-dashboard): show all clients in Claude tab dropdown and enhance git s...",
       "timestamp": "2026-03-12T14:41:27Z",
@@ -102,6 +96,12 @@
       "version": "build-d692452",
       "title": "fix(middleware): return JSON errors for WebDAV/LFS requests instead of HTML e...",
       "timestamp": "2026-03-18T14:36:29Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-a7c27cd",
+      "title": "fix(webdav): pass --config flag to rclone rcat and cat commands",
+      "timestamp": "2026-03-18T15:08:36Z",
       "environment": "production"
     }
   ]
