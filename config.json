@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-53021ce",
-      "title": "fix(sdk-dashboard): use explicit repo names from submodule data in Git Graphs",
-      "timestamp": "2026-03-12T15:38:57Z",
-      "environment": "production"
-    },
-    {
       "version": "build-c4550c7",
       "title": "feat(sdk-dashboard): add clickable file diff viewing with syntax coloring",
       "timestamp": "2026-03-12T16:31:59Z",
@@ -102,6 +96,12 @@
       "version": "build-74a9da9",
       "title": "fix(sdk): remove orphan SignalR event listeners SdkClientUpdated and ClaudeSe...",
       "timestamp": "2026-03-19T17:00:21Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-8942f05",
+      "title": "feat(static-sites): add Hugo site template and GitHub Actions build/deploy wo...",
+      "timestamp": "2026-03-19T20:27:06Z",
       "environment": "production"
     }
   ]
