@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-733a275",
-      "title": "fix(platform): robust Discord activity table schema creation and error handling",
-      "timestamp": "2026-03-12T16:46:40Z",
-      "environment": "production"
-    },
-    {
       "version": "build-76f4f9c",
       "title": "feat(portals): add built-in undeletable system portals",
       "timestamp": "2026-03-16T11:31:14Z",
@@ -102,6 +96,12 @@
       "version": "build-e7e4e08",
       "title": "feat(static-sites): add StaticSite entity, service, API controller, and migra...",
       "timestamp": "2026-03-19T20:32:14Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-29bfcb3",
+      "title": "feat(static-sites): enhance dashboard UI with modal forms, improved detail pa...",
+      "timestamp": "2026-03-19T20:37:38Z",
       "environment": "production"
     }
   ]
