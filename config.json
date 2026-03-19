@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-5ccc015",
-      "title": "feat(commands): add Discord channel ingest commands",
-      "timestamp": "2026-03-12T15:28:41Z",
-      "environment": "production"
-    },
-    {
       "version": "build-53021ce",
       "title": "fix(sdk-dashboard): use explicit repo names from submodule data in Git Graphs",
       "timestamp": "2026-03-12T15:38:57Z",
@@ -102,6 +96,12 @@
       "version": "build-9326aad",
       "title": "feat(sdk): add Version field to SdkClientInfo and Register method",
       "timestamp": "2026-03-19T16:53:09Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-74a9da9",
+      "title": "fix(sdk): remove orphan SignalR event listeners SdkClientUpdated and ClaudeSe...",
+      "timestamp": "2026-03-19T17:00:21Z",
       "environment": "production"
     }
   ]
