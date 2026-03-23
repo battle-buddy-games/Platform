@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-84a6859",
-      "title": "fix(lfs): use rclone alias type for local LFS remotes and add stale remote va...",
-      "timestamp": "2026-03-16T11:49:21Z",
-      "environment": "production"
-    },
-    {
       "version": "build-273ed4e",
       "title": "fix(lfs): add content structure validation to stale remote detection",
       "timestamp": "2026-03-16T13:21:20Z",
@@ -102,6 +96,12 @@
       "version": "build-745c266",
       "title": "feat(static-sites): add insight panels for input data, templating, engine, an...",
       "timestamp": "2026-03-19T21:06:52Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-d295359",
+      "title": "feat(platform-logs): add unity editor log source category",
+      "timestamp": "2026-03-23T20:37:24Z",
       "environment": "production"
     }
   ]
