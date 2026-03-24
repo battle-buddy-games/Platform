@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-273ed4e",
-      "title": "fix(lfs): add content structure validation to stale remote detection",
-      "timestamp": "2026-03-16T13:21:20Z",
-      "environment": "production"
-    },
-    {
       "version": "build-d692452",
       "title": "fix(middleware): return JSON errors for WebDAV/LFS requests instead of HTML e...",
       "timestamp": "2026-03-18T14:36:29Z",
@@ -102,6 +96,12 @@
       "version": "build-d295359",
       "title": "feat(platform-logs): add unity editor log source category",
       "timestamp": "2026-03-23T20:37:24Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-d2565a2",
+      "title": "feat(signalr): add ReportLog hub method for SDK Hub tri-destination logging",
+      "timestamp": "2026-03-24T10:38:28Z",
       "environment": "production"
     }
   ]
