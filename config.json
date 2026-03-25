@@ -20,7 +20,7 @@
   "cloudflareTunnels": [
     {
       "name": "cloud",
-      "address": "https://roles-gel-namespace-monsters.trycloudflare.com"
+      "address": "https://modem-sur-respond-parcel.trycloudflare.com"
     },
     {
       "name": "local-cloud",
