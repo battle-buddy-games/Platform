@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-d692452",
-      "title": "fix(middleware): return JSON errors for WebDAV/LFS requests instead of HTML e...",
-      "timestamp": "2026-03-18T14:36:29Z",
-      "environment": "production"
-    },
-    {
       "version": "build-a7c27cd",
       "title": "fix(webdav): pass --config flag to rclone rcat and cat commands",
       "timestamp": "2026-03-18T15:08:36Z",
@@ -102,6 +96,12 @@
       "version": "build-d2565a2",
       "title": "feat(signalr): add ReportLog hub method for SDK Hub tri-destination logging",
       "timestamp": "2026-03-24T10:38:28Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-df8bbd2",
+      "title": "refactor(platform): remove Shell dashboard partial and UI references",
+      "timestamp": "2026-03-25T19:34:35Z",
       "environment": "production"
     }
   ]
