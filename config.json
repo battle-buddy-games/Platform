@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-a7c27cd",
-      "title": "fix(webdav): pass --config flag to rclone rcat and cat commands",
-      "timestamp": "2026-03-18T15:08:36Z",
-      "environment": "production"
-    },
-    {
       "version": "build-9326aad",
       "title": "feat(sdk): add Version field to SdkClientInfo and Register method",
       "timestamp": "2026-03-19T16:53:09Z",
@@ -102,6 +96,12 @@
       "version": "build-df8bbd2",
       "title": "refactor(platform): remove Shell dashboard partial and UI references",
       "timestamp": "2026-03-25T19:34:35Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-6f55142",
+      "title": "feat(server): configure game process configs for EC dedicated server",
+      "timestamp": "2026-03-26T19:26:47Z",
       "environment": "production"
     }
   ]
