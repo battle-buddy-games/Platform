@@ -20,7 +20,7 @@
   "cloudflareTunnels": [
     {
       "name": "cloud",
-      "address": "https://modem-sur-respond-parcel.trycloudflare.com"
+      "address": "https://pas-arbitrary-social-specialty.trycloudflare.com"
     },
     {
       "name": "local-cloud",
