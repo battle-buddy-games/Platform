@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-e7e4e08",
-      "title": "feat(static-sites): add StaticSite entity, service, API controller, and migra...",
-      "timestamp": "2026-03-19T20:32:14Z",
-      "environment": "production"
-    },
-    {
       "version": "build-29bfcb3",
       "title": "feat(static-sites): enhance dashboard UI with modal forms, improved detail pa...",
       "timestamp": "2026-03-19T20:37:38Z",
@@ -102,6 +96,12 @@
       "version": "build-db862e9",
       "title": "feat(discord-activity): add org review summary",
       "timestamp": "2026-03-29T02:19:15Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-64c6e7b",
+      "title": "feat(platform): add sdk artifact bundle downloads with dedupe",
+      "timestamp": "2026-03-29T03:04:01Z",
       "environment": "production"
     }
   ]
