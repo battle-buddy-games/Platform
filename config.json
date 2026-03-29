@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-74a9da9",
-      "title": "fix(sdk): remove orphan SignalR event listeners SdkClientUpdated and ClaudeSe...",
-      "timestamp": "2026-03-19T17:00:21Z",
-      "environment": "production"
-    },
-    {
       "version": "build-8942f05",
       "title": "feat(static-sites): add Hugo site template and GitHub Actions build/deploy wo...",
       "timestamp": "2026-03-19T20:27:06Z",
@@ -102,6 +96,12 @@
       "version": "build-429bd68",
       "title": "feat(ci): add CI build queue and active runner jobs dashboard",
       "timestamp": "2026-03-29T02:00:40Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-32407c8",
+      "title": "feat(platform): add real-time runner CPU/memory/disk health monitoring",
+      "timestamp": "2026-03-29T02:09:30Z",
       "environment": "production"
     }
   ]
