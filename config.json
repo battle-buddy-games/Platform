@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-29bfcb3",
-      "title": "feat(static-sites): enhance dashboard UI with modal forms, improved detail pa...",
-      "timestamp": "2026-03-19T20:37:38Z",
-      "environment": "production"
-    },
-    {
       "version": "build-745c266",
       "title": "feat(static-sites): add insight panels for input data, templating, engine, an...",
       "timestamp": "2026-03-19T21:06:52Z",
@@ -102,6 +96,12 @@
       "version": "build-64c6e7b",
       "title": "feat(platform): add sdk artifact bundle downloads with dedupe",
       "timestamp": "2026-03-29T03:04:01Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-a164809",
+      "title": "feat(platform): add server registration API for CI pipeline integration",
+      "timestamp": "2026-03-29T04:33:32Z",
       "environment": "production"
     }
   ]
