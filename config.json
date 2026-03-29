@@ -45,12 +45,6 @@
   ],
   "releases": [
     {
-      "version": "build-9326aad",
-      "title": "feat(sdk): add Version field to SdkClientInfo and Register method",
-      "timestamp": "2026-03-19T16:53:09Z",
-      "environment": "production"
-    },
-    {
       "version": "build-74a9da9",
       "title": "fix(sdk): remove orphan SignalR event listeners SdkClientUpdated and ClaudeSe...",
       "timestamp": "2026-03-19T17:00:21Z",
@@ -102,6 +96,12 @@
       "version": "build-6f55142",
       "title": "feat(server): configure game process configs for EC dedicated server",
       "timestamp": "2026-03-26T19:26:47Z",
+      "environment": "production"
+    },
+    {
+      "version": "build-429bd68",
+      "title": "feat(ci): add CI build queue and active runner jobs dashboard",
+      "timestamp": "2026-03-29T02:00:40Z",
       "environment": "production"
     }
   ]
