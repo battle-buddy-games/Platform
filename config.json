@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-df8bbd2",
-                         "title":  "refactor(platform): remove Shell dashboard partial and UI references",
-                         "timestamp":  "2026-03-25T19:34:35Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-6f55142",
                          "title":  "feat(server): configure game process configs for EC dedicated server",
                          "timestamp":  "2026-03-26T19:26:47Z",
@@ -102,6 +96,12 @@
                          "version":  "build-f6e12c1",
                          "title":  "feat(platform): add Contributor Drives tab to Drives dashboard",
                          "timestamp":  "2026-04-05T19:29:19Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-79d7aa7",
+                         "title":  "feat(platform): add sharing UI and admin publish queue to Contributor Drives ...",
+                         "timestamp":  "2026-04-05T20:23:59Z",
                          "environment":  "production"
                      }
                  ]
