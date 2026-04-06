@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f6e12c1",
-                         "title":  "feat(platform): add Contributor Drives tab to Drives dashboard",
-                         "timestamp":  "2026-04-05T19:29:19Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-79d7aa7",
                          "title":  "feat(platform): add sharing UI and admin publish queue to Contributor Drives ...",
                          "timestamp":  "2026-04-05T20:23:59Z",
@@ -102,6 +96,12 @@
                          "version":  "build-0ddd1f0",
                          "title":  "fix(security): mask secrets in logs, fix auth bypass, deduplicate healthz, bl...",
                          "timestamp":  "2026-04-06T22:55:25Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c3286c7",
+                         "title":  "fix(platform): fix XSS in toast utility, invisible close button, stale async ...",
+                         "timestamp":  "2026-04-06T23:41:13Z",
                          "environment":  "production"
                      }
                  ]
