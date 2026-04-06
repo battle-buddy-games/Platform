@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-64c6e7b",
-                         "title":  "feat(platform): add sdk artifact bundle downloads with dedupe",
-                         "timestamp":  "2026-03-29T03:04:01Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a164809",
                          "title":  "feat(platform): add server registration API for CI pipeline integration",
                          "timestamp":  "2026-03-29T04:33:32Z",
@@ -102,6 +96,12 @@
                          "version":  "build-c3afcd9",
                          "title":  "refactor: replace Google Drive references with local LFS storage labels",
                          "timestamp":  "2026-04-06T16:43:59Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a182e22",
+                         "title":  "fix(platform): remove stack trace exposure, add auth to controllers, clean up...",
+                         "timestamp":  "2026-04-06T17:36:26Z",
                          "environment":  "production"
                      }
                  ]
