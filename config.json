@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-cee23a5",
-                         "title":  "feat(platform): add full file management UI to Contributor Drives dashboard",
-                         "timestamp":  "2026-04-05T21:18:15Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-11b9ff2",
                          "title":  "feat(platform): add share notifications using existing notification infrastru...",
                          "timestamp":  "2026-04-05T22:07:53Z",
@@ -102,6 +96,12 @@
                          "version":  "build-d619c02",
                          "title":  "f",
                          "timestamp":  "2026-04-09T03:30:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-376d67b",
+                         "title":  "fix(ci): grant contents:write to pre-deploy-production for release entry push",
+                         "timestamp":  "2026-04-10T19:01:04Z",
                          "environment":  "production"
                      }
                  ]
