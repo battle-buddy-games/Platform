@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d619c02",
-                         "title":  "f",
-                         "timestamp":  "2026-04-09T03:30:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-376d67b",
                          "title":  "fix(ci): grant contents:write to pre-deploy-production for release entry push",
                          "timestamp":  "2026-04-10T19:01:04Z",
@@ -102,6 +96,12 @@
                          "version":  "build-ded8bb9",
                          "title":  "fix(platform): add Forms table migration and dashboard error isolation",
                          "timestamp":  "2026-04-11T21:47:51Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6086786",
+                         "title":  "fix(platform): add missing _GitHub_PipelineLive dashboard partial view",
+                         "timestamp":  "2026-04-11T22:50:50Z",
                          "environment":  "production"
                      }
                  ]
