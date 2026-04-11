@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://ppc-using-missions-claire.trycloudflare.com"
+                                  "address":  "https://research-children-figures-fiction.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -45,63 +45,63 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d295359",
-                         "title":  "feat(platform-logs): add unity editor log source category",
-                         "timestamp":  "2026-03-23T20:37:24Z",
+                         "version":  "build-a182e22",
+                         "title":  "fix(platform): remove stack trace exposure, add auth to controllers, clean up...",
+                         "timestamp":  "2026-04-06T17:36:26Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-d2565a2",
-                         "title":  "feat(signalr): add ReportLog hub method for SDK Hub tri-destination logging",
-                         "timestamp":  "2026-03-24T10:38:28Z",
+                         "version":  "build-719d2d2",
+                         "title":  "feat(platform): add built-in BlenderSDK source repository registration",
+                         "timestamp":  "2026-04-06T18:40:59Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-df8bbd2",
-                         "title":  "refactor(platform): remove Shell dashboard partial and UI references",
-                         "timestamp":  "2026-03-25T19:34:35Z",
+                         "version":  "build-2d9b2a8",
+                         "title":  "feat(analytics): add authenticated query endpoint for structured analytics E2...",
+                         "timestamp":  "2026-04-06T19:09:44Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-6f55142",
-                         "title":  "feat(server): configure game process configs for EC dedicated server",
-                         "timestamp":  "2026-03-26T19:26:47Z",
+                         "version":  "build-0ddd1f0",
+                         "title":  "fix(security): mask secrets in logs, fix auth bypass, deduplicate healthz, bl...",
+                         "timestamp":  "2026-04-06T22:55:25Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-429bd68",
-                         "title":  "feat(ci): add CI build queue and active runner jobs dashboard",
-                         "timestamp":  "2026-03-29T02:00:40Z",
+                         "version":  "build-c3286c7",
+                         "title":  "fix(platform): fix XSS in toast utility, invisible close button, stale async ...",
+                         "timestamp":  "2026-04-06T23:41:13Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-32407c8",
-                         "title":  "feat(platform): add real-time runner CPU/memory/disk health monitoring",
-                         "timestamp":  "2026-03-29T02:09:30Z",
+                         "version":  "build-d619c02",
+                         "title":  "f",
+                         "timestamp":  "2026-04-09T03:30:41Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-db862e9",
-                         "title":  "feat(discord-activity): add org review summary",
-                         "timestamp":  "2026-03-29T02:19:15Z",
+                         "version":  "build-376d67b",
+                         "title":  "fix(ci): grant contents:write to pre-deploy-production for release entry push",
+                         "timestamp":  "2026-04-10T19:01:04Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-64c6e7b",
-                         "title":  "feat(platform): add sdk artifact bundle downloads with dedupe",
-                         "timestamp":  "2026-03-29T03:04:01Z",
+                         "version":  "build-7835d0e",
+                         "title":  "fix(ci): remove legacy deploy-agent-service job — unified mode only",
+                         "timestamp":  "2026-04-10T19:46:18Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-a164809",
-                         "title":  "feat(platform): add server registration API for CI pipeline integration",
-                         "timestamp":  "2026-03-29T04:33:32Z",
+                         "version":  "build-83af8ae",
+                         "title":  "fix(ci): recreate .github dir before copying backup in gh-pages deploy",
+                         "timestamp":  "2026-04-10T22:07:21Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-51455e6",
-                         "title":  "refactor(sdk): rename Steam branches to entrypoint-download and entrypoint-st...",
-                         "timestamp":  "2026-03-29T05:01:05Z",
+                         "version":  "build-47d1876",
+                         "title":  "fix(ci): copy .github contents not directory in gh-pages backup",
+                         "timestamp":  "2026-04-11T00:54:37Z",
                          "environment":  "production"
                      }
                  ]
