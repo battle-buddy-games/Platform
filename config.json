@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-376d67b",
-                         "title":  "fix(ci): grant contents:write to pre-deploy-production for release entry push",
-                         "timestamp":  "2026-04-10T19:01:04Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7835d0e",
                          "title":  "fix(ci): remove legacy deploy-agent-service job â€” unified mode only",
                          "timestamp":  "2026-04-10T19:46:18Z",
@@ -102,6 +96,12 @@
                          "version":  "build-6086786",
                          "title":  "fix(platform): add missing _GitHub_PipelineLive dashboard partial view",
                          "timestamp":  "2026-04-11T22:50:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8ca4fa9",
+                         "title":  "feat(platform): dashboard tool improvements across document, builds, and drives",
+                         "timestamp":  "2026-04-11T23:42:07Z",
                          "environment":  "production"
                      }
                  ]
