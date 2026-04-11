@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c3286c7",
-                         "title":  "fix(platform): fix XSS in toast utility, invisible close button, stale async ...",
-                         "timestamp":  "2026-04-06T23:41:13Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d619c02",
                          "title":  "f",
                          "timestamp":  "2026-04-09T03:30:41Z",
@@ -64,7 +58,7 @@
                      },
                      {
                          "version":  "build-7835d0e",
-                         "title":  "fix(ci): remove legacy deploy-agent-service job — unified mode only",
+                         "title":  "fix(ci): remove legacy deploy-agent-service job â€” unified mode only",
                          "timestamp":  "2026-04-10T19:46:18Z",
                          "environment":  "production"
                      },
@@ -102,6 +96,12 @@
                          "version":  "build-bbe1e86",
                          "title":  "feat(cognitive): default LM Studio model fallback to gemma-4",
                          "timestamp":  "2026-04-11T18:53:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ded8bb9",
+                         "title":  "fix(platform): add Forms table migration and dashboard error isolation",
+                         "timestamp":  "2026-04-11T21:47:51Z",
                          "environment":  "production"
                      }
                  ]
