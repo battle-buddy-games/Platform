@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://ppc-using-missions-claire.trycloudflare.com"
+                                  "address":  "https://research-children-figures-fiction.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-a182e22",
-                         "title":  "fix(platform): remove stack trace exposure, add auth to controllers, clean up...",
-                         "timestamp":  "2026-04-06T17:36:26Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-719d2d2",
                          "title":  "feat(platform): add built-in BlenderSDK source repository registration",
@@ -102,6 +96,12 @@
                          "version":  "build-47d1876",
                          "title":  "fix(ci): copy .github contents not directory in gh-pages backup",
                          "timestamp":  "2026-04-11T00:54:37Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c51c47a",
+                         "title":  "feat(document-tool): allow multi-block selection",
+                         "timestamp":  "2026-04-11T12:31:46Z",
                          "environment":  "production"
                      }
                  ]
