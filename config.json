@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2d9b2a8",
-                         "title":  "feat(analytics): add authenticated query endpoint for structured analytics E2...",
-                         "timestamp":  "2026-04-06T19:09:44Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0ddd1f0",
                          "title":  "fix(security): mask secrets in logs, fix auth bypass, deduplicate healthz, bl...",
                          "timestamp":  "2026-04-06T22:55:25Z",
@@ -102,6 +96,12 @@
                          "version":  "build-dbdc38f",
                          "title":  "feat(cognitive): implement LM Studio tool-calling orchestration loop",
                          "timestamp":  "2026-04-11T14:21:15Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a2842b3",
+                         "title":  "fix(cognitive): replace LM Studio HTTP self-call with direct service injection",
+                         "timestamp":  "2026-04-11T15:32:09Z",
                          "environment":  "production"
                      }
                  ]
