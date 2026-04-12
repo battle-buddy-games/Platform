@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-83af8ae",
-                         "title":  "fix(ci): recreate .github dir before copying backup in gh-pages deploy",
-                         "timestamp":  "2026-04-10T22:07:21Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-47d1876",
                          "title":  "fix(ci): copy .github contents not directory in gh-pages backup",
                          "timestamp":  "2026-04-11T00:54:37Z",
@@ -102,6 +96,12 @@
                          "version":  "build-3e7f193",
                          "title":  "refactor(git-sync): update session sync target to watch living-docs",
                          "timestamp":  "2026-04-12T03:22:52Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d14eeef",
+                         "title":  "fix(documents): replace per-block contentEditable with unified editor surface",
+                         "timestamp":  "2026-04-12T04:18:23Z",
                          "environment":  "production"
                      }
                  ]
