@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7835d0e",
-                         "title":  "fix(ci): remove legacy deploy-agent-service job â€” unified mode only",
-                         "timestamp":  "2026-04-10T19:46:18Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-83af8ae",
                          "title":  "fix(ci): recreate .github dir before copying backup in gh-pages deploy",
                          "timestamp":  "2026-04-10T22:07:21Z",
@@ -102,6 +96,12 @@
                          "version":  "build-8ca4fa9",
                          "title":  "feat(platform): dashboard tool improvements across document, builds, and drives",
                          "timestamp":  "2026-04-11T23:42:07Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3e7f193",
+                         "title":  "refactor(git-sync): update session sync target to watch living-docs",
+                         "timestamp":  "2026-04-12T03:22:52Z",
                          "environment":  "production"
                      }
                  ]
