@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a2842b3",
-                         "title":  "fix(cognitive): replace LM Studio HTTP self-call with direct service injection",
-                         "timestamp":  "2026-04-11T15:32:09Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-bbe1e86",
                          "title":  "feat(cognitive): default LM Studio model fallback to gemma-4",
                          "timestamp":  "2026-04-11T18:53:20Z",
@@ -102,6 +96,12 @@
                          "version":  "build-15d9d58",
                          "title":  "feat(projects): add dispatch API, refine releases, add suite config API",
                          "timestamp":  "2026-04-12T21:26:33Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-cc598ea",
+                         "title":  "fix(ui): restore SignalR connection indicator in sparkles menu",
+                         "timestamp":  "2026-04-12T22:12:23Z",
                          "environment":  "production"
                      }
                  ]
