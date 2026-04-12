@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-47d1876",
-                         "title":  "fix(ci): copy .github contents not directory in gh-pages backup",
-                         "timestamp":  "2026-04-11T00:54:37Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c51c47a",
                          "title":  "feat(document-tool): allow multi-block selection",
                          "timestamp":  "2026-04-11T12:31:46Z",
@@ -102,6 +96,12 @@
                          "version":  "build-d14eeef",
                          "title":  "fix(documents): replace per-block contentEditable with unified editor surface",
                          "timestamp":  "2026-04-12T04:18:23Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-72b98c2",
+                         "title":  "fix(platform): align Testing tab suite configs with current YAML schema and a...",
+                         "timestamp":  "2026-04-12T06:38:07Z",
                          "environment":  "production"
                      }
                  ]
