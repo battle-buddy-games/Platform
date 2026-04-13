@@ -45,36 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ded8bb9",
-                         "title":  "fix(platform): add Forms table migration and dashboard error isolation",
-                         "timestamp":  "2026-04-11T21:47:51Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-6086786",
-                         "title":  "fix(platform): add missing _GitHub_PipelineLive dashboard partial view",
-                         "timestamp":  "2026-04-11T22:50:50Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-8ca4fa9",
-                         "title":  "feat(platform): dashboard tool improvements across document, builds, and drives",
-                         "timestamp":  "2026-04-11T23:42:07Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-3e7f193",
-                         "title":  "refactor(git-sync): update session sync target to watch living-docs",
-                         "timestamp":  "2026-04-12T03:22:52Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-d14eeef",
-                         "title":  "fix(documents): replace per-block contentEditable with unified editor surface",
-                         "timestamp":  "2026-04-12T04:18:23Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-72b98c2",
                          "title":  "fix(platform): align Testing tab suite configs with current YAML schema and a...",
                          "timestamp":  "2026-04-12T06:38:07Z",
@@ -102,6 +72,36 @@
                          "version":  "build-0361e5f",
                          "title":  "feat(content): replace manual source name entry with connected repos picker",
                          "timestamp":  "2026-04-13T00:05:22Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-33d2a1b",
+                         "title":  "fix(ci): prevent Roslyn compiler crashes and git push race conditions",
+                         "timestamp":  "2026-04-13T02:17:18Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f0cde95",
+                         "title":  "fix(ci): handle git stderr in pre-deploy push to prevent false failure",
+                         "timestamp":  "2026-04-13T02:33:13Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-dc42ceb",
+                         "title":  "feat(platform): add Proposals sub-tab to Projects dashboard",
+                         "timestamp":  "2026-04-13T20:23:12Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-62a93ee",
+                         "title":  "fix(docs): move IsProposal flag from entry-level to source-level",
+                         "timestamp":  "2026-04-13T20:47:27Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-06ee26a",
+                         "title":  "fix(ci): guard git stderr against ErrorActionPreference=Stop in deploy steps",
+                         "timestamp":  "2026-04-13T21:22:50Z",
                          "environment":  "production"
                      }
                  ]
