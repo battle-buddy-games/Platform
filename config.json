@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-bbe1e86",
-                         "title":  "feat(cognitive): default LM Studio model fallback to gemma-4",
-                         "timestamp":  "2026-04-11T18:53:20Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ded8bb9",
                          "title":  "fix(platform): add Forms table migration and dashboard error isolation",
                          "timestamp":  "2026-04-11T21:47:51Z",
@@ -102,6 +96,12 @@
                          "version":  "build-cc598ea",
                          "title":  "fix(ui): restore SignalR connection indicator in sparkles menu",
                          "timestamp":  "2026-04-12T22:12:23Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0361e5f",
+                         "title":  "feat(content): replace manual source name entry with connected repos picker",
+                         "timestamp":  "2026-04-13T00:05:22Z",
                          "environment":  "production"
                      }
                  ]
