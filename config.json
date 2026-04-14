@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0361e5f",
-                         "title":  "feat(content): replace manual source name entry with connected repos picker",
-                         "timestamp":  "2026-04-13T00:05:22Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-33d2a1b",
                          "title":  "fix(ci): prevent Roslyn compiler crashes and git push race conditions",
                          "timestamp":  "2026-04-13T02:17:18Z",
@@ -102,6 +96,12 @@
                          "version":  "build-66b131e",
                          "title":  "fix(platform): seed SdkSourceRepositories with frostebite/GameClient",
                          "timestamp":  "2026-04-14T03:42:31Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-906ef48",
+                         "title":  "fix(tests): handle voice connecting state and 409 in production tests",
+                         "timestamp":  "2026-04-14T04:21:51Z",
                          "environment":  "production"
                      }
                  ]
