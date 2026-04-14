@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-dc42ceb",
-                         "title":  "feat(platform): add Proposals sub-tab to Projects dashboard",
-                         "timestamp":  "2026-04-13T20:23:12Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-62a93ee",
                          "title":  "fix(docs): move IsProposal flag from entry-level to source-level",
                          "timestamp":  "2026-04-13T20:47:27Z",
@@ -102,6 +96,12 @@
                          "version":  "build-e9c2b6d",
                          "title":  "fix(platform): seed TurnOfWar and TurnOfWarEndlessCrusade source repos",
                          "timestamp":  "2026-04-14T17:30:40Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-557119c",
+                         "title":  "feat(platform): add authenticated download distribution API for dev tools",
+                         "timestamp":  "2026-04-14T18:04:19Z",
                          "environment":  "production"
                      }
                  ]
