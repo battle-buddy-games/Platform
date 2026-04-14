@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://research-children-figures-fiction.trycloudflare.com"
+                                  "address":  "https://schedules-operations-mission-under.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-62a93ee",
-                         "title":  "fix(docs): move IsProposal flag from entry-level to source-level",
-                         "timestamp":  "2026-04-13T20:47:27Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-06ee26a",
                          "title":  "fix(ci): guard git stderr against ErrorActionPreference=Stop in deploy steps",
@@ -99,9 +93,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-abd3645",
-                         "title":  "feat(platform): add CLI product to downloads tool display names",
-                         "timestamp":  "2026-04-14T18:36:46Z",
+                         "version":  "build-557119c",
+                         "title":  "feat(platform): add authenticated download distribution API for dev tools",
+                         "timestamp":  "2026-04-14T18:04:19Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d952096",
+                         "title":  "fix(ci): prevent empty process_action from overriding action on push trigger",
+                         "timestamp":  "2026-04-14T19:18:52Z",
                          "environment":  "production"
                      }
                  ]
