@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-72b98c2",
-                         "title":  "fix(platform): align Testing tab suite configs with current YAML schema and a...",
-                         "timestamp":  "2026-04-12T06:38:07Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-324c968",
                          "title":  "feat(projects): unify Client/Server Builds into Unity Builds tab with Product...",
                          "timestamp":  "2026-04-12T20:40:26Z",
@@ -102,6 +96,12 @@
                          "version":  "build-06ee26a",
                          "title":  "fix(ci): guard git stderr against ErrorActionPreference=Stop in deploy steps",
                          "timestamp":  "2026-04-13T21:22:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3f6c8c8",
+                         "title":  "fix(ci): prevent production tests from timing out due to redundant 20-min polls",
+                         "timestamp":  "2026-04-14T01:50:05Z",
                          "environment":  "production"
                      }
                  ]
