@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-33d2a1b",
-                         "title":  "fix(ci): prevent Roslyn compiler crashes and git push race conditions",
-                         "timestamp":  "2026-04-13T02:17:18Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f0cde95",
                          "title":  "fix(ci): handle git stderr in pre-deploy push to prevent false failure",
                          "timestamp":  "2026-04-13T02:33:13Z",
@@ -102,6 +96,12 @@
                          "version":  "build-906ef48",
                          "title":  "fix(tests): handle voice connecting state and 409 in production tests",
                          "timestamp":  "2026-04-14T04:21:51Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-84a5f84",
+                         "title":  "fix(ci): add continue-on-error to GitHub Pages release steps in pre-deploy",
+                         "timestamp":  "2026-04-14T04:46:19Z",
                          "environment":  "production"
                      }
                  ]
