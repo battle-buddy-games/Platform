@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-557119c",
-                         "title":  "feat(platform): add authenticated download distribution API for dev tools",
-                         "timestamp":  "2026-04-14T18:04:19Z",
+                         "version":  "build-abd3645",
+                         "title":  "feat(platform): add CLI product to downloads tool display names",
+                         "timestamp":  "2026-04-14T18:36:46Z",
                          "environment":  "production"
                      }
                  ]
