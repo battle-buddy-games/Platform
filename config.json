@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3f6c8c8",
-                         "title":  "fix(ci): prevent production tests from timing out due to redundant 20-min polls",
-                         "timestamp":  "2026-04-14T01:50:05Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3bd6244",
                          "title":  "fix(ci): make production tests resilient to post-deploy warm-up delays",
                          "timestamp":  "2026-04-14T02:43:28Z",
@@ -102,6 +96,12 @@
                          "version":  "build-c270bad",
                          "title":  "fix(dashboard): add missing Platform Drives subtab content and modals",
                          "timestamp":  "2026-04-14T20:12:55Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-57e084c",
+                         "title":  "refactor(dashboard): move Downloads tool into Projects Artifacts tab",
+                         "timestamp":  "2026-04-14T21:37:29Z",
                          "environment":  "production"
                      }
                  ]
