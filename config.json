@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-15d9d58",
-                         "title":  "feat(projects): add dispatch API, refine releases, add suite config API",
-                         "timestamp":  "2026-04-12T21:26:33Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-cc598ea",
                          "title":  "fix(ui): restore SignalR connection indicator in sparkles menu",
                          "timestamp":  "2026-04-12T22:12:23Z",
@@ -102,6 +96,12 @@
                          "version":  "build-3bd6244",
                          "title":  "fix(ci): make production tests resilient to post-deploy warm-up delays",
                          "timestamp":  "2026-04-14T02:43:28Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d080c0c",
+                         "title":  "fix(ci): make voice connect tests skip gracefully when bot is initializing",
+                         "timestamp":  "2026-04-14T03:15:47Z",
                          "environment":  "production"
                      }
                  ]
