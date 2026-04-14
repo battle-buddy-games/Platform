@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-cc598ea",
-                         "title":  "fix(ui): restore SignalR connection indicator in sparkles menu",
-                         "timestamp":  "2026-04-12T22:12:23Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0361e5f",
                          "title":  "feat(content): replace manual source name entry with connected repos picker",
                          "timestamp":  "2026-04-13T00:05:22Z",
@@ -102,6 +96,12 @@
                          "version":  "build-d080c0c",
                          "title":  "fix(ci): make voice connect tests skip gracefully when bot is initializing",
                          "timestamp":  "2026-04-14T03:15:47Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-66b131e",
+                         "title":  "fix(platform): seed SdkSourceRepositories with frostebite/GameClient",
+                         "timestamp":  "2026-04-14T03:42:31Z",
                          "environment":  "production"
                      }
                  ]
