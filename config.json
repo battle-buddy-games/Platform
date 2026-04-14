@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f0cde95",
-                         "title":  "fix(ci): handle git stderr in pre-deploy push to prevent false failure",
-                         "timestamp":  "2026-04-13T02:33:13Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-dc42ceb",
                          "title":  "feat(platform): add Proposals sub-tab to Projects dashboard",
                          "timestamp":  "2026-04-13T20:23:12Z",
@@ -102,6 +96,12 @@
                          "version":  "build-84a5f84",
                          "title":  "fix(ci): add continue-on-error to GitHub Pages release steps in pre-deploy",
                          "timestamp":  "2026-04-14T04:46:19Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e9c2b6d",
+                         "title":  "fix(platform): seed TurnOfWar and TurnOfWarEndlessCrusade source repos",
+                         "timestamp":  "2026-04-14T17:30:40Z",
                          "environment":  "production"
                      }
                  ]
