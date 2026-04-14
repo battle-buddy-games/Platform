@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-06ee26a",
-                         "title":  "fix(ci): guard git stderr against ErrorActionPreference=Stop in deploy steps",
-                         "timestamp":  "2026-04-13T21:22:50Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-3f6c8c8",
                          "title":  "fix(ci): prevent production tests from timing out due to redundant 20-min polls",
@@ -102,6 +96,12 @@
                          "version":  "build-d952096",
                          "title":  "fix(ci): prevent empty process_action from overriding action on push trigger",
                          "timestamp":  "2026-04-14T19:18:52Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c270bad",
+                         "title":  "fix(dashboard): add missing Platform Drives subtab content and modals",
+                         "timestamp":  "2026-04-14T20:12:55Z",
                          "environment":  "production"
                      }
                  ]
