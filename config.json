@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://research-children-figures-fiction.trycloudflare.com"
+                                  "address":  "https://schedules-operations-mission-under.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -45,63 +45,63 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-83af8ae",
-                         "title":  "fix(ci): recreate .github dir before copying backup in gh-pages deploy",
-                         "timestamp":  "2026-04-10T22:07:21Z",
+                         "version":  "build-62a93ee",
+                         "title":  "fix(docs): move IsProposal flag from entry-level to source-level",
+                         "timestamp":  "2026-04-13T20:47:27Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-47d1876",
-                         "title":  "fix(ci): copy .github contents not directory in gh-pages backup",
-                         "timestamp":  "2026-04-11T00:54:37Z",
+                         "version":  "build-06ee26a",
+                         "title":  "fix(ci): guard git stderr against ErrorActionPreference=Stop in deploy steps",
+                         "timestamp":  "2026-04-13T21:22:50Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-c51c47a",
-                         "title":  "feat(document-tool): allow multi-block selection",
-                         "timestamp":  "2026-04-11T12:31:46Z",
+                         "version":  "build-3f6c8c8",
+                         "title":  "fix(ci): prevent production tests from timing out due to redundant 20-min polls",
+                         "timestamp":  "2026-04-14T01:50:05Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-dbdc38f",
-                         "title":  "feat(cognitive): implement LM Studio tool-calling orchestration loop",
-                         "timestamp":  "2026-04-11T14:21:15Z",
+                         "version":  "build-3bd6244",
+                         "title":  "fix(ci): make production tests resilient to post-deploy warm-up delays",
+                         "timestamp":  "2026-04-14T02:43:28Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-a2842b3",
-                         "title":  "fix(cognitive): replace LM Studio HTTP self-call with direct service injection",
-                         "timestamp":  "2026-04-11T15:32:09Z",
+                         "version":  "build-d080c0c",
+                         "title":  "fix(ci): make voice connect tests skip gracefully when bot is initializing",
+                         "timestamp":  "2026-04-14T03:15:47Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-bbe1e86",
-                         "title":  "feat(cognitive): default LM Studio model fallback to gemma-4",
-                         "timestamp":  "2026-04-11T18:53:20Z",
+                         "version":  "build-66b131e",
+                         "title":  "fix(platform): seed SdkSourceRepositories with frostebite/GameClient",
+                         "timestamp":  "2026-04-14T03:42:31Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-ded8bb9",
-                         "title":  "fix(platform): add Forms table migration and dashboard error isolation",
-                         "timestamp":  "2026-04-11T21:47:51Z",
+                         "version":  "build-906ef48",
+                         "title":  "fix(tests): handle voice connecting state and 409 in production tests",
+                         "timestamp":  "2026-04-14T04:21:51Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-6086786",
-                         "title":  "fix(platform): add missing _GitHub_PipelineLive dashboard partial view",
-                         "timestamp":  "2026-04-11T22:50:50Z",
+                         "version":  "build-84a5f84",
+                         "title":  "fix(ci): add continue-on-error to GitHub Pages release steps in pre-deploy",
+                         "timestamp":  "2026-04-14T04:46:19Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-8ca4fa9",
-                         "title":  "feat(platform): dashboard tool improvements across document, builds, and drives",
-                         "timestamp":  "2026-04-11T23:42:07Z",
+                         "version":  "build-e9c2b6d",
+                         "title":  "fix(platform): seed TurnOfWar and TurnOfWarEndlessCrusade source repos",
+                         "timestamp":  "2026-04-14T17:30:40Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-3e7f193",
-                         "title":  "refactor(git-sync): update session sync target to watch living-docs",
-                         "timestamp":  "2026-04-12T03:22:52Z",
+                         "version":  "build-557119c",
+                         "title":  "feat(platform): add authenticated download distribution API for dev tools",
+                         "timestamp":  "2026-04-14T18:04:19Z",
                          "environment":  "production"
                      }
                  ]
