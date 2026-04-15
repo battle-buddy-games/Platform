@@ -1,3 +1,8 @@
+// DEPRECATED: This module is superseded by the bbsdk:// custom protocol handler.
+// Launch parameters are now dispatched directly via bbsdk://launch?app=NAME
+// instead of the localStorage -> HTTP POST relay flow implemented here.
+// Retained for backward compatibility until all SDK clients use the bbsdk:// protocol.
+//
 // SDK Start - SDK Launcher
 // Reads pending launch instructions from localStorage and sends them
 // to the SDK Hub's HTTP listener on localhost. Supports launching

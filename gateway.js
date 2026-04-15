@@ -110,12 +110,12 @@ function updateSignInButtonStates() {
 const SDK_LAUNCH_HISTORY_KEY = 'sdk_launch_history';
 const SDK_LAUNCH_HISTORY_MAX = 10;
 
-// Map steam:// URLs to app identifiers
-const STEAM_APP_MAP = {
-  'steam://launch/2153520/': { app: 'aoo-sdk', label: 'Launch AOO SDK' },
-  'steam://launch/2153520/blender-sdk/': { app: 'blender-sdk', label: 'Launch Blender SDK' },
-  'steam://launch/3687660/': { app: 'tow', label: 'Launch TOW' },
-  'steam://launch/365670/':  { app: 'blender', label: 'Launch Blender' }
+// Map bbsdk:// URLs to app identifiers
+const BBSDK_APP_MAP = {
+  'bbsdk://launch?app=aoo-sdk':     { app: 'aoo-sdk', label: 'Launch AOO SDK' },
+  'bbsdk://launch?app=blender-sdk': { app: 'blender-sdk', label: 'Launch Blender SDK' },
+  'bbsdk://launch?app=tow':         { app: 'tow', label: 'Launch TOW' },
+  'bbsdk://launch?app=blender':     { app: 'blender', label: 'Launch Blender' }
 };
 
 function getSdkLaunchHistory() {
@@ -138,7 +138,7 @@ function saveSdkLaunchHistory(entries) {
   }
 }
 
-function addSdkLaunchEntry(app, label, steamUrl, parameters) {
+function addSdkLaunchEntry(app, label, launchUrl, parameters) {
   const history = getSdkLaunchHistory();
 
   const id = (crypto && crypto.randomUUID) ? crypto.randomUUID() :
@@ -151,7 +151,7 @@ function addSdkLaunchEntry(app, label, steamUrl, parameters) {
     id: id,
     app: app,
     label: label,
-    steamUrl: steamUrl,
+    launchUrl: launchUrl,
     timestamp: new Date().toISOString(),
     completed: false,
     completedAt: null,
@@ -170,18 +170,18 @@ function addSdkLaunchEntry(app, label, steamUrl, parameters) {
   return entry;
 }
 
-// Intercept clicks on steam:// launch links in the External Links dropdown
-// to store launch instructions before the Steam protocol handler fires.
-function interceptSteamLaunchLinks() {
-  const links = document.querySelectorAll('.external-links-menu-dropdown a[href^="steam://"]');
+// Intercept clicks on bbsdk:// launch links in the External Links dropdown
+// to store launch instructions before the bbsdk protocol handler fires.
+function interceptBbsdkLaunchLinks() {
+  const links = document.querySelectorAll('.external-links-menu-dropdown a[href^="bbsdk://"]');
   links.forEach(function(link) {
     link.addEventListener('click', function() {
       const href = link.getAttribute('href');
-      const mapping = STEAM_APP_MAP[href];
+      const mapping = BBSDK_APP_MAP[href];
       if (mapping) {
         addSdkLaunchEntry(mapping.app, mapping.label, href, {});
       }
-      // Allow the default navigation to proceed (steam:// protocol)
+      // Allow the default navigation to proceed (bbsdk:// protocol)
     });
   });
 }
@@ -2789,20 +2789,21 @@ function initQuickLinksTabs() {
 
 /**
  * Resolve a quick link ID to a target URL.
- * Supports steam launches, portal subpages, and external links.
+ * Supports bbsdk launches, portal subpages, and external links.
  * IDs are case-insensitive.
  */
 function resolveQuickLink(id) {
   const key = (id || '').toLowerCase().replace(/[\s_-]/g, '');
 
-  // Steam launch links
-  const steamLinks = {
-    'aoosdk':     'steam://launch/2153520/',
-    'aoo':        'steam://launch/2153520/',
-    'tow':        'steam://launch/3687660/',
-    'blender':    'steam://launch/365670/',
+  // BBSDK launch links
+  const bbsdkLinks = {
+    'aoosdk':     'bbsdk://launch?app=aoo-sdk',
+    'aoo':        'bbsdk://launch?app=aoo-sdk',
+    'tow':        'bbsdk://launch?app=tow',
+    'blender':    'bbsdk://launch?app=blender',
+    'blendersdk': 'bbsdk://launch?app=blender-sdk',
   };
-  if (steamLinks[key]) return steamLinks[key];
+  if (bbsdkLinks[key]) return bbsdkLinks[key];
 
   // Portal subpage links (dashboard tools and pages)
   const portalSubpages = {
@@ -2918,9 +2919,9 @@ window.addEventListener('DOMContentLoaded', async () => {
     const resolved = resolveQuickLink(openLinkParam);
     if (resolved) {
       console.log('[OPEN-LINK] Resolved quick link:', openLinkParam, '->', resolved);
-      // Store launch entry for steam:// links before navigating
-      if (resolved.startsWith('steam://')) {
-        const mapping = STEAM_APP_MAP[resolved];
+      // Store launch entry for bbsdk:// links before navigating
+      if (resolved.startsWith('bbsdk://')) {
+        const mapping = BBSDK_APP_MAP[resolved];
         if (mapping) {
           addSdkLaunchEntry(mapping.app, mapping.label, resolved, {});
         }
@@ -2944,8 +2945,8 @@ window.addEventListener('DOMContentLoaded', async () => {
   // Initialize foldout menus
   initializeFoldoutMenus();
 
-  // Intercept steam:// launch links to store launch history
-  interceptSteamLaunchLinks();
+  // Intercept bbsdk:// launch links to store launch history
+  interceptBbsdkLaunchLinks();
 
   // Initialize quick links tabs
   initQuickLinksTabs();
