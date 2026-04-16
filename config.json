@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3bd6244",
-                         "title":  "fix(ci): make production tests resilient to post-deploy warm-up delays",
-                         "timestamp":  "2026-04-14T02:43:28Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d080c0c",
                          "title":  "fix(ci): make voice connect tests skip gracefully when bot is initializing",
                          "timestamp":  "2026-04-14T03:15:47Z",
@@ -102,6 +96,12 @@
                          "version":  "build-57e084c",
                          "title":  "refactor(dashboard): move Downloads tool into Projects Artifacts tab",
                          "timestamp":  "2026-04-14T21:37:29Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a8bce97",
+                         "title":  "fix(tests): add missing DeleteFileAsync to FakeGitContentService",
+                         "timestamp":  "2026-04-16T01:15:29Z",
                          "environment":  "production"
                      }
                  ]
