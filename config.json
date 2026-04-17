@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d080c0c",
-                         "title":  "fix(ci): make voice connect tests skip gracefully when bot is initializing",
-                         "timestamp":  "2026-04-14T03:15:47Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-66b131e",
                          "title":  "fix(platform): seed SdkSourceRepositories with frostebite/GameClient",
                          "timestamp":  "2026-04-14T03:42:31Z",
@@ -102,6 +96,12 @@
                          "version":  "build-a8bce97",
                          "title":  "fix(tests): add missing DeleteFileAsync to FakeGitContentService",
                          "timestamp":  "2026-04-16T01:15:29Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ca4c794",
+                         "title":  "feat(dashboard): add Releases tool MVP",
+                         "timestamp":  "2026-04-17T03:07:25Z",
                          "environment":  "production"
                      }
                  ]
