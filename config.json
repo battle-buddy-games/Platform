@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-906ef48",
-                         "title":  "fix(tests): handle voice connecting state and 409 in production tests",
-                         "timestamp":  "2026-04-14T04:21:51Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-84a5f84",
                          "title":  "fix(ci): add continue-on-error to GitHub Pages release steps in pre-deploy",
                          "timestamp":  "2026-04-14T04:46:19Z",
@@ -102,6 +96,12 @@
                          "version":  "build-bb3685f",
                          "title":  "feat(dashboard): add dispatch actions, SignalR, Steam state tracking",
                          "timestamp":  "2026-04-17T03:45:27Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6b16704",
+                         "title":  "fix(ui): lowercase Maturity values in ci-tests-shared.js prompt strings",
+                         "timestamp":  "2026-04-17T05:24:35Z",
                          "environment":  "production"
                      }
                  ]
