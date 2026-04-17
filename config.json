@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-66b131e",
-                         "title":  "fix(platform): seed SdkSourceRepositories with frostebite/GameClient",
-                         "timestamp":  "2026-04-14T03:42:31Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-906ef48",
                          "title":  "fix(tests): handle voice connecting state and 409 in production tests",
                          "timestamp":  "2026-04-14T04:21:51Z",
@@ -102,6 +96,12 @@
                          "version":  "build-ca4c794",
                          "title":  "feat(dashboard): add Releases tool MVP",
                          "timestamp":  "2026-04-17T03:07:25Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-bb3685f",
+                         "title":  "feat(dashboard): add dispatch actions, SignalR, Steam state tracking",
+                         "timestamp":  "2026-04-17T03:45:27Z",
                          "environment":  "production"
                      }
                  ]
