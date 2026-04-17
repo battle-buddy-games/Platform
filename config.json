@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-1ce0820",
-                         "title":  "feat(telemetry): test result ingestion + catalog (Phase 1 MVP)",
-                         "timestamp":  "2026-04-17T06:06:56Z",
+                         "version":  "build-6b16704",
+                         "title":  "fix(ui): lowercase Maturity values in ci-tests-shared.js prompt strings",
+                         "timestamp":  "2026-04-17T05:24:35Z",
                          "environment":  "production"
                      }
                  ]
