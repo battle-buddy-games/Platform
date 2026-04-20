@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c270bad",
-                         "title":  "fix(dashboard): add missing Platform Drives subtab content and modals",
-                         "timestamp":  "2026-04-14T20:12:55Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-57e084c",
                          "title":  "refactor(dashboard): move Downloads tool into Projects Artifacts tab",
                          "timestamp":  "2026-04-14T21:37:29Z",
@@ -99,9 +93,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-f3298a2",
-                         "title":  "feat(platform): add self-managed GitHub webhook registration",
-                         "timestamp":  "2026-04-20T18:32:53Z",
+                         "version":  "build-78a0a20",
+                         "title":  "feat(platform): add Discord bot buttons for CI investigation workflow",
+                         "timestamp":  "2026-04-20T17:19:06Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d090c6d",
+                         "title":  "feat(platform): improve Projects dashboard Pipeline Live and Overview tabs",
+                         "timestamp":  "2026-04-20T20:43:50Z",
                          "environment":  "production"
                      }
                  ]
