@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-78a0a20",
-                         "title":  "feat(platform): add Discord bot buttons for CI investigation workflow",
-                         "timestamp":  "2026-04-20T17:19:06Z",
+                         "version":  "build-f3298a2",
+                         "title":  "feat(platform): add self-managed GitHub webhook registration",
+                         "timestamp":  "2026-04-20T18:32:53Z",
                          "environment":  "production"
                      }
                  ]
