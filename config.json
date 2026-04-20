@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d952096",
-                         "title":  "fix(ci): prevent empty process_action from overriding action on push trigger",
-                         "timestamp":  "2026-04-14T19:18:52Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c270bad",
                          "title":  "fix(dashboard): add missing Platform Drives subtab content and modals",
                          "timestamp":  "2026-04-14T20:12:55Z",
@@ -102,6 +96,12 @@
                          "version":  "build-2b80eb8",
                          "title":  "refactor(platform): rename Cognitive Services dashboard tool to Agent Services",
                          "timestamp":  "2026-04-20T16:37:59Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-78a0a20",
+                         "title":  "feat(platform): add Discord bot buttons for CI investigation workflow",
+                         "timestamp":  "2026-04-20T17:19:06Z",
                          "environment":  "production"
                      }
                  ]
