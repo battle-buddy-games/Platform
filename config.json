@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-557119c",
-                         "title":  "feat(platform): add authenticated download distribution API for dev tools",
-                         "timestamp":  "2026-04-14T18:04:19Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d952096",
                          "title":  "fix(ci): prevent empty process_action from overriding action on push trigger",
                          "timestamp":  "2026-04-14T19:18:52Z",
@@ -102,6 +96,12 @@
                          "version":  "build-3a6884e",
                          "title":  "fix(platform): fix document comment selection feedback and indicator range",
                          "timestamp":  "2026-04-20T15:59:03Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2b80eb8",
+                         "title":  "refactor(platform): rename Cognitive Services dashboard tool to Agent Services",
+                         "timestamp":  "2026-04-20T16:37:59Z",
                          "environment":  "production"
                      }
                  ]
