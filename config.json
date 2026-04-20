@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-57e084c",
-                         "title":  "refactor(dashboard): move Downloads tool into Projects Artifacts tab",
-                         "timestamp":  "2026-04-14T21:37:29Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a8bce97",
                          "title":  "fix(tests): add missing DeleteFileAsync to FakeGitContentService",
                          "timestamp":  "2026-04-16T01:15:29Z",
@@ -102,6 +96,12 @@
                          "version":  "build-d090c6d",
                          "title":  "feat(platform): improve Projects dashboard Pipeline Live and Overview tabs",
                          "timestamp":  "2026-04-20T20:43:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-b4dfcf3",
+                         "title":  "fix(platform): auto-seed CI notification config so notifications work without...",
+                         "timestamp":  "2026-04-20T23:16:18Z",
                          "environment":  "production"
                      }
                  ]
