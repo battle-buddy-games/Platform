@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a8bce97",
-                         "title":  "fix(tests): add missing DeleteFileAsync to FakeGitContentService",
-                         "timestamp":  "2026-04-16T01:15:29Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ca4c794",
                          "title":  "feat(dashboard): add Releases tool MVP",
                          "timestamp":  "2026-04-17T03:07:25Z",
@@ -102,6 +96,12 @@
                          "version":  "build-b4dfcf3",
                          "title":  "fix(platform): auto-seed CI notification config so notifications work without...",
                          "timestamp":  "2026-04-20T23:16:18Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a3884d7",
+                         "title":  "fix(platform): wire CI notification tables into database schema initialization",
+                         "timestamp":  "2026-04-21T00:25:43Z",
                          "environment":  "production"
                      }
                  ]

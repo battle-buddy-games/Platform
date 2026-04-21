@@ -83,6 +83,12 @@ const POSTMESSAGE_PRIORITY_MS = 2000; // PostMessage updates take priority for 2
 // Track iframe load state
 let iframeLoadCompleted = false;
 
+// Loading timeout system - auto-retry and error display
+let loadingTimeoutHandle = null;
+let loadingRetryCount = 0;
+const LOADING_TIMEOUT_MS = 10000; // 10 seconds before auto-retry
+const LOADING_MAX_RETRIES = 1; // Retry once, then show error
+
 // Periodic health check system (like gateway.js)
 let healthCheckInterval = null;
 let lastHealthyTunnelAddress = '';
@@ -897,6 +903,7 @@ function retryConnection() {
   // Stop polling and updating timer
   stopPolling();
   stopUpdatingTimer();
+  clearLoadingTimeout();
 
   // Hide failure overlay
   const overlay = document.getElementById('connectionFailureOverlay');
@@ -913,6 +920,7 @@ function retryConnection() {
   // Reset flags and clear persisted failure state
   connectionFailureDetected = false;
   iframeLoadCompleted = false;
+  loadingRetryCount = 0;
   clearPersistedFailure();
 
   // Show loading overlay
@@ -1021,10 +1029,15 @@ function refreshToNewAddress(newAddress) {
   
   // Reset load state flags
   iframeLoadCompleted = false;
+  loadingRetryCount = 0;
+  clearLoadingTimeout();
 
   // Reload iframe
   iframe.src = targetUrl;
   currentIframePath = subpagePath;
+
+  // Start loading timeout for the new address
+  startLoadingTimeout();
 
   showToast('New Address Found', 'Connecting to new cloud address...', 'success');
 
@@ -1146,6 +1159,81 @@ function updateUrlFromIframe() {
   }
 }
 
+// Start the loading timeout - auto-retries after LOADING_TIMEOUT_MS, shows error after max retries
+function startLoadingTimeout() {
+  clearLoadingTimeout();
+  loadingTimeoutHandle = setTimeout(() => {
+    if (iframeLoadCompleted || connectionFailureDetected) return;
+
+    if (loadingRetryCount < LOADING_MAX_RETRIES) {
+      loadingRetryCount++;
+      console.log(`[Portal] Loading timeout (${LOADING_TIMEOUT_MS / 1000}s) - auto-retry #${loadingRetryCount}`);
+
+      // Retry: reload the iframe with the same URL
+      const iframe = document.getElementById('tunnelFrame');
+      if (iframe && iframe.src) {
+        const currentSrc = iframe.src;
+        iframe.src = '';
+        // Brief delay to force a fresh request
+        setTimeout(() => {
+          iframe.src = currentSrc;
+          // Start timeout again for the retry attempt
+          startLoadingTimeout();
+        }, 100);
+      } else {
+        showLoadingError();
+      }
+    } else {
+      // Max retries exhausted - show error with manual retry button
+      console.log('[Portal] Loading timeout after retry - showing error');
+      showLoadingError();
+    }
+  }, LOADING_TIMEOUT_MS);
+}
+
+// Clear the loading timeout
+function clearLoadingTimeout() {
+  if (loadingTimeoutHandle) {
+    clearTimeout(loadingTimeoutHandle);
+    loadingTimeoutHandle = null;
+  }
+}
+
+// Show loading error with retry button (replaces the spinner)
+function showLoadingError() {
+  clearLoadingTimeout();
+  const overlay = document.getElementById('loadingOverlay');
+  if (!overlay) return;
+
+  overlay.innerHTML = `
+    <div class="error-message">
+      <h1>Platform Unreachable</h1>
+      <p>The platform did not respond in time. It may be temporarily unavailable.</p>
+      <button class="retry-button" onclick="manualRetryLoading()">Retry</button>
+    </div>
+  `;
+}
+
+// Manual retry from the error button
+function manualRetryLoading() {
+  // Reset the loading overlay to spinner state
+  const overlay = document.getElementById('loadingOverlay');
+  if (overlay) {
+    overlay.innerHTML = `
+      <div class="spinner"></div>
+      <p>Loading platform...</p>
+    `;
+    overlay.classList.remove('hidden');
+  }
+
+  // Reset retry state
+  loadingRetryCount = 0;
+  iframeLoadCompleted = false;
+
+  // Reload tunnel from scratch
+  loadTunnel();
+}
+
 async function loadTunnel() {
   const urlParams = new URLSearchParams(window.location.search);
 
@@ -1251,6 +1339,9 @@ async function loadTunnel() {
   iframe.src = targetUrl;
   const targetUrlObj = new URL(targetUrl);
   currentIframePath = targetUrlObj.pathname + targetUrlObj.search + targetUrlObj.hash;
+
+  // Start loading timeout - will auto-retry if iframe does not load in time
+  startLoadingTimeout();
 
   // Clean up URL for bookmarking:
   // - Remove token (security: one-time tokens shouldn't stay in address bar)
@@ -1386,6 +1477,7 @@ async function loadTunnel() {
     if (typeof trackGatewayEvent === 'function') trackGatewayEvent('portal_tunnel_connected', { tunnelUrl: tunnelBaseUrl });
 
     iframeLoadCompleted = true;
+    clearLoadingTimeout();
 
     // Reset connection failure flag if it was set (successful load clears failure state)
     if (connectionFailureDetected) {
@@ -1489,6 +1581,15 @@ async function loadTunnel() {
         }
       }
     }, 1000);
+  };
+
+  // Handle iframe load errors (e.g., network failure, DNS resolution failure)
+  iframe.onerror = () => {
+    console.log('[Portal] Iframe load error detected');
+    clearLoadingTimeout();
+    if (!connectionFailureDetected) {
+      showLoadingError();
+    }
   };
 
   // Reset load state
