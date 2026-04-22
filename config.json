@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-6b16704",
-                         "title":  "fix(ui): lowercase Maturity values in ci-tests-shared.js prompt strings",
-                         "timestamp":  "2026-04-17T05:24:35Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b17f6da",
                          "title":  "fix(platform): validate SDK assembly zip integrity before persisting",
                          "timestamp":  "2026-04-18T22:53:30Z",
@@ -102,6 +96,12 @@
                          "version":  "build-a03af82",
                          "title":  "feat(platform): add ProcessGuardianService for Unity Hub and LM Studio auto-s...",
                          "timestamp":  "2026-04-21T17:47:44Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-522c68b",
+                         "title":  "feat(agent): add CI job status to Discord bot presence",
+                         "timestamp":  "2026-04-22T01:00:37Z",
                          "environment":  "production"
                      }
                  ]
