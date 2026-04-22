@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2b80eb8",
-                         "title":  "refactor(platform): rename Cognitive Services dashboard tool to Agent Services",
-                         "timestamp":  "2026-04-20T16:37:59Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-78a0a20",
                          "title":  "feat(platform): add Discord bot buttons for CI investigation workflow",
                          "timestamp":  "2026-04-20T17:19:06Z",
@@ -102,6 +96,12 @@
                          "version":  "build-1cafbc6",
                          "title":  "feat(discord): add +Voice command with TTS, join, leave, status",
                          "timestamp":  "2026-04-22T03:52:11Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7b53c70",
+                         "title":  "fix(blue-green): validate process name + start time in lock file to prevent P...",
+                         "timestamp":  "2026-04-22T04:33:07Z",
                          "environment":  "production"
                      }
                  ]
