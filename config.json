@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3a6884e",
-                         "title":  "fix(platform): fix document comment selection feedback and indicator range",
-                         "timestamp":  "2026-04-20T15:59:03Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2b80eb8",
                          "title":  "refactor(platform): rename Cognitive Services dashboard tool to Agent Services",
                          "timestamp":  "2026-04-20T16:37:59Z",
@@ -102,6 +96,12 @@
                          "version":  "build-3f04fc7",
                          "title":  "refactor(discord): merge individual game commands into unified /game command",
                          "timestamp":  "2026-04-22T02:13:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1cafbc6",
+                         "title":  "feat(discord): add +Voice command with TTS, join, leave, status",
+                         "timestamp":  "2026-04-22T03:52:11Z",
                          "environment":  "production"
                      }
                  ]
