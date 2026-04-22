@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-78a0a20",
-                         "title":  "feat(platform): add Discord bot buttons for CI investigation workflow",
-                         "timestamp":  "2026-04-20T17:19:06Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d090c6d",
                          "title":  "feat(platform): improve Projects dashboard Pipeline Live and Overview tabs",
                          "timestamp":  "2026-04-20T20:43:50Z",
@@ -102,6 +96,12 @@
                          "version":  "build-7b53c70",
                          "title":  "fix(blue-green): validate process name + start time in lock file to prevent P...",
                          "timestamp":  "2026-04-22T04:33:07Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d993d55",
+                         "title":  "perf(webdav): serve LFS objects via FileStream when remote is local — elimina...",
+                         "timestamp":  "2026-04-22T04:52:37Z",
                          "environment":  "production"
                      }
                  ]
