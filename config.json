@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-c258a51",
-                         "title":  "fix(deploy): use nginx router URL for SELF_HOSTED_AGENT_URL in blue-green mode",
-                         "timestamp":  "2026-04-22T01:34:53Z",
+                         "version":  "build-522c68b",
+                         "title":  "feat(agent): add CI job status to Discord bot presence",
+                         "timestamp":  "2026-04-22T01:00:37Z",
                          "environment":  "production"
                      }
                  ]
