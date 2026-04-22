@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-b17f6da",
-                         "title":  "fix(platform): validate SDK assembly zip integrity before persisting",
-                         "timestamp":  "2026-04-18T22:53:30Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3a6884e",
                          "title":  "fix(platform): fix document comment selection feedback and indicator range",
                          "timestamp":  "2026-04-20T15:59:03Z",
@@ -102,6 +96,12 @@
                          "version":  "build-522c68b",
                          "title":  "feat(agent): add CI job status to Discord bot presence",
                          "timestamp":  "2026-04-22T01:00:37Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3f04fc7",
+                         "title":  "refactor(discord): merge individual game commands into unified /game command",
+                         "timestamp":  "2026-04-22T02:13:01Z",
                          "environment":  "production"
                      }
                  ]
