@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://casa-events-assessing-dom.trycloudflare.com"
+                                  "address":  "https://bearing-later-player-till.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
