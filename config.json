@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a03af82",
-                         "title":  "feat(platform): add ProcessGuardianService for Unity Hub and LM Studio auto-s...",
-                         "timestamp":  "2026-04-21T17:47:44Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-522c68b",
                          "title":  "feat(agent): add CI job status to Discord bot presence",
                          "timestamp":  "2026-04-22T01:00:37Z",
@@ -102,6 +96,12 @@
                          "version":  "build-9e60616",
                          "title":  "fix(ci-notifications): wire Discord channel messages and DM delivery for CI a...",
                          "timestamp":  "2026-04-23T21:26:04Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f6dabe1",
+                         "title":  "feat(discord): add webhook message observer for Discord channel monitoring",
+                         "timestamp":  "2026-04-23T23:02:04Z",
                          "environment":  "production"
                      }
                  ]
