@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a3884d7",
-                         "title":  "fix(platform): wire CI notification tables into database schema initialization",
-                         "timestamp":  "2026-04-21T00:25:43Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ae4e326",
                          "title":  "fix(platform): improve CI notification observability and decouple chat from a...",
                          "timestamp":  "2026-04-21T15:35:54Z",
@@ -102,6 +96,12 @@
                          "version":  "build-b362e4c",
                          "title":  "feat(commands): improve +Help with inline subcommands, deep help, and unified...",
                          "timestamp":  "2026-04-23T15:36:14Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e0d5d7c",
+                         "title":  "feat(ci-notifications): add NotifyOnCancelledWithFailedJobs config column",
+                         "timestamp":  "2026-04-23T21:03:48Z",
                          "environment":  "production"
                      }
                  ]
