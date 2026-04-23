@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-b4dfcf3",
-                         "title":  "fix(platform): auto-seed CI notification config so notifications work without...",
-                         "timestamp":  "2026-04-20T23:16:18Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a3884d7",
                          "title":  "fix(platform): wire CI notification tables into database schema initialization",
                          "timestamp":  "2026-04-21T00:25:43Z",
@@ -102,6 +96,12 @@
                          "version":  "build-81c7b74",
                          "title":  "feat(discord): show subcommand details in +Help \u003cparent-command\u003e",
                          "timestamp":  "2026-04-22T17:03:02Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-b362e4c",
+                         "title":  "feat(commands): improve +Help with inline subcommands, deep help, and unified...",
+                         "timestamp":  "2026-04-23T15:36:14Z",
                          "environment":  "production"
                      }
                  ]
