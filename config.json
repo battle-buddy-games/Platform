@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-ee31cdf",
-                         "title":  "feat(discord): add CI failure detection to webhook observer with +CI investig...",
-                         "timestamp":  "2026-04-24T00:03:33Z",
+                         "version":  "build-74f45db",
+                         "title":  "refactor(commands): move CI investigate to +Agent subcommand, remove orphaned...",
+                         "timestamp":  "2026-04-24T00:22:45Z",
                          "environment":  "production"
                      }
                  ]
