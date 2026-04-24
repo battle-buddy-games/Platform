@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d993d55",
-                         "title":  "perf(webdav): serve LFS objects via FileStream when remote is local — elimina...",
-                         "timestamp":  "2026-04-22T04:52:37Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-81c7b74",
                          "title":  "feat(discord): show subcommand details in +Help \u003cparent-command\u003e",
                          "timestamp":  "2026-04-22T17:03:02Z",
@@ -99,9 +93,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-318d95c",
-                         "title":  "fix(discord): route CI failure alerts to bot-platform channel instead of foll...",
-                         "timestamp":  "2026-04-24T22:34:58Z",
+                         "version":  "build-822fe4a",
+                         "title":  "fix(discord): detect CI failures from plain text webhook messages",
+                         "timestamp":  "2026-04-24T22:20:31Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-fa106a0",
+                         "title":  "fix(discord): dispatch CI investigation directly from CiNotificationService",
+                         "timestamp":  "2026-04-24T22:49:05Z",
                          "environment":  "production"
                      }
                  ]
