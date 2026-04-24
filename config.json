@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-522c68b",
-                         "title":  "feat(agent): add CI job status to Discord bot presence",
-                         "timestamp":  "2026-04-22T01:00:37Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3f04fc7",
                          "title":  "refactor(discord): merge individual game commands into unified /game command",
                          "timestamp":  "2026-04-22T02:13:01Z",
@@ -102,6 +96,12 @@
                          "version":  "build-f6dabe1",
                          "title":  "feat(discord): add webhook message observer for Discord channel monitoring",
                          "timestamp":  "2026-04-23T23:02:04Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ee31cdf",
+                         "title":  "feat(discord): add CI failure detection to webhook observer with +CI investig...",
+                         "timestamp":  "2026-04-24T00:03:33Z",
                          "environment":  "production"
                      }
                  ]
