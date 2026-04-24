@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7b53c70",
-                         "title":  "fix(blue-green): validate process name + start time in lock file to prevent P...",
-                         "timestamp":  "2026-04-22T04:33:07Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d993d55",
                          "title":  "perf(webdav): serve LFS objects via FileStream when remote is local — elimina...",
                          "timestamp":  "2026-04-22T04:52:37Z",
@@ -102,6 +96,12 @@
                          "version":  "build-c079dab",
                          "title":  "feat(discord): add investigate button to CI failure webhook notifications",
                          "timestamp":  "2026-04-24T17:38:40Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-822fe4a",
+                         "title":  "fix(discord): detect CI failures from plain text webhook messages",
+                         "timestamp":  "2026-04-24T22:20:31Z",
                          "environment":  "production"
                      }
                  ]
