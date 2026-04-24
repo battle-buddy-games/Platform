@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-e4ea958",
-                         "title":  "fix(discord): add default agent channel ID for CI investigation dispatch",
-                         "timestamp":  "2026-04-24T15:49:15Z",
+                         "version":  "build-3390169",
+                         "title":  "fix(discord): route webhook observer messages to bot-platform channel instead...",
+                         "timestamp":  "2026-04-24T15:16:55Z",
                          "environment":  "production"
                      }
                  ]
