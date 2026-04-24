@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3f04fc7",
-                         "title":  "refactor(discord): merge individual game commands into unified /game command",
-                         "timestamp":  "2026-04-22T02:13:01Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1cafbc6",
                          "title":  "feat(discord): add +Voice command with TTS, join, leave, status",
                          "timestamp":  "2026-04-22T03:52:11Z",
@@ -99,9 +93,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-74f45db",
-                         "title":  "refactor(commands): move CI investigate to +Agent subcommand, remove orphaned...",
-                         "timestamp":  "2026-04-24T00:22:45Z",
+                         "version":  "build-ee31cdf",
+                         "title":  "feat(discord): add CI failure detection to webhook observer with +CI investig...",
+                         "timestamp":  "2026-04-24T00:03:33Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3390169",
+                         "title":  "fix(discord): route webhook observer messages to bot-platform channel instead...",
+                         "timestamp":  "2026-04-24T15:16:55Z",
                          "environment":  "production"
                      }
                  ]
