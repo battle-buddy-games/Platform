@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e0d5d7c",
-                         "title":  "feat(ci-notifications): add NotifyOnCancelledWithFailedJobs config column",
-                         "timestamp":  "2026-04-23T21:03:48Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9e60616",
                          "title":  "fix(ci-notifications): wire Discord channel messages and DM delivery for CI a...",
                          "timestamp":  "2026-04-23T21:26:04Z",
@@ -102,6 +96,12 @@
                          "version":  "build-be6d466",
                          "title":  "fix(discord): fix CI investigate button — direct channel send with message li...",
                          "timestamp":  "2026-04-25T01:32:43Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1eebf5f",
+                         "title":  "fix(discord): fix investigate button 50001 — use proven SendMessageWithCompon...",
+                         "timestamp":  "2026-04-25T02:15:55Z",
                          "environment":  "production"
                      }
                  ]
