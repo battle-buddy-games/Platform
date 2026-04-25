@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9e60616",
-                         "title":  "fix(ci-notifications): wire Discord channel messages and DM delivery for CI a...",
-                         "timestamp":  "2026-04-23T21:26:04Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f6dabe1",
                          "title":  "feat(discord): add webhook message observer for Discord channel monitoring",
                          "timestamp":  "2026-04-23T23:02:04Z",
@@ -102,6 +96,12 @@
                          "version":  "build-1eebf5f",
                          "title":  "fix(discord): fix investigate button 50001 — use proven SendMessageWithCompon...",
                          "timestamp":  "2026-04-25T02:15:55Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ac80f02",
+                         "title":  "fix(discord): fix investigate button channel + remove auto-dispatch to agents",
+                         "timestamp":  "2026-04-25T02:39:25Z",
                          "environment":  "production"
                      }
                  ]
