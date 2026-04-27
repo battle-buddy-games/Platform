@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://belkin-respiratory-arrival-burke.trycloudflare.com"
+                                  "address":  "https://savannah-salem-exit-consistently.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
