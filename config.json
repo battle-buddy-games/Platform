@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3390169",
-                         "title":  "fix(discord): route webhook observer messages to bot-platform channel instead...",
-                         "timestamp":  "2026-04-24T15:16:55Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c079dab",
                          "title":  "feat(discord): add investigate button to CI failure webhook notifications",
                          "timestamp":  "2026-04-24T17:38:40Z",
@@ -102,6 +96,12 @@
                          "version":  "build-3b87c4a",
                          "title":  "fix(discord): add auth to CI toggle persistence and set ClaimsPrincipal in se...",
                          "timestamp":  "2026-04-28T02:37:30Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-08accad",
+                         "title":  "feat: add fix instructions to CI Discord notifications when auto-fix toggle i...",
+                         "timestamp":  "2026-04-28T17:28:31Z",
                          "environment":  "production"
                      }
                  ]
