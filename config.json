@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ee31cdf",
-                         "title":  "feat(discord): add CI failure detection to webhook observer with +CI investig...",
-                         "timestamp":  "2026-04-24T00:03:33Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3390169",
                          "title":  "fix(discord): route webhook observer messages to bot-platform channel instead...",
                          "timestamp":  "2026-04-24T15:16:55Z",
@@ -102,6 +96,12 @@
                          "version":  "build-dc97d6d",
                          "title":  "feat(discord): add Investigate with Prompt button to CI failure notifications",
                          "timestamp":  "2026-04-25T03:47:18Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3b87c4a",
+                         "title":  "fix(discord): add auth to CI toggle persistence and set ClaimsPrincipal in se...",
+                         "timestamp":  "2026-04-28T02:37:30Z",
                          "environment":  "production"
                      }
                  ]
