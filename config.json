@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://flowers-princeton-mhz-flame.trycloudflare.com"
+                                  "address":  "https://finds-val-treasury-collapse.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
