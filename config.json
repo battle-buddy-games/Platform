@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c079dab",
-                         "title":  "feat(discord): add investigate button to CI failure webhook notifications",
-                         "timestamp":  "2026-04-24T17:38:40Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-822fe4a",
                          "title":  "fix(discord): detect CI failures from plain text webhook messages",
                          "timestamp":  "2026-04-24T22:20:31Z",
@@ -102,6 +96,12 @@
                          "version":  "build-08accad",
                          "title":  "feat: add fix instructions to CI Discord notifications when auto-fix toggle i...",
                          "timestamp":  "2026-04-28T17:28:31Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8e0c93c",
+                         "title":  "feat: add \u0027acknowledge this request by replying here\u0027 to all CI Discord notif...",
+                         "timestamp":  "2026-04-28T20:35:29Z",
                          "environment":  "production"
                      }
                  ]
