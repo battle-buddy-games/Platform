@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-fa106a0",
-                         "title":  "fix(discord): dispatch CI investigation directly from CiNotificationService",
-                         "timestamp":  "2026-04-24T22:49:05Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a930d25",
                          "title":  "fix(platform): fix CI investigate button — post to #agents channel, rename to...",
                          "timestamp":  "2026-04-24T23:52:15Z",
@@ -102,6 +96,12 @@
                          "version":  "build-5689fd0",
                          "title":  "fix: update System.Management to 9.0.5 to resolve NuGet downgrade error",
                          "timestamp":  "2026-04-29T18:59:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8b3fdaf",
+                         "title":  "feat(platform): add server auto-deploy for CI builds",
+                         "timestamp":  "2026-04-29T23:45:28Z",
                          "environment":  "production"
                      }
                  ]
