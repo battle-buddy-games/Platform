@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-822fe4a",
-                         "title":  "fix(discord): detect CI failures from plain text webhook messages",
-                         "timestamp":  "2026-04-24T22:20:31Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-fa106a0",
                          "title":  "fix(discord): dispatch CI investigation directly from CiNotificationService",
                          "timestamp":  "2026-04-24T22:49:05Z",
@@ -102,6 +96,12 @@
                          "version":  "build-8e0c93c",
                          "title":  "feat: add \u0027acknowledge this request by replying here\u0027 to all CI Discord notif...",
                          "timestamp":  "2026-04-28T20:35:29Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5689fd0",
+                         "title":  "fix: update System.Management to 9.0.5 to resolve NuGet downgrade error",
+                         "timestamp":  "2026-04-29T18:59:50Z",
                          "environment":  "production"
                      }
                  ]
