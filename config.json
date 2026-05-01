@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://day-essex-combo-groove.trycloudflare.com"
+                                  "address":  "https://benchmark-progressive-dolls-interference.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
