@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-1eebf5f",
-                         "title":  "fix(discord): fix investigate button 50001 — use proven SendMessageWithCompon...",
-                         "timestamp":  "2026-04-25T02:15:55Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-ac80f02",
                          "title":  "fix(discord): fix investigate button channel + remove auto-dispatch to agents",
@@ -102,6 +96,12 @@
                          "version":  "build-27ae7f1",
                          "title":  "feat(test-stability): add automated test stability service with quarantine, g...",
                          "timestamp":  "2026-05-02T15:58:07Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-808607f",
+                         "title":  "fix(ops): harden runner watchdog with absolute NSSM path and stuck detection",
+                         "timestamp":  "2026-05-02T16:23:40Z",
                          "environment":  "production"
                      }
                  ]
