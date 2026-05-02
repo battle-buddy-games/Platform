@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://schedules-operations-mission-under.trycloudflare.com"
+                                  "address":  "https://benchmark-progressive-dolls-interference.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -45,63 +45,63 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-62a93ee",
-                         "title":  "fix(docs): move IsProposal flag from entry-level to source-level",
-                         "timestamp":  "2026-04-13T20:47:27Z",
+                         "version":  "build-1eebf5f",
+                         "title":  "fix(discord): fix investigate button 50001 — use proven SendMessageWithCompon...",
+                         "timestamp":  "2026-04-25T02:15:55Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-06ee26a",
-                         "title":  "fix(ci): guard git stderr against ErrorActionPreference=Stop in deploy steps",
-                         "timestamp":  "2026-04-13T21:22:50Z",
+                         "version":  "build-ac80f02",
+                         "title":  "fix(discord): fix investigate button channel + remove auto-dispatch to agents",
+                         "timestamp":  "2026-04-25T02:39:25Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-3f6c8c8",
-                         "title":  "fix(ci): prevent production tests from timing out due to redundant 20-min polls",
-                         "timestamp":  "2026-04-14T01:50:05Z",
+                         "version":  "build-dc97d6d",
+                         "title":  "feat(discord): add Investigate with Prompt button to CI failure notifications",
+                         "timestamp":  "2026-04-25T03:47:18Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-3bd6244",
-                         "title":  "fix(ci): make production tests resilient to post-deploy warm-up delays",
-                         "timestamp":  "2026-04-14T02:43:28Z",
+                         "version":  "build-3b87c4a",
+                         "title":  "fix(discord): add auth to CI toggle persistence and set ClaimsPrincipal in se...",
+                         "timestamp":  "2026-04-28T02:37:30Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-d080c0c",
-                         "title":  "fix(ci): make voice connect tests skip gracefully when bot is initializing",
-                         "timestamp":  "2026-04-14T03:15:47Z",
+                         "version":  "build-08accad",
+                         "title":  "feat: add fix instructions to CI Discord notifications when auto-fix toggle i...",
+                         "timestamp":  "2026-04-28T17:28:31Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-66b131e",
-                         "title":  "fix(platform): seed SdkSourceRepositories with frostebite/GameClient",
-                         "timestamp":  "2026-04-14T03:42:31Z",
+                         "version":  "build-8e0c93c",
+                         "title":  "feat: add \u0027acknowledge this request by replying here\u0027 to all CI Discord notif...",
+                         "timestamp":  "2026-04-28T20:35:29Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-906ef48",
-                         "title":  "fix(tests): handle voice connecting state and 409 in production tests",
-                         "timestamp":  "2026-04-14T04:21:51Z",
+                         "version":  "build-5689fd0",
+                         "title":  "fix: update System.Management to 9.0.5 to resolve NuGet downgrade error",
+                         "timestamp":  "2026-04-29T18:59:50Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-84a5f84",
-                         "title":  "fix(ci): add continue-on-error to GitHub Pages release steps in pre-deploy",
-                         "timestamp":  "2026-04-14T04:46:19Z",
+                         "version":  "build-8b3fdaf",
+                         "title":  "feat(platform): add server auto-deploy for CI builds",
+                         "timestamp":  "2026-04-29T23:45:28Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-e9c2b6d",
-                         "title":  "fix(platform): seed TurnOfWar and TurnOfWarEndlessCrusade source repos",
-                         "timestamp":  "2026-04-14T17:30:40Z",
+                         "version":  "build-40ebe53",
+                         "title":  "fix(ci): set CiBuildRecord flags and normalize framework names for server aut...",
+                         "timestamp":  "2026-04-30T18:15:39Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-557119c",
-                         "title":  "feat(platform): add authenticated download distribution API for dev tools",
-                         "timestamp":  "2026-04-14T18:04:19Z",
+                         "version":  "build-27ae7f1",
+                         "title":  "feat(test-stability): add automated test stability service with quarantine, g...",
+                         "timestamp":  "2026-05-02T15:58:07Z",
                          "environment":  "production"
                      }
                  ]
