@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ac80f02",
-                         "title":  "fix(discord): fix investigate button channel + remove auto-dispatch to agents",
-                         "timestamp":  "2026-04-25T02:39:25Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-dc97d6d",
                          "title":  "feat(discord): add Investigate with Prompt button to CI failure notifications",
                          "timestamp":  "2026-04-25T03:47:18Z",
@@ -102,6 +96,12 @@
                          "version":  "build-808607f",
                          "title":  "fix(ops): harden runner watchdog with absolute NSSM path and stuck detection",
                          "timestamp":  "2026-05-02T16:23:40Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-305814a",
+                         "title":  "feat(agent): auto-start LM Studio when Discord AI requests find it offline",
+                         "timestamp":  "2026-05-03T14:33:15Z",
                          "environment":  "production"
                      }
                  ]
