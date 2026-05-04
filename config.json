@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3b87c4a",
-                         "title":  "fix(discord): add auth to CI toggle persistence and set ClaimsPrincipal in se...",
-                         "timestamp":  "2026-04-28T02:37:30Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-08accad",
                          "title":  "feat: add fix instructions to CI Discord notifications when auto-fix toggle i...",
                          "timestamp":  "2026-04-28T17:28:31Z",
@@ -102,6 +96,12 @@
                          "version":  "build-de9700a",
                          "title":  "fix(discord): execute startup health check commands directly instead of Disco...",
                          "timestamp":  "2026-05-03T14:50:19Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8653363",
+                         "title":  "fix(platform): launch LM Studio in interactive desktop session instead of Ses...",
+                         "timestamp":  "2026-05-04T02:30:59Z",
                          "environment":  "production"
                      }
                  ]
