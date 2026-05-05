@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5689fd0",
-                         "title":  "fix: update System.Management to 9.0.5 to resolve NuGet downgrade error",
-                         "timestamp":  "2026-04-29T18:59:50Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8b3fdaf",
                          "title":  "feat(platform): add server auto-deploy for CI builds",
                          "timestamp":  "2026-04-29T23:45:28Z",
@@ -102,6 +96,12 @@
                          "version":  "build-877e26e",
                          "title":  "feat(ci-logs): add direct file-based live log REST API endpoints",
                          "timestamp":  "2026-05-05T01:27:03Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2a0a040",
+                         "title":  "feat(chat): replace mobile sidebar stacking with overlay drawer pattern",
+                         "timestamp":  "2026-05-05T01:54:14Z",
                          "environment":  "production"
                      }
                  ]
