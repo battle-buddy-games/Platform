@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8b3fdaf",
-                         "title":  "feat(platform): add server auto-deploy for CI builds",
-                         "timestamp":  "2026-04-29T23:45:28Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-40ebe53",
                          "title":  "fix(ci): set CiBuildRecord flags and normalize framework names for server aut...",
                          "timestamp":  "2026-04-30T18:15:39Z",
@@ -102,6 +96,12 @@
                          "version":  "build-2a0a040",
                          "title":  "feat(chat): replace mobile sidebar stacking with overlay drawer pattern",
                          "timestamp":  "2026-05-05T01:54:14Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-acff13c",
+                         "title":  "fix(platform): auto-detect LM Studio model and handle unreachable/no-model gr...",
+                         "timestamp":  "2026-05-05T02:28:36Z",
                          "environment":  "production"
                      }
                  ]
