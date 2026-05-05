@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8e0c93c",
-                         "title":  "feat: add \u0027acknowledge this request by replying here\u0027 to all CI Discord notif...",
-                         "timestamp":  "2026-04-28T20:35:29Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5689fd0",
                          "title":  "fix: update System.Management to 9.0.5 to resolve NuGet downgrade error",
                          "timestamp":  "2026-04-29T18:59:50Z",
@@ -102,6 +96,12 @@
                          "version":  "build-73844aa",
                          "title":  "feat(chat): add mobile-responsive CSS for Chat dashboard tool",
                          "timestamp":  "2026-05-05T00:27:27Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-877e26e",
+                         "title":  "feat(ci-logs): add direct file-based live log REST API endpoints",
+                         "timestamp":  "2026-05-05T01:27:03Z",
                          "environment":  "production"
                      }
                  ]
