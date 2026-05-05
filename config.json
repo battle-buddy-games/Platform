@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://benchmark-progressive-dolls-interference.trycloudflare.com"
+                                  "address":  "https://guaranteed-tiny-flavor-and.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-1f98fad",
-                         "title":  "feat(platform): auto-load model when LM Studio has no chat model loaded",
-                         "timestamp":  "2026-05-05T02:42:52Z",
+                         "version":  "build-acff13c",
+                         "title":  "fix(platform): auto-detect LM Studio model and handle unreachable/no-model gr...",
+                         "timestamp":  "2026-05-05T02:28:36Z",
                          "environment":  "production"
                      }
                  ]
