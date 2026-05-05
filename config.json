@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-08accad",
-                         "title":  "feat: add fix instructions to CI Discord notifications when auto-fix toggle i...",
-                         "timestamp":  "2026-04-28T17:28:31Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8e0c93c",
                          "title":  "feat: add \u0027acknowledge this request by replying here\u0027 to all CI Discord notif...",
                          "timestamp":  "2026-04-28T20:35:29Z",
@@ -102,6 +96,12 @@
                          "version":  "build-8653363",
                          "title":  "fix(platform): launch LM Studio in interactive desktop session instead of Ses...",
                          "timestamp":  "2026-05-04T02:30:59Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-73844aa",
+                         "title":  "feat(chat): add mobile-responsive CSS for Chat dashboard tool",
+                         "timestamp":  "2026-05-05T00:27:27Z",
                          "environment":  "production"
                      }
                  ]
