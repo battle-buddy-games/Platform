@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-305814a",
-                         "title":  "feat(agent): auto-start LM Studio when Discord AI requests find it offline",
-                         "timestamp":  "2026-05-03T14:33:15Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-de9700a",
                          "title":  "fix(discord): execute startup health check commands directly instead of Disco...",
                          "timestamp":  "2026-05-03T14:50:19Z",
@@ -102,6 +96,12 @@
                          "version":  "build-b6f636e",
                          "title":  "ci(webplatform): own Buddy electron-build workflow (move from GameClient parent)",
                          "timestamp":  "2026-05-08T00:45:54Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-013d313",
+                         "title":  "fix: resolve cicd failures and partial updates",
+                         "timestamp":  "2026-05-08T23:22:44Z",
                          "environment":  "production"
                      }
                  ]
