@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-808607f",
-                         "title":  "fix(ops): harden runner watchdog with absolute NSSM path and stuck detection",
-                         "timestamp":  "2026-05-02T16:23:40Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-305814a",
                          "title":  "feat(agent): auto-start LM Studio when Discord AI requests find it offline",
                          "timestamp":  "2026-05-03T14:33:15Z",
@@ -102,6 +96,12 @@
                          "version":  "build-220c10f",
                          "title":  "feat(webplatform): Buddy Electron delivery — studio gating + electron-updater...",
                          "timestamp":  "2026-05-07T21:33:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-b6f636e",
+                         "title":  "ci(webplatform): own Buddy electron-build workflow (move from GameClient parent)",
+                         "timestamp":  "2026-05-08T00:45:54Z",
                          "environment":  "production"
                      }
                  ]
