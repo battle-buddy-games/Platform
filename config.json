@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8653363",
-                         "title":  "fix(platform): launch LM Studio in interactive desktop session instead of Ses...",
-                         "timestamp":  "2026-05-04T02:30:59Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-73844aa",
                          "title":  "feat(chat): add mobile-responsive CSS for Chat dashboard tool",
                          "timestamp":  "2026-05-05T00:27:27Z",
@@ -102,6 +96,12 @@
                          "version":  "build-6d0fc90",
                          "title":  "feat(platform): consolidate test stability into projects dashboard test tab",
                          "timestamp":  "2026-05-11T13:39:32Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-b36cf75",
+                         "title":  "fix(tests): remove false recordCount\u003e0 assertion from activity sampling healt...",
+                         "timestamp":  "2026-05-11T14:08:14Z",
                          "environment":  "production"
                      }
                  ]
