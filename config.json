@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-73844aa",
-                         "title":  "feat(chat): add mobile-responsive CSS for Chat dashboard tool",
-                         "timestamp":  "2026-05-05T00:27:27Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-877e26e",
                          "title":  "feat(ci-logs): add direct file-based live log REST API endpoints",
                          "timestamp":  "2026-05-05T01:27:03Z",
@@ -76,7 +70,7 @@
                      },
                      {
                          "version":  "build-220c10f",
-                         "title":  "feat(webplatform): Buddy Electron delivery — studio gating + electron-updater...",
+                         "title":  "feat(webplatform): Buddy Electron delivery â€” studio gating + electron-updater...",
                          "timestamp":  "2026-05-07T21:33:20Z",
                          "environment":  "production"
                      },
@@ -102,6 +96,12 @@
                          "version":  "build-b36cf75",
                          "title":  "fix(tests): remove false recordCount\u003e0 assertion from activity sampling healt...",
                          "timestamp":  "2026-05-11T14:08:14Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8a7056f",
+                         "title":  "fix(ci): write config.json as UTF-8 without BOM (PS 5.1 -Encoding UTF8 emits ...",
+                         "timestamp":  "2026-05-12T23:04:02Z",
                          "environment":  "production"
                      }
                  ]
