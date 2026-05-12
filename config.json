@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://benchmark-progressive-dolls-interference.trycloudflare.com"
+                                  "address":  "https://material-compatible-josh-participated.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -45,63 +45,63 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1eebf5f",
-                         "title":  "fix(discord): fix investigate button 50001 — use proven SendMessageWithCompon...",
-                         "timestamp":  "2026-04-25T02:15:55Z",
+                         "version":  "build-73844aa",
+                         "title":  "feat(chat): add mobile-responsive CSS for Chat dashboard tool",
+                         "timestamp":  "2026-05-05T00:27:27Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-ac80f02",
-                         "title":  "fix(discord): fix investigate button channel + remove auto-dispatch to agents",
-                         "timestamp":  "2026-04-25T02:39:25Z",
+                         "version":  "build-877e26e",
+                         "title":  "feat(ci-logs): add direct file-based live log REST API endpoints",
+                         "timestamp":  "2026-05-05T01:27:03Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-dc97d6d",
-                         "title":  "feat(discord): add Investigate with Prompt button to CI failure notifications",
-                         "timestamp":  "2026-04-25T03:47:18Z",
+                         "version":  "build-2a0a040",
+                         "title":  "feat(chat): replace mobile sidebar stacking with overlay drawer pattern",
+                         "timestamp":  "2026-05-05T01:54:14Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-3b87c4a",
-                         "title":  "fix(discord): add auth to CI toggle persistence and set ClaimsPrincipal in se...",
-                         "timestamp":  "2026-04-28T02:37:30Z",
+                         "version":  "build-acff13c",
+                         "title":  "fix(platform): auto-detect LM Studio model and handle unreachable/no-model gr...",
+                         "timestamp":  "2026-05-05T02:28:36Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-08accad",
-                         "title":  "feat: add fix instructions to CI Discord notifications when auto-fix toggle i...",
-                         "timestamp":  "2026-04-28T17:28:31Z",
+                         "version":  "build-1be2b60",
+                         "title":  "chore(webplatform): remove chrome-platform-linker chrome extension",
+                         "timestamp":  "2026-05-07T19:15:47Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-8e0c93c",
-                         "title":  "feat: add \u0027acknowledge this request by replying here\u0027 to all CI Discord notif...",
-                         "timestamp":  "2026-04-28T20:35:29Z",
+                         "version":  "build-220c10f",
+                         "title":  "feat(webplatform): Buddy Electron delivery â€” studio gating + electron-updater...",
+                         "timestamp":  "2026-05-07T21:33:20Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-5689fd0",
-                         "title":  "fix: update System.Management to 9.0.5 to resolve NuGet downgrade error",
-                         "timestamp":  "2026-04-29T18:59:50Z",
+                         "version":  "build-b6f636e",
+                         "title":  "ci(webplatform): own Buddy electron-build workflow (move from GameClient parent)",
+                         "timestamp":  "2026-05-08T00:45:54Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-8b3fdaf",
-                         "title":  "feat(platform): add server auto-deploy for CI builds",
-                         "timestamp":  "2026-04-29T23:45:28Z",
+                         "version":  "build-013d313",
+                         "title":  "fix: resolve cicd failures and partial updates",
+                         "timestamp":  "2026-05-08T23:22:44Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-40ebe53",
-                         "title":  "fix(ci): set CiBuildRecord flags and normalize framework names for server aut...",
-                         "timestamp":  "2026-04-30T18:15:39Z",
+                         "version":  "build-6d0fc90",
+                         "title":  "feat(platform): consolidate test stability into projects dashboard test tab",
+                         "timestamp":  "2026-05-11T13:39:32Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-27ae7f1",
-                         "title":  "feat(test-stability): add automated test stability service with quarantine, g...",
-                         "timestamp":  "2026-05-02T15:58:07Z",
+                         "version":  "build-b36cf75",
+                         "title":  "fix(tests): remove false recordCount\u003e0 assertion from activity sampling healt...",
+                         "timestamp":  "2026-05-11T14:08:14Z",
                          "environment":  "production"
                      }
                  ]
