@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-2a0a040",
-                         "title":  "feat(chat): replace mobile sidebar stacking with overlay drawer pattern",
-                         "timestamp":  "2026-05-05T01:54:14Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-acff13c",
                          "title":  "fix(platform): auto-detect LM Studio model and handle unreachable/no-model gr...",
@@ -102,6 +96,12 @@
                          "version":  "build-50b7044",
                          "title":  "fix(platform): require interactive LM Studio startup",
                          "timestamp":  "2026-05-13T20:02:56Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0fe4435",
+                         "title":  "fix(chat): harden agents endpoint against EF and per-row failures",
+                         "timestamp":  "2026-05-13T22:46:08Z",
                          "environment":  "production"
                      }
                  ]
