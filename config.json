@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://remove-shall-colour-hospitality.trycloudflare.com"
+                                  "address":  "https://wave-reprints-arlington-ventures.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -64,7 +64,7 @@
                      },
                      {
                          "version":  "build-220c10f",
-                         "title":  "feat(webplatform): Buddy Electron delivery Ã¢â‚¬â€ studio gating + electron-updater...",
+                         "title":  "feat(webplatform): Buddy Electron delivery ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â studio gating + electron-updater...",
                          "timestamp":  "2026-05-07T21:33:20Z",
                          "environment":  "production"
                      },
