@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-acff13c",
-                         "title":  "fix(platform): auto-detect LM Studio model and handle unreachable/no-model gr...",
-                         "timestamp":  "2026-05-05T02:28:36Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1be2b60",
                          "title":  "chore(webplatform): remove chrome-platform-linker chrome extension",
                          "timestamp":  "2026-05-07T19:15:47Z",
@@ -58,7 +52,7 @@
                      },
                      {
                          "version":  "build-220c10f",
-                         "title":  "feat(webplatform): Buddy Electron delivery ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â studio gating + electron-updater...",
+                         "title":  "feat(webplatform): Buddy Electron delivery ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â studio gating + electron-updater...",
                          "timestamp":  "2026-05-07T21:33:20Z",
                          "environment":  "production"
                      },
@@ -99,9 +93,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-38a76f9",
-                         "title":  "ci(buddy): assert http 200 + json id on tool upload to prevent silent 302 fai...",
-                         "timestamp":  "2026-05-13T23:02:47Z",
+                         "version":  "build-0fe4435",
+                         "title":  "fix(chat): harden agents endpoint against EF and per-row failures",
+                         "timestamp":  "2026-05-13T22:46:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-dd4f5ad",
+                         "title":  "fix(webplatform): suppress EF Sqlite Autoincrement-roundtrip PendingModelChan...",
+                         "timestamp":  "2026-05-13T23:26:21Z",
                          "environment":  "production"
                      }
                  ]
