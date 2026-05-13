@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-877e26e",
-                         "title":  "feat(ci-logs): add direct file-based live log REST API endpoints",
-                         "timestamp":  "2026-05-05T01:27:03Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-2a0a040",
                          "title":  "feat(chat): replace mobile sidebar stacking with overlay drawer pattern",
@@ -102,6 +96,12 @@
                          "version":  "build-8a7056f",
                          "title":  "fix(ci): write config.json as UTF-8 without BOM (PS 5.1 -Encoding UTF8 emits ...",
                          "timestamp":  "2026-05-12T23:04:02Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-50b7044",
+                         "title":  "fix(platform): require interactive LM Studio startup",
+                         "timestamp":  "2026-05-13T20:02:56Z",
                          "environment":  "production"
                      }
                  ]
