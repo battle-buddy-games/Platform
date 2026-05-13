@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-0fe4435",
-                         "title":  "fix(chat): harden agents endpoint against EF and per-row failures",
-                         "timestamp":  "2026-05-13T22:46:08Z",
+                         "version":  "build-38a76f9",
+                         "title":  "ci(buddy): assert http 200 + json id on tool upload to prevent silent 302 fai...",
+                         "timestamp":  "2026-05-13T23:02:47Z",
                          "environment":  "production"
                      }
                  ]
