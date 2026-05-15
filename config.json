@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://wave-reprints-arlington-ventures.trycloudflare.com"
+                                  "address":  "https://titans-cohen-prepare-using.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
