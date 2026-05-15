@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-b6f636e",
-                         "title":  "ci(webplatform): own Buddy electron-build workflow (move from GameClient parent)",
-                         "timestamp":  "2026-05-08T00:45:54Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-013d313",
                          "title":  "fix: resolve cicd failures and partial updates",
@@ -102,6 +96,12 @@
                          "version":  "build-ef4496c",
                          "title":  "fix(ci): rename skip_smoke -\u003e skip_preflight workflow dispatch input",
                          "timestamp":  "2026-05-15T00:54:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-429bee9",
+                         "title":  "fix(ops): skip nginx access.log by default in PullPlatformLogs, add -IncludeA...",
+                         "timestamp":  "2026-05-15T01:33:35Z",
                          "environment":  "production"
                      }
                  ]
