@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-50b7044",
-                         "title":  "fix(platform): require interactive LM Studio startup",
-                         "timestamp":  "2026-05-13T20:02:56Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0fe4435",
                          "title":  "fix(chat): harden agents endpoint against EF and per-row failures",
                          "timestamp":  "2026-05-13T22:46:08Z",
@@ -82,7 +76,7 @@
                      },
                      {
                          "version":  "build-d615711",
-                         "title":  "feat(chat): implement sidebar redesign ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â vertical layout, DM area with agents...",
+                         "title":  "feat(chat): implement sidebar redesign ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â vertical layout, DM area with agents...",
                          "timestamp":  "2026-05-15T18:51:36Z",
                          "environment":  "production"
                      },
@@ -100,8 +94,14 @@
                      },
                      {
                          "version":  "build-2ca030e",
-                         "title":  "feat(ics): add ICS WebPlatform surface — DTO, widget, and detail page",
+                         "title":  "feat(ics): add ICS WebPlatform surface â€” DTO, widget, and detail page",
                          "timestamp":  "2026-05-15T20:07:06Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0d9d6b7",
+                         "title":  "fix(platform): backfill legacy EF migration history, surface migration failures",
+                         "timestamp":  "2026-05-15T20:59:27Z",
                          "environment":  "production"
                      }
                  ]
