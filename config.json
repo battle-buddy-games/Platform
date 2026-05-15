@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-1be2b60",
-                         "title":  "chore(webplatform): remove chrome-platform-linker chrome extension",
-                         "timestamp":  "2026-05-07T19:15:47Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-220c10f",
                          "title":  "feat(webplatform): Buddy Electron delivery ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â studio gating + electron-updater...",
@@ -102,6 +96,12 @@
                          "version":  "build-dd4f5ad",
                          "title":  "fix(webplatform): suppress EF Sqlite Autoincrement-roundtrip PendingModelChan...",
                          "timestamp":  "2026-05-13T23:26:21Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c9e80a0",
+                         "title":  "fix: report discord agent cpu pressure",
+                         "timestamp":  "2026-05-15T00:32:37Z",
                          "environment":  "production"
                      }
                  ]
