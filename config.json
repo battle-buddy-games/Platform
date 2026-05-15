@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-220c10f",
-                         "title":  "feat(webplatform): Buddy Electron delivery ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â studio gating + electron-updater...",
-                         "timestamp":  "2026-05-07T21:33:20Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b6f636e",
                          "title":  "ci(webplatform): own Buddy electron-build workflow (move from GameClient parent)",
                          "timestamp":  "2026-05-08T00:45:54Z",
@@ -102,6 +96,12 @@
                          "version":  "build-c9e80a0",
                          "title":  "fix: report discord agent cpu pressure",
                          "timestamp":  "2026-05-15T00:32:37Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ef4496c",
+                         "title":  "fix(ci): rename skip_smoke -\u003e skip_preflight workflow dispatch input",
+                         "timestamp":  "2026-05-15T00:54:01Z",
                          "environment":  "production"
                      }
                  ]
