@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-6d0fc90",
-                         "title":  "feat(platform): consolidate test stability into projects dashboard test tab",
-                         "timestamp":  "2026-05-11T13:39:32Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-b36cf75",
                          "title":  "fix(tests): remove false recordCount\u003e0 assertion from activity sampling healt...",
@@ -102,6 +96,12 @@
                          "version":  "build-d615711",
                          "title":  "feat(chat): implement sidebar redesign â€” vertical layout, DM area with agents...",
                          "timestamp":  "2026-05-15T18:51:36Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ee493fe",
+                         "title":  "fix(discord): bypass GitHub API validation for localhost service-to-service c...",
+                         "timestamp":  "2026-05-15T19:18:33Z",
                          "environment":  "production"
                      }
                  ]
