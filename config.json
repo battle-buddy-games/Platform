@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://material-compatible-josh-participated.trycloudflare.com"
+                                  "address":  "https://titans-cohen-prepare-using.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -45,42 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-73844aa",
-                         "title":  "feat(chat): add mobile-responsive CSS for Chat dashboard tool",
-                         "timestamp":  "2026-05-05T00:27:27Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-877e26e",
-                         "title":  "feat(ci-logs): add direct file-based live log REST API endpoints",
-                         "timestamp":  "2026-05-05T01:27:03Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-2a0a040",
-                         "title":  "feat(chat): replace mobile sidebar stacking with overlay drawer pattern",
-                         "timestamp":  "2026-05-05T01:54:14Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-acff13c",
-                         "title":  "fix(platform): auto-detect LM Studio model and handle unreachable/no-model gr...",
-                         "timestamp":  "2026-05-05T02:28:36Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-1be2b60",
-                         "title":  "chore(webplatform): remove chrome-platform-linker chrome extension",
-                         "timestamp":  "2026-05-07T19:15:47Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-220c10f",
-                         "title":  "feat(webplatform): Buddy Electron delivery â€” studio gating + electron-updater...",
-                         "timestamp":  "2026-05-07T21:33:20Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b6f636e",
                          "title":  "ci(webplatform): own Buddy electron-build workflow (move from GameClient parent)",
                          "timestamp":  "2026-05-08T00:45:54Z",
@@ -102,6 +66,42 @@
                          "version":  "build-b36cf75",
                          "title":  "fix(tests): remove false recordCount\u003e0 assertion from activity sampling healt...",
                          "timestamp":  "2026-05-11T14:08:14Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8a7056f",
+                         "title":  "fix(ci): write config.json as UTF-8 without BOM (PS 5.1 -Encoding UTF8 emits ...",
+                         "timestamp":  "2026-05-12T23:04:02Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-50b7044",
+                         "title":  "fix(platform): require interactive LM Studio startup",
+                         "timestamp":  "2026-05-13T20:02:56Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0fe4435",
+                         "title":  "fix(chat): harden agents endpoint against EF and per-row failures",
+                         "timestamp":  "2026-05-13T22:46:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-dd4f5ad",
+                         "title":  "fix(webplatform): suppress EF Sqlite Autoincrement-roundtrip PendingModelChan...",
+                         "timestamp":  "2026-05-13T23:26:21Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c9e80a0",
+                         "title":  "fix: report discord agent cpu pressure",
+                         "timestamp":  "2026-05-15T00:32:37Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ef4496c",
+                         "title":  "fix(ci): rename skip_smoke -\u003e skip_preflight workflow dispatch input",
+                         "timestamp":  "2026-05-15T00:54:01Z",
                          "environment":  "production"
                      }
                  ]
