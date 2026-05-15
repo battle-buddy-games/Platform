@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-429bee9",
-                         "title":  "fix(ops): skip nginx access.log by default in PullPlatformLogs, add -IncludeA...",
-                         "timestamp":  "2026-05-15T01:33:35Z",
+                         "version":  "build-8a8cb81",
+                         "title":  "fix(ops): add 60s continuous post-switch readiness probe with auto-revert",
+                         "timestamp":  "2026-05-15T01:48:13Z",
                          "environment":  "production"
                      }
                  ]
