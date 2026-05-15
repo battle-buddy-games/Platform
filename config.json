@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8a7056f",
-                         "title":  "fix(ci): write config.json as UTF-8 without BOM (PS 5.1 -Encoding UTF8 emits ...",
-                         "timestamp":  "2026-05-12T23:04:02Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-50b7044",
                          "title":  "fix(platform): require interactive LM Studio startup",
                          "timestamp":  "2026-05-13T20:02:56Z",
@@ -88,7 +82,7 @@
                      },
                      {
                          "version":  "build-d615711",
-                         "title":  "feat(chat): implement sidebar redesign Ã¢â‚¬â€ vertical layout, DM area with agents...",
+                         "title":  "feat(chat): implement sidebar redesign ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â vertical layout, DM area with agents...",
                          "timestamp":  "2026-05-15T18:51:36Z",
                          "environment":  "production"
                      },
@@ -102,6 +96,12 @@
                          "version":  "build-767920b",
                          "title":  "feat(ci-notifications): add 1:1 Discord DM delivery for CI failure events",
                          "timestamp":  "2026-05-15T19:41:51Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2ca030e",
+                         "title":  "feat(ics): add ICS WebPlatform surface — DTO, widget, and detail page",
+                         "timestamp":  "2026-05-15T20:07:06Z",
                          "environment":  "production"
                      }
                  ]
