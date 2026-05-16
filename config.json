@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7e23422",
-                         "title":  "docs: cross-link with root CLAUDE.md changes",
-                         "timestamp":  "2026-05-16T02:45:54Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7ef2843",
                          "title":  "feat(buddy): add lan-first update feed resolution",
                          "timestamp":  "2026-05-16T03:06:46Z",
@@ -102,6 +96,12 @@
                          "version":  "build-b8fefcb",
                          "title":  "fix(buddy-android): redirect stdin from file for sdkmanager --licenses",
                          "timestamp":  "2026-05-16T20:36:57Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-17a0715",
+                         "title":  "feat(ci-notifications): include commit message in CI Discord channel and DM n...",
+                         "timestamp":  "2026-05-16T23:03:40Z",
                          "environment":  "production"
                      }
                  ]
