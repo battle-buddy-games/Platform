@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-1ea9c8c",
-                         "title":  "fix(buddy-upload): validate ghs_ workflow tokens via repos endpoint + PAT fal...",
-                         "timestamp":  "2026-05-16T18:57:28Z",
+                         "version":  "build-f40abc9",
+                         "title":  "fix(buddy-android): use standalone Android SDK, not Unity\u0027s AndroidPlayer",
+                         "timestamp":  "2026-05-16T19:13:45Z",
                          "environment":  "production"
                      }
                  ]
