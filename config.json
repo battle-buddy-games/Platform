@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d61c122",
-                         "title":  "feat(docs): integrate project and agent portal bindings",
-                         "timestamp":  "2026-05-16T01:50:52Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7e23422",
                          "title":  "docs: cross-link with root CLAUDE.md changes",
                          "timestamp":  "2026-05-16T02:45:54Z",
@@ -99,9 +93,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-f40abc9",
-                         "title":  "fix(buddy-android): use standalone Android SDK, not Unity\u0027s AndroidPlayer",
-                         "timestamp":  "2026-05-16T19:13:45Z",
+                         "version":  "build-1ea9c8c",
+                         "title":  "fix(buddy-upload): validate ghs_ workflow tokens via repos endpoint + PAT fal...",
+                         "timestamp":  "2026-05-16T18:57:28Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-b8fefcb",
+                         "title":  "fix(buddy-android): redirect stdin from file for sdkmanager --licenses",
+                         "timestamp":  "2026-05-16T20:36:57Z",
                          "environment":  "production"
                      }
                  ]
