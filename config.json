@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-c9e80a0",
-                         "title":  "fix: report discord agent cpu pressure",
-                         "timestamp":  "2026-05-15T00:32:37Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-ef4496c",
                          "title":  "fix(ci): rename skip_smoke -\u003e skip_preflight workflow dispatch input",
@@ -102,6 +96,12 @@
                          "version":  "build-7e23422",
                          "title":  "docs: cross-link with root CLAUDE.md changes",
                          "timestamp":  "2026-05-16T02:45:54Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7ef2843",
+                         "title":  "feat(buddy): add lan-first update feed resolution",
+                         "timestamp":  "2026-05-16T03:06:46Z",
                          "environment":  "production"
                      }
                  ]
