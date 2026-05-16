@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0d9d6b7",
-                         "title":  "fix(platform): backfill legacy EF migration history, surface migration failures",
-                         "timestamp":  "2026-05-15T20:59:27Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d61c122",
                          "title":  "feat(docs): integrate project and agent portal bindings",
                          "timestamp":  "2026-05-16T01:50:52Z",
@@ -102,6 +96,12 @@
                          "version":  "build-2ac88ff",
                          "title":  "fix(ci): drop unnecessary actions permission from buddy workflows",
                          "timestamp":  "2026-05-16T17:44:21Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1ea9c8c",
+                         "title":  "fix(buddy-upload): validate ghs_ workflow tokens via repos endpoint + PAT fal...",
+                         "timestamp":  "2026-05-16T18:57:28Z",
                          "environment":  "production"
                      }
                  ]
