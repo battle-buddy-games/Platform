@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-7ef2843",
-                         "title":  "feat(buddy): add lan-first update feed resolution",
-                         "timestamp":  "2026-05-16T03:06:46Z",
+                         "version":  "build-7fccd9f",
+                         "title":  "fix(buddy): load electron-store via dynamic import",
+                         "timestamp":  "2026-05-16T03:14:56Z",
                          "environment":  "production"
                      }
                  ]
