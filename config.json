@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0fe4435",
-                         "title":  "fix(chat): harden agents endpoint against EF and per-row failures",
-                         "timestamp":  "2026-05-13T22:46:08Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-dd4f5ad",
                          "title":  "fix(webplatform): suppress EF Sqlite Autoincrement-roundtrip PendingModelChan...",
                          "timestamp":  "2026-05-13T23:26:21Z",
@@ -76,7 +70,7 @@
                      },
                      {
                          "version":  "build-d615711",
-                         "title":  "feat(chat): implement sidebar redesign ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â vertical layout, DM area with agents...",
+                         "title":  "feat(chat): implement sidebar redesign ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â vertical layout, DM area with agents...",
                          "timestamp":  "2026-05-15T18:51:36Z",
                          "environment":  "production"
                      },
@@ -94,7 +88,7 @@
                      },
                      {
                          "version":  "build-2ca030e",
-                         "title":  "feat(ics): add ICS WebPlatform surface â€” DTO, widget, and detail page",
+                         "title":  "feat(ics): add ICS WebPlatform surface Ã¢â‚¬â€ DTO, widget, and detail page",
                          "timestamp":  "2026-05-15T20:07:06Z",
                          "environment":  "production"
                      },
@@ -102,6 +96,12 @@
                          "version":  "build-0d9d6b7",
                          "title":  "fix(platform): backfill legacy EF migration history, surface migration failures",
                          "timestamp":  "2026-05-15T20:59:27Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d61c122",
+                         "title":  "feat(docs): integrate project and agent portal bindings",
+                         "timestamp":  "2026-05-16T01:50:52Z",
                          "environment":  "production"
                      }
                  ]
