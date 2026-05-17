@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7ef2843",
-                         "title":  "feat(buddy): add lan-first update feed resolution",
-                         "timestamp":  "2026-05-16T03:06:46Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9467e64",
                          "title":  "fix(platform): create Documentation Platform tables on legacy databases",
                          "timestamp":  "2026-05-16T03:25:03Z",
@@ -102,6 +96,12 @@
                          "version":  "build-17a0715",
                          "title":  "feat(ci-notifications): include commit message in CI Discord channel and DM n...",
                          "timestamp":  "2026-05-16T23:03:40Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e3497be",
+                         "title":  "feat(platform): ci-artifact ingest + screenshot variants (phase 1)",
+                         "timestamp":  "2026-05-17T00:47:35Z",
                          "environment":  "production"
                      }
                  ]
