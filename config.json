@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-685244c",
-                         "title":  "revert(ci): remove buddy publish jobs from ci-cd.yml -- startup_failure",
-                         "timestamp":  "2026-05-16T03:58:47Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-5b217e9",
                          "title":  "fix(schema): backfill DocumentationEntries metadata columns via schema-ensure",
@@ -102,6 +96,12 @@
                          "version":  "build-e561405",
                          "title":  "Fix Buddy Android CI target framework",
                          "timestamp":  "2026-05-17T19:55:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f921fe8",
+                         "title":  "Fix Electron Buddy upload artifact filter",
+                         "timestamp":  "2026-05-17T20:39:05Z",
                          "environment":  "production"
                      }
                  ]
