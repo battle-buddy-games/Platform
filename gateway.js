@@ -371,6 +371,74 @@ function attachSignInListeners() {
 
 // Make handleSignIn globally accessible for onclick handlers
 // Define function and immediately attach to window for inline handlers
+const BUDDY_APP_RETURN_STATE_MARKER = 'buddyAppReturn';
+
+function getBuddyAppHost() {
+  if (window.platform && typeof window.platform.openExternalAuth === 'function') {
+    return 'electron';
+  }
+
+  if (window.BuddyAndroid && typeof window.BuddyAndroid.openExternalAuth === 'function') {
+    return 'android';
+  }
+
+  return null;
+}
+
+function appendBuddyAppReturnState(state, host) {
+  if (!host || !state || state.includes(`${BUDDY_APP_RETURN_STATE_MARKER}:`)) {
+    return state;
+  }
+
+  return `${state}:${BUDDY_APP_RETURN_STATE_MARKER}:${host}`;
+}
+
+function shouldUseExternalBrowserForProvider(provider) {
+  // Google blocks OAuth in embedded WebViews. Launch it in the user's browser
+  // and return to Buddy via buddy://auth-callback after the callback page
+  // exchanges the authorization code.
+  return provider === 'google' && !!getBuddyAppHost();
+}
+
+function openOAuthUrl(provider, authUrl, callbackUrl, additionalInfo) {
+  if (!shouldUseExternalBrowserForProvider(provider)) {
+    showOAuthSignInCountdown(provider, authUrl, callbackUrl, additionalInfo);
+    return;
+  }
+
+  const host = getBuddyAppHost();
+  const providerName = provider.charAt(0).toUpperCase() + provider.slice(1);
+  const container = document.querySelector('.sign-in-container');
+  if (container) {
+    container.innerHTML = `
+      <div class="spinner"></div>
+      <h1>Continue in Browser</h1>
+      <p class="subtitle">${providerName} sign-in will open in your browser and return to Buddy automatically.</p>
+      <div style="margin-top: 24px;">
+        <button class="modal-button primary" onclick="openOAuthUrl('${provider}', '${authUrl.replace(/'/g, "\\'")}', '${callbackUrl.replace(/'/g, "\\'")}', {})" style="width: 100%;">
+          Open Browser
+        </button>
+        <button class="modal-button secondary" onclick="restoreSignInForm()" style="width: 100%; margin-top: 8px;">
+          Cancel
+        </button>
+      </div>
+    `;
+  }
+
+  try {
+    if (host === 'electron') {
+      window.platform.openExternalAuth(authUrl);
+    } else if (host === 'android' && window.BuddyAndroid && typeof window.BuddyAndroid.openExternalAuth === 'function') {
+      window.BuddyAndroid.openExternalAuth(authUrl);
+    }
+  } catch (e) {
+    console.warn('Failed to open external auth browser, falling back to embedded navigation:', e);
+    showOAuthSignInCountdown(provider, authUrl, callbackUrl, additionalInfo);
+  }
+}
+
+window.openOAuthUrl = openOAuthUrl;
+
 window.handleSignIn = function handleSignIn(provider) {
   console.log('handleSignIn called with provider:', provider);
   if (typeof trackGatewayEvent === 'function') trackGatewayEvent('sign_in_click', { provider: provider });
@@ -666,6 +734,7 @@ window.handleSignIn = function handleSignIn(provider) {
       state = `createToken:${state}`;
       console.log('CreateToken mode enabled for Google - state includes createToken indicator:', state);
     }
+    state = appendBuddyAppReturnState(state, getBuddyAppHost());
 
     // Build callback URL - use the exact redirectUri from config.json
     let callbackUrl = CONFIG.google.redirectUri;
@@ -769,7 +838,7 @@ window.handleSignIn = function handleSignIn(provider) {
     console.log('ReturnUrl:', callbackUrl);
     console.log('========================');
     
-    showOAuthSignInCountdown('google', googleAuthUrl, callbackUrl, {
+    openOAuthUrl('google', googleAuthUrl, callbackUrl, {
       scope: scope
     });
     return; // Explicitly return to prevent fallthrough

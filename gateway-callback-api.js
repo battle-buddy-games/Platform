@@ -26,6 +26,17 @@ let authState = {
   linkReturnUrl: null
 };
 
+const BUDDY_APP_RETURN_STATE_MARKER = 'buddyAppReturn';
+
+function getBuddyAppReturnHost() {
+  if (!authState.state || !authState.state.includes(`${BUDDY_APP_RETURN_STATE_MARKER}:`)) {
+    return null;
+  }
+
+  const match = authState.state.match(/(?:^|:)buddyAppReturn:([a-zA-Z0-9_-]+)/);
+  return match ? match[1] : null;
+}
+
 // Initialize callback page
 async function initCallbackPage(provider) {
   authState.provider = provider;
@@ -601,6 +612,18 @@ async function performRedirect(token) {
 }
 
 function buildRedirectUrl(token) {
+  const buddyAppReturnHost = getBuddyAppReturnHost();
+  if (buddyAppReturnHost) {
+    const returnUrl = getReturnUrl();
+    const callbackUrl = new URL('buddy://auth-callback');
+    callbackUrl.searchParams.set('token', token);
+    callbackUrl.searchParams.set('backendUrl', authState.backendUrl || '');
+    callbackUrl.searchParams.set('returnUrl', returnUrl);
+    callbackUrl.searchParams.set('source', buddyAppReturnHost);
+    console.log('[CallbackAPI] Buddy app return requested, redirecting via protocol:', callbackUrl.toString());
+    return callbackUrl.toString();
+  }
+
   // Check if this is link mode - link mode should always go through the backend
   // to set the session cookie and then redirect back to the profile page.
   // CRITICAL: Use authState (set before showSuccess cleared localStorage) as primary source.
