@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-5b217e9",
-                         "title":  "fix(schema): backfill DocumentationEntries metadata columns via schema-ensure",
-                         "timestamp":  "2026-05-16T04:16:08Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-45e8416",
                          "title":  "fix(ci-notification): treat skipped/neutral/null workflow conclusions as non-...",
@@ -102,6 +96,12 @@
                          "version":  "build-f921fe8",
                          "title":  "Fix Electron Buddy upload artifact filter",
                          "timestamp":  "2026-05-17T20:39:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-16577e1",
+                         "title":  "fix(ops): refuse to start Unity Hub from Session 0 (task #63)",
+                         "timestamp":  "2026-05-18T20:41:22Z",
                          "environment":  "production"
                      }
                  ]
