@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://titans-cohen-prepare-using.trycloudflare.com"
+                                  "address":  "https://variety-senator-gathered-love.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-c0ec321",
-                         "title":  "Clean stale Electron Buddy build artifacts",
-                         "timestamp":  "2026-05-17T21:08:02Z",
+                         "version":  "build-f921fe8",
+                         "title":  "Fix Electron Buddy upload artifact filter",
+                         "timestamp":  "2026-05-17T20:39:05Z",
                          "environment":  "production"
                      }
                  ]
