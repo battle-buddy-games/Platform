@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-45e8416",
-                         "title":  "fix(ci-notification): treat skipped/neutral/null workflow conclusions as non-...",
-                         "timestamp":  "2026-05-16T06:26:05Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-551ec14",
                          "title":  "feat(platform): bind Proposals view to live data and ensure section parity",
                          "timestamp":  "2026-05-16T16:37:48Z",
@@ -102,6 +96,12 @@
                          "version":  "build-16577e1",
                          "title":  "fix(ops): refuse to start Unity Hub from Session 0 (task #63)",
                          "timestamp":  "2026-05-18T20:41:22Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7e98c08",
+                         "title":  "fix(ops): suppress runner watchdog restart while job is in flight",
+                         "timestamp":  "2026-05-19T05:24:21Z",
                          "environment":  "production"
                      }
                  ]
