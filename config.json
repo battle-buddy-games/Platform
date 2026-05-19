@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1ea9c8c",
-                         "title":  "fix(buddy-upload): validate ghs_ workflow tokens via repos endpoint + PAT fal...",
-                         "timestamp":  "2026-05-16T18:57:28Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b8fefcb",
                          "title":  "fix(buddy-android): redirect stdin from file for sdkmanager --licenses",
                          "timestamp":  "2026-05-16T20:36:57Z",
@@ -102,6 +96,12 @@
                          "version":  "build-b3910c4",
                          "title":  "fix(deploy): stamp DEPLOYMENT_SHA env var so staleness alert reports commit",
                          "timestamp":  "2026-05-19T14:45:39Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-fee7bea",
+                         "title":  "fix(platform): interim DDL backfill for missing migration tables (CiScreensho...",
+                         "timestamp":  "2026-05-19T15:00:59Z",
                          "environment":  "production"
                      }
                  ]
