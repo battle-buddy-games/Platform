@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2ac88ff",
-                         "title":  "fix(ci): drop unnecessary actions permission from buddy workflows",
-                         "timestamp":  "2026-05-16T17:44:21Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1ea9c8c",
                          "title":  "fix(buddy-upload): validate ghs_ workflow tokens via repos endpoint + PAT fal...",
                          "timestamp":  "2026-05-16T18:57:28Z",
@@ -102,6 +96,12 @@
                          "version":  "build-d5959b0",
                          "title":  "feat(platform): add deploy-staleness startup alert",
                          "timestamp":  "2026-05-19T13:51:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-b3910c4",
+                         "title":  "fix(deploy): stamp DEPLOYMENT_SHA env var so staleness alert reports commit",
+                         "timestamp":  "2026-05-19T14:45:39Z",
                          "environment":  "production"
                      }
                  ]
