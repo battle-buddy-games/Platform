@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-b8fefcb",
-                         "title":  "fix(buddy-android): redirect stdin from file for sdkmanager --licenses",
-                         "timestamp":  "2026-05-16T20:36:57Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-17a0715",
                          "title":  "feat(ci-notifications): include commit message in CI Discord channel and DM n...",
@@ -102,6 +96,12 @@
                          "version":  "build-fee7bea",
                          "title":  "fix(platform): interim DDL backfill for missing migration tables (CiScreensho...",
                          "timestamp":  "2026-05-19T15:00:59Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-cb8fc50",
+                         "title":  "feat(ci-logs): document service-to-service auth on live-logs endpoints",
+                         "timestamp":  "2026-05-19T17:24:09Z",
                          "environment":  "production"
                      }
                  ]
