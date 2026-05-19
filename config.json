@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-17a0715",
-                         "title":  "feat(ci-notifications): include commit message in CI Discord channel and DM n...",
-                         "timestamp":  "2026-05-16T23:03:40Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-e3497be",
                          "title":  "feat(platform): ci-artifact ingest + screenshot variants (phase 1)",
@@ -102,6 +96,12 @@
                          "version":  "build-cb8fc50",
                          "title":  "feat(ci-logs): document service-to-service auth on live-logs endpoints",
                          "timestamp":  "2026-05-19T17:24:09Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-83827a1",
+                         "title":  "feat(ci-notification): enrich Discord channel ping with unified triage block",
+                         "timestamp":  "2026-05-19T19:12:47Z",
                          "environment":  "production"
                      }
                  ]
