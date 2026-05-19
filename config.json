@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-551ec14",
-                         "title":  "feat(platform): bind Proposals view to live data and ensure section parity",
-                         "timestamp":  "2026-05-16T16:37:48Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2ac88ff",
                          "title":  "fix(ci): drop unnecessary actions permission from buddy workflows",
                          "timestamp":  "2026-05-16T17:44:21Z",
@@ -102,6 +96,12 @@
                          "version":  "build-7e98c08",
                          "title":  "fix(ops): suppress runner watchdog restart while job is in flight",
                          "timestamp":  "2026-05-19T05:24:21Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d5959b0",
+                         "title":  "feat(platform): add deploy-staleness startup alert",
+                         "timestamp":  "2026-05-19T13:51:45Z",
                          "environment":  "production"
                      }
                  ]
