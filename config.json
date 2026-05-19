@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e3497be",
-                         "title":  "feat(platform): ci-artifact ingest + screenshot variants (phase 1)",
-                         "timestamp":  "2026-05-17T00:47:35Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e561405",
                          "title":  "Fix Buddy Android CI target framework",
                          "timestamp":  "2026-05-17T19:55:45Z",
@@ -102,6 +96,12 @@
                          "version":  "build-83827a1",
                          "title":  "feat(ci-notification): enrich Discord channel ping with unified triage block",
                          "timestamp":  "2026-05-19T19:12:47Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3c02553",
+                         "title":  "docs(claude): trim CLAUDE.md frontmatter and collapse verbose tables",
+                         "timestamp":  "2026-05-19T19:32:59Z",
                          "environment":  "production"
                      }
                  ]
