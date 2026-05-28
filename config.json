@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-e6868a3",
-                         "title":  "fix(ci): migrate same-repo PAT_GITHUB call sites to github.token",
-                         "timestamp":  "2026-05-20T03:06:30Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-9c697e4",
                          "title":  "fix(ci): use App-token broker for cross-repo battle-buddy-games checkouts",
@@ -102,6 +96,12 @@
                          "version":  "build-0bab15c",
                          "title":  "fix(ci): correct cross-repo GitHub App secrets for gh-pages tunnel propagatio...",
                          "timestamp":  "2026-05-28T15:33:58Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ba0413c",
+                         "title":  "feat(ci): hourly portal synthetic check + consecutive-failure Discord alertin...",
+                         "timestamp":  "2026-05-28T16:49:30Z",
                          "environment":  "production"
                      }
                  ]
