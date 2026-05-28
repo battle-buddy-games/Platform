@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://variety-senator-gathered-love.trycloudflare.com"
+                                  "address":  "https://administrative-freeware-particles-cgi.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -45,63 +45,63 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e561405",
-                         "title":  "Fix Buddy Android CI target framework",
-                         "timestamp":  "2026-05-17T19:55:45Z",
+                         "version":  "build-e6868a3",
+                         "title":  "fix(ci): migrate same-repo PAT_GITHUB call sites to github.token",
+                         "timestamp":  "2026-05-20T03:06:30Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-f921fe8",
-                         "title":  "Fix Electron Buddy upload artifact filter",
-                         "timestamp":  "2026-05-17T20:39:05Z",
+                         "version":  "build-9c697e4",
+                         "title":  "fix(ci): use App-token broker for cross-repo battle-buddy-games checkouts",
+                         "timestamp":  "2026-05-20T13:53:05Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-16577e1",
-                         "title":  "fix(ops): refuse to start Unity Hub from Session 0 (task #63)",
-                         "timestamp":  "2026-05-18T20:41:22Z",
+                         "version":  "build-b4af573",
+                         "title":  "fix(platform): validate ghs_ workflow tokens via /repos endpoint, not /user",
+                         "timestamp":  "2026-05-20T17:40:15Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-7e98c08",
-                         "title":  "fix(ops): suppress runner watchdog restart while job is in flight",
-                         "timestamp":  "2026-05-19T05:24:21Z",
+                         "version":  "build-9fd466f",
+                         "title":  "feat(runners): add unity-shell-4/5/6 to runner-configs",
+                         "timestamp":  "2026-05-21T00:56:03Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-d5959b0",
-                         "title":  "feat(platform): add deploy-staleness startup alert",
-                         "timestamp":  "2026-05-19T13:51:45Z",
+                         "version":  "build-e41ed24",
+                         "title":  "Add Dash UI theme adapter",
+                         "timestamp":  "2026-05-21T18:22:59Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-b3910c4",
-                         "title":  "fix(deploy): stamp DEPLOYMENT_SHA env var so staleness alert reports commit",
-                         "timestamp":  "2026-05-19T14:45:39Z",
+                         "version":  "build-0493598",
+                         "title":  "fix(ci): continue-on-error on Validate Upload step to unblock deploys (#68)",
+                         "timestamp":  "2026-05-27T21:36:30Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-fee7bea",
-                         "title":  "fix(platform): interim DDL backfill for missing migration tables (CiScreensho...",
-                         "timestamp":  "2026-05-19T15:00:59Z",
+                         "version":  "build-b2794d5",
+                         "title":  "feat(ci-screenshots): Discord embed deep-links to filtered dashboard gallery ...",
+                         "timestamp":  "2026-05-27T23:39:28Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-cb8fc50",
-                         "title":  "feat(ci-logs): document service-to-service auth on live-logs endpoints",
-                         "timestamp":  "2026-05-19T17:24:09Z",
+                         "version":  "build-c93ceec",
+                         "title":  "fix(health): /healthcheck returns application/json per documented contract (#...",
+                         "timestamp":  "2026-05-28T00:35:35Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-83827a1",
-                         "title":  "feat(ci-notification): enrich Discord channel ping with unified triage block",
-                         "timestamp":  "2026-05-19T19:12:47Z",
+                         "version":  "build-42c1934",
+                         "title":  "fix(ci-screenshots): route Discord gallery link via GitHub Pages portal",
+                         "timestamp":  "2026-05-28T00:56:35Z",
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-3c02553",
-                         "title":  "docs(claude): trim CLAUDE.md frontmatter and collapse verbose tables",
-                         "timestamp":  "2026-05-19T19:32:59Z",
+                         "version":  "build-0bab15c",
+                         "title":  "fix(ci): correct cross-repo GitHub App secrets for gh-pages tunnel propagatio...",
+                         "timestamp":  "2026-05-28T15:33:58Z",
                          "environment":  "production"
                      }
                  ]
