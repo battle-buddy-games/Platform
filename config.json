@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-9c697e4",
-                         "title":  "fix(ci): use App-token broker for cross-repo battle-buddy-games checkouts",
-                         "timestamp":  "2026-05-20T13:53:05Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-b4af573",
                          "title":  "fix(platform): validate ghs_ workflow tokens via /repos endpoint, not /user",
@@ -102,6 +96,12 @@
                          "version":  "build-ba0413c",
                          "title":  "feat(ci): hourly portal synthetic check + consecutive-failure Discord alertin...",
                          "timestamp":  "2026-05-28T16:49:30Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-231cb83",
+                         "title":  "chore(agent): rename tick-quarter.yml reference to tick-fifteen.yml in health...",
+                         "timestamp":  "2026-05-28T23:35:05Z",
                          "environment":  "production"
                      }
                  ]
