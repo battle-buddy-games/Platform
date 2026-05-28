@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-7378ca1",
-                         "title":  "fix(ci): strip UTF-8 BOM when SdkHub reads published tunnel config (#17)",
-                         "timestamp":  "2026-05-28T17:01:49Z",
+                         "version":  "build-ba0413c",
+                         "title":  "feat(ci): hourly portal synthetic check + consecutive-failure Discord alertin...",
+                         "timestamp":  "2026-05-28T16:49:30Z",
                          "environment":  "production"
                      }
                  ]
