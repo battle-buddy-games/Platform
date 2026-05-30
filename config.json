@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-546df08",
-                         "title":  "feat(dashboard-github-projects): add CI Triage and Investigations sub-tabs (d...",
-                         "timestamp":  "2026-05-30T20:42:11Z",
+                         "version":  "build-64d8b35",
+                         "title":  "docs(claude.md): codify dashboard tool creation policy -- extend existing, do...",
+                         "timestamp":  "2026-05-30T20:11:51Z",
                          "environment":  "production"
                      }
                  ]
