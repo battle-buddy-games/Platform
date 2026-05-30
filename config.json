@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-9fd466f",
-                         "title":  "feat(runners): add unity-shell-4/5/6 to runner-configs",
-                         "timestamp":  "2026-05-21T00:56:03Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-e41ed24",
                          "title":  "Add Dash UI theme adapter",
@@ -102,6 +96,12 @@
                          "version":  "build-7181e52",
                          "title":  "chore(ci): rename Tick Fifteen workflow to Tick Quarter Hour",
                          "timestamp":  "2026-05-29T12:16:17Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-64d8b35",
+                         "title":  "docs(claude.md): codify dashboard tool creation policy -- extend existing, do...",
+                         "timestamp":  "2026-05-30T20:11:51Z",
                          "environment":  "production"
                      }
                  ]
