@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-b2794d5",
-                         "title":  "feat(ci-screenshots): Discord embed deep-links to filtered dashboard gallery ...",
-                         "timestamp":  "2026-05-27T23:39:28Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c93ceec",
                          "title":  "fix(health): /healthcheck returns application/json per documented contract (#...",
                          "timestamp":  "2026-05-28T00:35:35Z",
@@ -102,6 +96,12 @@
                          "version":  "build-14d71ee",
                          "title":  "fix(ci): make test-result artifact uploads non-fatal when storage quota is hit",
                          "timestamp":  "2026-05-31T03:28:00Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9d3027c",
+                         "title":  "fix(platform-scripts): InstallGitHubRunnerServices gate checks .runner/.crede...",
+                         "timestamp":  "2026-05-31T16:00:41Z",
                          "environment":  "production"
                      }
                  ]
