@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c93ceec",
-                         "title":  "fix(health): /healthcheck returns application/json per documented contract (#...",
-                         "timestamp":  "2026-05-28T00:35:35Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-42c1934",
                          "title":  "fix(ci-screenshots): route Discord gallery link via GitHub Pages portal",
                          "timestamp":  "2026-05-28T00:56:35Z",
@@ -99,9 +93,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-6aa279c",
-                         "title":  "fix(platform-scripts): route CheckGitHubRunnerHealth through broker token cha...",
-                         "timestamp":  "2026-05-31T16:52:31Z",
+                         "version":  "build-9d3027c",
+                         "title":  "fix(platform-scripts): InstallGitHubRunnerServices gate checks .runner/.crede...",
+                         "timestamp":  "2026-05-31T16:00:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6d2e487",
+                         "title":  "fix(platform): inject IGitHubPatProvider into _Projects_ClientPackages.cshtml...",
+                         "timestamp":  "2026-05-31T19:16:08Z",
                          "environment":  "production"
                      }
                  ]
