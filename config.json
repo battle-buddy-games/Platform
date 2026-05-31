@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-52ae85b",
-                         "title":  "fix(platform): remove IActiveSlotOnly from GitHubWebhookRegistrationService -...",
-                         "timestamp":  "2026-05-31T02:20:25Z",
+                         "version":  "build-83fefb7",
+                         "title":  "fix(agent-discord): make DiscordClient accessor live-gated on ConnectionState",
+                         "timestamp":  "2026-05-31T02:57:03Z",
                          "environment":  "production"
                      }
                  ]
