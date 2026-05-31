@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0493598",
-                         "title":  "fix(ci): continue-on-error on Validate Upload step to unblock deploys (#68)",
-                         "timestamp":  "2026-05-27T21:36:30Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b2794d5",
                          "title":  "feat(ci-screenshots): Discord embed deep-links to filtered dashboard gallery ...",
                          "timestamp":  "2026-05-27T23:39:28Z",
@@ -99,9 +93,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-83fefb7",
-                         "title":  "fix(agent-discord): make DiscordClient accessor live-gated on ConnectionState",
-                         "timestamp":  "2026-05-31T02:57:03Z",
+                         "version":  "build-52ae85b",
+                         "title":  "fix(platform): remove IActiveSlotOnly from GitHubWebhookRegistrationService -...",
+                         "timestamp":  "2026-05-31T02:20:25Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-14d71ee",
+                         "title":  "fix(ci): make test-result artifact uploads non-fatal when storage quota is hit",
+                         "timestamp":  "2026-05-31T03:28:00Z",
                          "environment":  "production"
                      }
                  ]
