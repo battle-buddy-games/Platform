@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-9d3027c",
-                         "title":  "fix(platform-scripts): InstallGitHubRunnerServices gate checks .runner/.crede...",
-                         "timestamp":  "2026-05-31T16:00:41Z",
+                         "version":  "build-6aa279c",
+                         "title":  "fix(platform-scripts): route CheckGitHubRunnerHealth through broker token cha...",
+                         "timestamp":  "2026-05-31T16:52:31Z",
                          "environment":  "production"
                      }
                  ]
