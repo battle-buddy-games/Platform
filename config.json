@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-e41ed24",
-                         "title":  "Add Dash UI theme adapter",
-                         "timestamp":  "2026-05-21T18:22:59Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-0493598",
                          "title":  "fix(ci): continue-on-error on Validate Upload step to unblock deploys (#68)",
@@ -102,6 +96,12 @@
                          "version":  "build-64d8b35",
                          "title":  "docs(claude.md): codify dashboard tool creation policy -- extend existing, do...",
                          "timestamp":  "2026-05-30T20:11:51Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-52ae85b",
+                         "title":  "fix(platform): remove IActiveSlotOnly from GitHubWebhookRegistrationService -...",
+                         "timestamp":  "2026-05-31T02:20:25Z",
                          "environment":  "production"
                      }
                  ]
