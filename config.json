@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0bab15c",
-                         "title":  "fix(ci): correct cross-repo GitHub App secrets for gh-pages tunnel propagatio...",
-                         "timestamp":  "2026-05-28T15:33:58Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ba0413c",
                          "title":  "feat(ci): hourly portal synthetic check + consecutive-failure Discord alertin...",
                          "timestamp":  "2026-05-28T16:49:30Z",
@@ -99,9 +93,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-62c581d",
-                         "title":  "feat(ci): run-SHA freshness gate annotates superseded auto-investigate dispat...",
-                         "timestamp":  "2026-06-02T03:41:15Z",
+                         "version":  "build-ee543f5",
+                         "title":  "fix(runner): publish broker-probe wrapper to deploy-stable ProgramData root (...",
+                         "timestamp":  "2026-06-02T03:15:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-961caaf",
+                         "title":  "fix(sdk-artifacts): serve-time zip guard + live on-demand dispatch (Defect B ...",
+                         "timestamp":  "2026-06-02T05:51:24Z",
                          "environment":  "production"
                      }
                  ]
