@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-7fe84bf",
-                         "title":  "fix(ci-notify): suppress stale auto-trigger investigation dispatch (Task #506)",
-                         "timestamp":  "2026-06-02T06:14:49Z",
+                         "version":  "build-3ea4122",
+                         "title":  "fix(sdk-artifacts): add on-demand 404 re-trigger loop-guard (Task #508)",
+                         "timestamp":  "2026-06-02T06:32:27Z",
                          "environment":  "production"
                      }
                  ]
