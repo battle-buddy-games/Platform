@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7181e52",
-                         "title":  "chore(ci): rename Tick Fifteen workflow to Tick Quarter Hour",
-                         "timestamp":  "2026-05-29T12:16:17Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-64d8b35",
                          "title":  "docs(claude.md): codify dashboard tool creation policy -- extend existing, do...",
                          "timestamp":  "2026-05-30T20:11:51Z",
@@ -102,6 +96,12 @@
                          "version":  "build-692947a",
                          "title":  "feat(platform): add MermaidGraphModel for shared Mermaid partial (Task #45 A1)",
                          "timestamp":  "2026-06-02T10:54:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4a8d1e1",
+                         "title":  "feat(platform): Source\u003eModules profile dependency graph sourced from CI run s...",
+                         "timestamp":  "2026-06-02T11:05:32Z",
                          "environment":  "production"
                      }
                  ]
