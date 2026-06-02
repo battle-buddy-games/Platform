@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-14d71ee",
-                         "title":  "fix(ci): make test-result artifact uploads non-fatal when storage quota is hit",
-                         "timestamp":  "2026-05-31T03:28:00Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9d3027c",
                          "title":  "fix(platform-scripts): InstallGitHubRunnerServices gate checks .runner/.crede...",
                          "timestamp":  "2026-05-31T16:00:41Z",
@@ -99,9 +93,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-e2e56fc",
-                         "title":  "chore(ci): paths-ignore the pipeline-shape graph script in both push and PR t...",
-                         "timestamp":  "2026-06-02T17:42:51Z",
+                         "version":  "build-18f664e",
+                         "title":  "fix(ci): harden Buddy ToolDownloads upload -- idempotent 409 + transient-curl...",
+                         "timestamp":  "2026-06-02T17:31:17Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-96489a4",
+                         "title":  "fix(ci): remove all actions/upload-artifact step uses (Task #594, closes #211)",
+                         "timestamp":  "2026-06-02T21:33:30Z",
                          "environment":  "production"
                      }
                  ]
