@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-64d8b35",
-                         "title":  "docs(claude.md): codify dashboard tool creation policy -- extend existing, do...",
-                         "timestamp":  "2026-05-30T20:11:51Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-52ae85b",
                          "title":  "fix(platform): remove IActiveSlotOnly from GitHubWebhookRegistrationService -...",
                          "timestamp":  "2026-05-31T02:20:25Z",
@@ -102,6 +96,12 @@
                          "version":  "build-4a8d1e1",
                          "title":  "feat(platform): Source\u003eModules profile dependency graph sourced from CI run s...",
                          "timestamp":  "2026-06-02T11:05:32Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c0ee460",
+                         "title":  "feat(ci): add pipeline-shape mermaid generator + wire into 7 workflows",
+                         "timestamp":  "2026-06-02T16:21:11Z",
                          "environment":  "production"
                      }
                  ]
