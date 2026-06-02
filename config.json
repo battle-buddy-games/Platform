@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-18f664e",
-                         "title":  "fix(ci): harden Buddy ToolDownloads upload -- idempotent 409 + transient-curl...",
-                         "timestamp":  "2026-06-02T17:31:17Z",
+                         "version":  "build-e2e56fc",
+                         "title":  "chore(ci): paths-ignore the pipeline-shape graph script in both push and PR t...",
+                         "timestamp":  "2026-06-02T17:42:51Z",
                          "environment":  "production"
                      }
                  ]
