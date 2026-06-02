@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-231cb83",
-                         "title":  "chore(agent): rename tick-quarter.yml reference to tick-fifteen.yml in health...",
-                         "timestamp":  "2026-05-28T23:35:05Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-7181e52",
                          "title":  "chore(ci): rename Tick Fifteen workflow to Tick Quarter Hour",
@@ -102,6 +96,12 @@
                          "version":  "build-7fe84bf",
                          "title":  "fix(ci-notify): suppress stale auto-trigger investigation dispatch (Task #506)",
                          "timestamp":  "2026-06-02T06:14:49Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-692947a",
+                         "title":  "feat(platform): add MermaidGraphModel for shared Mermaid partial (Task #45 A1)",
+                         "timestamp":  "2026-06-02T10:54:41Z",
                          "environment":  "production"
                      }
                  ]
