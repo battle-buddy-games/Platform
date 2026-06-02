@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-52ae85b",
-                         "title":  "fix(platform): remove IActiveSlotOnly from GitHubWebhookRegistrationService -...",
-                         "timestamp":  "2026-05-31T02:20:25Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-14d71ee",
                          "title":  "fix(ci): make test-result artifact uploads non-fatal when storage quota is hit",
                          "timestamp":  "2026-05-31T03:28:00Z",
@@ -102,6 +96,12 @@
                          "version":  "build-c0ee460",
                          "title":  "feat(ci): add pipeline-shape mermaid generator + wire into 7 workflows",
                          "timestamp":  "2026-06-02T16:21:11Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-18f664e",
+                         "title":  "fix(ci): harden Buddy ToolDownloads upload -- idempotent 409 + transient-curl...",
+                         "timestamp":  "2026-06-02T17:31:17Z",
                          "environment":  "production"
                      }
                  ]
