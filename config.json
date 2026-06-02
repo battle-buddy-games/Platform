@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-ee543f5",
-                         "title":  "fix(runner): publish broker-probe wrapper to deploy-stable ProgramData root (...",
-                         "timestamp":  "2026-06-02T03:15:20Z",
+                         "version":  "build-62c581d",
+                         "title":  "feat(ci): run-SHA freshness gate annotates superseded auto-investigate dispat...",
+                         "timestamp":  "2026-06-02T03:41:15Z",
                          "environment":  "production"
                      }
                  ]
