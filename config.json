@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9d3027c",
-                         "title":  "fix(platform-scripts): InstallGitHubRunnerServices gate checks .runner/.crede...",
-                         "timestamp":  "2026-05-31T16:00:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-6d2e487",
                          "title":  "fix(platform): inject IGitHubPatProvider into _Projects_ClientPackages.cshtml...",
                          "timestamp":  "2026-05-31T19:16:08Z",
@@ -102,6 +96,12 @@
                          "version":  "build-96489a4",
                          "title":  "fix(ci): remove all actions/upload-artifact step uses (Task #594, closes #211)",
                          "timestamp":  "2026-06-02T21:33:30Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e1a874b",
+                         "title":  "fix(runners): explicit NSSM ObjectName on install (Task #597)",
+                         "timestamp":  "2026-06-02T22:03:13Z",
                          "environment":  "production"
                      }
                  ]
