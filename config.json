@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-ee543f5",
-                         "title":  "fix(runner): publish broker-probe wrapper to deploy-stable ProgramData root (...",
-                         "timestamp":  "2026-06-02T03:15:20Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-961caaf",
                          "title":  "fix(sdk-artifacts): serve-time zip guard + live on-demand dispatch (Defect B ...",
@@ -102,6 +96,12 @@
                          "version":  "build-0ace863",
                          "title":  "feat(runners): NSSM ObjectName sibling-drift detection (Task #354 follow-on)",
                          "timestamp":  "2026-06-03T01:40:17Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0c8bd99",
+                         "title":  "fix(frontend): disable text clipping on per-product summary graph nodes (owne...",
+                         "timestamp":  "2026-06-03T14:49:39Z",
                          "environment":  "production"
                      }
                  ]
