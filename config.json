@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-7fe84bf",
-                         "title":  "fix(ci-notify): suppress stale auto-trigger investigation dispatch (Task #506)",
-                         "timestamp":  "2026-06-02T06:14:49Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-692947a",
                          "title":  "feat(platform): add MermaidGraphModel for shared Mermaid partial (Task #45 A1)",
@@ -102,6 +96,12 @@
                          "version":  "build-bf8e9cd",
                          "title":  "chore(dashboards): drop shell-multiplayer from project build filters",
                          "timestamp":  "2026-06-04T03:12:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-70c6014",
+                         "title":  "fix(ci): exclude GameClient from workflow auto-retry",
+                         "timestamp":  "2026-06-05T10:41:02Z",
                          "environment":  "production"
                      }
                  ]
