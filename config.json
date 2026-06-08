@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-96489a4",
-                         "title":  "fix(ci): remove all actions/upload-artifact step uses (Task #594, closes #211)",
-                         "timestamp":  "2026-06-02T21:33:30Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e1a874b",
                          "title":  "fix(runners): explicit NSSM ObjectName on install (Task #597)",
                          "timestamp":  "2026-06-02T22:03:13Z",
@@ -102,6 +96,12 @@
                          "version":  "build-4016820",
                          "title":  "fix(buddy): append preferToken=true to loadURL when GH CLI token available",
                          "timestamp":  "2026-06-08T15:27:21Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-cd02e6b",
+                         "title":  "fix(buddy): use /pr-auth/signin endpoint for GH CLI auto sign-in",
+                         "timestamp":  "2026-06-08T16:59:22Z",
                          "environment":  "production"
                      }
                  ]
