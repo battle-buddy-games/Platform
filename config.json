@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-bf8e9cd",
-                         "title":  "chore(dashboards): drop shell-multiplayer from project build filters",
-                         "timestamp":  "2026-06-04T03:12:20Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-70c6014",
                          "title":  "fix(ci): exclude GameClient from workflow auto-retry",
@@ -102,6 +96,12 @@
                          "version":  "build-5652bbf",
                          "title":  "fix(navbar): populate jobs-summary endpoint with real GitHub Actions + comman...",
                          "timestamp":  "2026-06-08T18:49:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e8cc5b1",
+                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
+                         "timestamp":  "2026-06-08T19:46:37Z",
                          "environment":  "production"
                      }
                  ]
