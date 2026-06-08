@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4016820",
-                         "title":  "fix(buddy): append preferToken=true to loadURL when GH CLI token available",
-                         "timestamp":  "2026-06-08T15:27:21Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-cd02e6b",
                          "title":  "fix(buddy): use /pr-auth/signin endpoint for GH CLI auto sign-in",
                          "timestamp":  "2026-06-08T16:59:22Z",
@@ -102,6 +96,12 @@
                          "version":  "build-f3f6764",
                          "title":  "feat(platform): add detailed logging to signin endpoint for diagnostics",
                          "timestamp":  "2026-06-08T21:56:00Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-da8ff72",
+                         "title":  "fix(auth): remove orphaned code and fix duplicate variable names",
+                         "timestamp":  "2026-06-08T22:45:19Z",
                          "environment":  "production"
                      }
                  ]
