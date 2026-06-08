@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1d21d6e",
-                         "title":  "fix(ci): include failure analysis in investigation dispatch",
-                         "timestamp":  "2026-06-05T11:08:37Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-652839a",
                          "title":  "fix(platform): route broker consumers through webplatform router",
                          "timestamp":  "2026-06-05T22:12:14Z",
@@ -99,9 +93,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-51befc5",
-                         "title":  "refactor(auth): rename /pr-auth endpoint to /auth/token",
-                         "timestamp":  "2026-06-08T20:30:13Z",
+                         "version":  "build-b8fb08c",
+                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
+                         "timestamp":  "2026-06-08T20:09:48Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7504f2a",
+                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
+                         "timestamp":  "2026-06-08T20:58:52Z",
                          "environment":  "production"
                      }
                  ]
