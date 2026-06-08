@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-18f664e",
-                         "title":  "fix(ci): harden Buddy ToolDownloads upload -- idempotent 409 + transient-curl...",
-                         "timestamp":  "2026-06-02T17:31:17Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-96489a4",
                          "title":  "fix(ci): remove all actions/upload-artifact step uses (Task #594, closes #211)",
                          "timestamp":  "2026-06-02T21:33:30Z",
@@ -102,6 +96,12 @@
                          "version":  "build-7da73f0",
                          "title":  "fix(downloads): repair ToolDownloadsController parse + sibling CS1061",
                          "timestamp":  "2026-06-08T15:05:16Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4016820",
+                         "title":  "fix(buddy): append preferToken=true to loadURL when GH CLI token available",
+                         "timestamp":  "2026-06-08T15:27:21Z",
                          "environment":  "production"
                      }
                  ]
