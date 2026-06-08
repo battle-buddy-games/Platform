@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-b8fb08c",
-                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
-                         "timestamp":  "2026-06-08T20:09:48Z",
+                         "version":  "build-51befc5",
+                         "title":  "refactor(auth): rename /pr-auth endpoint to /auth/token",
+                         "timestamp":  "2026-06-08T20:30:13Z",
                          "environment":  "production"
                      }
                  ]
