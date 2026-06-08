@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7da73f0",
-                         "title":  "fix(downloads): repair ToolDownloadsController parse + sibling CS1061",
-                         "timestamp":  "2026-06-08T15:05:16Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4016820",
                          "title":  "fix(buddy): append preferToken=true to loadURL when GH CLI token available",
                          "timestamp":  "2026-06-08T15:27:21Z",
@@ -102,6 +96,12 @@
                          "version":  "build-d3994f2",
                          "title":  "feat(buddy): add comprehensive logging to navbar fetch for diagnostics",
                          "timestamp":  "2026-06-08T21:45:42Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f3f6764",
+                         "title":  "feat(platform): add detailed logging to signin endpoint for diagnostics",
+                         "timestamp":  "2026-06-08T21:56:00Z",
                          "environment":  "production"
                      }
                  ]
