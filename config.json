@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-c0ee460",
-                         "title":  "feat(ci): add pipeline-shape mermaid generator + wire into 7 workflows",
-                         "timestamp":  "2026-06-02T16:21:11Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-18f664e",
                          "title":  "fix(ci): harden Buddy ToolDownloads upload -- idempotent 409 + transient-curl...",
@@ -102,6 +96,12 @@
                          "version":  "build-652839a",
                          "title":  "fix(platform): route broker consumers through webplatform router",
                          "timestamp":  "2026-06-05T22:12:14Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7da73f0",
+                         "title":  "fix(downloads): repair ToolDownloadsController parse + sibling CS1061",
+                         "timestamp":  "2026-06-08T15:05:16Z",
                          "environment":  "production"
                      }
                  ]
