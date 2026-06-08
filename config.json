@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-70c6014",
-                         "title":  "fix(ci): exclude GameClient from workflow auto-retry",
-                         "timestamp":  "2026-06-05T10:41:02Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1d21d6e",
                          "title":  "fix(ci): include failure analysis in investigation dispatch",
                          "timestamp":  "2026-06-05T11:08:37Z",
@@ -102,6 +96,12 @@
                          "version":  "build-e8cc5b1",
                          "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
                          "timestamp":  "2026-06-08T19:46:37Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-b8fb08c",
+                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
+                         "timestamp":  "2026-06-08T20:09:48Z",
                          "environment":  "production"
                      }
                  ]
