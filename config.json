@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-b7d1e7e",
-                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
-                         "timestamp":  "2026-06-08T18:24:36Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5652bbf",
                          "title":  "fix(navbar): populate jobs-summary endpoint with real GitHub Actions + comman...",
                          "timestamp":  "2026-06-08T18:49:41Z",
@@ -102,6 +96,12 @@
                          "version":  "build-3634ebd",
                          "title":  "fix(buddy): correct property name casing for user data in tray menu",
                          "timestamp":  "2026-06-09T01:09:30Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c0f0478",
+                         "title":  "fix(buddy): improve Bearer token injection compatibility",
+                         "timestamp":  "2026-06-09T02:23:42Z",
                          "environment":  "production"
                      }
                  ]
