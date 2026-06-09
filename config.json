@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-27c0ebd",
-                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
-                         "timestamp":  "2026-06-09T17:20:06Z",
+                         "version":  "build-5969928",
+                         "title":  "improve(buddy-desktop): enhance launch on start feature with better logging a...",
+                         "timestamp":  "2026-06-09T16:52:00Z",
                          "environment":  "production"
                      }
                  ]
