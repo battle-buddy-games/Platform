@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-f3f6764",
-                         "title":  "feat(platform): add detailed logging to signin endpoint for diagnostics",
-                         "timestamp":  "2026-06-08T21:56:00Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-da8ff72",
                          "title":  "fix(auth): remove orphaned code and fix duplicate variable names",
@@ -102,6 +96,12 @@
                          "version":  "build-b641e56",
                          "title":  "fix(portal-lock): exempt Buddy Desktop native shell via User-Agent token",
                          "timestamp":  "2026-06-09T13:50:17Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-10d9f9b",
+                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
+                         "timestamp":  "2026-06-09T14:41:05Z",
                          "environment":  "production"
                      }
                  ]
