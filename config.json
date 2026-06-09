@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-1eeadef",
-                         "title":  "fix(buddy): stop silent self-updates; add explicit update UX in tray",
-                         "timestamp":  "2026-06-09T04:20:12Z",
+                         "version":  "build-12acba2",
+                         "title":  "refactor(buddy): remove CLI status line from tray footer",
+                         "timestamp":  "2026-06-09T04:56:50Z",
                          "environment":  "production"
                      }
                  ]
