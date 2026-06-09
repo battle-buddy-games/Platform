@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5652bbf",
-                         "title":  "fix(navbar): populate jobs-summary endpoint with real GitHub Actions + comman...",
-                         "timestamp":  "2026-06-08T18:49:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e8cc5b1",
                          "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
                          "timestamp":  "2026-06-08T19:46:37Z",
@@ -102,6 +96,12 @@
                          "version":  "build-c0f0478",
                          "title":  "fix(buddy): improve Bearer token injection compatibility",
                          "timestamp":  "2026-06-09T02:23:42Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c2c0a34",
+                         "title":  "fix(auth): treat direct IP access as non-secure for session cookie",
+                         "timestamp":  "2026-06-09T02:40:42Z",
                          "environment":  "production"
                      }
                  ]
