@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-b8fb08c",
-                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
-                         "timestamp":  "2026-06-08T20:09:48Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7504f2a",
                          "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
                          "timestamp":  "2026-06-08T20:58:52Z",
@@ -99,9 +93,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-5943ebb",
-                         "title":  "fix(analytics): guard Desktop analytics track() against sync exceptions and w...",
-                         "timestamp":  "2026-06-09T03:28:25Z",
+                         "version":  "build-09352af",
+                         "title":  "fix(buddy): load signin endpoint to establish session cookie for page auth",
+                         "timestamp":  "2026-06-09T03:11:29Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-cd7137e",
+                         "title":  "fix(analytics): remove redundant signin_pat_missing emit from Desktop sign-in...",
+                         "timestamp":  "2026-06-09T03:52:52Z",
                          "environment":  "production"
                      }
                  ]
