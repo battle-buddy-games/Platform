@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-09352af",
-                         "title":  "fix(buddy): load signin endpoint to establish session cookie for page auth",
-                         "timestamp":  "2026-06-09T03:11:29Z",
+                         "version":  "build-5943ebb",
+                         "title":  "fix(analytics): guard Desktop analytics track() against sync exceptions and w...",
+                         "timestamp":  "2026-06-09T03:28:25Z",
                          "environment":  "production"
                      }
                  ]
