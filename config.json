@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-cd02e6b",
-                         "title":  "fix(buddy): use /pr-auth/signin endpoint for GH CLI auto sign-in",
-                         "timestamp":  "2026-06-08T16:59:22Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-589d1f9",
                          "title":  "fix(auth): inject SignInManager into PrEnvironmentAuthController",
                          "timestamp":  "2026-06-08T18:14:00Z",
@@ -102,6 +96,12 @@
                          "version":  "build-da8ff72",
                          "title":  "fix(auth): remove orphaned code and fix duplicate variable names",
                          "timestamp":  "2026-06-08T22:45:19Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8159823",
+                         "title":  "fix(buddy): use signin endpoint for webview session establishment",
+                         "timestamp":  "2026-06-09T00:52:48Z",
                          "environment":  "production"
                      }
                  ]
