@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,6 +44,12 @@
                               }
                           ],
     "releases":  [
+                     {
+                         "version":  "build-8159823",
+                         "title":  "fix(buddy): use signin endpoint for webview session establishment",
+                         "timestamp":  "2026-06-09T00:52:48Z",
+                         "environment":  "production"
+                     },
                      {
                          "version":  "build-3634ebd",
                          "title":  "fix(buddy): correct property name casing for user data in tray menu",
@@ -96,12 +102,6 @@
                          "version":  "build-37bab7e",
                          "title":  "fix: make frostebite-cli version endpoint public for buddy desktop",
                          "timestamp":  "2026-06-09T15:11:07Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-1a59331",
-                         "title":  "refactor(buddy-desktop): remove discord option from tray menu",
-                         "timestamp":  "2026-06-09T16:03:35Z",
                          "environment":  "production"
                      }
                  ]
