@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3634ebd",
-                         "title":  "fix(buddy): correct property name casing for user data in tray menu",
-                         "timestamp":  "2026-06-09T01:09:30Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c0f0478",
                          "title":  "fix(buddy): improve Bearer token injection compatibility",
                          "timestamp":  "2026-06-09T02:23:42Z",
@@ -102,6 +96,12 @@
                          "version":  "build-1a59331",
                          "title":  "refactor(buddy-desktop): remove discord option from tray menu",
                          "timestamp":  "2026-06-09T16:03:35Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5969928",
+                         "title":  "improve(buddy-desktop): enhance launch on start feature with better logging a...",
+                         "timestamp":  "2026-06-09T16:52:00Z",
                          "environment":  "production"
                      }
                  ]
