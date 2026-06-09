@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e8cc5b1",
-                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
-                         "timestamp":  "2026-06-08T19:46:37Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b8fb08c",
                          "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
                          "timestamp":  "2026-06-08T20:09:48Z",
@@ -102,6 +96,12 @@
                          "version":  "build-c2c0a34",
                          "title":  "fix(auth): treat direct IP access as non-secure for session cookie",
                          "timestamp":  "2026-06-09T02:40:42Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-09352af",
+                         "title":  "fix(buddy): load signin endpoint to establish session cookie for page auth",
+                         "timestamp":  "2026-06-09T03:11:29Z",
                          "environment":  "production"
                      }
                  ]
