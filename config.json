@@ -45,6 +45,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-7504f2a",
+                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
+                         "timestamp":  "2026-06-08T20:58:52Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-d3994f2",
                          "title":  "feat(buddy): add comprehensive logging to navbar fetch for diagnostics",
                          "timestamp":  "2026-06-08T21:45:42Z",
@@ -96,12 +102,6 @@
                          "version":  "build-cd7137e",
                          "title":  "fix(analytics): remove redundant signin_pat_missing emit from Desktop sign-in...",
                          "timestamp":  "2026-06-09T03:52:52Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-1eeadef",
-                         "title":  "fix(buddy): stop silent self-updates; add explicit update UX in tray",
-                         "timestamp":  "2026-06-09T04:20:12Z",
                          "environment":  "production"
                      }
                  ]
