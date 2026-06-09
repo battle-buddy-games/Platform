@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-da8ff72",
-                         "title":  "fix(auth): remove orphaned code and fix duplicate variable names",
-                         "timestamp":  "2026-06-08T22:45:19Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8159823",
                          "title":  "fix(buddy): use signin endpoint for webview session establishment",
                          "timestamp":  "2026-06-09T00:52:48Z",
@@ -102,6 +96,12 @@
                          "version":  "build-10d9f9b",
                          "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
                          "timestamp":  "2026-06-09T14:41:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-37bab7e",
+                         "title":  "fix: make frostebite-cli version endpoint public for buddy desktop",
+                         "timestamp":  "2026-06-09T15:11:07Z",
                          "environment":  "production"
                      }
                  ]
