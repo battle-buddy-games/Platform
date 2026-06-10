@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-cd7137e",
-                         "title":  "fix(analytics): remove redundant signin_pat_missing emit from Desktop sign-in...",
-                         "timestamp":  "2026-06-09T03:52:52Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-1eeadef",
                          "title":  "fix(buddy): stop silent self-updates; add explicit update UX in tray",
@@ -102,6 +96,12 @@
                          "version":  "build-0a48f5a",
                          "title":  "fix(runner): bound + instrument NSSM wrapper startup diagnostics (WrapperStar...",
                          "timestamp":  "2026-06-10T16:29:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-abb4506",
+                         "title":  "fix(platform): resolve compiler warnings and namespace conflict",
+                         "timestamp":  "2026-06-10T23:24:24Z",
                          "environment":  "production"
                      }
                  ]
