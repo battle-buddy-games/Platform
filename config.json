@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c2c0a34",
-                         "title":  "fix(auth): treat direct IP access as non-secure for session cookie",
-                         "timestamp":  "2026-06-09T02:40:42Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-09352af",
                          "title":  "fix(buddy): load signin endpoint to establish session cookie for page auth",
                          "timestamp":  "2026-06-09T03:11:29Z",
@@ -102,6 +96,12 @@
                          "version":  "build-5040ba3",
                          "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
                          "timestamp":  "2026-06-10T00:09:07Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-58e6b0d",
+                         "title":  "ci(buddy-desktop): fix path detection to use full pushed range instead of tip...",
+                         "timestamp":  "2026-06-10T01:00:11Z",
                          "environment":  "production"
                      }
                  ]
