@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-09352af",
-                         "title":  "fix(buddy): load signin endpoint to establish session cookie for page auth",
-                         "timestamp":  "2026-06-09T03:11:29Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-cd7137e",
                          "title":  "fix(analytics): remove redundant signin_pat_missing emit from Desktop sign-in...",
@@ -102,6 +96,12 @@
                          "version":  "build-58e6b0d",
                          "title":  "ci(buddy-desktop): fix path detection to use full pushed range instead of tip...",
                          "timestamp":  "2026-06-10T01:00:11Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0a48f5a",
+                         "title":  "fix(runner): bound + instrument NSSM wrapper startup diagnostics (WrapperStar...",
+                         "timestamp":  "2026-06-10T16:29:45Z",
                          "environment":  "production"
                      }
                  ]
