@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://act-comes-accountability-medicare.trycloudflare.com"
+                                  "address":  "https://try-cooking-intellectual-revenue.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
