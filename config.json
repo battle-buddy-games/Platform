@@ -24,7 +24,8 @@
                               },
                               {
                                   "name":  "local-cloud",
-                                  "address":  "http://192.168.0.243:8081"
+                                  "address":  "http://192.168.0.243:8081",
+                                  "deprecated":  "Use local service discovery (platform.local) instead; local IPs are subject to change"
                               },
                               {
                                   "name":  "staging-cloud",
@@ -40,16 +41,11 @@
                               },
                               {
                                   "name":  "production-local",
-                                  "address":  "http://192.168.0.251:8081"
+                                  "address":  "http://192.168.0.251:8081",
+                                  "deprecated":  "Use local service discovery (platform.local) instead; local IPs are subject to change"
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-0a48f5a",
-                         "title":  "fix(runner): bound + instrument NSSM wrapper startup diagnostics (WrapperStar...",
-                         "timestamp":  "2026-06-10T16:29:45Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-abb4506",
                          "title":  "fix(platform): resolve compiler warnings and namespace conflict",
@@ -102,6 +98,12 @@
                          "version":  "build-1c0db70",
                          "title":  "fix(buddy-desktop): accept cli download checksum casing",
                          "timestamp":  "2026-06-14T20:39:56Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e79b0e7",
+                         "title":  "fix(ci-observability): commit ExtractJobStepLogs production method to fix tes...",
+                         "timestamp":  "2026-06-14T23:05:27Z",
                          "environment":  "production"
                      }
                  ]
