@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-e79b0e7",
-                         "title":  "fix(ci-observability): commit ExtractJobStepLogs production method to fix tes...",
-                         "timestamp":  "2026-06-14T23:05:27Z",
+                         "version":  "build-ba535d9",
+                         "title":  "docs(findings): record ExtractJobStepLogs fix and resolution for Validate CI ...",
+                         "timestamp":  "2026-06-14T23:20:50Z",
                          "environment":  "production"
                      }
                  ]
