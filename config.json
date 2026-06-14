@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1a59331",
-                         "title":  "refactor(buddy-desktop): remove discord option from tray menu",
-                         "timestamp":  "2026-06-09T16:03:35Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5969928",
                          "title":  "improve(buddy-desktop): enhance launch on start feature with better logging a...",
                          "timestamp":  "2026-06-09T16:52:00Z",
@@ -102,6 +96,12 @@
                          "version":  "build-be685d8",
                          "title":  "test(sdk-hub): pin SdkClientInfo broadcast shape to guard Steam/framework fie...",
                          "timestamp":  "2026-06-14T17:54:56Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ee4e209",
+                         "title":  "fix(buddy-desktop): restore reverted toggle-default edits dropped by linter",
+                         "timestamp":  "2026-06-14T18:15:30Z",
                          "environment":  "production"
                      }
                  ]
