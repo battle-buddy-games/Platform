@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -44,12 +44,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-b641e56",
-                         "title":  "fix(portal-lock): exempt Buddy Desktop native shell via User-Agent token",
-                         "timestamp":  "2026-06-09T13:50:17Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-10d9f9b",
                          "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
@@ -102,6 +96,12 @@
                          "version":  "build-87c2db0",
                          "title":  "Merge feature/task-9-cancel-cleanup-reaper: cancel-cleanup reaper observe-dep...",
                          "timestamp":  "2026-06-11T09:40:22Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2eba4ab",
+                         "title":  "fix(platform): emit absolute frostebite-cli downloadUrl so non-browser consum...",
+                         "timestamp":  "2026-06-14T16:45:59Z",
                          "environment":  "production"
                      }
                  ]
