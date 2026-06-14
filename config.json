@@ -99,9 +99,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-f4a2dfd",
-                         "title":  "fix(chat): reconcile service+tests to 2-column session lifecycle schema",
-                         "timestamp":  "2026-06-14T17:11:19Z",
+                         "version":  "build-2b2f0e4",
+                         "title":  "feat(battle-buddy-hub): append optional framework/profile at 8-9 for shared-c...",
+                         "timestamp":  "2026-06-14T17:28:28Z",
                          "environment":  "production"
                      }
                  ]
