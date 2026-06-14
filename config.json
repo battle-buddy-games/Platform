@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5040ba3",
-                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
-                         "timestamp":  "2026-06-10T00:09:07Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-58e6b0d",
                          "title":  "ci(buddy-desktop): fix path detection to use full pushed range instead of tip...",
                          "timestamp":  "2026-06-10T01:00:11Z",
@@ -102,6 +96,12 @@
                          "version":  "build-4fb3295",
                          "title":  "feat(buddy): data-driven CI summary in tray Actions menu",
                          "timestamp":  "2026-06-14T18:40:29Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-cfb1477",
+                         "title":  "feat(platform): cached enriched CI summary endpoint for Buddy tray",
+                         "timestamp":  "2026-06-14T19:43:45Z",
                          "environment":  "production"
                      }
                  ]
