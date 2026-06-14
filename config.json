@@ -45,12 +45,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-58e6b0d",
-                         "title":  "ci(buddy-desktop): fix path detection to use full pushed range instead of tip...",
-                         "timestamp":  "2026-06-10T01:00:11Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0a48f5a",
                          "title":  "fix(runner): bound + instrument NSSM wrapper startup diagnostics (WrapperStar...",
                          "timestamp":  "2026-06-10T16:29:45Z",
@@ -102,6 +96,12 @@
                          "version":  "build-cfb1477",
                          "title":  "feat(platform): cached enriched CI summary endpoint for Buddy tray",
                          "timestamp":  "2026-06-14T19:43:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1c0db70",
+                         "title":  "fix(buddy-desktop): accept cli download checksum casing",
+                         "timestamp":  "2026-06-14T20:39:56Z",
                          "environment":  "production"
                      }
                  ]
