@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-87c2db0",
-                         "title":  "Merge feature/task-9-cancel-cleanup-reaper: cancel-cleanup reaper observe-dep...",
-                         "timestamp":  "2026-06-11T09:40:22Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2eba4ab",
                          "title":  "fix(platform): emit absolute frostebite-cli downloadUrl so non-browser consum...",
                          "timestamp":  "2026-06-14T16:45:59Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4f6ce91",
                          "title":  "feat(platform): central error+crash incident spine â€” isolated ingest, fingerp...",
                          "timestamp":  "2026-06-15T00:42:49Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-80e4649",
+                         "title":  "fix(security): gate GDriveLfsCleanupController to admin/service trust, drop c...",
+                         "timestamp":  "2026-06-15T01:01:24Z",
                          "environment":  "production"
                      }
                  ]
