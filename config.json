@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-abb4506",
-                         "title":  "fix(platform): resolve compiler warnings and namespace conflict",
-                         "timestamp":  "2026-06-10T23:24:24Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-87c2db0",
                          "title":  "Merge feature/task-9-cancel-cleanup-reaper: cancel-cleanup reaper observe-dep...",
@@ -104,6 +98,12 @@
                          "version":  "build-e79b0e7",
                          "title":  "fix(ci-observability): commit ExtractJobStepLogs production method to fix tes...",
                          "timestamp":  "2026-06-14T23:05:27Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4f6ce91",
+                         "title":  "feat(platform): central error+crash incident spine — isolated ingest, fingerp...",
+                         "timestamp":  "2026-06-15T00:42:49Z",
                          "environment":  "production"
                      }
                  ]
