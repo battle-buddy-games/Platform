@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-6edf275",
-                         "title":  "fix(platform-core): update AuthenticationConfiguration call sites to Incident...",
-                         "timestamp":  "2026-06-15T01:28:36Z",
+                         "version":  "build-ff6694a",
+                         "title":  "docs(findings): record AuthenticationConfiguration IncidentsSchema fix for Bu...",
+                         "timestamp":  "2026-06-15T01:41:35Z",
                          "environment":  "production"
                      }
                  ]
