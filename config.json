@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-f4a2dfd",
-                         "title":  "fix(chat): reconcile service+tests to 2-column session lifecycle schema",
-                         "timestamp":  "2026-06-14T17:11:19Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-be685d8",
                          "title":  "test(sdk-hub): pin SdkClientInfo broadcast shape to guard Steam/framework fie...",
@@ -104,6 +98,12 @@
                          "version":  "build-6edf275",
                          "title":  "fix(platform-core): update AuthenticationConfiguration call sites to Incident...",
                          "timestamp":  "2026-06-15T01:28:36Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-716e746",
+                         "title":  "feat(platform): live CI-log nav -- run-ID deeplinks, active-runs panel, run-d...",
+                         "timestamp":  "2026-06-16T05:19:16Z",
                          "environment":  "production"
                      }
                  ]
