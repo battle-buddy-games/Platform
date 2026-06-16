@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -84,7 +84,7 @@
                      },
                      {
                          "version":  "build-4f6ce91",
-                         "title":  "feat(platform): central error+crash incident spine Ã¢â‚¬â€ isolated ingest, fingerp...",
+                         "title":  "feat(platform): central error+crash incident spine ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â isolated ingest, fingerp...",
                          "timestamp":  "2026-06-15T00:42:49Z",
                          "environment":  "production"
                      },
