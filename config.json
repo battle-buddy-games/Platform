@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ee4e209",
-                         "title":  "fix(buddy-desktop): restore reverted toggle-default edits dropped by linter",
-                         "timestamp":  "2026-06-14T18:15:30Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4fb3295",
                          "title":  "feat(buddy): data-driven CI summary in tray Actions menu",
                          "timestamp":  "2026-06-14T18:40:29Z",
@@ -78,7 +72,7 @@
                      },
                      {
                          "version":  "build-4f6ce91",
-                         "title":  "feat(platform): central error+crash incident spine ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â isolated ingest, fingerp...",
+                         "title":  "feat(platform): central error+crash incident spine ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â isolated ingest, fingerp...",
                          "timestamp":  "2026-06-15T00:42:49Z",
                          "environment":  "production"
                      },
@@ -104,6 +98,12 @@
                          "version":  "build-5e2134c",
                          "title":  "feat(status): replace SDK Hub tile with Desktop/CLI connection list in navbar...",
                          "timestamp":  "2026-06-17T18:08:14Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ae7eaea",
+                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
+                         "timestamp":  "2026-06-17T18:27:43Z",
                          "environment":  "production"
                      }
                  ]
