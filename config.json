@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-43c37c0",
-                         "title":  "feat(buddy-desktop): add \"Active Tool Area\" context group to tray",
-                         "timestamp":  "2026-06-20T22:44:50Z",
+                         "version":  "build-64fc0d6",
+                         "title":  "fix(buddy-desktop): remove internal separators within tray SDK group",
+                         "timestamp":  "2026-06-20T23:04:03Z",
                          "environment":  "production"
                      }
                  ]
