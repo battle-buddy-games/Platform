@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-a9642c9",
-                         "title":  "feat(buddy-tray): move Launch into the profile/account group (SDK stays alone)",
-                         "timestamp":  "2026-06-20T20:23:56Z",
+                         "version":  "build-ac4fcec",
+                         "title":  "test(platform): serialize env-var-mutating test classes to fix Validate flake",
+                         "timestamp":  "2026-06-20T20:38:46Z",
                          "environment":  "production"
                      }
                  ]
