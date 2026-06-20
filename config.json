@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1c0db70",
-                         "title":  "fix(buddy-desktop): accept cli download checksum casing",
-                         "timestamp":  "2026-06-14T20:39:56Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e79b0e7",
                          "title":  "fix(ci-observability): commit ExtractJobStepLogs production method to fix tes...",
                          "timestamp":  "2026-06-14T23:05:27Z",
@@ -60,7 +54,7 @@
                      },
                      {
                          "version":  "build-4f6ce91",
-                         "title":  "feat(platform): central error+crash incident spine ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â isolated ingest, fingerp...",
+                         "title":  "feat(platform): central error+crash incident spine ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â isolated ingest, fingerp...",
                          "timestamp":  "2026-06-15T00:42:49Z",
                          "environment":  "production"
                      },
@@ -104,6 +98,12 @@
                          "version":  "build-f00f4b6",
                          "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
                          "timestamp":  "2026-06-20T16:36:21Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-171b020",
+                         "title":  "feat(ci-logs): serve preserved BuildArtifacts logs via HTTP (Z3 WinRM replace...",
+                         "timestamp":  "2026-06-20T17:41:25Z",
                          "environment":  "production"
                      }
                  ]
