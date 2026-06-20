@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-716e746",
-                         "title":  "feat(platform): live CI-log nav -- run-ID deeplinks, active-runs panel, run-d...",
-                         "timestamp":  "2026-06-16T05:19:16Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5e2134c",
                          "title":  "feat(status): replace SDK Hub tile with Desktop/CLI connection list in navbar...",
                          "timestamp":  "2026-06-17T18:08:14Z",
@@ -84,7 +78,7 @@
                      },
                      {
                          "version":  "build-8243e8d",
-                         "title":  "feat(ci-logs): add CI log file browser UI ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Z3 observability deliverable",
+                         "title":  "feat(ci-logs): add CI log file browser UI ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Z3 observability deliverable",
                          "timestamp":  "2026-06-20T18:13:08Z",
                          "environment":  "production"
                      },
@@ -104,6 +98,12 @@
                          "version":  "build-8bb93d6",
                          "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
                          "timestamp":  "2026-06-20T22:17:28Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-43c37c0",
+                         "title":  "feat(buddy-desktop): add \"Active Tool Area\" context group to tray",
+                         "timestamp":  "2026-06-20T22:44:50Z",
                          "environment":  "production"
                      }
                  ]
