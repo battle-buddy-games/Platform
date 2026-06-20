@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-171b020",
-                         "title":  "feat(ci-logs): serve preserved BuildArtifacts logs via HTTP (Z3 WinRM replace...",
-                         "timestamp":  "2026-06-20T17:41:25Z",
+                         "version":  "build-edfd16e",
+                         "title":  "feat(ci-logs): add search endpoints + paged-read length param for full log-fi...",
+                         "timestamp":  "2026-06-20T18:01:07Z",
                          "environment":  "production"
                      }
                  ]
