@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-cfb1477",
-                         "title":  "feat(platform): cached enriched CI summary endpoint for Buddy tray",
-                         "timestamp":  "2026-06-14T19:43:45Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1c0db70",
                          "title":  "fix(buddy-desktop): accept cli download checksum casing",
                          "timestamp":  "2026-06-14T20:39:56Z",
@@ -66,7 +60,7 @@
                      },
                      {
                          "version":  "build-4f6ce91",
-                         "title":  "feat(platform): central error+crash incident spine ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â isolated ingest, fingerp...",
+                         "title":  "feat(platform): central error+crash incident spine ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â isolated ingest, fingerp...",
                          "timestamp":  "2026-06-15T00:42:49Z",
                          "environment":  "production"
                      },
@@ -104,6 +98,12 @@
                          "version":  "build-42acbe9",
                          "title":  "merge origin/main: bundle Buddy auto-update + Steam-ticket auth onto current ...",
                          "timestamp":  "2026-06-20T15:11:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f00f4b6",
+                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
+                         "timestamp":  "2026-06-20T16:36:21Z",
                          "environment":  "production"
                      }
                  ]
