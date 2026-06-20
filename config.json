@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-4fb3295",
-                         "title":  "feat(buddy): data-driven CI summary in tray Actions menu",
-                         "timestamp":  "2026-06-14T18:40:29Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-cfb1477",
                          "title":  "feat(platform): cached enriched CI summary endpoint for Buddy tray",
@@ -104,6 +98,12 @@
                          "version":  "build-ae7eaea",
                          "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
                          "timestamp":  "2026-06-17T18:27:43Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-42acbe9",
+                         "title":  "merge origin/main: bundle Buddy auto-update + Steam-ticket auth onto current ...",
+                         "timestamp":  "2026-06-20T15:11:45Z",
                          "environment":  "production"
                      }
                  ]
