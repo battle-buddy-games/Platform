@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-6edf275",
-                         "title":  "fix(platform-core): update AuthenticationConfiguration call sites to Incident...",
-                         "timestamp":  "2026-06-15T01:28:36Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-716e746",
                          "title":  "feat(platform): live CI-log nav -- run-ID deeplinks, active-runs panel, run-d...",
                          "timestamp":  "2026-06-16T05:19:16Z",
@@ -90,7 +84,7 @@
                      },
                      {
                          "version":  "build-8243e8d",
-                         "title":  "feat(ci-logs): add CI log file browser UI Ã¢â‚¬â€ Z3 observability deliverable",
+                         "title":  "feat(ci-logs): add CI log file browser UI ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Z3 observability deliverable",
                          "timestamp":  "2026-06-20T18:13:08Z",
                          "environment":  "production"
                      },
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-ac4fcec",
-                         "title":  "test(platform): serialize env-var-mutating test classes to fix Validate flake",
-                         "timestamp":  "2026-06-20T20:38:46Z",
+                         "version":  "build-a9642c9",
+                         "title":  "feat(buddy-tray): move Launch into the profile/account group (SDK stays alone)",
+                         "timestamp":  "2026-06-20T20:23:56Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8bb93d6",
+                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
+                         "timestamp":  "2026-06-20T22:17:28Z",
                          "environment":  "production"
                      }
                  ]
