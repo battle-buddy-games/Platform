@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-64fc0d6",
-                         "title":  "fix(buddy-desktop): remove internal separators within tray SDK group",
-                         "timestamp":  "2026-06-20T23:04:03Z",
+                         "version":  "build-d9060de",
+                         "title":  "fix(buddy-desktop): electron-parity CLI auto-update + true version in tray",
+                         "timestamp":  "2026-06-20T23:43:40Z",
                          "environment":  "production"
                      }
                  ]
