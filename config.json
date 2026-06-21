@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-ae7eaea",
-                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
-                         "timestamp":  "2026-06-17T18:27:43Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-42acbe9",
                          "title":  "merge origin/main: bundle Buddy auto-update + Steam-ticket auth onto current ...",
@@ -104,6 +98,12 @@
                          "version":  "build-9db3e16",
                          "title":  "feat(buddy-desktop): SDK tray New Workspace dropdown (register/clone verbs); ...",
                          "timestamp":  "2026-06-21T00:36:39Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2fab644",
+                         "title":  "feat(backups): add retention cleanup to database backup -- keep 30 most recent",
+                         "timestamp":  "2026-06-21T14:10:30Z",
                          "environment":  "production"
                      }
                  ]
