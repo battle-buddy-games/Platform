@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-ac24314",
-                         "title":  "fix(buddy-desktop): don\u0027t flag legacy-overflow downward version correction as...",
-                         "timestamp":  "2026-06-22T23:31:40Z",
+                         "version":  "build-faa6c81",
+                         "title":  "fix(buddy-desktop): loud guard when CLI version does not advance after update",
+                         "timestamp":  "2026-06-22T22:50:21Z",
                          "environment":  "production"
                      }
                  ]
