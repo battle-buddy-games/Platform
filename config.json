@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a9642c9",
-                         "title":  "feat(buddy-tray): move Launch into the profile/account group (SDK stays alone)",
-                         "timestamp":  "2026-06-20T20:23:56Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8bb93d6",
                          "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
                          "timestamp":  "2026-06-20T22:17:28Z",
@@ -104,6 +98,12 @@
                          "version":  "build-97288ef",
                          "title":  "feat(battlebuddy-hub): per-session owner-identity routing for inbound Discord...",
                          "timestamp":  "2026-06-22T21:26:29Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-faa6c81",
+                         "title":  "fix(buddy-desktop): loud guard when CLI version does not advance after update",
+                         "timestamp":  "2026-06-22T22:50:21Z",
                          "environment":  "production"
                      }
                  ]
