@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-fdd31c7",
-                         "title":  "feat(ci-logs): add byteOffset to search results for precise jump-to-match",
-                         "timestamp":  "2026-06-20T18:35:23Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-a9642c9",
                          "title":  "feat(buddy-tray): move Launch into the profile/account group (SDK stays alone)",
@@ -104,6 +98,12 @@
                          "version":  "build-09f9581",
                          "title":  "fix(chat,cognitive): pass model=\"null\" to _TranscriptRenderer partials (Chat ...",
                          "timestamp":  "2026-06-22T20:32:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-97288ef",
+                         "title":  "feat(battlebuddy-hub): per-session owner-identity routing for inbound Discord...",
+                         "timestamp":  "2026-06-22T21:26:29Z",
                          "environment":  "production"
                      }
                  ]
