@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-97288ef",
-                         "title":  "feat(battlebuddy-hub): per-session owner-identity routing for inbound Discord...",
-                         "timestamp":  "2026-06-22T21:26:29Z",
+                         "version":  "build-aa7280a",
+                         "title":  "docs(buddy-desktop): add deny-inherit ACL convention for SYSTEM-executed arti...",
+                         "timestamp":  "2026-06-22T22:07:55Z",
                          "environment":  "production"
                      }
                  ]
