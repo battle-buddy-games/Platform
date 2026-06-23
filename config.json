@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9db3e16",
-                         "title":  "feat(buddy-desktop): SDK tray New Workspace dropdown (register/clone verbs); ...",
-                         "timestamp":  "2026-06-21T00:36:39Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2fab644",
                          "title":  "feat(backups): add retention cleanup to database backup -- keep 30 most recent",
                          "timestamp":  "2026-06-21T14:10:30Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d0ec517",
                          "title":  "chore(di): bundle concurrent projects-artifacts + sdk-webdav DI registrations",
                          "timestamp":  "2026-06-23T02:54:48Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f151a94",
+                         "title":  "feat(buddy-desktop): add \"SDK version (non-git)\" workspace tray option",
+                         "timestamp":  "2026-06-23T11:35:49Z",
                          "environment":  "production"
                      }
                  ]
