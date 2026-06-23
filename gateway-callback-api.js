@@ -29,12 +29,29 @@ let authState = {
 const BUDDY_APP_RETURN_STATE_MARKER = 'buddyAppReturn';
 
 function getBuddyAppReturnHost() {
-  if (!authState.state || !authState.state.includes(`${BUDDY_APP_RETURN_STATE_MARKER}:`)) {
-    return null;
+  // Primary: OAuth code providers (GitHub, Discord, Google) carry the marker inside
+  // `state` as `:buddyAppReturn:<host>`.
+  if (authState.state && authState.state.includes(`${BUDDY_APP_RETURN_STATE_MARKER}:`)) {
+    const match = authState.state.match(/(?:^|:)buddyAppReturn:([a-zA-Z0-9_-]+)/);
+    if (match) {
+      return match[1];
+    }
   }
 
-  const match = authState.state.match(/(?:^|:)buddyAppReturn:([a-zA-Z0-9_-]+)/);
-  return match ? match[1] : null;
+  // Fallback: Steam OpenID 2.0 has no `state` parameter, so the gateway carries the host
+  // as a return_to query param (`?buddyAppReturn=<host>`), which Steam round-trips back to
+  // this callback. Read it directly from the URL. Host-token charset is constrained to match
+  // the values the gateway emits ('electron' | 'android').
+  try {
+    const param = new URLSearchParams(window.location.search).get(BUDDY_APP_RETURN_STATE_MARKER);
+    if (param && /^[a-zA-Z0-9_-]+$/.test(param)) {
+      return param;
+    }
+  } catch (e) {
+    console.warn('[CallbackAPI] Error reading buddyAppReturn URL param:', e);
+  }
+
+  return null;
 }
 
 // Initialize callback page
@@ -620,6 +637,17 @@ function buildRedirectUrl(token) {
     callbackUrl.searchParams.set('backendUrl', authState.backendUrl || '');
     callbackUrl.searchParams.set('returnUrl', returnUrl);
     callbackUrl.searchParams.set('source', buddyAppReturnHost);
+    // Login-CSRF / session-fixation binding (F4): echo the ORIGINAL OAuth `state` that this
+    // sign-in round-tripped through the provider. authState.state is set verbatim in
+    // initCallbackPage from params.get('state') -- the exact value the client placed on the
+    // outbound auth URL. It is NOT freshly minted here. The Desktop/Android consumer
+    // constant-time compares this against the state it captured on the outbound request and
+    // rejects mismatches. Param name is exactly `state`; this is additive (existing
+    // token/backendUrl/returnUrl/source params are unchanged). Omitted when absent -- Steam
+    // OpenID 2.0 has no `state` parameter, so Steam cannot bind via this leg (see report flag).
+    if (authState.state) {
+      callbackUrl.searchParams.set('state', authState.state);
+    }
     console.log('[CallbackAPI] Buddy app return requested, redirecting via protocol:', callbackUrl.toString());
     return callbackUrl.toString();
   }

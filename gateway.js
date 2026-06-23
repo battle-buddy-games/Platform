@@ -394,10 +394,19 @@ function appendBuddyAppReturnState(state, host) {
 }
 
 function shouldUseExternalBrowserForProvider(provider) {
-  // Google blocks OAuth in embedded WebViews. Launch it in the user's browser
-  // and return to Buddy via buddy://auth-callback after the callback page
-  // exchanges the authorization code.
-  return provider === 'google' && !!getBuddyAppHost();
+  // ALL providers (GitHub, Steam, Discord, Google) must use the system browser
+  // when running inside a Buddy app host (Electron or Android). Embedded WebViews
+  // block OAuth -- Google returns disallowed_useragent, and even where a provider
+  // tolerates the embedded user agent, the cross-origin platform session-cookie
+  // handoff cannot complete back into the app. The external browser completes auth
+  // and returns to Buddy via buddy://auth-callback after the callback page exchanges
+  // the authorization code (or, for Steam OpenID, the claimed id).
+  //
+  // This is provider-SELECTION only. The emitted buddy://auth-callback deep link,
+  // its one-time token semantics, and the /auth/signin-token consumer endpoint are
+  // unchanged (see gateway-callback-api.js buildRedirectUrl). The `provider` arg is
+  // retained for call-site compatibility but no longer gates the decision.
+  return !!getBuddyAppHost();
 }
 
 function openOAuthUrl(provider, authUrl, callbackUrl, additionalInfo) {
@@ -534,6 +543,9 @@ window.handleSignIn = function handleSignIn(provider) {
       state = `createToken:${state}`;
       console.log('CreateToken mode enabled - state includes createToken indicator:', state);
     }
+    // Tag the OAuth state with the Buddy app return host (Electron/Android) so the
+    // callback relay emits buddy://auth-callback. No-op in a normal browser.
+    state = appendBuddyAppReturnState(state, getBuddyAppHost());
     // State storage removed - not yet implemented for verification
 
     // Build GitHub OAuth URL - redirect to provider-specific callback
@@ -640,7 +652,7 @@ window.handleSignIn = function handleSignIn(provider) {
     console.log('ReturnUrl:', callbackUrl);
     console.log('========================');
     
-    showOAuthSignInCountdown('github', githubAuthUrl, callbackUrl, {
+    openOAuthUrl('github', githubAuthUrl, callbackUrl, {
       scope: CONFIG.github.scope || 'user:email'
     });
     return; // Explicitly return to prevent fallthrough
@@ -670,12 +682,47 @@ window.handleSignIn = function handleSignIn(provider) {
 
     // Check if link mode is requested
     const isLinkMode = localStorage.getItem('oauth_link_mode') === 'true';
-    if (isLinkMode) {
-      // Add link indicator to return_to URL so callback knows this is account linking
-      const callbackWithLink = new URL(callbackUrl);
-      callbackWithLink.searchParams.set('link', 'true');
-      steamOpenIdUrl.searchParams.set('openid.return_to', callbackWithLink.toString());
-      console.log('Link mode enabled for Steam');
+
+    // Steam OpenID 2.0 has no `state` parameter, so any markers the callback needs are
+    // carried as return_to query params. Steam preserves return_to query params and appends
+    // its openid.* response params, so they round-trip reliably (the same mechanism link
+    // mode already relies on). The buddyAppReturn host that other providers carry in `state`
+    // is carried here so the callback relay can emit the buddy://auth-callback deep link.
+    const buddyAppHost = getBuddyAppHost();
+
+    // Login-CSRF / session-fixation binding (F4) for Steam: Steam OpenID 2.0 has no native
+    // `state`, so for a Buddy app handoff we generate a binding nonce here. generateState()
+    // returns a colon-free token, so it never trips the backend exchange-code `link:` /
+    // `createToken:` state branches. The SAME nonce value is placed in TWO spots on the same
+    // outbound authUrl:
+    //   1. Top-level `state` on the Steam authUrl -- so the app captures it UNIFORMLY with the
+    //      OAuth-code providers (parse the `state` query param off the authUrl it was handed).
+    //      Steam ignores non-`openid.*` request params, so this is inert for Steam itself.
+    //   2. Inside openid.return_to as `state` -- the leg Steam actually round-trips back to the
+    //      callback, where params.get('state') populates authState.state and buildRedirectUrl
+    //      echoes it onto buddy://auth-callback as `state` for the consumer's constant-time compare.
+    const buddyAppStateNonce = buddyAppHost ? generateState() : null;
+    if (buddyAppStateNonce) {
+      steamOpenIdUrl.searchParams.set('state', buddyAppStateNonce);
+    }
+
+    if (isLinkMode || buddyAppHost) {
+      const returnToUrl = new URL(callbackUrl);
+      if (isLinkMode) {
+        // Add link indicator to return_to URL so callback knows this is account linking
+        returnToUrl.searchParams.set('link', 'true');
+        console.log('Link mode enabled for Steam');
+      }
+      if (buddyAppHost) {
+        returnToUrl.searchParams.set(BUDDY_APP_RETURN_STATE_MARKER, buddyAppHost);
+        console.log('Buddy app host detected for Steam, tagging return_to:', buddyAppHost);
+      }
+      if (buddyAppStateNonce) {
+        // Round-trip carrier: Steam preserves return_to query params and echoes them back, so
+        // the callback reads this as `state` and binds the emitted deep link to this request.
+        returnToUrl.searchParams.set('state', buddyAppStateNonce);
+      }
+      steamOpenIdUrl.searchParams.set('openid.return_to', returnToUrl.toString());
     }
 
     // Get tunnel URL for storing (callback will need it)
@@ -703,7 +750,7 @@ window.handleSignIn = function handleSignIn(provider) {
     }));
 
     // Show countdown before redirecting to Steam
-    showOAuthSignInCountdown('steam', steamOpenIdUrl.toString(), callbackUrl, {
+    openOAuthUrl('steam', steamOpenIdUrl.toString(), callbackUrl, {
       realm: realm,
       backendInitiated: false
     });
@@ -868,6 +915,9 @@ window.handleSignIn = function handleSignIn(provider) {
       state = `createToken:${state}`;
       console.log('CreateToken mode enabled for Discord - state includes createToken indicator:', state);
     }
+    // Tag the OAuth state with the Buddy app return host (Electron/Android) so the
+    // callback relay emits buddy://auth-callback. No-op in a normal browser.
+    state = appendBuddyAppReturnState(state, getBuddyAppHost());
 
     // Build callback URL - use the exact redirectUri from config.json
     let callbackUrl = CONFIG.discord.redirectUri;
@@ -950,7 +1000,7 @@ window.handleSignIn = function handleSignIn(provider) {
     console.log('ReturnUrl:', callbackUrl);
     console.log('========================');
     
-    showOAuthSignInCountdown('discord', discordAuthUrl, callbackUrl, {
+    openOAuthUrl('discord', discordAuthUrl, callbackUrl, {
       scope: scope
     });
     return; // Explicitly return to prevent fallthrough
