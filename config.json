@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-64fc0d6",
-                         "title":  "fix(buddy-desktop): remove internal separators within tray SDK group",
-                         "timestamp":  "2026-06-20T23:04:03Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9db3e16",
                          "title":  "feat(buddy-desktop): SDK tray New Workspace dropdown (register/clone verbs); ...",
                          "timestamp":  "2026-06-21T00:36:39Z",
@@ -104,6 +98,12 @@
                          "version":  "build-8b266b4",
                          "title":  "fix(ci-doctrine): set KnownClassSlug in BuildClassificationEnvelope",
                          "timestamp":  "2026-06-23T02:36:36Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d0ec517",
+                         "title":  "chore(di): bundle concurrent projects-artifacts + sdk-webdav DI registrations",
+                         "timestamp":  "2026-06-23T02:54:48Z",
                          "environment":  "production"
                      }
                  ]
