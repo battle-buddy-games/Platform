@@ -1,5 +1,146 @@
 // CONFIG is declared in gateway-shared.js which is loaded first
 
+// ---------------------------------------------------------------------------
+// Sign-in loop-breaker (defense-in-depth; mitigates the F4 gateway/portal loop)
+// ---------------------------------------------------------------------------
+// The portal redirects the WHOLE page to gateway.html whenever the embedded
+// platform iframe navigates there (the backend bounced an unauthenticated
+// request to sign-in). If the platform session cookie cannot persist in this
+// cross-origin iframe (third-party-cookie blocking / SameSite), that bounce can
+// repeat forever: gateway -> OAuth -> portal -> iframe signin -> cookie lost ->
+// iframe gateway.html -> portal redirects to gateway.html -> ...
+//
+// This guard caps the bounce RATE. If MAX_GATEWAY_BOUNCES whole-page redirects to
+// gateway.html occur within GATEWAY_BOUNCE_WINDOW_MS, we STOP auto-redirecting and
+// show a terminal error instead of reloading -- so a cookie failure degrades to a
+// visible error, never an infinite reload. The counter lives in SESSIONSTORAGE so
+// it is per-tab/session, survives the navigations within one loop, and is cleared
+// on a successful auth (authenticated platform content posts a non-gateway URL).
+// Happy-path single redirects (bounces under threshold) are unaffected.
+const SIGNIN_BOUNCE_KEY = 'bb_portal_gateway_bounce';
+const MAX_GATEWAY_BOUNCES = 3;            // trip on the 3rd gateway.html redirect
+const GATEWAY_BOUNCE_WINDOW_MS = 20000;   // ...within 20 seconds
+let signInLoopBroken = false;             // once tripped, suppress further redirects on this page
+
+function clearGatewayBounceCounter() {
+  signInLoopBroken = false;
+  try { sessionStorage.removeItem(SIGNIN_BOUNCE_KEY); } catch (e) {}
+}
+
+// Redirect the whole page to gateway.html, but stop and show a terminal error if
+// we are bouncing too fast. Returns true if it tripped the breaker (no redirect).
+function redirectToGatewayWithLoopGuard(gatewaySearch) {
+  if (signInLoopBroken) {
+    // Already tripped on this page load -- do nothing further.
+    return true;
+  }
+
+  const now = Date.now();
+  let count = 0;
+  let windowStart = now;
+  try {
+    const raw = sessionStorage.getItem(SIGNIN_BOUNCE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed && typeof parsed.windowStart === 'number' &&
+          (now - parsed.windowStart) <= GATEWAY_BOUNCE_WINDOW_MS) {
+        count = parsed.count || 0;
+        windowStart = parsed.windowStart;
+      }
+    }
+  } catch (e) { /* corrupt/unavailable -> treat as a fresh window */ }
+
+  count += 1;
+
+  if (count >= MAX_GATEWAY_BOUNCES) {
+    console.warn('[Portal] Sign-in bounce threshold reached (' + count + ' gateway.html redirects within ' +
+      GATEWAY_BOUNCE_WINDOW_MS + 'ms) -- stopping auto-redirect to break the loop.');
+    signInLoopBroken = true;
+    showSignInLoopError();
+    return true;
+  }
+
+  try {
+    sessionStorage.setItem(SIGNIN_BOUNCE_KEY, JSON.stringify({ count: count, windowStart: windowStart }));
+  } catch (e) {}
+
+  console.log('[Portal] Redirecting whole page to gateway.html (bounce ' + count + '/' + MAX_GATEWAY_BOUNCES + ')');
+  window.location.href = './gateway.html' + (gatewaySearch || '');
+  return false;
+}
+
+// Best-effort resolution of the platform tunnel URL for the "open directly" action.
+function resolvePortalTunnelUrl() {
+  try {
+    const fromParam = new URLSearchParams(window.location.search).get('tunnelUrl');
+    if (fromParam) return fromParam.replace(/\/$/, '');
+  } catch (e) {}
+  try {
+    if (window.CONFIG && window.CONFIG.cloudflareTunnels) {
+      const tunnel = window.CONFIG.cloudflareTunnels.find(function (t) { return t.name === 'cloud'; });
+      if (tunnel && tunnel.address) return tunnel.address.replace(/\/$/, '');
+    }
+  } catch (e) {}
+  return null;
+}
+
+// Terminal state shown when the bounce breaker trips. Built via DOM APIs (no inline
+// handlers) and idempotent.
+function showSignInLoopError() {
+  if (document.getElementById('signInLoopError')) return;
+  const tunnelUrl = resolvePortalTunnelUrl();
+
+  const overlay = document.createElement('div');
+  overlay.id = 'signInLoopError';
+  overlay.setAttribute('style', 'position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#0f1117;z-index:2147483647;padding:24px;');
+
+  const card = document.createElement('div');
+  card.setAttribute('style', 'max-width:520px;text-align:center;color:#e6e6e6;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;');
+
+  const h1 = document.createElement('h1');
+  h1.textContent = "Sign-in couldn't complete";
+  h1.setAttribute('style', 'font-size:22px;margin:0 0 12px;');
+
+  const p1 = document.createElement('p');
+  p1.textContent = 'We kept getting sent back to the sign-in page. This usually means your browser is blocking third-party cookies for the embedded platform.';
+  p1.setAttribute('style', 'font-size:15px;line-height:1.5;color:rgba(255,255,255,0.75);margin:0 0 8px;');
+
+  const p2 = document.createElement('p');
+  p2.textContent = 'Open the platform directly in its own tab, or allow third-party cookies for this site and retry.';
+  p2.setAttribute('style', 'font-size:13px;line-height:1.5;color:rgba(255,255,255,0.55);margin:0 0 20px;');
+
+  const actions = document.createElement('div');
+
+  if (tunnelUrl) {
+    const openLink = document.createElement('a');
+    openLink.textContent = 'Open the platform directly';
+    openLink.href = tunnelUrl;
+    openLink.setAttribute('style', 'display:inline-block;margin:8px;padding:10px 20px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;');
+    actions.appendChild(openLink);
+  }
+
+  const retryBtn = document.createElement('button');
+  retryBtn.textContent = 'Retry sign-in';
+  retryBtn.setAttribute('style', 'display:inline-block;margin:8px;padding:10px 20px;background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:8px;font-weight:600;cursor:pointer;');
+  retryBtn.addEventListener('click', function () {
+    clearGatewayBounceCounter();
+    window.location.href = './gateway.html';
+  });
+  actions.appendChild(retryBtn);
+
+  card.appendChild(h1);
+  card.appendChild(p1);
+  card.appendChild(p2);
+  card.appendChild(actions);
+  overlay.appendChild(card);
+
+  try {
+    (document.body || document.documentElement).appendChild(overlay);
+  } catch (e) {
+    console.error('[Portal] Failed to render sign-in loop error overlay:', e);
+  }
+}
+
 // Get tunnel for environment
 function getTunnelForEnvironment(envName) {
   // Map environment names to tunnel names
@@ -1084,7 +1225,7 @@ function updateUrlFromIframe() {
         // Preserve URL params (e.g. ?link=google&returnUrl=...) when redirecting
         const gatewaySearch = iframeLocation.search || '';
         console.log('Iframe navigated to gateway.html, redirecting whole page' + (gatewaySearch ? ' with params: ' + gatewaySearch : ''));
-        window.location.href = './gateway.html' + gatewaySearch;
+        redirectToGatewayWithLoopGuard(gatewaySearch);
         return;
       }
     } catch (e) {
@@ -1394,7 +1535,7 @@ async function loadTunnel() {
         let gatewaySearch = '';
         try { gatewaySearch = new URL(currentSrc).search || ''; } catch (e) {}
         console.log('Iframe src contains gateway.html, redirecting whole page' + (gatewaySearch ? ' with params: ' + gatewaySearch : ''));
-        window.location.href = './gateway.html' + gatewaySearch;
+        redirectToGatewayWithLoopGuard(gatewaySearch);
         return;
       }
       
@@ -1442,7 +1583,7 @@ async function loadTunnel() {
             // Preserve URL params (e.g. ?link=google&returnUrl=...) when redirecting
             const gatewaySearch = iframeLocation.search || '';
             console.log('Iframe navigated to gateway.html, redirecting whole page' + (gatewaySearch ? ' with params: ' + gatewaySearch : ''));
-            window.location.href = './gateway.html' + gatewaySearch;
+            redirectToGatewayWithLoopGuard(gatewaySearch);
             return true;
           }
         } catch (e) {
@@ -1461,7 +1602,7 @@ async function loadTunnel() {
           let gatewaySearch = '';
           try { gatewaySearch = new URL(iframeSrc).search || ''; } catch (e) {}
           console.log('Iframe src contains gateway.html, redirecting whole page' + (gatewaySearch ? ' with params: ' + gatewaySearch : ''));
-          window.location.href = './gateway.html' + gatewaySearch;
+          redirectToGatewayWithLoopGuard(gatewaySearch);
           return true;
         }
       }
@@ -1675,9 +1816,15 @@ async function loadTunnel() {
             }
           } catch (e) {}
           console.log('PostMessage detected gateway.html navigation, redirecting whole page' + (gatewaySearch ? ' with params: ' + gatewaySearch : ''));
-          window.location.href = './gateway.html' + gatewaySearch;
+          redirectToGatewayWithLoopGuard(gatewaySearch);
           return;
         }
+
+        // Reached here => the platform iframe posted a real (non-gateway) navigation,
+        // i.e. authenticated content is running. That is our cross-origin success
+        // signal: clear the sign-in bounce counter so a later genuine sign-in gets a
+        // fresh budget.
+        clearGatewayBounceCounter();
 
         // Apply page metadata for bookmarks/tabs (always, even if path unchanged)
         if (event.data.meta) {

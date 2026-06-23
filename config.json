@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-8bb93d6",
-                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
-                         "timestamp":  "2026-06-20T22:17:28Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-64fc0d6",
                          "title":  "fix(buddy-desktop): remove internal separators within tray SDK group",
@@ -104,6 +98,12 @@
                          "version":  "build-faa6c81",
                          "title":  "fix(buddy-desktop): loud guard when CLI version does not advance after update",
                          "timestamp":  "2026-06-22T22:50:21Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8b266b4",
+                         "title":  "fix(ci-doctrine): set KnownClassSlug in BuildClassificationEnvelope",
+                         "timestamp":  "2026-06-23T02:36:36Z",
                          "environment":  "production"
                      }
                  ]
