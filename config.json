@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-f151a94",
-                         "title":  "feat(buddy-desktop): add \"SDK version (non-git)\" workspace tray option",
-                         "timestamp":  "2026-06-23T11:35:49Z",
+                         "version":  "build-8e32b27",
+                         "title":  "feat(ci): remove terrain capture ingestion",
+                         "timestamp":  "2026-06-24T05:05:56Z",
                          "environment":  "production"
                      }
                  ]
