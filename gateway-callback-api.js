@@ -631,7 +631,7 @@ async function performRedirect(token) {
 function buildRedirectUrl(token) {
   const buddyAppReturnHost = getBuddyAppReturnHost();
   if (buddyAppReturnHost) {
-    const returnUrl = getReturnUrl();
+    const returnUrl = getBuddyAppReturnUrl();
     const callbackUrl = new URL('buddy://auth-callback');
     callbackUrl.searchParams.set('token', token);
     callbackUrl.searchParams.set('backendUrl', authState.backendUrl || '');
@@ -930,6 +930,65 @@ function getReturnUrl() {
 
   // Default to home
   return '/';
+}
+
+function getBuddyAppReturnUrl() {
+  // Buddy Desktop/Android consumes returnUrl inside the platform backend:
+  // <backendUrl>/auth/signin-token?token=...&returnUrl=...
+  // Do not use getReturnUrl() here because normal browser sign-in may resolve to
+  // portal.html on GitHub Pages, which would send the in-app platform window to
+  // the public gateway shell after the deep-link token exchange.
+  if (authState.isLinkMode && authState.linkReturnUrl) {
+    const linkReturnUrl = normalizePlatformReturnUrl(authState.linkReturnUrl);
+    if (linkReturnUrl) return linkReturnUrl;
+  }
+
+  try {
+    const linkReturnUrl = localStorage.getItem('oauth_return_url');
+    const isLinkMode = localStorage.getItem('linkingModeEnabled') === 'true' || localStorage.getItem('oauth_link_mode') === 'true';
+    if (isLinkMode && linkReturnUrl) {
+      const normalized = normalizePlatformReturnUrl(linkReturnUrl);
+      if (normalized) return normalized;
+    }
+  } catch (e) {
+    console.warn('[CallbackAPI] Error checking Buddy link return URL:', e);
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const urlReturnUrl = normalizePlatformReturnUrl(params.get('returnUrl'));
+  if (urlReturnUrl) return urlReturnUrl;
+
+  try {
+    const oauthAttempt = sessionStorage.getItem('oauthSignInAttempt');
+    if (oauthAttempt) {
+      const parsed = JSON.parse(oauthAttempt);
+      const storedReturnUrl = normalizePlatformReturnUrl(parsed.returnUrl);
+      if (storedReturnUrl) return storedReturnUrl;
+    }
+  } catch (e) {}
+
+  return '/';
+}
+
+function normalizePlatformReturnUrl(returnUrl) {
+  if (!returnUrl || typeof returnUrl !== 'string' || isGatewayCallbackReturnUrl(returnUrl)) {
+    return null;
+  }
+
+  if (returnUrl.startsWith('/') && !returnUrl.startsWith('//')) {
+    return returnUrl;
+  }
+
+  try {
+    if (!authState.backendUrl) return null;
+    const backendOrigin = new URL(authState.backendUrl).origin;
+    const parsed = new URL(returnUrl);
+    if (parsed.origin === backendOrigin && !isGatewayCallbackReturnUrl(parsed.toString())) {
+      return parsed.pathname + parsed.search + parsed.hash;
+    }
+  } catch (e) {}
+
+  return null;
 }
 
 function isGatewayCallbackReturnUrl(returnUrl) {
