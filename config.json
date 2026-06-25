@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-353c3ae",
-                         "title":  "feat(buddy): Claude plugin navbar presence + Desktop workspace fixes",
-                         "timestamp":  "2026-06-21T14:52:46Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-eaa9692",
                          "title":  "fix(platform-tests): add RecentToolsService arg to DashboardController test ctor",
                          "timestamp":  "2026-06-22T16:07:39Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4e80abb",
                          "title":  "fix(ci): dispatch screenshots to discord immediately",
                          "timestamp":  "2026-06-25T00:23:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-fab6bd9",
+                         "title":  "fix(buddy-desktop): show registered workspaces and harden cli daemon",
+                         "timestamp":  "2026-06-25T14:04:00Z",
                          "environment":  "production"
                      }
                  ]

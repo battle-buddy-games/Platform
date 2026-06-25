@@ -688,7 +688,7 @@ function buildRedirectUrl(token) {
   // This ensures the token exchange happens inside the iframe, where the cookie can be set
   // Going through the backend first sets the cookie on the wrong domain for cross-origin iframes
   try {
-    const preferPortal = localStorage.getItem('preferPortal') === 'true';
+    const preferPortal = localStorage.getItem('preferPortal') !== 'false';
     if (preferPortal) {
       // Get tunnel URL from stored OAuth attempt or config
       let tunnelUrl = null;
@@ -710,11 +710,15 @@ function buildRedirectUrl(token) {
 
       if (tunnelUrl) {
         // Build portal URL with token - portal will pass token to iframe for authentication
+        const returnUrl = getReturnUrl();
         const currentUrl = new URL(window.location.href);
         const basePath = currentUrl.pathname.substring(0, currentUrl.pathname.lastIndexOf('/') + 1);
         const portalUrl = new URL(`${currentUrl.origin}${basePath}portal.html`);
         portalUrl.searchParams.set('tunnelUrl', tunnelUrl);
         portalUrl.searchParams.set('token', token);
+        if (returnUrl && returnUrl !== '/') {
+          portalUrl.searchParams.set('returnUrl', returnUrl);
+        }
         console.log('[CallbackAPI] Prefer portal enabled, redirecting to portal with token:', portalUrl.toString());
         return portalUrl.toString();
       }
@@ -884,13 +888,13 @@ function getReturnUrl() {
     const oauthAttempt = sessionStorage.getItem('oauthSignInAttempt');
     if (oauthAttempt) {
       const parsed = JSON.parse(oauthAttempt);
-      if (parsed.returnUrl) return parsed.returnUrl;
+      if (parsed.returnUrl && !isGatewayCallbackReturnUrl(parsed.returnUrl)) return parsed.returnUrl;
     }
   } catch (e) {}
 
   // Check if preferPortal is enabled - if so, return portal.html with tunnelUrl
   try {
-    const preferPortal = localStorage.getItem('preferPortal') === 'true';
+    const preferPortal = localStorage.getItem('preferPortal') !== 'false';
     if (preferPortal) {
       // Get tunnel URL from stored OAuth attempt or config
       let tunnelUrl = null;
@@ -926,6 +930,19 @@ function getReturnUrl() {
 
   // Default to home
   return '/';
+}
+
+function isGatewayCallbackReturnUrl(returnUrl) {
+  if (!returnUrl || typeof returnUrl !== 'string') {
+    return false;
+  }
+
+  try {
+    const parsed = new URL(returnUrl, window.location.href);
+    return /gateway-callback-[a-z]+\.html$/i.test(parsed.pathname);
+  } catch (e) {
+    return /gateway-callback-[a-z]+\.html/i.test(returnUrl);
+  }
 }
 
 function getPageName() {

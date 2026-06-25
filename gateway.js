@@ -448,6 +448,55 @@ function openOAuthUrl(provider, authUrl, callbackUrl, additionalInfo) {
 
 window.openOAuthUrl = openOAuthUrl;
 
+function getGatewayPostAuthReturnUrl() {
+  // OAuth provider callbacks are relay pages, never a valid final destination.
+  // The signed-in platform should land on the app root unless a link flow supplies
+  // a dedicated returnUrl.
+  try {
+    const requestedReturnUrl = new URLSearchParams(window.location.search).get('returnUrl');
+    if (!requestedReturnUrl || isGatewayCallbackReturnUrl(requestedReturnUrl)) {
+      return '/';
+    }
+
+    if (requestedReturnUrl.startsWith('/')) {
+      return requestedReturnUrl;
+    }
+
+    const parsed = new URL(requestedReturnUrl, window.location.href);
+    if (parsed.origin === window.location.origin && !isGatewayCallbackReturnUrl(parsed.toString())) {
+      return parsed.pathname + parsed.search + parsed.hash;
+    }
+  } catch (e) {
+    console.warn('Failed to resolve OAuth returnUrl, using platform root:', e);
+  }
+
+  return '/';
+}
+
+function buildGatewayTokenReturnUrl(cleanTunnelUrl, preferPortal) {
+  const currentUrl = new URL(window.location.href);
+  const basePath = currentUrl.pathname.substring(0, currentUrl.pathname.lastIndexOf('/') + 1);
+  const gatewayReturnUrl = new URL(`${currentUrl.origin}${basePath}gateway.html`);
+
+  gatewayReturnUrl.searchParams.set('tokenSignInTarget', preferPortal ? 'portal' : 'tunnel');
+  gatewayReturnUrl.searchParams.set('tunnelUrl', cleanTunnelUrl);
+
+  return gatewayReturnUrl.toString();
+}
+
+function isGatewayCallbackReturnUrl(returnUrl) {
+  if (!returnUrl || typeof returnUrl !== 'string') {
+    return false;
+  }
+
+  try {
+    const parsed = new URL(returnUrl, window.location.href);
+    return /gateway-callback-[a-z]+\.html$/i.test(parsed.pathname);
+  } catch (e) {
+    return /gateway-callback-[a-z]+\.html/i.test(returnUrl);
+  }
+}
+
 window.handleSignIn = function handleSignIn(provider) {
   console.log('handleSignIn called with provider:', provider);
   if (typeof trackGatewayEvent === 'function') trackGatewayEvent('sign_in_click', { provider: provider });
@@ -634,7 +683,7 @@ window.handleSignIn = function handleSignIn(provider) {
       sessionStorage.setItem('oauthSignInAttempt', JSON.stringify({
         provider: 'github',
         timestamp: Date.now(),
-        returnUrl: callbackUrl,
+        returnUrl: getGatewayPostAuthReturnUrl(),
         targetUrl: callbackUrl,
         state: state,
         tunnelUrl: tunnelUrl,
@@ -744,7 +793,7 @@ window.handleSignIn = function handleSignIn(provider) {
       provider: 'steam',
       timestamp: Date.now(),
       targetUrl: callbackUrl,
-      returnUrl: callbackUrl,
+      returnUrl: getGatewayPostAuthReturnUrl(),
       tunnelUrl: tunnelUrl,
       environment: getPreferredEnvironment()
     }));
@@ -867,7 +916,7 @@ window.handleSignIn = function handleSignIn(provider) {
       sessionStorage.setItem('oauthSignInAttempt', JSON.stringify({
         provider: 'google',
         timestamp: Date.now(),
-        returnUrl: callbackUrl,
+        returnUrl: getGatewayPostAuthReturnUrl(),
         targetUrl: callbackUrl,
         state: state,
         tunnelUrl: tunnelUrl,
@@ -982,7 +1031,7 @@ window.handleSignIn = function handleSignIn(provider) {
       sessionStorage.setItem('oauthSignInAttempt', JSON.stringify({
         provider: 'discord',
         timestamp: Date.now(),
-        returnUrl: callbackUrl,
+        returnUrl: getGatewayPostAuthReturnUrl(),
         targetUrl: callbackUrl,
         state: state,
         tunnelUrl: tunnelUrl,
@@ -1384,21 +1433,8 @@ window.submitToken = function submitToken() {
 
   // Build return URL based on preferPortal setting
   const preferPortal = localStorage.getItem('preferPortal') !== 'false';
-  const currentUrl = new URL(window.location.href);
-  let targetUrl;
-  let targetDisplay;
-
-  if (preferPortal) {
-    // Return to portal.html with tunnelUrl parameter
-    const portalUrl = new URL(`${currentUrl.origin}${currentUrl.pathname.replace('gateway.html', 'portal.html')}`);
-    portalUrl.searchParams.set('tunnelUrl', cleanBaseUrl);
-    targetUrl = portalUrl.toString();
-    targetDisplay = 'Portal';
-  } else {
-    // Return directly to tunnel
-    targetUrl = cleanBaseUrl;
-    targetDisplay = 'Platform (Tunnel)';
-  }
+  const targetUrl = buildGatewayTokenReturnUrl(cleanBaseUrl, preferPortal);
+  const targetDisplay = preferPortal ? 'Portal' : 'Platform (Tunnel)';
 
   const returnUrl = encodeURIComponent(targetUrl);
   tokenAuthUrl = `${cleanBaseUrl}/pr-auth/signin?token=${encodeURIComponent(token)}&returnUrl=${returnUrl}`;
@@ -1869,10 +1905,23 @@ function showOAuthSignInCountdown(provider, authUrl, callbackUrl, additionalInfo
 
   // Store OAuth sign-in attempt marker to detect unexpected redirects
   try {
+    let existingAttempt = {};
+    try {
+      const rawAttempt = sessionStorage.getItem('oauthSignInAttempt');
+      if (rawAttempt) {
+        existingAttempt = JSON.parse(rawAttempt) || {};
+      }
+    } catch (e) {
+      existingAttempt = {};
+    }
+
     sessionStorage.setItem('oauthSignInAttempt', JSON.stringify({
+      ...existingAttempt,
       timestamp: Date.now(),
       provider: provider,
-      type: 'oauth'
+      type: 'oauth',
+      targetUrl: existingAttempt.targetUrl || callbackUrl,
+      returnUrl: existingAttempt.returnUrl || getGatewayPostAuthReturnUrl()
     }));
   } catch (e) {
     console.warn('Failed to store OAuth sign-in attempt marker:', e);
@@ -2028,8 +2077,8 @@ window.signInWithRememberedToken = function signInWithRememberedToken(tokenId, o
   });
   console.log('Signing in with remembered token (long-lived:', isLongLivedToken, ')');
 
-  // Get cloud tunnel address from config
-  const productionTunnel = CONFIG.cloudflareTunnels?.find(t => t.name === 'cloud');
+  // Get cloud tunnel address from config (use preferred environment)
+  const productionTunnel = getTunnelForPreferredEnvironment() || CONFIG.cloudflareTunnels?.find(t => t.name === 'cloud');
 
   if (!productionTunnel || !productionTunnel.address) {
     showErrorModal('Configuration Error', 'No cloud tunnel configured in config.json. Token authentication requires a tunnel.');
@@ -2041,25 +2090,10 @@ window.signInWithRememberedToken = function signInWithRememberedToken(tokenId, o
   // IMPORTANT: Always return to gateway.html so error parameters are preserved
   // Gateway.html will then redirect to tunnel/portal based on preferPortal setting
   const preferPortal = localStorage.getItem('preferPortal') !== 'false';
-  const currentUrl = new URL(window.location.href);
-  const basePath = currentUrl.pathname.substring(0, currentUrl.pathname.lastIndexOf('/') + 1);
-
   // Always return to gateway.html, but include target URL as parameter
   // This ensures error parameters are preserved if authentication fails
-  const gatewayReturnUrl = new URL(`${currentUrl.origin}${basePath}gateway.html`);
-
   const cleanTunnelUrl = productionTunnel.address.replace(/\/$/, '');
-  if (preferPortal) {
-    // Target is portal.html - include tunnel URL so portal can load it in iframe
-    gatewayReturnUrl.searchParams.set('tokenSignInTarget', 'portal');
-    gatewayReturnUrl.searchParams.set('tunnelUrl', cleanTunnelUrl);
-  } else {
-    // Target is tunnel directly
-    gatewayReturnUrl.searchParams.set('tokenSignInTarget', 'tunnel');
-    gatewayReturnUrl.searchParams.set('tunnelUrl', cleanTunnelUrl);
-  }
-
-  const finalReturnUrl = gatewayReturnUrl.toString();
+  const finalReturnUrl = buildGatewayTokenReturnUrl(cleanTunnelUrl, preferPortal);
 
   // FULL REDIRECT to backend with token in URL
   // The backend will authenticate and redirect to the final returnUrl
