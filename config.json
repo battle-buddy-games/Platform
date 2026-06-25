@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-3b3666f",
-                         "title":  "fix(buddy-desktop): harden self-update feed fallback",
-                         "timestamp":  "2026-06-25T14:44:59Z",
+                         "version":  "build-6e2da18",
+                         "title":  "feat(buddy-desktop): toast update availability notifications",
+                         "timestamp":  "2026-06-25T15:03:28Z",
                          "environment":  "production"
                      }
                  ]
