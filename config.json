@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-eac7c49",
-                         "title":  "fix(buddy-desktop): open sdk config file from settings",
-                         "timestamp":  "2026-06-25T14:24:37Z",
+                         "version":  "build-fab6bd9",
+                         "title":  "fix(buddy-desktop): show registered workspaces and harden cli daemon",
+                         "timestamp":  "2026-06-25T14:04:00Z",
                          "environment":  "production"
                      }
                  ]
