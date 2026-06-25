@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-01838fc",
-                         "title":  "fix(ci-artifacts): correct IngestResult named-arg casing (CS1739)",
-                         "timestamp":  "2026-06-22T19:26:06Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-09f9581",
                          "title":  "fix(chat,cognitive): pass model=\"null\" to _TranscriptRenderer partials (Chat ...",
                          "timestamp":  "2026-06-22T20:32:50Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3b3666f",
                          "title":  "fix(buddy-desktop): harden self-update feed fallback",
                          "timestamp":  "2026-06-25T14:44:59Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7ee29bf",
+                         "title":  "fix(gateway): keep buddy app OAuth returns on backend",
+                         "timestamp":  "2026-06-25T19:41:19Z",
                          "environment":  "production"
                      }
                  ]
