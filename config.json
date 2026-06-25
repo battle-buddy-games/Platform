@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-2fab644",
-                         "title":  "feat(backups): add retention cleanup to database backup -- keep 30 most recent",
-                         "timestamp":  "2026-06-21T14:10:30Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-353c3ae",
                          "title":  "feat(buddy): Claude plugin navbar presence + Desktop workspace fixes",
@@ -104,6 +98,12 @@
                          "version":  "build-8e32b27",
                          "title":  "feat(ci): remove terrain capture ingestion",
                          "timestamp":  "2026-06-24T05:05:56Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4e80abb",
+                         "title":  "fix(ci): dispatch screenshots to discord immediately",
+                         "timestamp":  "2026-06-25T00:23:05Z",
                          "environment":  "production"
                      }
                  ]
