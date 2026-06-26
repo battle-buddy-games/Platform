@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://among-undertaken-knee-manufacturer.trycloudflare.com"
+                                  "address":  "https://app-announces-slow-compressed.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-e64ddee",
-                         "title":  "Fix Buddy service mode and align desktop menus",
-                         "timestamp":  "2026-06-25T20:33:38Z",
+                         "version":  "build-7ee29bf",
+                         "title":  "fix(gateway): keep buddy app OAuth returns on backend",
+                         "timestamp":  "2026-06-25T19:41:19Z",
                          "environment":  "production"
                      }
                  ]
