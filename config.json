@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-faa6c81",
-                         "title":  "fix(buddy-desktop): loud guard when CLI version does not advance after update",
-                         "timestamp":  "2026-06-22T22:50:21Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8b266b4",
                          "title":  "fix(ci-doctrine): set KnownClassSlug in BuildClassificationEnvelope",
                          "timestamp":  "2026-06-23T02:36:36Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-986ecd2",
-                         "title":  "fix(chat): preserve nested sidebar foldouts",
-                         "timestamp":  "2026-06-26T18:30:03Z",
+                         "version":  "build-9b65139",
+                         "title":  "feat(buddy-desktop): update workspace launch profiles",
+                         "timestamp":  "2026-06-26T18:16:47Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9a4b06c",
+                         "title":  "fix(ci): expose ingested screenshot history",
+                         "timestamp":  "2026-06-26T22:14:20Z",
                          "environment":  "production"
                      }
                  ]
