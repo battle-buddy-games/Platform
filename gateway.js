@@ -372,6 +372,7 @@ function attachSignInListeners() {
 // Make handleSignIn globally accessible for onclick handlers
 // Define function and immediately attach to window for inline handlers
 const BUDDY_APP_RETURN_STATE_MARKER = 'buddyAppReturn';
+const BUDDY_DESKTOP_AUTH_STATE_MARKER = 'desktopGatewayAuth';
 
 function getBuddyAppHost() {
   if (window.platform && typeof window.platform.openExternalAuth === 'function') {
@@ -385,12 +386,38 @@ function getBuddyAppHost() {
   return null;
 }
 
+function isBuddyDesktopAuthRequested() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const fromUrl = params.get('authenticateBuddyDesktop') === '1' ||
+      params.get('authenticateBuddyDesktop') === 'true' ||
+      params.get('buddyDesktopAuth') === '1' ||
+      params.get('buddyDesktopAuth') === 'true';
+    const checkbox = document.getElementById('authenticateBuddyDesktopCheckbox');
+    return fromUrl || (checkbox && checkbox.checked === true) || localStorage.getItem('authenticateBuddyDesktop') === 'true';
+  } catch (e) {
+    return false;
+  }
+}
+
+function getBuddyAuthReturnHost() {
+  return getBuddyAppHost() || (isBuddyDesktopAuthRequested() ? 'electron' : null);
+}
+
 function appendBuddyAppReturnState(state, host) {
   if (!host || !state || state.includes(`${BUDDY_APP_RETURN_STATE_MARKER}:`)) {
     return state;
   }
 
   return `${state}:${BUDDY_APP_RETURN_STATE_MARKER}:${host}`;
+}
+
+function appendBuddyDesktopAuthState(state) {
+  if (!state || !isBuddyDesktopAuthRequested() || state.includes(`${BUDDY_DESKTOP_AUTH_STATE_MARKER}:`)) {
+    return state;
+  }
+
+  return `${state}:${BUDDY_DESKTOP_AUTH_STATE_MARKER}:electron`;
 }
 
 function shouldUseExternalBrowserForProvider(provider) {
@@ -594,7 +621,7 @@ window.handleSignIn = function handleSignIn(provider) {
     }
     // Tag the OAuth state with the Buddy app return host (Electron/Android) so the
     // callback relay emits buddy://auth-callback. No-op in a normal browser.
-    state = appendBuddyAppReturnState(state, getBuddyAppHost());
+    state = appendBuddyDesktopAuthState(appendBuddyAppReturnState(state, getBuddyAuthReturnHost()));
     // State storage removed - not yet implemented for verification
 
     // Build GitHub OAuth URL - redirect to provider-specific callback
@@ -737,7 +764,7 @@ window.handleSignIn = function handleSignIn(provider) {
     // its openid.* response params, so they round-trip reliably (the same mechanism link
     // mode already relies on). The buddyAppReturn host that other providers carry in `state`
     // is carried here so the callback relay can emit the buddy://auth-callback deep link.
-    const buddyAppHost = getBuddyAppHost();
+    const buddyAppHost = getBuddyAuthReturnHost();
 
     // Login-CSRF / session-fixation binding (F4) for Steam: Steam OpenID 2.0 has no native
     // `state`, so for a Buddy app handoff we generate a binding nonce here. generateState()
@@ -750,7 +777,9 @@ window.handleSignIn = function handleSignIn(provider) {
     //   2. Inside openid.return_to as `state` -- the leg Steam actually round-trips back to the
     //      callback, where params.get('state') populates authState.state and buildRedirectUrl
     //      echoes it onto buddy://auth-callback as `state` for the consumer's constant-time compare.
-    const buddyAppStateNonce = buddyAppHost ? generateState() : null;
+    const buddyAppStateNonce = buddyAppHost
+      ? appendBuddyDesktopAuthState(generateState())
+      : null;
     if (buddyAppStateNonce) {
       steamOpenIdUrl.searchParams.set('state', buddyAppStateNonce);
     }
@@ -830,7 +859,7 @@ window.handleSignIn = function handleSignIn(provider) {
       state = `createToken:${state}`;
       console.log('CreateToken mode enabled for Google - state includes createToken indicator:', state);
     }
-    state = appendBuddyAppReturnState(state, getBuddyAppHost());
+    state = appendBuddyDesktopAuthState(appendBuddyAppReturnState(state, getBuddyAuthReturnHost()));
 
     // Build callback URL - use the exact redirectUri from config.json
     let callbackUrl = CONFIG.google.redirectUri;
@@ -966,7 +995,7 @@ window.handleSignIn = function handleSignIn(provider) {
     }
     // Tag the OAuth state with the Buddy app return host (Electron/Android) so the
     // callback relay emits buddy://auth-callback. No-op in a normal browser.
-    state = appendBuddyAppReturnState(state, getBuddyAppHost());
+    state = appendBuddyDesktopAuthState(appendBuddyAppReturnState(state, getBuddyAuthReturnHost()));
 
     // Build callback URL - use the exact redirectUri from config.json
     let callbackUrl = CONFIG.discord.redirectUri;
@@ -3143,6 +3172,26 @@ window.addEventListener('DOMContentLoaded', async () => {
       localStorage.setItem('preferToken', e.target.checked ? 'true' : 'false');
       console.log('Prefer token setting saved:', e.target.checked);
       if (typeof trackGatewayEvent === 'function') trackGatewayEvent('setting_changed', { setting: 'preferToken', value: e.target.checked });
+    });
+  }
+
+  const authenticateBuddyDesktopCheckbox = document.getElementById('authenticateBuddyDesktopCheckbox');
+  if (authenticateBuddyDesktopCheckbox) {
+    const params = new URLSearchParams(window.location.search);
+    const requestedByUrl = params.get('authenticateBuddyDesktop') === '1' ||
+      params.get('authenticateBuddyDesktop') === 'true' ||
+      params.get('buddyDesktopAuth') === '1' ||
+      params.get('buddyDesktopAuth') === 'true';
+    const savedPreference = localStorage.getItem('authenticateBuddyDesktop') === 'true';
+    authenticateBuddyDesktopCheckbox.checked = requestedByUrl || savedPreference;
+    if (requestedByUrl) {
+      localStorage.setItem('authenticateBuddyDesktop', 'true');
+    }
+
+    authenticateBuddyDesktopCheckbox.addEventListener('change', (e) => {
+      localStorage.setItem('authenticateBuddyDesktop', e.target.checked ? 'true' : 'false');
+      console.log('Authenticate Buddy Desktop setting saved:', e.target.checked);
+      if (typeof trackGatewayEvent === 'function') trackGatewayEvent('setting_changed', { setting: 'authenticateBuddyDesktop', value: e.target.checked });
     });
   }
 

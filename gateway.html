@@ -127,6 +127,15 @@
           </svg>
           <span>Create account or sign in to existing account.</span>
         </p>
+
+        <label style="margin: 12px 0 16px 0; padding: 10px 12px; background: rgba(100, 200, 255, 0.08); border: 1px solid rgba(100, 200, 255, 0.22); border-radius: 8px; display: flex; gap: 10px; align-items: flex-start; cursor: pointer; color: rgba(255, 255, 255, 0.82); font-size: 13px; line-height: 1.35;">
+          <input type="checkbox" id="authenticateBuddyDesktopCheckbox" style="margin-top: 2px; width: 16px; height: 16px; flex-shrink: 0;" />
+          <span>
+            <strong style="color: rgba(255, 255, 255, 0.95);">Authenticate Buddy Desktop after sign-in</strong>
+            <br>
+            <span style="color: rgba(255, 255, 255, 0.58);">Opens the desktop app and keeps it signed in until Buddy logout.</span>
+          </span>
+        </label>
         
         <div class="button-group">
       <a href="javascript:void(0)" class="auth-button google" data-provider="google" onclick="handleSignIn('google'); return false;">

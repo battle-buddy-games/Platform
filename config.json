@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8b266b4",
-                         "title":  "fix(ci-doctrine): set KnownClassSlug in BuildClassificationEnvelope",
-                         "timestamp":  "2026-06-23T02:36:36Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d0ec517",
                          "title":  "chore(di): bundle concurrent projects-artifacts + sdk-webdav DI registrations",
                          "timestamp":  "2026-06-23T02:54:48Z",
@@ -104,6 +98,12 @@
                          "version":  "build-9a4b06c",
                          "title":  "fix(ci): expose ingested screenshot history",
                          "timestamp":  "2026-06-26T22:14:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-63b467e",
+                         "title":  "feat(buddy): add desktop auth handoff",
+                         "timestamp":  "2026-06-26T22:28:32Z",
                          "environment":  "production"
                      }
                  ]
