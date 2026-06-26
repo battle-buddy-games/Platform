@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-9b65139",
-                         "title":  "feat(buddy-desktop): update workspace launch profiles",
-                         "timestamp":  "2026-06-26T18:16:47Z",
+                         "version":  "build-986ecd2",
+                         "title":  "fix(chat): preserve nested sidebar foldouts",
+                         "timestamp":  "2026-06-26T18:30:03Z",
                          "environment":  "production"
                      }
                  ]
