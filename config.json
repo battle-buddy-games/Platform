@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-d0ec517",
-                         "title":  "chore(di): bundle concurrent projects-artifacts + sdk-webdav DI registrations",
-                         "timestamp":  "2026-06-23T02:54:48Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-8e32b27",
                          "title":  "feat(ci): remove terrain capture ingestion",
@@ -104,6 +98,12 @@
                          "version":  "build-63b467e",
                          "title":  "feat(buddy): add desktop auth handoff",
                          "timestamp":  "2026-06-26T22:28:32Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-fb347ab",
+                         "title":  "fix(ci): make discord screenshot variants budget-safe",
+                         "timestamp":  "2026-06-27T02:40:28Z",
                          "environment":  "production"
                      }
                  ]
