@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-9175b50",
-                         "title":  "fix(buddy-desktop): add cancellable clone progress window",
-                         "timestamp":  "2026-06-27T13:18:33Z",
+                         "version":  "build-6fe8868",
+                         "title":  "fix(chat): stack sidebar foldouts",
+                         "timestamp":  "2026-06-27T13:00:08Z",
                          "environment":  "production"
                      }
                  ]
