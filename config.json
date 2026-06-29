@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://app-announces-slow-compressed.trycloudflare.com"
+                                  "address":  "https://changelog-josh-cincinnati-laura.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
