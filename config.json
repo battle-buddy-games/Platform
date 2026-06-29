@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,6 +46,12 @@
                               }
                           ],
     "releases":  [
+                     {
+                         "version":  "build-7ee29bf",
+                         "title":  "fix(gateway): keep buddy app OAuth returns on backend",
+                         "timestamp":  "2026-06-25T19:41:19Z",
+                         "environment":  "production"
+                     },
                      {
                          "version":  "build-a266808",
                          "title":  "fix(ci): forward screenshot discord delivery failures",
@@ -98,12 +104,6 @@
                          "version":  "build-9328e32",
                          "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
                          "timestamp":  "2026-06-29T22:06:25Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-9881a5d",
-                         "title":  "fix(screen-capture): repoint Library off dead rclone, restore CI Screenshots ...",
-                         "timestamp":  "2026-06-29T23:07:42Z",
                          "environment":  "production"
                      }
                  ]
