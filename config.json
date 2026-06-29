@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-e95b430",
-                         "title":  "fix(screen-capture): repoint Media Screenshots copy off dead drive:Screenshot...",
-                         "timestamp":  "2026-06-29T23:19:56Z",
+                         "version":  "build-9881a5d",
+                         "title":  "fix(screen-capture): repoint Library off dead rclone, restore CI Screenshots ...",
+                         "timestamp":  "2026-06-29T23:07:42Z",
                          "environment":  "production"
                      }
                  ]
