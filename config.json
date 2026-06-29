@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-4e80abb",
-                         "title":  "fix(ci): dispatch screenshots to discord immediately",
-                         "timestamp":  "2026-06-25T00:23:05Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-fab6bd9",
                          "title":  "fix(buddy-desktop): show registered workspaces and harden cli daemon",
@@ -104,6 +98,12 @@
                          "version":  "build-6fe8868",
                          "title":  "fix(chat): stack sidebar foldouts",
                          "timestamp":  "2026-06-27T13:00:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1ebf823",
+                         "title":  "fix(platform): show ci screenshot resolution",
+                         "timestamp":  "2026-06-29T21:37:41Z",
                          "environment":  "production"
                      }
                  ]
