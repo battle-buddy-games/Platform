@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://changelog-josh-cincinnati-laura.trycloudflare.com"
+                                  "address":  "https://gibson-juan-received-lamps.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
