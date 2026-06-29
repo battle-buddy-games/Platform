@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-fab6bd9",
-                         "title":  "fix(buddy-desktop): show registered workspaces and harden cli daemon",
-                         "timestamp":  "2026-06-25T14:04:00Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3b3666f",
                          "title":  "fix(buddy-desktop): harden self-update feed fallback",
                          "timestamp":  "2026-06-25T14:44:59Z",
@@ -104,6 +98,12 @@
                          "version":  "build-1ebf823",
                          "title":  "fix(platform): show ci screenshot resolution",
                          "timestamp":  "2026-06-29T21:37:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-25e9fef",
+                         "title":  "fix(platform): show ci gallery screenshot resolution",
+                         "timestamp":  "2026-06-29T21:54:46Z",
                          "environment":  "production"
                      }
                  ]
