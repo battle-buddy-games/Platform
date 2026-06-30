@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-1c2af93",
-                         "title":  "fix(automation): gate remaining VM builds behind activeTab check",
-                         "timestamp":  "2026-06-30T02:03:32Z",
+                         "version":  "build-3629c6e",
+                         "title":  "feat(automation): add cross-surface links and fix runners legacy redirect",
+                         "timestamp":  "2026-06-30T02:13:36Z",
                          "environment":  "production"
                      }
                  ]
