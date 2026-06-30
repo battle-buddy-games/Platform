@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-9a4b06c",
-                         "title":  "fix(ci): expose ingested screenshot history",
-                         "timestamp":  "2026-06-26T22:14:20Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-63b467e",
                          "title":  "feat(buddy): add desktop auth handoff",
@@ -104,6 +98,12 @@
                          "version":  "build-1c2af93",
                          "title":  "fix(automation): gate remaining VM builds behind activeTab check",
                          "timestamp":  "2026-06-30T02:03:32Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a179210",
+                         "title":  "fix(service-mode): surface task failure, fix uninstall race, remove dead code",
+                         "timestamp":  "2026-06-30T17:45:31Z",
                          "environment":  "production"
                      }
                  ]
