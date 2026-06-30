@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,6 +46,12 @@
                               }
                           ],
     "releases":  [
+                     {
+                         "version":  "build-63b467e",
+                         "title":  "feat(buddy): add desktop auth handoff",
+                         "timestamp":  "2026-06-26T22:28:32Z",
+                         "environment":  "production"
+                     },
                      {
                          "version":  "build-fb347ab",
                          "title":  "fix(ci): make discord screenshot variants budget-safe",
@@ -98,12 +104,6 @@
                          "version":  "build-a179210",
                          "title":  "fix(service-mode): surface task failure, fix uninstall race, remove dead code",
                          "timestamp":  "2026-06-30T17:45:31Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-083f42e",
-                         "title":  "feat(chat): align CodeAgent tab callout with BattleBuddyAgent pattern",
-                         "timestamp":  "2026-06-30T18:45:36Z",
                          "environment":  "production"
                      }
                  ]
