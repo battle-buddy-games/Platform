@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9b65139",
-                         "title":  "feat(buddy-desktop): update workspace launch profiles",
-                         "timestamp":  "2026-06-26T18:16:47Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9a4b06c",
                          "title":  "fix(ci): expose ingested screenshot history",
                          "timestamp":  "2026-06-26T22:14:20Z",
@@ -104,6 +98,12 @@
                          "version":  "build-8287437",
                          "title":  "feat(automation): consolidate Projects \u003e Automation from 8 tabs to 3 (Runs, W...",
                          "timestamp":  "2026-06-30T01:48:55Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1c2af93",
+                         "title":  "fix(automation): gate remaining VM builds behind activeTab check",
+                         "timestamp":  "2026-06-30T02:03:32Z",
                          "environment":  "production"
                      }
                  ]
