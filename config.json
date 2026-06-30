@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-1fcd09c",
-                         "title":  "fix(security): gate WatchPluginSession to admin-or-session-owner",
-                         "timestamp":  "2026-06-30T18:19:36Z",
+                         "version":  "build-a179210",
+                         "title":  "fix(service-mode): surface task failure, fix uninstall race, remove dead code",
+                         "timestamp":  "2026-06-30T17:45:31Z",
                          "environment":  "production"
                      }
                  ]
