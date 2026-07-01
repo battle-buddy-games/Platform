@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-9328e32",
-                         "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
-                         "timestamp":  "2026-06-29T22:06:25Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-9881a5d",
                          "title":  "fix(screen-capture): repoint Library off dead rclone, restore CI Screenshots ...",
@@ -104,6 +98,12 @@
                          "version":  "build-edd6954",
                          "title":  "fix(security): use attribute-safe escaping + href scheme allowlist in Agent S...",
                          "timestamp":  "2026-07-01T01:32:04Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2dc832a",
+                         "title":  "fix(discord): treat bot reconnect as sampling pause",
+                         "timestamp":  "2026-07-01T02:38:45Z",
                          "environment":  "production"
                      }
                  ]
