@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a179210",
-                         "title":  "fix(service-mode): surface task failure, fix uninstall race, remove dead code",
-                         "timestamp":  "2026-06-30T17:45:31Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-083f42e",
                          "title":  "feat(chat): align CodeAgent tab callout with BattleBuddyAgent pattern",
                          "timestamp":  "2026-06-30T18:45:36Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4c6e20b",
                          "title":  "feat(buddy-desktop): add Git Actions submenu + local screen-capture wiring (T...",
                          "timestamp":  "2026-07-01T12:18:22Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f30d824",
+                         "title":  "feat(platform-tasks): Slice B — typed lean PlatformTaskDto, keyset pagination...",
+                         "timestamp":  "2026-07-01T12:48:53Z",
                          "environment":  "production"
                      }
                  ]
