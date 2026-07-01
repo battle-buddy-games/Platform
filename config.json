@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-cfad066",
-                         "title":  "refactor(downloads): re-home Tool Distribution tab out of project-nested Proj...",
-                         "timestamp":  "2026-07-01T00:48:05Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-61ce825",
                          "title":  "fix(signalr): widen hub client-timeout to survive tunnel jitter",
                          "timestamp":  "2026-07-01T01:08:36Z",
@@ -90,7 +84,7 @@
                      },
                      {
                          "version":  "build-f30d824",
-                         "title":  "feat(platform-tasks): Slice B Ã¢â‚¬â€ typed lean PlatformTaskDto, keyset pagination...",
+                         "title":  "feat(platform-tasks): Slice B ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â typed lean PlatformTaskDto, keyset pagination...",
                          "timestamp":  "2026-07-01T12:48:53Z",
                          "environment":  "production"
                      },
@@ -104,6 +98,12 @@
                          "version":  "build-8d7ee12",
                          "title":  "feat(webplatform): add downloads dashboard views",
                          "timestamp":  "2026-07-01T13:21:48Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-da44f1c",
+                         "title":  "feat(dashboard): SDK workspace/library and theme UI polish",
+                         "timestamp":  "2026-07-01T17:06:14Z",
                          "environment":  "production"
                      }
                  ]
