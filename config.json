@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1ebf823",
-                         "title":  "fix(platform): show ci screenshot resolution",
-                         "timestamp":  "2026-06-29T21:37:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-25e9fef",
                          "title":  "fix(platform): show ci gallery screenshot resolution",
                          "timestamp":  "2026-06-29T21:54:46Z",
@@ -104,6 +98,12 @@
                          "version":  "build-cfad066",
                          "title":  "refactor(downloads): re-home Tool Distribution tab out of project-nested Proj...",
                          "timestamp":  "2026-07-01T00:48:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-61ce825",
+                         "title":  "fix(signalr): widen hub client-timeout to survive tunnel jitter",
+                         "timestamp":  "2026-07-01T01:08:36Z",
                          "environment":  "production"
                      }
                  ]
