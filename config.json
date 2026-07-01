@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-083f42e",
-                         "title":  "feat(chat): align CodeAgent tab callout with BattleBuddyAgent pattern",
-                         "timestamp":  "2026-06-30T18:45:36Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-284e6b8",
                          "title":  "fix(buddy-desktop): show main window before folder picker dialog in clone flow",
                          "timestamp":  "2026-06-30T20:28:18Z",
@@ -102,8 +96,14 @@
                      },
                      {
                          "version":  "build-f30d824",
-                         "title":  "feat(platform-tasks): Slice B — typed lean PlatformTaskDto, keyset pagination...",
+                         "title":  "feat(platform-tasks): Slice B â€” typed lean PlatformTaskDto, keyset pagination...",
                          "timestamp":  "2026-07-01T12:48:53Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a27d3ea",
+                         "title":  "feat(platform): per-test-case memory ingest + Test-tab analytics; fix prod-de...",
+                         "timestamp":  "2026-07-01T13:03:23Z",
                          "environment":  "production"
                      }
                  ]
