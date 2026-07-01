@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9881a5d",
-                         "title":  "fix(screen-capture): repoint Library off dead rclone, restore CI Screenshots ...",
-                         "timestamp":  "2026-06-29T23:07:42Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8287437",
                          "title":  "feat(automation): consolidate Projects \u003e Automation from 8 tabs to 3 (Runs, W...",
                          "timestamp":  "2026-06-30T01:48:55Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2dc832a",
                          "title":  "fix(discord): treat bot reconnect as sampling pause",
                          "timestamp":  "2026-07-01T02:38:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-53a7648",
+                         "title":  "feat(themes): full-page theme integration + persistent live-preview overlay",
+                         "timestamp":  "2026-07-01T03:32:12Z",
                          "environment":  "production"
                      }
                  ]
