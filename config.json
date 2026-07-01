@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-25e9fef",
-                         "title":  "fix(platform): show ci gallery screenshot resolution",
-                         "timestamp":  "2026-06-29T21:54:46Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9328e32",
                          "title":  "Merge branch \u0027main\u0027 of https://github.com/frostebite/WebPlatform",
                          "timestamp":  "2026-06-29T22:06:25Z",
@@ -104,6 +98,12 @@
                          "version":  "build-61ce825",
                          "title":  "fix(signalr): widen hub client-timeout to survive tunnel jitter",
                          "timestamp":  "2026-07-01T01:08:36Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-edd6954",
+                         "title":  "fix(security): use attribute-safe escaping + href scheme allowlist in Agent S...",
+                         "timestamp":  "2026-07-01T01:32:04Z",
                          "environment":  "production"
                      }
                  ]
