@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1c2af93",
-                         "title":  "fix(automation): gate remaining VM builds behind activeTab check",
-                         "timestamp":  "2026-06-30T02:03:32Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a179210",
                          "title":  "fix(service-mode): surface task failure, fix uninstall race, remove dead code",
                          "timestamp":  "2026-06-30T17:45:31Z",
@@ -104,6 +98,12 @@
                          "version":  "build-c9d1273",
                          "title":  "feat(presence): extend InstanceId correlation to BattleBuddyHub",
                          "timestamp":  "2026-07-01T03:59:06Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4c6e20b",
+                         "title":  "feat(buddy-desktop): add Git Actions submenu + local screen-capture wiring (T...",
+                         "timestamp":  "2026-07-01T12:18:22Z",
                          "environment":  "production"
                      }
                  ]
