@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-61ce825",
-                         "title":  "fix(signalr): widen hub client-timeout to survive tunnel jitter",
-                         "timestamp":  "2026-07-01T01:08:36Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-edd6954",
                          "title":  "fix(security): use attribute-safe escaping + href scheme allowlist in Agent S...",
                          "timestamp":  "2026-07-01T01:32:04Z",
@@ -84,7 +78,7 @@
                      },
                      {
                          "version":  "build-f30d824",
-                         "title":  "feat(platform-tasks): Slice B ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â typed lean PlatformTaskDto, keyset pagination...",
+                         "title":  "feat(platform-tasks): Slice B ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â typed lean PlatformTaskDto, keyset pagination...",
                          "timestamp":  "2026-07-01T12:48:53Z",
                          "environment":  "production"
                      },
@@ -104,6 +98,12 @@
                          "version":  "build-da44f1c",
                          "title":  "feat(dashboard): SDK workspace/library and theme UI polish",
                          "timestamp":  "2026-07-01T17:06:14Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5c68ccb",
+                         "title":  "fix(agents): retarget agent definition sync/read/write to frostebite/Agents",
+                         "timestamp":  "2026-07-01T17:27:59Z",
                          "environment":  "production"
                      }
                  ]
