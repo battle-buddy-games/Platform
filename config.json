@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-2ad1f55",
-                         "title":  "feat(buddy): expose codex info in tray",
-                         "timestamp":  "2026-07-01T19:17:21Z",
+                         "version":  "build-0a21f10",
+                         "title":  "feat(sdk-artifacts): support partial dll uploads",
+                         "timestamp":  "2026-07-01T19:49:51Z",
                          "environment":  "production"
                      }
                  ]
