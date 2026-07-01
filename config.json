@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8287437",
-                         "title":  "feat(automation): consolidate Projects \u003e Automation from 8 tabs to 3 (Runs, W...",
-                         "timestamp":  "2026-06-30T01:48:55Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1c2af93",
                          "title":  "fix(automation): gate remaining VM builds behind activeTab check",
                          "timestamp":  "2026-06-30T02:03:32Z",
@@ -104,6 +98,12 @@
                          "version":  "build-53a7648",
                          "title":  "feat(themes): full-page theme integration + persistent live-preview overlay",
                          "timestamp":  "2026-07-01T03:32:12Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c9d1273",
+                         "title":  "feat(presence): extend InstanceId correlation to BattleBuddyHub",
+                         "timestamp":  "2026-07-01T03:59:06Z",
                          "environment":  "production"
                      }
                  ]
