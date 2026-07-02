@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-00a5828",
-                         "title":  "fix(buddy-desktop): defer local conversation tray scans",
-                         "timestamp":  "2026-07-02T02:22:57Z",
+                         "version":  "build-f41b780",
+                         "title":  "fix(buddy): eliminate main-process hang from synchronous transcript scanning ...",
+                         "timestamp":  "2026-07-02T02:41:27Z",
                          "environment":  "production"
                      }
                  ]
