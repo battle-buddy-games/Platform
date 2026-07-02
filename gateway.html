@@ -128,14 +128,6 @@
           <span>Create account or sign in to existing account.</span>
         </p>
 
-        <label style="margin: 12px 0 16px 0; padding: 10px 12px; background: rgba(100, 200, 255, 0.08); border: 1px solid rgba(100, 200, 255, 0.22); border-radius: 8px; display: flex; gap: 10px; align-items: flex-start; cursor: pointer; color: rgba(255, 255, 255, 0.82); font-size: 13px; line-height: 1.35;">
-          <input type="checkbox" id="authenticateBuddyDesktopCheckbox" style="margin-top: 2px; width: 16px; height: 16px; flex-shrink: 0;" />
-          <span>
-            <strong style="color: rgba(255, 255, 255, 0.95);">Authenticate Buddy Desktop after sign-in</strong>
-            <br>
-            <span style="color: rgba(255, 255, 255, 0.58);">Opens the desktop app and keeps it signed in until Buddy logout.</span>
-          </span>
-        </label>
         
         <div class="button-group">
       <a href="javascript:void(0)" class="auth-button google" data-provider="google" onclick="handleSignIn('google'); return false;">
@@ -287,7 +279,7 @@
       </div>
 
       <div class="quick-links-panel" style="position: absolute; top: 80px; left: 100%; margin-left: 12px; width: 260px; background: rgba(26, 26, 46, 0.9); border-radius: 16px; padding: 24px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); opacity: 0.9; z-index: 1000;">
-        <h3 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: rgba(255, 255, 255, 0.85); letter-spacing: 0.03em; text-transform: uppercase;">Quick Links</h3>
+        <h3 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: rgba(255, 255, 255, 0.85); letter-spacing: 0.03em; text-transform: uppercase;">More</h3>
         <div class="button-group">
           <div class="options-menu-container" style="margin-bottom: 8px;">
             <div class="options-menu-trigger" role="button" tabindex="0" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); font-size: 13px; padding: 8px 12px; display: flex; align-items: center; justify-content: flex-start; text-align: left; border-radius: 8px; cursor: pointer; position: relative;">
@@ -295,11 +287,11 @@
                 <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
               </svg>
               <span>Options</span>
-              <svg viewBox="0 0 24 24" class="options-menu-arrow" style="width: 16px; height: 16px; fill: currentColor; margin-left: auto;">
+              <svg viewBox="0 0 24 24" class="options-menu-arrow" style="width: 16px; height: 16px; fill: currentColor; margin-left: auto; transform: rotate(180deg);">
                 <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
               </svg>
             </div>
-            <div class="options-menu-dropdown">
+            <div class="options-menu-dropdown" style="display: block;">
               <div class="quick-links-options" style="padding: 8px 4px;">
                 <label class="quick-links-option disabled-option">
                   <input type="checkbox" checked disabled />
@@ -324,6 +316,10 @@
                 <label class="quick-links-option developer-option" style="display: none;">
                   <input type="checkbox" id="debugModeCheckbox" />
                   <span>Debug Mode</span>
+                </label>
+                <label class="quick-links-option" id="authenticateBuddyDesktopLabel" style="display: none;">
+                  <input type="checkbox" id="authenticateBuddyDesktopCheckbox" />
+                  <span>Authenticate Buddy Desktop after sign-in</span>
                 </label>
                 <div id="debugEditLinkContainer" style="display: none; margin-top: 6px;">
                   <a id="debugEditLink" href="https://github.com/frostebite/WebPlatform/blob/main/github-pages-deploy/gateway.html" target="_blank" rel="noopener noreferrer" class="quick-links-edit-link" title="View gateway.html on GitHub">

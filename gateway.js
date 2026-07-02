@@ -3176,6 +3176,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   }
 
   const authenticateBuddyDesktopCheckbox = document.getElementById('authenticateBuddyDesktopCheckbox');
+  const authenticateBuddyDesktopLabel = document.getElementById('authenticateBuddyDesktopLabel');
   if (authenticateBuddyDesktopCheckbox) {
     const params = new URLSearchParams(window.location.search);
     const requestedByUrl = params.get('authenticateBuddyDesktop') === '1' ||
@@ -3183,8 +3184,18 @@ window.addEventListener('DOMContentLoaded', async () => {
       params.get('buddyDesktopAuth') === '1' ||
       params.get('buddyDesktopAuth') === 'true';
     const savedPreference = localStorage.getItem('authenticateBuddyDesktop') === 'true';
-    authenticateBuddyDesktopCheckbox.checked = requestedByUrl || savedPreference;
-    if (requestedByUrl) {
+    const isAndroidAuth = getBuddyAppHost() === 'android';
+
+    // Show option if requested via URL, saved preference, or Android app is authenticating
+    if (requestedByUrl || savedPreference || isAndroidAuth) {
+      if (authenticateBuddyDesktopLabel) {
+        authenticateBuddyDesktopLabel.style.display = '';
+      }
+    }
+
+    // Check by default if Android app is authenticating
+    authenticateBuddyDesktopCheckbox.checked = requestedByUrl || savedPreference || isAndroidAuth;
+    if (requestedByUrl || isAndroidAuth) {
       localStorage.setItem('authenticateBuddyDesktop', 'true');
     }
 

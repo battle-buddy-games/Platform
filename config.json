@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-da44f1c",
-                         "title":  "feat(dashboard): SDK workspace/library and theme UI polish",
-                         "timestamp":  "2026-07-01T17:06:14Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-5c68ccb",
                          "title":  "fix(agents): retarget agent definition sync/read/write to frostebite/Agents",
@@ -104,6 +98,12 @@
                          "version":  "build-41e3339",
                          "title":  "feat(ci): add platform-side trusted-baseline endpoint for diff-baseline speedup",
                          "timestamp":  "2026-07-02T16:14:42Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-91afec1",
+                         "title":  "fix(tabs): add missing usings and HtmlEncoder args in unified tab/title TagHe...",
+                         "timestamp":  "2026-07-02T19:26:12Z",
                          "environment":  "production"
                      }
                  ]
