@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-18b88b1",
-                         "title":  "fix(buddy): add missing tray icon click handler to show/hide window",
-                         "timestamp":  "2026-07-02T01:27:57Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d35fa9d",
                          "title":  "fix(buddy): decouple auto-updater wiring from the rest of startup",
                          "timestamp":  "2026-07-02T01:50:27Z",
@@ -104,6 +98,12 @@
                          "version":  "build-43f06ff",
                          "title":  "feat(buddy-tray): wire workspace Build/Test/Launch to local packaged test loop",
                          "timestamp":  "2026-07-02T21:39:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2c4de22",
+                         "title":  "fix(signalr): re-wire dropped SignalRTokenAuthMiddleware into pipeline",
+                         "timestamp":  "2026-07-02T21:58:29Z",
                          "environment":  "production"
                      }
                  ]
