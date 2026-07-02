@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-4d82a76",
-                         "title":  "fix(buddy): dedupe desktop presence",
-                         "timestamp":  "2026-07-02T14:44:54Z",
+                         "version":  "build-c37aeb3",
+                         "title":  "feat(notifications): add push and follow preferences",
+                         "timestamp":  "2026-07-02T15:01:53Z",
                          "environment":  "production"
                      }
                  ]
