@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-53a7648",
-                         "title":  "feat(themes): full-page theme integration + persistent live-preview overlay",
-                         "timestamp":  "2026-07-01T03:32:12Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-c9d1273",
                          "title":  "feat(presence): extend InstanceId correlation to BattleBuddyHub",
@@ -104,6 +98,12 @@
                          "version":  "build-18b88b1",
                          "title":  "fix(buddy): add missing tray icon click handler to show/hide window",
                          "timestamp":  "2026-07-02T01:27:57Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d35fa9d",
+                         "title":  "fix(buddy): decouple auto-updater wiring from the rest of startup",
+                         "timestamp":  "2026-07-02T01:50:27Z",
                          "environment":  "production"
                      }
                  ]
