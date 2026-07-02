@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a27d3ea",
-                         "title":  "feat(platform): per-test-case memory ingest + Test-tab analytics; fix prod-de...",
-                         "timestamp":  "2026-07-01T13:03:23Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8d7ee12",
                          "title":  "feat(webplatform): add downloads dashboard views",
                          "timestamp":  "2026-07-01T13:21:48Z",
@@ -104,6 +98,12 @@
                          "version":  "build-6e78356",
                          "title":  "fix(buddy): move AI-usage disk reads off main thread + add event-loop-lag wat...",
                          "timestamp":  "2026-07-02T05:14:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4d82a76",
+                         "title":  "fix(buddy): dedupe desktop presence",
+                         "timestamp":  "2026-07-02T14:44:54Z",
                          "environment":  "production"
                      }
                  ]
