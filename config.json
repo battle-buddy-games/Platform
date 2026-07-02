@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8d7ee12",
-                         "title":  "feat(webplatform): add downloads dashboard views",
-                         "timestamp":  "2026-07-01T13:21:48Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-da44f1c",
                          "title":  "feat(dashboard): SDK workspace/library and theme UI polish",
                          "timestamp":  "2026-07-01T17:06:14Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-c37aeb3",
-                         "title":  "feat(notifications): add push and follow preferences",
-                         "timestamp":  "2026-07-02T15:01:53Z",
+                         "version":  "build-4d82a76",
+                         "title":  "fix(buddy): dedupe desktop presence",
+                         "timestamp":  "2026-07-02T14:44:54Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-41e3339",
+                         "title":  "feat(ci): add platform-side trusted-baseline endpoint for diff-baseline speedup",
+                         "timestamp":  "2026-07-02T16:14:42Z",
                          "environment":  "production"
                      }
                  ]
