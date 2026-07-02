@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2ad1f55",
-                         "title":  "feat(buddy): expose codex info in tray",
-                         "timestamp":  "2026-07-01T19:17:21Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-18b88b1",
                          "title":  "fix(buddy): add missing tray icon click handler to show/hide window",
                          "timestamp":  "2026-07-02T01:27:57Z",
@@ -104,6 +98,12 @@
                          "version":  "build-fe4d3f4",
                          "title":  "feat(ci-tests): ingest packaged build-test .trx results into the test-results...",
                          "timestamp":  "2026-07-02T21:00:59Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-43f06ff",
+                         "title":  "feat(buddy-tray): wire workspace Build/Test/Launch to local packaged test loop",
+                         "timestamp":  "2026-07-02T21:39:01Z",
                          "environment":  "production"
                      }
                  ]

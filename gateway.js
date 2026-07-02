@@ -386,22 +386,65 @@ function getBuddyAppHost() {
   return null;
 }
 
-function isBuddyDesktopAuthRequested() {
+// Device-type gates for the "Prefer Desktop" / "Prefer Android" options menu
+// checkboxes. These are UA sniffs, not app-presence checks (that's getBuddyAppHost()) --
+// they gate which preference option is even relevant on this device.
+function isAndroidUserAgent() {
+  try {
+    return /Android/i.test(navigator.userAgent || '');
+  } catch (e) {
+    return false;
+  }
+}
+
+function isMobileUserAgent() {
+  try {
+    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent || '');
+  } catch (e) {
+    return false;
+  }
+}
+
+function isPreferDesktopAuthRequested() {
   try {
     const params = new URLSearchParams(window.location.search);
     const fromUrl = params.get('authenticateBuddyDesktop') === '1' ||
       params.get('authenticateBuddyDesktop') === 'true' ||
       params.get('buddyDesktopAuth') === '1' ||
       params.get('buddyDesktopAuth') === 'true';
-    const checkbox = document.getElementById('authenticateBuddyDesktopCheckbox');
-    return fromUrl || (checkbox && checkbox.checked === true) || localStorage.getItem('authenticateBuddyDesktop') === 'true';
+    const checkbox = document.getElementById('preferDesktopCheckbox');
+    return fromUrl || (checkbox && checkbox.checked === true) || localStorage.getItem('preferDesktopAuth') === 'true';
+  } catch (e) {
+    return false;
+  }
+}
+
+function isPreferAndroidAuthRequested() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const fromUrl = params.get('authenticateBuddyAndroid') === '1' ||
+      params.get('authenticateBuddyAndroid') === 'true' ||
+      params.get('buddyAndroidAuth') === '1' ||
+      params.get('buddyAndroidAuth') === 'true';
+    const checkbox = document.getElementById('preferAndroidCheckbox');
+    return fromUrl || (checkbox && checkbox.checked === true) || localStorage.getItem('preferAndroidAuth') === 'true';
   } catch (e) {
     return false;
   }
 }
 
 function getBuddyAuthReturnHost() {
-  return getBuddyAppHost() || (isBuddyDesktopAuthRequested() ? 'electron' : null);
+  const appHost = getBuddyAppHost();
+  if (appHost) {
+    return appHost;
+  }
+  if (isAndroidUserAgent() && isPreferAndroidAuthRequested()) {
+    return 'android';
+  }
+  if (!isMobileUserAgent() && isPreferDesktopAuthRequested()) {
+    return 'electron';
+  }
+  return null;
 }
 
 function appendBuddyAppReturnState(state, host) {
@@ -413,11 +456,18 @@ function appendBuddyAppReturnState(state, host) {
 }
 
 function appendBuddyDesktopAuthState(state) {
-  if (!state || !isBuddyDesktopAuthRequested() || state.includes(`${BUDDY_DESKTOP_AUTH_STATE_MARKER}:`)) {
+  // Only the browser-preference flow needs this marker -- an app-initiated flow
+  // (already running inside Electron/Android) carries its own pending-state match.
+  if (getBuddyAppHost()) {
     return state;
   }
 
-  return `${state}:${BUDDY_DESKTOP_AUTH_STATE_MARKER}:electron`;
+  const host = getBuddyAuthReturnHost();
+  if (!state || !host || state.includes(`${BUDDY_DESKTOP_AUTH_STATE_MARKER}:`)) {
+    return state;
+  }
+
+  return `${state}:${BUDDY_DESKTOP_AUTH_STATE_MARKER}:${host}`;
 }
 
 function shouldUseExternalBrowserForProvider(provider) {
@@ -3175,34 +3225,59 @@ window.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  const authenticateBuddyDesktopCheckbox = document.getElementById('authenticateBuddyDesktopCheckbox');
-  const authenticateBuddyDesktopLabel = document.getElementById('authenticateBuddyDesktopLabel');
-  if (authenticateBuddyDesktopCheckbox) {
+  // "Prefer Desktop" -- only relevant on a non-mobile browser (covers real desktop
+  // browsers and Buddy Desktop's own Electron webview).
+  const preferDesktopLabel = document.getElementById('preferDesktopLabel');
+  const preferDesktopCheckbox = document.getElementById('preferDesktopCheckbox');
+  if (preferDesktopLabel) {
+    preferDesktopLabel.style.display = isMobileUserAgent() ? 'none' : '';
+  }
+  if (preferDesktopCheckbox) {
     const params = new URLSearchParams(window.location.search);
     const requestedByUrl = params.get('authenticateBuddyDesktop') === '1' ||
       params.get('authenticateBuddyDesktop') === 'true' ||
       params.get('buddyDesktopAuth') === '1' ||
       params.get('buddyDesktopAuth') === 'true';
-    const savedPreference = localStorage.getItem('authenticateBuddyDesktop') === 'true';
-    const isAndroidAuth = getBuddyAppHost() === 'android';
+    const savedPreference = localStorage.getItem('preferDesktopAuth') === 'true';
+    const isElectronApp = getBuddyAppHost() === 'electron';
 
-    // Show option if requested via URL, saved preference, or Android app is authenticating
-    if (requestedByUrl || savedPreference || isAndroidAuth) {
-      if (authenticateBuddyDesktopLabel) {
-        authenticateBuddyDesktopLabel.style.display = '';
-      }
+    preferDesktopCheckbox.checked = requestedByUrl || savedPreference || isElectronApp;
+    if (requestedByUrl || isElectronApp) {
+      localStorage.setItem('preferDesktopAuth', 'true');
     }
 
-    // Check by default if Android app is authenticating
-    authenticateBuddyDesktopCheckbox.checked = requestedByUrl || savedPreference || isAndroidAuth;
-    if (requestedByUrl || isAndroidAuth) {
-      localStorage.setItem('authenticateBuddyDesktop', 'true');
+    preferDesktopCheckbox.addEventListener('change', (e) => {
+      localStorage.setItem('preferDesktopAuth', e.target.checked ? 'true' : 'false');
+      console.log('Prefer Desktop setting saved:', e.target.checked);
+      if (typeof trackGatewayEvent === 'function') trackGatewayEvent('setting_changed', { setting: 'preferDesktopAuth', value: e.target.checked });
+    });
+  }
+
+  // "Prefer Android" -- only relevant on an Android browser (covers real Android
+  // browsers and Buddy Android's own embedded webview).
+  const preferAndroidLabel = document.getElementById('preferAndroidLabel');
+  const preferAndroidCheckbox = document.getElementById('preferAndroidCheckbox');
+  if (preferAndroidLabel) {
+    preferAndroidLabel.style.display = isAndroidUserAgent() ? '' : 'none';
+  }
+  if (preferAndroidCheckbox) {
+    const params = new URLSearchParams(window.location.search);
+    const requestedByUrl = params.get('authenticateBuddyAndroid') === '1' ||
+      params.get('authenticateBuddyAndroid') === 'true' ||
+      params.get('buddyAndroidAuth') === '1' ||
+      params.get('buddyAndroidAuth') === 'true';
+    const savedPreference = localStorage.getItem('preferAndroidAuth') === 'true';
+    const isAndroidApp = getBuddyAppHost() === 'android';
+
+    preferAndroidCheckbox.checked = requestedByUrl || savedPreference || isAndroidApp;
+    if (requestedByUrl || isAndroidApp) {
+      localStorage.setItem('preferAndroidAuth', 'true');
     }
 
-    authenticateBuddyDesktopCheckbox.addEventListener('change', (e) => {
-      localStorage.setItem('authenticateBuddyDesktop', e.target.checked ? 'true' : 'false');
-      console.log('Authenticate Buddy Desktop setting saved:', e.target.checked);
-      if (typeof trackGatewayEvent === 'function') trackGatewayEvent('setting_changed', { setting: 'authenticateBuddyDesktop', value: e.target.checked });
+    preferAndroidCheckbox.addEventListener('change', (e) => {
+      localStorage.setItem('preferAndroidAuth', e.target.checked ? 'true' : 'false');
+      console.log('Prefer Android setting saved:', e.target.checked);
+      if (typeof trackGatewayEvent === 'function') trackGatewayEvent('setting_changed', { setting: 'preferAndroidAuth', value: e.target.checked });
     });
   }
 
@@ -4014,18 +4089,19 @@ async function checkCloudServiceHealth() {
     try {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
-      
+
       const response = await fetch(healthUrl, {
         method: 'GET',
         headers: {
           'Accept': 'application/json, text/plain, */*'
         },
         signal: controller.signal,
-        mode: 'cors'
+        mode: 'cors',
+        cache: 'no-store'
       });
-      
+
       clearTimeout(timeoutId);
-      
+
       if (response.ok) {
         // Cloud service is healthy - don't check agent service status here
         // Agent service status is checked separately in checkAgentStatus()
@@ -4052,7 +4128,8 @@ async function checkCloudServiceHealth() {
             const versionResponse = await fetch(versionUrl, {
               method: 'GET',
               headers: { 'Accept': 'application/json' },
-              mode: 'cors'
+              mode: 'cors',
+              cache: 'no-store'
             });
             if (versionResponse.ok) {
               const versionData = await versionResponse.json();
@@ -4202,16 +4279,17 @@ async function checkAgentStatus() {
     try {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
-      
+
       response = await fetch(healthUrl, {
         method: 'GET',
         headers: {
           'Accept': 'application/json, text/plain, */*'
         },
         signal: controller.signal,
-        mode: 'cors'
+        mode: 'cors',
+        cache: 'no-store'
       });
-      
+
       clearTimeout(timeoutId);
     } finally {
       restoreConsoleError();
@@ -4519,18 +4597,19 @@ async function checkSignalRHealth() {
     try {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
-      
+
       const response = await fetch(healthUrl, {
         method: 'GET',
         headers: {
           'Accept': 'application/json, text/plain, */*'
         },
         signal: controller.signal,
-        mode: 'cors'
+        mode: 'cors',
+        cache: 'no-store'
       });
-      
+
       clearTimeout(timeoutId);
-      
+
       if (response.ok) {
         // Try to parse the response to get SignalR connection count
         try {
