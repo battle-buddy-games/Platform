@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-5c68ccb",
-                         "title":  "fix(agents): retarget agent definition sync/read/write to frostebite/Agents",
-                         "timestamp":  "2026-07-01T17:27:59Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-2ad1f55",
                          "title":  "feat(buddy): expose codex info in tray",
@@ -104,6 +98,12 @@
                          "version":  "build-91afec1",
                          "title":  "fix(tabs): add missing usings and HtmlEncoder args in unified tab/title TagHe...",
                          "timestamp":  "2026-07-02T19:26:12Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-fe4d3f4",
+                         "title":  "feat(ci-tests): ingest packaged build-test .trx results into the test-results...",
+                         "timestamp":  "2026-07-02T21:00:59Z",
                          "environment":  "production"
                      }
                  ]
