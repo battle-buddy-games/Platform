@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-ebc65f3",
-                         "title":  "feat(buddy): show resumable agent conversations",
-                         "timestamp":  "2026-07-01T20:12:43Z",
+                         "version":  "build-18b88b1",
+                         "title":  "fix(buddy): add missing tray icon click handler to show/hide window",
+                         "timestamp":  "2026-07-02T01:27:57Z",
                          "environment":  "production"
                      }
                  ]
