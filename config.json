@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-6e78356",
-                         "title":  "fix(buddy): move AI-usage disk reads off main thread + add event-loop-lag wat...",
-                         "timestamp":  "2026-07-02T05:14:08Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4d82a76",
                          "title":  "fix(buddy): dedupe desktop presence",
                          "timestamp":  "2026-07-02T14:44:54Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-8489c61",
-                         "title":  "feat(ci-builds): build Unity Builds tab frontend (metadata, download, log-lin...",
-                         "timestamp":  "2026-07-03T02:17:41Z",
+                         "version":  "build-331dff0",
+                         "title":  "fix(auth): sync Identity cookie scheme redirect paths with primary Cookie scheme",
+                         "timestamp":  "2026-07-03T01:53:06Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8b93265",
+                         "title":  "fix(ci-builds): wire primary Unity build ingest path to UnityBuildDetailEntity",
+                         "timestamp":  "2026-07-03T02:35:42Z",
                          "environment":  "production"
                      }
                  ]
