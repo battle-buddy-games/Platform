@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-43f06ff",
-                         "title":  "feat(buddy-tray): wire workspace Build/Test/Launch to local packaged test loop",
-                         "timestamp":  "2026-07-02T21:39:01Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2c4de22",
                          "title":  "fix(signalr): re-wire dropped SignalRTokenAuthMiddleware into pipeline",
                          "timestamp":  "2026-07-02T21:58:29Z",
@@ -104,6 +98,12 @@
                          "version":  "build-fc71829",
                          "title":  "fix(dashboard-tabs): fix parent-to-child context passing in tag helpers",
                          "timestamp":  "2026-07-03T04:21:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-feba95c",
+                         "title":  "feat(ui-designer): Unity RectTransform-style anchor editor, CanvasScaler scal...",
+                         "timestamp":  "2026-07-03T04:39:41Z",
                          "environment":  "production"
                      }
                  ]
