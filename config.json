@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-611685e",
-                         "title":  "fix(header): stop ellipsizing Battle Buddy title, swap to short form instead",
-                         "timestamp":  "2026-07-03T15:50:33Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-dcb7ca6",
                          "title":  "fix(dashboard-tabs): correct @addTagHelper assembly name (root cause of invis...",
                          "timestamp":  "2026-07-03T16:18:33Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a499c5d",
                          "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
                          "timestamp":  "2026-07-03T23:08:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a03a12a",
+                         "title":  "feat(cloud-saves): add admin browse/inspect UI to User Accounts tool",
+                         "timestamp":  "2026-07-03T23:33:02Z",
                          "environment":  "production"
                      }
                  ]
