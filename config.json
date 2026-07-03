@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-465be9b",
-                         "title":  "fix(dashboard-tabs): use scoped service for parent-to-child context passing",
-                         "timestamp":  "2026-07-03T05:38:08Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1783c86",
                          "title":  "fix(dashboard-tabs): render proper Bootstrap tab structure",
                          "timestamp":  "2026-07-03T11:40:17Z",
@@ -104,6 +98,12 @@
                          "version":  "build-31e7ef5",
                          "title":  "fix(navbar): replace presence dropdown status row with icon-level color + too...",
                          "timestamp":  "2026-07-03T20:35:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f07c031",
+                         "title":  "feat(navbar): add Tasks section to Actions dropdown",
+                         "timestamp":  "2026-07-03T20:52:45Z",
                          "environment":  "production"
                      }
                  ]
