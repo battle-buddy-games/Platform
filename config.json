@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-21ed153",
-                         "title":  "revert(dashboard-tabs): restore known-good tag helper (undo speculative conte...",
-                         "timestamp":  "2026-07-03T15:09:56Z",
+                         "version":  "build-e8d8100",
+                         "title":  "fix(ui): move GitHub Actions settings cog out of the sparkles dropdown tab row",
+                         "timestamp":  "2026-07-03T15:33:12Z",
                          "environment":  "production"
                      }
                  ]
