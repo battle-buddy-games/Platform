@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1505649",
-                         "title":  "feat(analytics): persist and surface packaged test-run correlation tag",
-                         "timestamp":  "2026-07-03T12:48:45Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b183c93",
                          "title":  "feat(schema): reconcile EF model snapshot drift with inert migration (Task #17)",
                          "timestamp":  "2026-07-03T13:38:37Z",
@@ -104,6 +98,12 @@
                          "version":  "build-1c7320a",
                          "title":  "fix(navbar): merge presence icon back into Actions dropdown, move tool menus",
                          "timestamp":  "2026-07-03T21:51:10Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7889109",
+                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
+                         "timestamp":  "2026-07-03T22:04:54Z",
                          "environment":  "production"
                      }
                  ]
