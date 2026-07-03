@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-b183c93",
-                         "title":  "feat(schema): reconcile EF model snapshot drift with inert migration (Task #17)",
-                         "timestamp":  "2026-07-03T13:38:37Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-21ed153",
                          "title":  "revert(dashboard-tabs): restore known-good tag helper (undo speculative conte...",
                          "timestamp":  "2026-07-03T15:09:56Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-69481d7",
-                         "title":  "feat(presence): add per-row action menu (Message DM / SDK tool links)",
-                         "timestamp":  "2026-07-03T22:29:33Z",
+                         "version":  "build-7889109",
+                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
+                         "timestamp":  "2026-07-03T22:04:54Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-bdc49fd",
+                         "title":  "fix(dashboard): remove top margin gap above dashboard-tool-title",
+                         "timestamp":  "2026-07-03T22:51:16Z",
                          "environment":  "production"
                      }
                  ]
