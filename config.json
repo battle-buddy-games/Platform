@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2c4de22",
-                         "title":  "fix(signalr): re-wire dropped SignalRTokenAuthMiddleware into pipeline",
-                         "timestamp":  "2026-07-02T21:58:29Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-6fa2d7c",
                          "title":  "fix(buddy-desktop): surface update-available/downloaded via native toast",
                          "timestamp":  "2026-07-02T23:31:57Z",
@@ -104,6 +98,12 @@
                          "version":  "build-feba95c",
                          "title":  "feat(ui-designer): Unity RectTransform-style anchor editor, CanvasScaler scal...",
                          "timestamp":  "2026-07-03T04:39:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-465be9b",
+                         "title":  "fix(dashboard-tabs): use scoped service for parent-to-child context passing",
+                         "timestamp":  "2026-07-03T05:38:08Z",
                          "environment":  "production"
                      }
                  ]
