@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-91afec1",
-                         "title":  "fix(tabs): add missing usings and HtmlEncoder args in unified tab/title TagHe...",
-                         "timestamp":  "2026-07-02T19:26:12Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-fe4d3f4",
                          "title":  "feat(ci-tests): ingest packaged build-test .trx results into the test-results...",
                          "timestamp":  "2026-07-02T21:00:59Z",
@@ -104,6 +98,12 @@
                          "version":  "build-bcc6c23",
                          "title":  "fix(navbar): keep Battle Buddy title visible at mobile widths",
                          "timestamp":  "2026-07-03T03:34:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-95ac92c",
+                         "title":  "fix(navbar,dashboard): mobile submenu parity + sidebar auto-collapse",
+                         "timestamp":  "2026-07-03T03:57:44Z",
                          "environment":  "production"
                      }
                  ]
