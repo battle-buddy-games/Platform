@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-bcc6c23",
-                         "title":  "fix(navbar): keep Battle Buddy title visible at mobile widths",
-                         "timestamp":  "2026-07-03T03:34:20Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-95ac92c",
                          "title":  "fix(navbar,dashboard): mobile submenu parity + sidebar auto-collapse",
                          "timestamp":  "2026-07-03T03:57:44Z",
@@ -104,6 +98,12 @@
                          "version":  "build-611685e",
                          "title":  "fix(header): stop ellipsizing Battle Buddy title, swap to short form instead",
                          "timestamp":  "2026-07-03T15:50:33Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-dcb7ca6",
+                         "title":  "fix(dashboard-tabs): correct @addTagHelper assembly name (root cause of invis...",
+                         "timestamp":  "2026-07-03T16:18:33Z",
                          "environment":  "production"
                      }
                  ]
