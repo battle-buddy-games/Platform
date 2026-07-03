@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1783c86",
-                         "title":  "fix(dashboard-tabs): render proper Bootstrap tab structure",
-                         "timestamp":  "2026-07-03T11:40:17Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1505649",
                          "title":  "feat(analytics): persist and surface packaged test-run correlation tag",
                          "timestamp":  "2026-07-03T12:48:45Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f07c031",
                          "title":  "feat(navbar): add Tasks section to Actions dropdown",
                          "timestamp":  "2026-07-03T20:52:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1c7320a",
+                         "title":  "fix(navbar): merge presence icon back into Actions dropdown, move tool menus",
+                         "timestamp":  "2026-07-03T21:51:10Z",
                          "environment":  "production"
                      }
                  ]
