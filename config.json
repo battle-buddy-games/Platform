@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-dcb7ca6",
-                         "title":  "fix(dashboard-tabs): correct @addTagHelper assembly name (root cause of invis...",
-                         "timestamp":  "2026-07-03T16:18:33Z",
+                         "version":  "build-31ade2a",
+                         "title":  "fix(navbar): compact presence indicator + move Open Chat to header icon",
+                         "timestamp":  "2026-07-03T16:32:22Z",
                          "environment":  "production"
                      }
                  ]
