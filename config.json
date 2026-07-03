@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-21ed153",
-                         "title":  "revert(dashboard-tabs): restore known-good tag helper (undo speculative conte...",
-                         "timestamp":  "2026-07-03T15:09:56Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-611685e",
                          "title":  "fix(header): stop ellipsizing Battle Buddy title, swap to short form instead",
@@ -104,6 +98,12 @@
                          "version":  "build-bdc49fd",
                          "title":  "fix(dashboard): remove top margin gap above dashboard-tool-title",
                          "timestamp":  "2026-07-03T22:51:16Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a499c5d",
+                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
+                         "timestamp":  "2026-07-03T23:08:20Z",
                          "environment":  "production"
                      }
                  ]
