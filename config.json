@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-00a5828",
-                         "title":  "fix(buddy-desktop): defer local conversation tray scans",
-                         "timestamp":  "2026-07-02T02:22:57Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-49309e1",
                          "title":  "fix(buddy): remove synchronous npx unity-cli fallback from tray menu build",
                          "timestamp":  "2026-07-02T04:49:27Z",
@@ -104,6 +98,12 @@
                          "version":  "build-6fa2d7c",
                          "title":  "fix(buddy-desktop): surface update-available/downloaded via native toast",
                          "timestamp":  "2026-07-02T23:31:57Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a57fb53",
+                         "title":  "feat(buddy-tray): remap Build menu to local-first contract (exit-code remap)",
+                         "timestamp":  "2026-07-03T00:08:01Z",
                          "environment":  "production"
                      }
                  ]
