@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-8b93265",
-                         "title":  "fix(ci-builds): wire primary Unity build ingest path to UnityBuildDetailEntity",
-                         "timestamp":  "2026-07-03T02:35:42Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-89c8e34",
                          "title":  "feat(chat-portal): add UI trigger for desktop-session plugin elevate",
@@ -104,6 +98,12 @@
                          "version":  "build-b183c93",
                          "title":  "feat(schema): reconcile EF model snapshot drift with inert migration (Task #17)",
                          "timestamp":  "2026-07-03T13:38:37Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-21ed153",
+                         "title":  "revert(dashboard-tabs): restore known-good tag helper (undo speculative conte...",
+                         "timestamp":  "2026-07-03T15:09:56Z",
                          "environment":  "production"
                      }
                  ]
