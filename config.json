@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-6fa2d7c",
-                         "title":  "fix(buddy-desktop): surface update-available/downloaded via native toast",
-                         "timestamp":  "2026-07-02T23:31:57Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-a57fb53",
                          "title":  "feat(buddy-tray): remap Build menu to local-first contract (exit-code remap)",
@@ -104,6 +98,12 @@
                          "version":  "build-465be9b",
                          "title":  "fix(dashboard-tabs): use scoped service for parent-to-child context passing",
                          "timestamp":  "2026-07-03T05:38:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1783c86",
+                         "title":  "fix(dashboard-tabs): render proper Bootstrap tab structure",
+                         "timestamp":  "2026-07-03T11:40:17Z",
                          "environment":  "production"
                      }
                  ]
