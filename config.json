@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a57fb53",
-                         "title":  "feat(buddy-tray): remap Build menu to local-first contract (exit-code remap)",
-                         "timestamp":  "2026-07-03T00:08:01Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-331dff0",
                          "title":  "fix(auth): sync Identity cookie scheme redirect paths with primary Cookie scheme",
                          "timestamp":  "2026-07-03T01:53:06Z",
@@ -104,6 +98,12 @@
                          "version":  "build-1783c86",
                          "title":  "fix(dashboard-tabs): render proper Bootstrap tab structure",
                          "timestamp":  "2026-07-03T11:40:17Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1505649",
+                         "title":  "feat(analytics): persist and surface packaged test-run correlation tag",
+                         "timestamp":  "2026-07-03T12:48:45Z",
                          "environment":  "production"
                      }
                  ]
