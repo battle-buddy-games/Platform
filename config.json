@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-331dff0",
-                         "title":  "fix(auth): sync Identity cookie scheme redirect paths with primary Cookie scheme",
-                         "timestamp":  "2026-07-03T01:53:06Z",
+                         "version":  "build-8489c61",
+                         "title":  "feat(ci-builds): build Unity Builds tab frontend (metadata, download, log-lin...",
+                         "timestamp":  "2026-07-03T02:17:41Z",
                          "environment":  "production"
                      }
                  ]
