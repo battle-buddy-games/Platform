@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-49309e1",
-                         "title":  "fix(buddy): remove synchronous npx unity-cli fallback from tray menu build",
-                         "timestamp":  "2026-07-02T04:49:27Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-6e78356",
                          "title":  "fix(buddy): move AI-usage disk reads off main thread + add event-loop-lag wat...",
@@ -104,6 +98,12 @@
                          "version":  "build-a57fb53",
                          "title":  "feat(buddy-tray): remap Build menu to local-first contract (exit-code remap)",
                          "timestamp":  "2026-07-03T00:08:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-331dff0",
+                         "title":  "fix(auth): sync Identity cookie scheme redirect paths with primary Cookie scheme",
+                         "timestamp":  "2026-07-03T01:53:06Z",
                          "environment":  "production"
                      }
                  ]
