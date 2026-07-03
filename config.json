@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4d82a76",
-                         "title":  "fix(buddy): dedupe desktop presence",
-                         "timestamp":  "2026-07-02T14:44:54Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-41e3339",
                          "title":  "feat(ci): add platform-side trusted-baseline endpoint for diff-baseline speedup",
                          "timestamp":  "2026-07-02T16:14:42Z",
@@ -104,6 +98,12 @@
                          "version":  "build-8b93265",
                          "title":  "fix(ci-builds): wire primary Unity build ingest path to UnityBuildDetailEntity",
                          "timestamp":  "2026-07-03T02:35:42Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-89c8e34",
+                         "title":  "feat(chat-portal): add UI trigger for desktop-session plugin elevate",
+                         "timestamp":  "2026-07-03T03:03:30Z",
                          "environment":  "production"
                      }
                  ]
