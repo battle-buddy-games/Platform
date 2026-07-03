@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-41e3339",
-                         "title":  "feat(ci): add platform-side trusted-baseline endpoint for diff-baseline speedup",
-                         "timestamp":  "2026-07-02T16:14:42Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-91afec1",
                          "title":  "fix(tabs): add missing usings and HtmlEncoder args in unified tab/title TagHe...",
                          "timestamp":  "2026-07-02T19:26:12Z",
@@ -104,6 +98,12 @@
                          "version":  "build-89c8e34",
                          "title":  "feat(chat-portal): add UI trigger for desktop-session plugin elevate",
                          "timestamp":  "2026-07-03T03:03:30Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-bcc6c23",
+                         "title":  "fix(navbar): keep Battle Buddy title visible at mobile widths",
+                         "timestamp":  "2026-07-03T03:34:20Z",
                          "environment":  "production"
                      }
                  ]
