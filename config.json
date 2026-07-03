@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-7889109",
-                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
-                         "timestamp":  "2026-07-03T22:04:54Z",
+                         "version":  "build-69481d7",
+                         "title":  "feat(presence): add per-row action menu (Message DM / SDK tool links)",
+                         "timestamp":  "2026-07-03T22:29:33Z",
                          "environment":  "production"
                      }
                  ]
