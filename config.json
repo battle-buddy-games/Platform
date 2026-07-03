@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-fc71829",
-                         "title":  "fix(dashboard-tabs): fix parent-to-child context passing in tag helpers",
-                         "timestamp":  "2026-07-03T04:21:01Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-feba95c",
                          "title":  "feat(ui-designer): Unity RectTransform-style anchor editor, CanvasScaler scal...",
                          "timestamp":  "2026-07-03T04:39:41Z",
@@ -104,6 +98,12 @@
                          "version":  "build-ab41ad5",
                          "title":  "fix(github-actions-status): Correct workflow count filtering with explicit st...",
                          "timestamp":  "2026-07-03T19:20:04Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-08b6d3b",
+                         "title":  "fix(navbar): mobile menu scrollable overlay + drill-down submenus with breadc...",
+                         "timestamp":  "2026-07-03T19:51:21Z",
                          "environment":  "production"
                      }
                  ]
