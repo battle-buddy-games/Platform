@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-331dff0",
-                         "title":  "fix(auth): sync Identity cookie scheme redirect paths with primary Cookie scheme",
-                         "timestamp":  "2026-07-03T01:53:06Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8b93265",
                          "title":  "fix(ci-builds): wire primary Unity build ingest path to UnityBuildDetailEntity",
                          "timestamp":  "2026-07-03T02:35:42Z",
@@ -104,6 +98,12 @@
                          "version":  "build-1505649",
                          "title":  "feat(analytics): persist and surface packaged test-run correlation tag",
                          "timestamp":  "2026-07-03T12:48:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-b183c93",
+                         "title":  "feat(schema): reconcile EF model snapshot drift with inert migration (Task #17)",
+                         "timestamp":  "2026-07-03T13:38:37Z",
                          "environment":  "production"
                      }
                  ]
