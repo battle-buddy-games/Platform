@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-f07c031",
-                         "title":  "feat(navbar): add Tasks section to Actions dropdown",
-                         "timestamp":  "2026-07-03T20:52:45Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-1c7320a",
                          "title":  "fix(navbar): merge presence icon back into Actions dropdown, move tool menus",
@@ -104,6 +98,12 @@
                          "version":  "build-e684975",
                          "title":  "fix(sdk): let Elevated-tier callers use non-git sdk mode too",
                          "timestamp":  "2026-07-04T06:11:17Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0498047",
+                         "title":  "fix(navbar): close hasOnlineUsersAccess Razor block before Go To dropdown",
+                         "timestamp":  "2026-07-04T14:01:30Z",
                          "environment":  "production"
                      }
                  ]
