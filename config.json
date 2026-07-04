@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7889109",
-                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
-                         "timestamp":  "2026-07-03T22:04:54Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-bdc49fd",
                          "title":  "fix(dashboard): remove top margin gap above dashboard-tool-title",
                          "timestamp":  "2026-07-03T22:51:16Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-b954657",
-                         "title":  "fix(navbar): fix uneven icon spacing, close remaining desktop/mobile gaps",
-                         "timestamp":  "2026-07-04T14:51:23Z",
+                         "version":  "build-bcdfb1f",
+                         "title":  "fix(navbar): move Gateway back to Profile, Portals to Go To dropdown",
+                         "timestamp":  "2026-07-04T14:31:15Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2bdc5fa",
+                         "title":  "feat(navbar): rename Build Queue to Actions with queue/by-workflow views",
+                         "timestamp":  "2026-07-04T15:05:48Z",
                          "environment":  "production"
                      }
                  ]
