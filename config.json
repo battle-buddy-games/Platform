@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a499c5d",
-                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
-                         "timestamp":  "2026-07-03T23:08:20Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a03a12a",
                          "title":  "feat(cloud-saves): add admin browse/inspect UI to User Accounts tool",
                          "timestamp":  "2026-07-03T23:33:02Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-94cefd9",
-                         "title":  "fix(chat): un-mangled chat-config div broken by a misplaced tool-title tag",
-                         "timestamp":  "2026-07-04T17:26:05Z",
+                         "version":  "build-37cc7b0",
+                         "title":  "feat(navbar+tray): Actions dropdown collapse/badge consistency; tray Go To+So...",
+                         "timestamp":  "2026-07-04T17:11:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2c83bd0",
+                         "title":  "fix(tray+navbar): restore Social as its own item; enforce equal icon-button s...",
+                         "timestamp":  "2026-07-04T20:35:27Z",
                          "environment":  "production"
                      }
                  ]
