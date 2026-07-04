@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-dcb7ca6",
-                         "title":  "fix(dashboard-tabs): correct @addTagHelper assembly name (root cause of invis...",
-                         "timestamp":  "2026-07-03T16:18:33Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-ab41ad5",
                          "title":  "fix(github-actions-status): Correct workflow count filtering with explicit st...",
@@ -104,6 +98,12 @@
                          "version":  "build-a03a12a",
                          "title":  "feat(cloud-saves): add admin browse/inspect UI to User Accounts tool",
                          "timestamp":  "2026-07-03T23:33:02Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4e9778d",
+                         "title":  "feat(admin): add submodule profile + git submodule admin backend",
+                         "timestamp":  "2026-07-04T01:28:13Z",
                          "environment":  "production"
                      }
                  ]
