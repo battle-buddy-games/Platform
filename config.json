@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-31e7ef5",
-                         "title":  "fix(navbar): replace presence dropdown status row with icon-level color + too...",
-                         "timestamp":  "2026-07-03T20:35:20Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f07c031",
                          "title":  "feat(navbar): add Tasks section to Actions dropdown",
                          "timestamp":  "2026-07-03T20:52:45Z",
@@ -104,6 +98,12 @@
                          "version":  "build-fb2abd9",
                          "title":  "feat(sdk): lazy on-demand tier materialization for non-git WebDAV delivery",
                          "timestamp":  "2026-07-04T05:34:26Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e684975",
+                         "title":  "fix(sdk): let Elevated-tier callers use non-git sdk mode too",
+                         "timestamp":  "2026-07-04T06:11:17Z",
                          "environment":  "production"
                      }
                  ]
