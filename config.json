@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1c7320a",
-                         "title":  "fix(navbar): merge presence icon back into Actions dropdown, move tool menus",
-                         "timestamp":  "2026-07-03T21:51:10Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7889109",
                          "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
                          "timestamp":  "2026-07-03T22:04:54Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0498047",
                          "title":  "fix(navbar): close hasOnlineUsersAccess Razor block before Go To dropdown",
                          "timestamp":  "2026-07-04T14:01:30Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-bcdfb1f",
+                         "title":  "fix(navbar): move Gateway back to Profile, Portals to Go To dropdown",
+                         "timestamp":  "2026-07-04T14:31:15Z",
                          "environment":  "production"
                      }
                  ]
