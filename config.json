@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a03a12a",
-                         "title":  "feat(cloud-saves): add admin browse/inspect UI to User Accounts tool",
-                         "timestamp":  "2026-07-03T23:33:02Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4e9778d",
                          "title":  "feat(admin): add submodule profile + git submodule admin backend",
                          "timestamp":  "2026-07-04T01:28:13Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2c83bd0",
                          "title":  "fix(tray+navbar): restore Social as its own item; enforce equal icon-button s...",
                          "timestamp":  "2026-07-04T20:35:27Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3bb9b9d",
+                         "title":  "fix(tray): label the existing auto-update toggle \"Available Update Instant Re...",
+                         "timestamp":  "2026-07-04T21:02:57Z",
                          "environment":  "production"
                      }
                  ]
