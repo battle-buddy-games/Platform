@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-bcdfb1f",
-                         "title":  "fix(navbar): move Gateway back to Profile, Portals to Go To dropdown",
-                         "timestamp":  "2026-07-04T14:31:15Z",
+                         "version":  "build-b954657",
+                         "title":  "fix(navbar): fix uneven icon spacing, close remaining desktop/mobile gaps",
+                         "timestamp":  "2026-07-04T14:51:23Z",
                          "environment":  "production"
                      }
                  ]
