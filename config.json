@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-3bb9b9d",
-                         "title":  "fix(tray): label the existing auto-update toggle \"Available Update Instant Re...",
-                         "timestamp":  "2026-07-04T21:02:57Z",
+                         "version":  "build-4e13656",
+                         "title":  "fix(sdk): background tier materialization instead of blocking the request thread",
+                         "timestamp":  "2026-07-04T21:20:06Z",
                          "environment":  "production"
                      }
                  ]
