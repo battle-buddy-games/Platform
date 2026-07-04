@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-37cc7b0",
-                         "title":  "feat(navbar+tray): Actions dropdown collapse/badge consistency; tray Go To+So...",
-                         "timestamp":  "2026-07-04T17:11:20Z",
+                         "version":  "build-94cefd9",
+                         "title":  "fix(chat): un-mangled chat-config div broken by a misplaced tool-title tag",
+                         "timestamp":  "2026-07-04T17:26:05Z",
                          "environment":  "production"
                      }
                  ]
