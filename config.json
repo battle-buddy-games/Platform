@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-08b6d3b",
-                         "title":  "fix(navbar): mobile menu scrollable overlay + drill-down submenus with breadc...",
-                         "timestamp":  "2026-07-03T19:51:21Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-31e7ef5",
                          "title":  "fix(navbar): replace presence dropdown status row with icon-level color + too...",
                          "timestamp":  "2026-07-03T20:35:20Z",
@@ -104,6 +98,12 @@
                          "version":  "build-1e51f5d",
                          "title":  "fix(razor): escape literal @ in submodule confirm-modal JS string",
                          "timestamp":  "2026-07-04T05:01:34Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-fb2abd9",
+                         "title":  "feat(sdk): lazy on-demand tier materialization for non-git WebDAV delivery",
+                         "timestamp":  "2026-07-04T05:34:26Z",
                          "environment":  "production"
                      }
                  ]
