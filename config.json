@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-bdc49fd",
-                         "title":  "fix(dashboard): remove top margin gap above dashboard-tool-title",
-                         "timestamp":  "2026-07-03T22:51:16Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-a499c5d",
                          "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
@@ -104,6 +98,12 @@
                          "version":  "build-2bdc5fa",
                          "title":  "feat(navbar): rename Build Queue to Actions with queue/by-workflow views",
                          "timestamp":  "2026-07-04T15:05:48Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-37cc7b0",
+                         "title":  "feat(navbar+tray): Actions dropdown collapse/badge consistency; tray Go To+So...",
+                         "timestamp":  "2026-07-04T17:11:20Z",
                          "environment":  "production"
                      }
                  ]
