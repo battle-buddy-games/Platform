@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1e51f5d",
-                         "title":  "fix(razor): escape literal @ in submodule confirm-modal JS string",
-                         "timestamp":  "2026-07-04T05:01:34Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-fb2abd9",
                          "title":  "feat(sdk): lazy on-demand tier materialization for non-git WebDAV delivery",
                          "timestamp":  "2026-07-04T05:34:26Z",
@@ -104,6 +98,12 @@
                          "version":  "build-bc3fee2",
                          "title":  "fix(sdk): resolve materialize script path via shared repo-root locator + conf...",
                          "timestamp":  "2026-07-05T17:33:39Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d9a6edf",
+                         "title":  "fix(sdk): bundle Materialize-SdkTierTrees.ps1 + deps into cloud publish outpu...",
+                         "timestamp":  "2026-07-05T19:33:31Z",
                          "environment":  "production"
                      }
                  ]
