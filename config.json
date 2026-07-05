@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e684975",
-                         "title":  "fix(sdk): let Elevated-tier callers use non-git sdk mode too",
-                         "timestamp":  "2026-07-04T06:11:17Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0498047",
                          "title":  "fix(navbar): close hasOnlineUsersAccess Razor block before Go To dropdown",
                          "timestamp":  "2026-07-04T14:01:30Z",
@@ -104,6 +98,12 @@
                          "version":  "build-da0761d",
                          "title":  "feat(dashboard): add Remote Control tool, move Live Control out of Screen Cap...",
                          "timestamp":  "2026-07-05T21:21:28Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-468f7ec",
+                         "title":  "fix(ci): fetch SDK materialize scripts from frostebite/automation, not the Ga...",
+                         "timestamp":  "2026-07-05T22:21:15Z",
                          "environment":  "production"
                      }
                  ]
