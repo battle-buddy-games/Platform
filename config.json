@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-4e9778d",
-                         "title":  "feat(admin): add submodule profile + git submodule admin backend",
-                         "timestamp":  "2026-07-04T01:28:13Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-1e51f5d",
                          "title":  "fix(razor): escape literal @ in submodule confirm-modal JS string",
@@ -104,6 +98,12 @@
                          "version":  "build-4e13656",
                          "title":  "fix(sdk): background tier materialization instead of blocking the request thread",
                          "timestamp":  "2026-07-04T21:20:06Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-bc3fee2",
+                         "title":  "fix(sdk): resolve materialize script path via shared repo-root locator + conf...",
+                         "timestamp":  "2026-07-05T17:33:39Z",
                          "environment":  "production"
                      }
                  ]
