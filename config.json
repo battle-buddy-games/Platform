@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-37cc7b0",
-                         "title":  "feat(navbar+tray): Actions dropdown collapse/badge consistency; tray Go To+So...",
-                         "timestamp":  "2026-07-04T17:11:20Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2c83bd0",
                          "title":  "fix(tray+navbar): restore Social as its own item; enforce equal icon-button s...",
                          "timestamp":  "2026-07-04T20:35:27Z",
@@ -104,6 +98,12 @@
                          "version":  "build-78e194e",
                          "title":  "fix(agent): make Discord NoClient API-diagnosable + self-service-recoverable",
                          "timestamp":  "2026-07-06T15:09:53Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-998fda2",
+                         "title":  "feat(dashboard): split Remote Control into System/User/Product tabs",
+                         "timestamp":  "2026-07-06T17:41:49Z",
                          "environment":  "production"
                      }
                  ]
