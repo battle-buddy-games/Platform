@@ -198,6 +198,27 @@ async function loadConfig() {
   }
 }
 
+// Independent GitHub-Actions-verified health signal, published by the "Health Check (Portal)"
+// workflow to health-status.json alongside config.json. Used ONLY to anchor the offline-detection
+// UI's "last confirmed online" timeline -- NOT for the 30-second direct tunnel poll in
+// checkTunnelHealth(), which keeps polling the tunnel directly and is unaffected by this.
+let HEALTH_STATUS = null;
+
+async function loadHealthStatus() {
+  try {
+    const response = await fetch('./health-status.json?t=' + Date.now());
+    if (!response.ok) {
+      console.warn('[Portal] health-status.json not available:', response.status);
+      return false;
+    }
+    HEALTH_STATUS = await response.json();
+    return true;
+  } catch (error) {
+    console.warn('[Portal] Failed to load health-status.json:', error);
+    return false;
+  }
+}
+
 function showError(title, message) {
   const overlay = document.getElementById('loadingOverlay');
   overlay.innerHTML = `
@@ -516,6 +537,20 @@ function renderUpdatesTimeline() {
   container.classList.remove('hidden');
 }
 
+// Update the "Last confirmed online" line in the offline-detection overlay from HEALTH_STATUS
+// (the independent GitHub-Actions health check), not from the last deploy timestamp.
+function updateLastConfirmedOnlineDisplay() {
+  const el = document.getElementById('lastConfirmedOnline');
+  if (!el) return;
+
+  if (HEALTH_STATUS && HEALTH_STATUS.lastOnlineAt) {
+    el.textContent = 'Last confirmed online: ' + formatReleaseTime(HEALTH_STATUS.lastOnlineAt);
+    el.classList.remove('hidden');
+  } else {
+    el.classList.add('hidden');
+  }
+}
+
 // Format release timestamp for timeline display
 function formatReleaseTime(timestamp) {
   if (!timestamp) return '';
@@ -661,6 +696,7 @@ function updateUpdatingUI() {
 
   // Update elapsed time in spinner (count UP)
   if (timeEl) timeEl.textContent = formatCountdown(updatingElapsedSeconds);
+  updateLastConfirmedOnlineDisplay();
 
   // Update bar segments - mark completed and active
   const segments = document.querySelectorAll('.updating-steps-bar .bar-segment');
@@ -726,23 +762,22 @@ async function pollConfigAndHealth() {
     const newConfig = await response.json();
     CONFIG = newConfig;
 
-    // Re-check for release info (may appear or change after config.json is updated mid-wait)
+    // Re-check for release info (may appear or change after config.json is updated mid-wait).
+    // This is cosmetic messaging only ("Deploying update X") -- it does NOT re-anchor the
+    // elapsed timer, which stays anchored to HEALTH_STATUS.lastOnlineAt (see showConnectionFailure).
     if (connectionFailureDetected) {
       const latestRelease = getLatestRelease();
-      // Re-anchor if we found a newer release than what we had
       if (latestRelease && latestRelease.timestamp &&
           (!detectedRelease || latestRelease.version !== detectedRelease.version)) {
         detectedRelease = latestRelease;
         console.log('[Portal] New release detected during polling:', detectedRelease.version);
-        const releaseTime = new Date(detectedRelease.timestamp).getTime();
-        if (!isNaN(releaseTime)) {
-          updatingStartTime = releaseTime;
-          updatingElapsedSeconds = Math.max(0, Math.floor((Date.now() - releaseTime) / 1000));
-          persistFailureTime(releaseTime, tunnelBaseUrl);
-          console.log('[Portal] Timer re-anchored to release timestamp (' + updatingElapsedSeconds + 's elapsed)');
-        }
         renderUpdatesTimeline();
       }
+
+      // Refresh the independent health signal too, so "Last confirmed online" stays current
+      // if it was unavailable at the moment the failure was first detected.
+      await loadHealthStatus();
+      updateLastConfirmedOnlineDisplay();
     }
 
     const cloudTunnel = getTunnelForPreferredEnvironment() || newConfig.cloudflareTunnels?.find(t => t.name === 'cloud');
@@ -938,24 +973,29 @@ function showConnectionFailure(title, message) {
 
   connectionFailureDetected = true;
 
-  // Always get the latest release from config.json for timer anchoring.
-  // The release timestamp is the most reliable anchor for elapsed time,
-  // regardless of age — the stage system handles early/late display states.
+  // Kept for the cosmetic "Deploying update X" message text only (see below) -- NOT used to
+  // anchor the elapsed timer. Anchoring to the deploy timestamp was the bug: it made the "elapsed"
+  // duration wrong whenever the platform had been running fine for a while since the last release
+  // before actually going down.
   detectedRelease = getLatestRelease();
 
-  // Determine timer start time:
-  // 1. Latest release timestamp from config.json (always used if available)
-  // 2. Persisted failure detection time from localStorage (survives refresh)
-  // 3. Current time (last resort, only on first detection with no release info)
-  if (detectedRelease && detectedRelease.timestamp) {
-    const releaseTime = new Date(detectedRelease.timestamp).getTime();
-    updatingStartTime = releaseTime;
-    updatingElapsedSeconds = Math.max(0, Math.floor((Date.now() - releaseTime) / 1000));
-    persistFailureTime(releaseTime, tunnelBaseUrl);
-    console.log('[Portal] Timer anchored to release', detectedRelease.version,
-      '(' + updatingElapsedSeconds + 's elapsed)');
+  // Determine timer start time -- "last confirmed online", most reliable signal first:
+  // 1. HEALTH_STATUS.lastOnlineAt from the independent GitHub-Actions health check
+  //    (health-status.json) -- the actual last time the platform was confirmed reachable.
+  // 2. Persisted failure detection time from localStorage (survives refresh, keeps a stable
+  //    anchor across reloads even if health-status.json is briefly unavailable).
+  // 3. Current time (last resort, only on first detection with neither signal available).
+  const lastOnlineAt = HEALTH_STATUS && HEALTH_STATUS.lastOnlineAt
+    ? new Date(HEALTH_STATUS.lastOnlineAt).getTime()
+    : NaN;
+
+  if (!isNaN(lastOnlineAt)) {
+    updatingStartTime = lastOnlineAt;
+    updatingElapsedSeconds = Math.max(0, Math.floor((Date.now() - lastOnlineAt) / 1000));
+    persistFailureTime(lastOnlineAt, tunnelBaseUrl);
+    console.log('[Portal] Timer anchored to health-status.json lastOnlineAt (' + updatingElapsedSeconds + 's elapsed)');
   } else {
-    // No release in config.json — check localStorage for persisted failure time
+    // No health status available — check localStorage for persisted failure time
     const persisted = getPersistedFailureTime();
     if (persisted) {
       updatingStartTime = persisted;
@@ -966,7 +1006,7 @@ function showConnectionFailure(title, message) {
       updatingStartTime = Date.now();
       updatingElapsedSeconds = 0;
       persistFailureTime(updatingStartTime, tunnelBaseUrl);
-      console.log('[Portal] No release or persisted time — starting timer fresh');
+      console.log('[Portal] No health status or persisted time — starting timer fresh');
     }
   }
 
@@ -1001,6 +1041,7 @@ function showConnectionFailure(title, message) {
   // Show elapsed time (count up)
   if (timeEl) timeEl.textContent = formatCountdown(updatingElapsedSeconds);
   if (extraMsg) { extraMsg.classList.add('hidden'); extraMsg.classList.remove('offline'); }
+  updateLastConfirmedOnlineDisplay();
 
   // Set bar segments to match current elapsed position
   const activeBarIndex = initialStage.barIndex;
@@ -1976,6 +2017,7 @@ document.addEventListener('keydown', function(e) {
 // Initialize: Load config first, then load tunnel
 window.addEventListener('DOMContentLoaded', async () => {
   initSpaceBarHoldDetection();
+  loadHealthStatus(); // fire-and-forget; offline-detection UI tolerates it not being ready yet
   const configLoaded = await loadConfig();
   if (configLoaded) {
     await loadTunnel();

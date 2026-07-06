@@ -378,6 +378,17 @@ iframe {
   height: 6px;
 }
 
+/* Last confirmed online (from the independent GitHub-Actions health check) */
+.last-confirmed-online {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: -8px 0 16px;
+}
+
+.last-confirmed-online.hidden {
+  display: none;
+}
+
 /* Extra message box */
 .updating-extra-message {
   background: rgba(255, 193, 7, 0.1);

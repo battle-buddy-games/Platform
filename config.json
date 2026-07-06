@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2c83bd0",
-                         "title":  "fix(tray+navbar): restore Social as its own item; enforce equal icon-button s...",
-                         "timestamp":  "2026-07-04T20:35:27Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4e13656",
                          "title":  "fix(sdk): background tier materialization instead of blocking the request thread",
                          "timestamp":  "2026-07-04T21:20:06Z",
@@ -104,6 +98,12 @@
                          "version":  "build-998fda2",
                          "title":  "feat(dashboard): split Remote Control into System/User/Product tabs",
                          "timestamp":  "2026-07-06T17:41:49Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5d24c4e",
+                         "title":  "fix(buddy-desktop): route update-check failures through logToFile, not consol...",
+                         "timestamp":  "2026-07-06T19:13:34Z",
                          "environment":  "production"
                      }
                  ]
