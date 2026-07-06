@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0498047",
-                         "title":  "fix(navbar): close hasOnlineUsersAccess Razor block before Go To dropdown",
-                         "timestamp":  "2026-07-04T14:01:30Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-bcdfb1f",
                          "title":  "fix(navbar): move Gateway back to Profile, Portals to Go To dropdown",
                          "timestamp":  "2026-07-04T14:31:15Z",
@@ -104,6 +98,12 @@
                          "version":  "build-468f7ec",
                          "title":  "fix(ci): fetch SDK materialize scripts from frostebite/automation, not the Ga...",
                          "timestamp":  "2026-07-05T22:21:15Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ab6439e",
+                         "title":  "feat(sdk): add stage/elapsed-time progress reporting to tier materialization 503",
+                         "timestamp":  "2026-07-06T02:09:07Z",
                          "environment":  "production"
                      }
                  ]
