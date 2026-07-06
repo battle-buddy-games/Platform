@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-bcdfb1f",
-                         "title":  "fix(navbar): move Gateway back to Profile, Portals to Go To dropdown",
-                         "timestamp":  "2026-07-04T14:31:15Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-2bdc5fa",
                          "title":  "feat(navbar): rename Build Queue to Actions with queue/by-workflow views",
@@ -104,6 +98,12 @@
                          "version":  "build-ab6439e",
                          "title":  "feat(sdk): add stage/elapsed-time progress reporting to tier materialization 503",
                          "timestamp":  "2026-07-06T02:09:07Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2d41f02",
+                         "title":  "fix(ci-screenshots): retry transient Discord-delivery failures instead of sil...",
+                         "timestamp":  "2026-07-06T14:31:44Z",
                          "environment":  "production"
                      }
                  ]
