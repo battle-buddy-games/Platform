@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-bc3fee2",
-                         "title":  "fix(sdk): resolve materialize script path via shared repo-root locator + conf...",
-                         "timestamp":  "2026-07-05T17:33:39Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d9a6edf",
                          "title":  "fix(sdk): bundle Materialize-SdkTierTrees.ps1 + deps into cloud publish outpu...",
                          "timestamp":  "2026-07-05T19:33:31Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3726bf1",
                          "title":  "docs(auth): correct github-token-exchange route in CLAUDE.md + doc comments",
                          "timestamp":  "2026-07-06T19:43:04Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-be63da3",
+                         "title":  "fix(sdk): avoid retry-storm when GitHub HEAD SHA lookup fails transiently",
+                         "timestamp":  "2026-07-06T20:09:59Z",
                          "environment":  "production"
                      }
                  ]
