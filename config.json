@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4e13656",
-                         "title":  "fix(sdk): background tier materialization instead of blocking the request thread",
-                         "timestamp":  "2026-07-04T21:20:06Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-bc3fee2",
                          "title":  "fix(sdk): resolve materialize script path via shared repo-root locator + conf...",
                          "timestamp":  "2026-07-05T17:33:39Z",
@@ -104,6 +98,12 @@
                          "version":  "build-5d24c4e",
                          "title":  "fix(buddy-desktop): route update-check failures through logToFile, not consol...",
                          "timestamp":  "2026-07-06T19:13:34Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3726bf1",
+                         "title":  "docs(auth): correct github-token-exchange route in CLAUDE.md + doc comments",
+                         "timestamp":  "2026-07-06T19:43:04Z",
                          "environment":  "production"
                      }
                  ]
