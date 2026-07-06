@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2bdc5fa",
-                         "title":  "feat(navbar): rename Build Queue to Actions with queue/by-workflow views",
-                         "timestamp":  "2026-07-04T15:05:48Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-37cc7b0",
                          "title":  "feat(navbar+tray): Actions dropdown collapse/badge consistency; tray Go To+So...",
                          "timestamp":  "2026-07-04T17:11:20Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2d41f02",
                          "title":  "fix(ci-screenshots): retry transient Discord-delivery failures instead of sil...",
                          "timestamp":  "2026-07-06T14:31:44Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-78e194e",
+                         "title":  "fix(agent): make Discord NoClient API-diagnosable + self-service-recoverable",
+                         "timestamp":  "2026-07-06T15:09:53Z",
                          "environment":  "production"
                      }
                  ]
