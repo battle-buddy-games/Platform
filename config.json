@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-be63da3",
-                         "title":  "fix(sdk): avoid retry-storm when GitHub HEAD SHA lookup fails transiently",
-                         "timestamp":  "2026-07-06T20:09:59Z",
+                         "version":  "build-3e7b995",
+                         "title":  "refactor(navbar): reorganize Actions dropdown - fold Events into Scheduled, r...",
+                         "timestamp":  "2026-07-06T20:33:57Z",
                          "environment":  "production"
                      }
                  ]
