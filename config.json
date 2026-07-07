@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-468f7ec",
-                         "title":  "fix(ci): fetch SDK materialize scripts from frostebite/automation, not the Ga...",
-                         "timestamp":  "2026-07-05T22:21:15Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ab6439e",
                          "title":  "feat(sdk): add stage/elapsed-time progress reporting to tier materialization 503",
                          "timestamp":  "2026-07-06T02:09:07Z",
@@ -103,7 +97,13 @@
                      {
                          "version":  "build-7be066b",
                          "title":  "feat(sdk-catalog): surface sdk_cloneable flag + close deployed-host empty-cat...",
-                         "timestamp":  "2026-07-07T15:18:20Z",
+                         "timestamp":  "2026-07-07T14:51:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-073e062",
+                         "title":  "feat(sdk-hub): add Dispatcher-based SdkClientDisconnected event (Plan 05 Phas...",
+                         "timestamp":  "2026-07-07T17:51:16Z",
                          "environment":  "production"
                      }
                  ]
