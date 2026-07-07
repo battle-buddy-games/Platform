@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-be63da3",
-                         "title":  "fix(sdk): avoid retry-storm when GitHub HEAD SHA lookup fails transiently",
-                         "timestamp":  "2026-07-06T20:09:59Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-53d28fd",
                          "title":  "Release build-be63da3: fix(sdk): avoid retry-storm when GitHub HEAD SHA looku...",
                          "timestamp":  "2026-07-07T00:07:50Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-e1345ab",
-                         "title":  "feat(buddy-desktop): add browser open, workspace sync, recent assets",
-                         "timestamp":  "2026-07-07T22:06:19Z",
+                         "version":  "build-97f8f3e",
+                         "title":  "fix(di): eagerly construct ClaudeJobService/ClaudeSessionService/EditorConnec...",
+                         "timestamp":  "2026-07-07T21:41:46Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-43b5002",
+                         "title":  "fix(sdk): replace zipball source fetch with git clone --recurse-submodules",
+                         "timestamp":  "2026-07-07T23:01:29Z",
                          "environment":  "production"
                      }
                  ]
