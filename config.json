@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-da0761d",
-                         "title":  "feat(dashboard): add Remote Control tool, move Live Control out of Screen Cap...",
-                         "timestamp":  "2026-07-05T21:21:28Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-468f7ec",
                          "title":  "fix(ci): fetch SDK materialize scripts from frostebite/automation, not the Ga...",
@@ -104,6 +98,12 @@
                          "version":  "build-53d28fd",
                          "title":  "Release build-be63da3: fix(sdk): avoid retry-storm when GitHub HEAD SHA looku...",
                          "timestamp":  "2026-07-07T00:07:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7be066b",
+                         "title":  "feat(sdk-catalog): surface sdk_cloneable flag + close deployed-host empty-cat...",
+                         "timestamp":  "2026-07-07T14:51:45Z",
                          "environment":  "production"
                      }
                  ]
