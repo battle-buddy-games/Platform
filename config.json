@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-97f8f3e",
-                         "title":  "fix(di): eagerly construct ClaudeJobService/ClaudeSessionService/EditorConnec...",
-                         "timestamp":  "2026-07-07T21:41:46Z",
+                         "version":  "build-e1345ab",
+                         "title":  "feat(buddy-desktop): add browser open, workspace sync, recent assets",
+                         "timestamp":  "2026-07-07T22:06:19Z",
                          "environment":  "production"
                      }
                  ]
