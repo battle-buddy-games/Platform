@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2d41f02",
-                         "title":  "fix(ci-screenshots): retry transient Discord-delivery failures instead of sil...",
-                         "timestamp":  "2026-07-06T14:31:44Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-78e194e",
                          "title":  "fix(agent): make Discord NoClient API-diagnosable + self-service-recoverable",
                          "timestamp":  "2026-07-06T15:09:53Z",
@@ -104,6 +98,12 @@
                          "version":  "build-fa21991",
                          "title":  "feat(status-vocab): add smart-enum status vocabularies for CI/command lifecyc...",
                          "timestamp":  "2026-07-07T18:14:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ddaf816",
+                         "title":  "feat(ci-build): add BuildCoordinates value object for declared build identity",
+                         "timestamp":  "2026-07-07T19:54:41Z",
                          "environment":  "production"
                      }
                  ]
