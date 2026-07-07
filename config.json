@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-53d28fd",
-                         "title":  "Release build-be63da3: fix(sdk): avoid retry-storm when GitHub HEAD SHA looku...",
-                         "timestamp":  "2026-07-07T00:07:50Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-7be066b",
                          "title":  "feat(sdk-catalog): surface sdk_cloneable flag + close deployed-host empty-cat...",
@@ -104,6 +98,12 @@
                          "version":  "build-43b5002",
                          "title":  "fix(sdk): replace zipball source fetch with git clone --recurse-submodules",
                          "timestamp":  "2026-07-07T23:01:29Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3d31f43",
+                         "title":  "fix(sdk): clear read-only attributes before deleting .git in StripGitMetadata",
+                         "timestamp":  "2026-07-07T23:34:06Z",
                          "environment":  "production"
                      }
                  ]
