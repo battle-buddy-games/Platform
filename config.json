@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-78e194e",
-                         "title":  "fix(agent): make Discord NoClient API-diagnosable + self-service-recoverable",
-                         "timestamp":  "2026-07-06T15:09:53Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-998fda2",
                          "title":  "feat(dashboard): split Remote Control into System/User/Product tabs",
                          "timestamp":  "2026-07-06T17:41:49Z",
@@ -104,6 +98,12 @@
                          "version":  "build-ddaf816",
                          "title":  "feat(ci-build): add BuildCoordinates value object for declared build identity",
                          "timestamp":  "2026-07-07T19:54:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4f208a2",
+                         "title":  "feat(sdk): capture composer counts onto 503 progress body (Task #31, I10+I6)",
+                         "timestamp":  "2026-07-07T20:16:01Z",
                          "environment":  "production"
                      }
                  ]
