@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-97f8f3e",
-                         "title":  "fix(di): eagerly construct ClaudeJobService/ClaudeSessionService/EditorConnec...",
-                         "timestamp":  "2026-07-07T21:41:46Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-43b5002",
                          "title":  "fix(sdk): replace zipball source fetch with git clone --recurse-submodules",
                          "timestamp":  "2026-07-07T23:01:29Z",
@@ -104,6 +98,12 @@
                          "version":  "build-bc991d7",
                          "title":  "feat(sdk): add tracking-repo tip-SHA fast-skip probe endpoint (Task #72)",
                          "timestamp":  "2026-07-08T20:36:12Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c33e3c4",
+                         "title":  "feat(buddy-desktop): add Steam Presence mode setting (Steam Only / Always)",
+                         "timestamp":  "2026-07-08T21:18:47Z",
                          "environment":  "production"
                      }
                  ]
