@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-cf7bee3",
-                         "title":  "feat(buddy-desktop): add local asset browser window with search, filters, and...",
-                         "timestamp":  "2026-07-08T17:56:10Z",
+                         "version":  "build-0bb5b57",
+                         "title":  "feat(sdk): add tracking-repo git-bundle delivery foundation (Task #67 Phase 1)",
+                         "timestamp":  "2026-07-08T18:14:09Z",
                          "environment":  "production"
                      }
                  ]
