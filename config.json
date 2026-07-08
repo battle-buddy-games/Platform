@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-deafb4e",
-                         "title":  "fix(buddy-desktop): fix CLI update reentrancy/silent-failure + add Force Imme...",
-                         "timestamp":  "2026-07-07T21:17:28Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-97f8f3e",
                          "title":  "fix(di): eagerly construct ClaudeJobService/ClaudeSessionService/EditorConnec...",
                          "timestamp":  "2026-07-07T21:41:46Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-b8dc60b",
-                         "title":  "chore(ci): retire Health Check (Portal) workflow, superseded by battle-buddy-...",
-                         "timestamp":  "2026-07-08T19:55:41Z",
+                         "version":  "build-76d38a9",
+                         "title":  "fix(buddy-desktop): fix blank asset browser window on open",
+                         "timestamp":  "2026-07-08T19:30:19Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-bc991d7",
+                         "title":  "feat(sdk): add tracking-repo tip-SHA fast-skip probe endpoint (Task #72)",
+                         "timestamp":  "2026-07-08T20:36:12Z",
                          "environment":  "production"
                      }
                  ]

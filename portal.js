@@ -198,38 +198,54 @@ async function loadConfig() {
   }
 }
 
-// Independent GitHub-Actions-verified health signal, formerly published by the "Health Check
-// (Portal)" workflow to health-status.json alongside config.json. Used ONLY to anchor the
-// offline-detection UI's "last confirmed online" timeline -- NOT for the 30-second direct tunnel
-// poll in checkTunnelHealth(), which keeps polling the tunnel directly and is unaffected by this.
+// Independent GitHub-Actions-verified health signal. Used ONLY to anchor the offline-detection
+// UI's "last confirmed online" timeline -- NOT for the 30-second direct tunnel poll in
+// checkTunnelHealth(), which keeps polling the tunnel directly and is unaffected by this.
 //
-// STALE SINCE 2026-07-08: "Health Check (Portal)" (portal-synthetic-check.yml) was retired in
-// favor of the standalone battle-buddy-games/Status repo's own health-check.yml + portal.html
-// (see that repo's README). Nothing publishes new commits to health-status.json anymore -- the
-// file on the gh-pages branch is now FROZEN at whatever value it held at retirement. This is an
-// accepted, deliberate degradation (per root CLAUDE.md "no half-measures" the alternative --
-// ripping out the offline-timer anchor entirely -- was judged not worth the churn for a
-// display-only "how long since last confirmed online" timer): fetch still succeeds (the file
-// still exists), so this function still returns true and HEALTH_STATUS still gets a value, it's
-// just permanently stale. The showConnectionFailure() anchor logic below silently falls through
-// to its localStorage/current-time fallbacks working exactly as before if this value ever looks
-// wrong -- it was already designed to tolerate this file being briefly unavailable, so a
-// permanently-stale-but-present file degrades to a source that just stops being useful, not one
-// that breaks anything. For genuinely live health status, see
-// https://battle-buddy-games.github.io/Status/portal.html.
+// UPDATED 2026-07-08: this used to read a static health-status.json committed by the (now
+// retired) "Health Check (Portal)" workflow. That workflow is gone, so this now reads LIVE
+// straight from the standalone battle-buddy-games/Status repo's own health-check.yml run
+// history via the public, anonymous GitHub Actions API (the same API and workflow that repo's
+// own portal.html renders at https://battle-buddy-games.github.io/Status/portal.html) -- no
+// committed intermediate file, no staleness. `lastOnlineAt` is the completion time of the most
+// recent run whose conclusion was "success"; `healthy` reflects the most recent completed run
+// regardless of conclusion. Anonymous GitHub API requests are rate-limited to 60/hr per source
+// IP; a rate-limited or failed fetch simply returns false and leaves HEALTH_STATUS null -- the
+// showConnectionFailure() anchor logic below was already designed to tolerate this source being
+// briefly unavailable and falls through to its localStorage/current-time fallbacks.
+const HEALTH_STATUS_API_URL =
+  'https://api.github.com/repos/battle-buddy-games/Status/actions/workflows/health-check.yml/runs?per_page=20';
 let HEALTH_STATUS = null;
 
 async function loadHealthStatus() {
   try {
-    const response = await fetch('./health-status.json?t=' + Date.now());
+    const response = await fetch(HEALTH_STATUS_API_URL, {
+      headers: { Accept: 'application/vnd.github+json' }
+    });
     if (!response.ok) {
-      console.warn('[Portal] health-status.json not available:', response.status);
+      console.warn('[Portal] Status repo Actions API not available:', response.status);
       return false;
     }
-    HEALTH_STATUS = await response.json();
+    const data = await response.json();
+    const runs = Array.isArray(data.workflow_runs) ? data.workflow_runs : [];
+    const completedRuns = runs.filter((r) => r.status === 'completed');
+    const latestCompleted = completedRuns[0] || null;
+    const latestSuccess = completedRuns.find((r) => r.conclusion === 'success') || null;
+
+    if (!latestCompleted) {
+      console.warn('[Portal] Status repo has no completed health-check runs yet');
+      return false;
+    }
+
+    HEALTH_STATUS = {
+      healthy: latestCompleted.conclusion === 'success',
+      lastOnlineAt: latestSuccess ? latestSuccess.updated_at : null,
+      lastCheckedAt: latestCompleted.updated_at,
+      checkedUrl: 'https://battle-buddy-games.github.io/Status/portal.html'
+    };
     return true;
   } catch (error) {
-    console.warn('[Portal] Failed to load health-status.json:', error);
+    console.warn('[Portal] Failed to load health status from Status repo Actions API:', error);
     return false;
   }
 }
