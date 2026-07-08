@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-ddaf816",
-                         "title":  "feat(ci-build): add BuildCoordinates value object for declared build identity",
-                         "timestamp":  "2026-07-07T19:54:41Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-4f208a2",
                          "title":  "feat(sdk): capture composer counts onto 503 progress body (Task #31, I10+I6)",
@@ -104,6 +98,12 @@
                          "version":  "build-7297b79",
                          "title":  "fix(buddy-desktop): show friendly SDK/Source labels instead of raw clone/unzi...",
                          "timestamp":  "2026-07-08T17:01:10Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-cf7bee3",
+                         "title":  "feat(buddy-desktop): add local asset browser window with search, filters, and...",
+                         "timestamp":  "2026-07-08T17:56:10Z",
                          "environment":  "production"
                      }
                  ]
