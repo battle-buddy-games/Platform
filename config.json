@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-073e062",
-                         "title":  "feat(sdk-hub): add Dispatcher-based SdkClientDisconnected event (Plan 05 Phas...",
-                         "timestamp":  "2026-07-07T17:51:16Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-fa21991",
                          "title":  "feat(status-vocab): add smart-enum status vocabularies for CI/command lifecyc...",
                          "timestamp":  "2026-07-07T18:14:41Z",
@@ -104,6 +98,12 @@
                          "version":  "build-fee2e91",
                          "title":  "fix(sdk): clear read-only attributes at three sibling git-clone-cleanup sites...",
                          "timestamp":  "2026-07-08T00:40:54Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0a337c2",
+                         "title":  "fix(broker): retry + self-validate GitHub App installation token mint",
+                         "timestamp":  "2026-07-08T11:31:49Z",
                          "environment":  "production"
                      }
                  ]
