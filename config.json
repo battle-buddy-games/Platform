@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-c33e3c4",
-                         "title":  "feat(buddy-desktop): add Steam Presence mode setting (Steam Only / Always)",
-                         "timestamp":  "2026-07-08T21:18:47Z",
+                         "version":  "build-0c3d11e",
+                         "title":  "fix(sdk): trigger on-demand materialization from tracking-repo bundle/tip end...",
+                         "timestamp":  "2026-07-08T21:41:12Z",
                          "environment":  "production"
                      }
                  ]
