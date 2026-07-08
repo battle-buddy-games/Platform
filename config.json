@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ddaf816",
-                         "title":  "feat(ci-build): add BuildCoordinates value object for declared build identity",
-                         "timestamp":  "2026-07-07T19:54:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4f208a2",
                          "title":  "feat(sdk): capture composer counts onto 503 progress body (Task #31, I10+I6)",
                          "timestamp":  "2026-07-07T20:16:01Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7297b79",
                          "title":  "fix(buddy-desktop): show friendly SDK/Source labels instead of raw clone/unzi...",
                          "timestamp":  "2026-07-08T17:01:10Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4a97725",
+                         "title":  "fix(home): cap Portals widget height with a \"view all\" link instead of growin...",
+                         "timestamp":  "2026-07-08T17:31:21Z",
                          "environment":  "production"
                      }
                  ]
