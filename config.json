@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7be066b",
-                         "title":  "feat(sdk-catalog): surface sdk_cloneable flag + close deployed-host empty-cat...",
-                         "timestamp":  "2026-07-07T14:51:45Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-073e062",
                          "title":  "feat(sdk-hub): add Dispatcher-based SdkClientDisconnected event (Plan 05 Phas...",
                          "timestamp":  "2026-07-07T17:51:16Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3d31f43",
                          "title":  "fix(sdk): clear read-only attributes before deleting .git in StripGitMetadata",
                          "timestamp":  "2026-07-07T23:34:06Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-fee2e91",
+                         "title":  "fix(sdk): clear read-only attributes at three sibling git-clone-cleanup sites...",
+                         "timestamp":  "2026-07-08T00:40:54Z",
                          "environment":  "production"
                      }
                  ]
