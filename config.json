@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-76d38a9",
-                         "title":  "fix(buddy-desktop): fix blank asset browser window on open",
-                         "timestamp":  "2026-07-08T19:30:19Z",
+                         "version":  "build-b8dc60b",
+                         "title":  "chore(ci): retire Health Check (Portal) workflow, superseded by battle-buddy-...",
+                         "timestamp":  "2026-07-08T19:55:41Z",
                          "environment":  "production"
                      }
                  ]
