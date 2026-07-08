@@ -198,10 +198,25 @@ async function loadConfig() {
   }
 }
 
-// Independent GitHub-Actions-verified health signal, published by the "Health Check (Portal)"
-// workflow to health-status.json alongside config.json. Used ONLY to anchor the offline-detection
-// UI's "last confirmed online" timeline -- NOT for the 30-second direct tunnel poll in
-// checkTunnelHealth(), which keeps polling the tunnel directly and is unaffected by this.
+// Independent GitHub-Actions-verified health signal, formerly published by the "Health Check
+// (Portal)" workflow to health-status.json alongside config.json. Used ONLY to anchor the
+// offline-detection UI's "last confirmed online" timeline -- NOT for the 30-second direct tunnel
+// poll in checkTunnelHealth(), which keeps polling the tunnel directly and is unaffected by this.
+//
+// STALE SINCE 2026-07-08: "Health Check (Portal)" (portal-synthetic-check.yml) was retired in
+// favor of the standalone battle-buddy-games/Status repo's own health-check.yml + portal.html
+// (see that repo's README). Nothing publishes new commits to health-status.json anymore -- the
+// file on the gh-pages branch is now FROZEN at whatever value it held at retirement. This is an
+// accepted, deliberate degradation (per root CLAUDE.md "no half-measures" the alternative --
+// ripping out the offline-timer anchor entirely -- was judged not worth the churn for a
+// display-only "how long since last confirmed online" timer): fetch still succeeds (the file
+// still exists), so this function still returns true and HEALTH_STATUS still gets a value, it's
+// just permanently stale. The showConnectionFailure() anchor logic below silently falls through
+// to its localStorage/current-time fallbacks working exactly as before if this value ever looks
+// wrong -- it was already designed to tolerate this file being briefly unavailable, so a
+// permanently-stale-but-present file degrades to a source that just stops being useful, not one
+// that breaks anything. For genuinely live health status, see
+// https://battle-buddy-games.github.io/Status/portal.html.
 let HEALTH_STATUS = null;
 
 async function loadHealthStatus() {

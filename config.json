@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-43c0507",
-                         "title":  "test(ci-build): add EF value-converter round-trip coverage for CiBuildRecord ...",
-                         "timestamp":  "2026-07-07T20:44:18Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-deafb4e",
                          "title":  "fix(buddy-desktop): fix CLI update reentrancy/silent-failure + add Force Imme...",
                          "timestamp":  "2026-07-07T21:17:28Z",
@@ -104,6 +98,12 @@
                          "version":  "build-5326524",
                          "title":  "fix(projects): scope Run Detail live-log panel to the job actually being viewed",
                          "timestamp":  "2026-07-08T18:28:47Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-76d38a9",
+                         "title":  "fix(buddy-desktop): fix blank asset browser window on open",
+                         "timestamp":  "2026-07-08T19:30:19Z",
                          "environment":  "production"
                      }
                  ]
