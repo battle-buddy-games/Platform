@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3d31f43",
-                         "title":  "fix(sdk): clear read-only attributes before deleting .git in StripGitMetadata",
-                         "timestamp":  "2026-07-07T23:34:06Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-fee2e91",
                          "title":  "fix(sdk): clear read-only attributes at three sibling git-clone-cleanup sites...",
                          "timestamp":  "2026-07-08T00:40:54Z",
@@ -104,6 +98,12 @@
                          "version":  "build-272b2a9",
                          "title":  "refactor(buddy-desktop): move Screen Capture out of System Settings to top-le...",
                          "timestamp":  "2026-07-08T22:27:57Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5b98328",
+                         "title":  "fix(buddy-desktop): show real name and active tool in Social tray summary",
+                         "timestamp":  "2026-07-08T23:01:36Z",
                          "environment":  "production"
                      }
                  ]
