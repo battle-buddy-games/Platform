@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-5b98328",
-                         "title":  "fix(buddy-desktop): show real name and active tool in Social tray summary",
-                         "timestamp":  "2026-07-08T23:01:36Z",
+                         "version":  "build-24aa37b",
+                         "title":  "fix(buddy-desktop): fix CLI updater race condition and uncaught EPERM crash",
+                         "timestamp":  "2026-07-08T23:24:28Z",
                          "environment":  "production"
                      }
                  ]
