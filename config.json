@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7297b79",
-                         "title":  "fix(buddy-desktop): show friendly SDK/Source labels instead of raw clone/unzi...",
-                         "timestamp":  "2026-07-08T17:01:10Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-cf7bee3",
                          "title":  "feat(buddy-desktop): add local asset browser window with search, filters, and...",
                          "timestamp":  "2026-07-08T17:56:10Z",
@@ -104,6 +98,12 @@
                          "version":  "build-b02b4b2",
                          "title":  "fix(assets): close anonymous API surface on AssetLibraryApiController",
                          "timestamp":  "2026-07-09T00:44:48Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f47f6ca",
+                         "title":  "feat(dashboard): apply visibility-aware refresh + Failures cross-link to Run ...",
+                         "timestamp":  "2026-07-09T01:07:26Z",
                          "environment":  "production"
                      }
                  ]
