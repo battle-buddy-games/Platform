@@ -5,7 +5,7 @@
 //
 // SDK Start - SDK Launcher
 // Reads pending launch instructions from localStorage and sends them
-// to the SDK Hub's HTTP listener on localhost. Supports launching
+// to the Buddy CLI's HTTP listener on localhost. Supports launching
 // without parameters via an interruptable countdown.
 
 const SDK_LAUNCH_HISTORY_KEY = 'sdk_launch_history';
@@ -13,7 +13,7 @@ const POLL_INTERVAL_MS = 500;
 const MAX_POLL_ATTEMPTS = 120; // 60 seconds at 500ms intervals
 const STALE_THRESHOLD_MS = 5 * 60 * 1000; // 5 minutes
 
-let sdkHubPort = null;
+let buddyHubPort = null;
 let pollTimer = null;
 let pollAttempts = 0;
 let pendingEntry = null;
@@ -163,23 +163,23 @@ function cancelCountdown() {
 }
 
 function beginNoParamsCall() {
-  setStatus('Connecting to SDK Hub on port ' + sdkHubPort + '...', 'waiting');
+  setStatus('Connecting to Buddy CLI on port ' + buddyHubPort + '...', 'waiting');
   pollAttempts = 0;
-  pollTimer = setInterval(pollSdkHubNoParams, POLL_INTERVAL_MS);
-  pollSdkHubNoParams();
+  pollTimer = setInterval(pollBuddyHubNoParams, POLL_INTERVAL_MS);
+  pollBuddyHubNoParams();
 }
 
-function pollSdkHubNoParams() {
-  if (!sdkHubPort) return;
+function pollBuddyHubNoParams() {
+  if (!buddyHubPort) return;
 
   pollAttempts++;
   if (pollAttempts > MAX_POLL_ATTEMPTS) {
     clearInterval(pollTimer);
-    setStatus('SDK Hub did not respond (timeout)', 'error');
+    setStatus('Buddy CLI did not respond (timeout)', 'error');
     showPanel('errorPanel');
     var errorMsg = document.getElementById('errorMessage');
     if (errorMsg) {
-      errorMsg.textContent = 'SDK Hub did not start listening within 60 seconds. You can close this page and try again.';
+      errorMsg.textContent = 'Buddy CLI did not start listening within 60 seconds. You can close this page and try again.';
     }
     return;
   }
@@ -187,7 +187,7 @@ function pollSdkHubNoParams() {
   var controller = new AbortController();
   var timeoutId = setTimeout(function() { controller.abort(); }, 2000);
 
-  fetch('http://localhost:' + sdkHubPort + '/api/sdk-start/status', {
+  fetch('http://localhost:' + buddyHubPort + '/api/sdk-start/status', {
     method: 'GET',
     signal: controller.signal
   })
@@ -195,13 +195,13 @@ function pollSdkHubNoParams() {
     clearTimeout(timeoutId);
     if (response.ok) {
       clearInterval(pollTimer);
-      setStatus('Connected to SDK Hub!', 'connected');
+      setStatus('Connected to Buddy CLI!', 'connected');
       sendNoParamsLaunch();
     }
   })
   .catch(function() {
     clearTimeout(timeoutId);
-    // SDK Hub not ready yet, keep polling
+    // Buddy CLI not ready yet, keep polling
   });
 }
 
@@ -209,7 +209,7 @@ function sendNoParamsLaunch() {
   var controller = new AbortController();
   var timeoutId = setTimeout(function() { controller.abort(); }, 5000);
 
-  fetch('http://localhost:' + sdkHubPort + '/api/sdk-start/launch', {
+  fetch('http://localhost:' + buddyHubPort + '/api/sdk-start/launch', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ noParams: true }),
@@ -218,47 +218,47 @@ function sendNoParamsLaunch() {
   .then(function(response) {
     clearTimeout(timeoutId);
     if (response.ok) {
-      setStatus('SDK Hub called successfully!', 'success');
+      setStatus('Buddy CLI called successfully!', 'success');
       showPanel('successPanel');
       var successMsg = document.getElementById('successMessage');
       if (successMsg) {
-        successMsg.textContent = 'SDK Hub started without additional parameters.';
+        successMsg.textContent = 'Buddy CLI started without additional parameters.';
       }
     } else {
-      setStatus('SDK Hub rejected the request', 'error');
+      setStatus('Buddy CLI rejected the request', 'error');
       showPanel('errorPanel');
       var errorMsg = document.getElementById('errorMessage');
       if (errorMsg) {
-        errorMsg.textContent = 'SDK Hub returned status ' + response.status + '. Check the SDK Hub console for details.';
+        errorMsg.textContent = 'Buddy CLI returned status ' + response.status + '. Check the Buddy CLI console for details.';
       }
     }
   })
   .catch(function(e) {
     clearTimeout(timeoutId);
-    setStatus('Failed to reach SDK Hub', 'error');
+    setStatus('Failed to reach Buddy CLI', 'error');
     showPanel('errorPanel');
     var errorMsg = document.getElementById('errorMessage');
     if (errorMsg) {
-      errorMsg.textContent = 'Network error: ' + e.message + '. Ensure SDK Hub is still running.';
+      errorMsg.textContent = 'Network error: ' + e.message + '. Ensure Buddy CLI is still running.';
     }
   });
 }
 
 // ============================================================================
-// SDK Hub communication
+// Buddy CLI communication
 // ============================================================================
 
-function pollSdkHub() {
-  if (!sdkHubPort || !pendingEntry) return;
+function pollBuddyHub() {
+  if (!buddyHubPort || !pendingEntry) return;
 
   pollAttempts++;
   if (pollAttempts > MAX_POLL_ATTEMPTS) {
     clearInterval(pollTimer);
-    setStatus('SDK Hub did not respond (timeout)', 'error');
+    setStatus('Buddy CLI did not respond (timeout)', 'error');
     showPanel('errorPanel');
     var errorMsg = document.getElementById('errorMessage');
     if (errorMsg) {
-      errorMsg.textContent = 'SDK Hub did not start listening within 60 seconds. You can close this page and try again.';
+      errorMsg.textContent = 'Buddy CLI did not start listening within 60 seconds. You can close this page and try again.';
     }
     return;
   }
@@ -266,7 +266,7 @@ function pollSdkHub() {
   var controller = new AbortController();
   var timeoutId = setTimeout(function() { controller.abort(); }, 2000);
 
-  fetch('http://localhost:' + sdkHubPort + '/api/sdk-start/status', {
+  fetch('http://localhost:' + buddyHubPort + '/api/sdk-start/status', {
     method: 'GET',
     signal: controller.signal
   })
@@ -274,13 +274,13 @@ function pollSdkHub() {
     clearTimeout(timeoutId);
     if (response.ok) {
       clearInterval(pollTimer);
-      setStatus('Connected to SDK Hub!', 'connected');
+      setStatus('Connected to Buddy CLI!', 'connected');
       sendLaunchParameters();
     }
   })
   .catch(function() {
     clearTimeout(timeoutId);
-    // SDK Hub not ready yet, keep polling
+    // Buddy CLI not ready yet, keep polling
   });
 }
 
@@ -290,7 +290,7 @@ function sendLaunchParameters() {
   var controller = new AbortController();
   var timeoutId = setTimeout(function() { controller.abort(); }, 5000);
 
-  fetch('http://localhost:' + sdkHubPort + '/api/sdk-start/launch', {
+  fetch('http://localhost:' + buddyHubPort + '/api/sdk-start/launch', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(pendingEntry),
@@ -304,11 +304,11 @@ function sendLaunchParameters() {
       showPanel('successPanel');
       renderHistory();
     } else {
-      setStatus('SDK Hub rejected the launch parameters', 'error');
+      setStatus('Buddy CLI rejected the launch parameters', 'error');
       showPanel('errorPanel');
       var errorMsg = document.getElementById('errorMessage');
       if (errorMsg) {
-        errorMsg.textContent = 'SDK Hub returned status ' + response.status + '. Check the SDK Hub console for details.';
+        errorMsg.textContent = 'Buddy CLI returned status ' + response.status + '. Check the Buddy CLI console for details.';
       }
     }
   })
@@ -318,7 +318,7 @@ function sendLaunchParameters() {
     showPanel('errorPanel');
     var errorMsg = document.getElementById('errorMessage');
     if (errorMsg) {
-      errorMsg.textContent = 'Network error: ' + e.message + '. Ensure SDK Hub is still running.';
+      errorMsg.textContent = 'Network error: ' + e.message + '. Ensure Buddy CLI is still running.';
     }
   });
 }
@@ -330,7 +330,7 @@ function sendLaunchParameters() {
 function initialize() {
   // Parse port from query params
   var params = new URLSearchParams(window.location.search);
-  sdkHubPort = params.get('port') || '18720';
+  buddyHubPort = params.get('port') || '18720';
 
   // Get most recent pending launch
   pendingEntry = getMostRecentPending();
@@ -353,11 +353,11 @@ function initialize() {
 
     showPanel('pendingLaunchPanel');
 
-    // Start polling for SDK Hub
-    setStatus('Waiting for SDK Hub on port ' + sdkHubPort + '...', 'waiting');
-    pollTimer = setInterval(pollSdkHub, POLL_INTERVAL_MS);
+    // Start polling for Buddy CLI
+    setStatus('Waiting for Buddy CLI on port ' + buddyHubPort + '...', 'waiting');
+    pollTimer = setInterval(pollBuddyHub, POLL_INTERVAL_MS);
     // Also poll immediately
-    pollSdkHub();
+    pollBuddyHub();
   } else {
     showPanel('noPendingPanel');
     setStatus('No startup parameters mounted', 'waiting');

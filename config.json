@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-cf7bee3",
-                         "title":  "feat(buddy-desktop): add local asset browser window with search, filters, and...",
-                         "timestamp":  "2026-07-08T17:56:10Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5326524",
                          "title":  "fix(projects): scope Run Detail live-log panel to the job actually being viewed",
                          "timestamp":  "2026-07-08T18:28:47Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-681ed85",
-                         "title":  "fix(automation): fix runner active-jobs join, add GitHub API caching, server-...",
-                         "timestamp":  "2026-07-09T01:39:26Z",
+                         "version":  "build-f47f6ca",
+                         "title":  "feat(dashboard): apply visibility-aware refresh + Failures cross-link to Run ...",
+                         "timestamp":  "2026-07-09T01:07:26Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1c3ab2d",
+                         "title":  "fix(platform-core): restore missing ForumAccessService and EngagementDashboar...",
+                         "timestamp":  "2026-07-09T22:41:16Z",
                          "environment":  "production"
                      }
                  ]
