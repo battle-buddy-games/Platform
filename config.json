@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-f47f6ca",
-                         "title":  "feat(dashboard): apply visibility-aware refresh + Failures cross-link to Run ...",
-                         "timestamp":  "2026-07-09T01:07:26Z",
+                         "version":  "build-681ed85",
+                         "title":  "fix(automation): fix runner active-jobs join, add GitHub API caching, server-...",
+                         "timestamp":  "2026-07-09T01:39:26Z",
                          "environment":  "production"
                      }
                  ]
