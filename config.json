@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5326524",
-                         "title":  "fix(projects): scope Run Detail live-log panel to the job actually being viewed",
-                         "timestamp":  "2026-07-08T18:28:47Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-76d38a9",
                          "title":  "fix(buddy-desktop): fix blank asset browser window on open",
                          "timestamp":  "2026-07-08T19:30:19Z",
@@ -104,6 +98,12 @@
                          "version":  "build-1c3ab2d",
                          "title":  "fix(platform-core): restore missing ForumAccessService and EngagementDashboar...",
                          "timestamp":  "2026-07-09T22:41:16Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-42e5814",
+                         "title":  "feat(dashboard): redesign Discord tool layout across all sub-tabs",
+                         "timestamp":  "2026-07-10T01:52:41Z",
                          "environment":  "production"
                      }
                  ]
