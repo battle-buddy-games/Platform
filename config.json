@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5b98328",
-                         "title":  "fix(buddy-desktop): show real name and active tool in Social tray summary",
-                         "timestamp":  "2026-07-08T23:01:36Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ec4bf6c",
                          "title":  "fix(buddy-desktop): unify sign-in-expired and signed-in-user indicators",
                          "timestamp":  "2026-07-08T23:52:59Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d949052",
                          "title":  "feat(ci-observability): add CPU activity telemetry mirroring memory pipeline ...",
                          "timestamp":  "2026-07-10T22:49:46Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5137eb5",
+                         "title":  "feat(releases): add Steam deployment history (insert-only) alongside branch s...",
+                         "timestamp":  "2026-07-10T23:45:01Z",
                          "environment":  "production"
                      }
                  ]
