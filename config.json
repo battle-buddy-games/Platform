@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-9f7fb26",
-                         "title":  "feat(canvas): embeddable internal-tool allowlist endpoint",
-                         "timestamp":  "2026-07-10T03:15:32Z",
+                         "version":  "build-af1b859",
+                         "title":  "feat(infinite-canvas): board history timeline with preview and confirm-gated ...",
+                         "timestamp":  "2026-07-10T03:43:14Z",
                          "environment":  "production"
                      }
                  ]
