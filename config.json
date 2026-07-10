@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-76d38a9",
-                         "title":  "fix(buddy-desktop): fix blank asset browser window on open",
-                         "timestamp":  "2026-07-08T19:30:19Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-bc991d7",
                          "title":  "feat(sdk): add tracking-repo tip-SHA fast-skip probe endpoint (Task #72)",
@@ -104,6 +98,12 @@
                          "version":  "build-42e5814",
                          "title":  "feat(dashboard): redesign Discord tool layout across all sub-tabs",
                          "timestamp":  "2026-07-10T01:52:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-069c1ed",
+                         "title":  "feat(infinite-canvas): aria-live announcements for remote changes + focus res...",
+                         "timestamp":  "2026-07-10T02:38:14Z",
                          "environment":  "production"
                      }
                  ]
