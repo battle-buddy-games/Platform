@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-c33e3c4",
-                         "title":  "feat(buddy-desktop): add Steam Presence mode setting (Steam Only / Always)",
-                         "timestamp":  "2026-07-08T21:18:47Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-272b2a9",
                          "title":  "refactor(buddy-desktop): move Screen Capture out of System Settings to top-le...",
@@ -104,6 +98,12 @@
                          "version":  "build-9f7fb26",
                          "title":  "feat(canvas): embeddable internal-tool allowlist endpoint",
                          "timestamp":  "2026-07-10T03:15:32Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6874d6c",
+                         "title":  "fix(servers): un-dead the bleeding-edge develop-server chain on production (T...",
+                         "timestamp":  "2026-07-10T21:13:46Z",
                          "environment":  "production"
                      }
                  ]
