@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-272b2a9",
-                         "title":  "refactor(buddy-desktop): move Screen Capture out of System Settings to top-le...",
-                         "timestamp":  "2026-07-08T22:27:57Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5b98328",
                          "title":  "fix(buddy-desktop): show real name and active tool in Social tray summary",
                          "timestamp":  "2026-07-08T23:01:36Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-55029b3",
-                         "title":  "fix(local-router): remove http_503 from production location / proxy_next_upst...",
-                         "timestamp":  "2026-07-10T21:49:05Z",
+                         "version":  "build-6874d6c",
+                         "title":  "fix(servers): un-dead the bleeding-edge develop-server chain on production (T...",
+                         "timestamp":  "2026-07-10T21:13:46Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d949052",
+                         "title":  "feat(ci-observability): add CPU activity telemetry mirroring memory pipeline ...",
+                         "timestamp":  "2026-07-10T22:49:46Z",
                          "environment":  "production"
                      }
                  ]
