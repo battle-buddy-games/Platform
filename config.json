@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-6874d6c",
-                         "title":  "fix(servers): un-dead the bleeding-edge develop-server chain on production (T...",
-                         "timestamp":  "2026-07-10T21:13:46Z",
+                         "version":  "build-55029b3",
+                         "title":  "fix(local-router): remove http_503 from production location / proxy_next_upst...",
+                         "timestamp":  "2026-07-10T21:49:05Z",
                          "environment":  "production"
                      }
                  ]
