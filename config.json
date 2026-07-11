@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1c3ab2d",
-                         "title":  "fix(platform-core): restore missing ForumAccessService and EngagementDashboar...",
-                         "timestamp":  "2026-07-09T22:41:16Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-42e5814",
                          "title":  "feat(dashboard): redesign Discord tool layout across all sub-tabs",
                          "timestamp":  "2026-07-10T01:52:41Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4885535",
                          "title":  "fix(ci): stop benign NuGet audit warning from failing the backup-required check",
                          "timestamp":  "2026-07-11T20:29:27Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f125abc",
+                         "title":  "feat(game-control): surface Mirror package version in GameOps Sessions dashboard",
+                         "timestamp":  "2026-07-11T20:57:59Z",
                          "environment":  "production"
                      }
                  ]
