@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-70fa999",
-                         "title":  "fix(db): self-heal PlatformServers migration history on any pre-existing table",
-                         "timestamp":  "2026-07-11T19:13:16Z",
+                         "version":  "build-d6dc78e",
+                         "title":  "feat(ci): add ISafeMigration marker + fail-closed pre-deploy backup skip",
+                         "timestamp":  "2026-07-11T19:34:13Z",
                          "environment":  "production"
                      }
                  ]
