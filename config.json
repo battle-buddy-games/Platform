@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-069c1ed",
-                         "title":  "feat(infinite-canvas): aria-live announcements for remote changes + focus res...",
-                         "timestamp":  "2026-07-10T02:38:14Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9f7fb26",
                          "title":  "feat(canvas): embeddable internal-tool allowlist endpoint",
                          "timestamp":  "2026-07-10T03:15:32Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-d1b4fdf",
-                         "title":  "fix(game-control): admin-gate + audit GameControlHub SendCommand/SendBatch (T...",
-                         "timestamp":  "2026-07-11T21:59:21Z",
+                         "version":  "build-ae61849",
+                         "title":  "fix(platform): wire UserNotificationChannelPreferences Ensure + bound Discord...",
+                         "timestamp":  "2026-07-11T21:35:13Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-565daf0",
+                         "title":  "fix(chat): surface real desktop-session launch failures instead of polling si...",
+                         "timestamp":  "2026-07-11T22:38:40Z",
                          "environment":  "production"
                      }
                  ]
