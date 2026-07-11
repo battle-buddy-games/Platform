@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-ae61849",
-                         "title":  "fix(platform): wire UserNotificationChannelPreferences Ensure + bound Discord...",
-                         "timestamp":  "2026-07-11T21:35:13Z",
+                         "version":  "build-d1b4fdf",
+                         "title":  "fix(game-control): admin-gate + audit GameControlHub SendCommand/SendBatch (T...",
+                         "timestamp":  "2026-07-11T21:59:21Z",
                          "environment":  "production"
                      }
                  ]
