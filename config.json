@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-6874d6c",
-                         "title":  "fix(servers): un-dead the bleeding-edge develop-server chain on production (T...",
-                         "timestamp":  "2026-07-10T21:13:46Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d949052",
                          "title":  "feat(ci-observability): add CPU activity telemetry mirroring memory pipeline ...",
                          "timestamp":  "2026-07-10T22:49:46Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0eb5fda",
                          "title":  "fix(sdk): add missing _Sdk_BuddyHub partial view (live 500 on Development \u003e S...",
                          "timestamp":  "2026-07-11T22:58:46Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c5a51f1",
+                         "title":  "feat(studio-role): shrink StudioRole to 5 values, move Founder Member/Insider...",
+                         "timestamp":  "2026-07-11T23:33:52Z",
                          "environment":  "production"
                      }
                  ]
