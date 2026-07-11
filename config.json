@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ec4bf6c",
-                         "title":  "fix(buddy-desktop): unify sign-in-expired and signed-in-user indicators",
-                         "timestamp":  "2026-07-08T23:52:59Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b02b4b2",
                          "title":  "fix(assets): close anonymous API surface on AssetLibraryApiController",
                          "timestamp":  "2026-07-09T00:44:48Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-c45c3a8",
-                         "title":  "feat(servers): surface deploy status, bleeding-edge badge, and uptime in Serv...",
-                         "timestamp":  "2026-07-11T00:18:20Z",
+                         "version":  "build-5137eb5",
+                         "title":  "feat(releases): add Steam deployment history (insert-only) alongside branch s...",
+                         "timestamp":  "2026-07-10T23:45:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-af4ae1c",
+                         "title":  "fix(canvas): add missing Ensure-pairing for DashboardCanvasOperations schema",
+                         "timestamp":  "2026-07-11T01:54:25Z",
                          "environment":  "production"
                      }
                  ]
