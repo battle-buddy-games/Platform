@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-5137eb5",
-                         "title":  "feat(releases): add Steam deployment history (insert-only) alongside branch s...",
-                         "timestamp":  "2026-07-10T23:45:01Z",
+                         "version":  "build-c45c3a8",
+                         "title":  "feat(servers): surface deploy status, bleeding-edge badge, and uptime in Serv...",
+                         "timestamp":  "2026-07-11T00:18:20Z",
                          "environment":  "production"
                      }
                  ]
