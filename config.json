@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-42e5814",
-                         "title":  "feat(dashboard): redesign Discord tool layout across all sub-tabs",
-                         "timestamp":  "2026-07-10T01:52:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-069c1ed",
                          "title":  "feat(infinite-canvas): aria-live announcements for remote changes + focus res...",
                          "timestamp":  "2026-07-10T02:38:14Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f125abc",
                          "title":  "feat(game-control): surface Mirror package version in GameOps Sessions dashboard",
                          "timestamp":  "2026-07-11T20:57:59Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ae61849",
+                         "title":  "fix(platform): wire UserNotificationChannelPreferences Ensure + bound Discord...",
+                         "timestamp":  "2026-07-11T21:35:13Z",
                          "environment":  "production"
                      }
                  ]
