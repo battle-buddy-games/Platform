@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-af4ae1c",
-                         "title":  "fix(canvas): add missing Ensure-pairing for DashboardCanvasOperations schema",
-                         "timestamp":  "2026-07-11T01:54:25Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-70fa999",
                          "title":  "fix(db): self-heal PlatformServers migration history on any pre-existing table",
                          "timestamp":  "2026-07-11T19:13:16Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0cd9ef4",
                          "title":  "fix(chat): distinguish unauthenticated-connection 403 from real ownership con...",
                          "timestamp":  "2026-07-12T01:03:23Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3d8de07",
+                         "title":  "fix(sdk): debounce on-demand materialization restart against high commit velo...",
+                         "timestamp":  "2026-07-12T04:02:53Z",
                          "environment":  "production"
                      }
                  ]
