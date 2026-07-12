@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5137eb5",
-                         "title":  "feat(releases): add Steam deployment history (insert-only) alongside branch s...",
-                         "timestamp":  "2026-07-10T23:45:01Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-af4ae1c",
                          "title":  "fix(canvas): add missing Ensure-pairing for DashboardCanvasOperations schema",
                          "timestamp":  "2026-07-11T01:54:25Z",
@@ -104,6 +98,12 @@
                          "version":  "build-e870e6b",
                          "title":  "feat(follow): add workflow-type filter to Projects \u003e Automation \u003e Live Follow",
                          "timestamp":  "2026-07-12T00:15:06Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0cd9ef4",
+                         "title":  "fix(chat): distinguish unauthenticated-connection 403 from real ownership con...",
+                         "timestamp":  "2026-07-12T01:03:23Z",
                          "environment":  "production"
                      }
                  ]
