@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3d8de07",
-                         "title":  "fix(sdk): debounce on-demand materialization restart against high commit velo...",
-                         "timestamp":  "2026-07-12T04:02:53Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2c99061",
                          "title":  "fix(sdk): decouple served-root segment from on-disk tier pointer filename (Ta...",
                          "timestamp":  "2026-07-12T13:44:59Z",
@@ -72,7 +66,7 @@
                      },
                      {
                          "version":  "build-92ce88a",
-                         "title":  "feat(plugin-sessions): harness-reliability hardening ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â delivery ack, git-stat...",
+                         "title":  "feat(plugin-sessions): harness-reliability hardening ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â delivery ack, git-stat...",
                          "timestamp":  "2026-07-12T15:07:45Z",
                          "environment":  "production"
                      },
@@ -104,6 +98,12 @@
                          "version":  "build-efa393e",
                          "title":  "Implement theme catalog dashboard",
                          "timestamp":  "2026-07-12T22:38:22Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e3b0544",
+                         "title":  "Fix dashboard typed tool model fallback",
+                         "timestamp":  "2026-07-12T23:09:04Z",
                          "environment":  "production"
                      }
                  ]
