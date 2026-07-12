@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-c5a51f1",
-                         "title":  "feat(studio-role): shrink StudioRole to 5 values, move Founder Member/Insider...",
-                         "timestamp":  "2026-07-11T23:33:52Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-e870e6b",
                          "title":  "feat(follow): add workflow-type filter to Projects \u003e Automation \u003e Live Follow",
@@ -104,6 +98,12 @@
                          "version":  "build-bc66a86",
                          "title":  "docs(buddy-desktop): correct Task #104 live-verification finding with full ma...",
                          "timestamp":  "2026-07-12T18:11:31Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4d985e9",
+                         "title":  "feat(sdk): scope on-demand tier materialization clone to the target profile\u0027s...",
+                         "timestamp":  "2026-07-12T19:32:28Z",
                          "environment":  "production"
                      }
                  ]
