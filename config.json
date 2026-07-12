@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0cd9ef4",
-                         "title":  "fix(chat): distinguish unauthenticated-connection 403 from real ownership con...",
-                         "timestamp":  "2026-07-12T01:03:23Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3d8de07",
                          "title":  "fix(sdk): debounce on-demand materialization restart against high commit velo...",
                          "timestamp":  "2026-07-12T04:02:53Z",
@@ -78,7 +72,7 @@
                      },
                      {
                          "version":  "build-92ce88a",
-                         "title":  "feat(plugin-sessions): harness-reliability hardening ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â delivery ack, git-stat...",
+                         "title":  "feat(plugin-sessions): harness-reliability hardening ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â delivery ack, git-stat...",
                          "timestamp":  "2026-07-12T15:07:45Z",
                          "environment":  "production"
                      },
@@ -104,6 +98,12 @@
                          "version":  "build-f1125b9",
                          "title":  "Fix packaged runtime presence contract",
                          "timestamp":  "2026-07-12T21:38:37Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-efa393e",
+                         "title":  "Implement theme catalog dashboard",
+                         "timestamp":  "2026-07-12T22:38:22Z",
                          "environment":  "production"
                      }
                  ]
