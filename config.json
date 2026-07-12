@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-565daf0",
-                         "title":  "fix(chat): surface real desktop-session launch failures instead of polling si...",
-                         "timestamp":  "2026-07-11T22:38:40Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-0eb5fda",
                          "title":  "fix(sdk): add missing _Sdk_BuddyHub partial view (live 500 on Development \u003e S...",
@@ -104,6 +98,12 @@
                          "version":  "build-92ce88a",
                          "title":  "feat(plugin-sessions): harness-reliability hardening â€” delivery ack, git-stat...",
                          "timestamp":  "2026-07-12T15:07:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0f3fcac",
+                         "title":  "feat(sdk): tracking-repo commit history, diff, and pin-to-SHA clone (Task #101)",
+                         "timestamp":  "2026-07-12T16:57:05Z",
                          "environment":  "production"
                      }
                  ]
