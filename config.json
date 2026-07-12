@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -102,7 +102,7 @@
                      },
                      {
                          "version":  "build-92ce88a",
-                         "title":  "feat(plugin-sessions): harness-reliability hardening — delivery ack, git-stat...",
+                         "title":  "feat(plugin-sessions): harness-reliability hardening â€” delivery ack, git-stat...",
                          "timestamp":  "2026-07-12T15:07:45Z",
                          "environment":  "production"
                      }
