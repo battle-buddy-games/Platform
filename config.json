@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-70fa999",
-                         "title":  "fix(db): self-heal PlatformServers migration history on any pre-existing table",
-                         "timestamp":  "2026-07-11T19:13:16Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4885535",
                          "title":  "fix(ci): stop benign NuGet audit warning from failing the backup-required check",
                          "timestamp":  "2026-07-11T20:29:27Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3d8de07",
                          "title":  "fix(sdk): debounce on-demand materialization restart against high commit velo...",
                          "timestamp":  "2026-07-12T04:02:53Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-385bd77",
+                         "title":  "feat(buddy-desktop): explicit \"Run in Background\" + notify-on-completion, fix...",
+                         "timestamp":  "2026-07-12T04:43:33Z",
                          "environment":  "production"
                      }
                  ]
