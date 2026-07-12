@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f125abc",
-                         "title":  "feat(game-control): surface Mirror package version in GameOps Sessions dashboard",
-                         "timestamp":  "2026-07-11T20:57:59Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ae61849",
                          "title":  "fix(platform): wire UserNotificationChannelPreferences Ensure + bound Discord...",
                          "timestamp":  "2026-07-11T21:35:13Z",
@@ -104,6 +98,12 @@
                          "version":  "build-48af53e",
                          "title":  "fix(sdk): gate on-demand materialization triggers to the active blue-green sl...",
                          "timestamp":  "2026-07-12T14:00:47Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-730b94d",
+                         "title":  "fix(identity): stop stamping ClaimTypes.Name with DisplayName instead of User...",
+                         "timestamp":  "2026-07-12T14:25:58Z",
                          "environment":  "production"
                      }
                  ]
