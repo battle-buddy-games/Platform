@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d949052",
-                         "title":  "feat(ci-observability): add CPU activity telemetry mirroring memory pipeline ...",
-                         "timestamp":  "2026-07-10T22:49:46Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5137eb5",
                          "title":  "feat(releases): add Steam deployment history (insert-only) alongside branch s...",
                          "timestamp":  "2026-07-10T23:45:01Z",
@@ -104,6 +98,12 @@
                          "version":  "build-c5a51f1",
                          "title":  "feat(studio-role): shrink StudioRole to 5 values, move Founder Member/Insider...",
                          "timestamp":  "2026-07-11T23:33:52Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e870e6b",
+                         "title":  "feat(follow): add workflow-type filter to Projects \u003e Automation \u003e Live Follow",
+                         "timestamp":  "2026-07-12T00:15:06Z",
                          "environment":  "production"
                      }
                  ]
