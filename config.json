@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-e3b0544",
-                         "title":  "Fix dashboard typed tool model fallback",
-                         "timestamp":  "2026-07-12T23:09:04Z",
+                         "version":  "build-7e13abe",
+                         "title":  "Run dashboard render crawl in production tests",
+                         "timestamp":  "2026-07-12T23:27:06Z",
                          "environment":  "production"
                      }
                  ]
