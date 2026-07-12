@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2c99061",
-                         "title":  "fix(sdk): decouple served-root segment from on-disk tier pointer filename (Ta...",
-                         "timestamp":  "2026-07-12T13:44:59Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-48af53e",
                          "title":  "fix(sdk): gate on-demand materialization triggers to the active blue-green sl...",
                          "timestamp":  "2026-07-12T14:00:47Z",
@@ -66,7 +60,7 @@
                      },
                      {
                          "version":  "build-92ce88a",
-                         "title":  "feat(plugin-sessions): harness-reliability hardening ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â delivery ack, git-stat...",
+                         "title":  "feat(plugin-sessions): harness-reliability hardening ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â delivery ack, git-stat...",
                          "timestamp":  "2026-07-12T15:07:45Z",
                          "environment":  "production"
                      },
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-7e13abe",
-                         "title":  "Run dashboard render crawl in production tests",
-                         "timestamp":  "2026-07-12T23:27:06Z",
+                         "version":  "build-e3b0544",
+                         "title":  "Fix dashboard typed tool model fallback",
+                         "timestamp":  "2026-07-12T23:09:04Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6b4b544",
+                         "title":  "Fix theme catalog initialization",
+                         "timestamp":  "2026-07-12T23:55:00Z",
                          "environment":  "production"
                      }
                  ]
