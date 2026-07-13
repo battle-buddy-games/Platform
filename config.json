@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-eed2cd3",
-                         "title":  "Polish dashboard home theme integration",
-                         "timestamp":  "2026-07-13T02:46:42Z",
+                         "version":  "build-31aa5d3",
+                         "title":  "Refine platform theme visual foundation",
+                         "timestamp":  "2026-07-13T02:27:27Z",
                          "environment":  "production"
                      }
                  ]
