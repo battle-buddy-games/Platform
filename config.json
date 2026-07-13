@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-5433261",
-                         "title":  "Skip dashboard crawl when production auth token is unavailable",
-                         "timestamp":  "2026-07-13T00:16:36Z",
+                         "version":  "build-6588409",
+                         "title":  "Use platform broker token for dashboard crawl",
+                         "timestamp":  "2026-07-13T00:49:35Z",
                          "environment":  "production"
                      }
                  ]
