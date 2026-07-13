@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-48af53e",
-                         "title":  "fix(sdk): gate on-demand materialization triggers to the active blue-green sl...",
-                         "timestamp":  "2026-07-12T14:00:47Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-730b94d",
                          "title":  "fix(identity): stop stamping ClaimTypes.Name with DisplayName instead of User...",
                          "timestamp":  "2026-07-12T14:25:58Z",
@@ -60,7 +54,7 @@
                      },
                      {
                          "version":  "build-92ce88a",
-                         "title":  "feat(plugin-sessions): harness-reliability hardening ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â delivery ack, git-stat...",
+                         "title":  "feat(plugin-sessions): harness-reliability hardening ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â delivery ack, git-stat...",
                          "timestamp":  "2026-07-12T15:07:45Z",
                          "environment":  "production"
                      },
@@ -104,6 +98,12 @@
                          "version":  "build-6b4b544",
                          "title":  "Fix theme catalog initialization",
                          "timestamp":  "2026-07-12T23:55:00Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5433261",
+                         "title":  "Skip dashboard crawl when production auth token is unavailable",
+                         "timestamp":  "2026-07-13T00:16:36Z",
                          "environment":  "production"
                      }
                  ]
