@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5433261",
-                         "title":  "Skip dashboard crawl when production auth token is unavailable",
-                         "timestamp":  "2026-07-13T00:16:36Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a17c585",
                          "title":  "Polish platform theme dashboard previews",
                          "timestamp":  "2026-07-13T01:13:03Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-989be5e",
-                         "title":  "docs(servers): document Task #24 liveness/provenance/log-repair Inspect depth",
-                         "timestamp":  "2026-07-14T15:50:13Z",
+                         "version":  "build-909f6f9",
+                         "title":  "fix(home): restore the site\u0027s background photo showing through home page sect...",
+                         "timestamp":  "2026-07-14T15:15:26Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-33d3171",
+                         "title":  "feat(assets-hub): wire explore-by-submodule-profile filter into Library Asset...",
+                         "timestamp":  "2026-07-14T16:27:15Z",
                          "environment":  "production"
                      }
                  ]
