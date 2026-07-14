@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7f33a31",
-                         "title":  "fix(buddy-desktop): launch a real visible claude session for Start Interactiv...",
-                         "timestamp":  "2026-07-13T13:54:45Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d28c980",
                          "title":  "fix(themes): restore per-theme background images, fix home breadcrumb, add ga...",
                          "timestamp":  "2026-07-14T00:48:36Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d948cad",
                          "title":  "feat(themes): deepen material grammar and composition",
                          "timestamp":  "2026-07-14T19:24:28Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5a1ccf1",
+                         "title":  "fix(servers): make Inspect modal always closable and load sections independently",
+                         "timestamp":  "2026-07-14T20:01:07Z",
                          "environment":  "production"
                      }
                  ]
