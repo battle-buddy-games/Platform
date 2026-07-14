@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e3b0544",
-                         "title":  "Fix dashboard typed tool model fallback",
-                         "timestamp":  "2026-07-12T23:09:04Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-6b4b544",
                          "title":  "Fix theme catalog initialization",
                          "timestamp":  "2026-07-12T23:55:00Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a0130ca",
                          "title":  "feat(themes): catalog search + collapsible bands + contrast pills, themed scr...",
                          "timestamp":  "2026-07-14T01:53:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2ab07cf",
+                         "title":  "fix: remove duplicate ThemeSelectionApiController blocking every deploy",
+                         "timestamp":  "2026-07-14T03:48:16Z",
                          "environment":  "production"
                      }
                  ]
