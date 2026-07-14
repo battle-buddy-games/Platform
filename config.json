@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-d49a243",
-                         "title":  "fix(navbar): thin dropdown scrollbars, fix collapse-state persistence, trunca...",
-                         "timestamp":  "2026-07-14T21:54:16Z",
+                         "version":  "build-f55c5de",
+                         "title":  "feat(servers): risky-action confirmations + deploy diff + admin command conso...",
+                         "timestamp":  "2026-07-14T22:12:36Z",
                          "environment":  "production"
                      }
                  ]
