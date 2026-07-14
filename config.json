@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f1125b9",
-                         "title":  "Fix packaged runtime presence contract",
-                         "timestamp":  "2026-07-12T21:38:37Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-efa393e",
                          "title":  "Implement theme catalog dashboard",
                          "timestamp":  "2026-07-12T22:38:22Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d28c980",
                          "title":  "fix(themes): restore per-theme background images, fix home breadcrumb, add ga...",
                          "timestamp":  "2026-07-14T00:48:36Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7a75f86",
+                         "title":  "feat(themes): wire semantic status + integration tokens across Bootstrap, Cha...",
+                         "timestamp":  "2026-07-14T01:07:41Z",
                          "environment":  "production"
                      }
                  ]
