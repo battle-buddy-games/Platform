@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2ab07cf",
-                         "title":  "fix: remove duplicate ThemeSelectionApiController blocking every deploy",
-                         "timestamp":  "2026-07-14T03:48:16Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-909f6f9",
                          "title":  "fix(home): restore the site\u0027s background photo showing through home page sect...",
                          "timestamp":  "2026-07-14T15:15:26Z",
@@ -104,6 +98,12 @@
                          "version":  "build-c8f7401",
                          "title":  "feat(servers): persisted health-history view, alerts opt-in, cross-surface ba...",
                          "timestamp":  "2026-07-14T22:32:43Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-b19acb6",
+                         "title":  "fix(navbar): collapse Presence hub URL row into an icon tooltip",
+                         "timestamp":  "2026-07-14T23:18:59Z",
                          "environment":  "production"
                      }
                  ]
