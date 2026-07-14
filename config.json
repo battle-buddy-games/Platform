@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a0130ca",
-                         "title":  "feat(themes): catalog search + collapsible bands + contrast pills, themed scr...",
-                         "timestamp":  "2026-07-14T01:53:08Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2ab07cf",
                          "title":  "fix: remove duplicate ThemeSelectionApiController blocking every deploy",
                          "timestamp":  "2026-07-14T03:48:16Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-f55c5de",
-                         "title":  "feat(servers): risky-action confirmations + deploy diff + admin command conso...",
-                         "timestamp":  "2026-07-14T22:12:36Z",
+                         "version":  "build-d49a243",
+                         "title":  "fix(navbar): thin dropdown scrollbars, fix collapse-state persistence, trunca...",
+                         "timestamp":  "2026-07-14T21:54:16Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c8f7401",
+                         "title":  "feat(servers): persisted health-history view, alerts opt-in, cross-surface ba...",
+                         "timestamp":  "2026-07-14T22:32:43Z",
                          "environment":  "production"
                      }
                  ]
