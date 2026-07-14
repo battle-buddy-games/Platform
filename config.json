@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-909f6f9",
-                         "title":  "fix(home): restore the site\u0027s background photo showing through home page sect...",
-                         "timestamp":  "2026-07-14T15:15:26Z",
+                         "version":  "build-989be5e",
+                         "title":  "docs(servers): document Task #24 liveness/provenance/log-repair Inspect depth",
+                         "timestamp":  "2026-07-14T15:50:13Z",
                          "environment":  "production"
                      }
                  ]
