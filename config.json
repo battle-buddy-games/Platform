@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-3762a9e",
-                         "title":  "feat(themes): add theme-specific widget ornaments",
-                         "timestamp":  "2026-07-14T20:53:21Z",
+                         "version":  "build-e39b002",
+                         "title":  "feat(servers): live in-place status refresh, health verdict banner/chip/triag...",
+                         "timestamp":  "2026-07-14T21:30:58Z",
                          "environment":  "production"
                      }
                  ]
