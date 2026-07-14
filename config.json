@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3478eb0",
-                         "title":  "Deepen platform theme integration",
-                         "timestamp":  "2026-07-13T01:56:55Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-31aa5d3",
                          "title":  "Refine platform theme visual foundation",
                          "timestamp":  "2026-07-13T02:27:27Z",
@@ -104,6 +98,12 @@
                          "version":  "build-723ea34",
                          "title":  "docs: document Uploads sub-tab and Blender plugin admin panel",
                          "timestamp":  "2026-07-14T17:03:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-19279c1",
+                         "title":  "feat(themes): add repeating identity textures",
+                         "timestamp":  "2026-07-14T18:32:00Z",
                          "environment":  "production"
                      }
                  ]
