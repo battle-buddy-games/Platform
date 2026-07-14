@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-4d985e9",
-                         "title":  "feat(sdk): scope on-demand tier materialization clone to the target profile\u0027s...",
-                         "timestamp":  "2026-07-12T19:32:28Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-f1125b9",
                          "title":  "Fix packaged runtime presence contract",
@@ -104,6 +98,12 @@
                          "version":  "build-7f33a31",
                          "title":  "fix(buddy-desktop): launch a real visible claude session for Start Interactiv...",
                          "timestamp":  "2026-07-13T13:54:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d28c980",
+                         "title":  "fix(themes): restore per-theme background images, fix home breadcrumb, add ga...",
+                         "timestamp":  "2026-07-14T00:48:36Z",
                          "environment":  "production"
                      }
                  ]
