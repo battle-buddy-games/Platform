@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7a75f86",
-                         "title":  "feat(themes): wire semantic status + integration tokens across Bootstrap, Cha...",
-                         "timestamp":  "2026-07-14T01:07:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a0130ca",
                          "title":  "feat(themes): catalog search + collapsible bands + contrast pills, themed scr...",
                          "timestamp":  "2026-07-14T01:53:08Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-e39b002",
-                         "title":  "feat(servers): live in-place status refresh, health verdict banner/chip/triag...",
-                         "timestamp":  "2026-07-14T21:30:58Z",
+                         "version":  "build-3762a9e",
+                         "title":  "feat(themes): add theme-specific widget ornaments",
+                         "timestamp":  "2026-07-14T20:53:21Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d49a243",
+                         "title":  "fix(navbar): thin dropdown scrollbars, fix collapse-state persistence, trunca...",
+                         "timestamp":  "2026-07-14T21:54:16Z",
                          "environment":  "production"
                      }
                  ]
