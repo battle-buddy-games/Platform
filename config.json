@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-efa393e",
-                         "title":  "Implement theme catalog dashboard",
-                         "timestamp":  "2026-07-12T22:38:22Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e3b0544",
                          "title":  "Fix dashboard typed tool model fallback",
                          "timestamp":  "2026-07-12T23:09:04Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-493f681",
-                         "title":  "feat(themes): rebuild catalog preview card -- the card IS the theme demo, waf...",
-                         "timestamp":  "2026-07-14T01:23:00Z",
+                         "version":  "build-7a75f86",
+                         "title":  "feat(themes): wire semantic status + integration tokens across Bootstrap, Cha...",
+                         "timestamp":  "2026-07-14T01:07:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a0130ca",
+                         "title":  "feat(themes): catalog search + collapsible bands + contrast pills, themed scr...",
+                         "timestamp":  "2026-07-14T01:53:08Z",
                          "environment":  "production"
                      }
                  ]
