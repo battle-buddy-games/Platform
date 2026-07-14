@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a17c585",
-                         "title":  "Polish platform theme dashboard previews",
-                         "timestamp":  "2026-07-13T01:13:03Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3478eb0",
                          "title":  "Deepen platform theme integration",
                          "timestamp":  "2026-07-13T01:56:55Z",
@@ -104,6 +98,12 @@
                          "version":  "build-33d3171",
                          "title":  "feat(assets-hub): wire explore-by-submodule-profile filter into Library Asset...",
                          "timestamp":  "2026-07-14T16:27:15Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-723ea34",
+                         "title":  "docs: document Uploads sub-tab and Blender plugin admin panel",
+                         "timestamp":  "2026-07-14T17:03:01Z",
                          "environment":  "production"
                      }
                  ]
