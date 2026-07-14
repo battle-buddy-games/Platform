@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-31aa5d3",
-                         "title":  "Refine platform theme visual foundation",
-                         "timestamp":  "2026-07-13T02:27:27Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7f33a31",
                          "title":  "fix(buddy-desktop): launch a real visible claude session for Start Interactiv...",
                          "timestamp":  "2026-07-13T13:54:45Z",
@@ -104,6 +98,12 @@
                          "version":  "build-19279c1",
                          "title":  "feat(themes): add repeating identity textures",
                          "timestamp":  "2026-07-14T18:32:00Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d948cad",
+                         "title":  "feat(themes): deepen material grammar and composition",
+                         "timestamp":  "2026-07-14T19:24:28Z",
                          "environment":  "production"
                      }
                  ]
