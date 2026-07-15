@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-909f6f9",
-                         "title":  "fix(home): restore the site\u0027s background photo showing through home page sect...",
-                         "timestamp":  "2026-07-14T15:15:26Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-33d3171",
                          "title":  "feat(assets-hub): wire explore-by-submodule-profile filter into Library Asset...",
                          "timestamp":  "2026-07-14T16:27:15Z",
@@ -104,6 +98,12 @@
                          "version":  "build-b19acb6",
                          "title":  "fix(navbar): collapse Presence hub URL row into an icon tooltip",
                          "timestamp":  "2026-07-14T23:18:59Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-92c5eb0",
+                         "title":  "fix(ci): isolate screenshot delivery tests from local agent (#14)",
+                         "timestamp":  "2026-07-15T01:01:51Z",
                          "environment":  "production"
                      }
                  ]
