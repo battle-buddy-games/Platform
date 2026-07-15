@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-19279c1",
-                         "title":  "feat(themes): add repeating identity textures",
-                         "timestamp":  "2026-07-14T18:32:00Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-d948cad",
                          "title":  "feat(themes): deepen material grammar and composition",
@@ -104,6 +98,12 @@
                          "version":  "build-22f1b35",
                          "title":  "fix(theme): wire retired-theme cleanup, convert theme textures to webp, add m...",
                          "timestamp":  "2026-07-15T15:15:28Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ef7f038",
+                         "title":  "chore(webplatform): remove stale SDK Artifacts/Tool Distribution redirect banner",
+                         "timestamp":  "2026-07-15T20:05:48Z",
                          "environment":  "production"
                      }
                  ]
