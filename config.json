@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-8b539b2",
-                         "title":  "fix(buddy-desktop): route non-.blend assets through dev-launch.ps1 -ImportAss...",
-                         "timestamp":  "2026-07-15T20:40:15Z",
+                         "version":  "build-e488910",
+                         "title":  "fix(themes): stop unthemed Bootstrap vars causing white panels in Themes tool",
+                         "timestamp":  "2026-07-15T21:16:16Z",
                          "environment":  "production"
                      }
                  ]
