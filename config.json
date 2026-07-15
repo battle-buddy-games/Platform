@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-6793c15",
-                         "title":  "fix(editors): render embedded Document/Chat/Assets tools content-only",
-                         "timestamp":  "2026-07-15T21:45:42Z",
+                         "version":  "build-91a5eb1",
+                         "title":  "fix(editors): embed DocumentTool/Chat/Assets via reusable partial rendering, ...",
+                         "timestamp":  "2026-07-15T23:47:26Z",
                          "environment":  "production"
                      }
                  ]
