@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5a1ccf1",
-                         "title":  "fix(servers): make Inspect modal always closable and load sections independently",
-                         "timestamp":  "2026-07-14T20:01:07Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3762a9e",
                          "title":  "feat(themes): add theme-specific widget ornaments",
                          "timestamp":  "2026-07-14T20:53:21Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-e488910",
-                         "title":  "fix(themes): stop unthemed Bootstrap vars causing white panels in Themes tool",
-                         "timestamp":  "2026-07-15T21:16:16Z",
+                         "version":  "build-8b539b2",
+                         "title":  "fix(buddy-desktop): route non-.blend assets through dev-launch.ps1 -ImportAss...",
+                         "timestamp":  "2026-07-15T20:40:15Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6793c15",
+                         "title":  "fix(editors): render embedded Document/Chat/Assets tools content-only",
+                         "timestamp":  "2026-07-15T21:45:42Z",
                          "environment":  "production"
                      }
                  ]
