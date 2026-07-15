@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-22f1b35",
-                         "title":  "fix(theme): wire retired-theme cleanup, convert theme textures to webp, add m...",
-                         "timestamp":  "2026-07-15T15:15:28Z",
+                         "version":  "build-828e804",
+                         "title":  "docs: remove stale feature-owner references from agent context",
+                         "timestamp":  "2026-07-15T15:34:48Z",
                          "environment":  "production"
                      }
                  ]
