@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-33d3171",
-                         "title":  "feat(assets-hub): wire explore-by-submodule-profile filter into Library Asset...",
-                         "timestamp":  "2026-07-14T16:27:15Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-723ea34",
                          "title":  "docs: document Uploads sub-tab and Blender plugin admin panel",
                          "timestamp":  "2026-07-14T17:03:01Z",
@@ -104,6 +98,12 @@
                          "version":  "build-92c5eb0",
                          "title":  "fix(ci): isolate screenshot delivery tests from local agent (#14)",
                          "timestamp":  "2026-07-15T01:01:51Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-66a8a9d",
+                         "title":  "feat: add documentation search dashboard",
+                         "timestamp":  "2026-07-15T01:25:01Z",
                          "environment":  "production"
                      }
                  ]
