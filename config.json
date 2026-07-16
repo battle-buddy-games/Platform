@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-b94fb3f",
-                         "title":  "feat(assets-hub): add decision records, style guide, and profile-aware voting...",
-                         "timestamp":  "2026-07-16T06:00:53Z",
+                         "version":  "build-7438cbd",
+                         "title":  "fix(buddy-desktop): list other online users at tray root level, not nested un...",
+                         "timestamp":  "2026-07-16T07:02:27Z",
                          "environment":  "production"
                      }
                  ]
