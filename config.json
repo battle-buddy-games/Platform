@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d49a243",
-                         "title":  "fix(navbar): thin dropdown scrollbars, fix collapse-state persistence, trunca...",
-                         "timestamp":  "2026-07-14T21:54:16Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c8f7401",
                          "title":  "feat(servers): persisted health-history view, alerts opt-in, cross-surface ba...",
                          "timestamp":  "2026-07-14T22:32:43Z",
@@ -104,6 +98,12 @@
                          "version":  "build-8006ba7",
                          "title":  "Merge branch \u0027agent/fix-webplatform-ci-tests\u0027 for Sitemap tab",
                          "timestamp":  "2026-07-16T00:51:52Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f004083",
+                         "title":  "feat(webplatform): add Development Images gallery sub-tab to Screen Capture tool",
+                         "timestamp":  "2026-07-16T01:23:01Z",
                          "environment":  "production"
                      }
                  ]
