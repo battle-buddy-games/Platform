@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-88c0876",
-                         "title":  "fix(theme): retire Pegasus Vanguard and its removed siblings so their DB rows...",
-                         "timestamp":  "2026-07-16T17:40:00Z",
+                         "version":  "build-3b5cf71",
+                         "title":  "feat(presence,buddy-desktop): show other online users\u0027 profile pictures in tray",
+                         "timestamp":  "2026-07-16T17:13:47Z",
                          "environment":  "production"
                      }
                  ]
