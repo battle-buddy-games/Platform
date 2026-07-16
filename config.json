@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://fancy-elephant-apnic-pmc.trycloudflare.com"
+                                  "address":  "https://cleaners-bite-european-wishlist.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
