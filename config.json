@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-3762a9e",
-                         "title":  "feat(themes): add theme-specific widget ornaments",
-                         "timestamp":  "2026-07-14T20:53:21Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-d49a243",
                          "title":  "fix(navbar): thin dropdown scrollbars, fix collapse-state persistence, trunca...",
@@ -104,6 +98,12 @@
                          "version":  "build-6793c15",
                          "title":  "fix(editors): render embedded Document/Chat/Assets tools content-only",
                          "timestamp":  "2026-07-15T21:45:42Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8006ba7",
+                         "title":  "Merge branch \u0027agent/fix-webplatform-ci-tests\u0027 for Sitemap tab",
+                         "timestamp":  "2026-07-16T00:51:52Z",
                          "environment":  "production"
                      }
                  ]
