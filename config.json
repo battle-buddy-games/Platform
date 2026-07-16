@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://headphones-questionnaire-costa-file.trycloudflare.com"
+                                  "address":  "https://fancy-elephant-apnic-pmc.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
