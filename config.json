@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-92c5eb0",
-                         "title":  "fix(ci): isolate screenshot delivery tests from local agent (#14)",
-                         "timestamp":  "2026-07-15T01:01:51Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-66a8a9d",
                          "title":  "feat: add documentation search dashboard",
@@ -104,6 +98,12 @@
                          "version":  "build-b94fb3f",
                          "title":  "feat(assets-hub): add decision records, style guide, and profile-aware voting...",
                          "timestamp":  "2026-07-16T06:00:53Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3b5cf71",
+                         "title":  "feat(presence,buddy-desktop): show other online users\u0027 profile pictures in tray",
+                         "timestamp":  "2026-07-16T17:13:47Z",
                          "environment":  "production"
                      }
                  ]
