@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-91a5eb1",
-                         "title":  "fix(editors): embed DocumentTool/Chat/Assets via reusable partial rendering, ...",
-                         "timestamp":  "2026-07-15T23:47:26Z",
+                         "version":  "build-6793c15",
+                         "title":  "fix(editors): render embedded Document/Chat/Assets tools content-only",
+                         "timestamp":  "2026-07-15T21:45:42Z",
                          "environment":  "production"
                      }
                  ]
