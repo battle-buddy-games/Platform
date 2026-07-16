@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c8f7401",
-                         "title":  "feat(servers): persisted health-history view, alerts opt-in, cross-surface ba...",
-                         "timestamp":  "2026-07-14T22:32:43Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b19acb6",
                          "title":  "fix(navbar): collapse Presence hub URL row into an icon tooltip",
                          "timestamp":  "2026-07-14T23:18:59Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f004083",
                          "title":  "feat(webplatform): add Development Images gallery sub-tab to Screen Capture tool",
                          "timestamp":  "2026-07-16T01:23:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2bd97bc",
+                         "title":  "revert(buddy-desktop): un-gate tray New Project, doc bootstrap gap instead",
+                         "timestamp":  "2026-07-16T03:20:31Z",
                          "environment":  "production"
                      }
                  ]
