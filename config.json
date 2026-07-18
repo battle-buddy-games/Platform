@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-66a8a9d",
-                         "title":  "feat: add documentation search dashboard",
-                         "timestamp":  "2026-07-15T01:25:01Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-22f1b35",
                          "title":  "fix(theme): wire retired-theme cleanup, convert theme textures to webp, add m...",
@@ -104,6 +98,12 @@
                          "version":  "build-3b5cf71",
                          "title":  "feat(presence,buddy-desktop): show other online users\u0027 profile pictures in tray",
                          "timestamp":  "2026-07-16T17:13:47Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-63f5945",
+                         "title":  "fix(tests): update stale DocumentationServiceTests + ThemeCatalogContractTest...",
+                         "timestamp":  "2026-07-18T00:47:55Z",
                          "environment":  "production"
                      }
                  ]
