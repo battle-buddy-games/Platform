@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-21df6e5",
-                         "title":  "feat(buddy-desktop): add standalone Workspace View and SDK Sync windows",
-                         "timestamp":  "2026-07-18T01:53:02Z",
+                         "version":  "build-39bf700",
+                         "title":  "fix(webplatform): cache-bust dashboard-home.js so dropdown fixes reliably rea...",
+                         "timestamp":  "2026-07-18T01:28:28Z",
                          "environment":  "production"
                      }
                  ]
