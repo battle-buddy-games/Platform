@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8006ba7",
-                         "title":  "Merge branch \u0027agent/fix-webplatform-ci-tests\u0027 for Sitemap tab",
-                         "timestamp":  "2026-07-16T00:51:52Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f004083",
                          "title":  "feat(webplatform): add Development Images gallery sub-tab to Screen Capture tool",
                          "timestamp":  "2026-07-16T01:23:01Z",
@@ -104,6 +98,12 @@
                          "version":  "build-86c6501",
                          "title":  "feat(sdk-dashboard): add Editor Tools API for Sdk dashboard tool",
                          "timestamp":  "2026-07-18T22:22:52Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1e3f249",
+                         "title":  "feat(signalr): add presence auth gate + hosting join tokens (Phase 1)",
+                         "timestamp":  "2026-07-18T23:06:06Z",
                          "environment":  "production"
                      }
                  ]
