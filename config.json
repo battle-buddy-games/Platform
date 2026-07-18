@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ef7f038",
-                         "title":  "chore(webplatform): remove stale SDK Artifacts/Tool Distribution redirect banner",
-                         "timestamp":  "2026-07-15T20:05:48Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8b539b2",
                          "title":  "fix(buddy-desktop): route non-.blend assets through dev-launch.ps1 -ImportAss...",
                          "timestamp":  "2026-07-15T20:40:15Z",
@@ -104,6 +98,12 @@
                          "version":  "build-39bf700",
                          "title":  "fix(webplatform): cache-bust dashboard-home.js so dropdown fixes reliably rea...",
                          "timestamp":  "2026-07-18T01:28:28Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-241b7e9",
+                         "title":  "feat(screenshot): extend legacy upload endpoint for Quantum Console dev/QA ca...",
+                         "timestamp":  "2026-07-18T19:37:36Z",
                          "environment":  "production"
                      }
                  ]
