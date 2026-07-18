@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-6793c15",
-                         "title":  "fix(editors): render embedded Document/Chat/Assets tools content-only",
-                         "timestamp":  "2026-07-15T21:45:42Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8006ba7",
                          "title":  "Merge branch \u0027agent/fix-webplatform-ci-tests\u0027 for Sitemap tab",
                          "timestamp":  "2026-07-16T00:51:52Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d5a63f9",
                          "title":  "feat(screen-capture): CI case broken-flag tracking frontend",
                          "timestamp":  "2026-07-18T21:39:13Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-86c6501",
+                         "title":  "feat(sdk-dashboard): add Editor Tools API for Sdk dashboard tool",
+                         "timestamp":  "2026-07-18T22:22:52Z",
                          "environment":  "production"
                      }
                  ]
