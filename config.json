@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-8b539b2",
-                         "title":  "fix(buddy-desktop): route non-.blend assets through dev-launch.ps1 -ImportAss...",
-                         "timestamp":  "2026-07-15T20:40:15Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-6793c15",
                          "title":  "fix(editors): render embedded Document/Chat/Assets tools content-only",
@@ -104,6 +98,12 @@
                          "version":  "build-241b7e9",
                          "title":  "feat(screenshot): extend legacy upload endpoint for Quantum Console dev/QA ca...",
                          "timestamp":  "2026-07-18T19:37:36Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d5a63f9",
+                         "title":  "feat(screen-capture): CI case broken-flag tracking frontend",
+                         "timestamp":  "2026-07-18T21:39:13Z",
                          "environment":  "production"
                      }
                  ]
