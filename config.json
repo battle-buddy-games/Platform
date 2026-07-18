@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-22f1b35",
-                         "title":  "fix(theme): wire retired-theme cleanup, convert theme textures to webp, add m...",
-                         "timestamp":  "2026-07-15T15:15:28Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ef7f038",
                          "title":  "chore(webplatform): remove stale SDK Artifacts/Tool Distribution redirect banner",
                          "timestamp":  "2026-07-15T20:05:48Z",
@@ -104,6 +98,12 @@
                          "version":  "build-63f5945",
                          "title":  "fix(tests): update stale DocumentationServiceTests + ThemeCatalogContractTest...",
                          "timestamp":  "2026-07-18T00:47:55Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-39bf700",
+                         "title":  "fix(webplatform): cache-bust dashboard-home.js so dropdown fixes reliably rea...",
+                         "timestamp":  "2026-07-18T01:28:28Z",
                          "environment":  "production"
                      }
                  ]
