@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-b94fb3f",
-                         "title":  "feat(assets-hub): add decision records, style guide, and profile-aware voting...",
-                         "timestamp":  "2026-07-16T06:00:53Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-3b5cf71",
                          "title":  "feat(presence,buddy-desktop): show other online users\u0027 profile pictures in tray",
@@ -104,6 +98,12 @@
                          "version":  "build-233167d",
                          "title":  "feat(buddy-desktop): add File \u003e Clear Browser Cache menu item",
                          "timestamp":  "2026-07-19T06:04:13Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e00786c",
+                         "title":  "fix(platform-theme): stop dashboard-container isolation trapping modals behin...",
+                         "timestamp":  "2026-07-19T15:04:25Z",
                          "environment":  "production"
                      }
                  ]
