@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-ea4eaf1",
-                         "title":  "fix(tests): resolve ArtifactStatus.Evicted CS0117 and GitHubRunId/BuildIdenti...",
-                         "timestamp":  "2026-07-19T04:41:53Z",
+                         "version":  "build-aa41752",
+                         "title":  "feat(blender-live-sync): bidirectional pointer/cursor sync on BlenderLiveHub ...",
+                         "timestamp":  "2026-07-19T05:26:54Z",
                          "environment":  "production"
                      }
                  ]
