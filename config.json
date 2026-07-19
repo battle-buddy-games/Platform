@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-e00786c",
-                         "title":  "fix(platform-theme): stop dashboard-container isolation trapping modals behin...",
-                         "timestamp":  "2026-07-19T15:04:25Z",
+                         "version":  "build-6a6851b",
+                         "title":  "feat(screen-capture): add Discord Import sub-tab to CI Screenshots group",
+                         "timestamp":  "2026-07-19T15:37:59Z",
                          "environment":  "production"
                      }
                  ]
