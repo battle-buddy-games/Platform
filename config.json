@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-fcbfc6b",
-                         "title":  "feat(webplatform): aggregate pip on Actions dropdown, CI badge counts distinc...",
-                         "timestamp":  "2026-07-19T19:55:19Z",
+                         "version":  "build-dc53037",
+                         "title":  "feat(buddy-hub): dispatch plugin sessions to the daemon connection, remove th...",
+                         "timestamp":  "2026-07-19T20:45:34Z",
                          "environment":  "production"
                      }
                  ]
