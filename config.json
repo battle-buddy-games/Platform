@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3b5cf71",
-                         "title":  "feat(presence,buddy-desktop): show other online users\u0027 profile pictures in tray",
-                         "timestamp":  "2026-07-16T17:13:47Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-63f5945",
                          "title":  "fix(tests): update stale DocumentationServiceTests + ThemeCatalogContractTest...",
                          "timestamp":  "2026-07-18T00:47:55Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-6a6851b",
-                         "title":  "feat(screen-capture): add Discord Import sub-tab to CI Screenshots group",
-                         "timestamp":  "2026-07-19T15:37:59Z",
+                         "version":  "build-e00786c",
+                         "title":  "fix(platform-theme): stop dashboard-container isolation trapping modals behin...",
+                         "timestamp":  "2026-07-19T15:04:25Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7c2617f",
+                         "title":  "feat(project-metadata): add thumbnail upload/list/fetch endpoints + entity su...",
+                         "timestamp":  "2026-07-19T18:40:26Z",
                          "environment":  "production"
                      }
                  ]
