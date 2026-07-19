@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2bd97bc",
-                         "title":  "revert(buddy-desktop): un-gate tray New Project, doc bootstrap gap instead",
-                         "timestamp":  "2026-07-16T03:20:31Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b94fb3f",
                          "title":  "feat(assets-hub): add decision records, style guide, and profile-aware voting...",
                          "timestamp":  "2026-07-16T06:00:53Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-aa41752",
-                         "title":  "feat(blender-live-sync): bidirectional pointer/cursor sync on BlenderLiveHub ...",
-                         "timestamp":  "2026-07-19T05:26:54Z",
+                         "version":  "build-ea4eaf1",
+                         "title":  "fix(tests): resolve ArtifactStatus.Evicted CS0117 and GitHubRunId/BuildIdenti...",
+                         "timestamp":  "2026-07-19T04:41:53Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-233167d",
+                         "title":  "feat(buddy-desktop): add File \u003e Clear Browser Cache menu item",
+                         "timestamp":  "2026-07-19T06:04:13Z",
                          "environment":  "production"
                      }
                  ]
