@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,6 +46,12 @@
                               }
                           ],
     "releases":  [
+                     {
+                         "version":  "build-241b7e9",
+                         "title":  "feat(screenshot): extend legacy upload endpoint for Quantum Console dev/QA ca...",
+                         "timestamp":  "2026-07-18T19:37:36Z",
+                         "environment":  "production"
+                     },
                      {
                          "version":  "build-d5a63f9",
                          "title":  "feat(screen-capture): CI case broken-flag tracking frontend",
@@ -98,12 +104,6 @@
                          "version":  "build-8749f34",
                          "title":  "fix(webplatform): stop card hover-transform and card-body z-index trapping mo...",
                          "timestamp":  "2026-07-20T03:17:29Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-08b2626",
-                         "title":  "fix(buddy-desktop): default CLI daemon spawn cwd to home dir",
-                         "timestamp":  "2026-07-20T06:12:41Z",
                          "environment":  "production"
                      }
                  ]
