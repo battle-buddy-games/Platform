@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-623ae59",
-                         "title":  "fix(release-ingest): restore content dropped by a stale-base commit in 7fd2ca639",
-                         "timestamp":  "2026-07-20T16:32:18Z",
+                         "version":  "build-5e6ed86",
+                         "title":  "merge WIP: catch up to origin/main advancing during resolution",
+                         "timestamp":  "2026-07-20T17:10:09Z",
                          "environment":  "production"
                      }
                  ]
