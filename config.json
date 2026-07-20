@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-c1d4eb5",
-                         "title":  "fix(buddy-desktop): fix broken syntax + local job progress reporting wiring",
-                         "timestamp":  "2026-07-20T19:00:30Z",
+                         "version":  "build-05297c4",
+                         "title":  "feat(local-jobs): add REST ingest counterpart to BuddyHub local-job reporting",
+                         "timestamp":  "2026-07-20T18:05:04Z",
                          "environment":  "production"
                      }
                  ]
