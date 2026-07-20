@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-1e3f249",
-                         "title":  "feat(signalr): add presence auth gate + hosting join tokens (Phase 1)",
-                         "timestamp":  "2026-07-18T23:06:06Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-ea4eaf1",
                          "title":  "fix(tests): resolve ArtifactStatus.Evicted CS0117 and GitHubRunId/BuildIdenti...",
@@ -104,6 +98,12 @@
                          "version":  "build-47acf48",
                          "title":  "feat(platform-tasks): Friends Contribution Board v1 backend + board UI (Slice...",
                          "timestamp":  "2026-07-20T14:51:24Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-623ae59",
+                         "title":  "fix(release-ingest): restore content dropped by a stale-base commit in 7fd2ca639",
+                         "timestamp":  "2026-07-20T16:32:18Z",
                          "environment":  "production"
                      }
                  ]
