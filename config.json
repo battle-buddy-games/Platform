@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-39bf700",
-                         "title":  "fix(webplatform): cache-bust dashboard-home.js so dropdown fixes reliably rea...",
-                         "timestamp":  "2026-07-18T01:28:28Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-241b7e9",
                          "title":  "feat(screenshot): extend legacy upload endpoint for Quantum Console dev/QA ca...",
                          "timestamp":  "2026-07-18T19:37:36Z",
@@ -104,6 +98,12 @@
                          "version":  "build-fcbfc6b",
                          "title":  "feat(webplatform): aggregate pip on Actions dropdown, CI badge counts distinc...",
                          "timestamp":  "2026-07-19T19:55:19Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8749f34",
+                         "title":  "fix(webplatform): stop card hover-transform and card-body z-index trapping mo...",
+                         "timestamp":  "2026-07-20T03:17:29Z",
                          "environment":  "production"
                      }
                  ]
