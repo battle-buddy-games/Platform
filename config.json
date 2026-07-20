@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,6 +46,12 @@
                               }
                           ],
     "releases":  [
+                     {
+                         "version":  "build-ea4eaf1",
+                         "title":  "fix(tests): resolve ArtifactStatus.Evicted CS0117 and GitHubRunId/BuildIdenti...",
+                         "timestamp":  "2026-07-19T04:41:53Z",
+                         "environment":  "production"
+                     },
                      {
                          "version":  "build-233167d",
                          "title":  "feat(buddy-desktop): add File \u003e Clear Browser Cache menu item",
@@ -98,12 +104,6 @@
                          "version":  "build-623ae59",
                          "title":  "fix(release-ingest): restore content dropped by a stale-base commit in 7fd2ca639",
                          "timestamp":  "2026-07-20T16:32:18Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-05297c4",
-                         "title":  "feat(local-jobs): add REST ingest counterpart to BuddyHub local-job reporting",
-                         "timestamp":  "2026-07-20T18:05:04Z",
                          "environment":  "production"
                      }
                  ]
