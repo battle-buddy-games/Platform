@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://jackie-throw-stud-mls.trycloudflare.com"
+                                  "address":  "https://cleaners-bite-european-wishlist.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -46,18 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-233167d",
-                         "title":  "feat(buddy-desktop): add File \u003e Clear Browser Cache menu item",
-                         "timestamp":  "2026-07-19T06:04:13Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-e00786c",
-                         "title":  "fix(platform-theme): stop dashboard-container isolation trapping modals behin...",
-                         "timestamp":  "2026-07-19T15:04:25Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-7c2617f",
                          "title":  "feat(project-metadata): add thumbnail upload/list/fetch endpoints + entity su...",
@@ -104,6 +92,18 @@
                          "version":  "build-05297c4",
                          "title":  "feat(local-jobs): add REST ingest counterpart to BuddyHub local-job reporting",
                          "timestamp":  "2026-07-20T18:05:04Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-fad4724",
+                         "title":  "feat(engagement): build Report an Issue frontend (submission form + triage qu...",
+                         "timestamp":  "2026-07-20T20:00:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0a63f29",
+                         "title":  "fix(sdk-hub): widen SdkReportedGitStatus.AheadBy/BehindBy to nullable, fixing...",
+                         "timestamp":  "2026-07-20T23:35:53Z",
                          "environment":  "production"
                      }
                  ]
