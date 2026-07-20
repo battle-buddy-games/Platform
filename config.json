@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-e98b518",
-                         "title":  "fix(platform-tasks): ProposalFileSyncTarget slug source is name: not id:",
-                         "timestamp":  "2026-07-20T15:41:11Z",
+                         "version":  "build-47acf48",
+                         "title":  "feat(platform-tasks): Friends Contribution Board v1 backend + board UI (Slice...",
+                         "timestamp":  "2026-07-20T14:51:24Z",
                          "environment":  "production"
                      }
                  ]
