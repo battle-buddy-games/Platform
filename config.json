@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://rocky-nobody-configurations-phoenix.trycloudflare.com"
+                                  "address":  "https://configurations-consultant-stream-resorts.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
