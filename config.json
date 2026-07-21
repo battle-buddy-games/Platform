@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-9afd519",
-                         "title":  "fix(buddy-desktop): tray reorg - Open Workspace Window into Tools, Assets sub...",
-                         "timestamp":  "2026-07-21T20:52:34Z",
+                         "version":  "build-e1e9653",
+                         "title":  "fix(chat): keep brand-new open AI agent conversations in the sidebar list",
+                         "timestamp":  "2026-07-21T21:18:47Z",
                          "environment":  "production"
                      }
                  ]
