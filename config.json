@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -102,7 +102,7 @@
                      },
                      {
                          "version":  "build-c6723f1",
-                         "title":  "fix(notifications,development-images): unblock CI Validate — 3 root causes",
+                         "title":  "fix(notifications,development-images): unblock CI Validate â€” 3 root causes",
                          "timestamp":  "2026-07-21T05:00:08Z",
                          "environment":  "production"
                      }
