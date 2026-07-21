@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-7c2617f",
-                         "title":  "feat(project-metadata): add thumbnail upload/list/fetch endpoints + entity su...",
-                         "timestamp":  "2026-07-19T18:40:26Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-fcbfc6b",
                          "title":  "feat(webplatform): aggregate pip on Actions dropdown, CI badge counts distinc...",
@@ -104,6 +98,12 @@
                          "version":  "build-e5e7734",
                          "title":  "feat(webplatform): ingest prefab hierarchy manifest from export.json",
                          "timestamp":  "2026-07-21T06:26:42Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9afd519",
+                         "title":  "fix(buddy-desktop): tray reorg - Open Workspace Window into Tools, Assets sub...",
+                         "timestamp":  "2026-07-21T20:52:34Z",
                          "environment":  "production"
                      }
                  ]
