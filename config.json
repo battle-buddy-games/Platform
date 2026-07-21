@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-233167d",
-                         "title":  "feat(buddy-desktop): add File \u003e Clear Browser Cache menu item",
-                         "timestamp":  "2026-07-19T06:04:13Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-e00786c",
                          "title":  "fix(platform-theme): stop dashboard-container isolation trapping modals behin...",
@@ -104,6 +98,12 @@
                          "version":  "build-05297c4",
                          "title":  "feat(local-jobs): add REST ingest counterpart to BuddyHub local-job reporting",
                          "timestamp":  "2026-07-20T18:05:04Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c6723f1",
+                         "title":  "fix(notifications,development-images): unblock CI Validate — 3 root causes",
+                         "timestamp":  "2026-07-21T05:00:08Z",
                          "environment":  "production"
                      }
                  ]
