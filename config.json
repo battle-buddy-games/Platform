@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8749f34",
-                         "title":  "fix(webplatform): stop card hover-transform and card-body z-index trapping mo...",
-                         "timestamp":  "2026-07-20T03:17:29Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-08b2626",
                          "title":  "fix(buddy-desktop): default CLI daemon spawn cwd to home dir",
                          "timestamp":  "2026-07-20T06:12:41Z",
@@ -84,7 +78,7 @@
                      },
                      {
                          "version":  "build-c6723f1",
-                         "title":  "fix(notifications,development-images): unblock CI Validate ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â 3 root causes",
+                         "title":  "fix(notifications,development-images): unblock CI Validate ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â 3 root causes",
                          "timestamp":  "2026-07-21T05:00:08Z",
                          "environment":  "production"
                      },
@@ -104,6 +98,12 @@
                          "version":  "build-a34e6fc",
                          "title":  "fix(dashboard): report clean tab key in presence, not raw ?tab= URL",
                          "timestamp":  "2026-07-22T00:45:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-53a73c0",
+                         "title":  "fix(chat): resolve friendly title in plugin session transcript endpoint",
+                         "timestamp":  "2026-07-22T05:06:25Z",
                          "environment":  "production"
                      }
                  ]
