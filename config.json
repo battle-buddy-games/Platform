@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-7b90339",
-                         "title":  "feat(chat): surface stalled-after-ack signal for plugin session launches",
-                         "timestamp":  "2026-07-22T07:26:33Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-f96605b",
                          "title":  "chore(infinity-canvas): remove stale embedded-tool planning comment",
@@ -104,6 +98,12 @@
                          "version":  "build-f34ed1d",
                          "title":  "fix(signalr): close asymmetric heartbeat no-op hiding live BuddyHub/BattleBud...",
                          "timestamp":  "2026-07-22T21:30:27Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-eacadd3",
+                         "title":  "feat(infinity-canvas): add paste-to-unfurl link widget node type",
+                         "timestamp":  "2026-07-22T22:43:18Z",
                          "environment":  "production"
                      }
                  ]
