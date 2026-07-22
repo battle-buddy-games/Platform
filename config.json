@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://reaching-waves-wendy-vinyl.trycloudflare.com"
+                                  "address":  "https://push-safely-census-chat.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
