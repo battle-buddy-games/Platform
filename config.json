@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ce254fd",
-                         "title":  "fix(home): restore scroll-snap/nav-rail via flex-basis fix; prioritize active...",
-                         "timestamp":  "2026-07-22T05:30:32Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-907c934",
                          "title":  "fix(chat): stop New Chat workspace foldout from collapsing on the 6s silent p...",
                          "timestamp":  "2026-07-22T06:05:02Z",
@@ -104,6 +98,12 @@
                          "version":  "build-412eec9",
                          "title":  "fix(di): register 4 dead-on-arrival DI dependencies found in cross-codebase s...",
                          "timestamp":  "2026-07-22T17:29:31Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1d9086d",
+                         "title":  "feat(document-tool): wire internal/external link widgets into Widget block-style",
+                         "timestamp":  "2026-07-22T17:48:51Z",
                          "environment":  "production"
                      }
                  ]
