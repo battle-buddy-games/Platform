@@ -47,6 +47,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-907c934",
+                         "title":  "fix(chat): stop New Chat workspace foldout from collapsing on the 6s silent p...",
+                         "timestamp":  "2026-07-22T06:05:02Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-5c7b36d",
                          "title":  "fix(home): relocate anonymous pitch band from News row to Platform Intro row",
                          "timestamp":  "2026-07-22T06:19:24Z",
@@ -98,12 +104,6 @@
                          "version":  "build-1d9086d",
                          "title":  "feat(document-tool): wire internal/external link widgets into Widget block-style",
                          "timestamp":  "2026-07-22T17:48:51Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-1931454",
-                         "title":  "refactor(webplatform): retire Fabric.js from Infinity Canvas viewport, backgr...",
-                         "timestamp":  "2026-07-22T18:26:34Z",
                          "environment":  "production"
                      }
                  ]
