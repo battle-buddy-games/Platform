@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-907c934",
-                         "title":  "fix(chat): stop New Chat workspace foldout from collapsing on the 6s silent p...",
-                         "timestamp":  "2026-07-22T06:05:02Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-5c7b36d",
                          "title":  "fix(home): relocate anonymous pitch band from News row to Platform Intro row",
@@ -104,6 +98,12 @@
                          "version":  "build-1d9086d",
                          "title":  "feat(document-tool): wire internal/external link widgets into Widget block-style",
                          "timestamp":  "2026-07-22T17:48:51Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-77c0133",
+                         "title":  "fix(home): resolve double-scrollbar on Home/About by rendering footer inline",
+                         "timestamp":  "2026-07-22T19:22:12Z",
                          "environment":  "production"
                      }
                  ]
