@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e5e7734",
-                         "title":  "feat(webplatform): ingest prefab hierarchy manifest from export.json",
-                         "timestamp":  "2026-07-21T06:26:42Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9afd519",
                          "title":  "fix(buddy-desktop): tray reorg - Open Workspace Window into Tools, Assets sub...",
                          "timestamp":  "2026-07-21T20:52:34Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7b90339",
                          "title":  "feat(chat): surface stalled-after-ack signal for plugin session launches",
                          "timestamp":  "2026-07-22T07:26:33Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f96605b",
+                         "title":  "chore(infinity-canvas): remove stale embedded-tool planning comment",
+                         "timestamp":  "2026-07-22T07:44:57Z",
                          "environment":  "production"
                      }
                  ]
