@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-fcbfc6b",
-                         "title":  "feat(webplatform): aggregate pip on Actions dropdown, CI badge counts distinc...",
-                         "timestamp":  "2026-07-19T19:55:19Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8749f34",
                          "title":  "fix(webplatform): stop card hover-transform and card-body z-index trapping mo...",
                          "timestamp":  "2026-07-20T03:17:29Z",
@@ -90,7 +84,7 @@
                      },
                      {
                          "version":  "build-c6723f1",
-                         "title":  "fix(notifications,development-images): unblock CI Validate Ã¢â‚¬â€ 3 root causes",
+                         "title":  "fix(notifications,development-images): unblock CI Validate ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â 3 root causes",
                          "timestamp":  "2026-07-21T05:00:08Z",
                          "environment":  "production"
                      },
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-e1e9653",
-                         "title":  "fix(chat): keep brand-new open AI agent conversations in the sidebar list",
-                         "timestamp":  "2026-07-21T21:18:47Z",
+                         "version":  "build-9afd519",
+                         "title":  "fix(buddy-desktop): tray reorg - Open Workspace Window into Tools, Assets sub...",
+                         "timestamp":  "2026-07-21T20:52:34Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a34e6fc",
+                         "title":  "fix(dashboard): report clean tab key in presence, not raw ?tab= URL",
+                         "timestamp":  "2026-07-22T00:45:08Z",
                          "environment":  "production"
                      }
                  ]
