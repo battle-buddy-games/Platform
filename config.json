@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-f590cb6",
-                         "title":  "fix(buddy-desktop): guard mainWindow resize/move listener against destroyed w...",
-                         "timestamp":  "2026-07-22T16:47:48Z",
+                         "version":  "build-ea26a25",
+                         "title":  "feat(links): extend link resolver with Steam/GitHub/OpenGraph external unfurl",
+                         "timestamp":  "2026-07-22T17:08:50Z",
                          "environment":  "production"
                      }
                  ]
