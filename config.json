@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-9afd519",
-                         "title":  "fix(buddy-desktop): tray reorg - Open Workspace Window into Tools, Assets sub...",
-                         "timestamp":  "2026-07-21T20:52:34Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-a34e6fc",
                          "title":  "fix(dashboard): report clean tab key in presence, not raw ?tab= URL",
@@ -104,6 +98,12 @@
                          "version":  "build-f96605b",
                          "title":  "chore(infinity-canvas): remove stale embedded-tool planning comment",
                          "timestamp":  "2026-07-22T07:44:57Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8ca11e1",
+                         "title":  "fix(chat): exclude stale workspaces from New Chat modal picker",
+                         "timestamp":  "2026-07-22T12:57:20Z",
                          "environment":  "production"
                      }
                  ]
