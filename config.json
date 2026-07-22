@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0d2f9e5",
-                         "title":  "feat(buddy-tray): activate dynamic runner label for fish-pc-4070ti",
-                         "timestamp":  "2026-07-22T06:50:28Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1d9d0b0",
                          "title":  "fix(home): eliminate header-induced overflow on scroll-snap container",
                          "timestamp":  "2026-07-22T07:07:12Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7800dd2",
                          "title":  "feat(ci-observability): add host-telemetry ingest + Infrastructure dashboard tab",
                          "timestamp":  "2026-07-22T19:59:30Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-971f4e2",
+                         "title":  "fix(platform.core): register DashboardController\u0027s dependency chain under LOC...",
+                         "timestamp":  "2026-07-22T20:35:35Z",
                          "environment":  "production"
                      }
                  ]
