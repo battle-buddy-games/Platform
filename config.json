@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-47acf48",
-                         "title":  "feat(platform-tasks): Friends Contribution Board v1 backend + board UI (Slice...",
-                         "timestamp":  "2026-07-20T14:51:24Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-623ae59",
                          "title":  "fix(release-ingest): restore content dropped by a stale-base commit in 7fd2ca639",
                          "timestamp":  "2026-07-20T16:32:18Z",
@@ -104,6 +98,12 @@
                          "version":  "build-907c934",
                          "title":  "fix(chat): stop New Chat workspace foldout from collapsing on the 6s silent p...",
                          "timestamp":  "2026-07-22T06:05:02Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5c7b36d",
+                         "title":  "fix(home): relocate anonymous pitch band from News row to Platform Intro row",
+                         "timestamp":  "2026-07-22T06:19:24Z",
                          "environment":  "production"
                      }
                  ]
