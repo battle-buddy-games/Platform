@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-53a73c0",
-                         "title":  "fix(chat): resolve friendly title in plugin session transcript endpoint",
-                         "timestamp":  "2026-07-22T05:06:25Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ce254fd",
                          "title":  "fix(home): restore scroll-snap/nav-rail via flex-basis fix; prioritize active...",
                          "timestamp":  "2026-07-22T05:30:32Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-ea26a25",
-                         "title":  "feat(links): extend link resolver with Steam/GitHub/OpenGraph external unfurl",
-                         "timestamp":  "2026-07-22T17:08:50Z",
+                         "version":  "build-f590cb6",
+                         "title":  "fix(buddy-desktop): guard mainWindow resize/move listener against destroyed w...",
+                         "timestamp":  "2026-07-22T16:47:48Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-412eec9",
+                         "title":  "fix(di): register 4 dead-on-arrival DI dependencies found in cross-codebase s...",
+                         "timestamp":  "2026-07-22T17:29:31Z",
                          "environment":  "production"
                      }
                  ]
