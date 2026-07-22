@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-08b2626",
-                         "title":  "fix(buddy-desktop): default CLI daemon spawn cwd to home dir",
-                         "timestamp":  "2026-07-20T06:12:41Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-2cd17d5",
                          "title":  "feat(webplatform): add model readiness / work-order tracking backend (Task #1)",
@@ -104,6 +98,12 @@
                          "version":  "build-53a73c0",
                          "title":  "fix(chat): resolve friendly title in plugin session transcript endpoint",
                          "timestamp":  "2026-07-22T05:06:25Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ce254fd",
+                         "title":  "fix(home): restore scroll-snap/nav-rail via flex-basis fix; prioritize active...",
+                         "timestamp":  "2026-07-22T05:30:32Z",
                          "environment":  "production"
                      }
                  ]
