@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1d9d0b0",
-                         "title":  "fix(home): eliminate header-induced overflow on scroll-snap container",
-                         "timestamp":  "2026-07-22T07:07:12Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7b90339",
                          "title":  "feat(chat): surface stalled-after-ack signal for plugin session launches",
                          "timestamp":  "2026-07-22T07:26:33Z",
@@ -104,6 +98,12 @@
                          "version":  "build-971f4e2",
                          "title":  "fix(platform.core): register DashboardController\u0027s dependency chain under LOC...",
                          "timestamp":  "2026-07-22T20:35:35Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f34ed1d",
+                         "title":  "fix(signalr): close asymmetric heartbeat no-op hiding live BuddyHub/BattleBud...",
+                         "timestamp":  "2026-07-22T21:30:27Z",
                          "environment":  "production"
                      }
                  ]
