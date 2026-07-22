@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f96605b",
-                         "title":  "chore(infinity-canvas): remove stale embedded-tool planning comment",
-                         "timestamp":  "2026-07-22T07:44:57Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8ca11e1",
                          "title":  "fix(chat): exclude stale workspaces from New Chat modal picker",
                          "timestamp":  "2026-07-22T12:57:20Z",
@@ -104,6 +98,12 @@
                          "version":  "build-eacadd3",
                          "title":  "feat(infinity-canvas): add paste-to-unfurl link widget node type",
                          "timestamp":  "2026-07-22T22:43:18Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e54ff0f",
+                         "title":  "fix(buddy-desktop): surface real errors when Unity fails to launch",
+                         "timestamp":  "2026-07-22T23:28:35Z",
                          "environment":  "production"
                      }
                  ]
