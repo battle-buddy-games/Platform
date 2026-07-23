@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e54ff0f",
-                         "title":  "fix(buddy-desktop): surface real errors when Unity fails to launch",
-                         "timestamp":  "2026-07-22T23:28:35Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2b8ba05",
                          "title":  "feat(chat): surface SupportsClaudeJobs on /api/dev-status for Claude-job-capa...",
                          "timestamp":  "2026-07-22T23:56:44Z",
@@ -104,6 +98,12 @@
                          "version":  "build-9b4130b",
                          "title":  "fix(buddy-desktop): stop nested sync_policy.mode from clobbering workspace mode",
                          "timestamp":  "2026-07-23T19:26:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d1b4a03",
+                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
+                         "timestamp":  "2026-07-23T19:40:48Z",
                          "environment":  "production"
                      }
                  ]
