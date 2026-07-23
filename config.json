@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7800dd2",
-                         "title":  "feat(ci-observability): add host-telemetry ingest + Infrastructure dashboard tab",
-                         "timestamp":  "2026-07-22T19:59:30Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-971f4e2",
                          "title":  "fix(platform.core): register DashboardController\u0027s dependency chain under LOC...",
                          "timestamp":  "2026-07-22T20:35:35Z",
@@ -104,6 +98,12 @@
                          "version":  "build-5371787",
                          "title":  "fix(buddy-desktop): invoke a globally-installed unity-cli.cmd directly, bypas...",
                          "timestamp":  "2026-07-23T14:34:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-376b36e",
+                         "title":  "fix(webplatform): replace collapsing single-letter CI chip initials with coll...",
+                         "timestamp":  "2026-07-23T15:05:55Z",
                          "environment":  "production"
                      }
                  ]
