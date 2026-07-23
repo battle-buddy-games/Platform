@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2b8ba05",
-                         "title":  "feat(chat): surface SupportsClaudeJobs on /api/dev-status for Claude-job-capa...",
-                         "timestamp":  "2026-07-22T23:56:44Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-fe1cfe9",
                          "title":  "feat(webplatform): add severity accent, occurrence badge, and category labell...",
                          "timestamp":  "2026-07-23T00:21:54Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d1b4a03",
                          "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
                          "timestamp":  "2026-07-23T19:40:48Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e62cd48",
+                         "title":  "fix(chat): duplicate-launch guard, zombie-sweep observability, Electron log s...",
+                         "timestamp":  "2026-07-23T19:57:38Z",
                          "environment":  "production"
                      }
                  ]
