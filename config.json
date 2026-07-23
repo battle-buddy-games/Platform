@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f34ed1d",
-                         "title":  "fix(signalr): close asymmetric heartbeat no-op hiding live BuddyHub/BattleBud...",
-                         "timestamp":  "2026-07-22T21:30:27Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-eacadd3",
                          "title":  "feat(infinity-canvas): add paste-to-unfurl link widget node type",
                          "timestamp":  "2026-07-22T22:43:18Z",
@@ -104,6 +98,12 @@
                          "version":  "build-e7291c5",
                          "title":  "fix(chat): stop plugin session transcripts from leaking raw JSON, add opt-in ...",
                          "timestamp":  "2026-07-23T15:24:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-fca6eb5",
+                         "title":  "docs(assets-hub): document Meshy AI Generation feature + MeshyApiKey secret",
+                         "timestamp":  "2026-07-23T15:39:37Z",
                          "environment":  "production"
                      }
                  ]
