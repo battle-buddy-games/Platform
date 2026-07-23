@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-1931454",
-                         "title":  "refactor(webplatform): retire Fabric.js from Infinity Canvas viewport, backgr...",
-                         "timestamp":  "2026-07-22T18:26:34Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-7800dd2",
                          "title":  "feat(ci-observability): add host-telemetry ingest + Infrastructure dashboard tab",
@@ -104,6 +98,12 @@
                          "version":  "build-2aece62",
                          "title":  "fix(buddy-desktop): strip MSYSTEM/TERM=cygwin so unity-cli always uses its na...",
                          "timestamp":  "2026-07-23T02:25:00Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5371787",
+                         "title":  "fix(buddy-desktop): invoke a globally-installed unity-cli.cmd directly, bypas...",
+                         "timestamp":  "2026-07-23T14:34:20Z",
                          "environment":  "production"
                      }
                  ]
