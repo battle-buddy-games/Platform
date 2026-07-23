@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ae92052",
-                         "title":  "docs(sessions): record independent-verification digest for plugin session rel...",
-                         "timestamp":  "2026-07-23T01:01:29Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2aece62",
                          "title":  "fix(buddy-desktop): strip MSYSTEM/TERM=cygwin so unity-cli always uses its na...",
                          "timestamp":  "2026-07-23T02:25:00Z",
@@ -104,6 +98,12 @@
                          "version":  "build-762457d",
                          "title":  "fix(webplatform): guarantee one slot per active workflow type in Actions drop...",
                          "timestamp":  "2026-07-23T20:43:44Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-724061b",
+                         "title":  "feat(buddy-desktop): add Plugin Session Log window for Claude bridge sessions",
+                         "timestamp":  "2026-07-23T22:14:18Z",
                          "environment":  "production"
                      }
                  ]
