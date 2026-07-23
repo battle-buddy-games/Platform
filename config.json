@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-971f4e2",
-                         "title":  "fix(platform.core): register DashboardController\u0027s dependency chain under LOC...",
-                         "timestamp":  "2026-07-22T20:35:35Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f34ed1d",
                          "title":  "fix(signalr): close asymmetric heartbeat no-op hiding live BuddyHub/BattleBud...",
                          "timestamp":  "2026-07-22T21:30:27Z",
@@ -104,6 +98,12 @@
                          "version":  "build-376b36e",
                          "title":  "fix(webplatform): replace collapsing single-letter CI chip initials with coll...",
                          "timestamp":  "2026-07-23T15:05:55Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e7291c5",
+                         "title":  "fix(chat): stop plugin session transcripts from leaking raw JSON, add opt-in ...",
+                         "timestamp":  "2026-07-23T15:24:41Z",
                          "environment":  "production"
                      }
                  ]
