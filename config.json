@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-2aece62",
-                         "title":  "fix(buddy-desktop): strip MSYSTEM/TERM=cygwin so unity-cli always uses its na...",
-                         "timestamp":  "2026-07-23T02:25:00Z",
+                         "version":  "build-efb77d4",
+                         "title":  "fix(buddy-desktop): close CLI self-update EPERM/race/missed-push gaps",
+                         "timestamp":  "2026-07-23T03:07:21Z",
                          "environment":  "production"
                      }
                  ]
