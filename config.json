@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-412eec9",
-                         "title":  "fix(di): register 4 dead-on-arrival DI dependencies found in cross-codebase s...",
-                         "timestamp":  "2026-07-22T17:29:31Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1d9086d",
                          "title":  "feat(document-tool): wire internal/external link widgets into Widget block-style",
                          "timestamp":  "2026-07-22T17:48:51Z",
@@ -104,6 +98,12 @@
                          "version":  "build-fe1cfe9",
                          "title":  "feat(webplatform): add severity accent, occurrence badge, and category labell...",
                          "timestamp":  "2026-07-23T00:21:54Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ae92052",
+                         "title":  "docs(sessions): record independent-verification digest for plugin session rel...",
+                         "timestamp":  "2026-07-23T01:01:29Z",
                          "environment":  "production"
                      }
                  ]
