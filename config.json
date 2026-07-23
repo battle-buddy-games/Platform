@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-fe1cfe9",
-                         "title":  "feat(webplatform): add severity accent, occurrence badge, and category labell...",
-                         "timestamp":  "2026-07-23T00:21:54Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ae92052",
                          "title":  "docs(sessions): record independent-verification digest for plugin session rel...",
                          "timestamp":  "2026-07-23T01:01:29Z",
@@ -104,6 +98,12 @@
                          "version":  "build-e62cd48",
                          "title":  "fix(chat): duplicate-launch guard, zombie-sweep observability, Electron log s...",
                          "timestamp":  "2026-07-23T19:57:38Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-762457d",
+                         "title":  "fix(webplatform): guarantee one slot per active workflow type in Actions drop...",
+                         "timestamp":  "2026-07-23T20:43:44Z",
                          "environment":  "production"
                      }
                  ]
