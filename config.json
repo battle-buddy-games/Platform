@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-1d9086d",
-                         "title":  "feat(document-tool): wire internal/external link widgets into Widget block-style",
-                         "timestamp":  "2026-07-22T17:48:51Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-1931454",
                          "title":  "refactor(webplatform): retire Fabric.js from Infinity Canvas viewport, backgr...",
@@ -104,6 +98,12 @@
                          "version":  "build-ae92052",
                          "title":  "docs(sessions): record independent-verification digest for plugin session rel...",
                          "timestamp":  "2026-07-23T01:01:29Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2aece62",
+                         "title":  "fix(buddy-desktop): strip MSYSTEM/TERM=cygwin so unity-cli always uses its na...",
+                         "timestamp":  "2026-07-23T02:25:00Z",
                          "environment":  "production"
                      }
                  ]
