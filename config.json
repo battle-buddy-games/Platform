@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-1205819",
-                         "title":  "feat(buddy): add explicit SDK snapshot sync controls",
-                         "timestamp":  "2026-07-24T00:07:40Z",
+                         "version":  "build-ed059c2",
+                         "title":  "fix(ci-screenshots): keep every Discord image inside run thread",
+                         "timestamp":  "2026-07-24T00:34:08Z",
                          "environment":  "production"
                      }
                  ]
