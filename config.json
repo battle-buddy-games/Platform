@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-376b36e",
-                         "title":  "fix(webplatform): replace collapsing single-letter CI chip initials with coll...",
-                         "timestamp":  "2026-07-23T15:05:55Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-e7291c5",
                          "title":  "fix(chat): stop plugin session transcripts from leaking raw JSON, add opt-in ...",
@@ -104,6 +98,12 @@
                          "version":  "build-cbb41f6",
                          "title":  "fix(buddy-desktop): recover channel control daemon",
                          "timestamp":  "2026-07-24T01:25:59Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c8f64c5",
+                         "title":  "fix(ci): preserve workflow and profile identity",
+                         "timestamp":  "2026-07-24T04:03:15Z",
                          "environment":  "production"
                      }
                  ]
