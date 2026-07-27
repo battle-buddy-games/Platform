@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d1b4a03",
-                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
-                         "timestamp":  "2026-07-23T19:40:48Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e62cd48",
                          "title":  "fix(chat): duplicate-launch guard, zombie-sweep observability, Electron log s...",
                          "timestamp":  "2026-07-23T19:57:38Z",
@@ -104,6 +98,12 @@
                          "version":  "build-ee13da3",
                          "title":  "feat(home): add production-floor and personal hot-files backend endpoints",
                          "timestamp":  "2026-07-27T19:51:04Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8df2462",
+                         "title":  "fix(buddy-android): fix CS1026 syntax error breaking every Android build sinc...",
+                         "timestamp":  "2026-07-27T20:16:59Z",
                          "environment":  "production"
                      }
                  ]
