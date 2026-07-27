@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-724061b",
-                         "title":  "feat(buddy-desktop): add Plugin Session Log window for Claude bridge sessions",
-                         "timestamp":  "2026-07-23T22:14:18Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1205819",
                          "title":  "feat(buddy): add explicit SDK snapshot sync controls",
                          "timestamp":  "2026-07-24T00:07:40Z",
@@ -104,6 +98,12 @@
                          "version":  "build-bde37e3",
                          "title":  "fix(dev-images): add retroactive category-set endpoint",
                          "timestamp":  "2026-07-27T22:12:02Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f792c22",
+                         "title":  "feat(news): post-type taxonomy, visibility model, stable-image auto-post, Cha...",
+                         "timestamp":  "2026-07-27T22:31:27Z",
                          "environment":  "production"
                      }
                  ]
