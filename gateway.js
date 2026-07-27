@@ -386,6 +386,88 @@ function getBuddyAppHost() {
   return null;
 }
 
+// Desktop-only sign-in shortcuts (GitHub CLI / Steam Desktop) only make sense when this page is
+// running inside Buddy Desktop's own embedded window -- they shell out to local tools (Buddy CLI,
+// `gh`) a normal browser has no access to. getBuddyAppHost() === 'electron' is the same signal the
+// rest of this file already uses to detect "am I in Buddy Desktop".
+function updateDesktopCliSignInVisibility() {
+  const container = document.getElementById('desktopCliSignInContainer');
+  if (!container) return;
+  container.style.display = getBuddyAppHost() === 'electron' ? 'block' : 'none';
+}
+
+function setDesktopCliSignInStatus(message, isError) {
+  const status = document.getElementById('desktopCliSignInStatus');
+  if (!status) return;
+  if (!message) {
+    status.style.display = 'none';
+    status.textContent = '';
+    return;
+  }
+  status.style.display = 'block';
+  status.style.color = isError ? 'rgba(255, 120, 120, 0.9)' : 'rgba(255, 255, 255, 0.7)';
+  status.textContent = message;
+}
+
+function setDesktopCliButtonsDisabled(disabled) {
+  document.querySelectorAll('#desktopCliSignInContainer .auth-button').forEach((btn) => {
+    btn.style.opacity = disabled ? '0.5' : '';
+    btn.style.pointerEvents = disabled ? 'none' : '';
+  });
+}
+
+window.handleSignInWithGitHubCli = async function handleSignInWithGitHubCli() {
+  if (!window.platform || typeof window.platform.signInWithGitHubCli !== 'function') {
+    showErrorModal('Not Available', 'This option is only available inside Buddy Desktop.');
+    return;
+  }
+  if (typeof trackGatewayEvent === 'function') trackGatewayEvent('signin_attempt', { provider: 'github-cli' });
+  setDesktopCliButtonsDisabled(true);
+  setDesktopCliSignInStatus('Signing in with GitHub CLI...', false);
+  try {
+    const result = await window.platform.signInWithGitHubCli();
+    if (result && result.success) {
+      setDesktopCliSignInStatus('Signed in! Loading platform...', false);
+      if (typeof trackGatewayEvent === 'function') trackGatewayEvent('signin_success', { provider: 'github-cli' });
+      // Buddy Desktop's main process navigates this same window to the signed-in platform once
+      // the exchange completes -- no further action needed here.
+    } else {
+      setDesktopCliSignInStatus(null);
+      setDesktopCliButtonsDisabled(false);
+      showErrorModal('Sign-In Failed', (result && result.error) || 'GitHub CLI sign-in failed.');
+    }
+  } catch (e) {
+    setDesktopCliSignInStatus(null);
+    setDesktopCliButtonsDisabled(false);
+    showErrorModal('Sign-In Failed', (e && e.message) || String(e));
+  }
+};
+
+window.handleSignInWithSteamDesktop = async function handleSignInWithSteamDesktop() {
+  if (!window.platform || typeof window.platform.signInWithSteamDesktop !== 'function') {
+    showErrorModal('Not Available', 'This option is only available inside Buddy Desktop.');
+    return;
+  }
+  if (typeof trackGatewayEvent === 'function') trackGatewayEvent('signin_attempt', { provider: 'steam-desktop' });
+  setDesktopCliButtonsDisabled(true);
+  setDesktopCliSignInStatus('Signing in with Steam...', false);
+  try {
+    const result = await window.platform.signInWithSteamDesktop();
+    if (result && result.success) {
+      setDesktopCliSignInStatus('Signed in! Loading platform...', false);
+      if (typeof trackGatewayEvent === 'function') trackGatewayEvent('signin_success', { provider: 'steam-desktop' });
+    } else {
+      setDesktopCliSignInStatus(null);
+      setDesktopCliButtonsDisabled(false);
+      showErrorModal('Sign-In Failed', (result && result.error) || 'Steam sign-in failed.');
+    }
+  } catch (e) {
+    setDesktopCliSignInStatus(null);
+    setDesktopCliButtonsDisabled(false);
+    showErrorModal('Sign-In Failed', (e && e.message) || String(e));
+  }
+};
+
 // Device-type gates for the "Prefer Desktop" / "Prefer Android" options menu
 // checkboxes. These are UA sniffs, not app-presence checks (that's getBuddyAppHost()) --
 // they gate which preference option is even relevant on this device.
@@ -3860,7 +3942,11 @@ window.addEventListener('DOMContentLoaded', async () => {
   
   // Update token status indicator
   updateTokenStatus();
-  
+
+  // Show the desktop-only sign-in shortcuts (GitHub CLI / Steam Desktop) when running inside
+  // Buddy Desktop.
+  updateDesktopCliSignInVisibility();
+
   // Update remembered tokens list
   updateRememberedTokensList();
   
