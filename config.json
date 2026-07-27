@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://southampton-supplied-footwear-fly.trycloudflare.com"
+                                  "address":  "https://barely-senior-providers-custom.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-e1a7acd",
-                         "title":  "feat(home): wire Team/Right Now/You sections and add visibility-tier badges",
-                         "timestamp":  "2026-07-27T21:14:00Z",
+                         "version":  "build-ec27d77",
+                         "title":  "fix(buddy-android): fix Android.* namespace shadowing and Builder API misuse",
+                         "timestamp":  "2026-07-27T20:50:32Z",
                          "environment":  "production"
                      }
                  ]
