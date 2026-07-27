@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-762457d",
-                         "title":  "fix(webplatform): guarantee one slot per active workflow type in Actions drop...",
-                         "timestamp":  "2026-07-23T20:43:44Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-724061b",
                          "title":  "feat(buddy-desktop): add Plugin Session Log window for Claude bridge sessions",
@@ -104,6 +98,12 @@
                          "version":  "build-ec27d77",
                          "title":  "fix(buddy-android): fix Android.* namespace shadowing and Builder API misuse",
                          "timestamp":  "2026-07-27T20:50:32Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-bde37e3",
+                         "title":  "fix(dev-images): add retroactive category-set endpoint",
+                         "timestamp":  "2026-07-27T22:12:02Z",
                          "environment":  "production"
                      }
                  ]
