@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-fca6eb5",
-                         "title":  "docs(assets-hub): document Meshy AI Generation feature + MeshyApiKey secret",
-                         "timestamp":  "2026-07-23T15:39:37Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-9b4130b",
                          "title":  "fix(buddy-desktop): stop nested sync_policy.mode from clobbering workspace mode",
@@ -104,6 +98,12 @@
                          "version":  "build-a2848dd",
                          "title":  "chore(ci): update WebPlatform cross-repo refs for GameClient\u0027s ci-cd.yml -\u003e p...",
                          "timestamp":  "2026-07-27T15:54:07Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0d4fcc3",
+                         "title":  "fix(tests): update ChatPortalsService/ChatApiController construction for wide...",
+                         "timestamp":  "2026-07-27T19:16:29Z",
                          "environment":  "production"
                      }
                  ]
