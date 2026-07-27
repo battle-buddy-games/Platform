@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e62cd48",
-                         "title":  "fix(chat): duplicate-launch guard, zombie-sweep observability, Electron log s...",
-                         "timestamp":  "2026-07-23T19:57:38Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-762457d",
                          "title":  "fix(webplatform): guarantee one slot per active workflow type in Actions drop...",
                          "timestamp":  "2026-07-23T20:43:44Z",
@@ -104,6 +98,12 @@
                          "version":  "build-8df2462",
                          "title":  "fix(buddy-android): fix CS1026 syntax error breaking every Android build sinc...",
                          "timestamp":  "2026-07-27T20:16:59Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ec27d77",
+                         "title":  "fix(buddy-android): fix Android.* namespace shadowing and Builder API misuse",
+                         "timestamp":  "2026-07-27T20:50:32Z",
                          "environment":  "production"
                      }
                  ]
