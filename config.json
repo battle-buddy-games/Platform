@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://southampton-supplied-footwear-fly.trycloudflare.com"
+                                  "address":  "https://effects-names-platforms-language.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -46,6 +46,18 @@
                               }
                           ],
     "releases":  [
+                     {
+                         "version":  "build-e7291c5",
+                         "title":  "fix(chat): stop plugin session transcripts from leaking raw JSON, add opt-in ...",
+                         "timestamp":  "2026-07-23T15:24:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-fca6eb5",
+                         "title":  "docs(assets-hub): document Meshy AI Generation feature + MeshyApiKey secret",
+                         "timestamp":  "2026-07-23T15:39:37Z",
+                         "environment":  "production"
+                     },
                      {
                          "version":  "build-9b4130b",
                          "title":  "fix(buddy-desktop): stop nested sync_policy.mode from clobbering workspace mode",
@@ -92,18 +104,6 @@
                          "version":  "build-c8f64c5",
                          "title":  "fix(ci): preserve workflow and profile identity",
                          "timestamp":  "2026-07-24T04:03:15Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-a2848dd",
-                         "title":  "chore(ci): update WebPlatform cross-repo refs for GameClient\u0027s ci-cd.yml -\u003e p...",
-                         "timestamp":  "2026-07-27T15:54:07Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-0d4fcc3",
-                         "title":  "fix(tests): update ChatPortalsService/ChatApiController construction for wide...",
-                         "timestamp":  "2026-07-27T19:16:29Z",
                          "environment":  "production"
                      }
                  ]
