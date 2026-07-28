@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-cbb41f6",
-                         "title":  "fix(buddy-desktop): recover channel control daemon",
-                         "timestamp":  "2026-07-24T01:25:59Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c8f64c5",
                          "title":  "fix(ci): preserve workflow and profile identity",
                          "timestamp":  "2026-07-24T04:03:15Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-5c2cf68",
-                         "title":  "fix(discord): seed built-in role-interests/community-interests catalogs, auto...",
-                         "timestamp":  "2026-07-27T23:20:45Z",
+                         "version":  "build-6a3aac1",
+                         "title":  "chore(runners): update unity-dynamic-3 path in runner-configs.json for C: dri...",
+                         "timestamp":  "2026-07-27T23:01:29Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0795ead",
+                         "title":  "fix(webplatform): raw ADO.NET for AddColumnIfMissingAsync + 3 sibling Ensure ...",
+                         "timestamp":  "2026-07-28T00:23:01Z",
                          "environment":  "production"
                      }
                  ]
