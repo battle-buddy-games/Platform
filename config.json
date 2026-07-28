@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-ee13da3",
-                         "title":  "feat(home): add production-floor and personal hot-files backend endpoints",
-                         "timestamp":  "2026-07-27T19:51:04Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-8df2462",
                          "title":  "fix(buddy-android): fix CS1026 syntax error breaking every Android build sinc...",
@@ -104,6 +98,12 @@
                          "version":  "build-d6a1b77",
                          "title":  "fix(discord): word-boundary-aligned guild-name matching, delete dead EnsureSt...",
                          "timestamp":  "2026-07-28T02:09:33Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a86567d",
+                         "title":  "feat(chat): DM/AI-agent forum-view toggle + standalone group chat frontend",
+                         "timestamp":  "2026-07-28T02:52:09Z",
                          "environment":  "production"
                      }
                  ]
