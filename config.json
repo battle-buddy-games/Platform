@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-5619317",
-                         "title":  "feat(home): split You desk into Desk/Activity tabs to fix crowding",
-                         "timestamp":  "2026-07-28T12:43:26Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-32a8177",
                          "title":  "fix(news): add server-side visibility gate to HomeController.News",
@@ -104,6 +98,12 @@
                          "version":  "build-964e501",
                          "title":  "feat(home): commit timeline with 3D-model preview link-out + readable activit...",
                          "timestamp":  "2026-07-28T20:33:28Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3c8242f",
+                         "title":  "refactor(infinity-canvas): move Background pattern and Export into toolbar dr...",
+                         "timestamp":  "2026-07-28T22:56:45Z",
                          "environment":  "production"
                      }
                  ]
