@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-f792c22",
-                         "title":  "feat(news): post-type taxonomy, visibility model, stable-image auto-post, Cha...",
-                         "timestamp":  "2026-07-27T22:31:27Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-6a3aac1",
                          "title":  "chore(runners): update unity-dynamic-3 path in runner-configs.json for C: dri...",
@@ -104,6 +98,12 @@
                          "version":  "build-32a8177",
                          "title":  "fix(news): add server-side visibility gate to HomeController.News",
                          "timestamp":  "2026-07-28T14:05:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e95d324",
+                         "title":  "fix(portals): fall back to portal.AllowAnonymous for unset SourceMount page a...",
+                         "timestamp":  "2026-07-28T15:02:16Z",
                          "environment":  "production"
                      }
                  ]
