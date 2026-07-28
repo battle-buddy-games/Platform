@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-296b2e5",
-                         "title":  "docs(platform.service.cloud): correct stale production DB path in CLAUDE.md",
-                         "timestamp":  "2026-07-28T01:43:23Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d6a1b77",
                          "title":  "fix(discord): word-boundary-aligned guild-name matching, delete dead EnsureSt...",
                          "timestamp":  "2026-07-28T02:09:33Z",
@@ -104,6 +98,12 @@
                          "version":  "build-dfac2ea",
                          "title":  "feat(activity-log): instrument chat, forum, canvas, and docs domains",
                          "timestamp":  "2026-07-28T18:58:32Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f38b1b3",
+                         "title":  "feat(webplatform): add config-summary aggregator endpoint for Platform Guide ...",
+                         "timestamp":  "2026-07-28T19:23:49Z",
                          "environment":  "production"
                      }
                  ]
