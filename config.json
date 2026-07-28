@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-bde37e3",
-                         "title":  "fix(dev-images): add retroactive category-set endpoint",
-                         "timestamp":  "2026-07-27T22:12:02Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-f792c22",
                          "title":  "feat(news): post-type taxonomy, visibility model, stable-image auto-post, Cha...",
@@ -104,6 +98,12 @@
                          "version":  "build-5619317",
                          "title":  "feat(home): split You desk into Desk/Activity tabs to fix crowding",
                          "timestamp":  "2026-07-28T12:43:26Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-32a8177",
+                         "title":  "fix(news): add server-side visibility gate to HomeController.News",
+                         "timestamp":  "2026-07-28T14:05:08Z",
                          "environment":  "production"
                      }
                  ]
