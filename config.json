@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-778753e",
-                         "title":  "feat(ci): add MP4 video capture ingest storage (CiVideoEntity)",
-                         "timestamp":  "2026-07-28T03:25:24Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5619317",
                          "title":  "feat(home): split You desk into Desk/Activity tabs to fix crowding",
                          "timestamp":  "2026-07-28T12:43:26Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f64919a",
                          "title":  "fix(portals): External must Challenge anonymous callers, not Forbid unconditi...",
                          "timestamp":  "2026-07-28T20:10:43Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-964e501",
+                         "title":  "feat(home): commit timeline with 3D-model preview link-out + readable activit...",
+                         "timestamp":  "2026-07-28T20:33:28Z",
                          "environment":  "production"
                      }
                  ]
