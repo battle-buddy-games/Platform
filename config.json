@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a86567d",
-                         "title":  "feat(chat): DM/AI-agent forum-view toggle + standalone group chat frontend",
-                         "timestamp":  "2026-07-28T02:52:09Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-778753e",
                          "title":  "feat(ci): add MP4 video capture ingest storage (CiVideoEntity)",
                          "timestamp":  "2026-07-28T03:25:24Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7d12b7a",
                          "title":  "feat(home): render file-tower graph and daily commit heatmap on Right Now/You",
                          "timestamp":  "2026-07-28T19:52:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f64919a",
+                         "title":  "fix(portals): External must Challenge anonymous callers, not Forbid unconditi...",
+                         "timestamp":  "2026-07-28T20:10:43Z",
                          "environment":  "production"
                      }
                  ]
