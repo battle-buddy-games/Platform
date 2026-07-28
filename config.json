@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0d4fcc3",
-                         "title":  "fix(tests): update ChatPortalsService/ChatApiController construction for wide...",
-                         "timestamp":  "2026-07-27T19:16:29Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ee13da3",
                          "title":  "feat(home): add production-floor and personal hot-files backend endpoints",
                          "timestamp":  "2026-07-27T19:51:04Z",
@@ -104,6 +98,12 @@
                          "version":  "build-296b2e5",
                          "title":  "docs(platform.service.cloud): correct stale production DB path in CLAUDE.md",
                          "timestamp":  "2026-07-28T01:43:23Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d6a1b77",
+                         "title":  "fix(discord): word-boundary-aligned guild-name matching, delete dead EnsureSt...",
+                         "timestamp":  "2026-07-28T02:09:33Z",
                          "environment":  "production"
                      }
                  ]
