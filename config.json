@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,6 +46,12 @@
                               }
                           ],
     "releases":  [
+                     {
+                         "version":  "build-6a3aac1",
+                         "title":  "chore(runners): update unity-dynamic-3 path in runner-configs.json for C: dri...",
+                         "timestamp":  "2026-07-27T23:01:29Z",
+                         "environment":  "production"
+                     },
                      {
                          "version":  "build-0795ead",
                          "title":  "fix(webplatform): raw ADO.NET for AddColumnIfMissingAsync + 3 sibling Ensure ...",
@@ -98,12 +104,6 @@
                          "version":  "build-e95d324",
                          "title":  "fix(portals): fall back to portal.AllowAnonymous for unset SourceMount page a...",
                          "timestamp":  "2026-07-28T15:02:16Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-26c9a50",
-                         "title":  "docs(webplatform): document Home Roadmap/Team split + Products differentiation",
-                         "timestamp":  "2026-07-28T16:28:26Z",
                          "environment":  "production"
                      }
                  ]
