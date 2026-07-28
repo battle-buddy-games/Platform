@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-ec27d77",
-                         "title":  "fix(buddy-android): fix Android.* namespace shadowing and Builder API misuse",
-                         "timestamp":  "2026-07-27T20:50:32Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-bde37e3",
                          "title":  "fix(dev-images): add retroactive category-set endpoint",
@@ -104,6 +98,12 @@
                          "version":  "build-778753e",
                          "title":  "feat(ci): add MP4 video capture ingest storage (CiVideoEntity)",
                          "timestamp":  "2026-07-28T03:25:24Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5619317",
+                         "title":  "feat(home): split You desk into Desk/Activity tabs to fix crowding",
+                         "timestamp":  "2026-07-28T12:43:26Z",
                          "environment":  "production"
                      }
                  ]
