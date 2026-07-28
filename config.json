@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c8f64c5",
-                         "title":  "fix(ci): preserve workflow and profile identity",
-                         "timestamp":  "2026-07-24T04:03:15Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a2848dd",
                          "title":  "chore(ci): update WebPlatform cross-repo refs for GameClient\u0027s ci-cd.yml -\u003e p...",
                          "timestamp":  "2026-07-27T15:54:07Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0795ead",
                          "title":  "fix(webplatform): raw ADO.NET for AddColumnIfMissingAsync + 3 sibling Ensure ...",
                          "timestamp":  "2026-07-28T00:23:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-df31eef",
+                         "title":  "fix(navbar): strip legacy target suffix from CI workflow short label",
+                         "timestamp":  "2026-07-28T00:55:18Z",
                          "environment":  "production"
                      }
                  ]
