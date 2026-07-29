@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-9ef648c",
-                         "title":  "feat(chat): SyncMode (Overlay/ForumOnly), outbound reply relay embed, Start S...",
-                         "timestamp":  "2026-07-29T14:48:42Z",
+                         "version":  "build-3bd4f0b",
+                         "title":  "feat(portals): bulk access update, audit log, and role-preview UI (Access Con...",
+                         "timestamp":  "2026-07-29T14:16:37Z",
                          "environment":  "production"
                      }
                  ]
