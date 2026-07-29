@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-11f4ba6",
-                         "title":  "docs(chat): document platform-side-only cleanup invariant for Discord mirroring",
-                         "timestamp":  "2026-07-29T12:57:33Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d3dbafa",
                          "title":  "fix(news): fire NewsPublished when a scheduled post\u0027s publish date actually c...",
                          "timestamp":  "2026-07-29T13:32:33Z",
@@ -104,6 +98,12 @@
                          "version":  "build-6b1df46",
                          "title":  "fix(platform-guide): footer double-render, config-last reorder, franchise cyc...",
                          "timestamp":  "2026-07-29T18:23:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-bd52d5e",
+                         "title":  "test(chat): prove the Discord visibility gate is reachable from the real writ...",
+                         "timestamp":  "2026-07-29T18:39:08Z",
                          "environment":  "production"
                      }
                  ]
