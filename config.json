@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-f64919a",
-                         "title":  "fix(portals): External must Challenge anonymous callers, not Forbid unconditi...",
-                         "timestamp":  "2026-07-28T20:10:43Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-964e501",
                          "title":  "feat(home): commit timeline with 3D-model preview link-out + readable activit...",
@@ -104,6 +98,12 @@
                          "version":  "build-3bd4f0b",
                          "title":  "feat(portals): bulk access update, audit log, and role-preview UI (Access Con...",
                          "timestamp":  "2026-07-29T14:16:37Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c0a0b7e",
+                         "title":  "feat(home): first-time-visitor copy pass + since-last-visit nudge + welcome f...",
+                         "timestamp":  "2026-07-29T15:08:33Z",
                          "environment":  "production"
                      }
                  ]
