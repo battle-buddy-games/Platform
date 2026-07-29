@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-491c30f",
-                         "title":  "fix(platform): AsyncLocal-scope AdminService.TestAdminLookup to close cross-t...",
-                         "timestamp":  "2026-07-29T12:39:05Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-11f4ba6",
                          "title":  "docs(chat): document platform-side-only cleanup invariant for Discord mirroring",
                          "timestamp":  "2026-07-29T12:57:33Z",
@@ -104,6 +98,12 @@
                          "version":  "build-fc55de8",
                          "title":  "fix(static-sites): auto-provision GitHub repo on build + fix Manage/Create de...",
                          "timestamp":  "2026-07-29T17:58:35Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6b1df46",
+                         "title":  "fix(platform-guide): footer double-render, config-last reorder, franchise cyc...",
+                         "timestamp":  "2026-07-29T18:23:08Z",
                          "environment":  "production"
                      }
                  ]
