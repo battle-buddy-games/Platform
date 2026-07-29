@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3c8242f",
-                         "title":  "refactor(infinity-canvas): move Background pattern and Export into toolbar dr...",
-                         "timestamp":  "2026-07-28T22:56:45Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d48a73f",
                          "title":  "fix(home): franchise-grid 2-column layout + hero declutter + 8 enrichment items",
                          "timestamp":  "2026-07-29T03:54:29Z",
@@ -104,6 +98,12 @@
                          "version":  "build-ee21de4",
                          "title":  "fix(about): repoint Portals door to a real destination + persona hero teaser ...",
                          "timestamp":  "2026-07-29T15:24:09Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0e24edd",
+                         "title":  "fix(about): convert Products row to orientation form (owner-confirmed reversal)",
+                         "timestamp":  "2026-07-29T15:47:41Z",
                          "environment":  "production"
                      }
                  ]
