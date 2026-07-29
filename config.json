@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-72f1fd0",
-                         "title":  "feat(discord): platform UserGroup -\u003e Discord role auto-create + membership sync",
-                         "timestamp":  "2026-07-29T11:46:14Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b8ab91d",
                          "title":  "fix(discord): Texas Hold\u0027em/Poker advert silently null via static field order",
                          "timestamp":  "2026-07-29T12:02:31Z",
@@ -104,6 +98,12 @@
                          "version":  "build-66130fd",
                          "title":  "fix(chat): normalize DateTime read-back to Utc so relative timestamps are cor...",
                          "timestamp":  "2026-07-29T16:28:25Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9cee4d5",
+                         "title":  "fix(chat): refresh plugin session badges/transcript on tab-visibility restore",
+                         "timestamp":  "2026-07-29T17:22:13Z",
                          "environment":  "production"
                      }
                  ]
