@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8e646fc",
-                         "title":  "feat(chat): public visibility toggles + public Forum source picker (frontend)",
-                         "timestamp":  "2026-07-28T16:56:47Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-dfac2ea",
                          "title":  "feat(activity-log): instrument chat, forum, canvas, and docs domains",
                          "timestamp":  "2026-07-28T18:58:32Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-6e48592",
-                         "title":  "fix(chat): serialize chat-portal sync per guild + merge duplicate mirrored ch...",
-                         "timestamp":  "2026-07-29T12:19:05Z",
+                         "version":  "build-b8ab91d",
+                         "title":  "fix(discord): Texas Hold\u0027em/Poker advert silently null via static field order",
+                         "timestamp":  "2026-07-29T12:02:31Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-491c30f",
+                         "title":  "fix(platform): AsyncLocal-scope AdminService.TestAdminLookup to close cross-t...",
+                         "timestamp":  "2026-07-29T12:39:05Z",
                          "environment":  "production"
                      }
                  ]
