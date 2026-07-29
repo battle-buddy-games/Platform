@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-0e24edd",
-                         "title":  "fix(about): convert Products row to orientation form (owner-confirmed reversal)",
-                         "timestamp":  "2026-07-29T15:47:41Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-66130fd",
                          "title":  "fix(chat): normalize DateTime read-back to Utc so relative timestamps are cor...",
@@ -104,6 +98,12 @@
                          "version":  "build-6eceb12",
                          "title":  "Update android-buddy-build.yml",
                          "timestamp":  "2026-07-29T22:33:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-faeef86",
+                         "title":  "Configure Claude sessions from chat",
+                         "timestamp":  "2026-07-29T23:37:42Z",
                          "environment":  "production"
                      }
                  ]
