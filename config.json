@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-964e501",
-                         "title":  "feat(home): commit timeline with 3D-model preview link-out + readable activit...",
-                         "timestamp":  "2026-07-28T20:33:28Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3c8242f",
                          "title":  "refactor(infinity-canvas): move Background pattern and Export into toolbar dr...",
                          "timestamp":  "2026-07-28T22:56:45Z",
@@ -104,6 +98,12 @@
                          "version":  "build-c0a0b7e",
                          "title":  "feat(home): first-time-visitor copy pass + since-last-visit nudge + welcome f...",
                          "timestamp":  "2026-07-29T15:08:33Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ee21de4",
+                         "title":  "fix(about): repoint Portals door to a real destination + persona hero teaser ...",
+                         "timestamp":  "2026-07-29T15:24:09Z",
                          "environment":  "production"
                      }
                  ]
