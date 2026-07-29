@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-b8ab91d",
-                         "title":  "fix(discord): Texas Hold\u0027em/Poker advert silently null via static field order",
-                         "timestamp":  "2026-07-29T12:02:31Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-491c30f",
                          "title":  "fix(platform): AsyncLocal-scope AdminService.TestAdminLookup to close cross-t...",
@@ -104,6 +98,12 @@
                          "version":  "build-9cee4d5",
                          "title":  "fix(chat): refresh plugin session badges/transcript on tab-visibility restore",
                          "timestamp":  "2026-07-29T17:22:13Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-fc55de8",
+                         "title":  "fix(static-sites): auto-provision GitHub repo on build + fix Manage/Create de...",
+                         "timestamp":  "2026-07-29T17:58:35Z",
                          "environment":  "production"
                      }
                  ]
