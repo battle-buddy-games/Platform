@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3bd4f0b",
-                         "title":  "feat(portals): bulk access update, audit log, and role-preview UI (Access Con...",
-                         "timestamp":  "2026-07-29T14:16:37Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c0a0b7e",
                          "title":  "feat(home): first-time-visitor copy pass + since-last-visit nudge + welcome f...",
                          "timestamp":  "2026-07-29T15:08:33Z",
@@ -104,6 +98,12 @@
                          "version":  "build-caf25f7",
                          "title":  "docs(cloud): add authorization-gate reachability rule + audit pointer",
                          "timestamp":  "2026-07-29T19:15:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-598f32a",
+                         "title":  "feat(learning): integrate Platform Guide tour completion with Learn dashboard...",
+                         "timestamp":  "2026-07-29T19:44:44Z",
                          "environment":  "production"
                      }
                  ]
