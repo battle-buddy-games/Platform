@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-26c9a50",
-                         "title":  "docs(webplatform): document Home Roadmap/Team split + Products differentiation",
-                         "timestamp":  "2026-07-28T16:28:26Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8e646fc",
                          "title":  "feat(chat): public visibility toggles + public Forum source picker (frontend)",
                          "timestamp":  "2026-07-28T16:56:47Z",
@@ -104,6 +98,12 @@
                          "version":  "build-72f1fd0",
                          "title":  "feat(discord): platform UserGroup -\u003e Discord role auto-create + membership sync",
                          "timestamp":  "2026-07-29T11:46:14Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-b8ab91d",
+                         "title":  "fix(discord): Texas Hold\u0027em/Poker advert silently null via static field order",
+                         "timestamp":  "2026-07-29T12:02:31Z",
                          "environment":  "production"
                      }
                  ]
