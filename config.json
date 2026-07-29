@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-dfac2ea",
-                         "title":  "feat(activity-log): instrument chat, forum, canvas, and docs domains",
-                         "timestamp":  "2026-07-28T18:58:32Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-f38b1b3",
                          "title":  "feat(webplatform): add config-summary aggregator endpoint for Platform Guide ...",
@@ -104,6 +98,12 @@
                          "version":  "build-491c30f",
                          "title":  "fix(platform): AsyncLocal-scope AdminService.TestAdminLookup to close cross-t...",
                          "timestamp":  "2026-07-29T12:39:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-11f4ba6",
+                         "title":  "docs(chat): document platform-side-only cleanup invariant for Discord mirroring",
+                         "timestamp":  "2026-07-29T12:57:33Z",
                          "environment":  "production"
                      }
                  ]

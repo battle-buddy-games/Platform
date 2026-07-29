@@ -496,6 +496,10 @@ const RELEASE_RECENCY_MS = 2 * 60 * 60 * 1000; // Consider releases within 2 hou
 const LS_FAILURE_DETECTED_AT = 'portal_failureDetectedAt';
 const LS_FAILURE_TUNNEL = 'portal_failureTunnel';
 
+// localStorage key for the last time THIS BROWSER directly confirmed the tunnel was reachable
+// (via checkTunnelHealth()'s 30s periodic poll -- see LAST-CONFIRMED-ONLINE ANCHOR FIX below).
+const LS_LAST_LOCAL_SUCCESS_AT = 'portal_lastLocalSuccessAt';
+
 // Get the latest release from config.json (for timer anchoring when platform is offline)
 function getLatestRelease() {
   if (!CONFIG || !CONFIG.releases || CONFIG.releases.length === 0) return null;
@@ -634,6 +638,44 @@ function clearPersistedFailure() {
     localStorage.removeItem(LS_FAILURE_TUNNEL);
   } catch (e) {
     // Ignore
+  }
+}
+
+// LAST-CONFIRMED-ONLINE ANCHOR FIX (2026-07-29): record every time THIS BROWSER's own
+// checkTunnelHealth() poll succeeds. showConnectionFailure() previously anchored the
+// "offline for X" elapsed timer EXCLUSIVELY to HEALTH_STATUS.lastOnlineAt -- the completion
+// time of the most recent SUCCESSFUL run of the external battle-buddy-games/Status repo's
+// health-check.yml workflow. That workflow's cron is declared as */15 minutes but GitHub
+// Actions does not guarantee schedule-trigger cadence for a low-traffic repo; confirmed
+// observed cadence on 2026-07-28/29 was 1-3+ hours between successful runs (root-caused
+// alongside a real, still-ongoing platform.core.exe crash-loop -- see
+// docs/living-docs/findings/platform-offline-45min-false-report-devops-engineer-2026-07-29.md).
+// That gap alone can make lastOnlineAt read 45+ minutes stale even when the platform was only
+// actually unreachable for seconds. This browser's own 30s heartbeat (checkTunnelHealth(),
+// unaffected by the external check's cadence) is almost always a MUCH tighter, more recent
+// "last known good" signal whenever this tab has been open for a while before a failure is
+// detected -- showConnectionFailure() below now anchors to whichever of the two signals is
+// more recent, not the external one unconditionally.
+function persistLastLocalSuccess(timestamp) {
+  try {
+    localStorage.setItem(LS_LAST_LOCAL_SUCCESS_AT, String(timestamp));
+  } catch (e) {
+    // localStorage unavailable (private browsing, etc.)
+  }
+}
+
+function getPersistedLastLocalSuccess() {
+  try {
+    const raw = localStorage.getItem(LS_LAST_LOCAL_SUCCESS_AT);
+    if (!raw) return null;
+    const ts = Number(raw);
+    if (isNaN(ts) || ts <= 0) return null;
+    // Ignore stale entries older than 2 hours (matches getPersistedFailureTime's own ceiling) --
+    // a signal that old is no longer meaningfully "more recent" than any real external check.
+    if (Date.now() - ts > 2 * 60 * 60 * 1000) return null;
+    return ts;
+  } catch (e) {
+    return null;
   }
 }
 
@@ -943,6 +985,7 @@ async function performPeriodicHealthCheck() {
       const isHealthy = await checkTunnelHealth(newAddress);
       if (isHealthy) {
         console.log('[Health Check] New tunnel address is healthy, starting countdown');
+        persistLastLocalSuccess(Date.now());
         showToast('Tunnel Address Changed', 'A new tunnel address has been detected. Switching...', 'info');
         startCountdown(newAddress);
       } else {
@@ -957,6 +1000,10 @@ async function performPeriodicHealthCheck() {
       console.log('[Health Check] Current tunnel is unhealthy');
       lastHealthyTunnelAddress = tunnelBaseUrl;
       showConnectionFailure('Platform Offline', 'The platform is currently offline — an update may be in progress. Searching for a new address...');
+    } else {
+      // Record this browser's own successful reachability check -- see the
+      // LAST-CONFIRMED-ONLINE ANCHOR FIX doc comment on persistLastLocalSuccess() above.
+      persistLastLocalSuccess(Date.now());
     }
 
   } catch (error) {
@@ -1010,21 +1057,48 @@ function showConnectionFailure(title, message) {
   // before actually going down.
   detectedRelease = getLatestRelease();
 
-  // Determine timer start time -- "last confirmed online", most reliable signal first:
-  // 1. HEALTH_STATUS.lastOnlineAt from the independent GitHub-Actions health check
-  //    (health-status.json) -- the actual last time the platform was confirmed reachable.
+  // Determine timer start time -- "last confirmed online", most reliable (= most recent) signal wins:
+  // 1. The MORE RECENT of (a) HEALTH_STATUS.lastOnlineAt from the independent GitHub-Actions
+  //    health check (health-status.json), and (b) this browser's own last confirmed-successful
+  //    checkTunnelHealth() poll (LS_LAST_LOCAL_SUCCESS_AT). The external check's cron is declared
+  //    every 15 minutes but its observed real-world cadence can be 1-3+ hours (GitHub Actions does
+  //    not guarantee schedule-trigger timing for a low-traffic repo -- see the doc comment on
+  //    persistLastLocalSuccess() above), so trusting it unconditionally can report an "offline for
+  //    X minutes" figure far larger than the platform was actually unreachable. Picking whichever
+  //    signal is more recent never makes the reported duration LONGER than reality -- both are
+  //    lower bounds on "last known good", so the tighter (more recent) one is always at least as
+  //    accurate.
   // 2. Persisted failure detection time from localStorage (survives refresh, keeps a stable
-  //    anchor across reloads even if health-status.json is briefly unavailable).
-  // 3. Current time (last resort, only on first detection with neither signal available).
-  const lastOnlineAt = HEALTH_STATUS && HEALTH_STATUS.lastOnlineAt
+  //    anchor across reloads even if neither signal above is available).
+  // 3. Current time (last resort, only on first detection with no signal available at all).
+  const healthStatusOnlineAt = HEALTH_STATUS && HEALTH_STATUS.lastOnlineAt
     ? new Date(HEALTH_STATUS.lastOnlineAt).getTime()
     : NaN;
+  const localSuccessAt = getPersistedLastLocalSuccess();
+
+  let lastOnlineAt = NaN;
+  let lastOnlineSource = null;
+  if (!isNaN(healthStatusOnlineAt) && localSuccessAt) {
+    if (localSuccessAt > healthStatusOnlineAt) {
+      lastOnlineAt = localSuccessAt;
+      lastOnlineSource = 'this browser\'s own last successful check (more recent than health-status.json)';
+    } else {
+      lastOnlineAt = healthStatusOnlineAt;
+      lastOnlineSource = 'health-status.json';
+    }
+  } else if (!isNaN(healthStatusOnlineAt)) {
+    lastOnlineAt = healthStatusOnlineAt;
+    lastOnlineSource = 'health-status.json';
+  } else if (localSuccessAt) {
+    lastOnlineAt = localSuccessAt;
+    lastOnlineSource = 'this browser\'s own last successful check';
+  }
 
   if (!isNaN(lastOnlineAt)) {
     updatingStartTime = lastOnlineAt;
     updatingElapsedSeconds = Math.max(0, Math.floor((Date.now() - lastOnlineAt) / 1000));
     persistFailureTime(lastOnlineAt, tunnelBaseUrl);
-    console.log('[Portal] Timer anchored to health-status.json lastOnlineAt (' + updatingElapsedSeconds + 's elapsed)');
+    console.log('[Portal] Timer anchored to ' + lastOnlineSource + ' (' + updatingElapsedSeconds + 's elapsed)');
   } else {
     // No health status available — check localStorage for persisted failure time
     const persisted = getPersistedFailureTime();
