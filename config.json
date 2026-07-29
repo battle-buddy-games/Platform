@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-b8ab91d",
-                         "title":  "fix(discord): Texas Hold\u0027em/Poker advert silently null via static field order",
-                         "timestamp":  "2026-07-29T12:02:31Z",
+                         "version":  "build-6e48592",
+                         "title":  "fix(chat): serialize chat-portal sync per guild + merge duplicate mirrored ch...",
+                         "timestamp":  "2026-07-29T12:19:05Z",
                          "environment":  "production"
                      }
                  ]
