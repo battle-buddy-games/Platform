@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-598f32a",
-                         "title":  "feat(learning): integrate Platform Guide tour completion with Learn dashboard...",
-                         "timestamp":  "2026-07-29T19:44:44Z",
+                         "version":  "build-852b589",
+                         "title":  "feat(presence): fold Discord-only online/idle/DnD users into Unified Presence",
+                         "timestamp":  "2026-07-29T20:06:42Z",
                          "environment":  "production"
                      }
                  ]
