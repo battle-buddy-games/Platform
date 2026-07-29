@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-1783551",
-                         "title":  "fix(security): gate Roles/Products writes, fail-close Role access defaults",
-                         "timestamp":  "2026-07-29T20:25:34Z",
+                         "version":  "build-14b75d2",
+                         "title":  "fix(deploy): match ISafeMigration on the class declaration, not the whole file",
+                         "timestamp":  "2026-07-29T20:46:09Z",
                          "environment":  "production"
                      }
                  ]
