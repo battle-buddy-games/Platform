@@ -837,7 +837,10 @@ async function pollConfigAndHealth() {
 
     // Re-check for release info (may appear or change after config.json is updated mid-wait).
     // This is cosmetic messaging only ("Deploying update X") -- it does NOT re-anchor the
-    // elapsed timer, which stays anchored to HEALTH_STATUS.lastOnlineAt (see showConnectionFailure).
+    // elapsed timer here. The timer only re-anchors when showConnectionFailure() itself runs
+    // again (e.g. on a manual retry or a fresh page load) -- see that function's own doc comment
+    // for the current anchor-selection logic (whichever of HEALTH_STATUS.lastOnlineAt or this
+    // browser's own last local success is more recent).
     if (connectionFailureDetected) {
       const latestRelease = getLatestRelease();
       if (latestRelease && latestRelease.timestamp &&
