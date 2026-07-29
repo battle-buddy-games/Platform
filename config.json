@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d3dbafa",
-                         "title":  "fix(news): fire NewsPublished when a scheduled post\u0027s publish date actually c...",
-                         "timestamp":  "2026-07-29T13:32:33Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3bd4f0b",
                          "title":  "feat(portals): bulk access update, audit log, and role-preview UI (Access Con...",
                          "timestamp":  "2026-07-29T14:16:37Z",
@@ -104,6 +98,12 @@
                          "version":  "build-bd52d5e",
                          "title":  "test(chat): prove the Discord visibility gate is reachable from the real writ...",
                          "timestamp":  "2026-07-29T18:39:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-caf25f7",
+                         "title":  "docs(cloud): add authorization-gate reachability rule + audit pointer",
+                         "timestamp":  "2026-07-29T19:15:01Z",
                          "environment":  "production"
                      }
                  ]
