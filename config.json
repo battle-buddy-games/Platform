@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-be48a57",
-                         "title":  "fix(forum): preserve public channel access",
-                         "timestamp":  "2026-07-30T02:38:29Z",
+                         "version":  "build-7906174",
+                         "title":  "feat(chat): restore desktop launch defaults",
+                         "timestamp":  "2026-07-30T03:04:29Z",
                          "environment":  "production"
                      }
                  ]
