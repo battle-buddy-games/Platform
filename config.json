@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-caf25f7",
-                         "title":  "docs(cloud): add authorization-gate reachability rule + audit pointer",
-                         "timestamp":  "2026-07-29T19:15:01Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-598f32a",
                          "title":  "feat(learning): integrate Platform Guide tour completion with Learn dashboard...",
@@ -104,6 +98,12 @@
                          "version":  "build-da9bc1d",
                          "title":  "fix(chat): unify agent conversation actions",
                          "timestamp":  "2026-07-30T04:56:44Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-cc38f29",
+                         "title":  "fix(views): escape media queries in Editors Razor view",
+                         "timestamp":  "2026-07-30T06:13:39Z",
                          "environment":  "production"
                      }
                  ]
