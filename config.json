@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-66130fd",
-                         "title":  "fix(chat): normalize DateTime read-back to Utc so relative timestamps are cor...",
-                         "timestamp":  "2026-07-29T16:28:25Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9cee4d5",
                          "title":  "fix(chat): refresh plugin session badges/transcript on tab-visibility restore",
                          "timestamp":  "2026-07-29T17:22:13Z",
@@ -104,6 +98,12 @@
                          "version":  "build-faeef86",
                          "title":  "Configure Claude sessions from chat",
                          "timestamp":  "2026-07-29T23:37:42Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-27bf19b",
+                         "title":  "feat(buddy-desktop): show Unity launch progress",
+                         "timestamp":  "2026-07-30T00:11:48Z",
                          "environment":  "production"
                      }
                  ]
