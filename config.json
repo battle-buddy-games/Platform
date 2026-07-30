@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-6b1df46",
-                         "title":  "fix(platform-guide): footer double-render, config-last reorder, franchise cyc...",
-                         "timestamp":  "2026-07-29T18:23:08Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-bd52d5e",
                          "title":  "test(chat): prove the Discord visibility gate is reachable from the real writ...",
                          "timestamp":  "2026-07-29T18:39:08Z",
@@ -104,6 +98,12 @@
                          "version":  "build-46d79a1",
                          "title":  "feat(servers): consolidate page tabs",
                          "timestamp":  "2026-07-30T01:24:57Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-be48a57",
+                         "title":  "fix(forum): preserve public channel access",
+                         "timestamp":  "2026-07-30T02:38:29Z",
                          "environment":  "production"
                      }
                  ]
