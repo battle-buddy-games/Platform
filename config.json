@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-fc55de8",
-                         "title":  "fix(static-sites): auto-provision GitHub repo on build + fix Manage/Create de...",
-                         "timestamp":  "2026-07-29T17:58:35Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-6b1df46",
                          "title":  "fix(platform-guide): footer double-render, config-last reorder, franchise cyc...",
                          "timestamp":  "2026-07-29T18:23:08Z",
@@ -104,6 +98,12 @@
                          "version":  "build-237ec6a",
                          "title":  "fix(navbar): simplify actions pips and feed",
                          "timestamp":  "2026-07-30T00:50:56Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-46d79a1",
+                         "title":  "feat(servers): consolidate page tabs",
+                         "timestamp":  "2026-07-30T01:24:57Z",
                          "environment":  "production"
                      }
                  ]
