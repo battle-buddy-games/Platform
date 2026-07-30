@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-bd52d5e",
-                         "title":  "test(chat): prove the Discord visibility gate is reachable from the real writ...",
-                         "timestamp":  "2026-07-29T18:39:08Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-caf25f7",
                          "title":  "docs(cloud): add authorization-gate reachability rule + audit pointer",
@@ -104,6 +98,12 @@
                          "version":  "build-be48a57",
                          "title":  "fix(forum): preserve public channel access",
                          "timestamp":  "2026-07-30T02:38:29Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-da9bc1d",
+                         "title":  "fix(chat): unify agent conversation actions",
+                         "timestamp":  "2026-07-30T04:56:44Z",
                          "environment":  "production"
                      }
                  ]
