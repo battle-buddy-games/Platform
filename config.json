@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-4c69531",
-                         "title":  "fix(dashboard): append open document title into shared dashboard-tool title bar",
-                         "timestamp":  "2026-08-04T23:07:48Z",
+                         "version":  "build-cd61958",
+                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
+                         "timestamp":  "2026-08-04T22:32:18Z",
                          "environment":  "production"
                      }
                  ]
