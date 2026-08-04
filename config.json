@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-1783551",
-                         "title":  "fix(security): gate Roles/Products writes, fail-close Role access defaults",
-                         "timestamp":  "2026-07-29T20:25:34Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-6eceb12",
                          "title":  "Update android-buddy-build.yml",
@@ -104,6 +98,12 @@
                          "version":  "build-15f4fd6",
                          "title":  "feat(chat): stage AI session configuration",
                          "timestamp":  "2026-07-30T13:34:24Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9d74927",
+                         "title":  "test(chat): register DiscordIdentityResolutionService in backfill test DI con...",
+                         "timestamp":  "2026-08-04T01:36:21Z",
                          "environment":  "production"
                      }
                  ]
