@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-237ec6a",
-                         "title":  "fix(navbar): simplify actions pips and feed",
-                         "timestamp":  "2026-07-30T00:50:56Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-46d79a1",
                          "title":  "feat(servers): consolidate page tabs",
@@ -104,6 +98,12 @@
                          "version":  "build-1b11f43",
                          "title":  "feat(projects): add Branches subtab to Projects Source section",
                          "timestamp":  "2026-08-04T21:21:03Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-cd61958",
+                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
+                         "timestamp":  "2026-08-04T22:32:18Z",
                          "environment":  "production"
                      }
                  ]
