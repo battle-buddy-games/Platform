@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-be48a57",
-                         "title":  "fix(forum): preserve public channel access",
-                         "timestamp":  "2026-07-30T02:38:29Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-da9bc1d",
                          "title":  "fix(chat): unify agent conversation actions",
                          "timestamp":  "2026-07-30T04:56:44Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7ddc338",
                          "title":  "feat(documents): Space content-source type (Document Tool editable-content-so...",
                          "timestamp":  "2026-08-05T00:13:36Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-772ecac",
+                         "title":  "docs(dashboard): mark InternalDocumentationDashboardToolPlan.md as superseded",
+                         "timestamp":  "2026-08-05T00:53:56Z",
                          "environment":  "production"
                      }
                  ]
