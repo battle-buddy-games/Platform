@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-f6fbef3",
-                         "title":  "feat(chat): real thread-list pagination, pinned-thread ordering, board-index ...",
-                         "timestamp":  "2026-08-04T17:48:01Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-00f36cf",
                          "title":  "feat(chat): rebuild public Forum page as a classic board-index navigation",
@@ -104,6 +98,12 @@
                          "version":  "build-c3a086b",
                          "title":  "feat(portals): multi-source page content bindings + independent page slugs",
                          "timestamp":  "2026-08-05T21:03:03Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d2308bc",
+                         "title":  "fix(platform): render bindings admin view for zero-binding pages when viewer ...",
+                         "timestamp":  "2026-08-05T21:40:02Z",
                          "environment":  "production"
                      }
                  ]
