@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-15f4fd6",
-                         "title":  "feat(chat): stage AI session configuration",
-                         "timestamp":  "2026-07-30T13:34:24Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9d74927",
                          "title":  "test(chat): register DiscordIdentityResolutionService in backfill test DI con...",
                          "timestamp":  "2026-08-04T01:36:21Z",
@@ -104,6 +98,12 @@
                          "version":  "build-c20ec9f",
                          "title":  "fix(sdk-artifacts): update legacy community group names in access gate",
                          "timestamp":  "2026-08-05T17:55:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f6b8649",
+                         "title":  "feat(sdk): background self-heal for stale non-git SDK workspaces (Option D)",
+                         "timestamp":  "2026-08-05T20:04:08Z",
                          "environment":  "production"
                      }
                  ]
