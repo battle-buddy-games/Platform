@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://ensure-rank-installation-beef.trycloudflare.com"
+                                  "address":  "https://trends-heart-prefers-opponents.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
