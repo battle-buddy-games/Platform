@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,6 +46,12 @@
                               }
                           ],
     "releases":  [
+                     {
+                         "version":  "build-cc38f29",
+                         "title":  "fix(views): escape media queries in Editors Razor view",
+                         "timestamp":  "2026-07-30T06:13:39Z",
+                         "environment":  "production"
+                     },
                      {
                          "version":  "build-15f4fd6",
                          "title":  "feat(chat): stage AI session configuration",
@@ -98,12 +104,6 @@
                          "version":  "build-1200361",
                          "title":  "refactor(sdk): restructure Server State tab to organize by target",
                          "timestamp":  "2026-08-05T01:48:26Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-c20ec9f",
-                         "title":  "fix(sdk-artifacts): update legacy community group names in access gate",
-                         "timestamp":  "2026-08-05T17:55:01Z",
                          "environment":  "production"
                      }
                  ]
