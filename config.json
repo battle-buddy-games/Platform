@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-a3d2be0",
-                         "title":  "fix(servers): self-heal NSSM service reinstall when Windows Service is missing",
-                         "timestamp":  "2026-08-05T20:34:02Z",
+                         "version":  "build-f6b8649",
+                         "title":  "feat(sdk): background self-heal for stale non-git SDK workspaces (Option D)",
+                         "timestamp":  "2026-08-05T20:04:08Z",
                          "environment":  "production"
                      }
                  ]
