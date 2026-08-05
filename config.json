@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-ad46e1a",
-                         "title":  "feat(deploy): hold blue-green cutover while SDK materialization lease is held",
-                         "timestamp":  "2026-08-05T23:17:22Z",
+                         "version":  "build-e693106",
+                         "title":  "feat(sdk): add read-only lease-status endpoint for materialization coordinator",
+                         "timestamp":  "2026-08-05T22:47:03Z",
                          "environment":  "production"
                      }
                  ]
