@@ -1,4 +1,4 @@
-{
+﻿{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,6 +46,12 @@
                               }
                           ],
     "releases":  [
+                     {
+                         "version":  "build-da9bc1d",
+                         "title":  "fix(chat): unify agent conversation actions",
+                         "timestamp":  "2026-07-30T04:56:44Z",
+                         "environment":  "production"
+                     },
                      {
                          "version":  "build-cc38f29",
                          "title":  "fix(views): escape media queries in Editors Razor view",
@@ -98,12 +104,6 @@
                          "version":  "build-772ecac",
                          "title":  "docs(dashboard): mark InternalDocumentationDashboardToolPlan.md as superseded",
                          "timestamp":  "2026-08-05T00:53:56Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-1200361",
-                         "title":  "refactor(sdk): restructure Server State tab to organize by target",
-                         "timestamp":  "2026-08-05T01:48:26Z",
                          "environment":  "production"
                      }
                  ]
