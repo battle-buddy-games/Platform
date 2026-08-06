@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-cd61958",
-                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027",
-                         "timestamp":  "2026-08-04T22:32:18Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7ddc338",
                          "title":  "feat(documents): Space content-source type (Document Tool editable-content-so...",
                          "timestamp":  "2026-08-05T00:13:36Z",
@@ -104,6 +98,12 @@
                          "version":  "build-021db2f",
                          "title":  "fix(buddy-desktop): show other online users in presence submenu and window menu",
                          "timestamp":  "2026-08-06T00:02:49Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ff64d5c",
+                         "title":  "feat(platform): report stuck DocumentHub connections to the incident pipeline",
+                         "timestamp":  "2026-08-06T00:42:49Z",
                          "environment":  "production"
                      }
                  ]
