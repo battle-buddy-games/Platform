@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-7ddc338",
-                         "title":  "feat(documents): Space content-source type (Document Tool editable-content-so...",
-                         "timestamp":  "2026-08-05T00:13:36Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-772ecac",
                          "title":  "docs(dashboard): mark InternalDocumentationDashboardToolPlan.md as superseded",
@@ -104,6 +98,12 @@
                          "version":  "build-ff64d5c",
                          "title":  "feat(platform): report stuck DocumentHub connections to the incident pipeline",
                          "timestamp":  "2026-08-06T00:42:49Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e4f2301",
+                         "title":  "feat(home): link Home/About to SDK/Blender/Steam downloads and launch actions",
+                         "timestamp":  "2026-08-06T01:37:33Z",
                          "environment":  "production"
                      }
                  ]
