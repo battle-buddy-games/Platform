@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-772ecac",
-                         "title":  "docs(dashboard): mark InternalDocumentationDashboardToolPlan.md as superseded",
-                         "timestamp":  "2026-08-05T00:53:56Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1200361",
                          "title":  "refactor(sdk): restructure Server State tab to organize by target",
                          "timestamp":  "2026-08-05T01:48:26Z",
@@ -104,6 +98,12 @@
                          "version":  "build-e4f2301",
                          "title":  "feat(home): link Home/About to SDK/Blender/Steam downloads and launch actions",
                          "timestamp":  "2026-08-06T01:37:33Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ce42f6e",
+                         "title":  "fix(chat): group public/member forum portals by scalar id, not entity reference",
+                         "timestamp":  "2026-08-06T02:20:43Z",
                          "environment":  "production"
                      }
                  ]
