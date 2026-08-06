@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-1200361",
-                         "title":  "refactor(sdk): restructure Server State tab to organize by target",
-                         "timestamp":  "2026-08-05T01:48:26Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-c20ec9f",
                          "title":  "fix(sdk-artifacts): update legacy community group names in access gate",
@@ -104,6 +98,12 @@
                          "version":  "build-ce42f6e",
                          "title":  "fix(chat): group public/member forum portals by scalar id, not entity reference",
                          "timestamp":  "2026-08-06T02:20:43Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9e8bd0d",
+                         "title":  "feat(about): add Editors, Telemetry, and GameOps/LiveOps capability rows",
+                         "timestamp":  "2026-08-06T03:02:11Z",
                          "environment":  "production"
                      }
                  ]
