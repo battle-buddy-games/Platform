@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d2308bc",
-                         "title":  "fix(platform): render bindings admin view for zero-binding pages when viewer ...",
-                         "timestamp":  "2026-08-05T21:40:02Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e693106",
                          "title":  "feat(sdk): add read-only lease-status endpoint for materialization coordinator",
                          "timestamp":  "2026-08-05T22:47:03Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0a8239f",
                          "title":  "fix(ci): write tunnel-URL config.json without a UTF-8 BOM",
                          "timestamp":  "2026-08-08T11:29:13Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-30e8192",
+                         "title":  "fix(git-lfs): set filename on LFS download responses so browsers save with or...",
+                         "timestamp":  "2026-08-08T13:36:53Z",
                          "environment":  "production"
                      }
                  ]
