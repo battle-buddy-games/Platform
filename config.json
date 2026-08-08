@@ -1,4 +1,4 @@
-﻿{
+{
     "github":  {
                    "clientId":  "Ov23liXpQBh8YbkP2AIy",
                    "redirectUri":  "https://battle-buddy-games.github.io/Platform/gateway-callback-github.html",
@@ -46,12 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-c20ec9f",
-                         "title":  "fix(sdk-artifacts): update legacy community group names in access gate",
-                         "timestamp":  "2026-08-05T17:55:01Z",
-                         "environment":  "production"
-                     },
                      {
                          "version":  "build-f6b8649",
                          "title":  "feat(sdk): background self-heal for stale non-git SDK workspaces (Option D)",
@@ -104,6 +98,12 @@
                          "version":  "build-9e8bd0d",
                          "title":  "feat(about): add Editors, Telemetry, and GameOps/LiveOps capability rows",
                          "timestamp":  "2026-08-06T03:02:11Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d58c7d3",
+                         "title":  "fix(incidents): regenerate model snapshot for IncidentAlertDeliveries table",
+                         "timestamp":  "2026-08-08T00:15:12Z",
                          "environment":  "production"
                      }
                  ]
