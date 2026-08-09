@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-060d52f",
-                         "title":  "feat(chat-forum): default-collapsed board index + reply count display",
-                         "timestamp":  "2026-08-09T14:02:40Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0764f89",
                          "title":  "chore(secrets): move MeshyApiKey to CI-automated secrets delivery",
                          "timestamp":  "2026-08-09T14:47:46Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0b212fd",
                          "title":  "fix(editors): isolate Character Pipeline embed and add source asset presets",
                          "timestamp":  "2026-08-09T20:40:48Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-32fabc2",
+                         "title":  "feat(home): compact 3D hot-files graph, merge You/News into Your Feed, fold P...",
+                         "timestamp":  "2026-08-09T22:22:12Z",
                          "environment":  "production"
                      }
                  ]
