@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-697fd85",
-                         "title":  "fix(tools): fix PowerShell backtick-escape parse failure in extension publish...",
-                         "timestamp":  "2026-08-09T19:40:21Z",
+                         "version":  "build-60c0ac7",
+                         "title":  "fix(tools): move commit message and CI provenance fields into env vars for ex...",
+                         "timestamp":  "2026-08-09T20:09:49Z",
                          "environment":  "production"
                      }
                  ]
