@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e693106",
-                         "title":  "feat(sdk): add read-only lease-status endpoint for materialization coordinator",
-                         "timestamp":  "2026-08-05T22:47:03Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-021db2f",
                          "title":  "fix(buddy-desktop): show other online users in presence submenu and window menu",
                          "timestamp":  "2026-08-06T00:02:49Z",
@@ -104,6 +98,12 @@
                          "version":  "build-30e8192",
                          "title":  "fix(git-lfs): set filename on LFS download responses so browsers save with or...",
                          "timestamp":  "2026-08-08T13:36:53Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c6f16be",
+                         "title":  "feat(ci-video): thread CI video deliveries into per-run Discord threads",
+                         "timestamp":  "2026-08-09T13:27:18Z",
                          "environment":  "production"
                      }
                  ]
