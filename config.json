@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ff64d5c",
-                         "title":  "feat(platform): report stuck DocumentHub connections to the incident pipeline",
-                         "timestamp":  "2026-08-06T00:42:49Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e4f2301",
                          "title":  "feat(home): link Home/About to SDK/Blender/Steam downloads and launch actions",
                          "timestamp":  "2026-08-06T01:37:33Z",
@@ -104,6 +98,12 @@
                          "version":  "build-060d52f",
                          "title":  "feat(chat-forum): default-collapsed board index + reply count display",
                          "timestamp":  "2026-08-09T14:02:40Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0764f89",
+                         "title":  "chore(secrets): move MeshyApiKey to CI-automated secrets delivery",
+                         "timestamp":  "2026-08-09T14:47:46Z",
                          "environment":  "production"
                      }
                  ]
