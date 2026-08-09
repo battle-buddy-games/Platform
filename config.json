@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c6f16be",
-                         "title":  "feat(ci-video): thread CI video deliveries into per-run Discord threads",
-                         "timestamp":  "2026-08-09T13:27:18Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-060d52f",
                          "title":  "feat(chat-forum): default-collapsed board index + reply count display",
                          "timestamp":  "2026-08-09T14:02:40Z",
@@ -104,6 +98,12 @@
                          "version":  "build-697fd85",
                          "title":  "fix(tools): fix PowerShell backtick-escape parse failure in extension publish...",
                          "timestamp":  "2026-08-09T19:40:21Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0b212fd",
+                         "title":  "fix(editors): isolate Character Pipeline embed and add source asset presets",
+                         "timestamp":  "2026-08-09T20:40:48Z",
                          "environment":  "production"
                      }
                  ]
