@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-b5d9e49",
-                         "title":  "fix(roadmap): render undated plans, stop partial updates wiping schedule, add...",
-                         "timestamp":  "2026-08-09T23:05:10Z",
+                         "version":  "build-084bc6c",
+                         "title":  "fix(chat): accept provider in startDesktopSessionOn signature",
+                         "timestamp":  "2026-08-09T22:43:51Z",
                          "environment":  "production"
                      }
                  ]
