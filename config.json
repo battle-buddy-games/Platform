@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-021db2f",
-                         "title":  "fix(buddy-desktop): show other online users in presence submenu and window menu",
-                         "timestamp":  "2026-08-06T00:02:49Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ff64d5c",
                          "title":  "feat(platform): report stuck DocumentHub connections to the incident pipeline",
                          "timestamp":  "2026-08-06T00:42:49Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-ecb453c",
-                         "title":  "docs(webplatform): document CI video per-run Discord threading (Task #84)",
-                         "timestamp":  "2026-08-09T13:44:51Z",
+                         "version":  "build-c6f16be",
+                         "title":  "feat(ci-video): thread CI video deliveries into per-run Discord threads",
+                         "timestamp":  "2026-08-09T13:27:18Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-060d52f",
+                         "title":  "feat(chat-forum): default-collapsed board index + reply count display",
+                         "timestamp":  "2026-08-09T14:02:40Z",
                          "environment":  "production"
                      }
                  ]
