@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e4f2301",
-                         "title":  "feat(home): link Home/About to SDK/Blender/Steam downloads and launch actions",
-                         "timestamp":  "2026-08-06T01:37:33Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ce42f6e",
                          "title":  "fix(chat): group public/member forum portals by scalar id, not entity reference",
                          "timestamp":  "2026-08-06T02:20:43Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0764f89",
                          "title":  "chore(secrets): move MeshyApiKey to CI-automated secrets delivery",
                          "timestamp":  "2026-08-09T14:47:46Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8c91c0e",
+                         "title":  "Release build-0764f89: chore(secrets): move MeshyApiKey to CI-automated secre...",
+                         "timestamp":  "2026-08-09T15:45:34Z",
                          "environment":  "production"
                      }
                  ]
