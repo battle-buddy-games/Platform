@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9e8bd0d",
-                         "title":  "feat(about): add Editors, Telemetry, and GameOps/LiveOps capability rows",
-                         "timestamp":  "2026-08-06T03:02:11Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d58c7d3",
                          "title":  "fix(incidents): regenerate model snapshot for IncidentAlertDeliveries table",
                          "timestamp":  "2026-08-08T00:15:12Z",
@@ -104,6 +98,12 @@
                          "version":  "build-5768e8f",
                          "title":  "feat(project-metadata-export): add Discord summary delivery for editor + runt...",
                          "timestamp":  "2026-08-09T16:07:30Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d1cafbc",
+                         "title":  "fix(forum): wire up window.renderMarkdown so code fences render properly",
+                         "timestamp":  "2026-08-09T16:41:59Z",
                          "environment":  "production"
                      }
                  ]
