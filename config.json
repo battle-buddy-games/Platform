@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8833921",
-                         "title":  "feat(platform): extract shared portal access evaluator + viewer-scoped listin...",
-                         "timestamp":  "2026-08-08T02:45:26Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0a8239f",
                          "title":  "fix(ci): write tunnel-URL config.json without a UTF-8 BOM",
                          "timestamp":  "2026-08-08T11:29:13Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-2a9cb32",
-                         "title":  "fix(assets-hub): rework Meshy Generate tab into a browsable gallery",
-                         "timestamp":  "2026-08-09T18:12:35Z",
+                         "version":  "build-c365a69",
+                         "title":  "fix(forum): make Portal/Category breadcrumb segments clickable",
+                         "timestamp":  "2026-08-09T17:55:22Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f64dc28",
+                         "title":  "fix(assets-hub): move Meshy generation trigger into Editors tool",
+                         "timestamp":  "2026-08-09T18:29:56Z",
                          "environment":  "production"
                      }
                  ]
