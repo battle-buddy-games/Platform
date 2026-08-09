@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-30e8192",
-                         "title":  "fix(git-lfs): set filename on LFS download responses so browsers save with or...",
-                         "timestamp":  "2026-08-08T13:36:53Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c6f16be",
                          "title":  "feat(ci-video): thread CI video deliveries into per-run Discord threads",
                          "timestamp":  "2026-08-09T13:27:18Z",
@@ -104,6 +98,12 @@
                          "version":  "build-ea0094a",
                          "title":  "fix(chat): resolve Discord author identity at read time in flat message stream",
                          "timestamp":  "2026-08-09T19:09:35Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-697fd85",
+                         "title":  "fix(tools): fix PowerShell backtick-escape parse failure in extension publish...",
+                         "timestamp":  "2026-08-09T19:40:21Z",
                          "environment":  "production"
                      }
                  ]
