@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0764f89",
-                         "title":  "chore(secrets): move MeshyApiKey to CI-automated secrets delivery",
-                         "timestamp":  "2026-08-09T14:47:46Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8c91c0e",
                          "title":  "Release build-0764f89: chore(secrets): move MeshyApiKey to CI-automated secre...",
                          "timestamp":  "2026-08-09T15:45:34Z",
@@ -104,6 +98,12 @@
                          "version":  "build-32fabc2",
                          "title":  "feat(home): compact 3D hot-files graph, merge You/News into Your Feed, fold P...",
                          "timestamp":  "2026-08-09T22:22:12Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-084bc6c",
+                         "title":  "fix(chat): accept provider in startDesktopSessionOn signature",
+                         "timestamp":  "2026-08-09T22:43:51Z",
                          "environment":  "production"
                      }
                  ]
