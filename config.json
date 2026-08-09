@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-c6f16be",
-                         "title":  "feat(ci-video): thread CI video deliveries into per-run Discord threads",
-                         "timestamp":  "2026-08-09T13:27:18Z",
+                         "version":  "build-ecb453c",
+                         "title":  "docs(webplatform): document CI video per-run Discord threading (Task #84)",
+                         "timestamp":  "2026-08-09T13:44:51Z",
                          "environment":  "production"
                      }
                  ]
