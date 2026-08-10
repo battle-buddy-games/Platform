@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ea0094a",
-                         "title":  "fix(chat): resolve Discord author identity at read time in flat message stream",
-                         "timestamp":  "2026-08-09T19:09:35Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-697fd85",
                          "title":  "fix(tools): fix PowerShell backtick-escape parse failure in extension publish...",
                          "timestamp":  "2026-08-09T19:40:21Z",
@@ -104,6 +98,12 @@
                          "version":  "build-75054a7",
                          "title":  "feat(voice): add join/leave activity log with actor-type tracking",
                          "timestamp":  "2026-08-10T17:33:09Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2943c34",
+                         "title":  "feat(editors): relocate Character Pipeline, 3D Painter, UV Editor, Meshy gene...",
+                         "timestamp":  "2026-08-10T17:54:31Z",
                          "environment":  "production"
                      }
                  ]
