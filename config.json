@@ -47,6 +47,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-8c91c0e",
+                         "title":  "Release build-0764f89: chore(secrets): move MeshyApiKey to CI-automated secre...",
+                         "timestamp":  "2026-08-09T15:45:34Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-5768e8f",
                          "title":  "feat(project-metadata-export): add Discord summary delivery for editor + runt...",
                          "timestamp":  "2026-08-09T16:07:30Z",
@@ -98,12 +104,6 @@
                          "version":  "build-084bc6c",
                          "title":  "fix(chat): accept provider in startDesktopSessionOn signature",
                          "timestamp":  "2026-08-09T22:43:51Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-aa8d0bc",
-                         "title":  "feat(docs): HTML export + read view, quick-note capture, plan-scoped backlink...",
-                         "timestamp":  "2026-08-10T08:22:09Z",
                          "environment":  "production"
                      }
                  ]
