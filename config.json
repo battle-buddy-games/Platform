@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-32ad11f",
-                         "title":  "fix(home): remove duplicate team-roster row, fix Your Feed slug-label bug",
-                         "timestamp":  "2026-08-10T16:29:50Z",
+                         "version":  "build-9640d7b",
+                         "title":  "fix(theme): striped table rows render near-black text on any theme",
+                         "timestamp":  "2026-08-10T16:53:34Z",
                          "environment":  "production"
                      }
                  ]
