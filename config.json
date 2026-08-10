@@ -47,6 +47,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-f64dc28",
+                         "title":  "fix(assets-hub): move Meshy generation trigger into Editors tool",
+                         "timestamp":  "2026-08-09T18:29:56Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-ea0094a",
                          "title":  "fix(chat): resolve Discord author identity at read time in flat message stream",
                          "timestamp":  "2026-08-09T19:09:35Z",
@@ -98,12 +104,6 @@
                          "version":  "build-32ad11f",
                          "title":  "fix(home): remove duplicate team-roster row, fix Your Feed slug-label bug",
                          "timestamp":  "2026-08-10T16:29:50Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-75054a7",
-                         "title":  "feat(voice): add join/leave activity log with actor-type tracking",
-                         "timestamp":  "2026-08-10T17:33:09Z",
                          "environment":  "production"
                      }
                  ]
