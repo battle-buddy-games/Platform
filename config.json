@@ -47,6 +47,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-aa8d0bc",
+                         "title":  "feat(docs): HTML export + read view, quick-note capture, plan-scoped backlink...",
+                         "timestamp":  "2026-08-10T08:22:09Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-178549b",
                          "title":  "feat(chat): cursor transcript polling, load-earlier, errorCode launch message...",
                          "timestamp":  "2026-08-10T11:24:59Z",
@@ -98,12 +104,6 @@
                          "version":  "build-994156c",
                          "title":  "fix(agent): reclaim stale Discord connection lock via heartbeat + staleness t...",
                          "timestamp":  "2026-08-11T13:04:52Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-abacb1b",
-                         "title":  "fix(chat): backfill Discord thread history and reconcile flattened data",
-                         "timestamp":  "2026-08-11T20:01:10Z",
                          "environment":  "production"
                      }
                  ]
