@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-697fd85",
-                         "title":  "fix(tools): fix PowerShell backtick-escape parse failure in extension publish...",
-                         "timestamp":  "2026-08-09T19:40:21Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0b212fd",
                          "title":  "fix(editors): isolate Character Pipeline embed and add source asset presets",
                          "timestamp":  "2026-08-09T20:40:48Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2943c34",
                          "title":  "feat(editors): relocate Character Pipeline, 3D Painter, UV Editor, Meshy gene...",
                          "timestamp":  "2026-08-10T17:54:31Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7556efa",
+                         "title":  "feat(chat): add plugin session archive/unarchive with archive-also-closes",
+                         "timestamp":  "2026-08-11T01:45:40Z",
                          "environment":  "production"
                      }
                  ]
