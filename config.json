@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-084bc6c",
-                         "title":  "fix(chat): accept provider in startDesktopSessionOn signature",
-                         "timestamp":  "2026-08-09T22:43:51Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-aa8d0bc",
                          "title":  "feat(docs): HTML export + read view, quick-note capture, plan-scoped backlink...",
                          "timestamp":  "2026-08-10T08:22:09Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7298a1d",
                          "title":  "feat(telemetry): unify WebPlatform activity telemetry into ActivityLog",
                          "timestamp":  "2026-08-11T03:07:35Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-994156c",
+                         "title":  "fix(agent): reclaim stale Discord connection lock via heartbeat + staleness t...",
+                         "timestamp":  "2026-08-11T13:04:52Z",
                          "environment":  "production"
                      }
                  ]
