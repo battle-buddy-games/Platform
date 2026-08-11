@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-3de91f2",
-                         "title":  "docs(agent): document discord-bot.lock heartbeat + staleness reclaim fix",
-                         "timestamp":  "2026-08-11T13:23:49Z",
+                         "version":  "build-994156c",
+                         "title":  "fix(agent): reclaim stale Discord connection lock via heartbeat + staleness t...",
+                         "timestamp":  "2026-08-11T13:04:52Z",
                          "environment":  "production"
                      }
                  ]
