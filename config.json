@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-75054a7",
-                         "title":  "feat(voice): add join/leave activity log with actor-type tracking",
-                         "timestamp":  "2026-08-10T17:33:09Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2943c34",
                          "title":  "feat(editors): relocate Character Pipeline, 3D Painter, UV Editor, Meshy gene...",
                          "timestamp":  "2026-08-10T17:54:31Z",
@@ -104,6 +98,12 @@
                          "version":  "build-8d373d7",
                          "title":  "fix(buddy-desktop): respect commit-history TTL in Advance to Latest",
                          "timestamp":  "2026-08-12T13:31:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-bccc7fd",
+                         "title":  "fix(chat): exclude thread replies from the flat channel message view",
+                         "timestamp":  "2026-08-12T17:17:03Z",
                          "environment":  "production"
                      }
                  ]
