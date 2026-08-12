@@ -47,6 +47,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-178549b",
+                         "title":  "feat(chat): cursor transcript polling, load-earlier, errorCode launch message...",
+                         "timestamp":  "2026-08-10T11:24:59Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-e573b63",
                          "title":  "feat(home): restructure nav-rail (Products/Projects merge, hero-tab collapse,...",
                          "timestamp":  "2026-08-10T15:30:19Z",
@@ -98,12 +104,6 @@
                          "version":  "build-abacb1b",
                          "title":  "fix(chat): backfill Discord thread history and reconcile flattened data",
                          "timestamp":  "2026-08-11T20:01:10Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-5548dee",
-                         "title":  "feat(automation): add CI/CD Bisect stub tab to Automation dashboard tool",
-                         "timestamp":  "2026-08-12T01:45:36Z",
                          "environment":  "production"
                      }
                  ]
