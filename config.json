@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-32ad11f",
-                         "title":  "fix(home): remove duplicate team-roster row, fix Your Feed slug-label bug",
-                         "timestamp":  "2026-08-10T16:29:50Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-75054a7",
                          "title":  "feat(voice): add join/leave activity log with actor-type tracking",
                          "timestamp":  "2026-08-10T17:33:09Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a4fd04d",
                          "title":  "fix(gitsync): update ProposalFileSyncTarget for flat proposals convention",
                          "timestamp":  "2026-08-12T13:07:53Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8d373d7",
+                         "title":  "fix(buddy-desktop): respect commit-history TTL in Advance to Latest",
+                         "timestamp":  "2026-08-12T13:31:05Z",
                          "environment":  "production"
                      }
                  ]
