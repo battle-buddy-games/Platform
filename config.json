@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e573b63",
-                         "title":  "feat(home): restructure nav-rail (Products/Projects merge, hero-tab collapse,...",
-                         "timestamp":  "2026-08-10T15:30:19Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-32ad11f",
                          "title":  "fix(home): remove duplicate team-roster row, fix Your Feed slug-label bug",
                          "timestamp":  "2026-08-10T16:29:50Z",
@@ -104,6 +98,12 @@
                          "version":  "build-5548dee",
                          "title":  "feat(automation): add CI/CD Bisect stub tab to Automation dashboard tool",
                          "timestamp":  "2026-08-12T01:45:36Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a4fd04d",
+                         "title":  "fix(gitsync): update ProposalFileSyncTarget for flat proposals convention",
+                         "timestamp":  "2026-08-12T13:07:53Z",
                          "environment":  "production"
                      }
                  ]
