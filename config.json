@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-abacb1b",
-                         "title":  "fix(chat): backfill Discord thread history and reconcile flattened data",
-                         "timestamp":  "2026-08-11T20:01:10Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5548dee",
                          "title":  "feat(automation): add CI/CD Bisect stub tab to Automation dashboard tool",
                          "timestamp":  "2026-08-12T01:45:36Z",
@@ -104,6 +98,12 @@
                          "version":  "build-9a61e0e",
                          "title":  "fix(tests): update HomeControllerNewsVisibilityTests for a51739a3 ctor signature",
                          "timestamp":  "2026-08-13T03:13:18Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d4aa185",
+                         "title":  "fix(pre-deploy-backup): fix disk exhaustion, unauthenticated API fallback, an...",
+                         "timestamp":  "2026-08-13T03:59:34Z",
                          "environment":  "production"
                      }
                  ]
