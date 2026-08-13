@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-994156c",
-                         "title":  "fix(agent): reclaim stale Discord connection lock via heartbeat + staleness t...",
-                         "timestamp":  "2026-08-11T13:04:52Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-abacb1b",
                          "title":  "fix(chat): backfill Discord thread history and reconcile flattened data",
                          "timestamp":  "2026-08-11T20:01:10Z",
@@ -104,6 +98,12 @@
                          "version":  "build-84aa984",
                          "title":  "fix(local-dev): register EnvironmentLogsService for LOCAL_SERVICE so HomeCont...",
                          "timestamp":  "2026-08-13T02:27:06Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9a61e0e",
+                         "title":  "fix(tests): update HomeControllerNewsVisibilityTests for a51739a3 ctor signature",
+                         "timestamp":  "2026-08-13T03:13:18Z",
                          "environment":  "production"
                      }
                  ]
