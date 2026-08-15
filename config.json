@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-08bf5b8",
-                         "title":  "feat(user-groups): add PersonalAnalyticsAccessOverride flag + personal analyt...",
-                         "timestamp":  "2026-08-13T01:14:58Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4fd0c33",
                          "title":  "fix(chat): self-healing cache + orphan-reply reclassification for thread display",
                          "timestamp":  "2026-08-13T01:46:40Z",
@@ -104,6 +98,12 @@
                          "version":  "build-91b108b",
                          "title":  "fix(sdk): fail fast when a materialization dependency has no confirmed artifact",
                          "timestamp":  "2026-08-15T02:23:19Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0924bb9",
+                         "title":  "test(portals): update stale auth-tier assertions for PortalManage refactor",
+                         "timestamp":  "2026-08-15T23:45:16Z",
                          "environment":  "production"
                      }
                  ]
