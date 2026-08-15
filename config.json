@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0b46911",
-                         "title":  "feat(buddy-desktop): auto-update managed Claude Code plugins (auto/prompted/off)",
-                         "timestamp":  "2026-08-12T18:15:49Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-08bf5b8",
                          "title":  "feat(user-groups): add PersonalAnalyticsAccessOverride flag + personal analyt...",
                          "timestamp":  "2026-08-13T01:14:58Z",
@@ -104,6 +98,12 @@
                          "version":  "build-827371f",
                          "title":  "feat(product-axis): add git-sync status fields + status-only chip",
                          "timestamp":  "2026-08-14T22:17:32Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-91b108b",
+                         "title":  "fix(sdk): fail fast when a materialization dependency has no confirmed artifact",
+                         "timestamp":  "2026-08-15T02:23:19Z",
                          "environment":  "production"
                      }
                  ]
