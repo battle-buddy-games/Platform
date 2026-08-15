@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-91b108b",
-                         "title":  "fix(sdk): fail fast when a materialization dependency has no confirmed artifact",
-                         "timestamp":  "2026-08-15T02:23:19Z",
+                         "version":  "build-1b0bbf6",
+                         "title":  "docs(findings): correct SDK materialization root-cause per live prod DB check",
+                         "timestamp":  "2026-08-15T02:57:04Z",
                          "environment":  "production"
                      }
                  ]
