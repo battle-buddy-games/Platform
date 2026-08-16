@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-84aa984",
-                         "title":  "fix(local-dev): register EnvironmentLogsService for LOCAL_SERVICE so HomeCont...",
-                         "timestamp":  "2026-08-13T02:27:06Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9a61e0e",
                          "title":  "fix(tests): update HomeControllerNewsVisibilityTests for a51739a3 ctor signature",
                          "timestamp":  "2026-08-13T03:13:18Z",
@@ -104,6 +98,12 @@
                          "version":  "build-8ff466b",
                          "title":  "feat(buddy-desktop): add Copy Diagnostic Info for stuck SDK version-check states",
                          "timestamp":  "2026-08-16T22:17:17Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5eb058d",
+                         "title":  "feat(buddy-desktop): reactive re-resolution on stale-tunnel-consistent action...",
+                         "timestamp":  "2026-08-16T23:01:50Z",
                          "environment":  "production"
                      }
                  ]
