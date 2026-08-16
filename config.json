@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4fd0c33",
-                         "title":  "fix(chat): self-healing cache + orphan-reply reclassification for thread display",
-                         "timestamp":  "2026-08-13T01:46:40Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-84aa984",
                          "title":  "fix(local-dev): register EnvironmentLogsService for LOCAL_SERVICE so HomeCont...",
                          "timestamp":  "2026-08-13T02:27:06Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0924bb9",
                          "title":  "test(portals): update stale auth-tier assertions for PortalManage refactor",
                          "timestamp":  "2026-08-15T23:45:16Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8ff466b",
+                         "title":  "feat(buddy-desktop): add Copy Diagnostic Info for stuck SDK version-check states",
+                         "timestamp":  "2026-08-16T22:17:17Z",
                          "environment":  "production"
                      }
                  ]
