@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-5eb058d",
-                         "title":  "feat(buddy-desktop): reactive re-resolution on stale-tunnel-consistent action...",
-                         "timestamp":  "2026-08-16T23:01:50Z",
+                         "version":  "build-faf04b6",
+                         "title":  "docs(buddy-desktop): findings for tunnel reactive-resolution fix",
+                         "timestamp":  "2026-08-16T23:31:34Z",
                          "environment":  "production"
                      }
                  ]
