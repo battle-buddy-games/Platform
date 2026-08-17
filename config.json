@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9a61e0e",
-                         "title":  "fix(tests): update HomeControllerNewsVisibilityTests for a51739a3 ctor signature",
-                         "timestamp":  "2026-08-13T03:13:18Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d4aa185",
                          "title":  "fix(pre-deploy-backup): fix disk exhaustion, unauthenticated API fallback, an...",
                          "timestamp":  "2026-08-13T03:59:34Z",
@@ -104,6 +98,12 @@
                          "version":  "build-5eb058d",
                          "title":  "feat(buddy-desktop): reactive re-resolution on stale-tunnel-consistent action...",
                          "timestamp":  "2026-08-16T23:01:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-b129d30",
+                         "title":  "fix(buddy-desktop): route tray Launch menu Blender entry through SDK",
+                         "timestamp":  "2026-08-17T12:53:18Z",
                          "environment":  "production"
                      }
                  ]
