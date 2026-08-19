@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://designer-kirk-principles-teams.trycloudflare.com"
+                                  "address":  "https://properties-machines-told-sight.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
