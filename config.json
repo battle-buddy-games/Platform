@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0924bb9",
-                         "title":  "test(portals): update stale auth-tier assertions for PortalManage refactor",
-                         "timestamp":  "2026-08-15T23:45:16Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8ff466b",
                          "title":  "feat(buddy-desktop): add Copy Diagnostic Info for stuck SDK version-check states",
                          "timestamp":  "2026-08-16T22:17:17Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4f983e9",
                          "title":  "fix(navto): add Spaces entry to Go To dropdown, remove top-level nav item",
                          "timestamp":  "2026-08-20T17:20:16Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5f4617c",
+                         "title":  "fix(buddy-desktop): retry transient workspace-verb spawn UNKNOWN and surface ...",
+                         "timestamp":  "2026-08-20T17:56:22Z",
                          "environment":  "production"
                      }
                  ]
