@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-07fed93",
-                         "title":  "fix(buddy-desktop): stop version regression from workflow-rename run_number r...",
-                         "timestamp":  "2026-08-14T15:26:00Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e86cae1",
                          "title":  "fix(core-tests): fix CS1010/CS1003 syntax error in DocumentationHtmlInboundSy...",
                          "timestamp":  "2026-08-14T21:18:40Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a6edf7f",
                          "title":  "fix(tests): isolate SdkTierMaterializationCoordinator disk state from Validat...",
                          "timestamp":  "2026-08-20T07:25:43Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3eb013c",
+                         "title":  "docs(findings): correct SDK standard-tier doc -- cycle failed, deploy-cutover...",
+                         "timestamp":  "2026-08-20T08:22:31Z",
                          "environment":  "production"
                      }
                  ]
