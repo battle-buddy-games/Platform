@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8ff466b",
-                         "title":  "feat(buddy-desktop): add Copy Diagnostic Info for stuck SDK version-check states",
-                         "timestamp":  "2026-08-16T22:17:17Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5eb058d",
                          "title":  "feat(buddy-desktop): reactive re-resolution on stale-tunnel-consistent action...",
                          "timestamp":  "2026-08-16T23:01:50Z",
@@ -104,6 +98,12 @@
                          "version":  "build-5f4617c",
                          "title":  "fix(buddy-desktop): retry transient workspace-verb spawn UNKNOWN and surface ...",
                          "timestamp":  "2026-08-20T17:56:22Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e96428f",
+                         "title":  "fix(signalr): close UserHub staleness gap causing silent notification loss",
+                         "timestamp":  "2026-08-20T19:39:43Z",
                          "environment":  "production"
                      }
                  ]
