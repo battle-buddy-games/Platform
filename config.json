@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-a6edf7f",
-                         "title":  "fix(tests): isolate SdkTierMaterializationCoordinator disk state from Validat...",
-                         "timestamp":  "2026-08-20T07:25:43Z",
+                         "version":  "build-2df72e4",
+                         "title":  "feat(achievements): seed real 18-achievement catalog from design doc",
+                         "timestamp":  "2026-08-20T07:48:13Z",
                          "environment":  "production"
                      }
                  ]
