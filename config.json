@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8594007",
-                         "title":  "feat(git-sync-chip): roll out git-sync status chip to Forms, MarketingLink, P...",
-                         "timestamp":  "2026-08-14T21:52:19Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-827371f",
                          "title":  "feat(product-axis): add git-sync status fields + status-only chip",
                          "timestamp":  "2026-08-14T22:17:32Z",
@@ -104,6 +98,12 @@
                          "version":  "build-98e64da",
                          "title":  "docs(findings): confirm SDK standard-tier UPDATE 3 -- structural fix, not ano...",
                          "timestamp":  "2026-08-20T09:12:10Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-88c2cda",
+                         "title":  "docs(findings): SDK standard-tier freeze CLOSED -- live materialization confi...",
+                         "timestamp":  "2026-08-20T09:37:30Z",
                          "environment":  "production"
                      }
                  ]
