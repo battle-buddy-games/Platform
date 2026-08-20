@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e86cae1",
-                         "title":  "fix(core-tests): fix CS1010/CS1003 syntax error in DocumentationHtmlInboundSy...",
-                         "timestamp":  "2026-08-14T21:18:40Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8594007",
                          "title":  "feat(git-sync-chip): roll out git-sync status chip to Forms, MarketingLink, P...",
                          "timestamp":  "2026-08-14T21:52:19Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-34daec7",
-                         "title":  "docs(findings): confirm SDK standard-tier root cause -- LEAK-2 gate + config ...",
-                         "timestamp":  "2026-08-20T08:50:29Z",
+                         "version":  "build-3eb013c",
+                         "title":  "docs(findings): correct SDK standard-tier doc -- cycle failed, deploy-cutover...",
+                         "timestamp":  "2026-08-20T08:22:31Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-98e64da",
+                         "title":  "docs(findings): confirm SDK standard-tier UPDATE 3 -- structural fix, not ano...",
+                         "timestamp":  "2026-08-20T09:12:10Z",
                          "environment":  "production"
                      }
                  ]
