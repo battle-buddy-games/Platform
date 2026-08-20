@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5eb058d",
-                         "title":  "feat(buddy-desktop): reactive re-resolution on stale-tunnel-consistent action...",
-                         "timestamp":  "2026-08-16T23:01:50Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b129d30",
                          "title":  "fix(buddy-desktop): route tray Launch menu Blender entry through SDK",
                          "timestamp":  "2026-08-17T12:53:18Z",
@@ -104,6 +98,12 @@
                          "version":  "build-e96428f",
                          "title":  "fix(signalr): close UserHub staleness gap causing silent notification loss",
                          "timestamp":  "2026-08-20T19:39:43Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-03a1d9b",
+                         "title":  "docs: document MaximumReceiveMessageSize raise (Refs frostebite/GameClient#122)",
+                         "timestamp":  "2026-08-20T20:09:29Z",
                          "environment":  "production"
                      }
                  ]
