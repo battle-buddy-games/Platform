@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-b129d30",
-                         "title":  "fix(buddy-desktop): route tray Launch menu Blender entry through SDK",
-                         "timestamp":  "2026-08-17T12:53:18Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a6edf7f",
                          "title":  "fix(tests): isolate SdkTierMaterializationCoordinator disk state from Validat...",
                          "timestamp":  "2026-08-20T07:25:43Z",
@@ -104,6 +98,12 @@
                          "version":  "build-03a1d9b",
                          "title":  "docs: document MaximumReceiveMessageSize raise (Refs frostebite/GameClient#122)",
                          "timestamp":  "2026-08-20T20:09:29Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-19e3b00",
+                         "title":  "feat(docs): consolidate documentation portal structure",
+                         "timestamp":  "2026-08-20T20:59:37Z",
                          "environment":  "production"
                      }
                  ]
