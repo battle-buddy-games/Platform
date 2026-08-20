@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d4aa185",
-                         "title":  "fix(pre-deploy-backup): fix disk exhaustion, unauthenticated API fallback, an...",
-                         "timestamp":  "2026-08-13T03:59:34Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-07fed93",
                          "title":  "fix(buddy-desktop): stop version regression from workflow-rename run_number r...",
                          "timestamp":  "2026-08-14T15:26:00Z",
@@ -104,6 +98,12 @@
                          "version":  "build-b129d30",
                          "title":  "fix(buddy-desktop): route tray Launch menu Blender entry through SDK",
                          "timestamp":  "2026-08-17T12:53:18Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a6edf7f",
+                         "title":  "fix(tests): isolate SdkTierMaterializationCoordinator disk state from Validat...",
+                         "timestamp":  "2026-08-20T07:25:43Z",
                          "environment":  "production"
                      }
                  ]
