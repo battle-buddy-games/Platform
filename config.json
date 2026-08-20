@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-91b108b",
-                         "title":  "fix(sdk): fail fast when a materialization dependency has no confirmed artifact",
-                         "timestamp":  "2026-08-15T02:23:19Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0924bb9",
                          "title":  "test(portals): update stale auth-tier assertions for PortalManage refactor",
                          "timestamp":  "2026-08-15T23:45:16Z",
@@ -104,6 +98,12 @@
                          "version":  "build-50f1246",
                          "title":  "feat(achievements): expand catalog with 13 new gameplay+questline achievements",
                          "timestamp":  "2026-08-20T10:11:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4f983e9",
+                         "title":  "fix(navto): add Spaces entry to Go To dropdown, remove top-level nav item",
+                         "timestamp":  "2026-08-20T17:20:16Z",
                          "environment":  "production"
                      }
                  ]
