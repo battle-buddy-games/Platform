@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-3eb013c",
-                         "title":  "docs(findings): correct SDK standard-tier doc -- cycle failed, deploy-cutover...",
-                         "timestamp":  "2026-08-20T08:22:31Z",
+                         "version":  "build-34daec7",
+                         "title":  "docs(findings): confirm SDK standard-tier root cause -- LEAK-2 gate + config ...",
+                         "timestamp":  "2026-08-20T08:50:29Z",
                          "environment":  "production"
                      }
                  ]
