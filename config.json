@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4f983e9",
-                         "title":  "fix(navto): add Spaces entry to Go To dropdown, remove top-level nav item",
-                         "timestamp":  "2026-08-20T17:20:16Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5f4617c",
                          "title":  "fix(buddy-desktop): retry transient workspace-verb spawn UNKNOWN and surface ...",
                          "timestamp":  "2026-08-20T17:56:22Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f2f1612",
                          "title":  "fix(sdk-tracking-repo): correct binary negation-line suffix from text to -text",
                          "timestamp":  "2026-08-21T03:06:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c94bccd",
+                         "title":  "fix(sdk): stale-latest confirm monotonicity guard + nested .gitattributes sha...",
+                         "timestamp":  "2026-08-21T14:43:49Z",
                          "environment":  "production"
                      }
                  ]
