@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5f4617c",
-                         "title":  "fix(buddy-desktop): retry transient workspace-verb spawn UNKNOWN and surface ...",
-                         "timestamp":  "2026-08-20T17:56:22Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e96428f",
                          "title":  "fix(signalr): close UserHub staleness gap causing silent notification loss",
                          "timestamp":  "2026-08-20T19:39:43Z",
@@ -104,6 +98,12 @@
                          "version":  "build-c94bccd",
                          "title":  "fix(sdk): stale-latest confirm monotonicity guard + nested .gitattributes sha...",
                          "timestamp":  "2026-08-21T14:43:49Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c4c3257",
+                         "title":  "feat(remote-control): cross-link Product Control with Servers and GameOps",
+                         "timestamp":  "2026-08-21T16:31:35Z",
                          "environment":  "production"
                      }
                  ]
