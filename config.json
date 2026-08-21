@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e96428f",
-                         "title":  "fix(signalr): close UserHub staleness gap causing silent notification loss",
-                         "timestamp":  "2026-08-20T19:39:43Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-03a1d9b",
                          "title":  "docs: document MaximumReceiveMessageSize raise (Refs frostebite/GameClient#122)",
                          "timestamp":  "2026-08-20T20:09:29Z",
@@ -104,6 +98,12 @@
                          "version":  "build-c4c3257",
                          "title":  "feat(remote-control): cross-link Product Control with Servers and GameOps",
                          "timestamp":  "2026-08-21T16:31:35Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3c38033",
+                         "title":  "fix(ci-builds): retry ingest upsert on concurrent unique-constraint race",
+                         "timestamp":  "2026-08-21T17:05:10Z",
                          "environment":  "production"
                      }
                  ]
