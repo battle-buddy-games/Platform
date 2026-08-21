@@ -47,6 +47,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-281dc90",
+                         "title":  "docs(claude-md): correct stale Phase-1 Buddy CLI migration claims",
+                         "timestamp":  "2026-08-21T01:41:24Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-0c2cff4",
                          "title":  "fix(buddy-cli): build from live sdk-scripts source, remove frozen checked-in ...",
                          "timestamp":  "2026-08-21T02:13:44Z",
@@ -98,12 +104,6 @@
                          "version":  "build-4963647",
                          "title":  "style(home): themed slim scrollbar on franchise product lists",
                          "timestamp":  "2026-08-21T21:36:10Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-3428e08",
-                         "title":  "feat(document-tool): improve workspace layout",
-                         "timestamp":  "2026-08-21T22:07:54Z",
                          "environment":  "production"
                      }
                  ]
