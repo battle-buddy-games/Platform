@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-98e64da",
-                         "title":  "docs(findings): confirm SDK standard-tier UPDATE 3 -- structural fix, not ano...",
-                         "timestamp":  "2026-08-20T09:12:10Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-88c2cda",
                          "title":  "docs(findings): SDK standard-tier freeze CLOSED -- live materialization confi...",
                          "timestamp":  "2026-08-20T09:37:30Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0bdb487",
                          "title":  "feat(gameops): add read-only Asset Catalog sub-tab (browser spectator/client ...",
                          "timestamp":  "2026-08-21T01:12:28Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-281dc90",
+                         "title":  "docs(claude-md): correct stale Phase-1 Buddy CLI migration claims",
+                         "timestamp":  "2026-08-21T01:41:24Z",
                          "environment":  "production"
                      }
                  ]
