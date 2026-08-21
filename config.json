@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://properties-machines-told-sight.trycloudflare.com"
+                                  "address":  "https://reservoir-traveller-hrs-sisters.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
