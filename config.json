@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0bdb487",
-                         "title":  "feat(gameops): add read-only Asset Catalog sub-tab (browser spectator/client ...",
-                         "timestamp":  "2026-08-21T01:12:28Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-281dc90",
                          "title":  "docs(claude-md): correct stale Phase-1 Buddy CLI migration claims",
                          "timestamp":  "2026-08-21T01:41:24Z",
@@ -104,6 +98,12 @@
                          "version":  "build-62cb2bf",
                          "title":  "fix(buddy-desktop): show accurate state when a local sync supersedes a stale ...",
                          "timestamp":  "2026-08-21T20:50:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4963647",
+                         "title":  "style(home): themed slim scrollbar on franchise product lists",
+                         "timestamp":  "2026-08-21T21:36:10Z",
                          "environment":  "production"
                      }
                  ]
