@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a6edf7f",
-                         "title":  "fix(tests): isolate SdkTierMaterializationCoordinator disk state from Validat...",
-                         "timestamp":  "2026-08-20T07:25:43Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3eb013c",
                          "title":  "docs(findings): correct SDK standard-tier doc -- cycle failed, deploy-cutover...",
                          "timestamp":  "2026-08-20T08:22:31Z",
@@ -104,6 +98,12 @@
                          "version":  "build-19e3b00",
                          "title":  "feat(docs): consolidate documentation portal structure",
                          "timestamp":  "2026-08-20T20:59:37Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-cc0b9b2",
+                         "title":  "fix(buddy-desktop): surface content-integrity recovery/failure from workspace...",
+                         "timestamp":  "2026-08-21T00:42:33Z",
                          "environment":  "production"
                      }
                  ]
