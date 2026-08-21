@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-88c2cda",
-                         "title":  "docs(findings): SDK standard-tier freeze CLOSED -- live materialization confi...",
-                         "timestamp":  "2026-08-20T09:37:30Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-50f1246",
                          "title":  "feat(achievements): expand catalog with 13 new gameplay+questline achievements",
                          "timestamp":  "2026-08-20T10:11:20Z",
@@ -104,6 +98,12 @@
                          "version":  "build-281dc90",
                          "title":  "docs(claude-md): correct stale Phase-1 Buddy CLI migration claims",
                          "timestamp":  "2026-08-21T01:41:24Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0c2cff4",
+                         "title":  "fix(buddy-cli): build from live sdk-scripts source, remove frozen checked-in ...",
+                         "timestamp":  "2026-08-21T02:13:44Z",
                          "environment":  "production"
                      }
                  ]
