@@ -47,6 +47,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-c94bccd",
+                         "title":  "fix(sdk): stale-latest confirm monotonicity guard + nested .gitattributes sha...",
+                         "timestamp":  "2026-08-21T14:43:49Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-c4c3257",
                          "title":  "feat(remote-control): cross-link Product Control with Servers and GameOps",
                          "timestamp":  "2026-08-21T16:31:35Z",
@@ -98,12 +104,6 @@
                          "version":  "build-fb628fc",
                          "title":  "docs(reference-games): document gap-sweep findings and additions",
                          "timestamp":  "2026-08-21T23:14:53Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-5916ff4",
-                         "title":  "docs(endless-crusade): rewrite roadmap page with honest EA sequence status",
-                         "timestamp":  "2026-08-22T00:16:30Z",
                          "environment":  "production"
                      }
                  ]
