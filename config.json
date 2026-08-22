@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3c38033",
-                         "title":  "fix(ci-builds): retry ingest upsert on concurrent unique-constraint race",
-                         "timestamp":  "2026-08-21T17:05:10Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-939433c",
                          "title":  "feat(discord): add bot-vantage-point channel access diagnostic endpoint",
                          "timestamp":  "2026-08-21T18:48:37Z",
@@ -104,6 +98,12 @@
                          "version":  "build-93fc61b",
                          "title":  "docs(claude): document BattleBuddyHub reconnect-race fix (Gap 6, sdk-scripts-...",
                          "timestamp":  "2026-08-22T01:59:16Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e441703",
+                         "title":  "fix(ci-builds): remove over-restrictive GitHubRunId unique constraint",
+                         "timestamp":  "2026-08-22T03:02:14Z",
                          "environment":  "production"
                      }
                  ]
