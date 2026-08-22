@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a4f05c5",
-                         "title":  "feat(theme): give Sci-Fi/Futurism and Sci-Fi/Apocalyptic themes real fonts",
-                         "timestamp":  "2026-08-21T19:40:07Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-62cb2bf",
                          "title":  "fix(buddy-desktop): show accurate state when a local sync supersedes a stale ...",
                          "timestamp":  "2026-08-21T20:50:01Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3916424",
                          "title":  "chore(scripts): replace non-ASCII status glyphs with ASCII equivalents",
                          "timestamp":  "2026-08-22T15:25:00Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-875a9e8",
+                         "title":  "feat(assets-hub): add character pipeline publish endpoint",
+                         "timestamp":  "2026-08-22T16:01:18Z",
                          "environment":  "production"
                      }
                  ]
