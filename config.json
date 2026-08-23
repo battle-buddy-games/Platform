@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-fb628fc",
-                         "title":  "docs(reference-games): document gap-sweep findings and additions",
-                         "timestamp":  "2026-08-21T23:14:53Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5916ff4",
                          "title":  "docs(endless-crusade): rewrite roadmap page with honest EA sequence status",
                          "timestamp":  "2026-08-22T00:16:30Z",
@@ -104,6 +98,12 @@
                          "version":  "build-56da2d1",
                          "title":  "chore(pi): remove superseded piService.js/pi-tray/pi-full-support.md scaffolding",
                          "timestamp":  "2026-08-22T21:38:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-305bdac",
+                         "title":  "feat(character-pipeline): add shared vertex groups",
+                         "timestamp":  "2026-08-23T01:18:45Z",
                          "environment":  "production"
                      }
                  ]
