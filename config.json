@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-77c7af5",
-                         "title":  "feat(endless-crusade): restructure roadmap into headline EA sequence + collap...",
-                         "timestamp":  "2026-08-22T19:55:20Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-587cb3c",
                          "title":  "fix(chat): hide internal Claude Code harness/hook events from transcript UI",
                          "timestamp":  "2026-08-22T20:48:34Z",
@@ -104,6 +98,12 @@
                          "version":  "build-40e5f76",
                          "title":  "feat(character-pipeline): streamline Blender group export",
                          "timestamp":  "2026-08-24T21:51:29Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-068002b",
+                         "title":  "fix(wiki): populate the game data wiki from editor exports",
+                         "timestamp":  "2026-08-24T23:06:26Z",
                          "environment":  "production"
                      }
                  ]
