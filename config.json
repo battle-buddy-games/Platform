@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-81fe050",
-                         "title":  "feat(chat): render platform content link widgets",
-                         "timestamp":  "2026-08-24T01:05:27Z",
+                         "version":  "build-c4c1358",
+                         "title":  "style(document-tool): refine tree and writing canvas",
+                         "timestamp":  "2026-08-24T00:43:32Z",
                          "environment":  "production"
                      }
                  ]
