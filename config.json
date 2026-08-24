@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-93fc61b",
-                         "title":  "docs(claude): document BattleBuddyHub reconnect-race fix (Gap 6, sdk-scripts-...",
-                         "timestamp":  "2026-08-22T01:59:16Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e441703",
                          "title":  "fix(ci-builds): remove over-restrictive GitHubRunId unique constraint",
                          "timestamp":  "2026-08-22T03:02:14Z",
@@ -104,6 +98,12 @@
                          "version":  "build-b592dab",
                          "title":  "fix(document-tool): connect source-aware sidebar",
                          "timestamp":  "2026-08-24T00:09:10Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c4c1358",
+                         "title":  "style(document-tool): refine tree and writing canvas",
+                         "timestamp":  "2026-08-24T00:43:32Z",
                          "environment":  "production"
                      }
                  ]
