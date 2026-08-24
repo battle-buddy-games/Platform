@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-875a9e8",
-                         "title":  "feat(assets-hub): add character pipeline publish endpoint",
-                         "timestamp":  "2026-08-22T16:01:18Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5f18462",
                          "title":  "feat(character-pipeline): add real-time collaboration SignalR hub",
                          "timestamp":  "2026-08-22T16:40:29Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2babe81",
                          "title":  "fix(chat): require selecting model from list instead of free text",
                          "timestamp":  "2026-08-24T20:46:21Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-67c968d",
+                         "title":  "feat(character-pipeline): complete vertex group workflow",
+                         "timestamp":  "2026-08-24T21:11:08Z",
                          "environment":  "production"
                      }
                  ]
