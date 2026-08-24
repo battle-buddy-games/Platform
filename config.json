@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3916424",
-                         "title":  "chore(scripts): replace non-ASCII status glyphs with ASCII equivalents",
-                         "timestamp":  "2026-08-22T15:25:00Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-875a9e8",
                          "title":  "feat(assets-hub): add character pipeline publish endpoint",
                          "timestamp":  "2026-08-22T16:01:18Z",
@@ -104,6 +98,12 @@
                          "version":  "build-bcde880",
                          "title":  "feat(chat): server-side subagent activity tracking for plugin sessions",
                          "timestamp":  "2026-08-24T20:16:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2babe81",
+                         "title":  "fix(chat): require selecting model from list instead of free text",
+                         "timestamp":  "2026-08-24T20:46:21Z",
                          "environment":  "production"
                      }
                  ]
