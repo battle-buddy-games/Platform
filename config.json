@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3916424",
-                         "title":  "chore(scripts): replace non-ASCII status glyphs with ASCII equivalents",
-                         "timestamp":  "2026-08-22T15:25:00Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-875a9e8",
                          "title":  "feat(assets-hub): add character pipeline publish endpoint",
                          "timestamp":  "2026-08-22T16:01:18Z",
@@ -104,6 +98,12 @@
                          "version":  "build-99ab3ff",
                          "title":  "fix(tests): fix stale Validate failures (thread-title test auth, canvas token...",
                          "timestamp":  "2026-08-24T18:27:39Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-afffe2f",
+                         "title":  "feat(character-pipeline): add brush box and occlusion selection",
+                         "timestamp":  "2026-08-24T18:56:37Z",
                          "environment":  "production"
                      }
                  ]
