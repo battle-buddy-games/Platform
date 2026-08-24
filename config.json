@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5f18462",
-                         "title":  "feat(character-pipeline): add real-time collaboration SignalR hub",
-                         "timestamp":  "2026-08-22T16:40:29Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-77c7af5",
                          "title":  "feat(endless-crusade): restructure roadmap into headline EA sequence + collap...",
                          "timestamp":  "2026-08-22T19:55:20Z",
@@ -104,6 +98,12 @@
                          "version":  "build-67c968d",
                          "title":  "feat(character-pipeline): complete vertex group workflow",
                          "timestamp":  "2026-08-24T21:11:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-40e5f76",
+                         "title":  "feat(character-pipeline): streamline Blender group export",
+                         "timestamp":  "2026-08-24T21:51:29Z",
                          "environment":  "production"
                      }
                  ]
