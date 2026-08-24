@@ -47,6 +47,24 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-e441703",
+                         "title":  "fix(ci-builds): remove over-restrictive GitHubRunId unique constraint",
+                         "timestamp":  "2026-08-22T03:02:14Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3916424",
+                         "title":  "chore(scripts): replace non-ASCII status glyphs with ASCII equivalents",
+                         "timestamp":  "2026-08-22T15:25:00Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-875a9e8",
+                         "title":  "feat(assets-hub): add character pipeline publish endpoint",
+                         "timestamp":  "2026-08-22T16:01:18Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-5f18462",
                          "title":  "feat(character-pipeline): add real-time collaboration SignalR hub",
                          "timestamp":  "2026-08-22T16:40:29Z",
@@ -86,24 +104,6 @@
                          "version":  "build-c4c1358",
                          "title":  "style(document-tool): refine tree and writing canvas",
                          "timestamp":  "2026-08-24T00:43:32Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-99ab3ff",
-                         "title":  "fix(tests): fix stale Validate failures (thread-title test auth, canvas token...",
-                         "timestamp":  "2026-08-24T18:27:39Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-afffe2f",
-                         "title":  "feat(character-pipeline): add brush box and occlusion selection",
-                         "timestamp":  "2026-08-24T18:56:37Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-04c80ff",
-                         "title":  "fix(sdk): backfill UserRegisteredHosts from already-connected clients at startup",
-                         "timestamp":  "2026-08-24T19:38:43Z",
                          "environment":  "production"
                      }
                  ]
