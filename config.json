@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-305bdac",
-                         "title":  "feat(character-pipeline): add shared vertex groups",
-                         "timestamp":  "2026-08-23T01:18:45Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b592dab",
                          "title":  "fix(document-tool): connect source-aware sidebar",
                          "timestamp":  "2026-08-24T00:09:10Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a9a321c",
                          "title":  "feat(chat): wire restart UI for Claude plugin sessions",
                          "timestamp":  "2026-08-25T00:42:53Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3f58ed0",
+                         "title":  "Create news Platform activity update — 2026-08-25 00:53 UTC",
+                         "timestamp":  "2026-08-25T01:18:35Z",
                          "environment":  "production"
                      }
                  ]
