@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-554a83a",
-                         "title":  "fix(platform): use portal-wrapped link for release candidate owner DM",
-                         "timestamp":  "2026-08-27T12:07:19Z",
+                         "version":  "build-48cfe6c",
+                         "title":  "fix(discord): drop GitHub webhook.received from Platform Activity real-time feed",
+                         "timestamp":  "2026-08-27T12:54:45Z",
                          "environment":  "production"
                      }
                  ]
