@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-6bfcdcf",
-                         "title":  "Platform update (title omitted: 29986037 bytes, exceeded safety cap)",
-                         "timestamp":  "2026-08-25T04:43:08Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-da115f0",
                          "title":  "fix(component-library): restore missing JS source and test files for Pipeline...",
                          "timestamp":  "2026-08-27T00:33:01Z",
@@ -104,6 +98,12 @@
                          "version":  "build-dfa25ac",
                          "title":  "fix(home): graceful empty state for dev-mosaic + sparse-grid CSS",
                          "timestamp":  "2026-08-27T21:09:14Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-32173b2",
+                         "title":  "feat(buddy-hub): add UpdateSessionTitle for post-open plugin session retitling",
+                         "timestamp":  "2026-08-27T23:44:32Z",
                          "environment":  "production"
                      }
                  ]
