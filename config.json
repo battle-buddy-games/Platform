@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3f58ed0",
-                         "title":  "Platform update (title omitted: corrupted mojibake entry, cleaned 2026-08-27)",
-                         "timestamp":  "2026-08-25T01:18:35Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-96c9ba1",
                          "title":  "Platform update (title omitted: corrupted mojibake entry, cleaned 2026-08-27)",
                          "timestamp":  "2026-08-25T03:11:49Z",
@@ -104,6 +98,12 @@
                          "version":  "build-41aeee8",
                          "title":  "fix(buddy-desktop): revert auto-kill of active bridge sessions during CLI update",
                          "timestamp":  "2026-08-27T17:02:55Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a211947",
+                         "title":  "feat(home): render All Files hot-files tab as a per-file bar graph",
+                         "timestamp":  "2026-08-27T17:35:57Z",
                          "environment":  "production"
                      }
                  ]
