@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-068002b",
-                         "title":  "fix(wiki): populate the game data wiki from editor exports",
-                         "timestamp":  "2026-08-24T23:06:26Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-418939a",
                          "title":  "Platform update (title omitted: corrupted mojibake entry, cleaned 2026-08-27)",
                          "timestamp":  "2026-08-24T23:37:12Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-48cfe6c",
-                         "title":  "fix(discord): drop GitHub webhook.received from Platform Activity real-time feed",
-                         "timestamp":  "2026-08-27T12:54:45Z",
+                         "version":  "build-554a83a",
+                         "title":  "fix(platform): use portal-wrapped link for release candidate owner DM",
+                         "timestamp":  "2026-08-27T12:07:19Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-afa171a",
+                         "title":  "feat(home): redesign About page Products, Team, and Full Map rows",
+                         "timestamp":  "2026-08-27T13:48:28Z",
                          "environment":  "production"
                      }
                  ]
