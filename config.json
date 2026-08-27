@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-40e5f76",
-                         "title":  "feat(character-pipeline): streamline Blender group export",
-                         "timestamp":  "2026-08-24T21:51:29Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-068002b",
                          "title":  "fix(wiki): populate the game data wiki from editor exports",
                          "timestamp":  "2026-08-24T23:06:26Z",
@@ -104,6 +98,12 @@
                          "version":  "build-187aba4",
                          "title":  "fix(home): keep the page-terminal scroll-snap row unskippable on mobile",
                          "timestamp":  "2026-08-27T11:42:24Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-554a83a",
+                         "title":  "fix(platform): use portal-wrapped link for release candidate owner DM",
+                         "timestamp":  "2026-08-27T12:07:19Z",
                          "environment":  "production"
                      }
                  ]
