@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-bb967d9",
-                         "title":  "feat(infinity-canvas): connector anchor points + post-placement vertex editing",
-                         "timestamp":  "2026-08-27T19:10:55Z",
+                         "version":  "build-a606da4",
+                         "title":  "fix(buddy-desktop): show behind-count in Hop to Ready label",
+                         "timestamp":  "2026-08-27T18:16:34Z",
                          "environment":  "production"
                      }
                  ]
