@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-67c968d",
-                         "title":  "feat(character-pipeline): complete vertex group workflow",
-                         "timestamp":  "2026-08-24T21:11:08Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-40e5f76",
                          "title":  "feat(character-pipeline): streamline Blender group export",
                          "timestamp":  "2026-08-24T21:51:29Z",
@@ -104,6 +98,12 @@
                          "version":  "build-da115f0",
                          "title":  "fix(component-library): restore missing JS source and test files for Pipeline...",
                          "timestamp":  "2026-08-27T00:33:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-187aba4",
+                         "title":  "fix(home): keep the page-terminal scroll-snap row unskippable on mobile",
+                         "timestamp":  "2026-08-27T11:42:24Z",
                          "environment":  "production"
                      }
                  ]
