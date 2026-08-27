@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2babe81",
-                         "title":  "fix(chat): require selecting model from list instead of free text",
-                         "timestamp":  "2026-08-24T20:46:21Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-67c968d",
                          "title":  "feat(character-pipeline): complete vertex group workflow",
                          "timestamp":  "2026-08-24T21:11:08Z",
@@ -104,6 +98,12 @@
                          "version":  "build-6bfcdcf",
                          "title":  "Create news Platform activity update ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â 2026-08-25 04:18 UTC",
                          "timestamp":  "2026-08-25T04:43:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-da115f0",
+                         "title":  "fix(component-library): restore missing JS source and test files for Pipeline...",
+                         "timestamp":  "2026-08-27T00:33:01Z",
                          "environment":  "production"
                      }
                  ]
