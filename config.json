@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-32173b2",
-                         "title":  "feat(buddy-hub): add UpdateSessionTitle for post-open plugin session retitling",
-                         "timestamp":  "2026-08-27T23:44:32Z",
+                         "version":  "build-e33f512",
+                         "title":  "chore(scripts): add Fix-HomeProductCatalogData.ps1 for the audit\u0027s two data-s...",
+                         "timestamp":  "2026-08-28T00:17:36Z",
                          "environment":  "production"
                      }
                  ]
