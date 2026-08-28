@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-3f66c24",
-                         "title":  "feat(chat): provider badges, unified session state, live Browse Sessions refr...",
-                         "timestamp":  "2026-08-28T04:58:18Z",
+                         "version":  "build-6a97950",
+                         "title":  "feat(sdk): buddy-cli-build dependency-closure drift guard + tray-restructurin...",
+                         "timestamp":  "2026-08-28T04:10:16Z",
                          "environment":  "production"
                      }
                  ]
