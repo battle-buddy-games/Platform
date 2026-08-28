@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-554a83a",
-                         "title":  "fix(platform): use portal-wrapped link for release candidate owner DM",
-                         "timestamp":  "2026-08-27T12:07:19Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-afa171a",
                          "title":  "feat(home): redesign About page Products, Team, and Full Map rows",
                          "timestamp":  "2026-08-27T13:48:28Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3d4857b",
                          "title":  "chore(docs): consolidate living-docs and governance/agent-docs portals",
                          "timestamp":  "2026-08-28T02:06:40Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6a97950",
+                         "title":  "feat(sdk): buddy-cli-build dependency-closure drift guard + tray-restructurin...",
+                         "timestamp":  "2026-08-28T04:10:16Z",
                          "environment":  "production"
                      }
                  ]
