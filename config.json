@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-187aba4",
-                         "title":  "fix(home): keep the page-terminal scroll-snap row unskippable on mobile",
-                         "timestamp":  "2026-08-27T11:42:24Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-554a83a",
                          "title":  "fix(platform): use portal-wrapped link for release candidate owner DM",
                          "timestamp":  "2026-08-27T12:07:19Z",
@@ -104,6 +98,12 @@
                          "version":  "build-c0deb6a",
                          "title":  "fix(news): carry Summary/ImageUrl through NewsAutoPublishService\u0027s dispatch",
                          "timestamp":  "2026-08-28T01:04:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3d4857b",
+                         "title":  "chore(docs): consolidate living-docs and governance/agent-docs portals",
+                         "timestamp":  "2026-08-28T02:06:40Z",
                          "environment":  "production"
                      }
                  ]
