@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-41aeee8",
-                         "title":  "fix(buddy-desktop): revert auto-kill of active bridge sessions during CLI update",
-                         "timestamp":  "2026-08-27T17:02:55Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a211947",
                          "title":  "feat(home): render All Files hot-files tab as a per-file bar graph",
                          "timestamp":  "2026-08-27T17:35:57Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f387e92",
                          "title":  "docs(portals): retire team-and-agent-docs portal by owner request",
                          "timestamp":  "2026-08-28T15:26:46Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-88f2d09",
+                         "title":  "feat(docs): auto-retire folder-discovered portals when their folder is deleted",
+                         "timestamp":  "2026-08-28T15:54:28Z",
                          "environment":  "production"
                      }
                  ]
