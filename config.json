@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-da115f0",
-                         "title":  "fix(component-library): restore missing JS source and test files for Pipeline...",
-                         "timestamp":  "2026-08-27T00:33:01Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-187aba4",
                          "title":  "fix(home): keep the page-terminal scroll-snap row unskippable on mobile",
                          "timestamp":  "2026-08-27T11:42:24Z",
@@ -104,6 +98,12 @@
                          "version":  "build-32173b2",
                          "title":  "feat(buddy-hub): add UpdateSessionTitle for post-open plugin session retitling",
                          "timestamp":  "2026-08-27T23:44:32Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c0deb6a",
+                         "title":  "fix(news): carry Summary/ImageUrl through NewsAutoPublishService\u0027s dispatch",
+                         "timestamp":  "2026-08-28T01:04:20Z",
                          "environment":  "production"
                      }
                  ]
