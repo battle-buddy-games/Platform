@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4674587",
-                         "title":  "fix(buddy-desktop): auto-clear self-restarting bridge sessions blocking CLI u...",
-                         "timestamp":  "2026-08-27T14:24:23Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-41aeee8",
                          "title":  "fix(buddy-desktop): revert auto-kill of active bridge sessions during CLI update",
                          "timestamp":  "2026-08-27T17:02:55Z",
@@ -104,6 +98,12 @@
                          "version":  "build-b817cbb",
                          "title":  "fix(ci): pass sourcePathsJson via env var to avoid PowerShell string quoting ...",
                          "timestamp":  "2026-08-28T14:24:56Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f387e92",
+                         "title":  "docs(portals): retire team-and-agent-docs portal by owner request",
+                         "timestamp":  "2026-08-28T15:26:46Z",
                          "environment":  "production"
                      }
                  ]
