@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a211947",
-                         "title":  "feat(home): render All Files hot-files tab as a per-file bar graph",
-                         "timestamp":  "2026-08-27T17:35:57Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a606da4",
                          "title":  "fix(buddy-desktop): show behind-count in Hop to Ready label",
                          "timestamp":  "2026-08-27T18:16:34Z",
@@ -104,6 +98,12 @@
                          "version":  "build-88f2d09",
                          "title":  "feat(docs): auto-retire folder-discovered portals when their folder is deleted",
                          "timestamp":  "2026-08-28T15:54:28Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9c67e44",
+                         "title":  "fix(buddy-cli): combine identical-value -p: switches to dodge dotnet CLI arg-...",
+                         "timestamp":  "2026-08-28T16:58:09Z",
                          "environment":  "production"
                      }
                  ]
