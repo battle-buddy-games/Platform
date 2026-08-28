@@ -572,14 +572,37 @@ function renderUpdatesTimeline() {
   container.classList.remove('hidden');
 }
 
-// Update the "Last confirmed online" line in the offline-detection overlay from HEALTH_STATUS
-// (the independent GitHub-Actions health check), not from the last deploy timestamp.
+// Update the "Last confirmed online" line in the offline-detection overlay.
+//
+// FIXED 2026-08-28: this previously read ONLY HEALTH_STATUS.lastOnlineAt (the independent
+// GitHub-Actions health-check's own timestamp), completely bypassing the anchor-selection logic
+// showConnectionFailure() already computes (the MORE RECENT of that external signal and this
+// browser's own last successful checkTunnelHealth() poll -- see the "LAST-CONFIRMED-ONLINE ANCHOR
+// FIX" comment above persistLastLocalSuccess()). The elapsed-timer countdown was correctly using
+// the tighter/more-recent anchor via updatingStartTime, but this text line kept displaying the
+// external check's own (potentially hours-stale, see the cron-cadence note in
+// battle-buddy-games/Status's health-check.yml) timestamp regardless -- so a user could see an
+// accurate elapsed timer right next to a wildly inflated "Last confirmed online: 5h ago" label,
+// even when the platform had actually only been down for seconds. This is what produced the
+// reported "Platform Offline -- Last confirmed online: 5h ago" while the platform was already back
+// up: HEALTH_STATUS.lastOnlineAt was stale because the external check's real cadence lagged its
+// declared 15-minute cron by hours, and this function had no fallback to a fresher local signal.
+//
+// Fix: prefer updatingStartTime (the anchor showConnectionFailure() already resolved to whichever
+// signal is more recent) whenever the overlay is actively showing a failure; only fall back to the
+// raw HEALTH_STATUS.lastOnlineAt when no anchor has been established yet (e.g. this function is
+// called before any failure has ever been detected in this session).
 function updateLastConfirmedOnlineDisplay() {
   const el = document.getElementById('lastConfirmedOnline');
   if (!el) return;
 
-  if (HEALTH_STATUS && HEALTH_STATUS.lastOnlineAt) {
-    el.textContent = 'Last confirmed online: ' + formatReleaseTime(HEALTH_STATUS.lastOnlineAt);
+  const anchorMs = (connectionFailureDetected && updatingStartTime) ? updatingStartTime : null;
+  const displayMs = anchorMs || (HEALTH_STATUS && HEALTH_STATUS.lastOnlineAt
+    ? new Date(HEALTH_STATUS.lastOnlineAt).getTime()
+    : NaN);
+
+  if (!isNaN(displayMs) && displayMs) {
+    el.textContent = 'Last confirmed online: ' + formatReleaseTime(displayMs);
     el.classList.remove('hidden');
   } else {
     el.classList.add('hidden');
