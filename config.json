@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-b817cbb",
-                         "title":  "fix(ci): pass sourcePathsJson via env var to avoid PowerShell string quoting ...",
-                         "timestamp":  "2026-08-28T14:24:56Z",
+                         "version":  "build-1ee1c85",
+                         "title":  "fix(ci): fetch wire-contracts source of truth for Buddy.Cli.Tests",
+                         "timestamp":  "2026-08-28T14:50:50Z",
                          "environment":  "production"
                      }
                  ]
