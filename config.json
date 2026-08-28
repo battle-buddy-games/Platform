@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a606da4",
-                         "title":  "fix(buddy-desktop): show behind-count in Hop to Ready label",
-                         "timestamp":  "2026-08-27T18:16:34Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-dfa25ac",
                          "title":  "fix(home): graceful empty state for dev-mosaic + sparse-grid CSS",
                          "timestamp":  "2026-08-27T21:09:14Z",
@@ -104,6 +98,12 @@
                          "version":  "build-9c67e44",
                          "title":  "fix(buddy-cli): combine identical-value -p: switches to dodge dotnet CLI arg-...",
                          "timestamp":  "2026-08-28T16:58:09Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-643c5a8",
+                         "title":  "fix(deploy): scope hot-standby demoted-slot behavior to production only",
+                         "timestamp":  "2026-08-28T19:46:13Z",
                          "environment":  "production"
                      }
                  ]
