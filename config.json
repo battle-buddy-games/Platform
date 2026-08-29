@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-4d896a8",
-                         "title":  "fix(buddy-desktop): stop conflating queued runs as running in CI clipboard su...",
-                         "timestamp":  "2026-08-29T03:00:50Z",
+                         "version":  "build-2fc5bbf",
+                         "title":  "fix(buddy-desktop): recognize sdk-sync mode in isSdkManagedWorkspace gate",
+                         "timestamp":  "2026-08-29T03:34:53Z",
                          "environment":  "production"
                      }
                  ]
