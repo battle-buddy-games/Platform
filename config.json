@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-b817cbb",
-                         "title":  "fix(ci): pass sourcePathsJson via env var to avoid PowerShell string quoting ...",
-                         "timestamp":  "2026-08-28T14:24:56Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f387e92",
                          "title":  "docs(portals): retire team-and-agent-docs portal by owner request",
                          "timestamp":  "2026-08-28T15:26:46Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4ab7b80",
                          "title":  "fix(buddy-desktop): launch() no longer races an in-flight CLI swap into a sec...",
                          "timestamp":  "2026-08-29T22:59:10Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-062b890",
+                         "title":  "refactor(home): promote \u0027Workflows\u0027 to top-level platform area, Editors as su...",
+                         "timestamp":  "2026-08-29T23:58:10Z",
                          "environment":  "production"
                      }
                  ]
