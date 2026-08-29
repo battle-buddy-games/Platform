@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c0deb6a",
-                         "title":  "fix(news): carry Summary/ImageUrl through NewsAutoPublishService\u0027s dispatch",
-                         "timestamp":  "2026-08-28T01:04:20Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3d4857b",
                          "title":  "chore(docs): consolidate living-docs and governance/agent-docs portals",
                          "timestamp":  "2026-08-28T02:06:40Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-2fc5bbf",
-                         "title":  "fix(buddy-desktop): recognize sdk-sync mode in isSdkManagedWorkspace gate",
-                         "timestamp":  "2026-08-29T03:34:53Z",
+                         "version":  "build-4d896a8",
+                         "title":  "fix(buddy-desktop): stop conflating queued runs as running in CI clipboard su...",
+                         "timestamp":  "2026-08-29T03:00:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7759af3",
+                         "title":  "fix(sdk): raise MaterializeScriptTimeout 20 -\u003e 45 min, confirmed prod incident",
+                         "timestamp":  "2026-08-29T04:38:41Z",
                          "environment":  "production"
                      }
                  ]
