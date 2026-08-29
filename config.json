@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-dfa25ac",
-                         "title":  "fix(home): graceful empty state for dev-mosaic + sparse-grid CSS",
-                         "timestamp":  "2026-08-27T21:09:14Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-32173b2",
                          "title":  "feat(buddy-hub): add UpdateSessionTitle for post-open plugin session retitling",
                          "timestamp":  "2026-08-27T23:44:32Z",
@@ -104,6 +98,12 @@
                          "version":  "build-643c5a8",
                          "title":  "fix(deploy): scope hot-standby demoted-slot behavior to production only",
                          "timestamp":  "2026-08-28T19:46:13Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c3d23a8",
+                         "title":  "fix(sdk): degrade SdkTrackingRepo status/published/bundle to 503 instead of 500",
+                         "timestamp":  "2026-08-29T00:23:26Z",
                          "environment":  "production"
                      }
                  ]
