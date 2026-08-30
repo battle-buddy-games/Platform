@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-643c5a8",
-                         "title":  "fix(deploy): scope hot-standby demoted-slot behavior to production only",
-                         "timestamp":  "2026-08-28T19:46:13Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c3d23a8",
                          "title":  "fix(sdk): degrade SdkTrackingRepo status/published/bundle to 503 instead of 500",
                          "timestamp":  "2026-08-29T00:23:26Z",
@@ -104,6 +98,12 @@
                          "version":  "build-26b734d",
                          "title":  "feat(tray): show status repo health offline",
                          "timestamp":  "2026-08-30T16:11:46Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2654251",
+                         "title":  "Create news Platform activity update — 2026-08-30 16:53 UTC",
+                         "timestamp":  "2026-08-30T17:56:38Z",
                          "environment":  "production"
                      }
                  ]
