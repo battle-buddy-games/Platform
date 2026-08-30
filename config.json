@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-ac2a806",
-                         "title":  "fix(schema): harden CI notification ensure SQL",
-                         "timestamp":  "2026-08-30T21:47:17Z",
+                         "version":  "build-87a7a1c",
+                         "title":  "fix(buddy): clarify workspace sync versions",
+                         "timestamp":  "2026-08-30T20:45:01Z",
                          "environment":  "production"
                      }
                  ]
