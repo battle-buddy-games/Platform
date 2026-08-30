@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9c67e44",
-                         "title":  "fix(buddy-cli): combine identical-value -p: switches to dodge dotnet CLI arg-...",
-                         "timestamp":  "2026-08-28T16:58:09Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-643c5a8",
                          "title":  "fix(deploy): scope hot-standby demoted-slot behavior to production only",
                          "timestamp":  "2026-08-28T19:46:13Z",
@@ -104,6 +98,12 @@
                          "version":  "build-fe59cb7",
                          "title":  "fix(navbar): make CI failure warning actionable",
                          "timestamp":  "2026-08-30T02:17:12Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-26b734d",
+                         "title":  "feat(tray): show status repo health offline",
+                         "timestamp":  "2026-08-30T16:11:46Z",
                          "environment":  "production"
                      }
                  ]
