@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c3d23a8",
-                         "title":  "fix(sdk): degrade SdkTrackingRepo status/published/bundle to 503 instead of 500",
-                         "timestamp":  "2026-08-29T00:23:26Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4d896a8",
                          "title":  "fix(buddy-desktop): stop conflating queued runs as running in CI clipboard su...",
                          "timestamp":  "2026-08-29T03:00:50Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2654251",
                          "title":  "Create news Platform activity update — 2026-08-30 16:53 UTC",
                          "timestamp":  "2026-08-30T17:56:38Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-87a7a1c",
+                         "title":  "fix(buddy): clarify workspace sync versions",
+                         "timestamp":  "2026-08-30T20:45:01Z",
                          "environment":  "production"
                      }
                  ]
