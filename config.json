@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-fe59cb7",
-                         "title":  "fix(navbar): make CI failure warning actionable",
-                         "timestamp":  "2026-08-30T02:17:12Z",
+                         "version":  "build-50bd55a",
+                         "title":  "fix(chat): expose live desktop workspace fallback",
+                         "timestamp":  "2026-08-30T03:23:13Z",
                          "environment":  "production"
                      }
                  ]
