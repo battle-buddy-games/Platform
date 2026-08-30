@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-88f2d09",
-                         "title":  "feat(docs): auto-retire folder-discovered portals when their folder is deleted",
-                         "timestamp":  "2026-08-28T15:54:28Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9c67e44",
                          "title":  "fix(buddy-cli): combine identical-value -p: switches to dodge dotnet CLI arg-...",
                          "timestamp":  "2026-08-28T16:58:09Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2bcef18",
                          "title":  "fix(desktop): keep daemon healthy during locked CLI update",
                          "timestamp":  "2026-08-30T01:03:48Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-fe59cb7",
+                         "title":  "fix(navbar): make CI failure warning actionable",
+                         "timestamp":  "2026-08-30T02:17:12Z",
                          "environment":  "production"
                      }
                  ]
