@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7759af3",
-                         "title":  "fix(sdk): raise MaterializeScriptTimeout 20 -\u003e 45 min, confirmed prod incident",
-                         "timestamp":  "2026-08-29T04:38:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7a33222",
                          "title":  "feat(editors): add Basic Harness diagnostics/testing tab",
                          "timestamp":  "2026-08-29T06:31:55Z",
@@ -104,6 +98,12 @@
                          "version":  "build-29c27f9",
                          "title":  "fix(sdk): preserve hydrated bundle bytes",
                          "timestamp":  "2026-08-31T01:22:25Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d588af2",
+                         "title":  "fix(sdk): contain tracking probe failures",
+                         "timestamp":  "2026-08-31T04:24:13Z",
                          "environment":  "production"
                      }
                  ]
