@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-062b890",
-                         "title":  "refactor(home): promote \u0027Workflows\u0027 to top-level platform area, Editors as su...",
-                         "timestamp":  "2026-08-29T23:58:10Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2bcef18",
                          "title":  "fix(desktop): keep daemon healthy during locked CLI update",
                          "timestamp":  "2026-08-30T01:03:48Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f6417ca",
                          "title":  "fix(mcp): allow tunnel protocol discovery",
                          "timestamp":  "2026-08-31T19:54:13Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-05225d1",
+                         "title":  "fix(buddy-desktop): fix res-scoping ReferenceError blocking CLI launch",
+                         "timestamp":  "2026-08-31T23:04:41Z",
                          "environment":  "production"
                      }
                  ]
