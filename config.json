@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4d896a8",
-                         "title":  "fix(buddy-desktop): stop conflating queued runs as running in CI clipboard su...",
-                         "timestamp":  "2026-08-29T03:00:50Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7759af3",
                          "title":  "fix(sdk): raise MaterializeScriptTimeout 20 -\u003e 45 min, confirmed prod incident",
                          "timestamp":  "2026-08-29T04:38:41Z",
@@ -104,6 +98,12 @@
                          "version":  "build-87a7a1c",
                          "title":  "fix(buddy): clarify workspace sync versions",
                          "timestamp":  "2026-08-30T20:45:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-29c27f9",
+                         "title":  "fix(sdk): preserve hydrated bundle bytes",
+                         "timestamp":  "2026-08-31T01:22:25Z",
                          "environment":  "production"
                      }
                  ]
