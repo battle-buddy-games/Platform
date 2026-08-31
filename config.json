@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4ab7b80",
-                         "title":  "fix(buddy-desktop): launch() no longer races an in-flight CLI swap into a sec...",
-                         "timestamp":  "2026-08-29T22:59:10Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-062b890",
                          "title":  "refactor(home): promote \u0027Workflows\u0027 to top-level platform area, Editors as su...",
                          "timestamp":  "2026-08-29T23:58:10Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f007935",
                          "title":  "fix(docs): refresh repo-driven portals on pushes",
                          "timestamp":  "2026-08-31T06:11:03Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f6417ca",
+                         "title":  "fix(mcp): allow tunnel protocol discovery",
+                         "timestamp":  "2026-08-31T19:54:13Z",
                          "environment":  "production"
                      }
                  ]
