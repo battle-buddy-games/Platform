@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-29c27f9",
-                         "title":  "fix(sdk): preserve hydrated bundle bytes",
-                         "timestamp":  "2026-08-31T01:22:25Z",
+                         "version":  "build-a185f93",
+                         "title":  "fix(sdk): heal stale pointer bundles",
+                         "timestamp":  "2026-08-31T03:00:29Z",
                          "environment":  "production"
                      }
                  ]
