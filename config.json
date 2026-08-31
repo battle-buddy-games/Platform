@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7a33222",
-                         "title":  "feat(editors): add Basic Harness diagnostics/testing tab",
-                         "timestamp":  "2026-08-29T06:31:55Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4ab7b80",
                          "title":  "fix(buddy-desktop): launch() no longer races an in-flight CLI swap into a sec...",
                          "timestamp":  "2026-08-29T22:59:10Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d588af2",
                          "title":  "fix(sdk): contain tracking probe failures",
                          "timestamp":  "2026-08-31T04:24:13Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f007935",
+                         "title":  "fix(docs): refresh repo-driven portals on pushes",
+                         "timestamp":  "2026-08-31T06:11:03Z",
                          "environment":  "production"
                      }
                  ]
