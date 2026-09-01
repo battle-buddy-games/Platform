@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-2a1083d",
-                         "title":  "fix(sdk-materialize): stop stripping .git from the LFS hydration GitContextPath",
-                         "timestamp":  "2026-09-01T03:44:14Z",
+                         "version":  "build-e8bdf66",
+                         "title":  "fix(presence): unify presence rows by hostname across usernames, and fix a du...",
+                         "timestamp":  "2026-09-01T04:18:23Z",
                          "environment":  "production"
                      }
                  ]
