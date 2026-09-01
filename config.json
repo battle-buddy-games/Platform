@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2bcef18",
-                         "title":  "fix(desktop): keep daemon healthy during locked CLI update",
-                         "timestamp":  "2026-08-30T01:03:48Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-fe59cb7",
                          "title":  "fix(navbar): make CI failure warning actionable",
                          "timestamp":  "2026-08-30T02:17:12Z",
@@ -104,6 +98,12 @@
                          "version":  "build-05225d1",
                          "title":  "fix(buddy-desktop): fix res-scoping ReferenceError blocking CLI launch",
                          "timestamp":  "2026-08-31T23:04:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7a0a978",
+                         "title":  "fix(platform): serialize ActivityLogService fallback DbContext writes",
+                         "timestamp":  "2026-09-01T00:13:37Z",
                          "environment":  "production"
                      }
                  ]
