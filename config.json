@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2654251",
-                         "title":  "Create news Platform activity update — 2026-08-30 16:53 UTC",
-                         "timestamp":  "2026-08-30T17:56:38Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-87a7a1c",
                          "title":  "fix(buddy): clarify workspace sync versions",
                          "timestamp":  "2026-08-30T20:45:01Z",
@@ -104,6 +98,12 @@
                          "version":  "build-faba306",
                          "title":  "fix(buddy-desktop): distinguish sync failure from rollback failure in tray di...",
                          "timestamp":  "2026-09-02T00:27:47Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-613b796",
+                         "title":  "fix(git): resolve stale-service-PATH failure for git shell-outs; add Git\\cmd ...",
+                         "timestamp":  "2026-09-02T17:38:16Z",
                          "environment":  "production"
                      }
                  ]
