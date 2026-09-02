@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-26b734d",
-                         "title":  "feat(tray): show status repo health offline",
-                         "timestamp":  "2026-08-30T16:11:46Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2654251",
                          "title":  "Create news Platform activity update — 2026-08-30 16:53 UTC",
                          "timestamp":  "2026-08-30T17:56:38Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2a1083d",
                          "title":  "fix(sdk-materialize): stop stripping .git from the LFS hydration GitContextPath",
                          "timestamp":  "2026-09-01T03:44:14Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-faba306",
+                         "title":  "fix(buddy-desktop): distinguish sync failure from rollback failure in tray di...",
+                         "timestamp":  "2026-09-02T00:27:47Z",
                          "environment":  "production"
                      }
                  ]
