@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-87a7a1c",
-                         "title":  "fix(buddy): clarify workspace sync versions",
-                         "timestamp":  "2026-08-30T20:45:01Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-29c27f9",
                          "title":  "fix(sdk): preserve hydrated bundle bytes",
                          "timestamp":  "2026-08-31T01:22:25Z",
@@ -104,6 +98,12 @@
                          "version":  "build-613b796",
                          "title":  "fix(git): resolve stale-service-PATH failure for git shell-outs; add Git\\cmd ...",
                          "timestamp":  "2026-09-02T17:38:16Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ab4d205",
+                         "title":  "fix(buddy-desktop): external-lock CLI-update retry timer never fired for the ...",
+                         "timestamp":  "2026-09-02T21:39:31Z",
                          "environment":  "production"
                      }
                  ]
