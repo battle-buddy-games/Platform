@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-29c27f9",
-                         "title":  "fix(sdk): preserve hydrated bundle bytes",
-                         "timestamp":  "2026-08-31T01:22:25Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d588af2",
                          "title":  "fix(sdk): contain tracking probe failures",
                          "timestamp":  "2026-08-31T04:24:13Z",
@@ -104,6 +98,12 @@
                          "version":  "build-ab4d205",
                          "title":  "fix(buddy-desktop): external-lock CLI-update retry timer never fired for the ...",
                          "timestamp":  "2026-09-02T21:39:31Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ff7b7de",
+                         "title":  "fix(sdk-materialization): resolve powershell.exe defensively (Win32Exception ...",
+                         "timestamp":  "2026-09-03T04:55:46Z",
                          "environment":  "production"
                      }
                  ]
