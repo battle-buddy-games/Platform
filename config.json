@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d588af2",
-                         "title":  "fix(sdk): contain tracking probe failures",
-                         "timestamp":  "2026-08-31T04:24:13Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f007935",
                          "title":  "fix(docs): refresh repo-driven portals on pushes",
                          "timestamp":  "2026-08-31T06:11:03Z",
@@ -104,6 +98,12 @@
                          "version":  "build-ff7b7de",
                          "title":  "fix(sdk-materialization): resolve powershell.exe defensively (Win32Exception ...",
                          "timestamp":  "2026-09-03T04:55:46Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7eff179",
+                         "title":  "fix(sdk-materialization): force git core.longpaths=true on every clone/checko...",
+                         "timestamp":  "2026-09-03T05:14:36Z",
                          "environment":  "production"
                      }
                  ]
