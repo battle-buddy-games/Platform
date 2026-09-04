@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f6417ca",
-                         "title":  "fix(mcp): allow tunnel protocol discovery",
-                         "timestamp":  "2026-08-31T19:54:13Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-05225d1",
                          "title":  "fix(buddy-desktop): fix res-scoping ReferenceError blocking CLI launch",
                          "timestamp":  "2026-08-31T23:04:41Z",
@@ -104,6 +98,12 @@
                          "version":  "build-931e38b",
                          "title":  "feat(chat-tool): staged progress + stall hint for harness launch view",
                          "timestamp":  "2026-09-04T05:05:22Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c9ccd09",
+                         "title":  "fix(deploy): emit a real expanded service PATH instead of a literal unexpande...",
+                         "timestamp":  "2026-09-04T05:40:10Z",
                          "environment":  "production"
                      }
                  ]
