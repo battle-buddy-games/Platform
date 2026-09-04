@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ff7b7de",
-                         "title":  "fix(sdk-materialization): resolve powershell.exe defensively (Win32Exception ...",
-                         "timestamp":  "2026-09-03T04:55:46Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7eff179",
                          "title":  "fix(sdk-materialization): force git core.longpaths=true on every clone/checko...",
                          "timestamp":  "2026-09-03T05:14:36Z",
@@ -104,6 +98,12 @@
                          "version":  "build-ef3286d",
                          "title":  "@ fix(deploy): make the service-environment guard fatal before the service is...",
                          "timestamp":  "2026-09-04T11:17:53Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8a0aa66",
+                         "title":  "Create news Platform activity update — 2026-09-04 19:29 UTC",
+                         "timestamp":  "2026-09-04T20:02:13Z",
                          "environment":  "production"
                      }
                  ]
