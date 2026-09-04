@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ab4d205",
-                         "title":  "fix(buddy-desktop): external-lock CLI-update retry timer never fired for the ...",
-                         "timestamp":  "2026-09-02T21:39:31Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ff7b7de",
                          "title":  "fix(sdk-materialization): resolve powershell.exe defensively (Win32Exception ...",
                          "timestamp":  "2026-09-03T04:55:46Z",
@@ -104,6 +98,12 @@
                          "version":  "build-8119b75",
                          "title":  "fix(discord-agent): land missing type definitions to restore the Cloud build",
                          "timestamp":  "2026-09-04T10:14:52Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ef3286d",
+                         "title":  "@ fix(deploy): make the service-environment guard fatal before the service is...",
+                         "timestamp":  "2026-09-04T11:17:53Z",
                          "environment":  "production"
                      }
                  ]
