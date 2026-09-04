@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-05225d1",
-                         "title":  "fix(buddy-desktop): fix res-scoping ReferenceError blocking CLI launch",
-                         "timestamp":  "2026-08-31T23:04:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7a0a978",
                          "title":  "fix(platform): serialize ActivityLogService fallback DbContext writes",
                          "timestamp":  "2026-09-01T00:13:37Z",
@@ -104,6 +98,12 @@
                          "version":  "build-c9ccd09",
                          "title":  "fix(deploy): emit a real expanded service PATH instead of a literal unexpande...",
                          "timestamp":  "2026-09-04T05:40:10Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f55d33f",
+                         "title":  "fix(chat): allow any authenticated user to launch desktop harness sessions",
+                         "timestamp":  "2026-09-04T06:15:08Z",
                          "environment":  "production"
                      }
                  ]
