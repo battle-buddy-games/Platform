@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2a1083d",
-                         "title":  "fix(sdk-materialize): stop stripping .git from the LFS hydration GitContextPath",
-                         "timestamp":  "2026-09-01T03:44:14Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-faba306",
                          "title":  "fix(buddy-desktop): distinguish sync failure from rollback failure in tray di...",
                          "timestamp":  "2026-09-02T00:27:47Z",
@@ -104,6 +98,12 @@
                          "version":  "build-26ba773",
                          "title":  "fix(deploy): verify the service environment after writing it, fatal on failure",
                          "timestamp":  "2026-09-04T06:45:19Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-dacc392",
+                         "title":  "fix(tests): repair asset-review-workflow authorization test regressions",
+                         "timestamp":  "2026-09-04T08:34:46Z",
                          "environment":  "production"
                      }
                  ]
