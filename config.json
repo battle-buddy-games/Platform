@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f007935",
-                         "title":  "fix(docs): refresh repo-driven portals on pushes",
-                         "timestamp":  "2026-08-31T06:11:03Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f6417ca",
                          "title":  "fix(mcp): allow tunnel protocol discovery",
                          "timestamp":  "2026-08-31T19:54:13Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7eff179",
                          "title":  "fix(sdk-materialization): force git core.longpaths=true on every clone/checko...",
                          "timestamp":  "2026-09-03T05:14:36Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-931e38b",
+                         "title":  "feat(chat-tool): staged progress + stall hint for harness launch view",
+                         "timestamp":  "2026-09-04T05:05:22Z",
                          "environment":  "production"
                      }
                  ]
