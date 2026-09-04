@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7a0a978",
-                         "title":  "fix(platform): serialize ActivityLogService fallback DbContext writes",
-                         "timestamp":  "2026-09-01T00:13:37Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2a1083d",
                          "title":  "fix(sdk-materialize): stop stripping .git from the LFS hydration GitContextPath",
                          "timestamp":  "2026-09-01T03:44:14Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f55d33f",
                          "title":  "fix(chat): allow any authenticated user to launch desktop harness sessions",
                          "timestamp":  "2026-09-04T06:15:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-26ba773",
+                         "title":  "fix(deploy): verify the service environment after writing it, fatal on failure",
+                         "timestamp":  "2026-09-04T06:45:19Z",
                          "environment":  "production"
                      }
                  ]
