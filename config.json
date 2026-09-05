@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-931e38b",
-                         "title":  "feat(chat-tool): staged progress + stall hint for harness launch view",
-                         "timestamp":  "2026-09-04T05:05:22Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c9ccd09",
                          "title":  "fix(deploy): emit a real expanded service PATH instead of a literal unexpande...",
                          "timestamp":  "2026-09-04T05:40:10Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d7be69f",
                          "title":  "feat(pipeline): stamp SDK composer bundle provenance and expose it on /version",
                          "timestamp":  "2026-09-05T04:12:34Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-230dcea",
+                         "title":  "fix(sdk-materialize): abort in-flight materialization when the slot is demote...",
+                         "timestamp":  "2026-09-05T05:13:59Z",
                          "environment":  "production"
                      }
                  ]
