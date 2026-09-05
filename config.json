@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-26ba773",
-                         "title":  "fix(deploy): verify the service environment after writing it, fatal on failure",
-                         "timestamp":  "2026-09-04T06:45:19Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-dacc392",
                          "title":  "fix(tests): repair asset-review-workflow authorization test regressions",
                          "timestamp":  "2026-09-04T08:34:46Z",
@@ -104,6 +98,12 @@
                          "version":  "build-69e7260",
                          "title":  "Create news Platform activity update — 2026-09-05 06:43 UTC",
                          "timestamp":  "2026-09-05T07:07:44Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9aa88e6",
+                         "title":  "feat(ci-screenshots): add per-run atomic sequence numbers to screenshots and ...",
+                         "timestamp":  "2026-09-05T08:01:15Z",
                          "environment":  "production"
                      }
                  ]
