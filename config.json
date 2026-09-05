@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7eff179",
-                         "title":  "fix(sdk-materialization): force git core.longpaths=true on every clone/checko...",
-                         "timestamp":  "2026-09-03T05:14:36Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-931e38b",
                          "title":  "feat(chat-tool): staged progress + stall hint for harness launch view",
                          "timestamp":  "2026-09-04T05:05:22Z",
@@ -104,6 +98,12 @@
                          "version":  "build-8a0aa66",
                          "title":  "Create news Platform activity update — 2026-09-04 19:29 UTC",
                          "timestamp":  "2026-09-04T20:02:13Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d7be69f",
+                         "title":  "feat(pipeline): stamp SDK composer bundle provenance and expose it on /version",
+                         "timestamp":  "2026-09-05T04:12:34Z",
                          "environment":  "production"
                      }
                  ]
