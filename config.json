@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d6fbae9",
-                         "title":  "fix(news): stop restart-driven over-posting and the unbounded GitEvents backlog",
-                         "timestamp":  "2026-09-04T09:19:19Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8119b75",
                          "title":  "fix(discord-agent): land missing type definitions to restore the Cloud build",
                          "timestamp":  "2026-09-04T10:14:52Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4957726",
                          "title":  "Release build-9aa88e6: feat(ci-screenshots): add per-run atomic sequence numb...",
                          "timestamp":  "2026-09-05T08:43:09Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2dfc34e",
+                         "title":  "Create news Platform activity update — 2026-09-05 08:45 UTC",
+                         "timestamp":  "2026-09-05T09:16:06Z",
                          "environment":  "production"
                      }
                  ]
