@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c9ccd09",
-                         "title":  "fix(deploy): emit a real expanded service PATH instead of a literal unexpande...",
-                         "timestamp":  "2026-09-04T05:40:10Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f55d33f",
                          "title":  "fix(chat): allow any authenticated user to launch desktop harness sessions",
                          "timestamp":  "2026-09-04T06:15:08Z",
@@ -104,6 +98,12 @@
                          "version":  "build-230dcea",
                          "title":  "fix(sdk-materialize): abort in-flight materialization when the slot is demote...",
                          "timestamp":  "2026-09-05T05:13:59Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a0590ec",
+                         "title":  "feat(dashboard): add UI/metrics for test-stability automation system",
+                         "timestamp":  "2026-09-05T06:29:53Z",
                          "environment":  "production"
                      }
                  ]
