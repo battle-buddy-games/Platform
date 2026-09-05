@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-dacc392",
-                         "title":  "fix(tests): repair asset-review-workflow authorization test regressions",
-                         "timestamp":  "2026-09-04T08:34:46Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d6fbae9",
                          "title":  "fix(news): stop restart-driven over-posting and the unbounded GitEvents backlog",
                          "timestamp":  "2026-09-04T09:19:19Z",
@@ -104,6 +98,12 @@
                          "version":  "build-9aa88e6",
                          "title":  "feat(ci-screenshots): add per-run atomic sequence numbers to screenshots and ...",
                          "timestamp":  "2026-09-05T08:01:15Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4957726",
+                         "title":  "Release build-9aa88e6: feat(ci-screenshots): add per-run atomic sequence numb...",
+                         "timestamp":  "2026-09-05T08:43:09Z",
                          "environment":  "production"
                      }
                  ]
