@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8119b75",
-                         "title":  "fix(discord-agent): land missing type definitions to restore the Cloud build",
-                         "timestamp":  "2026-09-04T10:14:52Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ef3286d",
                          "title":  "@ fix(deploy): make the service-environment guard fatal before the service is...",
                          "timestamp":  "2026-09-04T11:17:53Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2dfc34e",
                          "title":  "Create news Platform activity update — 2026-09-05 08:45 UTC",
                          "timestamp":  "2026-09-05T09:16:06Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0a04d82",
+                         "title":  "Create news Platform activity update — 2026-09-05 10:47 UTC",
+                         "timestamp":  "2026-09-05T11:43:24Z",
                          "environment":  "production"
                      }
                  ]
