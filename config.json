@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f55d33f",
-                         "title":  "fix(chat): allow any authenticated user to launch desktop harness sessions",
-                         "timestamp":  "2026-09-04T06:15:08Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-26ba773",
                          "title":  "fix(deploy): verify the service environment after writing it, fatal on failure",
                          "timestamp":  "2026-09-04T06:45:19Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a0590ec",
                          "title":  "feat(dashboard): add UI/metrics for test-stability automation system",
                          "timestamp":  "2026-09-05T06:29:53Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-69e7260",
+                         "title":  "Create news Platform activity update — 2026-09-05 06:43 UTC",
+                         "timestamp":  "2026-09-05T07:07:44Z",
                          "environment":  "production"
                      }
                  ]
