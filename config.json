@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-230dcea",
-                         "title":  "fix(sdk-materialize): abort in-flight materialization when the slot is demote...",
-                         "timestamp":  "2026-09-05T05:13:59Z",
+                         "version":  "build-edb6616",
+                         "title":  "feat(discord-agent): event-driven sdk-activity feed; land agent-side module s...",
+                         "timestamp":  "2026-09-05T06:00:55Z",
                          "environment":  "production"
                      }
                  ]
