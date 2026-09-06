@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-69e7260",
-                         "title":  "Create news Platform activity update — 2026-09-05 06:43 UTC",
-                         "timestamp":  "2026-09-05T07:07:44Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9aa88e6",
                          "title":  "feat(ci-screenshots): add per-run atomic sequence numbers to screenshots and ...",
                          "timestamp":  "2026-09-05T08:01:15Z",
@@ -104,6 +98,12 @@
                          "version":  "build-00b827e",
                          "title":  "fix(sdk-artifacts): scope confirm monotonicity guard to a single CI producer",
                          "timestamp":  "2026-09-06T14:31:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-b0a2294",
+                         "title":  "fix(ci): resolve rclone test-remote config mismatch and installation-token 40...",
+                         "timestamp":  "2026-09-06T19:40:01Z",
                          "environment":  "production"
                      }
                  ]
