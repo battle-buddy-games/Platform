@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a0590ec",
-                         "title":  "feat(dashboard): add UI/metrics for test-stability automation system",
-                         "timestamp":  "2026-09-05T06:29:53Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-69e7260",
                          "title":  "Create news Platform activity update — 2026-09-05 06:43 UTC",
                          "timestamp":  "2026-09-05T07:07:44Z",
@@ -104,6 +98,12 @@
                          "version":  "build-b540dba",
                          "title":  "fix(plugin-sessions): add missing [Authorize] so [AdminOnly] can actually see...",
                          "timestamp":  "2026-09-06T10:44:25Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-00b827e",
+                         "title":  "fix(sdk-artifacts): scope confirm monotonicity guard to a single CI producer",
+                         "timestamp":  "2026-09-06T14:31:20Z",
                          "environment":  "production"
                      }
                  ]
