@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ef3286d",
-                         "title":  "@ fix(deploy): make the service-environment guard fatal before the service is...",
-                         "timestamp":  "2026-09-04T11:17:53Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8a0aa66",
                          "title":  "Create news Platform activity update — 2026-09-04 19:29 UTC",
                          "timestamp":  "2026-09-04T20:02:13Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0a04d82",
                          "title":  "Create news Platform activity update — 2026-09-05 10:47 UTC",
                          "timestamp":  "2026-09-05T11:43:24Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4328b9b",
+                         "title":  "Create news Platform activity update — 2026-09-06 00:11 UTC",
+                         "timestamp":  "2026-09-06T00:48:34Z",
                          "environment":  "production"
                      }
                  ]
