@@ -47,6 +47,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-8a0aa66",
+                         "title":  "Create news Platform activity update — 2026-09-04 19:29 UTC",
+                         "timestamp":  "2026-09-04T20:02:13Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-d7be69f",
                          "title":  "feat(pipeline): stamp SDK composer bundle provenance and expose it on /version",
                          "timestamp":  "2026-09-05T04:12:34Z",
@@ -98,12 +104,6 @@
                          "version":  "build-4328b9b",
                          "title":  "Create news Platform activity update — 2026-09-06 00:11 UTC",
                          "timestamp":  "2026-09-06T00:48:34Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-aa8b7f2",
-                         "title":  "fix(local-router): forward the real external scheme, not the local cloudflare...",
-                         "timestamp":  "2026-09-06T06:35:30Z",
                          "environment":  "production"
                      }
                  ]
