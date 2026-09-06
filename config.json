@@ -47,6 +47,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-4957726",
+                         "title":  "Release build-9aa88e6: feat(ci-screenshots): add per-run atomic sequence numb...",
+                         "timestamp":  "2026-09-05T08:43:09Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-2dfc34e",
                          "title":  "Create news Platform activity update — 2026-09-05 08:45 UTC",
                          "timestamp":  "2026-09-05T09:16:06Z",
@@ -98,12 +104,6 @@
                          "version":  "build-fdd6ed2",
                          "title":  "fix(ci): pass --config to rclone cat/rcat in Download/UploadFile actions",
                          "timestamp":  "2026-09-06T21:00:19Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-1698647",
-                         "title":  "feat(buddy-desktop): add SDK Workspaces window for syncing and managing SDK w...",
-                         "timestamp":  "2026-09-06T21:40:09Z",
                          "environment":  "production"
                      }
                  ]
