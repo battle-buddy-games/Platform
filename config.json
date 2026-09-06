@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d7be69f",
-                         "title":  "feat(pipeline): stamp SDK composer bundle provenance and expose it on /version",
-                         "timestamp":  "2026-09-05T04:12:34Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-230dcea",
                          "title":  "fix(sdk-materialize): abort in-flight materialization when the slot is demote...",
                          "timestamp":  "2026-09-05T05:13:59Z",
@@ -104,6 +98,12 @@
                          "version":  "build-aa8b7f2",
                          "title":  "fix(local-router): forward the real external scheme, not the local cloudflare...",
                          "timestamp":  "2026-09-06T06:35:30Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-98ca272",
+                         "title":  "fix(ci-doctrine): restore 0xc0000005 error-code mapping for test-runtime-crash",
+                         "timestamp":  "2026-09-06T09:36:56Z",
                          "environment":  "production"
                      }
                  ]
