@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2dfc34e",
-                         "title":  "Create news Platform activity update — 2026-09-05 08:45 UTC",
-                         "timestamp":  "2026-09-05T09:16:06Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0a04d82",
                          "title":  "Create news Platform activity update — 2026-09-05 10:47 UTC",
                          "timestamp":  "2026-09-05T11:43:24Z",
@@ -104,6 +98,12 @@
                          "version":  "build-1698647",
                          "title":  "feat(buddy-desktop): add SDK Workspaces window for syncing and managing SDK w...",
                          "timestamp":  "2026-09-06T21:40:09Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ed96293",
+                         "title":  "fix(dashboard): make tool/view discovery immune to test-host assembly load order",
+                         "timestamp":  "2026-09-06T23:00:27Z",
                          "environment":  "production"
                      }
                  ]
