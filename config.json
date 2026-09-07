@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0a04d82",
-                         "title":  "Create news Platform activity update — 2026-09-05 10:47 UTC",
-                         "timestamp":  "2026-09-05T11:43:24Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4328b9b",
                          "title":  "Create news Platform activity update — 2026-09-06 00:11 UTC",
                          "timestamp":  "2026-09-06T00:48:34Z",
@@ -104,6 +98,12 @@
                          "version":  "build-ed96293",
                          "title":  "fix(dashboard): make tool/view discovery immune to test-host assembly load order",
                          "timestamp":  "2026-09-06T23:00:27Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3c6cd9c",
+                         "title":  "fix(buddy-desktop): resolve workspace actions by path, not by ambiguous profi...",
+                         "timestamp":  "2026-09-07T11:24:08Z",
                          "environment":  "production"
                      }
                  ]
