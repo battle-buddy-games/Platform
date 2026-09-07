@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-00b827e",
-                         "title":  "fix(sdk-artifacts): scope confirm monotonicity guard to a single CI producer",
-                         "timestamp":  "2026-09-06T14:31:20Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b0a2294",
                          "title":  "fix(ci): resolve rclone test-remote config mismatch and installation-token 40...",
                          "timestamp":  "2026-09-06T19:40:01Z",
@@ -104,6 +98,12 @@
                          "version":  "build-96dc478",
                          "title":  "fix(security): gate DiscordApiController behind Authorize + AdminOnly",
                          "timestamp":  "2026-09-07T19:00:21Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7926fef",
+                         "title":  "feat(activity-feeds): add product-sites and metadata activity feeds",
+                         "timestamp":  "2026-09-07T19:40:42Z",
                          "environment":  "production"
                      }
                  ]
