@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-b50a242",
-                         "title":  "feat(static-sites): Hugo templates for the merged troops wiki",
-                         "timestamp":  "2026-09-07T16:37:50Z",
+                         "version":  "build-541098a",
+                         "title":  "feat(static-sites): merge the runtime game-data wiki into the static site build",
+                         "timestamp":  "2026-09-07T15:51:29Z",
                          "environment":  "production"
                      }
                  ]
