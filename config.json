@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-fdd6ed2",
-                         "title":  "fix(ci): pass --config to rclone cat/rcat in Download/UploadFile actions",
-                         "timestamp":  "2026-09-06T21:00:19Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1698647",
                          "title":  "feat(buddy-desktop): add SDK Workspaces window for syncing and managing SDK w...",
                          "timestamp":  "2026-09-06T21:40:09Z",
@@ -104,6 +98,12 @@
                          "version":  "build-061f955",
                          "title":  "feat(activity): add deterministic development heartbeats",
                          "timestamp":  "2026-09-07T20:46:43Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-dab1d44",
+                         "title":  "fix(activity): harden heartbeat recovery and branch scope",
+                         "timestamp":  "2026-09-07T21:23:11Z",
                          "environment":  "production"
                      }
                  ]
