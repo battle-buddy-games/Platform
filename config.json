@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4328b9b",
-                         "title":  "Create news Platform activity update — 2026-09-06 00:11 UTC",
-                         "timestamp":  "2026-09-06T00:48:34Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-aa8b7f2",
                          "title":  "fix(local-router): forward the real external scheme, not the local cloudflare...",
                          "timestamp":  "2026-09-06T06:35:30Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3c6cd9c",
                          "title":  "fix(buddy-desktop): resolve workspace actions by path, not by ambiguous profi...",
                          "timestamp":  "2026-09-07T11:24:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-beb7595",
+                         "title":  "fix(project-metadata-export): fix out-of-order re-ingest clobbering IsLatest ...",
+                         "timestamp":  "2026-09-07T14:14:47Z",
                          "environment":  "production"
                      }
                  ]
