@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-98ca272",
-                         "title":  "fix(ci-doctrine): restore 0xc0000005 error-code mapping for test-runtime-crash",
-                         "timestamp":  "2026-09-06T09:36:56Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b540dba",
                          "title":  "fix(plugin-sessions): add missing [Authorize] so [AdminOnly] can actually see...",
                          "timestamp":  "2026-09-06T10:44:25Z",
@@ -104,6 +98,12 @@
                          "version":  "build-65550cd",
                          "title":  "Release build-beb7595: fix(project-metadata-export): fix out-of-order re-inge...",
                          "timestamp":  "2026-09-07T14:58:46Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-541098a",
+                         "title":  "feat(static-sites): merge the runtime game-data wiki into the static site build",
+                         "timestamp":  "2026-09-07T15:51:29Z",
                          "environment":  "production"
                      }
                  ]
