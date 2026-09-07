@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-b540dba",
-                         "title":  "fix(plugin-sessions): add missing [Authorize] so [AdminOnly] can actually see...",
-                         "timestamp":  "2026-09-06T10:44:25Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-00b827e",
                          "title":  "fix(sdk-artifacts): scope confirm monotonicity guard to a single CI producer",
                          "timestamp":  "2026-09-06T14:31:20Z",
@@ -104,6 +98,12 @@
                          "version":  "build-541098a",
                          "title":  "feat(static-sites): merge the runtime game-data wiki into the static site build",
                          "timestamp":  "2026-09-07T15:51:29Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-96dc478",
+                         "title":  "fix(security): gate DiscordApiController behind Authorize + AdminOnly",
+                         "timestamp":  "2026-09-07T19:00:21Z",
                          "environment":  "production"
                      }
                  ]
