@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ed96293",
-                         "title":  "fix(dashboard): make tool/view discovery immune to test-host assembly load order",
-                         "timestamp":  "2026-09-06T23:00:27Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3c6cd9c",
                          "title":  "fix(buddy-desktop): resolve workspace actions by path, not by ambiguous profi...",
                          "timestamp":  "2026-09-07T11:24:08Z",
@@ -104,6 +98,12 @@
                          "version":  "build-aafba1d",
                          "title":  "fix(feeds): consolidate metadata ingest channel; attribute harness failures",
                          "timestamp":  "2026-09-07T23:39:23Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-84e1fef",
+                         "title":  "fix(portals): rename nav-facing \"Spaces\" label to \"Portals\"",
+                         "timestamp":  "2026-09-08T13:07:58Z",
                          "environment":  "production"
                      }
                  ]
