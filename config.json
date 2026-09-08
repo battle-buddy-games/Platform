@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3c6cd9c",
-                         "title":  "fix(buddy-desktop): resolve workspace actions by path, not by ambiguous profi...",
-                         "timestamp":  "2026-09-07T11:24:08Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-beb7595",
                          "title":  "fix(project-metadata-export): fix out-of-order re-ingest clobbering IsLatest ...",
                          "timestamp":  "2026-09-07T14:14:47Z",
@@ -104,6 +98,12 @@
                          "version":  "build-84e1fef",
                          "title":  "fix(portals): rename nav-facing \"Spaces\" label to \"Portals\"",
                          "timestamp":  "2026-09-08T13:07:58Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f2e930b",
+                         "title":  "fix(portal): rename Home/Spaces route to Home/Portals with legacy redirect",
+                         "timestamp":  "2026-09-08T15:08:35Z",
                          "environment":  "production"
                      }
                  ]
