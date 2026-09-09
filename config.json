@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7926fef",
-                         "title":  "feat(activity-feeds): add product-sites and metadata activity feeds",
-                         "timestamp":  "2026-09-07T19:40:42Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-061f955",
                          "title":  "feat(activity): add deterministic development heartbeats",
                          "timestamp":  "2026-09-07T20:46:43Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-9bb8bae",
-                         "title":  "fix(docs-portal): wire docs-html-frame-wrap into iframe markup",
-                         "timestamp":  "2026-09-09T13:33:40Z",
+                         "version":  "build-0b51196",
+                         "title":  "feat(buddyhub): add Mirror TCP session relay (host/joiner byte-stream)",
+                         "timestamp":  "2026-09-09T12:59:24Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-01a9675",
+                         "title":  "feat(viewership): per-entity view counters plus docs/forum/dashboard viewersh...",
+                         "timestamp":  "2026-09-09T14:16:41Z",
                          "environment":  "production"
                      }
                  ]
