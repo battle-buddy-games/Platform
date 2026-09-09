@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-061f955",
-                         "title":  "feat(activity): add deterministic development heartbeats",
-                         "timestamp":  "2026-09-07T20:46:43Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-dab1d44",
                          "title":  "fix(activity): harden heartbeat recovery and branch scope",
                          "timestamp":  "2026-09-07T21:23:11Z",
@@ -104,6 +98,12 @@
                          "version":  "build-01a9675",
                          "title":  "feat(viewership): per-entity view counters plus docs/forum/dashboard viewersh...",
                          "timestamp":  "2026-09-09T14:16:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f0d1cef",
+                         "title":  "feat(buddyhub): screen presenting + collaborative control session lifecycle",
+                         "timestamp":  "2026-09-09T16:11:08Z",
                          "environment":  "production"
                      }
                  ]
