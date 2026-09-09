@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-a256409",
-                         "title":  "feat(sdk): add Remote Browser tab shell for admin HTTP browse feature",
-                         "timestamp":  "2026-09-09T06:35:15Z",
+                         "version":  "build-b63a218",
+                         "title":  "feat(sdk-hub): add BuddyHub HttpProxyCommand/Result relay methods",
+                         "timestamp":  "2026-09-09T07:42:08Z",
                          "environment":  "production"
                      }
                  ]
