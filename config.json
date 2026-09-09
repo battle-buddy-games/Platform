@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-7b677f6",
-                         "title":  "feat(buddy-desktop): add screen presenting + collaborative control client",
-                         "timestamp":  "2026-09-09T16:47:32Z",
+                         "version":  "build-f0d1cef",
+                         "title":  "feat(buddyhub): screen presenting + collaborative control session lifecycle",
+                         "timestamp":  "2026-09-09T16:11:08Z",
                          "environment":  "production"
                      }
                  ]
