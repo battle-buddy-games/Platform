@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-541098a",
-                         "title":  "feat(static-sites): merge the runtime game-data wiki into the static site build",
-                         "timestamp":  "2026-09-07T15:51:29Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-96dc478",
                          "title":  "fix(security): gate DiscordApiController behind Authorize + AdminOnly",
                          "timestamp":  "2026-09-07T19:00:21Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a256409",
                          "title":  "feat(sdk): add Remote Browser tab shell for admin HTTP browse feature",
                          "timestamp":  "2026-09-09T06:35:15Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-64cebd3",
+                         "title":  "fix(docs-html): declare utf-8 charset on the docs-html static response",
+                         "timestamp":  "2026-09-09T12:02:21Z",
                          "environment":  "production"
                      }
                  ]
