@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-aafba1d",
-                         "title":  "fix(feeds): consolidate metadata ingest channel; attribute harness failures",
-                         "timestamp":  "2026-09-07T23:39:23Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-84e1fef",
                          "title":  "fix(portals): rename nav-facing \"Spaces\" label to \"Portals\"",
                          "timestamp":  "2026-09-08T13:07:58Z",
@@ -104,6 +98,12 @@
                          "version":  "build-fdc78cc",
                          "title":  "feat(useraccounts): add API to set UserGroup DashboardAccessOverride",
                          "timestamp":  "2026-09-10T08:17:14Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-985464a",
+                         "title":  "fix(useraccounts): require Authorize instead of AllowAnonymous; add groups lo...",
+                         "timestamp":  "2026-09-10T09:14:38Z",
                          "environment":  "production"
                      }
                  ]
