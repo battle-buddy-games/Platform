@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f2e930b",
-                         "title":  "fix(portal): rename Home/Spaces route to Home/Portals with legacy redirect",
-                         "timestamp":  "2026-09-08T15:08:35Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3ef99ef",
                          "title":  "fix(tests): wait for Discord gateway readiness before voice production tests",
                          "timestamp":  "2026-09-08T16:57:17Z",
@@ -104,6 +98,12 @@
                          "version":  "build-79a7817",
                          "title":  "feat(useraccounts): add read-only groups/list endpoint",
                          "timestamp":  "2026-09-10T09:47:16Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2cfefdf",
+                         "title":  "fix(db): reposition SdkArtifactVersions pre-migration Ensure to fix crash-loo...",
+                         "timestamp":  "2026-09-10T18:57:49Z",
                          "environment":  "production"
                      }
                  ]
