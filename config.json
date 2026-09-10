@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-84e1fef",
-                         "title":  "fix(portals): rename nav-facing \"Spaces\" label to \"Portals\"",
-                         "timestamp":  "2026-09-08T13:07:58Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f2e930b",
                          "title":  "fix(portal): rename Home/Spaces route to Home/Portals with legacy redirect",
                          "timestamp":  "2026-09-08T15:08:35Z",
@@ -104,6 +98,12 @@
                          "version":  "build-985464a",
                          "title":  "fix(useraccounts): require Authorize instead of AllowAnonymous; add groups lo...",
                          "timestamp":  "2026-09-10T09:14:38Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-79a7817",
+                         "title":  "feat(useraccounts): add read-only groups/list endpoint",
+                         "timestamp":  "2026-09-10T09:47:16Z",
                          "environment":  "production"
                      }
                  ]
