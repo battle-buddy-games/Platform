@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3ef99ef",
-                         "title":  "fix(tests): wait for Discord gateway readiness before voice production tests",
-                         "timestamp":  "2026-09-08T16:57:17Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a256409",
                          "title":  "feat(sdk): add Remote Browser tab shell for admin HTTP browse feature",
                          "timestamp":  "2026-09-09T06:35:15Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2cfefdf",
                          "title":  "fix(db): reposition SdkArtifactVersions pre-migration Ensure to fix crash-loo...",
                          "timestamp":  "2026-09-10T18:57:49Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-560134d",
+                         "title":  "feat(activity-feeds): add sdk-steam-activity and identity-activity feeds",
+                         "timestamp":  "2026-09-10T22:15:22Z",
                          "environment":  "production"
                      }
                  ]
