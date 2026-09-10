@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-f079bc6",
-                         "title":  "fix(auth): add rich diagnostics for one-time signin-token failures",
-                         "timestamp":  "2026-09-10T22:46:32Z",
+                         "version":  "build-ebcc7da",
+                         "title":  "feat(learning): sync demo playthrough stages from project-data exports",
+                         "timestamp":  "2026-09-10T23:05:03Z",
                          "environment":  "production"
                      }
                  ]
