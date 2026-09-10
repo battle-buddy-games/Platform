@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-dab1d44",
-                         "title":  "fix(activity): harden heartbeat recovery and branch scope",
-                         "timestamp":  "2026-09-07T21:23:11Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-aafba1d",
                          "title":  "fix(feeds): consolidate metadata ingest channel; attribute harness failures",
                          "timestamp":  "2026-09-07T23:39:23Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f0d1cef",
                          "title":  "feat(buddyhub): screen presenting + collaborative control session lifecycle",
                          "timestamp":  "2026-09-09T16:11:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-fdc78cc",
+                         "title":  "feat(useraccounts): add API to set UserGroup DashboardAccessOverride",
+                         "timestamp":  "2026-09-10T08:17:14Z",
                          "environment":  "production"
                      }
                  ]
