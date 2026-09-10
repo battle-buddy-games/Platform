@@ -27,6 +27,25 @@ function clearGatewayBounceCounter() {
   try { sessionStorage.removeItem(SIGNIN_BOUNCE_KEY); } catch (e) {}
 }
 
+// Always-on diagnostic telemetry for the sign-in bounce loop (NOT gated behind debug mode --
+// this is the exact failure signature reported for cross-origin iframe cookie loss, and there was
+// previously no signal at all from a real user's session unless they had manually enabled debug
+// mode). Reuses the existing always-on frontend-error pipeline (bufferFrontendError /
+// sendFrontendErrors in gateway-shared.js -> POST api/FrontendError/log -> incident pipeline),
+// so these show up in the Incident Explorer without any new backend endpoint.
+function reportPortalDiagnostic(type, message) {
+  try {
+    if (typeof bufferFrontendError !== 'function') return;
+    const currentSubpage = new URLSearchParams(window.location.search).get('subpage') || '/';
+    bufferFrontendError({
+      Type: type,
+      Message: message + ' | subpage=' + currentSubpage + ' | cookieEnabled=' + navigator.cookieEnabled,
+      Source: 'portal.js',
+      Timestamp: new Date().toISOString()
+    });
+  } catch (e) { /* never let diagnostics break the actual flow */ }
+}
+
 // Redirect the whole page to gateway.html, but stop and show a terminal error if
 // we are bouncing too fast. Returns true if it tripped the breaker (no redirect).
 function redirectToGatewayWithLoopGuard(gatewaySearch) {
@@ -56,6 +75,8 @@ function redirectToGatewayWithLoopGuard(gatewaySearch) {
     console.warn('[Portal] Sign-in bounce threshold reached (' + count + ' gateway.html redirects within ' +
       GATEWAY_BOUNCE_WINDOW_MS + 'ms) -- stopping auto-redirect to break the loop.');
     signInLoopBroken = true;
+    reportPortalDiagnostic('GatewaySignInLoopTripped',
+      'Sign-in bounce loop breaker tripped after ' + count + ' bounces within ' + GATEWAY_BOUNCE_WINDOW_MS + 'ms');
     showSignInLoopError();
     return true;
   }
@@ -65,6 +86,7 @@ function redirectToGatewayWithLoopGuard(gatewaySearch) {
   } catch (e) {}
 
   console.log('[Portal] Redirecting whole page to gateway.html (bounce ' + count + '/' + MAX_GATEWAY_BOUNCES + ')');
+  reportPortalDiagnostic('GatewayBounceDetected', 'Portal bounced to gateway.html (bounce ' + count + '/' + MAX_GATEWAY_BOUNCES + ')');
   window.location.href = './gateway.html' + (gatewaySearch || '');
   return false;
 }
