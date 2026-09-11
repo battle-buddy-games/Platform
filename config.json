@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-01a9675",
-                         "title":  "feat(viewership): per-entity view counters plus docs/forum/dashboard viewersh...",
-                         "timestamp":  "2026-09-09T14:16:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f0d1cef",
                          "title":  "feat(buddyhub): screen presenting + collaborative control session lifecycle",
                          "timestamp":  "2026-09-09T16:11:08Z",
@@ -104,6 +98,12 @@
                          "version":  "build-345358f",
                          "title":  "feat(identity-feed): give sign-in messages the context that makes them readable",
                          "timestamp":  "2026-09-11T08:26:12Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d013f71",
+                         "title":  "feat(activity-feeds): link every feed message to the page that owns it",
+                         "timestamp":  "2026-09-11T09:20:47Z",
                          "environment":  "production"
                      }
                  ]
