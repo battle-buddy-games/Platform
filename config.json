@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f0d1cef",
-                         "title":  "feat(buddyhub): screen presenting + collaborative control session lifecycle",
-                         "timestamp":  "2026-09-09T16:11:08Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-fdc78cc",
                          "title":  "feat(useraccounts): add API to set UserGroup DashboardAccessOverride",
                          "timestamp":  "2026-09-10T08:17:14Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d013f71",
                          "title":  "feat(activity-feeds): link every feed message to the page that owns it",
                          "timestamp":  "2026-09-11T09:20:47Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-57cf3b0",
+                         "title":  "fix(ci): self-heal corrupted electron-builder winCodeSign cache",
+                         "timestamp":  "2026-09-11T10:24:38Z",
                          "environment":  "production"
                      }
                  ]
