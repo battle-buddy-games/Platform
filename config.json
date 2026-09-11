@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-985464a",
-                         "title":  "fix(useraccounts): require Authorize instead of AllowAnonymous; add groups lo...",
-                         "timestamp":  "2026-09-10T09:14:38Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-79a7817",
                          "title":  "feat(useraccounts): add read-only groups/list endpoint",
                          "timestamp":  "2026-09-10T09:47:16Z",
@@ -104,6 +98,12 @@
                          "version":  "build-6eee7b0",
                          "title":  "test(dashboard-access): add regression coverage for docs-access-kuba-mery-202...",
                          "timestamp":  "2026-09-11T11:33:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3d486ca",
+                         "title":  "fix(ci): pass --config to rclone cat in RcloneHttpServeController.ServeFileAsync",
+                         "timestamp":  "2026-09-11T12:10:50Z",
                          "environment":  "production"
                      }
                  ]
