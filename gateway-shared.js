@@ -296,21 +296,29 @@ function showErrorModal(title, message, detailedMessage = null) {
       tryAgainButton.textContent = 'Try Again - Start Fresh Sign-In';
       tryAgainButton.onclick = function() {
         closeErrorModal();
-        // Clear any stored state
+        // Reset only the failed OAuth attempt. Saved sign-ins and preferences
+        // still belong to the user and must survive an expired callback.
         try {
-          localStorage.clear();
-          sessionStorage.clear();
-          console.log('Cleared all storage for fresh sign-in');
+          localStorage.removeItem('oauth_state');
+          localStorage.removeItem('oauth_provider');
+          sessionStorage.removeItem('oauthSignInAttempt');
+          console.log('Cleared failed OAuth attempt for fresh sign-in');
         } catch (e) {
           console.warn('Failed to clear storage:', e);
         }
         // Force a hard reload to clear any cached state
         // Add cache-busting parameter to ensure fresh page load
         const url = new URL(window.location.href);
+        url.pathname = url.pathname.replace(/gateway-callback-[^/]+\.html$/, 'gateway.html');
         url.searchParams.set('_retry', Date.now().toString());
         url.searchParams.delete('error');
         url.searchParams.delete('error_description');
         url.searchParams.delete('provider');
+        url.searchParams.delete('code');
+        url.searchParams.delete('state');
+        for (const key of Array.from(url.searchParams.keys())) {
+          if (key.startsWith('openid.')) url.searchParams.delete(key);
+        }
         window.location.href = url.toString();
       };
       modalBody.appendChild(tryAgainButton);

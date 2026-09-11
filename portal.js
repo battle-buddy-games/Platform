@@ -1317,6 +1317,22 @@ function startCountdown(newAddress) {
   }, 1000);
 }
 
+// Both initial sign-in and recovery can hand off a one-time token. Scrub it
+// after selecting the iframe destination so refresh/bookmarks cannot replay it.
+function cleanPortalBookmarkUrl(returnUrl) {
+  const cleanUrl = new URL(window.location.href);
+  cleanUrl.searchParams.delete('token');
+  cleanUrl.searchParams.delete('returnUrl');
+  cleanUrl.searchParams.delete('tunnelUrl');
+  if (returnUrl && returnUrl !== '/') {
+    cleanUrl.searchParams.set('subpage', returnUrl);
+  } else {
+    cleanUrl.searchParams.delete('subpage');
+  }
+  cleanUrl.hash = '';
+  window.history.replaceState({ iframePath: returnUrl }, document.title, cleanUrl.toString());
+}
+
 // Refresh iframe to new address while preserving subpage
 function refreshToNewAddress(newAddress) {
   // Hide connection failure overlay if showing
@@ -1341,7 +1357,7 @@ function refreshToNewAddress(newAddress) {
 
   // Get current subpage from URL
   const urlParams = new URLSearchParams(window.location.search);
-  const subpagePath = urlParams.get('subpage') || '/';
+  const subpagePath = urlParams.get('subpage') || urlParams.get('returnUrl') || '/';
   const token = urlParams.get('token');
   
   // Update tunnel base URL
@@ -1370,6 +1386,7 @@ function refreshToNewAddress(newAddress) {
   // Reload iframe
   iframe.src = targetUrl;
   currentIframePath = subpagePath;
+  cleanPortalBookmarkUrl(subpagePath);
 
   // Start loading timeout for the new address
   startLoadingTimeout();
@@ -1504,17 +1521,17 @@ function startLoadingTimeout() {
       loadingRetryCount++;
       console.log(`[Portal] Loading timeout (${LOADING_TIMEOUT_MS / 1000}s) - auto-retry #${loadingRetryCount}`);
 
-      // Retry: reload the iframe with the same URL
+      // The original src may contain an already-consumed one-time sign-in token.
+      // Retry the requested page with the session cookie, never the handoff URL.
       const iframe = document.getElementById('tunnelFrame');
-      if (iframe && iframe.src) {
-        const currentSrc = iframe.src;
-        iframe.src = '';
-        // Brief delay to force a fresh request
-        setTimeout(() => {
-          iframe.src = currentSrc;
-          // Start timeout again for the retry attempt
-          startLoadingTimeout();
-        }, 100);
+      if (iframe && iframe.src && tunnelBaseUrl) {
+        const requestedPath = new URL(window.location.href).searchParams.get('subpage') || '/';
+        iframeLoadCompleted = false;
+        // Do not insert about:blank: its load event would cancel the watchdog
+        // and hide the overlay before the actual platform request completes.
+        iframe.src = `${tunnelBaseUrl}${requestedPath}`;
+        currentIframePath = requestedPath;
+        startLoadingTimeout();
       } else {
         showLoadingError();
       }
@@ -1683,21 +1700,7 @@ async function loadTunnel() {
   // - Remove tunnelUrl (bookmarks should always use current tunnel from config.json)
   // - Remove returnUrl (only used during token exchange)
   // - Set subpage to the current iframe path (so bookmarks restore the correct page)
-  const cleanUrl = new URL(window.location.href);
-  cleanUrl.searchParams.delete('token');
-  cleanUrl.searchParams.delete('returnUrl');
-  cleanUrl.searchParams.delete('tunnelUrl'); // Always remove - bookmarks should use config.json tunnel
-
-  // Set subpage parameter for bookmarking (includes full path with query params and hash)
-  if (returnUrl && returnUrl !== '/') {
-    cleanUrl.searchParams.set('subpage', returnUrl);
-  } else {
-    cleanUrl.searchParams.delete('subpage');
-  }
-  cleanUrl.hash = ''; // Hash is stored in subpage, not in portal URL
-
-  window.history.replaceState({ iframePath: returnUrl }, document.title, cleanUrl.toString());
-  console.log('URL cleaned for bookmarking:', cleanUrl.toString());
+  cleanPortalBookmarkUrl(returnUrl);
 
   // Update currentIframePath to match
   currentIframePath = returnUrl;

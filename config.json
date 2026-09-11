@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-64cebd3",
-                         "title":  "fix(docs-html): declare utf-8 charset on the docs-html static response",
-                         "timestamp":  "2026-09-09T12:02:21Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0b51196",
                          "title":  "feat(buddyhub): add Mirror TCP session relay (host/joiner byte-stream)",
                          "timestamp":  "2026-09-09T12:59:24Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f079bc6",
                          "title":  "fix(auth): add rich diagnostics for one-time signin-token failures",
                          "timestamp":  "2026-09-10T22:46:32Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5286b43",
+                         "title":  "fix(auth): preserve sessions through sign-in recovery",
+                         "timestamp":  "2026-09-11T07:23:43Z",
                          "environment":  "production"
                      }
                  ]
