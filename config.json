@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-79a7817",
-                         "title":  "feat(useraccounts): add read-only groups/list endpoint",
-                         "timestamp":  "2026-09-10T09:47:16Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2cfefdf",
                          "title":  "fix(db): reposition SdkArtifactVersions pre-migration Ensure to fix crash-loo...",
                          "timestamp":  "2026-09-10T18:57:49Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3d486ca",
                          "title":  "fix(ci): pass --config to rclone cat in RcloneHttpServeController.ServeFileAsync",
                          "timestamp":  "2026-09-11T12:10:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-812e133",
+                         "title":  "Release build-3d486ca: fix(ci): pass --config to rclone cat in RcloneHttpServ...",
+                         "timestamp":  "2026-09-11T12:55:45Z",
                          "environment":  "production"
                      }
                  ]
