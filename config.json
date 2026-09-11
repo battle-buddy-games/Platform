@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-fdc78cc",
-                         "title":  "feat(useraccounts): add API to set UserGroup DashboardAccessOverride",
-                         "timestamp":  "2026-09-10T08:17:14Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-985464a",
                          "title":  "fix(useraccounts): require Authorize instead of AllowAnonymous; add groups lo...",
                          "timestamp":  "2026-09-10T09:14:38Z",
@@ -104,6 +98,12 @@
                          "version":  "build-57cf3b0",
                          "title":  "fix(ci): self-heal corrupted electron-builder winCodeSign cache",
                          "timestamp":  "2026-09-11T10:24:38Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6eee7b0",
+                         "title":  "test(dashboard-access): add regression coverage for docs-access-kuba-mery-202...",
+                         "timestamp":  "2026-09-11T11:33:05Z",
                          "environment":  "production"
                      }
                  ]
