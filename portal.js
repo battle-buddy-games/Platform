@@ -27,6 +27,48 @@ function clearGatewayBounceCounter() {
   try { sessionStorage.removeItem(SIGNIN_BOUNCE_KEY); } catch (e) {}
 }
 
+// ---------------------------------------------------------------------------
+// One-time sign-in token: single-use guard (confirmed live incident, 2026-09-12,
+// user JacobKubakowski -- "OneTimeTokenFailure.AlreadyUsed" fired ~96s after first
+// consumption, matching the blank-screen report at the exact same moment)
+// ---------------------------------------------------------------------------
+// Root cause: loadTunnel() (initial page load) and refreshToNewAddress() (the
+// tunnel-health-recovery retry path -- fires whenever a preceding health check saw
+// the tunnel as unhealthy, which the Cloudflare quick-tunnel genuinely does from
+// time to time) BOTH independently read `token` from window.location.search and,
+// if present, build a fresh /auth/signin-token?token=... URL and set it as the
+// iframe's src -- with nothing stopping both from doing this for the SAME token
+// within one page load. The token is single-use server-side
+// (OneTimeAuthTokenService.ValidateAndConsumeTokenWithDiagnosticsAsync marks it
+// Used on first success), so the second submission is rejected outright and the
+// iframe is left showing that rejection (or nothing useful) -- the reported
+// "blank screen". A prior investigation (2026-09-10, see that commit's own doc
+// comment on ValidateAndConsumeTokenWithDiagnosticsAsync) added server-side
+// diagnostics for this exact "AlreadyUsed" pattern but did not fix the client-side
+// double-submission that causes it.
+//
+// This flag makes the token consumable at most ONCE per page load, module-wide,
+// regardless of which function reaches for it first. Once consumed, every
+// subsequent iframe (re)load -- including the health-recovery retry path -- uses
+// the plain tunnel URL instead of resubmitting the token, relying on the session
+// cookie the first successful consumption already set.
+let _signInTokenConsumedThisPageLoad = false;
+
+// Returns the one-time token to use for THIS iframe load, or null if it has
+// already been consumed once this page load (in which case the caller must fall
+// back to a plain, tokenless URL). Call this instead of reading `token` from
+// URLSearchParams directly at every /auth/signin-token construction site.
+function claimSignInTokenOnce(token) {
+  if (!token) return null;
+  if (_signInTokenConsumedThisPageLoad) {
+    console.warn('[Portal] One-time sign-in token already claimed earlier this page load -- not resubmitting (would fail server-side as AlreadyUsed).');
+    reportPortalDiagnostic('SignInTokenDoubleSubmitPrevented', 'Skipped a second /auth/signin-token submission for the same one-time token within one page load');
+    return null;
+  }
+  _signInTokenConsumedThisPageLoad = true;
+  return token;
+}
+
 // Always-on diagnostic telemetry for the sign-in bounce loop (NOT gated behind debug mode --
 // this is the exact failure signature reported for cross-origin iframe cookie loss, and there was
 // previously no signal at all from a real user's session unless they had manually enabled debug
@@ -1358,16 +1400,19 @@ function refreshToNewAddress(newAddress) {
   // Get current subpage from URL
   const urlParams = new URLSearchParams(window.location.search);
   const subpagePath = urlParams.get('subpage') || urlParams.get('returnUrl') || '/';
-  const token = urlParams.get('token');
-  
+  // claimSignInTokenOnce: null if loadTunnel() (or an earlier call to this same
+  // function) already consumed this token this page load -- see the guard's own
+  // doc comment above for why this must never resubmit the same token twice.
+  const token = claimSignInTokenOnce(urlParams.get('token'));
+
   // Update tunnel base URL
   tunnelBaseUrl = newAddress;
   currentTunnelAddress = newAddress;
-  
+
   // Build new URL
   const iframe = document.getElementById('tunnelFrame');
   let targetUrl;
-  
+
   if (token) {
     // Use /auth/signin-token for one-time tokens from OAuth flow
     const authUrl = new URL(`${tunnelBaseUrl}/auth/signin-token`);
@@ -1661,8 +1706,10 @@ async function loadTunnel() {
 
   const iframe = document.getElementById('tunnelFrame');
 
-  // Get token from URL (token persistence not yet implemented)
-  let token = urlParams.get('token');
+  // Get token from URL (token persistence not yet implemented). claimSignInTokenOnce
+  // ensures this initial load and any later refreshToNewAddress() retry never both
+  // submit the same one-time token -- see that guard's own doc comment.
+  let token = claimSignInTokenOnce(urlParams.get('token'));
   // Check for subpage parameter first, then returnUrl, then default to '/'
   const subpagePath = urlParams.get('subpage');
   const returnUrl = subpagePath || urlParams.get('returnUrl') || '/';
