@@ -272,6 +272,33 @@ async function exchangeCodeForToken() {
       showError(result.error || 'unknown_error', result.errorDescription || 'Authentication failed.');
     }
   } catch (error) {
+    // A genuine network failure (DNS/connection-refused -- fetch() itself throws a TypeError,
+    // e.g. "Failed to fetch") means this request never reached the server, so the authorization
+    // code was never consumed -- retrying once with a freshly-reloaded tunnel URL is safe. An HTTP
+    // error response (handled in the else branch above, not here) means the server WAS reached
+    // and must never be retried blindly (the code may already be consumed).
+    const looksLikeNetworkFailure = error instanceof TypeError ||
+      (error && typeof error.message === 'string' && (
+        error.message.includes('Failed to fetch') ||
+        error.message.includes('NetworkError') ||
+        error.message.includes('Load failed')));
+
+    if (looksLikeNetworkFailure && !_exchangeRetriedWithFreshTunnel) {
+      _exchangeRetriedWithFreshTunnel = true;
+      console.warn('[CallbackAPI] Exchange fetch failed (' + error.message + ') -- retrying once with a freshly-reloaded tunnel URL (likely a rotated Cloudflare tunnel).');
+      if (typeof trackGatewayEvent === 'function') trackGatewayEvent('token_exchange_retry_fresh_tunnel', { provider: authState.provider, error: error.message });
+      try {
+        const freshBackendUrl = await getBackendUrl(true);
+        if (freshBackendUrl && freshBackendUrl !== authState.backendUrl) {
+          authState.backendUrl = freshBackendUrl;
+          return await exchangeCodeForToken();
+        }
+        console.warn('[CallbackAPI] Fresh tunnel resolution returned the same (or no) address -- not retrying again.');
+      } catch (retryResolveError) {
+        console.error('[CallbackAPI] Failed to resolve a fresh tunnel URL for retry:', retryResolveError);
+      }
+    }
+
     console.error('[CallbackAPI] Exchange error:', error);
     if (typeof trackGatewayEvent === 'function') trackGatewayEvent('token_exchange_error', { provider: authState.provider, error: error.message });
     if (authState.debugEnabled) {
@@ -816,10 +843,27 @@ function retryAuth() {
   window.location.href = './gateway.html';
 }
 
-async function getBackendUrl() {
-  // Wait for CONFIG if needed (from gateway-shared.js)
-  if (typeof loadConfig === 'function' && (!window.CONFIG || !window.CONFIG.cloudflareTunnels)) {
-    await loadConfig();
+// Root cause: docs-access-kuba-mery-2026-09-10 follow-up incident (2026-09-12), confirmed via the
+// always-on portal telemetry added for that incident -- "Failed to communicate with authentication
+// server: Failed to fetch" fires from the catch block below when this fetch cannot even reach the
+// server (DNS failure / connection refused), NOT when the server responds with an error. The
+// Cloudflare quick-tunnel address is EPHEMERAL and rotates independently of any user action; the
+// OAuth round-trip to the external provider (sign in, 2FA, consent screen) can easily outlast a
+// single tunnel's lifetime. getBackendUrl() below prefers sessionStorage's oauthSignInAttempt.tunnelUrl
+// -- the address captured at the START of that round-trip, before the user left for the provider --
+// so a tunnel rotation mid-flow leaves this exchange call pointed at a dead address even though
+// config.json (fetched fresh, cache-busted, by loadConfig()) already has the live one.
+// getBackendUrl(forceFresh) below adds an escape hatch: forceFresh=true skips the stored value
+// entirely and always resolves from a freshly-reloaded config.json, used by the one-shot retry in
+// exchangeCodeForToken()'s catch block. The exchanged code is single-use, so retrying is only
+// safe when the FIRST attempt's fetch() itself threw (never reached the server, code not consumed)
+// -- never when the server responded (even with an error), which is why the retry lives in the
+// fetch-level catch, not around an HTTP error response.
+async function getBackendUrl(forceFresh) {
+  // Wait for CONFIG if needed (from gateway-shared.js). forceFresh always reloads, bypassing
+  // whatever window.CONFIG already holds (which may itself be from before a tunnel rotation).
+  if (forceFresh || (typeof loadConfig === 'function' && (!window.CONFIG || !window.CONFIG.cloudflareTunnels))) {
+    if (typeof loadConfig === 'function') await loadConfig();
   }
 
   const config = window.CONFIG;
@@ -828,32 +872,41 @@ async function getBackendUrl() {
     return null;
   }
 
-  // Try to get stored tunnel from OAuth attempt
   let tunnelUrl = null;
-  try {
-    const oauthAttempt = sessionStorage.getItem('oauthSignInAttempt');
-    if (oauthAttempt) {
-      const parsed = JSON.parse(oauthAttempt);
-      if (parsed.tunnelUrl) {
-        tunnelUrl = parsed.tunnelUrl;
-        console.log('[CallbackAPI] Using stored tunnel URL:', tunnelUrl);
+
+  // Try to get stored tunnel from OAuth attempt -- skipped entirely on forceFresh, since that
+  // stored value is exactly what may now be stale.
+  if (!forceFresh) {
+    try {
+      const oauthAttempt = sessionStorage.getItem('oauthSignInAttempt');
+      if (oauthAttempt) {
+        const parsed = JSON.parse(oauthAttempt);
+        if (parsed.tunnelUrl) {
+          tunnelUrl = parsed.tunnelUrl;
+          console.log('[CallbackAPI] Using stored tunnel URL:', tunnelUrl);
+        }
       }
+    } catch (e) {
+      console.warn('[CallbackAPI] Could not parse stored OAuth attempt:', e);
     }
-  } catch (e) {
-    console.warn('[CallbackAPI] Could not parse stored OAuth attempt:', e);
   }
 
-  // Fallback to config
+  // Fallback to config (also the primary path when forceFresh)
   if (!tunnelUrl) {
     const tunnel = config.cloudflareTunnels.find(t => t.name === 'cloud');
     if (tunnel) {
       tunnelUrl = tunnel.address;
-      console.log('[CallbackAPI] Using tunnel from config:', tunnelUrl);
+      console.log('[CallbackAPI] Using tunnel from config' + (forceFresh ? ' (forced fresh reload)' : '') + ':', tunnelUrl);
     }
   }
 
   return tunnelUrl ? tunnelUrl.replace(/\/$/, '') : null;
 }
+
+// True once exchangeCodeForToken() has already retried a network failure with a freshly-reloaded
+// tunnel URL -- caps the retry at exactly one attempt per page load so a persistently-unreachable
+// backend still surfaces a real error instead of looping.
+let _exchangeRetriedWithFreshTunnel = false;
 
 function getRedirectUri() {
   const currentUrl = new URL(window.location.href);
