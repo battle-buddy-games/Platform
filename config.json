@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-560134d",
-                         "title":  "feat(activity-feeds): add sdk-steam-activity and identity-activity feeds",
-                         "timestamp":  "2026-09-10T22:15:22Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f079bc6",
                          "title":  "fix(auth): add rich diagnostics for one-time signin-token failures",
                          "timestamp":  "2026-09-10T22:46:32Z",
@@ -104,6 +98,12 @@
                          "version":  "build-e232bf5",
                          "title":  "fix(auth): tolerate idempotent replay of one-time sign-in tokens",
                          "timestamp":  "2026-09-13T09:08:21Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-37c39e8",
+                         "title":  "fix(portal): resolve docs portal group grants via stable identity id",
+                         "timestamp":  "2026-09-13T11:59:47Z",
                          "environment":  "production"
                      }
                  ]
