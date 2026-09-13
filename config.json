@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-812e133",
-                         "title":  "Release build-3d486ca: fix(ci): pass --config to rclone cat in RcloneHttpServ...",
-                         "timestamp":  "2026-09-11T12:55:45Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e232bf5",
                          "title":  "fix(auth): tolerate idempotent replay of one-time sign-in tokens",
                          "timestamp":  "2026-09-13T09:08:21Z",
@@ -104,6 +98,12 @@
                          "version":  "build-70b6f30",
                          "title":  "fix(chat): stop sidebar rebuild churn and the stuck group-chat spinner",
                          "timestamp":  "2026-09-13T16:05:14Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-dcd1369",
+                         "title":  "docs(claude-md): correct stale contracts in five WebPlatform CLAUDE.md files",
+                         "timestamp":  "2026-09-13T16:25:39Z",
                          "environment":  "production"
                      }
                  ]
