@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5286b43",
-                         "title":  "fix(auth): preserve sessions through sign-in recovery",
-                         "timestamp":  "2026-09-11T07:23:43Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-345358f",
                          "title":  "feat(identity-feed): give sign-in messages the context that makes them readable",
                          "timestamp":  "2026-09-11T08:26:12Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7e1f123",
                          "title":  "fix(access): stop default-valued Roles row pre-empting group grant",
                          "timestamp":  "2026-09-13T12:38:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-93652de",
+                         "title":  "fix(discord): de-duplicate Studio channel template, stop profile channels lea...",
+                         "timestamp":  "2026-09-13T13:07:30Z",
                          "environment":  "production"
                      }
                  ]
