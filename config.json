@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2cfefdf",
-                         "title":  "fix(db): reposition SdkArtifactVersions pre-migration Ensure to fix crash-loo...",
-                         "timestamp":  "2026-09-10T18:57:49Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-560134d",
                          "title":  "feat(activity-feeds): add sdk-steam-activity and identity-activity feeds",
                          "timestamp":  "2026-09-10T22:15:22Z",
@@ -104,6 +98,12 @@
                          "version":  "build-812e133",
                          "title":  "Release build-3d486ca: fix(ci): pass --config to rclone cat in RcloneHttpServ...",
                          "timestamp":  "2026-09-11T12:55:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e232bf5",
+                         "title":  "fix(auth): tolerate idempotent replay of one-time sign-in tokens",
+                         "timestamp":  "2026-09-13T09:08:21Z",
                          "environment":  "production"
                      }
                  ]
