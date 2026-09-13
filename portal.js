@@ -30,7 +30,9 @@ function clearGatewayBounceCounter() {
 // ---------------------------------------------------------------------------
 // One-time sign-in token: single-use guard (confirmed live incident, 2026-09-12,
 // user JacobKubakowski -- "OneTimeTokenFailure.AlreadyUsed" fired ~96s after first
-// consumption, matching the blank-screen report at the exact same moment)
+// consumption, matching the blank-screen report at the exact same moment; a SECOND
+// occurrence of the same fingerprint landed 2026-09-13 08:17 UTC, ~11 hours after
+// the per-tab fix below shipped, proving that fix alone is insufficient)
 // ---------------------------------------------------------------------------
 // Root cause: loadTunnel() (initial page load) and refreshToNewAddress() (the
 // tunnel-health-recovery retry path -- fires whenever a preceding health check saw
@@ -47,25 +49,60 @@ function clearGatewayBounceCounter() {
 // diagnostics for this exact "AlreadyUsed" pattern but did not fix the client-side
 // double-submission that causes it.
 //
-// This flag makes the token consumable at most ONCE per page load, module-wide,
-// regardless of which function reaches for it first. Once consumed, every
-// subsequent iframe (re)load -- including the health-recovery retry path -- uses
-// the plain tunnel URL instead of resubmitting the token, relying on the session
-// cookie the first successful consumption already set.
-let _signInTokenConsumedThisPageLoad = false;
+// A per-tab, in-memory flag (the original fix here) only protects against the
+// SAME tab racing itself -- it does nothing for two separate tabs/windows both
+// loading the same OAuth-redirect URL (e.g. a double-click, a link opened twice,
+// or a chat client's own link-preview crawler fetching the URL before the human
+// does). The 2026-09-13 recurrence happened on a plain bookmark URL carrying no
+// token at all, meaning the double-submission that produced it came from a
+// DIFFERENT browser context than the one this page's own JS could see -- exactly
+// the multi-tab/external-fetch gap. Upgraded to a cross-tab guard keyed by the
+// TOKEN VALUE itself in localStorage (shared across every tab of the same
+// browser, unlike sessionStorage): the first tab to claim a given token value
+// wins; every other tab (or reload) sees it already claimed and falls back to a
+// plain, tokenless URL, relying on the session cookie the winning tab's
+// consumption already set. A short TTL bounds the stored entry so localStorage
+// does not accumulate one entry per sign-in forever.
+const SIGNIN_TOKEN_CLAIM_PREFIX = 'bb_portal_signin_token_claimed:';
+const SIGNIN_TOKEN_CLAIM_TTL_MS = 5 * 60 * 1000; // 5 minutes -- well past any realistic multi-tab race
 
-// Returns the one-time token to use for THIS iframe load, or null if it has
-// already been consumed once this page load (in which case the caller must fall
-// back to a plain, tokenless URL). Call this instead of reading `token` from
-// URLSearchParams directly at every /auth/signin-token construction site.
+function pruneExpiredSignInTokenClaims() {
+  try {
+    const now = Date.now();
+    const staleKeys = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (!key || !key.startsWith(SIGNIN_TOKEN_CLAIM_PREFIX)) continue;
+      const claimedAt = parseInt(localStorage.getItem(key), 10);
+      if (!claimedAt || (now - claimedAt) > SIGNIN_TOKEN_CLAIM_TTL_MS) {
+        staleKeys.push(key);
+      }
+    }
+    staleKeys.forEach(k => localStorage.removeItem(k));
+  } catch (e) { /* localStorage unavailable (private mode, etc.) -- claim() below degrades safely */ }
+}
+
+// Returns the one-time token to use for THIS iframe load, or null if some tab of
+// this browser (this one included, on an earlier call) has already claimed this
+// exact token value. Call this instead of reading `token` from URLSearchParams
+// directly at every /auth/signin-token construction site.
 function claimSignInTokenOnce(token) {
   if (!token) return null;
-  if (_signInTokenConsumedThisPageLoad) {
-    console.warn('[Portal] One-time sign-in token already claimed earlier this page load -- not resubmitting (would fail server-side as AlreadyUsed).');
-    reportPortalDiagnostic('SignInTokenDoubleSubmitPrevented', 'Skipped a second /auth/signin-token submission for the same one-time token within one page load');
-    return null;
+
+  const storageKey = SIGNIN_TOKEN_CLAIM_PREFIX + token;
+  try {
+    pruneExpiredSignInTokenClaims();
+    if (localStorage.getItem(storageKey) !== null) {
+      console.warn('[Portal] One-time sign-in token already claimed by this browser (this tab or another) -- not resubmitting (would fail server-side as AlreadyUsed).');
+      reportPortalDiagnostic('SignInTokenDoubleSubmitPrevented', 'Skipped a second /auth/signin-token submission for the same one-time token (cross-tab guard)');
+      return null;
+    }
+    localStorage.setItem(storageKey, String(Date.now()));
+  } catch (e) {
+    // localStorage unavailable (private browsing, quota, disabled storage) -- cannot
+    // enforce the cross-tab guard, but must not block sign-in over a diagnostics nicety.
+    console.warn('[Portal] localStorage unavailable for sign-in token claim guard; proceeding without cross-tab protection:', e);
   }
-  _signInTokenConsumedThisPageLoad = true;
   return token;
 }
 
