@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3af6be1",
-                         "title":  "feat(home,galleries): theme the Workflows group, polish gallery a11y + empty ...",
-                         "timestamp":  "2026-09-13T14:06:20Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d4ce707",
                          "title":  "refactor(obs): drive stream status from a subscription instead of a poll",
                          "timestamp":  "2026-09-13T14:46:28Z",
@@ -104,6 +98,12 @@
                          "version":  "build-1555c37",
                          "title":  "fix(chat): derive the desktop-session dot from sessionState, not isConnected",
                          "timestamp":  "2026-09-13T18:51:17Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-afd9f87",
+                         "title":  "fix(chat): offer every workspace of the target machine, not one connection\u0027s ...",
+                         "timestamp":  "2026-09-13T19:21:45Z",
                          "environment":  "production"
                      }
                  ]
