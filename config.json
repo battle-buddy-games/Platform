@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-dcd1369",
-                         "title":  "docs(claude-md): correct stale contracts in five WebPlatform CLAUDE.md files",
-                         "timestamp":  "2026-09-13T16:25:39Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-6738339",
                          "title":  "feat(discord): delete dead-key mapping objects the sync never visits",
                          "timestamp":  "2026-09-13T16:48:50Z",
@@ -104,6 +98,12 @@
                          "version":  "build-c46f447",
                          "title":  "fix(local-router): signal nginx log reopen from a SYSTEM task, not the runner",
                          "timestamp":  "2026-09-13T21:43:34Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-98e5a8e",
+                         "title":  "Create news Platform activity update — 2026-09-13 21:54 UTC",
+                         "timestamp":  "2026-09-13T22:34:39Z",
                          "environment":  "production"
                      }
                  ]
