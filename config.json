@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7e1f123",
-                         "title":  "fix(access): stop default-valued Roles row pre-empting group grant",
-                         "timestamp":  "2026-09-13T12:38:01Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-93652de",
                          "title":  "fix(discord): de-duplicate Studio channel template, stop profile channels lea...",
                          "timestamp":  "2026-09-13T13:07:30Z",
@@ -104,6 +98,12 @@
                          "version":  "build-8fafdcc",
                          "title":  "fix(discord): never delete dead-key objects holding real conversation",
                          "timestamp":  "2026-09-13T17:10:11Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f0e25b9",
+                         "title":  "docs(webplatform): split platform.service.cloud/CLAUDE.md into a lean index p...",
+                         "timestamp":  "2026-09-13T17:33:41Z",
                          "environment":  "production"
                      }
                  ]
