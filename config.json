@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d4ce707",
-                         "title":  "refactor(obs): drive stream status from a subscription instead of a poll",
-                         "timestamp":  "2026-09-13T14:46:28Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-411c5c5",
                          "title":  "feat(platform): unify franchise and framework as one concept, drive channel n...",
                          "timestamp":  "2026-09-13T15:23:11Z",
@@ -104,6 +98,12 @@
                          "version":  "build-afd9f87",
                          "title":  "fix(chat): offer every workspace of the target machine, not one connection\u0027s ...",
                          "timestamp":  "2026-09-13T19:21:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-85ac002",
+                         "title":  "Release build-afd9f87: fix(chat): offer every workspace of the target machine...",
+                         "timestamp":  "2026-09-13T20:16:11Z",
                          "environment":  "production"
                      }
                  ]
