@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f079bc6",
-                         "title":  "fix(auth): add rich diagnostics for one-time signin-token failures",
-                         "timestamp":  "2026-09-10T22:46:32Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5286b43",
                          "title":  "fix(auth): preserve sessions through sign-in recovery",
                          "timestamp":  "2026-09-11T07:23:43Z",
@@ -104,6 +98,12 @@
                          "version":  "build-37c39e8",
                          "title":  "fix(portal): resolve docs portal group grants via stable identity id",
                          "timestamp":  "2026-09-13T11:59:47Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7e1f123",
+                         "title":  "fix(access): stop default-valued Roles row pre-empting group grant",
+                         "timestamp":  "2026-09-13T12:38:01Z",
                          "environment":  "production"
                      }
                  ]
