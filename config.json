@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-345358f",
-                         "title":  "feat(identity-feed): give sign-in messages the context that makes them readable",
-                         "timestamp":  "2026-09-11T08:26:12Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d013f71",
                          "title":  "feat(activity-feeds): link every feed message to the page that owns it",
                          "timestamp":  "2026-09-11T09:20:47Z",
@@ -104,6 +98,12 @@
                          "version":  "build-93652de",
                          "title":  "fix(discord): de-duplicate Studio channel template, stop profile channels lea...",
                          "timestamp":  "2026-09-13T13:07:30Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2f83f78",
+                         "title":  "feat(obs): publish OBS stream status into the Steam presence sidecar",
+                         "timestamp":  "2026-09-13T13:43:03Z",
                          "environment":  "production"
                      }
                  ]
