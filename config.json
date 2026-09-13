@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e232bf5",
-                         "title":  "fix(auth): tolerate idempotent replay of one-time sign-in tokens",
-                         "timestamp":  "2026-09-13T09:08:21Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-37c39e8",
                          "title":  "fix(portal): resolve docs portal group grants via stable identity id",
                          "timestamp":  "2026-09-13T11:59:47Z",
@@ -104,6 +98,12 @@
                          "version":  "build-dcd1369",
                          "title":  "docs(claude-md): correct stale contracts in five WebPlatform CLAUDE.md files",
                          "timestamp":  "2026-09-13T16:25:39Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6738339",
+                         "title":  "feat(discord): delete dead-key mapping objects the sync never visits",
+                         "timestamp":  "2026-09-13T16:48:50Z",
                          "environment":  "production"
                      }
                  ]
