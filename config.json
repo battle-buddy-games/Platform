@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-411c5c5",
-                         "title":  "feat(platform): unify franchise and framework as one concept, drive channel n...",
-                         "timestamp":  "2026-09-13T15:23:11Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-70b6f30",
                          "title":  "fix(chat): stop sidebar rebuild churn and the stuck group-chat spinner",
                          "timestamp":  "2026-09-13T16:05:14Z",
@@ -104,6 +98,12 @@
                          "version":  "build-85ac002",
                          "title":  "Release build-afd9f87: fix(chat): offer every workspace of the target machine...",
                          "timestamp":  "2026-09-13T20:16:11Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-04210af",
+                         "title":  "fix(local-router): reload nginx gracefully before falling back to taskkill",
+                         "timestamp":  "2026-09-13T20:55:39Z",
                          "environment":  "production"
                      }
                  ]
