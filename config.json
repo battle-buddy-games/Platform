@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-e232bf5",
-                         "title":  "fix(auth): tolerate idempotent replay of one-time sign-in tokens",
-                         "timestamp":  "2026-09-13T09:08:21Z",
+                         "version":  "build-9c0fd7a",
+                         "title":  "perf(ci): parallelize bounded cloud build",
+                         "timestamp":  "2026-09-13T09:57:48Z",
                          "environment":  "production"
                      }
                  ]
