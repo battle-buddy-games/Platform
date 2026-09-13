@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-37c39e8",
-                         "title":  "fix(portal): resolve docs portal group grants via stable identity id",
-                         "timestamp":  "2026-09-13T11:59:47Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7e1f123",
                          "title":  "fix(access): stop default-valued Roles row pre-empting group grant",
                          "timestamp":  "2026-09-13T12:38:01Z",
@@ -104,6 +98,12 @@
                          "version":  "build-6738339",
                          "title":  "feat(discord): delete dead-key mapping objects the sync never visits",
                          "timestamp":  "2026-09-13T16:48:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8fafdcc",
+                         "title":  "fix(discord): never delete dead-key objects holding real conversation",
+                         "timestamp":  "2026-09-13T17:10:11Z",
                          "environment":  "production"
                      }
                  ]
