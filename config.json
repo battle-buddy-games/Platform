@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-93652de",
-                         "title":  "fix(discord): de-duplicate Studio channel template, stop profile channels lea...",
-                         "timestamp":  "2026-09-13T13:07:30Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2f83f78",
                          "title":  "feat(obs): publish OBS stream status into the Steam presence sidecar",
                          "timestamp":  "2026-09-13T13:43:03Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f0e25b9",
                          "title":  "docs(webplatform): split platform.service.cloud/CLAUDE.md into a lean index p...",
                          "timestamp":  "2026-09-13T17:33:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f1af0df",
+                         "title":  "fix(docs): index CLAUDE-*.md and TOOL-DOWNLOADS.md in the docs portal",
+                         "timestamp":  "2026-09-13T18:06:06Z",
                          "environment":  "production"
                      }
                  ]
