@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3d486ca",
-                         "title":  "fix(ci): pass --config to rclone cat in RcloneHttpServeController.ServeFileAsync",
-                         "timestamp":  "2026-09-11T12:10:50Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-812e133",
                          "title":  "Release build-3d486ca: fix(ci): pass --config to rclone cat in RcloneHttpServ...",
                          "timestamp":  "2026-09-11T12:55:45Z",
@@ -104,6 +98,12 @@
                          "version":  "build-411c5c5",
                          "title":  "feat(platform): unify franchise and framework as one concept, drive channel n...",
                          "timestamp":  "2026-09-13T15:23:11Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-70b6f30",
+                         "title":  "fix(chat): stop sidebar rebuild churn and the stuck group-chat spinner",
+                         "timestamp":  "2026-09-13T16:05:14Z",
                          "environment":  "production"
                      }
                  ]
