@@ -46,6 +46,15 @@
 // Same-origin only: the targetOrigin is this page's own origin, and portal.js
 // independently rejects any message whose origin is not its own. A gateway
 // framed by some other page leaks nothing and changes nothing.
+//
+// LOAD-ORDER DEPENDENCY (do not move this below gateway.js's DOMContentLoaded work):
+// gateway.js STRIPS `error`/`error_description` from its own URL via
+// history.replaceState in its DOMContentLoaded handler (gateway.js:3781-3789). This
+// script must therefore read location.search during parse, before any
+// DOMContentLoaded handler runs -- it does, as a classic script at the end of
+// <body>. If it is ever moved to defer/async/module loading, or the strip is moved
+// to parse time, the reported path silently loses the rejection reason and the
+// bounce degrades to a bare gateway.html. Keep it a plain synchronous <script>.
 // ---------------------------------------------------------------------------
 (function () {
   'use strict';
