@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2f83f78",
-                         "title":  "feat(obs): publish OBS stream status into the Steam presence sidecar",
-                         "timestamp":  "2026-09-13T13:43:03Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3af6be1",
                          "title":  "feat(home,galleries): theme the Workflows group, polish gallery a11y + empty ...",
                          "timestamp":  "2026-09-13T14:06:20Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f1af0df",
                          "title":  "fix(docs): index CLAUDE-*.md and TOOL-DOWNLOADS.md in the docs portal",
                          "timestamp":  "2026-09-13T18:06:06Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1555c37",
+                         "title":  "fix(chat): derive the desktop-session dot from sessionState, not isConnected",
+                         "timestamp":  "2026-09-13T18:51:17Z",
                          "environment":  "production"
                      }
                  ]
