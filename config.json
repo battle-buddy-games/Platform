@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-dd8b30e",
-                         "title":  "docs: correct the Ensure-pairing rule\u0027s EF-visibility discriminator",
-                         "timestamp":  "2026-09-14T09:06:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5f6cdad",
                          "title":  "fix(incidents): attribute the emitting process on every row",
                          "timestamp":  "2026-09-14T09:41:10Z",
@@ -104,6 +98,12 @@
                          "version":  "build-e0026e1",
                          "title":  "fix(ci-discord): add clickable commit links to CI video Discord messages",
                          "timestamp":  "2026-09-14T16:44:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-29ae5b8",
+                         "title":  "fix(navbar): replace per-portal accordion with cascading pages submenu",
+                         "timestamp":  "2026-09-14T21:31:16Z",
                          "environment":  "production"
                      }
                  ]
