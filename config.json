@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-2ee7985",
-                         "title":  "fix(docs-portal): declutter documentation page metadata and remove right rail",
-                         "timestamp":  "2026-09-14T22:03:32Z",
+                         "version":  "build-29ae5b8",
+                         "title":  "fix(navbar): replace per-portal accordion with cascading pages submenu",
+                         "timestamp":  "2026-09-14T21:31:16Z",
                          "environment":  "production"
                      }
                  ]
