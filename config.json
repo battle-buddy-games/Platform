@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-98e5a8e",
-                         "title":  "Create news Platform activity update — 2026-09-13 21:54 UTC",
-                         "timestamp":  "2026-09-13T22:34:39Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2e8da24",
                          "title":  "fix(signin): recover a framed gateway rejection instead of stranding the user",
                          "timestamp":  "2026-09-13T23:15:22Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4eefb7f",
                          "title":  "docs(signin): the `--` form is a diff viewer, not a ref:path reader",
                          "timestamp":  "2026-09-14T14:22:00Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-dbe9ced",
+                         "title":  "feat(buddy-desktop): name the streaming platform on the Steam presence line",
+                         "timestamp":  "2026-09-14T15:00:29Z",
                          "environment":  "production"
                      }
                  ]
