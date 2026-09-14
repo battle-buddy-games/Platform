@@ -1794,9 +1794,13 @@ function showFramedFailureBar(data, intendedPath) {
 
   const text = document.createElement('span');
   text.className = 'framed-failure-text';
-  text.textContent = kind === 'access-denied'
-    ? "You don't have access to that page."
-    : "That page couldn't be loaded.";
+  // Kind-specific copy. A not-found is not a fault -- the status is 404 and the page simply is not
+  // there -- so "couldn't be loaded" would be the same mislabel the 404 status itself avoids.
+  const failureText = {
+    'access-denied': "You don't have access to that page.",
+    'not-found': "That page doesn't exist."
+  };
+  text.textContent = failureText[kind] || "That page couldn't be loaded.";
 
   const detail = document.createElement('code');
   detail.className = 'framed-failure-path';

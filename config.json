@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-04210af",
-                         "title":  "fix(local-router): reload nginx gracefully before falling back to taskkill",
-                         "timestamp":  "2026-09-13T20:55:39Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c46f447",
                          "title":  "fix(local-router): signal nginx log reopen from a SYSTEM task, not the runner",
                          "timestamp":  "2026-09-13T21:43:34Z",
@@ -104,6 +98,12 @@
                          "version":  "build-68a8e62",
                          "title":  "fix(security): apply the anti-framing policy to every response, not just body...",
                          "timestamp":  "2026-09-14T12:43:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f2de6f4",
+                         "title":  "ci(validate): pass UseSharedCompilation=false on the Release-Local build too",
+                         "timestamp":  "2026-09-14T13:09:54Z",
                          "environment":  "production"
                      }
                  ]
