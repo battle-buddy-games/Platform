@@ -47,6 +47,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-c46f447",
+                         "title":  "fix(local-router): signal nginx log reopen from a SYSTEM task, not the runner",
+                         "timestamp":  "2026-09-13T21:43:34Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-98e5a8e",
                          "title":  "Create news Platform activity update — 2026-09-13 21:54 UTC",
                          "timestamp":  "2026-09-13T22:34:39Z",
@@ -98,12 +104,6 @@
                          "version":  "build-f2de6f4",
                          "title":  "ci(validate): pass UseSharedCompilation=false on the Release-Local build too",
                          "timestamp":  "2026-09-14T13:09:54Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-4eefb7f",
-                         "title":  "docs(signin): the `--` form is a diff viewer, not a ref:path reader",
-                         "timestamp":  "2026-09-14T14:22:00Z",
                          "environment":  "production"
                      }
                  ]
