@@ -377,6 +377,12 @@ const POSTMESSAGE_PRIORITY_MS = 2000; // PostMessage updates take priority for 2
 // Track iframe load state
 let iframeLoadCompleted = false;
 
+// Pathname of an in-frame route we KNOW rendered a failure page (Error.cshtml / AccessDenied).
+// A failure route is not a destination: publishing it as the portal's own URL would make a reload
+// -- or the framed-failure bar's own retry -- re-request the failure route instead of the page the
+// person actually asked for. Set by handleFramedFailure, cleared when a retry is issued.
+let framedFailureRoute = null;
+
 // Loading timeout system - auto-retry and error display
 let loadingTimeoutHandle = null;
 let loadingRetryCount = 0;
@@ -1581,6 +1587,11 @@ function updateUrlFromIframe() {
       }
     }
 
+    // A known failure route is not a destination -- see framedFailureRoute's own comment.
+    if (framedFailureRoute && pathnameOf(iframePath) === framedFailureRoute) {
+      return;
+    }
+
     // Update parent URL if path changed - use query parameter instead of hash
     // Only update if there's an actual meaningful change
     if (iframePath !== currentIframePath) {
@@ -1615,12 +1626,12 @@ function startLoadingTimeout() {
         currentIframePath = requestedPath;
         startLoadingTimeout();
       } else {
-        showLoadingError();
+        showLoadingError('no-tunnel');
       }
     } else {
       // Max retries exhausted - show error with manual retry button
       console.log('[Portal] Loading timeout after retry - showing error');
-      showLoadingError();
+      showLoadingError('timeout');
     }
   }, LOADING_TIMEOUT_MS);
 }
@@ -1633,39 +1644,219 @@ function clearLoadingTimeout() {
   }
 }
 
-// Show loading error with retry button (replaces the spinner)
-function showLoadingError() {
+// The path the person actually asked for, as recorded in the portal's own URL. Used as the
+// recovery target when a failure page cannot tell us the path it failed to render.
+function requestedSubpagePath() {
+  try {
+    return new URL(window.location.href).searchParams.get('subpage') || '/';
+  } catch (e) {
+    return '/';
+  }
+}
+
+// Path portion only. The URL tracker reports path+search+hash while the failure signal reports
+// path+search, so comparisons must not depend on which one produced the value.
+function pathnameOf(value) {
+  if (!value) return '';
+  return String(value).split('?')[0].split('#')[0];
+}
+
+// Show loading error with retry button (replaces the spinner).
+// Built with DOM APIs (never innerHTML) so the requested path -- which comes from the portal's own
+// query string and is therefore user-controlled -- cannot be interpreted as markup.
+function showLoadingError(failureKind) {
   clearLoadingTimeout();
+
+  const requestedPath = requestedSubpagePath();
+  const kind = failureKind || 'timeout';
+
+  // Always-on telemetry. A hung or unreachable load used to leave NO trace anywhere: the person
+  // saw a spinner then a dead end, and the studio only found out if they said so. Matches the
+  // posture of FramedGatewayLoaded / GatewayBounceDetected. The kind distinguishes a watchdog
+  // timeout from a hard network/DNS failure from a missing configuration.
+  reportPortalDiagnostic('PortalLoadFailed/' + kind,
+    'Platform did not render in time after ' + LOADING_MAX_RETRIES + ' retry/retries | requestedPath=' + requestedPath);
+  if (typeof sendFrontendErrors === 'function') {
+    try { sendFrontendErrors(); } catch (e) { /* best-effort flush */ }
+  }
+
   const overlay = document.getElementById('loadingOverlay');
   if (!overlay) return;
 
-  overlay.innerHTML = `
-    <div class="error-message">
-      <h1>Platform Unreachable</h1>
-      <p>The platform did not respond in time. It may be temporarily unavailable.</p>
-      <button class="retry-button" onclick="manualRetryLoading()">Retry</button>
-    </div>
-  `;
+  while (overlay.firstChild) overlay.removeChild(overlay.firstChild);
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'error-message';
+
+  const heading = document.createElement('h1');
+  heading.textContent = "This page couldn't be loaded";
+
+  const body = document.createElement('p');
+  body.textContent = 'The platform did not respond in time. This is usually temporary -- it may ' +
+    'have been updating, or your connection may have dropped.';
+
+  const askedFor = document.createElement('p');
+  askedFor.className = 'requested-path';
+  askedFor.textContent = 'You asked for: ' + requestedPath;
+
+  const retryBtn = document.createElement('button');
+  retryBtn.type = 'button';
+  retryBtn.className = 'retry-button';
+  retryBtn.textContent = 'Try again';
+  retryBtn.addEventListener('click', function () { retryRequestedPage(requestedPath); });
+
+  wrapper.appendChild(heading);
+  wrapper.appendChild(body);
+  wrapper.appendChild(askedFor);
+  wrapper.appendChild(retryBtn);
+  overlay.appendChild(wrapper);
+  overlay.classList.remove('hidden');
 }
 
 // Manual retry from the error button
 function manualRetryLoading() {
-  // Reset the loading overlay to spinner state
+  retryRequestedPage(requestedSubpagePath());
+}
+
+// ---------------------------------------------------------------------------
+// Framed platform-failure recovery
+// ---------------------------------------------------------------------------
+// The platform volunteers a `portal-failure` message (js/portal-failure-signal.js) when a framed
+// request renders one of its failure pages -- Error.cshtml (unhandled exception) or
+// Identity/AccessDenied (Forbid). Without that signal the portal cannot tell a failure page from
+// real content: a cross-origin frame that renders Error.cshtml still fires `load`, so the loading
+// overlay is hidden and the failure route is published to the address bar as though it were the
+// page the person asked for. That is how a volunteer ended up reading a bare error card floating
+// over a hero image inside a frame they could not tell was a frame.
+//
+// The affordance this adds is TOP-LEVEL (the portal's own chrome) and deliberately does NOT cover
+// the frame. The platform's own failure page is legible, and for a denial it carries the account
+// information the portal cannot know; a second competing full-page message would be worse than the
+// one good one. What the portal adds is the thing the frame cannot do reliably: retry the path the
+// person actually requested, taken from the portal's own URL.
+function hideFramedFailureBar() {
+  const bar = document.getElementById('framedFailureBar');
+  if (bar) bar.remove();
+}
+
+// Re-request a path inside the frame. Never replays a sign-in token: a retry is a plain page
+// request against the session cookie, exactly like the loading watchdog's own retry.
+function retryRequestedPage(preferredPath) {
+  hideFramedFailureBar();
+
+  const path = preferredPath || requestedSubpagePath();
+  const iframe = document.getElementById('tunnelFrame');
+  if (!iframe || !tunnelBaseUrl) {
+    window.location.reload();
+    return;
+  }
+
+  // The retry replaces the failure page with the page they wanted, so the failure route must stop
+  // being suppressed once the frame navigates.
+  framedFailureRoute = null;
+
+  reportPortalDiagnostic('FramedFailureRetry', 'Retrying framed failure | path=' + path);
+
   const overlay = document.getElementById('loadingOverlay');
   if (overlay) {
-    overlay.innerHTML = `
-      <div class="spinner"></div>
-      <p>Loading platform...</p>
-    `;
+    while (overlay.firstChild) overlay.removeChild(overlay.firstChild);
+    const spinner = document.createElement('div');
+    spinner.className = 'spinner';
+    const label = document.createElement('p');
+    label.textContent = 'Loading platform...';
+    overlay.appendChild(spinner);
+    overlay.appendChild(label);
     overlay.classList.remove('hidden');
   }
 
-  // Reset retry state
+  // Reset the watchdog so the retry gets a full budget.
   loadingRetryCount = 0;
   iframeLoadCompleted = false;
+  iframe.src = tunnelBaseUrl + path;
+  currentIframePath = path;
+  startLoadingTimeout();
+}
 
-  // Reload tunnel from scratch
-  loadTunnel();
+// Render the top-level recovery bar. Idempotent: a repeated failure message does not stack bars.
+function showFramedFailureBar(data, intendedPath) {
+  if (document.getElementById('framedFailureBar')) return;
+
+  const container = document.querySelector('.iframe-container') || document.body;
+  if (!container) return;
+
+  const kind = (data && data.kind) || 'unknown';
+  const retryPath = intendedPath || (data && data.attemptedPath) || requestedSubpagePath();
+
+  const bar = document.createElement('div');
+  bar.id = 'framedFailureBar';
+  bar.className = 'framed-failure-bar';
+  bar.setAttribute('role', 'alert');
+
+  const text = document.createElement('span');
+  text.className = 'framed-failure-text';
+  text.textContent = kind === 'access-denied'
+    ? "You don't have access to that page."
+    : "That page couldn't be loaded.";
+
+  const detail = document.createElement('code');
+  detail.className = 'framed-failure-path';
+  detail.textContent = retryPath;
+
+  const actions = document.createElement('span');
+  actions.className = 'framed-failure-actions';
+
+  // Retrying a refusal would just re-refuse, so a denial offers no retry -- the refusal stands.
+  if (kind !== 'access-denied') {
+    const retryBtn = document.createElement('button');
+    retryBtn.type = 'button';
+    retryBtn.className = 'framed-failure-retry';
+    retryBtn.textContent = 'Try again';
+    retryBtn.addEventListener('click', function () { retryRequestedPage(retryPath); });
+    actions.appendChild(retryBtn);
+  }
+
+  const dismissBtn = document.createElement('button');
+  dismissBtn.type = 'button';
+  dismissBtn.className = 'framed-failure-dismiss';
+  dismissBtn.textContent = 'Dismiss';
+  dismissBtn.addEventListener('click', hideFramedFailureBar);
+  actions.appendChild(dismissBtn);
+
+  bar.appendChild(text);
+  bar.appendChild(detail);
+  bar.appendChild(actions);
+
+  try {
+    container.appendChild(bar);
+  } catch (e) {
+    console.error('[Portal] Failed to render framed-failure bar:', e);
+  }
+}
+
+// Consume a `portal-failure` message from the framed platform.
+function handleFramedFailure(data) {
+  const kind = (data && data.kind) || 'unknown';
+  const route = (data && data.route) || 'unknown';
+  const attemptedPath = (data && data.attemptedPath) || '';
+
+  // Remember which route must never be published, and resolve the intended target NOW. The iframe
+  // URL tracker republishes the frame's own path a moment after this message, so reading the portal
+  // URL later could target the failure route itself.
+  framedFailureRoute = (route && route.charAt(0) === '/') ? pathnameOf(route) : null;
+  const intendedPath = attemptedPath || requestedSubpagePath();
+
+  // Durable telemetry: a framed failure must reach the incident store without the person reporting
+  // it. Flushed immediately so it lands even if the retry tears this frame down.
+  reportPortalDiagnostic('PortalFramedFailure',
+    'Framed platform failure | kind=' + kind +
+    ' | route=' + route +
+    ' | attemptedPath=' + intendedPath +
+    ' | retryable=' + !!(data && data.retryable));
+  if (typeof sendFrontendErrors === 'function') {
+    try { sendFrontendErrors(); } catch (e) { /* best-effort flush */ }
+  }
+
+  showFramedFailureBar(data, intendedPath);
 }
 
 async function loadTunnel() {
@@ -2010,7 +2201,7 @@ async function loadTunnel() {
     console.log('[Portal] Iframe load error detected');
     clearLoadingTimeout();
     if (!connectionFailureDetected) {
-      showLoadingError();
+      showLoadingError('network');
     }
   };
 
@@ -2028,6 +2219,15 @@ async function loadTunnel() {
       if (tunnelBaseUrl) {
         console.warn('Ignoring message from unauthorized origin:', event.origin);
       }
+      return;
+    }
+
+    // A framed platform failure page announced itself (js/portal-failure-signal.js). This is
+    // handled BEFORE the URL-change formats below, because those treat any message carrying a path
+    // as a successful authenticated navigation: they clear the sign-in bounce budget and publish
+    // the path to the address bar. A failure route is neither of those things.
+    if (event.data && event.data.type === 'portal-failure') {
+      handleFramedFailure(event.data);
       return;
     }
 
@@ -2084,6 +2284,12 @@ async function loadTunnel() {
         // Normalize path (ensure it starts with /)
         if (!newPath.startsWith('/')) {
           newPath = '/' + newPath;
+        }
+
+        // A known failure route is not a successful authenticated navigation: it must not clear the
+        // sign-in bounce budget, and it must not become the portal's own URL (see framedFailureRoute).
+        if (framedFailureRoute && pathnameOf(newPath) === framedFailureRoute) {
+          return;
         }
 
         // Check if navigating to gateway.html
