@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2e8da24",
-                         "title":  "fix(signin): recover a framed gateway rejection instead of stranding the user",
-                         "timestamp":  "2026-09-13T23:15:22Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-96daefd",
                          "title":  "docs(findings): size where the shared GitHub installation budget actually goes",
                          "timestamp":  "2026-09-14T07:57:52Z",
@@ -104,6 +98,12 @@
                          "version":  "build-dbe9ced",
                          "title":  "feat(buddy-desktop): name the streaming platform on the Steam presence line",
                          "timestamp":  "2026-09-14T15:00:29Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-594ff1b",
+                         "title":  "feat(buddy-desktop): add report a bug option to actions submenu",
+                         "timestamp":  "2026-09-14T16:19:23Z",
                          "environment":  "production"
                      }
                  ]
