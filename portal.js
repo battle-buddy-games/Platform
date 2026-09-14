@@ -1805,8 +1805,13 @@ function showFramedFailureBar(data, intendedPath) {
   const actions = document.createElement('span');
   actions.className = 'framed-failure-actions';
 
-  // Retrying a refusal would just re-refuse, so a denial offers no retry -- the refusal stands.
-  if (kind !== 'access-denied') {
+  // No retry when the framed page stated a retry cannot succeed (Error.cshtml emits
+  // data-retryable="false" for a 404 -- retrying a path that does not exist is a loop, not a
+  // recovery), and none for a refusal, which would just re-refuse. A page that says nothing about
+  // retryability keeps the retry: `!== false` rather than a truthiness test, so `null`/`undefined`
+  // preserve this bar's behaviour from before the attribute existed rather than inverting it.
+  const retryAllowed = kind !== 'access-denied' && (!data || data.retryable !== false);
+  if (retryAllowed) {
     const retryBtn = document.createElement('button');
     retryBtn.type = 'button';
     retryBtn.className = 'framed-failure-retry';
