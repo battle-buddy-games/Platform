@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8fafdcc",
-                         "title":  "fix(discord): never delete dead-key objects holding real conversation",
-                         "timestamp":  "2026-09-13T17:10:11Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f0e25b9",
                          "title":  "docs(webplatform): split platform.service.cloud/CLAUDE.md into a lean index p...",
                          "timestamp":  "2026-09-13T17:33:41Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2e8da24",
                          "title":  "fix(signin): recover a framed gateway rejection instead of stranding the user",
                          "timestamp":  "2026-09-13T23:15:22Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-96daefd",
+                         "title":  "docs(findings): size where the shared GitHub installation budget actually goes",
+                         "timestamp":  "2026-09-14T07:57:52Z",
                          "environment":  "production"
                      }
                  ]
