@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-4ba5d81",
-                         "title":  "fix(battle-buddy-hub): accept buddy-transcript-sync client type",
-                         "timestamp":  "2026-09-14T22:40:30Z",
+                         "version":  "build-13bf1e7",
+                         "title":  "fix(chat): mirror plugin transcript turns into Chat DM thread automatically",
+                         "timestamp":  "2026-09-14T23:17:17Z",
                          "environment":  "production"
                      }
                  ]
