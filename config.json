@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-96daefd",
-                         "title":  "docs(findings): size where the shared GitHub installation budget actually goes",
-                         "timestamp":  "2026-09-14T07:57:52Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-dd8b30e",
                          "title":  "docs: correct the Ensure-pairing rule\u0027s EF-visibility discriminator",
                          "timestamp":  "2026-09-14T09:06:41Z",
@@ -104,6 +98,12 @@
                          "version":  "build-594ff1b",
                          "title":  "feat(buddy-desktop): add report a bug option to actions submenu",
                          "timestamp":  "2026-09-14T16:19:23Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e0026e1",
+                         "title":  "fix(ci-discord): add clickable commit links to CI video Discord messages",
+                         "timestamp":  "2026-09-14T16:44:41Z",
                          "environment":  "production"
                      }
                  ]
