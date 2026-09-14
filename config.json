@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-e0026e1",
-                         "title":  "fix(ci-discord): add clickable commit links to CI video Discord messages",
-                         "timestamp":  "2026-09-14T16:44:41Z",
+                         "version":  "build-10c9456",
+                         "title":  "fix(discord): platform activity channel defaults to Activity Feeds category",
+                         "timestamp":  "2026-09-14T17:13:58Z",
                          "environment":  "production"
                      }
                  ]
