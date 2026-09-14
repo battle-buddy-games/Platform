@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-6d3e333",
-                         "title":  "fix(tests): resolve the repo root deterministically in the structural scans",
-                         "timestamp":  "2026-09-14T08:28:39Z",
+                         "version":  "build-96daefd",
+                         "title":  "docs(findings): size where the shared GitHub installation budget actually goes",
+                         "timestamp":  "2026-09-14T07:57:52Z",
                          "environment":  "production"
                      }
                  ]
