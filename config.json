@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-a21bccd",
-                         "title":  "fix(platform): stop GitHub failures 500ing docs pages and run detail",
-                         "timestamp":  "2026-09-13T23:47:14Z",
+                         "version":  "build-2e8da24",
+                         "title":  "fix(signin): recover a framed gateway rejection instead of stranding the user",
+                         "timestamp":  "2026-09-13T23:15:22Z",
                          "environment":  "production"
                      }
                  ]
