@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-f2de6f4",
-                         "title":  "ci(validate): pass UseSharedCompilation=false on the Release-Local build too",
-                         "timestamp":  "2026-09-14T13:09:54Z",
+                         "version":  "build-c21f4be",
+                         "title":  "docs(findings): correct the audit\u0027s hourly magnitudes and record the ledger w...",
+                         "timestamp":  "2026-09-14T13:32:26Z",
                          "environment":  "production"
                      }
                  ]
