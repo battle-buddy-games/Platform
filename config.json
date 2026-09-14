@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5f6cdad",
-                         "title":  "fix(incidents): attribute the emitting process on every row",
-                         "timestamp":  "2026-09-14T09:41:10Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9aa3a5b",
                          "title":  "fix(migrations): make AddDocumentRouteSlug idempotent — index-only Up/Down",
                          "timestamp":  "2026-09-14T10:22:01Z",
@@ -104,6 +98,12 @@
                          "version":  "build-29ae5b8",
                          "title":  "fix(navbar): replace per-portal accordion with cascading pages submenu",
                          "timestamp":  "2026-09-14T21:31:16Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4ba5d81",
+                         "title":  "fix(battle-buddy-hub): accept buddy-transcript-sync client type",
+                         "timestamp":  "2026-09-14T22:40:30Z",
                          "environment":  "production"
                      }
                  ]
