@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-afd9f87",
-                         "title":  "fix(chat): offer every workspace of the target machine, not one connection\u0027s ...",
-                         "timestamp":  "2026-09-13T19:21:45Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-85ac002",
                          "title":  "Release build-afd9f87: fix(chat): offer every workspace of the target machine...",
                          "timestamp":  "2026-09-13T20:16:11Z",
@@ -104,6 +98,12 @@
                          "version":  "build-9aa3a5b",
                          "title":  "fix(migrations): make AddDocumentRouteSlug idempotent — index-only Up/Down",
                          "timestamp":  "2026-09-14T10:22:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f6b2f00",
+                         "title":  "fix(routing): give an unmatched route a real body instead of a blank pane",
+                         "timestamp":  "2026-09-14T11:18:21Z",
                          "environment":  "production"
                      }
                  ]
