@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f0e25b9",
-                         "title":  "docs(webplatform): split platform.service.cloud/CLAUDE.md into a lean index p...",
-                         "timestamp":  "2026-09-13T17:33:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f1af0df",
                          "title":  "fix(docs): index CLAUDE-*.md and TOOL-DOWNLOADS.md in the docs portal",
                          "timestamp":  "2026-09-13T18:06:06Z",
@@ -104,6 +98,12 @@
                          "version":  "build-96daefd",
                          "title":  "docs(findings): size where the shared GitHub installation budget actually goes",
                          "timestamp":  "2026-09-14T07:57:52Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-dd8b30e",
+                         "title":  "docs: correct the Ensure-pairing rule\u0027s EF-visibility discriminator",
+                         "timestamp":  "2026-09-14T09:06:41Z",
                          "environment":  "production"
                      }
                  ]
