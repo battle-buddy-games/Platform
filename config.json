@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1555c37",
-                         "title":  "fix(chat): derive the desktop-session dot from sessionState, not isConnected",
-                         "timestamp":  "2026-09-13T18:51:17Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-afd9f87",
                          "title":  "fix(chat): offer every workspace of the target machine, not one connection\u0027s ...",
                          "timestamp":  "2026-09-13T19:21:45Z",
@@ -104,6 +98,12 @@
                          "version":  "build-5f6cdad",
                          "title":  "fix(incidents): attribute the emitting process on every row",
                          "timestamp":  "2026-09-14T09:41:10Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9aa3a5b",
+                         "title":  "fix(migrations): make AddDocumentRouteSlug idempotent — index-only Up/Down",
+                         "timestamp":  "2026-09-14T10:22:01Z",
                          "environment":  "production"
                      }
                  ]
