@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e0026e1",
-                         "title":  "fix(ci-discord): add clickable commit links to CI video Discord messages",
-                         "timestamp":  "2026-09-14T16:44:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-29ae5b8",
                          "title":  "fix(navbar): replace per-portal accordion with cascading pages submenu",
                          "timestamp":  "2026-09-14T21:31:16Z",
@@ -104,6 +98,12 @@
                          "version":  "build-820aa10",
                          "title":  "fix(static-sites): correct wiki nav-link category slug to singular \"troop\"",
                          "timestamp":  "2026-09-15T15:39:06Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c25089a",
+                         "title":  "fix(local-router): extend nginx log retention with gzip compression",
+                         "timestamp":  "2026-09-15T16:14:31Z",
                          "environment":  "production"
                      }
                  ]
