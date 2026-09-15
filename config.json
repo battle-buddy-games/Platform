@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-32a5ac2",
-                         "title":  "fix(home): label fact-tile values on Home/About so raw numbers and theme name...",
-                         "timestamp":  "2026-09-15T11:53:12Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1fc174a",
                          "title":  "feat(discord): speak TTS announcement on bot reconnect",
                          "timestamp":  "2026-09-15T13:36:39Z",
@@ -104,6 +98,12 @@
                          "version":  "build-9125631",
                          "title":  "refactor(plugin-transcript-ingest): split persistence from the DashboardChatM...",
                          "timestamp":  "2026-09-15T20:43:23Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4276e1b",
+                         "title":  "feat(desktop): include Codex plugin updates",
+                         "timestamp":  "2026-09-15T21:49:09Z",
                          "environment":  "production"
                      }
                  ]
