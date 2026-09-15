@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7fd2032",
-                         "title":  "fix(docs-portal): compact the reading-page header so content starts near the top",
-                         "timestamp":  "2026-09-15T15:11:15Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-820aa10",
                          "title":  "fix(static-sites): correct wiki nav-link category slug to singular \"troop\"",
                          "timestamp":  "2026-09-15T15:39:06Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3b77533",
                          "title":  "feat(buddy-desktop): add a CI Status overlay window for OBS capture",
                          "timestamp":  "2026-09-15T23:15:39Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3ca426d",
+                         "title":  "feat(docs-portal): add a share control to documentation portal pages",
+                         "timestamp":  "2026-09-15T23:55:01Z",
                          "environment":  "production"
                      }
                  ]
