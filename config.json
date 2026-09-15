@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9aa3a5b",
-                         "title":  "fix(migrations): make AddDocumentRouteSlug idempotent — index-only Up/Down",
-                         "timestamp":  "2026-09-14T10:22:01Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f6b2f00",
                          "title":  "fix(routing): give an unmatched route a real body instead of a blank pane",
                          "timestamp":  "2026-09-14T11:18:21Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4ba5d81",
                          "title":  "fix(battle-buddy-hub): accept buddy-transcript-sync client type",
                          "timestamp":  "2026-09-14T22:40:30Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-07fe731",
+                         "title":  "fix(chat): mirror mismatched Recipient hides DM rows; hide local-command cave...",
+                         "timestamp":  "2026-09-15T09:27:24Z",
                          "environment":  "production"
                      }
                  ]
