@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-1fc174a",
-                         "title":  "feat(discord): speak TTS announcement on bot reconnect",
-                         "timestamp":  "2026-09-15T13:36:39Z",
+                         "version":  "build-0a5967f",
+                         "title":  "feat(home): add role chips with hover-highlight and fold About\u0027s Platform Are...",
+                         "timestamp":  "2026-09-15T14:02:24Z",
                          "environment":  "production"
                      }
                  ]
