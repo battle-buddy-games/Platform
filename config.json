@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-dbe9ced",
-                         "title":  "feat(buddy-desktop): name the streaming platform on the Steam presence line",
-                         "timestamp":  "2026-09-14T15:00:29Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-594ff1b",
                          "title":  "feat(buddy-desktop): add report a bug option to actions submenu",
                          "timestamp":  "2026-09-14T16:19:23Z",
@@ -104,6 +98,12 @@
                          "version":  "build-1fc174a",
                          "title":  "feat(discord): speak TTS announcement on bot reconnect",
                          "timestamp":  "2026-09-15T13:36:39Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7fd2032",
+                         "title":  "fix(docs-portal): compact the reading-page header so content starts near the top",
+                         "timestamp":  "2026-09-15T15:11:15Z",
                          "environment":  "production"
                      }
                  ]
