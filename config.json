@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4eefb7f",
-                         "title":  "docs(signin): the `--` form is a diff viewer, not a ref:path reader",
-                         "timestamp":  "2026-09-14T14:22:00Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-dbe9ced",
                          "title":  "feat(buddy-desktop): name the streaming platform on the Steam presence line",
                          "timestamp":  "2026-09-14T15:00:29Z",
@@ -104,6 +98,12 @@
                          "version":  "build-32a5ac2",
                          "title":  "fix(home): label fact-tile values on Home/About so raw numbers and theme name...",
                          "timestamp":  "2026-09-15T11:53:12Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1fc174a",
+                         "title":  "feat(discord): speak TTS announcement on bot reconnect",
+                         "timestamp":  "2026-09-15T13:36:39Z",
                          "environment":  "production"
                      }
                  ]
