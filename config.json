@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4ba5d81",
-                         "title":  "fix(battle-buddy-hub): accept buddy-transcript-sync client type",
-                         "timestamp":  "2026-09-14T22:40:30Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-07fe731",
                          "title":  "fix(chat): mirror mismatched Recipient hides DM rows; hide local-command cave...",
                          "timestamp":  "2026-09-15T09:27:24Z",
@@ -104,6 +98,12 @@
                          "version":  "build-59c0c02",
                          "title":  "feat(activity-tracking): add identity-attributed page-view tracking for Docum...",
                          "timestamp":  "2026-09-15T16:42:58Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-29456f2",
+                         "title":  "fix(portals): audit trail for IsEnabled archive/unarchive toggles",
+                         "timestamp":  "2026-09-15T17:11:54Z",
                          "environment":  "production"
                      }
                  ]
