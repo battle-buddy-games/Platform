@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-594ff1b",
-                         "title":  "feat(buddy-desktop): add report a bug option to actions submenu",
-                         "timestamp":  "2026-09-14T16:19:23Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e0026e1",
                          "title":  "fix(ci-discord): add clickable commit links to CI video Discord messages",
                          "timestamp":  "2026-09-14T16:44:41Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7fd2032",
                          "title":  "fix(docs-portal): compact the reading-page header so content starts near the top",
                          "timestamp":  "2026-09-15T15:11:15Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-820aa10",
+                         "title":  "fix(static-sites): correct wiki nav-link category slug to singular \"troop\"",
+                         "timestamp":  "2026-09-15T15:39:06Z",
                          "environment":  "production"
                      }
                  ]
