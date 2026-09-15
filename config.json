@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1fc174a",
-                         "title":  "feat(discord): speak TTS announcement on bot reconnect",
-                         "timestamp":  "2026-09-15T13:36:39Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7fd2032",
                          "title":  "fix(docs-portal): compact the reading-page header so content starts near the top",
                          "timestamp":  "2026-09-15T15:11:15Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4276e1b",
                          "title":  "feat(desktop): include Codex plugin updates",
                          "timestamp":  "2026-09-15T21:49:09Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3b77533",
+                         "title":  "feat(buddy-desktop): add a CI Status overlay window for OBS capture",
+                         "timestamp":  "2026-09-15T23:15:39Z",
                          "environment":  "production"
                      }
                  ]
