@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-820aa10",
-                         "title":  "fix(static-sites): correct wiki nav-link category slug to singular \"troop\"",
-                         "timestamp":  "2026-09-15T15:39:06Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c25089a",
                          "title":  "fix(local-router): extend nginx log retention with gzip compression",
                          "timestamp":  "2026-09-15T16:14:31Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3ca426d",
                          "title":  "feat(docs-portal): add a share control to documentation portal pages",
                          "timestamp":  "2026-09-15T23:55:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9d55260",
+                         "title":  "refactor(chat-plugin-sessions): shared row normaliser + seq-cursor advance",
+                         "timestamp":  "2026-09-16T00:36:35Z",
                          "environment":  "production"
                      }
                  ]
