@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-bda88f1",
-                         "title":  "feat(buddy-desktop): add Project Activity Tower OBS window (3D file-change to...",
-                         "timestamp":  "2026-09-16T16:48:48Z",
+                         "version":  "build-e3c03a9",
+                         "title":  "fix(buddy-desktop): add fetch timeouts + fix IPC race in CI gallery refresh",
+                         "timestamp":  "2026-09-16T16:04:45Z",
                          "environment":  "production"
                      }
                  ]
