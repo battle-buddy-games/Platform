@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-59c0c02",
-                         "title":  "feat(activity-tracking): add identity-attributed page-view tracking for Docum...",
-                         "timestamp":  "2026-09-15T16:42:58Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-29456f2",
                          "title":  "fix(portals): audit trail for IsEnabled archive/unarchive toggles",
                          "timestamp":  "2026-09-15T17:11:54Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4f2c484",
                          "title":  "fix(battlebuddy-hub): tag transcript-batch-limit rejection with its error cod...",
                          "timestamp":  "2026-09-16T09:32:13Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-01dd4cf",
+                         "title":  "fix(plugin-sessions): Codex/Pi sessions first-class everywhere Claude is; pla...",
+                         "timestamp":  "2026-09-16T10:12:06Z",
                          "environment":  "production"
                      }
                  ]
