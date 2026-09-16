@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9c15451",
-                         "title":  "feat(battle-buddy): structured hub error codes, sync-health badge, update-not...",
-                         "timestamp":  "2026-09-15T19:19:33Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2d238d1",
                          "title":  "fix(buddy-desktop): relaunch CLI daemon when Steam Presence mode changes",
                          "timestamp":  "2026-09-15T19:49:59Z",
@@ -104,6 +98,12 @@
                          "version":  "build-6c99692",
                          "title":  "fix(ci): stop Validate cleanup killing production slots; make Buddy CLI uploa...",
                          "timestamp":  "2026-09-16T10:41:48Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1e84200",
+                         "title":  "fix(buddy-desktop): make CI windows movable and add auto-rotating gallery",
+                         "timestamp":  "2026-09-16T11:07:46Z",
                          "environment":  "production"
                      }
                  ]
