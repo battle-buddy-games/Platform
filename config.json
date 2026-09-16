@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-29456f2",
-                         "title":  "fix(portals): audit trail for IsEnabled archive/unarchive toggles",
-                         "timestamp":  "2026-09-15T17:11:54Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9c15451",
                          "title":  "feat(battle-buddy): structured hub error codes, sync-health badge, update-not...",
                          "timestamp":  "2026-09-15T19:19:33Z",
@@ -104,6 +98,12 @@
                          "version":  "build-01dd4cf",
                          "title":  "fix(plugin-sessions): Codex/Pi sessions first-class everywhere Claude is; pla...",
                          "timestamp":  "2026-09-16T10:12:06Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6c99692",
+                         "title":  "fix(ci): stop Validate cleanup killing production slots; make Buddy CLI uploa...",
+                         "timestamp":  "2026-09-16T10:41:48Z",
                          "environment":  "production"
                      }
                  ]
