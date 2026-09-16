@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3b77533",
-                         "title":  "feat(buddy-desktop): add a CI Status overlay window for OBS capture",
-                         "timestamp":  "2026-09-15T23:15:39Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3ca426d",
                          "title":  "feat(docs-portal): add a share control to documentation portal pages",
                          "timestamp":  "2026-09-15T23:55:01Z",
@@ -104,6 +98,12 @@
                          "version":  "build-e3c03a9",
                          "title":  "fix(buddy-desktop): add fetch timeouts + fix IPC race in CI gallery refresh",
                          "timestamp":  "2026-09-16T16:04:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ebe1837",
+                         "title":  "fix(docs-portals): throttle request-path GitHub folder-discovery scan to fix ...",
+                         "timestamp":  "2026-09-16T17:55:24Z",
                          "environment":  "production"
                      }
                  ]
