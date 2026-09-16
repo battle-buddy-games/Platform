@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-3103269",
-                         "title":  "Create news Platform activity update — 2026-09-16 11:59 UTC",
-                         "timestamp":  "2026-09-16T13:27:49Z",
+                         "version":  "build-dc757aa",
+                         "title":  "fix(di): register a handler-free Dispatcher for Release-Local so SdkTrackingR...",
+                         "timestamp":  "2026-09-16T14:04:13Z",
                          "environment":  "production"
                      }
                  ]
