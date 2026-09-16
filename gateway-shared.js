@@ -1246,3 +1246,49 @@ window.addEventListener('beforeunload', function() {
   }
   flushGatewayAnalytics();
 });
+
+// ---------------------------------------------------------------------------
+// Browser/runtime identity for sign-in diagnostics (2026-09-16)
+// ---------------------------------------------------------------------------
+// Defined HERE, not in portal.js or gateway-frame-signal.js, because portal.html and
+// gateway.html both load this file BEFORE their own page script -- so both telemetry
+// producers (portal.js `GatewayBounceDetected`, gateway-frame-signal.js
+// `FramedGatewayLoaded`) get one identical implementation. There is no build pipeline
+// here, so a shared script is the only way to avoid two copies drifting apart.
+//
+// Two full investigations into the sign-in loop
+// (2026-09-13, 2026-09-16) could not confirm or refute "the Discord embedded webview blocks the
+// cookie" because not one of the 26 live `GatewayBounceDetected` events recorded what browser it
+// was. Third-party-cookie behaviour is decided almost entirely by browser engine and embedding
+// context, so without this field a row cannot answer the only question being asked of it -- and
+// once `Partitioned` (CHIPS) ships, it is the field that says WHICH populations it recovered.
+//
+// The RAW string is emitted, not only the derived flag: the derived flag answers today's question,
+// the raw string answers the one nobody has thought of yet. Both are needed because they degrade
+// differently -- see the scrub note below.
+//
+// Detection order is most-specific first. Discord desktop is Electron/Chromium and puts a
+// `discord/<ver>` token in the UA; Discord mobile uses the system webview, which on Android is
+// marked by the `; wv)` token and on iOS by the ABSENCE of the `Safari/` token (in-app webviews
+// omit it, real Mobile Safari does not). Anything unrecognised reports 'no' rather than guessing,
+// and a UA we cannot read at all reports 'unknown' -- never a silent false negative.
+function describeEmbeddedWebview(ua) {
+  try {
+    if (typeof ua !== 'string' || ua.length === 0) return 'unknown';
+    if (/discord\//i.test(ua)) return 'discord-desktop';
+    if (/Electron\//i.test(ua)) return 'electron';
+    if (/;\s*wv\)/i.test(ua)) return 'android-webview';
+    if (/\b(FBAN|FBAV|Instagram|Line|Twitter|MicroMessenger)\b/i.test(ua)) return 'in-app-webview';
+    if (/(iPhone|iPad|iPod)/i.test(ua) && !/Safari\//i.test(ua)) return 'ios-webview';
+    return 'no';
+  } catch (e) { return 'unknown'; }
+}
+
+function describeUserAgent() {
+  try {
+    if (typeof navigator === 'undefined' || typeof navigator.userAgent !== 'string') return '';
+    return navigator.userAgent;
+  } catch (e) { return ''; }
+}
+
+// end-of-webview-helpers

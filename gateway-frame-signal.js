@@ -83,9 +83,19 @@
       if (typeof bufferFrontendError === 'function') {
         bufferFrontendError({
           Type: DIAGNOSTIC_TYPE,
+          // `firstPartyCookies` (renamed from `cookieEnabled`, 2026-09-16): navigator.cookieEnabled
+          // reports FIRST-PARTY availability only and is `true` in every browser that blocks
+          // third-party cookies -- the exact condition this telemetry exists to identify. The old
+          // name read as evidence against the failure it was added to detect. Same rename already
+          // applied in portal.js; one name for one measurement across the whole stream.
+          // `embeddedWebview`/`ua` come from gateway-shared.js, loaded before this script.
           Message: 'Gateway loaded inside a frame; path=' + (location.pathname || '') +
             ' | hasErrorParam=' + hasErrorParam +
-            ' | cookieEnabled=' + (typeof navigator !== 'undefined' ? navigator.cookieEnabled : 'unknown'),
+            ' | firstPartyCookies=' + (typeof navigator !== 'undefined' ? navigator.cookieEnabled : 'unknown') +
+            ' | embeddedWebview=' + (typeof describeEmbeddedWebview === 'function'
+              ? describeEmbeddedWebview(typeof describeUserAgent === 'function' ? describeUserAgent() : '')
+              : 'unknown') +
+            ' | ua=' + (typeof describeUserAgent === 'function' ? describeUserAgent() : ''),
           Source: 'gateway-frame-signal.js',
           Timestamp: new Date().toISOString()
         });

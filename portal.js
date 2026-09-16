@@ -167,9 +167,18 @@ function reportPortalDiagnostic(type, message) {
     // old field could not discriminate the failure and read as evidence against it.
     bufferFrontendError({
       Type: type,
+      // `ua` goes LAST deliberately: IncidentScrubber.ScrubMessage truncates at 2048 chars, and
+      // the UA is by far the longest field -- trailing position means a truncation can only ever
+      // cost the raw string, never the structured flags in front of it. It is also the field the
+      // scrubber MUTATES: its IPv4 rule matches a Chrome version quad, so `Chrome/131.0.0.0`
+      // persists as `Chrome/<ip>` (verified against the live regexes, 2026-09-16). Browser
+      // identity and every webview marker survive that; the version number does not -- which is
+      // why `embeddedWebview` is precomputed here rather than derived from the stored string later.
       Message: message + ' | subpage=' + currentSubpage +
         ' | firstPartyCookies=' + navigator.cookieEnabled +
-        ' | thirdPartyCookies=' + describeThirdPartyCookieState(),
+        ' | thirdPartyCookies=' + describeThirdPartyCookieState() +
+        ' | embeddedWebview=' + describeEmbeddedWebview(describeUserAgent()) +
+        ' | ua=' + describeUserAgent(),
       Source: 'portal.js',
       Timestamp: new Date().toISOString()
     });
