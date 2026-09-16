@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9125631",
-                         "title":  "refactor(plugin-transcript-ingest): split persistence from the DashboardChatM...",
-                         "timestamp":  "2026-09-15T20:43:23Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4276e1b",
                          "title":  "feat(desktop): include Codex plugin updates",
                          "timestamp":  "2026-09-15T21:49:09Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3103269",
                          "title":  "Create news Platform activity update — 2026-09-16 11:59 UTC",
                          "timestamp":  "2026-09-16T13:27:49Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d6562df",
+                         "title":  "feat(buddy-desktop): add OBS-optimized CI gallery overlay window",
+                         "timestamp":  "2026-09-16T14:40:33Z",
                          "environment":  "production"
                      }
                  ]
