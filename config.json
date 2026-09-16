@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2d238d1",
-                         "title":  "fix(buddy-desktop): relaunch CLI daemon when Steam Presence mode changes",
-                         "timestamp":  "2026-09-15T19:49:59Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9125631",
                          "title":  "refactor(plugin-transcript-ingest): split persistence from the DashboardChatM...",
                          "timestamp":  "2026-09-15T20:43:23Z",
@@ -104,6 +98,12 @@
                          "version":  "build-1e84200",
                          "title":  "fix(buddy-desktop): make CI windows movable and add auto-rotating gallery",
                          "timestamp":  "2026-09-16T11:07:46Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3103269",
+                         "title":  "Create news Platform activity update — 2026-09-16 11:59 UTC",
+                         "timestamp":  "2026-09-16T13:27:49Z",
                          "environment":  "production"
                      }
                  ]
