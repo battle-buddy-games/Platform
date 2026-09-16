@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4f2c484",
-                         "title":  "fix(battlebuddy-hub): tag transcript-batch-limit rejection with its error cod...",
-                         "timestamp":  "2026-09-16T09:32:13Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-01dd4cf",
                          "title":  "fix(plugin-sessions): Codex/Pi sessions first-class everywhere Claude is; pla...",
                          "timestamp":  "2026-09-16T10:12:06Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a7ee863",
                          "title":  "fix(documentation): guard second unhandled GitHub SHA-lookup call on request ...",
                          "timestamp":  "2026-09-16T20:04:23Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-477a1e5",
+                         "title":  "feat(home): hierarchical city layout + architecture-zone color for Project Ac...",
+                         "timestamp":  "2026-09-16T20:46:43Z",
                          "environment":  "production"
                      }
                  ]
