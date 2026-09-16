@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-6c99692",
-                         "title":  "fix(ci): stop Validate cleanup killing production slots; make Buddy CLI uploa...",
-                         "timestamp":  "2026-09-16T10:41:48Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1e84200",
                          "title":  "fix(buddy-desktop): make CI windows movable and add auto-rotating gallery",
                          "timestamp":  "2026-09-16T11:07:46Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0a6d612",
                          "title":  "fix(buddy-desktop): CI Gallery grid slots showing identical item + add advanc...",
                          "timestamp":  "2026-09-16T21:28:56Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-784b7cb",
+                         "title":  "feat(buddy-desktop): add transparent-background toggle for Project Activity T...",
+                         "timestamp":  "2026-09-16T22:23:15Z",
                          "environment":  "production"
                      }
                  ]
