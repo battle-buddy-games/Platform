@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://campaign-garcia-domestic-morrison.trycloudflare.com"
+                                  "address":  "https://counties-shut-jose-cooper.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
