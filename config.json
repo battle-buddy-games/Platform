@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-01dd4cf",
-                         "title":  "fix(plugin-sessions): Codex/Pi sessions first-class everywhere Claude is; pla...",
-                         "timestamp":  "2026-09-16T10:12:06Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-6c99692",
                          "title":  "fix(ci): stop Validate cleanup killing production slots; make Buddy CLI uploa...",
                          "timestamp":  "2026-09-16T10:41:48Z",
@@ -104,6 +98,12 @@
                          "version":  "build-477a1e5",
                          "title":  "feat(home): hierarchical city layout + architecture-zone color for Project Ac...",
                          "timestamp":  "2026-09-16T20:46:43Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0a6d612",
+                         "title":  "fix(buddy-desktop): CI Gallery grid slots showing identical item + add advanc...",
+                         "timestamp":  "2026-09-16T21:28:56Z",
                          "environment":  "production"
                      }
                  ]
