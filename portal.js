@@ -10,16 +10,37 @@
 // repeat forever: gateway -> OAuth -> portal -> iframe signin -> cookie lost ->
 // iframe gateway.html -> portal redirects to gateway.html -> ...
 //
-// This guard caps the bounce RATE. If MAX_GATEWAY_BOUNCES whole-page redirects to
-// gateway.html occur within GATEWAY_BOUNCE_WINDOW_MS, we STOP auto-redirecting and
-// show a terminal error instead of reloading -- so a cookie failure degrades to a
-// visible error, never an infinite reload. The counter lives in SESSIONSTORAGE so
-// it is per-tab/session, survives the navigations within one loop, and is cleared
-// on a successful auth (authenticated platform content posts a non-gateway URL).
+// This guard counts CONSECUTIVE bounces -- bounces not separated by a proven success.
+// If MAX_GATEWAY_BOUNCES whole-page redirects to gateway.html happen consecutively, we
+// STOP auto-redirecting and show a terminal error instead of reloading -- so a cookie
+// failure degrades to a visible error, never an infinite reload. The counter lives in
+// SESSIONSTORAGE so it is per-tab/session, survives the navigations within one loop, and
+// is cleared on a successful auth (authenticated platform content posts a non-gateway URL).
 // Happy-path single redirects (bounces under threshold) are unaffected.
+//
+// WHY CONSECUTIVE, NOT A RATE (confirmed live defect, fixed 2026-09-16). This guard
+// previously required MAX_GATEWAY_BOUNCES within a fixed 20 000 ms window measured from the
+// FIRST bounce. One iteration of the loop being guarded is a whole OAuth round trip --
+// portal -> gateway.html (which runs its own 5 s countdown) -> provider -> callback page
+// (another countdown) -> portal -- so an iteration CANNOT complete in under ~20 s. Measured
+// from production telemetry (`GatewayBounceDetected`, surface=web, 2026-09-10..2026-09-16):
+// 26 bounce events, of which 23 reported "bounce 1/3" and 3 reported "2/3"; the breaker
+// tripped ZERO times and `GatewaySignInLoopTripped` was never once emitted. Every real
+// loop-iteration gap exceeded the window (20.8, 24.4, 28.5, 30.4, 34.4, 46.2, 51.5, 80.6,
+// 98.7, 176.7 s); the only sub-window gaps (0.0, 0.1, 0.9 s) were double-fires inside a
+// single page load. The rate window was therefore shorter than the minimum period of the
+// loop it existed to break, making the terminal error UNREACHABLE by construction and the
+// loop unbounded in practice.
+//
+// The condition being guarded is "N failures with no success in between", which is not a
+// rate. So the counter is now consecutive, and time is used only to expire STALE state --
+// measured from the PREVIOUS bounce (sliding), never from the first. A fixed start would
+// re-introduce the same bug at a larger scale: a long enough loop would still outrun it.
+// GATEWAY_BOUNCE_STALE_MS is ~5x the worst observed iteration gap above, and sessionStorage
+// already scopes the counter to one tab session, so stale state cannot outlive the tab.
 const SIGNIN_BOUNCE_KEY = 'bb_portal_gateway_bounce';
-const MAX_GATEWAY_BOUNCES = 3;            // trip on the 3rd gateway.html redirect
-const GATEWAY_BOUNCE_WINDOW_MS = 20000;   // ...within 20 seconds
+const MAX_GATEWAY_BOUNCES = 3;                   // trip on the 3rd CONSECUTIVE gateway.html redirect
+const GATEWAY_BOUNCE_STALE_MS = 15 * 60 * 1000;  // forget the run if no bounce for 15 minutes
 let signInLoopBroken = false;             // once tripped, suppress further redirects on this page
 
 function clearGatewayBounceCounter() {
@@ -112,13 +133,43 @@ function claimSignInTokenOnce(token) {
 // mode). Reuses the existing always-on frontend-error pipeline (bufferFrontendError /
 // sendFrontendErrors in gateway-shared.js -> POST api/FrontendError/log -> incident pipeline),
 // so these show up in the Incident Explorer without any new backend endpoint.
+// Third-party (partitioned) cookie availability for THIS document. `document.hasStorageAccess()`
+// is the only API that answers this, and it is async, while diagnostics are buffered
+// synchronously and flushed with sendBeacon. So the probe runs once at load and the resolved
+// answer is cached for later reads; a diagnostic emitted before it resolves honestly reports
+// 'unknown' rather than guessing. 'unsupported' means the browser has no such API.
+let thirdPartyCookieState = 'unknown';
+(function probeThirdPartyCookieAccess() {
+  try {
+    if (typeof document === 'undefined' || typeof document.hasStorageAccess !== 'function') {
+      thirdPartyCookieState = 'unsupported';
+      return;
+    }
+    document.hasStorageAccess()
+      .then(function (granted) { thirdPartyCookieState = granted ? 'granted' : 'blocked'; })
+      .catch(function () { thirdPartyCookieState = 'unknown'; });
+  } catch (e) { thirdPartyCookieState = 'unknown'; }
+})();
+
+function describeThirdPartyCookieState() {
+  return thirdPartyCookieState;
+}
+
 function reportPortalDiagnostic(type, message) {
   try {
     if (typeof bufferFrontendError !== 'function') return;
     const currentSubpage = new URLSearchParams(window.location.search).get('subpage') || '/';
+    // `navigator.cookieEnabled` reports FIRST-PARTY cookie availability only: it is `true` in
+    // every browser that blocks third-party cookies, which is the exact condition this
+    // telemetry exists to identify. Reported under a name that says what it actually measures
+    // -- all 26 live `GatewayBounceDetected` events up to 2026-09-16 carried the old
+    // `cookieEnabled=true`, including runs that were genuine third-party-cookie loops, so the
+    // old field could not discriminate the failure and read as evidence against it.
     bufferFrontendError({
       Type: type,
-      Message: message + ' | subpage=' + currentSubpage + ' | cookieEnabled=' + navigator.cookieEnabled,
+      Message: message + ' | subpage=' + currentSubpage +
+        ' | firstPartyCookies=' + navigator.cookieEnabled +
+        ' | thirdPartyCookies=' + describeThirdPartyCookieState(),
       Source: 'portal.js',
       Timestamp: new Date().toISOString()
     });
@@ -135,33 +186,38 @@ function redirectToGatewayWithLoopGuard(gatewaySearch) {
 
   const now = Date.now();
   let count = 0;
-  let windowStart = now;
   try {
     const raw = sessionStorage.getItem(SIGNIN_BOUNCE_KEY);
     if (raw) {
       const parsed = JSON.parse(raw);
-      if (parsed && typeof parsed.windowStart === 'number' &&
-          (now - parsed.windowStart) <= GATEWAY_BOUNCE_WINDOW_MS) {
+      // Sliding staleness: measured from the PREVIOUS bounce, so a run of consecutive
+      // bounces cannot expire mid-loop however long each iteration takes. `windowStart` is
+      // read as a fallback so a counter persisted by the previous (fixed-window) build is
+      // still honoured rather than silently discarded on the deploy that lands this.
+      const last = typeof parsed?.lastBounceAt === 'number' ? parsed.lastBounceAt
+                 : typeof parsed?.windowStart === 'number' ? parsed.windowStart
+                 : null;
+      if (last !== null && (now - last) <= GATEWAY_BOUNCE_STALE_MS) {
         count = parsed.count || 0;
-        windowStart = parsed.windowStart;
       }
     }
-  } catch (e) { /* corrupt/unavailable -> treat as a fresh window */ }
+  } catch (e) { /* corrupt/unavailable -> treat as a fresh run */ }
 
   count += 1;
 
   if (count >= MAX_GATEWAY_BOUNCES) {
-    console.warn('[Portal] Sign-in bounce threshold reached (' + count + ' gateway.html redirects within ' +
-      GATEWAY_BOUNCE_WINDOW_MS + 'ms) -- stopping auto-redirect to break the loop.');
+    console.warn('[Portal] Sign-in bounce threshold reached (' + count +
+      ' consecutive gateway.html redirects with no successful platform load in between) -- ' +
+      'stopping auto-redirect to break the loop.');
     signInLoopBroken = true;
     reportPortalDiagnostic('GatewaySignInLoopTripped',
-      'Sign-in bounce loop breaker tripped after ' + count + ' bounces within ' + GATEWAY_BOUNCE_WINDOW_MS + 'ms');
+      'Sign-in bounce loop breaker tripped after ' + count + ' consecutive bounces');
     showSignInLoopError();
     return true;
   }
 
   try {
-    sessionStorage.setItem(SIGNIN_BOUNCE_KEY, JSON.stringify({ count: count, windowStart: windowStart }));
+    sessionStorage.setItem(SIGNIN_BOUNCE_KEY, JSON.stringify({ count: count, lastBounceAt: now }));
   } catch (e) {}
 
   console.log('[Portal] Redirecting whole page to gateway.html (bounce ' + count + '/' + MAX_GATEWAY_BOUNCES + ')');
