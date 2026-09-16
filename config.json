@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c25089a",
-                         "title":  "fix(local-router): extend nginx log retention with gzip compression",
-                         "timestamp":  "2026-09-15T16:14:31Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-59c0c02",
                          "title":  "feat(activity-tracking): add identity-attributed page-view tracking for Docum...",
                          "timestamp":  "2026-09-15T16:42:58Z",
@@ -104,6 +98,12 @@
                          "version":  "build-9d55260",
                          "title":  "refactor(chat-plugin-sessions): shared row normaliser + seq-cursor advance",
                          "timestamp":  "2026-09-16T00:36:35Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4f2c484",
+                         "title":  "fix(battlebuddy-hub): tag transcript-batch-limit rejection with its error cod...",
+                         "timestamp":  "2026-09-16T09:32:13Z",
                          "environment":  "production"
                      }
                  ]
