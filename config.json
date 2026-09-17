@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d6562df",
-                         "title":  "feat(buddy-desktop): add OBS-optimized CI gallery overlay window",
-                         "timestamp":  "2026-09-16T14:40:33Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e3c03a9",
                          "title":  "fix(buddy-desktop): add fetch timeouts + fix IPC race in CI gallery refresh",
                          "timestamp":  "2026-09-16T16:04:45Z",
@@ -104,6 +98,12 @@
                          "version":  "build-b15d9c4",
                          "title":  "feat(signin-handoff): tokenless handoff option with partitioned cookie model",
                          "timestamp":  "2026-09-16T23:35:11Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4a6cab6",
+                         "title":  "Create news Platform activity update — 2026-09-17 06:28 UTC",
+                         "timestamp":  "2026-09-17T07:29:47Z",
                          "environment":  "production"
                      }
                  ]
