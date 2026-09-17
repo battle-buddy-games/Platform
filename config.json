@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ebe1837",
-                         "title":  "fix(docs-portals): throttle request-path GitHub folder-discovery scan to fix ...",
-                         "timestamp":  "2026-09-16T17:55:24Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-762ce0b",
                          "title":  "feat(docs-portals): consolidate CLAUDE.md/AGENTS.md/.claude onto a new claude...",
                          "timestamp":  "2026-09-16T19:08:03Z",
@@ -104,6 +98,12 @@
                          "version":  "build-bd2adf2",
                          "title":  "Create news Platform activity update — 2026-09-17 08:33 UTC",
                          "timestamp":  "2026-09-17T09:30:15Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4092079",
+                         "title":  "fix(home): use coverage-based row detection for TOC/nav-dot active state",
+                         "timestamp":  "2026-09-17T14:33:41Z",
                          "environment":  "production"
                      }
                  ]
