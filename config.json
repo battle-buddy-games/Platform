@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-762ce0b",
-                         "title":  "feat(docs-portals): consolidate CLAUDE.md/AGENTS.md/.claude onto a new claude...",
-                         "timestamp":  "2026-09-16T19:08:03Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a7ee863",
                          "title":  "fix(documentation): guard second unhandled GitHub SHA-lookup call on request ...",
                          "timestamp":  "2026-09-16T20:04:23Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4092079",
                          "title":  "fix(home): use coverage-based row detection for TOC/nav-dot active state",
                          "timestamp":  "2026-09-17T14:33:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c4bb543",
+                         "title":  "fix(buddy-desktop): replace Tower window drag with manual IPC-driven move",
+                         "timestamp":  "2026-09-17T16:13:15Z",
                          "environment":  "production"
                      }
                  ]
