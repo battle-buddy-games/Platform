@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-477a1e5",
-                         "title":  "feat(home): hierarchical city layout + architecture-zone color for Project Ac...",
-                         "timestamp":  "2026-09-16T20:46:43Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0a6d612",
                          "title":  "fix(buddy-desktop): CI Gallery grid slots showing identical item + add advanc...",
                          "timestamp":  "2026-09-16T21:28:56Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f28315e",
                          "title":  "fix(chat): stop mashing every plugin session into one DM called Claude",
                          "timestamp":  "2026-09-17T17:20:02Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c3a8a68",
+                         "title":  "feat(buddy-desktop): persist open/closed + position across restart for all 4 ...",
+                         "timestamp":  "2026-09-17T18:32:16Z",
                          "environment":  "production"
                      }
                  ]
