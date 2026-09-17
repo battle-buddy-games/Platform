@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-c4bb543",
-                         "title":  "fix(buddy-desktop): replace Tower window drag with manual IPC-driven move",
-                         "timestamp":  "2026-09-17T16:13:15Z",
+                         "version":  "build-b728e33",
+                         "title":  "feat(presence): distinct icons for OBS/watchdog ghost in unified presence UI",
+                         "timestamp":  "2026-09-17T16:47:37Z",
                          "environment":  "production"
                      }
                  ]
