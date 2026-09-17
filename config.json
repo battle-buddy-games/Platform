@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a7ee863",
-                         "title":  "fix(documentation): guard second unhandled GitHub SHA-lookup call on request ...",
-                         "timestamp":  "2026-09-16T20:04:23Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-477a1e5",
                          "title":  "feat(home): hierarchical city layout + architecture-zone color for Project Ac...",
                          "timestamp":  "2026-09-16T20:46:43Z",
@@ -104,6 +98,12 @@
                          "version":  "build-c4bb543",
                          "title":  "fix(buddy-desktop): replace Tower window drag with manual IPC-driven move",
                          "timestamp":  "2026-09-17T16:13:15Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f28315e",
+                         "title":  "fix(chat): stop mashing every plugin session into one DM called Claude",
+                         "timestamp":  "2026-09-17T17:20:02Z",
                          "environment":  "production"
                      }
                  ]
