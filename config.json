@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-d5f22d3",
-                         "title":  "test(docs-portal): add anonymous-reachability regression coverage for contrib...",
-                         "timestamp":  "2026-09-17T17:51:23Z",
+                         "version":  "build-f28315e",
+                         "title":  "fix(chat): stop mashing every plugin session into one DM called Claude",
+                         "timestamp":  "2026-09-17T17:20:02Z",
                          "environment":  "production"
                      }
                  ]
