@@ -1726,6 +1726,114 @@ function pathnameOf(value) {
   return String(value).split('?')[0].split('#')[0];
 }
 
+// ---- Consumer-side "how do I open this link" chooser --------------------------------
+//
+// The browser-vs-desktop decision belongs to whoever RECEIVED the link, not whoever built it, so it
+// is offered here on the landing surface instead of in the platform's share panel. This page is a
+// static GitHub Pages document with no server, so it composes the buddy:// link itself and assigns
+// it to window.location.href on the visitor's click -- exactly the direct-navigation technique
+// Views/ProtocolLaunch/Launch.cshtml uses. Routing through /protocol/launch instead would be wrong
+// twice over: that controller is [Authorize] [StudioMemberOnly] (community and anonymous readers
+// would get a 403), and a static page does not need a server round-trip to open a custom scheme.
+
+let consumerChooserDismissed = false;
+
+// Buddy Desktop tags every request with a "BuddyDesktop/<version>" User-Agent token
+// (Tools/buddy-desktop/main.js sets app.userAgentFallback, which also covers navigateTo's loadURL),
+// and PortalAccessLockMiddleware keys off that same token. Inside the
+// desktop app an "open in desktop" hand-off is meaningless, so the whole chooser stays hidden.
+// Substring test deliberately identical to platform.service.cloud/wwwroot/js/portal-lock.js.
+function isRunningInsideBuddyDesktop() {
+  return navigator.userAgent.indexOf('BuddyDesktop') !== -1;
+}
+
+// The path to hand off. Mirrors the subpage / returnUrl / '/' precedence the rest of this file uses
+// (see refreshToNewAddress), then reduces the result to a PATH ONLY:
+//
+//   - The arg validator on the desktop side rejects any '?', '#', or '\' anywhere, and a '//'
+//     prefix, because those would let the link choose the resulting page's query, fragment, or
+//     origin. Sending one anyway would be a silent no-op for the visitor, so query and fragment are
+//     stripped here -- they still land on the right page, just without its tab state.
+//   - The value is only ever PREFIXED onto the resolved tunnel base (never resolved against it), so
+//     a subpage of "//evil.com" stays a path, never a host. This is the same property the shell
+//     already relies on for every other subpage use.
+function consumerSubpagePath() {
+  let raw;
+  try {
+    const params = new URLSearchParams(window.location.search);
+    raw = params.get('subpage') || params.get('returnUrl') || '/';
+  } catch (e) {
+    raw = '/';
+  }
+  const pathOnly = String(raw).split('?')[0].split('#')[0];
+  if (!pathOnly || pathOnly.charAt(0) !== '/' || pathOnly.indexOf('//') === 0
+      || pathOnly.indexOf('\\') !== -1) {
+    return '/';
+  }
+  return pathOnly;
+}
+
+// Point the framed platform at a path, keeping the shell's own ?subpage= in sync so the address
+// stays bookmarkable. Uses the same prefix-only composition as the rest of this file -- never
+// new URL(path, tunnelBaseUrl), which would let "//host" resolve to a foreign origin.
+function navigateConsumerFrameTo(path) {
+  const iframe = document.getElementById('tunnelFrame');
+  if (!iframe || !tunnelBaseUrl) return;
+  iframe.src = tunnelBaseUrl + path;
+  currentIframePath = path;
+  updateParentUrl(path, true);
+}
+
+function wireConsumerChooser() {
+  const chooser = document.getElementById('consumerChooser');
+  if (!chooser) return;
+
+  const desktopBtn = document.getElementById('consumerDesktopBtn');
+  const dismissBtn = document.getElementById('consumerDismissBtn');
+  const note = document.getElementById('consumerChooserNote');
+  const fallback = document.getElementById('consumerChooserFallback');
+  const downloadsLink = document.getElementById('consumerDownloadsLink');
+
+  if (dismissBtn) {
+    dismissBtn.addEventListener('click', () => {
+      consumerChooserDismissed = true;
+      chooser.hidden = true;
+    });
+  }
+
+  if (desktopBtn) {
+    desktopBtn.addEventListener('click', () => {
+      const deepLink = 'buddy://open?tool=portal&arg=' + encodeURIComponent(consumerSubpagePath());
+      // Fire-and-forget. If no handler is registered -- Buddy Desktop not installed, or an older
+      // build that predates this contract and ignores tool=portal -- the browser does nothing and
+      // no error reaches us, so there is no failure branch to write here. The persistent fallback
+      // text below is the only recovery affordance, mirroring the "Don't have Buddy?" link in
+      // Views/ProtocolLaunch/Launch.cshtml.
+      window.location.href = deepLink;
+      if (note) note.hidden = true;
+      if (fallback) fallback.hidden = false;
+      desktopBtn.disabled = true;
+    });
+  }
+
+  if (downloadsLink) {
+    downloadsLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      navigateConsumerFrameTo('/Dashboard/Index/Projects?tab=downloads');
+    });
+  }
+}
+
+// Reveal the chooser unless the visitor is already in the desktop app or has dismissed it. The
+// chooser is position:fixed, so the shell's ?subpage= sync needs no repositioning of it.
+function setupConsumerChooser() {
+  const chooser = document.getElementById('consumerChooser');
+  if (!chooser) return;
+  if (consumerChooserDismissed) return;
+  if (isRunningInsideBuddyDesktop()) return;
+  chooser.hidden = false;
+}
+
 // Show loading error with retry button (replaces the spinner).
 // Built with DOM APIs (never innerHTML) so the requested path -- which comes from the portal's own
 // query string and is therefore user-controlled -- cannot be interpreted as markup.
@@ -2537,6 +2645,8 @@ document.addEventListener('keydown', function(e) {
 // Initialize: Load config first, then load tunnel
 window.addEventListener('DOMContentLoaded', async () => {
   initSpaceBarHoldDetection();
+  wireConsumerChooser();   // pure-DOM wiring; independent of whether the tunnel resolves
+  setupConsumerChooser();
   loadHealthStatus(); // fire-and-forget; offline-detection UI tolerates it not being ready yet
   const configLoaded = await loadConfig();
   if (configLoaded) {

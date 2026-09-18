@@ -28,6 +28,23 @@
     <iframe id="tunnelFrame" src="" title="Battle Buddy Platform" allow="clipboard-write; microphone"></iframe>
   </div>
 
+  <!-- Consumer-side "how do I open this link" chooser. The browser-vs-desktop decision belongs to
+       whoever RECEIVED the link, not whoever built it, so it is offered here -- on the surface the
+       link actually lands on -- rather than in the platform's share panel. Rendered by the shell
+       (outside #tunnelFrame), hidden by default, revealed by portal.js for visitors who are not
+       already inside Buddy Desktop. -->
+  <div id="consumerChooser" class="consumer-chooser" role="region" aria-label="How to open this link" hidden>
+    <div class="consumer-chooser-row">
+      <span class="consumer-chooser-label">Prefer the desktop app?</span>
+      <div class="consumer-chooser-actions">
+        <button type="button" id="consumerDesktopBtn" class="consumer-chooser-button primary">Open in Buddy Desktop</button>
+        <button type="button" id="consumerDismissBtn" class="consumer-chooser-button">Stay in browser</button>
+      </div>
+    </div>
+    <p id="consumerChooserNote" class="consumer-chooser-note">Requires Buddy Desktop to be installed on this machine.</p>
+    <p id="consumerChooserFallback" class="consumer-chooser-note" role="status" hidden>Opening in Buddy Desktop&hellip; nothing happened? You may need to update Buddy. <a href="#" id="consumerDownloadsLink">Get the latest Buddy Desktop</a></p>
+  </div>
+
   <!-- Toast notification container -->
   <div id="toastContainer" class="toast-container"></div>
 

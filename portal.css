@@ -669,3 +669,116 @@ iframe {
   100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
 }
 
+/* Consumer-side "how do I open this link" chooser. Fixed to the bottom-left so it never collides
+   with the toast stack (top-right, z-index 10000) or the centred overlays, and above the frame
+   (z-index 9500) so it stays reachable while the platform loads. */
+.consumer-chooser {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 9500;
+  max-width: 380px;
+  background: rgba(26, 26, 46, 0.92);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  animation: consumer-chooser-in 0.2s ease-out;
+}
+
+/* Defence in depth: this rule does not set `display`, so the [hidden] attribute already works via
+   the browser default. These explicit rules keep it working if a display value is added later. */
+.consumer-chooser[hidden],
+.consumer-chooser-note[hidden] {
+  display: none;
+}
+
+.consumer-chooser-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.consumer-chooser-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.consumer-chooser-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.consumer-chooser-button {
+  padding: 8px 16px;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  border-radius: 6px;
+  background: rgba(102, 126, 234, 0.1);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.consumer-chooser-button:hover {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.5);
+}
+
+/* Both chooser buttons are keyboard reachable; the default focus ring is suppressed elsewhere in
+   this sheet, so restore an explicit one. */
+.consumer-chooser-button:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 2px;
+}
+
+.consumer-chooser-button.primary {
+  background: #667eea;
+  border-color: #667eea;
+}
+
+.consumer-chooser-button.primary:hover {
+  background: #5568d3;
+  border-color: #5568d3;
+}
+
+.consumer-chooser-button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.consumer-chooser-note {
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.consumer-chooser-note a {
+  color: #667eea;
+  text-decoration: underline;
+}
+
+@keyframes consumer-chooser-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Frontend UI Rules: skip the entrance transition when the visitor asks for reduced motion. The
+   chooser is still fully usable -- it just appears without the fade. */
+@media (prefers-reduced-motion: reduce) {
+  .consumer-chooser {
+    animation: none;
+  }
+  .consumer-chooser-button {
+    transition: none;
+  }
+}
+

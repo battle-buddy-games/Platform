@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-b15d9c4",
-                         "title":  "feat(signin-handoff): tokenless handoff option with partitioned cookie model",
-                         "timestamp":  "2026-09-16T23:35:11Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4a6cab6",
                          "title":  "Create news Platform activity update — 2026-09-17 06:28 UTC",
                          "timestamp":  "2026-09-17T07:29:47Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a93529c",
                          "title":  "fix(portals): distinguish documentation portals from navigation bookmarks",
                          "timestamp":  "2026-09-17T22:32:02Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-185c060",
+                         "title":  "fix(portals): content-version documentation HTML bundle URLs so a push is nev...",
+                         "timestamp":  "2026-09-18T16:24:28Z",
                          "environment":  "production"
                      }
                  ]
