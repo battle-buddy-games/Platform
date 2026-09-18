@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4092079",
-                         "title":  "fix(home): use coverage-based row detection for TOC/nav-dot active state",
-                         "timestamp":  "2026-09-17T14:33:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c4bb543",
                          "title":  "fix(buddy-desktop): replace Tower window drag with manual IPC-driven move",
                          "timestamp":  "2026-09-17T16:13:15Z",
@@ -104,6 +98,12 @@
                          "version":  "build-809d538",
                          "title":  "fix(dashboard,guides): report unresolvable dashboard tool names; point guide ...",
                          "timestamp":  "2026-09-18T19:20:11Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-34a9f35",
+                         "title":  "docs(dashboard): record the legacy tool-name remap table and both tab shapes",
+                         "timestamp":  "2026-09-18T19:54:40Z",
                          "environment":  "production"
                      }
                  ]
