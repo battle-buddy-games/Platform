@@ -245,6 +245,20 @@ async function exchangeCodeForToken() {
       username: result.userInfo?.username
     });
 
+    // Pending-approval is tested FIRST, before result.success. It arrives as HTTP 200 with
+    // success:false and a `state` discriminator (OAuthApiController.BuildPendingApprovalResponse),
+    // so it would otherwise fall into the else branch below and render the generic error card. It is
+    // neither a success (no token, no account) nor an error (nothing went wrong), which is why it
+    // gets its own terminal state rather than borrowing either.
+    if (result.state === 'pending_approval') {
+      if (typeof trackGatewayEvent === 'function') trackGatewayEvent('token_exchange_pending_approval', { provider: authState.provider });
+      if (authState.debugEnabled) {
+        await sendDebugStep('exchange_pending_approval', { state: result.state });
+      }
+      showPending();
+      return;
+    }
+
     if (result.success) {
       if (typeof trackGatewayEvent === 'function') trackGatewayEvent('token_exchange_success', { provider: authState.provider, responseTimeMs: Date.now() - _exchangeStartTime });
       if (authState.debugEnabled) {
@@ -550,11 +564,16 @@ function showError(error, description) {
 // dashboard tool and is never returned to a signed-out caller.
 //
 // It also deliberately offers NO route back to sign-in, which is the opposite of the error card's
-// choice. The intake files a request unconditionally -- both creation sites in ExternalLoginController
-// construct a new AccountCreationRequestEntity and save it with no lookup for an existing pending row
-// on (LoginProvider, ProviderKey) -- so offering "try again" would file a second request for someone
-// who already has one queued. Verified against the code 2026-09-18; re-check that before adding any
-// affordance here.
+// choice. The reason is the intake's dedupe, not the absence of one: every entry point files through
+// AccountCreationRequestIntake.FileOrReuseAsync, which returns the already-queued Pending, unexpired
+// row matching (Source, ProviderKey) instead of inserting a new one. A retry therefore does not file
+// a second request and does not advance anything -- it lands back on this same page, having changed
+// nothing, which is a button that looks like an action and is not one. The person's next step is an
+// administrator's review, not another click here.
+//
+// (That dedupe was verified against the code 2026-09-18 -- FileOrReuseAsync's alreadyQueued lookup,
+// plus the single-construction-site rule: it is the only place an AccountCreationRequestEntity is
+// built. Re-check both before adding an affordance here.)
 //
 // It reads the provider from authState (a local value the page already knows) and renders NOTHING
 // from the response body. That is what keeps an admin-only field from ever leaking onto this
