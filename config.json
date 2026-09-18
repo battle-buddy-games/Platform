@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c3a8a68",
-                         "title":  "feat(buddy-desktop): persist open/closed + position across restart for all 4 ...",
-                         "timestamp":  "2026-09-17T18:32:16Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9bafad2",
                          "title":  "fix(frontend): convert layout-property animations to transform/grid-rows, fix...",
                          "timestamp":  "2026-09-17T19:02:26Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d707101",
                          "title":  "fix(stream-live): read the StreamLive.DiscordEnabled off-switch",
                          "timestamp":  "2026-09-18T21:41:43Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6a02f40",
+                         "title":  "feat(identity): add admin approval queue and awaiting-approval page",
+                         "timestamp":  "2026-09-18T22:10:29Z",
                          "environment":  "production"
                      }
                  ]

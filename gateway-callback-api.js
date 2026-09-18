@@ -319,16 +319,21 @@ function updateUI(step, message) {
   const countdownContainer = document.getElementById('countdownContainer');
   const successSection = document.getElementById('successSection');
   const errorSection = document.getElementById('errorSection');
+  const pendingSection = document.getElementById('pendingSection');
 
   // Update main status
   if (spinnerElement) spinnerElement.style.display = step === 'exchanging' ? 'block' : 'none';
   if (statusElement) statusElement.textContent = getStepTitle(step);
   if (messageElement) messageElement.textContent = message;
 
-  // Show/hide sections
-  if (resultContainer) resultContainer.style.display = (step === 'success' || step === 'error') ? 'block' : 'none';
+  // Show/hide sections. 'pending' is a terminal state of its own: it is NOT an error (nothing went
+  // wrong, and the person did nothing wrong) and NOT a success (no account, no token, no redirect),
+  // so it must not fall into either branch and must never share the error section's markup. The
+  // countdown stays success-only -- a pending request has no token to redirect with.
+  if (resultContainer) resultContainer.style.display = (step === 'success' || step === 'error' || step === 'pending') ? 'block' : 'none';
   if (successSection) successSection.style.display = step === 'success' ? 'block' : 'none';
   if (errorSection) errorSection.style.display = step === 'error' ? 'block' : 'none';
+  if (pendingSection) pendingSection.style.display = step === 'pending' ? 'block' : 'none';
   if (countdownContainer) countdownContainer.style.display = step === 'success' ? 'block' : 'none';
 }
 
@@ -339,6 +344,9 @@ function getStepTitle(step) {
     case 'exchanging': return `Authenticating with ${providerName}...`;
     case 'success': return 'Authentication Successful!';
     case 'error': return 'Authentication Failed';
+    // Not "Authentication Failed" and not a spinner: the sign-in itself worked, it just produced a
+    // request an administrator has to approve. The title states the outcome, not a fault.
+    case 'pending': return 'Account Request Received';
     default: return 'Processing...';
   }
 }
@@ -522,6 +530,70 @@ function showError(error, description) {
       </div>
     `;
   }
+}
+
+// Show the pending-approval result: the account request was filed and is waiting on an administrator.
+//
+// This is the gateway's counterpart to the platform's Views/Identity/AwaitingApproval.cshtml, and it
+// is deliberately NOT routed through showError(). An account request waiting on an administrator is
+// not a failure, and the error card would say exactly the wrong things: its title is "Authentication
+// Failed", it prints a raw machine-readable error code, and its "Copy Error Details" button dumps a
+// JSON blob containing window.location.href -- which still carries the one-time OAuth `code` and
+// `state` in the query string. Nor may it reuse the error card's "Try Again": the exchanged code is
+// single-use (see the note in exchangeCodeForToken's catch block), so retrying can only fail.
+//
+// WHAT THIS MAY AND MAY NOT SAY (studio owner directive, 2026-09-18). It may state that the request
+// was received, that it is waiting on an administrator, that no access is granted yet, and what
+// happens next. It must NOT reveal any existing account and must NOT hint that a duplicate was
+// suspected -- no "did you mean", no candidate list, no "we found an account that looks like yours".
+// The duplicate hint is an admin-only surface: it lives on the approval queue in the User Accounts
+// dashboard tool and is never returned to a signed-out caller.
+//
+// It also deliberately offers NO route back to sign-in, which is the opposite of the error card's
+// choice. The intake files a request unconditionally -- both creation sites in ExternalLoginController
+// construct a new AccountCreationRequestEntity and save it with no lookup for an existing pending row
+// on (LoginProvider, ProviderKey) -- so offering "try again" would file a second request for someone
+// who already has one queued. Verified against the code 2026-09-18; re-check that before adding any
+// affordance here.
+//
+// It reads the provider from authState (a local value the page already knows) and renders NOTHING
+// from the response body. That is what keeps an admin-only field from ever leaking onto this
+// signed-out page if the pending response shape later grows one.
+function showPending() {
+  updateUI('pending', 'Your sign-in came through, but no access has been granted yet.');
+
+  const pendingInfoElement = document.getElementById('pendingInfo');
+  if (!pendingInfoElement) return;
+
+  const providerName = authState.provider
+    ? authState.provider.charAt(0).toUpperCase() + authState.provider.slice(1)
+    : '';
+
+  // Reuses the existing .info-section card (neutral border/background) rather than a new class, so
+  // this reads as an informational outcome rather than borrowing the error card's red styling.
+  pendingInfoElement.innerHTML = `
+    <div class="info-section">
+      <p>
+        ${providerName
+          ? `Your <strong>${escapeHtml(providerName)}</strong> sign-in came through, but no access has been granted yet.`
+          : 'Your sign-in came through, but no access has been granted yet.'}
+      </p>
+      <p>
+        New accounts on this platform are created only after a platform administrator reviews and
+        approves the request. Your request is now waiting in that queue.
+      </p>
+      <h3>What happens next</h3>
+      <ul>
+        <li>An administrator reviews your request.</li>
+        <li>If it is approved, your account is created and you can sign in as usual.</li>
+        <li>Until then, this sign-in has no access to anything on the platform.</li>
+      </ul>
+      <p>
+        You do not need to do anything else. If you believe this is a mistake, or you need it
+        reviewed sooner, contact a platform administrator.
+      </p>
+    </div>
+  `;
 }
 
 // Countdown management
