@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-bd2adf2",
-                         "title":  "Create news Platform activity update — 2026-09-17 08:33 UTC",
-                         "timestamp":  "2026-09-17T09:30:15Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4092079",
                          "title":  "fix(home): use coverage-based row detection for TOC/nav-dot active state",
                          "timestamp":  "2026-09-17T14:33:41Z",
@@ -104,6 +98,12 @@
                          "version":  "build-34f104b",
                          "title":  "docs(webgl,documentation): record the bundle cache and lifecycle hardening",
                          "timestamp":  "2026-09-18T18:04:35Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-809d538",
+                         "title":  "fix(dashboard,guides): report unresolvable dashboard tool names; point guide ...",
+                         "timestamp":  "2026-09-18T19:20:11Z",
                          "environment":  "production"
                      }
                  ]
