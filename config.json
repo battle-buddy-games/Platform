@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4a6cab6",
-                         "title":  "Create news Platform activity update — 2026-09-17 06:28 UTC",
-                         "timestamp":  "2026-09-17T07:29:47Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-bd2adf2",
                          "title":  "Create news Platform activity update — 2026-09-17 08:33 UTC",
                          "timestamp":  "2026-09-17T09:30:15Z",
@@ -104,6 +98,12 @@
                          "version":  "build-185c060",
                          "title":  "fix(portals): content-version documentation HTML bundle URLs so a push is nev...",
                          "timestamp":  "2026-09-18T16:24:28Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-34f104b",
+                         "title":  "docs(webgl,documentation): record the bundle cache and lifecycle hardening",
+                         "timestamp":  "2026-09-18T18:04:35Z",
                          "environment":  "production"
                      }
                  ]
