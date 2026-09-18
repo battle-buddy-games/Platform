@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-6a02f40",
-                         "title":  "feat(identity): add admin approval queue and awaiting-approval page",
-                         "timestamp":  "2026-09-18T22:10:29Z",
+                         "version":  "build-caf371f",
+                         "title":  "feat(gateway): render a pending-approval page for gated sign-ups",
+                         "timestamp":  "2026-09-18T22:43:37Z",
                          "environment":  "production"
                      }
                  ]
