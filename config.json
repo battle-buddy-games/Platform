@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c4bb543",
-                         "title":  "fix(buddy-desktop): replace Tower window drag with manual IPC-driven move",
-                         "timestamp":  "2026-09-17T16:13:15Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f28315e",
                          "title":  "fix(chat): stop mashing every plugin session into one DM called Claude",
                          "timestamp":  "2026-09-17T17:20:02Z",
@@ -104,6 +98,12 @@
                          "version":  "build-34a9f35",
                          "title":  "docs(dashboard): record the legacy tool-name remap table and both tab shapes",
                          "timestamp":  "2026-09-18T19:54:40Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6835aed",
+                         "title":  "feat(stream-live): make the go-live Discord channel platform-managed",
+                         "timestamp":  "2026-09-18T21:08:36Z",
                          "environment":  "production"
                      }
                  ]
