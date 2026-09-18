@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-185c060",
-                         "title":  "fix(portals): content-version documentation HTML bundle URLs so a push is nev...",
-                         "timestamp":  "2026-09-18T16:24:28Z",
+                         "version":  "build-898d521",
+                         "title":  "feat(home): collapse the platform featured blocks into a lazy \"Platform Featu...",
+                         "timestamp":  "2026-09-18T16:47:44Z",
                          "environment":  "production"
                      }
                  ]
