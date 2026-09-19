@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3655c45",
-                         "title":  "feat(engagement): add weekly playtest recurrence rules for latest stable",
-                         "timestamp":  "2026-09-17T21:04:06Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a93529c",
                          "title":  "fix(portals): distinguish documentation portals from navigation bookmarks",
                          "timestamp":  "2026-09-17T22:32:02Z",
@@ -104,6 +98,12 @@
                          "version":  "build-9b74f75",
                          "title":  "test(oauth): align the sign-in preservation tests with the account-approval c...",
                          "timestamp":  "2026-09-19T00:30:57Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-05e174d",
+                         "title":  "feat(discord): land the cloud guild-join intake controller",
+                         "timestamp":  "2026-09-19T01:21:30Z",
                          "environment":  "production"
                      }
                  ]
