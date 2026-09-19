@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-34f104b",
-                         "title":  "docs(webgl,documentation): record the bundle cache and lifecycle hardening",
-                         "timestamp":  "2026-09-18T18:04:35Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-809d538",
                          "title":  "fix(dashboard,guides): report unresolvable dashboard tool names; point guide ...",
                          "timestamp":  "2026-09-18T19:20:11Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a092da5",
                          "title":  "fix(auth): make the six custom authorization attributes supply IAuthorizeData",
                          "timestamp":  "2026-09-19T20:20:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7fc49db",
+                         "title":  "fix(auth): enforce the no-policy rule on APPLIED instances, not just declarat...",
+                         "timestamp":  "2026-09-19T20:53:32Z",
                          "environment":  "production"
                      }
                  ]
