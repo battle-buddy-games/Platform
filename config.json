@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9bafad2",
-                         "title":  "fix(frontend): convert layout-property animations to transform/grid-rows, fix...",
-                         "timestamp":  "2026-09-17T19:02:26Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3655c45",
                          "title":  "feat(engagement): add weekly playtest recurrence rules for latest stable",
                          "timestamp":  "2026-09-17T21:04:06Z",
@@ -104,6 +98,12 @@
                          "version":  "build-6a02f40",
                          "title":  "feat(identity): add admin approval queue and awaiting-approval page",
                          "timestamp":  "2026-09-18T22:10:29Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9b74f75",
+                         "title":  "test(oauth): align the sign-in preservation tests with the account-approval c...",
+                         "timestamp":  "2026-09-19T00:30:57Z",
                          "environment":  "production"
                      }
                  ]
