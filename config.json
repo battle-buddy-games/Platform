@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a93529c",
-                         "title":  "fix(portals): distinguish documentation portals from navigation bookmarks",
-                         "timestamp":  "2026-09-17T22:32:02Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-185c060",
                          "title":  "fix(portals): content-version documentation HTML bundle URLs so a push is nev...",
                          "timestamp":  "2026-09-18T16:24:28Z",
@@ -104,6 +98,12 @@
                          "version":  "build-05e174d",
                          "title":  "feat(discord): land the cloud guild-join intake controller",
                          "timestamp":  "2026-09-19T01:21:30Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0f27165",
+                         "title":  "fix(auth): gate four controllers whose in-body check no token caller could sa...",
+                         "timestamp":  "2026-09-19T13:41:31Z",
                          "environment":  "production"
                      }
                  ]
