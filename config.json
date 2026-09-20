@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-34a9f35",
-                         "title":  "docs(dashboard): record the legacy tool-name remap table and both tab shapes",
-                         "timestamp":  "2026-09-18T19:54:40Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-6835aed",
                          "title":  "feat(stream-live): make the go-live Discord channel platform-managed",
                          "timestamp":  "2026-09-18T21:08:36Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d053dd2",
                          "title":  "feat(docs-portals): let readers report an issue into the community triage queue",
                          "timestamp":  "2026-09-20T14:25:26Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7dc5fbf",
+                         "title":  "docs(stream-live): correct the verification-base claim in the findings note",
+                         "timestamp":  "2026-09-20T16:16:32Z",
                          "environment":  "production"
                      }
                  ]
