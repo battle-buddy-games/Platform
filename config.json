@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-6835aed",
-                         "title":  "feat(stream-live): make the go-live Discord channel platform-managed",
-                         "timestamp":  "2026-09-18T21:08:36Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d707101",
                          "title":  "fix(stream-live): read the StreamLive.DiscordEnabled off-switch",
                          "timestamp":  "2026-09-18T21:41:43Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7dc5fbf",
                          "title":  "docs(stream-live): correct the verification-base claim in the findings note",
                          "timestamp":  "2026-09-20T16:16:32Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8398db6",
+                         "title":  "fix(buddy-desktop): drop the redundant access_token query param from hub URLs",
+                         "timestamp":  "2026-09-20T17:00:34Z",
                          "environment":  "production"
                      }
                  ]
