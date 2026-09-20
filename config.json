@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9b74f75",
-                         "title":  "test(oauth): align the sign-in preservation tests with the account-approval c...",
-                         "timestamp":  "2026-09-19T00:30:57Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-05e174d",
                          "title":  "feat(discord): land the cloud guild-join intake controller",
                          "timestamp":  "2026-09-19T01:21:30Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f041c6b",
                          "title":  "fix(development-images): take concept art back out of the CI screenshot gallery",
                          "timestamp":  "2026-09-20T18:25:02Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5284f1c",
+                         "title":  "feat(buddy-desktop): launch the Blender SDK from the tray with no workspace",
+                         "timestamp":  "2026-09-20T19:11:53Z",
                          "environment":  "production"
                      }
                  ]
