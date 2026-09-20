@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-fb55d5a",
-                         "title":  "feat(docs-portal): report an issue or suggest an improvement from a docs page",
-                         "timestamp":  "2026-09-20T14:46:54Z",
+                         "version":  "build-d053dd2",
+                         "title":  "feat(docs-portals): let readers report an issue into the community triage queue",
+                         "timestamp":  "2026-09-20T14:25:26Z",
                          "environment":  "production"
                      }
                  ]
