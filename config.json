@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d707101",
-                         "title":  "fix(stream-live): read the StreamLive.DiscordEnabled off-switch",
-                         "timestamp":  "2026-09-18T21:41:43Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-6a02f40",
                          "title":  "feat(identity): add admin approval queue and awaiting-approval page",
                          "timestamp":  "2026-09-18T22:10:29Z",
@@ -104,6 +98,12 @@
                          "version":  "build-8398db6",
                          "title":  "fix(buddy-desktop): drop the redundant access_token query param from hub URLs",
                          "timestamp":  "2026-09-20T17:00:34Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-231dbff",
+                         "title":  "fix(auth): separate platform identity from display label in SDK connection ow...",
+                         "timestamp":  "2026-09-20T17:50:13Z",
                          "environment":  "production"
                      }
                  ]
