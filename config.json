@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-759184f",
-                         "title":  "ci(web-platform): skip a production deploy superseded by a newer run",
-                         "timestamp":  "2026-09-21T03:20:54Z",
+                         "version":  "build-83d2192",
+                         "title":  "fix(gallery): send kind from the Development upload modal",
+                         "timestamp":  "2026-09-21T03:40:06Z",
                          "environment":  "production"
                      }
                  ]
