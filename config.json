@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-231dbff",
-                         "title":  "fix(auth): separate platform identity from display label in SDK connection ow...",
-                         "timestamp":  "2026-09-20T17:50:13Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f041c6b",
                          "title":  "fix(development-images): take concept art back out of the CI screenshot gallery",
                          "timestamp":  "2026-09-20T18:25:02Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f3d3a70",
                          "title":  "fix(stream-live): label the go-live message with the platform DisplayName (#144)",
                          "timestamp":  "2026-09-21T13:53:30Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4ba6752",
+                         "title":  "feat(chat): collapse the New Chat modal\u0027s stacked bar controls",
+                         "timestamp":  "2026-09-21T14:42:55Z",
                          "environment":  "production"
                      }
                  ]
