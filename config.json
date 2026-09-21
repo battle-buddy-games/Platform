@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8398db6",
-                         "title":  "fix(buddy-desktop): drop the redundant access_token query param from hub URLs",
-                         "timestamp":  "2026-09-20T17:00:34Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-231dbff",
                          "title":  "fix(auth): separate platform identity from display label in SDK connection ow...",
                          "timestamp":  "2026-09-20T17:50:13Z",
@@ -104,6 +98,12 @@
                          "version":  "build-759184f",
                          "title":  "ci(web-platform): skip a production deploy superseded by a newer run",
                          "timestamp":  "2026-09-21T03:20:54Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f3d3a70",
+                         "title":  "fix(stream-live): label the go-live message with the platform DisplayName (#144)",
+                         "timestamp":  "2026-09-21T13:53:30Z",
                          "environment":  "production"
                      }
                  ]
