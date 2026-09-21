@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0fabde3",
-                         "title":  "fix(security): gate X-Service-Communication synthesis and loopback allowances...",
-                         "timestamp":  "2026-09-21T01:10:02Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3c1b5bd",
                          "title":  "feat(gallery): add the Kind type axis, the IGalleryKindPolicy registry, and b...",
                          "timestamp":  "2026-09-21T01:54:55Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2f7b0d8",
                          "title":  "fix(e2e): resolve the News smoke spec against the test environment\u0027s base pat...",
                          "timestamp":  "2026-09-21T21:34:47Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-657d472",
+                         "title":  "fix(ci): make the /test environment path-aware so its pages load their own as...",
+                         "timestamp":  "2026-09-21T23:42:09Z",
                          "environment":  "production"
                      }
                  ]
