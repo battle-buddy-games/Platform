@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-cd3cb4a",
-                         "title":  "fix(concept-art): emit agent guild ids as strings and stop reporting a parse ...",
-                         "timestamp":  "2026-09-21T00:16:03Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0fabde3",
                          "title":  "fix(security): gate X-Service-Communication synthesis and loopback allowances...",
                          "timestamp":  "2026-09-21T01:10:02Z",
@@ -104,6 +98,12 @@
                          "version":  "build-667a52c",
                          "title":  "feat(buddy-desktop): OBS scene override on Buddy Desktop window focus (#151)",
                          "timestamp":  "2026-09-21T20:17:25Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2f7b0d8",
+                         "title":  "fix(e2e): resolve the News smoke spec against the test environment\u0027s base pat...",
+                         "timestamp":  "2026-09-21T21:34:47Z",
                          "environment":  "production"
                      }
                  ]
