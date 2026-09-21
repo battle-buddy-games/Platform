@@ -47,6 +47,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-5284f1c",
+                         "title":  "feat(buddy-desktop): launch the Blender SDK from the tray with no workspace",
+                         "timestamp":  "2026-09-20T19:11:53Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-7f16250",
                          "title":  "feat(concept-art): absorb Discord concept art across every guild, attributed ...",
                          "timestamp":  "2026-09-20T20:44:33Z",
@@ -98,12 +104,6 @@
                          "version":  "build-8d1b594",
                          "title":  "fix(identity): point /Identity/Login at the real sign-in page and carry retur...",
                          "timestamp":  "2026-09-21T16:18:18Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-6808d28",
-                         "title":  "fix(deps): regenerate package-lock so npm ci can install @playwright/test (#145)",
-                         "timestamp":  "2026-09-21T18:02:19Z",
                          "environment":  "production"
                      }
                  ]
