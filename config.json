@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7f16250",
-                         "title":  "feat(concept-art): absorb Discord concept art across every guild, attributed ...",
-                         "timestamp":  "2026-09-20T20:44:33Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-cd3cb4a",
                          "title":  "fix(concept-art): emit agent guild ids as strings and stop reporting a parse ...",
                          "timestamp":  "2026-09-21T00:16:03Z",
@@ -104,6 +98,12 @@
                          "version":  "build-6808d28",
                          "title":  "fix(deps): regenerate package-lock so npm ci can install @playwright/test (#145)",
                          "timestamp":  "2026-09-21T18:02:19Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-667a52c",
+                         "title":  "feat(buddy-desktop): OBS scene override on Buddy Desktop window focus (#151)",
+                         "timestamp":  "2026-09-21T20:17:25Z",
                          "environment":  "production"
                      }
                  ]
