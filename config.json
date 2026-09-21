@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7dc5fbf",
-                         "title":  "docs(stream-live): correct the verification-base claim in the findings note",
-                         "timestamp":  "2026-09-20T16:16:32Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8398db6",
                          "title":  "fix(buddy-desktop): drop the redundant access_token query param from hub URLs",
                          "timestamp":  "2026-09-20T17:00:34Z",
@@ -104,6 +98,12 @@
                          "version":  "build-97b52bd",
                          "title":  "feat(gallery): send the Kind on import and group the gallery by kind",
                          "timestamp":  "2026-09-21T02:32:48Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-759184f",
+                         "title":  "ci(web-platform): skip a production deploy superseded by a newer run",
+                         "timestamp":  "2026-09-21T03:20:54Z",
                          "environment":  "production"
                      }
                  ]
