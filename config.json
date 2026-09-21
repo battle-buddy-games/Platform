@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7fc49db",
-                         "title":  "fix(auth): enforce the no-policy rule on APPLIED instances, not just declarat...",
-                         "timestamp":  "2026-09-19T20:53:32Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d053dd2",
                          "title":  "feat(docs-portals): let readers report an issue into the community triage queue",
                          "timestamp":  "2026-09-20T14:25:26Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0fabde3",
                          "title":  "fix(security): gate X-Service-Communication synthesis and loopback allowances...",
                          "timestamp":  "2026-09-21T01:10:02Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3c1b5bd",
+                         "title":  "feat(gallery): add the Kind type axis, the IGalleryKindPolicy registry, and b...",
+                         "timestamp":  "2026-09-21T01:54:55Z",
                          "environment":  "production"
                      }
                  ]
