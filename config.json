@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f041c6b",
-                         "title":  "fix(development-images): take concept art back out of the CI screenshot gallery",
-                         "timestamp":  "2026-09-20T18:25:02Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5284f1c",
                          "title":  "feat(buddy-desktop): launch the Blender SDK from the tray with no workspace",
                          "timestamp":  "2026-09-20T19:11:53Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4ba6752",
                          "title":  "feat(chat): collapse the New Chat modal\u0027s stacked bar controls",
                          "timestamp":  "2026-09-21T14:42:55Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8d1b594",
+                         "title":  "fix(identity): point /Identity/Login at the real sign-in page and carry retur...",
+                         "timestamp":  "2026-09-21T16:18:18Z",
                          "environment":  "production"
                      }
                  ]
