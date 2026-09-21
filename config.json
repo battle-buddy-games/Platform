@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d053dd2",
-                         "title":  "feat(docs-portals): let readers report an issue into the community triage queue",
-                         "timestamp":  "2026-09-20T14:25:26Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7dc5fbf",
                          "title":  "docs(stream-live): correct the verification-base claim in the findings note",
                          "timestamp":  "2026-09-20T16:16:32Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3c1b5bd",
                          "title":  "feat(gallery): add the Kind type axis, the IGalleryKindPolicy registry, and b...",
                          "timestamp":  "2026-09-21T01:54:55Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-97b52bd",
+                         "title":  "feat(gallery): send the Kind on import and group the gallery by kind",
+                         "timestamp":  "2026-09-21T02:32:48Z",
                          "environment":  "production"
                      }
                  ]
