@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2f7b0d8",
-                         "title":  "fix(e2e): resolve the News smoke spec against the test environment\u0027s base pat...",
-                         "timestamp":  "2026-09-21T21:34:47Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-657d472",
                          "title":  "fix(ci): make the /test environment path-aware so its pages load their own as...",
                          "timestamp":  "2026-09-21T23:42:09Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d35d985",
                          "title":  "fix(discord): enumerate archived threads in the native-thread discovery sweep",
                          "timestamp":  "2026-09-22T22:35:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5bcfa31",
+                         "title":  "feat(gallery): kind write path, kind-to-thread routing, and a reclassificatio...",
+                         "timestamp":  "2026-09-22T23:29:04Z",
                          "environment":  "production"
                      }
                  ]
