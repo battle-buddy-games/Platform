@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4ba6752",
-                         "title":  "feat(chat): collapse the New Chat modal\u0027s stacked bar controls",
-                         "timestamp":  "2026-09-21T14:42:55Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8d1b594",
                          "title":  "fix(identity): point /Identity/Login at the real sign-in page and carry retur...",
                          "timestamp":  "2026-09-21T16:18:18Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4bca1d1",
                          "title":  "feat(platform.scripts): read-only Discord channel content inventory for a del...",
                          "timestamp":  "2026-09-22T16:08:59Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-12e8419",
+                         "title":  "feat(gallery): framework attribution on Development Images, derived and corre...",
+                         "timestamp":  "2026-09-22T17:22:56Z",
                          "environment":  "production"
                      }
                  ]
