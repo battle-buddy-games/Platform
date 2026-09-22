@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f3d3a70",
-                         "title":  "fix(stream-live): label the go-live message with the platform DisplayName (#144)",
-                         "timestamp":  "2026-09-21T13:53:30Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4ba6752",
                          "title":  "feat(chat): collapse the New Chat modal\u0027s stacked bar controls",
                          "timestamp":  "2026-09-21T14:42:55Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0875ad0",
                          "title":  "fix(agent): gate the Discord read routes that served data anonymously",
                          "timestamp":  "2026-09-22T15:03:43Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4bca1d1",
+                         "title":  "feat(platform.scripts): read-only Discord channel content inventory for a del...",
+                         "timestamp":  "2026-09-22T16:08:59Z",
                          "environment":  "production"
                      }
                  ]
