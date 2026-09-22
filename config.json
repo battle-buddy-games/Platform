@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-4bca1d1",
-                         "title":  "feat(platform.scripts): read-only Discord channel content inventory for a del...",
-                         "timestamp":  "2026-09-22T16:08:59Z",
+                         "version":  "build-29a5b7d",
+                         "title":  "feat(gallery): page the Development Images gallery past the first 100 rows",
+                         "timestamp":  "2026-09-22T16:35:13Z",
                          "environment":  "production"
                      }
                  ]
