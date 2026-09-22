@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-d35d985",
-                         "title":  "fix(discord): enumerate archived threads in the native-thread discovery sweep",
-                         "timestamp":  "2026-09-22T22:35:50Z",
+                         "version":  "build-db16ce2",
+                         "title":  "fix(discord): bound discovery fan-out and surface archived-enumeration failures",
+                         "timestamp":  "2026-09-22T23:02:09Z",
                          "environment":  "production"
                      }
                  ]
