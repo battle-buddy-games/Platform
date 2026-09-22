@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-1ba243d",
-                         "title":  "fix(platform.scripts): send the service header the gated Discord read routes ...",
-                         "timestamp":  "2026-09-22T15:26:20Z",
+                         "version":  "build-0875ad0",
+                         "title":  "fix(agent): gate the Discord read routes that served data anonymously",
+                         "timestamp":  "2026-09-22T15:03:43Z",
                          "environment":  "production"
                      }
                  ]
