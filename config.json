@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-759184f",
-                         "title":  "ci(web-platform): skip a production deploy superseded by a newer run",
-                         "timestamp":  "2026-09-21T03:20:54Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f3d3a70",
                          "title":  "fix(stream-live): label the go-live message with the platform DisplayName (#144)",
                          "timestamp":  "2026-09-21T13:53:30Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a4992d1",
                          "title":  "feat(discord-agent): enumerate archived threads on the threads route",
                          "timestamp":  "2026-09-22T14:03:56Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0875ad0",
+                         "title":  "fix(agent): gate the Discord read routes that served data anonymously",
+                         "timestamp":  "2026-09-22T15:03:43Z",
                          "environment":  "production"
                      }
                  ]
