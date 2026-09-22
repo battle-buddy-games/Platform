@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-6808d28",
-                         "title":  "fix(deps): regenerate package-lock so npm ci can install @playwright/test (#145)",
-                         "timestamp":  "2026-09-21T18:02:19Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-667a52c",
                          "title":  "feat(buddy-desktop): OBS scene override on Buddy Desktop window focus (#151)",
                          "timestamp":  "2026-09-21T20:17:25Z",
@@ -104,6 +98,12 @@
                          "version":  "build-51ed6d4",
                          "title":  "feat(gallery): surface Discord channel provenance on gallery read paths",
                          "timestamp":  "2026-09-22T20:36:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ad39f86",
+                         "title":  "feat(gallery): render image origin and page the concept art blade",
+                         "timestamp":  "2026-09-22T21:17:59Z",
                          "environment":  "production"
                      }
                  ]
