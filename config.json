@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8d1b594",
-                         "title":  "fix(identity): point /Identity/Login at the real sign-in page and carry retur...",
-                         "timestamp":  "2026-09-21T16:18:18Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-6808d28",
                          "title":  "fix(deps): regenerate package-lock so npm ci can install @playwright/test (#145)",
                          "timestamp":  "2026-09-21T18:02:19Z",
@@ -104,6 +98,12 @@
                          "version":  "build-12e8419",
                          "title":  "feat(gallery): framework attribution on Development Images, derived and corre...",
                          "timestamp":  "2026-09-22T17:22:56Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-51ed6d4",
+                         "title":  "feat(gallery): surface Discord channel provenance on gallery read paths",
+                         "timestamp":  "2026-09-22T20:36:01Z",
                          "environment":  "production"
                      }
                  ]
