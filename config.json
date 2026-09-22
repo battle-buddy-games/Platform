@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-5bcfa31",
-                         "title":  "feat(gallery): kind write path, kind-to-thread routing, and a reclassificatio...",
-                         "timestamp":  "2026-09-22T23:29:04Z",
+                         "version":  "build-7d8cff8",
+                         "title":  "feat(gallery): append gallery images into their kind\u0027s studio thread",
+                         "timestamp":  "2026-09-22T23:51:57Z",
                          "environment":  "production"
                      }
                  ]
