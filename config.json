@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-97b52bd",
-                         "title":  "feat(gallery): send the Kind on import and group the gallery by kind",
-                         "timestamp":  "2026-09-21T02:32:48Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-759184f",
                          "title":  "ci(web-platform): skip a production deploy superseded by a newer run",
                          "timestamp":  "2026-09-21T03:20:54Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0f672f8",
                          "title":  "feat(chat): consolidate harness session header controls into one dropdown",
                          "timestamp":  "2026-09-22T13:18:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a4992d1",
+                         "title":  "feat(discord-agent): enumerate archived threads on the threads route",
+                         "timestamp":  "2026-09-22T14:03:56Z",
                          "environment":  "production"
                      }
                  ]
