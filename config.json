@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://degrees-travel-ranger-classical.trycloudflare.com"
+                                  "address":  "https://impressive-juan-katie-sims.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
