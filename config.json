@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-657d472",
-                         "title":  "fix(ci): make the /test environment path-aware so its pages load their own as...",
-                         "timestamp":  "2026-09-21T23:42:09Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0f672f8",
                          "title":  "feat(chat): consolidate harness session header controls into one dropdown",
                          "timestamp":  "2026-09-22T13:18:08Z",
@@ -104,6 +98,12 @@
                          "version":  "build-5bcfa31",
                          "title":  "feat(gallery): kind write path, kind-to-thread routing, and a reclassificatio...",
                          "timestamp":  "2026-09-22T23:29:04Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-12b3a18",
+                         "title":  "fix(gallery): fold AI-generated into the concept-art thread",
+                         "timestamp":  "2026-09-23T00:14:39Z",
                          "environment":  "production"
                      }
                  ]
