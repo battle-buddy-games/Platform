@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ad39f86",
-                         "title":  "feat(gallery): render image origin and page the concept art blade",
-                         "timestamp":  "2026-09-22T21:17:59Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d35d985",
                          "title":  "fix(discord): enumerate archived threads in the native-thread discovery sweep",
                          "timestamp":  "2026-09-22T22:35:50Z",
@@ -104,6 +98,12 @@
                          "version":  "build-5db8ac6",
                          "title":  "fix(static-sites): push product sites with the GitHub App installation that c...",
                          "timestamp":  "2026-09-24T06:49:24Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d8811d0",
+                         "title":  "Create news Platform activity update — 2026-09-24 12:03 UTC",
+                         "timestamp":  "2026-09-24T13:29:23Z",
                          "environment":  "production"
                      }
                  ]
