@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0875ad0",
-                         "title":  "fix(agent): gate the Discord read routes that served data anonymously",
-                         "timestamp":  "2026-09-22T15:03:43Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4bca1d1",
                          "title":  "feat(platform.scripts): read-only Discord channel content inventory for a del...",
                          "timestamp":  "2026-09-22T16:08:59Z",
@@ -104,6 +98,12 @@
                          "version":  "build-33c8891",
                          "title":  "fix(static-sites): publish a real troop and building wiki on product sites",
                          "timestamp":  "2026-09-24T02:35:40Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6ce35d3",
+                         "title":  "Release build-33c8891: fix(static-sites): publish a real troop and building w...",
+                         "timestamp":  "2026-09-24T03:41:06Z",
                          "environment":  "production"
                      }
                  ]
