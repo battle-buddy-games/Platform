@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-63b7eb4",
-                         "title":  "fix(news): fetch the news directory in one GraphQL call instead of 800+ seria...",
-                         "timestamp":  "2026-09-24T01:25:09Z",
+                         "version":  "build-7938c57",
+                         "title":  "fix(chat): stop rich-link chips corrupting markdown link hrefs; order-guard a...",
+                         "timestamp":  "2026-09-24T00:53:55Z",
                          "environment":  "production"
                      }
                  ]
