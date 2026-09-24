@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d35d985",
-                         "title":  "fix(discord): enumerate archived threads in the native-thread discovery sweep",
-                         "timestamp":  "2026-09-22T22:35:50Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5bcfa31",
                          "title":  "feat(gallery): kind write path, kind-to-thread routing, and a reclassificatio...",
                          "timestamp":  "2026-09-22T23:29:04Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d8811d0",
                          "title":  "Create news Platform activity update — 2026-09-24 12:03 UTC",
                          "timestamp":  "2026-09-24T13:29:23Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a509f5c",
+                         "title":  "fix(static-sites): publish product sites through the org App without touching...",
+                         "timestamp":  "2026-09-24T16:35:50Z",
                          "environment":  "production"
                      }
                  ]
