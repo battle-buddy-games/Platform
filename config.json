@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5bcfa31",
-                         "title":  "feat(gallery): kind write path, kind-to-thread routing, and a reclassificatio...",
-                         "timestamp":  "2026-09-22T23:29:04Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-12b3a18",
                          "title":  "fix(gallery): fold AI-generated into the concept-art thread",
                          "timestamp":  "2026-09-23T00:14:39Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a509f5c",
                          "title":  "fix(static-sites): publish product sites through the org App without touching...",
                          "timestamp":  "2026-09-24T16:35:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-67cba83",
+                         "title":  "feat(wiki): terrain chunks, tiles and decorations sections",
+                         "timestamp":  "2026-09-24T17:46:37Z",
                          "environment":  "production"
                      }
                  ]
