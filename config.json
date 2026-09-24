@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-12e8419",
-                         "title":  "feat(gallery): framework attribution on Development Images, derived and corre...",
-                         "timestamp":  "2026-09-22T17:22:56Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-51ed6d4",
                          "title":  "feat(gallery): surface Discord channel provenance on gallery read paths",
                          "timestamp":  "2026-09-22T20:36:01Z",
@@ -104,6 +98,12 @@
                          "version":  "build-23e4187",
                          "title":  "feat(static-sites): republish product sites automatically after every CI expo...",
                          "timestamp":  "2026-09-24T05:13:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1e7ac6a",
+                         "title":  "fix(static-sites): ship a pinned, checksum-verified Hugo with the platform de...",
+                         "timestamp":  "2026-09-24T05:57:48Z",
                          "environment":  "production"
                      }
                  ]
