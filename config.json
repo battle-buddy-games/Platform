@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0f672f8",
-                         "title":  "feat(chat): consolidate harness session header controls into one dropdown",
-                         "timestamp":  "2026-09-22T13:18:08Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a4992d1",
                          "title":  "feat(discord-agent): enumerate archived threads on the threads route",
                          "timestamp":  "2026-09-22T14:03:56Z",
@@ -104,6 +98,12 @@
                          "version":  "build-12b3a18",
                          "title":  "fix(gallery): fold AI-generated into the concept-art thread",
                          "timestamp":  "2026-09-23T00:14:39Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7938c57",
+                         "title":  "fix(chat): stop rich-link chips corrupting markdown link hrefs; order-guard a...",
+                         "timestamp":  "2026-09-24T00:53:55Z",
                          "environment":  "production"
                      }
                  ]
