@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-51ed6d4",
-                         "title":  "feat(gallery): surface Discord channel provenance on gallery read paths",
-                         "timestamp":  "2026-09-22T20:36:01Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ad39f86",
                          "title":  "feat(gallery): render image origin and page the concept art blade",
                          "timestamp":  "2026-09-22T21:17:59Z",
@@ -104,6 +98,12 @@
                          "version":  "build-1e7ac6a",
                          "title":  "fix(static-sites): ship a pinned, checksum-verified Hugo with the platform de...",
                          "timestamp":  "2026-09-24T05:57:48Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5db8ac6",
+                         "title":  "fix(static-sites): push product sites with the GitHub App installation that c...",
+                         "timestamp":  "2026-09-24T06:49:24Z",
                          "environment":  "production"
                      }
                  ]
