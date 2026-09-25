@@ -47,6 +47,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-12b3a18",
+                         "title":  "fix(gallery): fold AI-generated into the concept-art thread",
+                         "timestamp":  "2026-09-23T00:14:39Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-7938c57",
                          "title":  "fix(chat): stop rich-link chips corrupting markdown link hrefs; order-guard a...",
                          "timestamp":  "2026-09-24T00:53:55Z",
@@ -98,12 +104,6 @@
                          "version":  "build-67cba83",
                          "title":  "feat(wiki): terrain chunks, tiles and decorations sections",
                          "timestamp":  "2026-09-24T17:46:37Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-bac462e",
-                         "title":  "Chat: harness-only sidebar, SDK Synced Sessions, clearer session state, Disco...",
-                         "timestamp":  "2026-09-25T03:15:35Z",
                          "environment":  "production"
                      }
                  ]
