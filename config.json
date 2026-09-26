@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5db8ac6",
-                         "title":  "fix(static-sites): push product sites with the GitHub App installation that c...",
-                         "timestamp":  "2026-09-24T06:49:24Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d8811d0",
                          "title":  "Create news Platform activity update — 2026-09-24 12:03 UTC",
                          "timestamp":  "2026-09-24T13:29:23Z",
@@ -104,6 +98,12 @@
                          "version":  "build-bd750c5",
                          "title":  "docs(chat): rule that the persona host mounts through the embedded path",
                          "timestamp":  "2026-09-26T22:21:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-843912f",
+                         "title":  "feat(chat): page-scoped persona hosts and the admin persona switch",
+                         "timestamp":  "2026-09-26T23:06:48Z",
                          "environment":  "production"
                      }
                  ]
