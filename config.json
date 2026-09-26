@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-6ce35d3",
-                         "title":  "Release build-33c8891: fix(static-sites): publish a real troop and building w...",
-                         "timestamp":  "2026-09-24T03:41:06Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-23e4187",
                          "title":  "feat(static-sites): republish product sites automatically after every CI expo...",
                          "timestamp":  "2026-09-24T05:13:45Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2cb5601",
                          "title":  "feat(editors): Reviewer, Image Review and Music Review tabs",
                          "timestamp":  "2026-09-25T16:29:53Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f45a2d9",
+                         "title":  "test(community-issue-reports): drop stale auth assertion blocking every deploy",
+                         "timestamp":  "2026-09-26T19:57:34Z",
                          "environment":  "production"
                      }
                  ]
