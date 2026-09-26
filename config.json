@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-ddb5df1",
-                         "title":  "feat(chat): show and control the chat launch defaults in the platform UI",
-                         "timestamp":  "2026-09-26T23:34:36Z",
+                         "version":  "build-843912f",
+                         "title":  "feat(chat): page-scoped persona hosts and the admin persona switch",
+                         "timestamp":  "2026-09-26T23:06:48Z",
                          "environment":  "production"
                      }
                  ]
