@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-23e4187",
-                         "title":  "feat(static-sites): republish product sites automatically after every CI expo...",
-                         "timestamp":  "2026-09-24T05:13:45Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1e7ac6a",
                          "title":  "fix(static-sites): ship a pinned, checksum-verified Hugo with the platform de...",
                          "timestamp":  "2026-09-24T05:57:48Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f45a2d9",
                          "title":  "test(community-issue-reports): drop stale auth assertion blocking every deploy",
                          "timestamp":  "2026-09-26T19:57:34Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7417a32",
+                         "title":  "docs(chat): freeze the page-scoped chat persona interface contract",
+                         "timestamp":  "2026-09-26T21:42:42Z",
                          "environment":  "production"
                      }
                  ]
