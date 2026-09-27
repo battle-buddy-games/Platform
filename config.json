@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-cfd8a89",
-                         "title":  "fix(chat): follow new transcript entries to the bottom of the harness pane",
-                         "timestamp":  "2026-09-27T00:42:20Z",
+                         "version":  "build-a620f57",
+                         "title":  "fix(chat): render thinking expanded in the harness transcript",
+                         "timestamp":  "2026-09-27T01:02:11Z",
                          "environment":  "production"
                      }
                  ]
