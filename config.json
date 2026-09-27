@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7417a32",
-                         "title":  "docs(chat): freeze the page-scoped chat persona interface contract",
-                         "timestamp":  "2026-09-26T21:42:42Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-bd750c5",
                          "title":  "docs(chat): rule that the persona host mounts through the embedded path",
                          "timestamp":  "2026-09-26T22:21:50Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4c95ae4",
                          "title":  "test(chat): bind the map\u0027s resolved set to the registry in both directions",
                          "timestamp":  "2026-09-27T05:35:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-154019c",
+                         "title":  "docs(chat): settle the Release-Agent behaviour -- measured against a discrimi...",
+                         "timestamp":  "2026-09-27T06:04:35Z",
                          "environment":  "production"
                      }
                  ]
