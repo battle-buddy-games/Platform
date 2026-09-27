@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-154019c",
-                         "title":  "docs(chat): settle the Release-Agent behaviour -- measured against a discrimi...",
-                         "timestamp":  "2026-09-27T06:04:35Z",
+                         "version":  "build-f531127",
+                         "title":  "docs(chat-persona): re-correct the resolution count from four-of-four to one-...",
+                         "timestamp":  "2026-09-27T06:37:44Z",
                          "environment":  "production"
                      }
                  ]
