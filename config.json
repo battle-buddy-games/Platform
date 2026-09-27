@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-06dcd80",
-                         "title":  "Merge branch \u0027claude/keen-faraday-x5mgts\u0027 into main-push",
-                         "timestamp":  "2026-09-25T15:37:45Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2cb5601",
                          "title":  "feat(editors): Reviewer, Image Review and Music Review tabs",
                          "timestamp":  "2026-09-25T16:29:53Z",
@@ -104,6 +98,12 @@
                          "version":  "build-90be80d",
                          "title":  "docs(chat): put the empty-allowlist exceptions inside the table rows and at t...",
                          "timestamp":  "2026-09-27T01:52:48Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f28b6d0",
+                         "title":  "feat(chat): order the new-conversation provider list Pi, Codex, Claude",
+                         "timestamp":  "2026-09-27T03:59:05Z",
                          "environment":  "production"
                      }
                  ]
