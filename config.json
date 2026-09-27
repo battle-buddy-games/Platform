@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4c95ae4",
-                         "title":  "test(chat): bind the map\u0027s resolved set to the registry in both directions",
-                         "timestamp":  "2026-09-27T05:35:50Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-154019c",
                          "title":  "docs(chat): settle the Release-Agent behaviour -- measured against a discrimi...",
                          "timestamp":  "2026-09-27T06:04:35Z",
@@ -104,6 +98,12 @@
                          "version":  "build-035372b",
                          "title":  "Create news Platform activity update — 2026-09-27 21:28 UTC",
                          "timestamp":  "2026-09-27T22:18:25Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ac27340",
+                         "title":  "fix(gallery): give the derivative generator a byte budget, and record degrade...",
+                         "timestamp":  "2026-09-27T22:57:32Z",
                          "environment":  "production"
                      }
                  ]
