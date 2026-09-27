@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-0bccefd",
-                         "title":  "feat(chat): LM Studio conversation titles with a model-judged skip, plus dura...",
-                         "timestamp":  "2026-09-27T00:19:03Z",
+                         "version":  "build-80e3919",
+                         "title":  "feat(chat): manual conversation rename for group chats, named DMs and agent s...",
+                         "timestamp":  "2026-09-26T23:58:32Z",
                          "environment":  "production"
                      }
                  ]
