@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-90be80d",
-                         "title":  "docs(chat): put the empty-allowlist exceptions inside the table rows and at t...",
-                         "timestamp":  "2026-09-27T01:52:48Z",
+                         "version":  "build-14060f6",
+                         "title":  "docs(chat): split the emptiness assertion into two lifetimes (permanent vs tr...",
+                         "timestamp":  "2026-09-27T02:12:45Z",
                          "environment":  "production"
                      }
                  ]
