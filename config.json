@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-80e3919",
-                         "title":  "feat(chat): manual conversation rename for group chats, named DMs and agent s...",
-                         "timestamp":  "2026-09-26T23:58:32Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-cfd8a89",
                          "title":  "fix(chat): follow new transcript entries to the bottom of the harness pane",
                          "timestamp":  "2026-09-27T00:42:20Z",
@@ -104,6 +98,12 @@
                          "version":  "build-fd339cf",
                          "title":  "docs(chat): document the frontend half of manual title generation",
                          "timestamp":  "2026-09-27T12:44:11Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8da8e63",
+                         "title":  "feat(buddy-desktop): profile coverage tab + clone-all-missing in SDK Workspaces",
+                         "timestamp":  "2026-09-27T16:38:41Z",
                          "environment":  "production"
                      }
                  ]
