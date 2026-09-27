@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-3f736e3",
-                         "title":  "refactor(chat): declare the persona commands on the attribute",
-                         "timestamp":  "2026-09-27T05:07:14Z",
+                         "version":  "build-e38b3ac",
+                         "title":  "feat(chat): add the persona news/documentation/media commands",
+                         "timestamp":  "2026-09-27T04:42:30Z",
                          "environment":  "production"
                      }
                  ]
