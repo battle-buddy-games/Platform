@@ -47,6 +47,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-90be80d",
+                         "title":  "docs(chat): put the empty-allowlist exceptions inside the table rows and at t...",
+                         "timestamp":  "2026-09-27T01:52:48Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-f28b6d0",
                          "title":  "feat(chat): order the new-conversation provider list Pi, Codex, Claude",
                          "timestamp":  "2026-09-27T03:59:05Z",
@@ -98,12 +104,6 @@
                          "version":  "build-aa17bbf",
                          "title":  "fix(studio-gallery): enforce the thread-rename precondition and persist appen...",
                          "timestamp":  "2026-09-27T18:11:49Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-320c8ce",
-                         "title":  "fix(build-streams): pin every stream row, so a disabled stream cannot unprote...",
-                         "timestamp":  "2026-09-27T19:11:30Z",
                          "environment":  "production"
                      }
                  ]
