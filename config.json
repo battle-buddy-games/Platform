@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e38b3ac",
-                         "title":  "feat(chat): add the persona news/documentation/media commands",
-                         "timestamp":  "2026-09-27T04:42:30Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4c95ae4",
                          "title":  "test(chat): bind the map\u0027s resolved set to the registry in both directions",
                          "timestamp":  "2026-09-27T05:35:50Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2e12fea",
                          "title":  "fix(gallery): degrade past an oversized derivative instead of failing the row",
                          "timestamp":  "2026-09-27T19:53:38Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-035372b",
+                         "title":  "Create news Platform activity update — 2026-09-27 21:28 UTC",
+                         "timestamp":  "2026-09-27T22:18:25Z",
                          "environment":  "production"
                      }
                  ]
