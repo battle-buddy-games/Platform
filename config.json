@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-bac462e",
-                         "title":  "Chat: harness-only sidebar, SDK Synced Sessions, clearer session state, Disco...",
-                         "timestamp":  "2026-09-25T03:15:35Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-06dcd80",
                          "title":  "Merge branch \u0027claude/keen-faraday-x5mgts\u0027 into main-push",
                          "timestamp":  "2026-09-25T15:37:45Z",
@@ -104,6 +98,12 @@
                          "version":  "build-191a88b",
                          "title":  "docs(chat): apply the owner rulings, and correct a false verb-disjointness claim",
                          "timestamp":  "2026-09-27T01:33:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-90be80d",
+                         "title":  "docs(chat): put the empty-allowlist exceptions inside the table rows and at t...",
+                         "timestamp":  "2026-09-27T01:52:48Z",
                          "environment":  "production"
                      }
                  ]
