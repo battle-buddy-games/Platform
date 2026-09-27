@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-942e84e",
-                         "title":  "feat(build-streams): add the BuildStreams registry table and its pins endpoint",
-                         "timestamp":  "2026-09-27T18:32:26Z",
+                         "version":  "build-aa17bbf",
+                         "title":  "fix(studio-gallery): enforce the thread-rename precondition and persist appen...",
+                         "timestamp":  "2026-09-27T18:11:49Z",
                          "environment":  "production"
                      }
                  ]
