@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f28b6d0",
-                         "title":  "feat(chat): order the new-conversation provider list Pi, Codex, Claude",
-                         "timestamp":  "2026-09-27T03:59:05Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e38b3ac",
                          "title":  "feat(chat): add the persona news/documentation/media commands",
                          "timestamp":  "2026-09-27T04:42:30Z",
@@ -104,6 +98,12 @@
                          "version":  "build-320c8ce",
                          "title":  "fix(build-streams): pin every stream row, so a disabled stream cannot unprote...",
                          "timestamp":  "2026-09-27T19:11:30Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2e12fea",
+                         "title":  "fix(gallery): degrade past an oversized derivative instead of failing the row",
+                         "timestamp":  "2026-09-27T19:53:38Z",
                          "environment":  "production"
                      }
                  ]
