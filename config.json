@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2cb5601",
-                         "title":  "feat(editors): Reviewer, Image Review and Music Review tabs",
-                         "timestamp":  "2026-09-25T16:29:53Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f45a2d9",
                          "title":  "test(community-issue-reports): drop stale auth assertion blocking every deploy",
                          "timestamp":  "2026-09-26T19:57:34Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f28b6d0",
                          "title":  "feat(chat): order the new-conversation provider list Pi, Codex, Claude",
                          "timestamp":  "2026-09-27T03:59:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e38b3ac",
+                         "title":  "feat(chat): add the persona news/documentation/media commands",
+                         "timestamp":  "2026-09-27T04:42:30Z",
                          "environment":  "production"
                      }
                  ]
