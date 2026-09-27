@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a509f5c",
-                         "title":  "fix(static-sites): publish product sites through the org App without touching...",
-                         "timestamp":  "2026-09-24T16:35:50Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-67cba83",
                          "title":  "feat(wiki): terrain chunks, tiles and decorations sections",
                          "timestamp":  "2026-09-24T17:46:37Z",
@@ -104,6 +98,12 @@
                          "version":  "build-80e3919",
                          "title":  "feat(chat): manual conversation rename for group chats, named DMs and agent s...",
                          "timestamp":  "2026-09-26T23:58:32Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-cfd8a89",
+                         "title":  "fix(chat): follow new transcript entries to the bottom of the harness pane",
+                         "timestamp":  "2026-09-27T00:42:20Z",
                          "environment":  "production"
                      }
                  ]
