@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-f28b6d0",
-                         "title":  "feat(chat): order the new-conversation provider list Pi, Codex, Claude",
-                         "timestamp":  "2026-09-27T03:59:05Z",
+                         "version":  "build-18864fc",
+                         "title":  "docs(chat): freeze the in-process persona seam (section 11.2c) and close the ...",
+                         "timestamp":  "2026-09-27T04:22:29Z",
                          "environment":  "production"
                      }
                  ]
