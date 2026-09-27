@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-843912f",
-                         "title":  "feat(chat): page-scoped persona hosts and the admin persona switch",
-                         "timestamp":  "2026-09-26T23:06:48Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-80e3919",
                          "title":  "feat(chat): manual conversation rename for group chats, named DMs and agent s...",
                          "timestamp":  "2026-09-26T23:58:32Z",
@@ -104,6 +98,12 @@
                          "version":  "build-095a931",
                          "title":  "docs(chat-persona): mark the experience-spec re-correction as landed, not out...",
                          "timestamp":  "2026-09-27T07:42:55Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-fd339cf",
+                         "title":  "docs(chat): document the frontend half of manual title generation",
+                         "timestamp":  "2026-09-27T12:44:11Z",
                          "environment":  "production"
                      }
                  ]
