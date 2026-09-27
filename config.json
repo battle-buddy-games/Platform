@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-67cba83",
-                         "title":  "feat(wiki): terrain chunks, tiles and decorations sections",
-                         "timestamp":  "2026-09-24T17:46:37Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-bac462e",
                          "title":  "Chat: harness-only sidebar, SDK Synced Sessions, clearer session state, Disco...",
                          "timestamp":  "2026-09-25T03:15:35Z",
@@ -104,6 +98,12 @@
                          "version":  "build-cfd8a89",
                          "title":  "fix(chat): follow new transcript entries to the bottom of the harness pane",
                          "timestamp":  "2026-09-27T00:42:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-191a88b",
+                         "title":  "docs(chat): apply the owner rulings, and correct a false verb-disjointness claim",
+                         "timestamp":  "2026-09-27T01:33:50Z",
                          "environment":  "production"
                      }
                  ]
