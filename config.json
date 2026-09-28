@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-cc5cc19",
-                         "title":  "fix(chat): announce a lost session only after its reconnect grace elapses",
-                         "timestamp":  "2026-09-28T22:19:56Z",
+                         "version":  "build-853f864",
+                         "title":  "fix(chat): relay plugin-session recovery over BattleBuddyHub, not BuddyHub",
+                         "timestamp":  "2026-09-28T21:46:00Z",
                          "environment":  "production"
                      }
                  ]
