@@ -47,6 +47,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-2e12fea",
+                         "title":  "fix(gallery): degrade past an oversized derivative instead of failing the row",
+                         "timestamp":  "2026-09-27T19:53:38Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-035372b",
                          "title":  "Create news Platform activity update — 2026-09-27 21:28 UTC",
                          "timestamp":  "2026-09-27T22:18:25Z",
@@ -98,12 +104,6 @@
                          "version":  "build-a7eaa1a",
                          "title":  "feat(chat): keep the launch in place instead of sending the user away",
                          "timestamp":  "2026-09-28T20:39:36Z",
-                         "environment":  "production"
-                     },
-                     {
-                         "version":  "build-3603ea3",
-                         "title":  "test(chat): pin the recovery status channel, not just the derived colour",
-                         "timestamp":  "2026-09-28T21:11:05Z",
                          "environment":  "production"
                      }
                  ]
