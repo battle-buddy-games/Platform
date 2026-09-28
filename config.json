@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-095a931",
-                         "title":  "docs(chat-persona): mark the experience-spec re-correction as landed, not out...",
-                         "timestamp":  "2026-09-27T07:42:55Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-fd339cf",
                          "title":  "docs(chat): document the frontend half of manual title generation",
                          "timestamp":  "2026-09-27T12:44:11Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d19da20",
                          "title":  "fix(buddy-desktop): delete the dead atomicReplace() guard and close the delet...",
                          "timestamp":  "2026-09-28T00:19:51Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-cef1191",
+                         "title":  "docs(buddy-desktop): warn at the Phase 5 marker that the job\u0027s bodies are Pow...",
+                         "timestamp":  "2026-09-28T01:13:08Z",
                          "environment":  "production"
                      }
                  ]
