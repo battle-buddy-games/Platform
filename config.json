@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-ab7f35d",
-                         "title":  "fix(gallery): size a separate artifact for Discord instead of capping the pla...",
-                         "timestamp":  "2026-09-28T00:46:36Z",
+                         "version":  "build-d19da20",
+                         "title":  "fix(buddy-desktop): delete the dead atomicReplace() guard and close the delet...",
+                         "timestamp":  "2026-09-28T00:19:51Z",
                          "environment":  "production"
                      }
                  ]
