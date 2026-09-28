@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-fd7037d",
-                         "title":  "fix(studio-gallery): post studio thread images oldest-to-newest, add staged r...",
-                         "timestamp":  "2026-09-27T17:03:31Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-aa17bbf",
                          "title":  "fix(studio-gallery): enforce the thread-rename precondition and persist appen...",
                          "timestamp":  "2026-09-27T18:11:49Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7e3c7d9",
                          "title":  "fix(deploy): scope the slot-replacement process kill to $ProductionPath",
                          "timestamp":  "2026-09-28T14:35:28Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3bcbf2c",
+                         "title":  "Create news Platform activity update — 2026-09-28 16:52 UTC",
+                         "timestamp":  "2026-09-28T17:55:36Z",
                          "environment":  "production"
                      }
                  ]
