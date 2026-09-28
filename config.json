@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-fd339cf",
-                         "title":  "docs(chat): document the frontend half of manual title generation",
-                         "timestamp":  "2026-09-27T12:44:11Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8da8e63",
                          "title":  "feat(buddy-desktop): profile coverage tab + clone-all-missing in SDK Workspaces",
                          "timestamp":  "2026-09-27T16:38:41Z",
@@ -104,6 +98,12 @@
                          "version":  "build-cef1191",
                          "title":  "docs(buddy-desktop): warn at the Phase 5 marker that the job\u0027s bodies are Pow...",
                          "timestamp":  "2026-09-28T01:13:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7ae661b",
+                         "title":  "feat(discord): reinstate the per-submodule-profile Studio channel loop",
+                         "timestamp":  "2026-09-28T13:55:54Z",
                          "environment":  "production"
                      }
                  ]
