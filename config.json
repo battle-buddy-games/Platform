@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://mats-productivity-lite-erik.trycloudflare.com"
+                                  "address":  "https://modular-nowhere-finding-directive.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-06f90c9",
-                         "title":  "fix(buddy-desktop): make `npm test` portable so the CI gate can run",
-                         "timestamp":  "2026-09-28T01:38:17Z",
+                         "version":  "build-cef1191",
+                         "title":  "docs(buddy-desktop): warn at the Phase 5 marker that the job\u0027s bodies are Pow...",
+                         "timestamp":  "2026-09-28T01:13:08Z",
                          "environment":  "production"
                      }
                  ]
