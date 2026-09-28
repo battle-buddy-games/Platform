@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-154019c",
-                         "title":  "docs(chat): settle the Release-Agent behaviour -- measured against a discrimi...",
-                         "timestamp":  "2026-09-27T06:04:35Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-095a931",
                          "title":  "docs(chat-persona): mark the experience-spec re-correction as landed, not out...",
                          "timestamp":  "2026-09-27T07:42:55Z",
@@ -104,6 +98,12 @@
                          "version":  "build-ac27340",
                          "title":  "fix(gallery): give the derivative generator a byte budget, and record degrade...",
                          "timestamp":  "2026-09-27T22:57:32Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d19da20",
+                         "title":  "fix(buddy-desktop): delete the dead atomicReplace() guard and close the delet...",
+                         "timestamp":  "2026-09-28T00:19:51Z",
                          "environment":  "production"
                      }
                  ]
