@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-035372b",
-                         "title":  "Create news Platform activity update — 2026-09-27 21:28 UTC",
-                         "timestamp":  "2026-09-27T22:18:25Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ac27340",
                          "title":  "fix(gallery): give the derivative generator a byte budget, and record degrade...",
                          "timestamp":  "2026-09-27T22:57:32Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3603ea3",
                          "title":  "test(chat): pin the recovery status channel, not just the derived colour",
                          "timestamp":  "2026-09-28T21:11:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-853f864",
+                         "title":  "fix(chat): relay plugin-session recovery over BattleBuddyHub, not BuddyHub",
+                         "timestamp":  "2026-09-28T21:46:00Z",
                          "environment":  "production"
                      }
                  ]
