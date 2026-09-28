@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-aa17bbf",
-                         "title":  "fix(studio-gallery): enforce the thread-rename precondition and persist appen...",
-                         "timestamp":  "2026-09-27T18:11:49Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-320c8ce",
                          "title":  "fix(build-streams): pin every stream row, so a disabled stream cannot unprote...",
                          "timestamp":  "2026-09-27T19:11:30Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3bcbf2c",
                          "title":  "Create news Platform activity update — 2026-09-28 16:52 UTC",
                          "timestamp":  "2026-09-28T17:55:36Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0fc80dd",
+                         "title":  "fix(chat): escape the @ button\u0027s label out of Razor code-transition position",
+                         "timestamp":  "2026-09-28T19:50:40Z",
                          "environment":  "production"
                      }
                  ]
