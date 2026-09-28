@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8da8e63",
-                         "title":  "feat(buddy-desktop): profile coverage tab + clone-all-missing in SDK Workspaces",
-                         "timestamp":  "2026-09-27T16:38:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-fd7037d",
                          "title":  "fix(studio-gallery): post studio thread images oldest-to-newest, add staged r...",
                          "timestamp":  "2026-09-27T17:03:31Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7ae661b",
                          "title":  "feat(discord): reinstate the per-submodule-profile Studio channel loop",
                          "timestamp":  "2026-09-28T13:55:54Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7e3c7d9",
+                         "title":  "fix(deploy): scope the slot-replacement process kill to $ProductionPath",
+                         "timestamp":  "2026-09-28T14:35:28Z",
                          "environment":  "production"
                      }
                  ]
