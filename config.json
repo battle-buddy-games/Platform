@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-320c8ce",
-                         "title":  "fix(build-streams): pin every stream row, so a disabled stream cannot unprote...",
-                         "timestamp":  "2026-09-27T19:11:30Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2e12fea",
                          "title":  "fix(gallery): degrade past an oversized derivative instead of failing the row",
                          "timestamp":  "2026-09-27T19:53:38Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0fc80dd",
                          "title":  "fix(chat): escape the @ button\u0027s label out of Razor code-transition position",
                          "timestamp":  "2026-09-28T19:50:40Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a7eaa1a",
+                         "title":  "feat(chat): keep the launch in place instead of sending the user away",
+                         "timestamp":  "2026-09-28T20:39:36Z",
                          "environment":  "production"
                      }
                  ]
