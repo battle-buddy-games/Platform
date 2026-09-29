@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-6279222",
-                         "title":  "feat(chat): delete the retired Agent Studio portal and everything under it",
-                         "timestamp":  "2026-09-29T14:39:34Z",
+                         "version":  "build-cb5ff86",
+                         "title":  "fix(chat): remove the harness Back-to-chat button and the browser-signin warning",
+                         "timestamp":  "2026-09-29T14:05:18Z",
                          "environment":  "production"
                      }
                  ]
