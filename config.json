@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-3d38c66",
-                         "title":  "feat(sessions): durable cross-slot presence for plugin sessions",
-                         "timestamp":  "2026-09-29T01:17:55Z",
+                         "version":  "build-720f086",
+                         "title":  "fix(sessions): hand plugin bridges over when a blue-green slot is demoted",
+                         "timestamp":  "2026-09-29T00:58:08Z",
                          "environment":  "production"
                      }
                  ]
