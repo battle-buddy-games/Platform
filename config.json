@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-851c096",
-                         "title":  "fix(chat): gate reopen and restart on dashboard access",
-                         "timestamp":  "2026-09-29T00:16:16Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-720f086",
                          "title":  "fix(sessions): hand plugin bridges over when a blue-green slot is demoted",
                          "timestamp":  "2026-09-29T00:58:08Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2d6ec68",
                          "title":  "feat(platform-host-agent): manage a Buddy host agent on the platform host",
                          "timestamp":  "2026-09-29T20:15:42Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c658b94",
+                         "title":  "fix(deploy): give a freshly-started service slot a 180s readiness budget, not...",
+                         "timestamp":  "2026-09-29T21:15:03Z",
                          "environment":  "production"
                      }
                  ]
