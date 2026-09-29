@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-6f9fbca",
-                         "title":  "feat(chat): retire the Agent Studio portal into Studio agent channels",
-                         "timestamp":  "2026-09-29T03:20:38Z",
+                         "version":  "build-4c267e6",
+                         "title":  "feat(chat): workspace git dropdown with pin and read-only actions",
+                         "timestamp":  "2026-09-29T03:50:20Z",
                          "environment":  "production"
                      }
                  ]
