@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7e3c7d9",
-                         "title":  "fix(deploy): scope the slot-replacement process kill to $ProductionPath",
-                         "timestamp":  "2026-09-28T14:35:28Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3bcbf2c",
                          "title":  "Create news Platform activity update — 2026-09-28 16:52 UTC",
                          "timestamp":  "2026-09-28T17:55:36Z",
@@ -104,6 +98,12 @@
                          "version":  "build-061ad72",
                          "title":  "feat(chat): shared @ reference picker in the harness composer, + menu, recall",
                          "timestamp":  "2026-09-29T01:39:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c76b48a",
+                         "title":  "feat(chat): move harness header chips into a subtext row below the title",
+                         "timestamp":  "2026-09-29T02:17:41Z",
                          "environment":  "production"
                      }
                  ]
