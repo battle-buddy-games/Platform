@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-cef1191",
-                         "title":  "docs(buddy-desktop): warn at the Phase 5 marker that the job\u0027s bodies are Pow...",
-                         "timestamp":  "2026-09-28T01:13:08Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7ae661b",
                          "title":  "feat(discord): reinstate the per-submodule-profile Studio channel loop",
                          "timestamp":  "2026-09-28T13:55:54Z",
@@ -104,6 +98,12 @@
                          "version":  "build-851c096",
                          "title":  "fix(chat): gate reopen and restart on dashboard access",
                          "timestamp":  "2026-09-29T00:16:16Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-720f086",
+                         "title":  "fix(sessions): hand plugin bridges over when a blue-green slot is demoted",
+                         "timestamp":  "2026-09-29T00:58:08Z",
                          "environment":  "production"
                      }
                  ]
