@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-853f864",
-                         "title":  "fix(chat): relay plugin-session recovery over BattleBuddyHub, not BuddyHub",
-                         "timestamp":  "2026-09-28T21:46:00Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-6fe1633",
                          "title":  "fix(chat): restart a disconnected session, and offer the action where it is n...",
                          "timestamp":  "2026-09-28T23:06:06Z",
@@ -104,6 +98,12 @@
                          "version":  "build-24ef625",
                          "title":  "Release build-e344e03: Create news Platform activity update — 2026-09-29 14:5...",
                          "timestamp":  "2026-09-29T17:41:49Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4019812",
+                         "title":  "fix(buddy-desktop): make the Steam registry lookup async so Validate can pass",
+                         "timestamp":  "2026-09-29T19:44:01Z",
                          "environment":  "production"
                      }
                  ]
