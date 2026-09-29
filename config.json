@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7ae661b",
-                         "title":  "feat(discord): reinstate the per-submodule-profile Studio channel loop",
-                         "timestamp":  "2026-09-28T13:55:54Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7e3c7d9",
                          "title":  "fix(deploy): scope the slot-replacement process kill to $ProductionPath",
                          "timestamp":  "2026-09-28T14:35:28Z",
@@ -104,6 +98,12 @@
                          "version":  "build-720f086",
                          "title":  "fix(sessions): hand plugin bridges over when a blue-green slot is demoted",
                          "timestamp":  "2026-09-29T00:58:08Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-061ad72",
+                         "title":  "feat(chat): shared @ reference picker in the harness composer, + menu, recall",
+                         "timestamp":  "2026-09-29T01:39:05Z",
                          "environment":  "production"
                      }
                  ]
