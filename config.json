@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-851c096",
-                         "title":  "fix(chat): gate reopen and restart on dashboard access",
-                         "timestamp":  "2026-09-29T00:16:16Z",
+                         "version":  "build-68d9a9a",
+                         "title":  "fix(chat): stop listing mirrored agent DMs for sessions the harness never sta...",
+                         "timestamp":  "2026-09-29T00:37:03Z",
                          "environment":  "production"
                      }
                  ]
