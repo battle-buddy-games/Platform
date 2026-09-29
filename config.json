@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0fc80dd",
-                         "title":  "fix(chat): escape the @ button\u0027s label out of Razor code-transition position",
-                         "timestamp":  "2026-09-28T19:50:40Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a7eaa1a",
                          "title":  "feat(chat): keep the launch in place instead of sending the user away",
                          "timestamp":  "2026-09-28T20:39:36Z",
@@ -104,6 +98,12 @@
                          "version":  "build-6f9fbca",
                          "title":  "feat(chat): retire the Agent Studio portal into Studio agent channels",
                          "timestamp":  "2026-09-29T03:20:38Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-cb5ff86",
+                         "title":  "fix(chat): remove the harness Back-to-chat button and the browser-signin warning",
+                         "timestamp":  "2026-09-29T14:05:18Z",
                          "environment":  "production"
                      }
                  ]
