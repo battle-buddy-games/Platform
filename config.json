@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3bcbf2c",
-                         "title":  "Create news Platform activity update — 2026-09-28 16:52 UTC",
-                         "timestamp":  "2026-09-28T17:55:36Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0fc80dd",
                          "title":  "fix(chat): escape the @ button\u0027s label out of Razor code-transition position",
                          "timestamp":  "2026-09-28T19:50:40Z",
@@ -104,6 +98,12 @@
                          "version":  "build-c76b48a",
                          "title":  "feat(chat): move harness header chips into a subtext row below the title",
                          "timestamp":  "2026-09-29T02:17:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6f9fbca",
+                         "title":  "feat(chat): retire the Agent Studio portal into Studio agent channels",
+                         "timestamp":  "2026-09-29T03:20:38Z",
                          "environment":  "production"
                      }
                  ]
