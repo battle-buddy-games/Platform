@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2d6ec68",
-                         "title":  "feat(platform-host-agent): manage a Buddy host agent on the platform host",
-                         "timestamp":  "2026-09-29T20:15:42Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c658b94",
                          "title":  "fix(deploy): give a freshly-started service slot a 180s readiness budget, not...",
                          "timestamp":  "2026-09-29T21:15:03Z",
@@ -104,6 +98,12 @@
                          "version":  "build-ad393fd",
                          "title":  "fix(buddy-desktop): keep harness OBS windows fixed-size",
                          "timestamp":  "2026-09-30T21:50:11Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d02d1ae",
+                         "title":  "fix(buddy-desktop): preserve resize outside OBS reposition drag",
+                         "timestamp":  "2026-09-30T22:24:01Z",
                          "environment":  "production"
                      }
                  ]
