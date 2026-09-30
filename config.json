@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-4163c0c",
-                         "title":  "fix(db): take the remaining raw-SQL brace literals off EF\u0027s composite-format ...",
-                         "timestamp":  "2026-09-30T23:16:41Z",
+                         "version":  "build-49a38a3",
+                         "title":  "feat(voice): read a generated news bulletin aloud in the production voice tests",
+                         "timestamp":  "2026-09-30T23:50:05Z",
                          "environment":  "production"
                      }
                  ]
