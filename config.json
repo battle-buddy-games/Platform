@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4019812",
-                         "title":  "fix(buddy-desktop): make the Steam registry lookup async so Validate can pass",
-                         "timestamp":  "2026-09-29T19:44:01Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2d6ec68",
                          "title":  "feat(platform-host-agent): manage a Buddy host agent on the platform host",
                          "timestamp":  "2026-09-29T20:15:42Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3bd0333",
                          "title":  "fix(tests): give GitExecutableResolverTests a real non-parallel collection",
                          "timestamp":  "2026-09-30T21:05:34Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ad393fd",
+                         "title":  "fix(buddy-desktop): keep harness OBS windows fixed-size",
+                         "timestamp":  "2026-09-30T21:50:11Z",
                          "environment":  "production"
                      }
                  ]
