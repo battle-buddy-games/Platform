@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c658b94",
-                         "title":  "fix(deploy): give a freshly-started service slot a 180s readiness budget, not...",
-                         "timestamp":  "2026-09-29T21:15:03Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-aaf3eb9",
                          "title":  "fix(views): drop the literal body tag from MainHeaderBar\u0027s CSS comment (RZ1034)",
                          "timestamp":  "2026-09-30T01:32:10Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d02d1ae",
                          "title":  "fix(buddy-desktop): preserve resize outside OBS reposition drag",
                          "timestamp":  "2026-09-30T22:24:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4163c0c",
+                         "title":  "fix(db): take the remaining raw-SQL brace literals off EF\u0027s composite-format ...",
+                         "timestamp":  "2026-09-30T23:16:41Z",
                          "environment":  "production"
                      }
                  ]
