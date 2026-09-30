@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-6f9fbca",
-                         "title":  "feat(chat): retire the Agent Studio portal into Studio agent channels",
-                         "timestamp":  "2026-09-29T03:20:38Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-cb5ff86",
                          "title":  "fix(chat): remove the harness Back-to-chat button and the browser-signin warning",
                          "timestamp":  "2026-09-29T14:05:18Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2b0373c",
                          "title":  "test(hub): put the slot-handoff fixture in the shared static-state collection...",
                          "timestamp":  "2026-09-30T02:38:25Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a7bd29b",
+                         "title":  "fix(deploy): remove the SDK-materialization drain gate now that the durable w...",
+                         "timestamp":  "2026-09-30T03:31:19Z",
                          "environment":  "production"
                      }
                  ]
