@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c76b48a",
-                         "title":  "feat(chat): move harness header chips into a subtext row below the title",
-                         "timestamp":  "2026-09-29T02:17:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-6f9fbca",
                          "title":  "feat(chat): retire the Agent Studio portal into Studio agent channels",
                          "timestamp":  "2026-09-29T03:20:38Z",
@@ -104,6 +98,12 @@
                          "version":  "build-96ebcd1",
                          "title":  "fix(buddy-desktop): make the harness OBS windows readable and movable; explai...",
                          "timestamp":  "2026-09-30T02:07:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2b0373c",
+                         "title":  "test(hub): put the slot-handoff fixture in the shared static-state collection...",
+                         "timestamp":  "2026-09-30T02:38:25Z",
                          "environment":  "production"
                      }
                  ]
