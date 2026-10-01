@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-2d11182",
-                         "title":  "feat(discord): split the docs feed into seven documentation-scope channels",
-                         "timestamp":  "2026-10-01T10:15:47Z",
+                         "version":  "build-915320b",
+                         "title":  "fix(chat): resolve launch options once, for both entry points",
+                         "timestamp":  "2026-10-01T10:39:07Z",
                          "environment":  "production"
                      }
                  ]
