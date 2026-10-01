@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-fc8b834",
-                         "title":  "fix(chat): re-resolve a stale desktop-capability target against the live hub ...",
-                         "timestamp":  "2026-10-01T00:15:53Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a9e4e34",
                          "title":  "fix(buddy-desktop): apply Steam Presence mode changes to the running daemon",
                          "timestamp":  "2026-10-01T01:09:00Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-915320b",
-                         "title":  "fix(chat): resolve launch options once, for both entry points",
-                         "timestamp":  "2026-10-01T10:39:07Z",
+                         "version":  "build-2d11182",
+                         "title":  "feat(discord): split the docs feed into seven documentation-scope channels",
+                         "timestamp":  "2026-10-01T10:15:47Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3e7ed3b",
+                         "title":  "fix(sdk): key registered hosts by machine, add workspace cleanup",
+                         "timestamp":  "2026-10-01T12:07:29Z",
                          "environment":  "production"
                      }
                  ]
