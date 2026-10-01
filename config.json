@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-a5ac746",
-                         "title":  "docs(discord): correct the message-sync mention-suppression claim",
-                         "timestamp":  "2026-10-01T13:41:23Z",
+                         "version":  "build-3e7ed3b",
+                         "title":  "fix(sdk): key registered hosts by machine, add workspace cleanup",
+                         "timestamp":  "2026-10-01T12:07:29Z",
                          "environment":  "production"
                      }
                  ]
