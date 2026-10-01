@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-de509ee",
-                         "title":  "fix(buddy-desktop): stop the harness OBS drag bar from resizing the window",
-                         "timestamp":  "2026-10-01T03:24:50Z",
+                         "version":  "build-edc1e0f",
+                         "title":  "fix(production-tests): set the client timeout at construction, not mid-test",
+                         "timestamp":  "2026-10-01T03:48:56Z",
                          "environment":  "production"
                      }
                  ]
