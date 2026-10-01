@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9adc005",
-                         "title":  "fix(deploy): restore absolute shared-DB env for production Cloud deploys",
-                         "timestamp":  "2026-09-30T05:21:50Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-78487bf",
                          "title":  "Create news Platform activity update — 2026-09-30 14:24 UTC",
                          "timestamp":  "2026-09-30T16:12:37Z",
@@ -104,6 +98,12 @@
                          "version":  "build-9776f82",
                          "title":  "fix(chat): rank desktop picker hosts by harness evidence, not recency",
                          "timestamp":  "2026-10-01T02:33:51Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-de509ee",
+                         "title":  "fix(buddy-desktop): stop the harness OBS drag bar from resizing the window",
+                         "timestamp":  "2026-10-01T03:24:50Z",
                          "environment":  "production"
                      }
                  ]
