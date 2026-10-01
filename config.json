@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ad393fd",
-                         "title":  "fix(buddy-desktop): keep harness OBS windows fixed-size",
-                         "timestamp":  "2026-09-30T21:50:11Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d02d1ae",
                          "title":  "fix(buddy-desktop): preserve resize outside OBS reposition drag",
                          "timestamp":  "2026-09-30T22:24:01Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-0abb6d4",
-                         "title":  "feat(chat): persist the conversation-list width and expose session activity",
-                         "timestamp":  "2026-10-01T07:11:16Z",
+                         "version":  "build-19f347c",
+                         "title":  "fix(deploy): require RCLONE_CONFIG at the service-environment gate (fail closed)",
+                         "timestamp":  "2026-10-01T06:28:38Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a0586ef",
+                         "title":  "feat(ci-video): Discord \"Change speed\" flow for CI video captures",
+                         "timestamp":  "2026-10-01T07:49:50Z",
                          "environment":  "production"
                      }
                  ]
