@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a7bd29b",
-                         "title":  "fix(deploy): remove the SDK-materialization drain gate now that the durable w...",
-                         "timestamp":  "2026-09-30T03:31:19Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9adc005",
                          "title":  "fix(deploy): restore absolute shared-DB env for production Cloud deploys",
                          "timestamp":  "2026-09-30T05:21:50Z",
@@ -104,6 +98,12 @@
                          "version":  "build-42e11bb",
                          "title":  "fix(buddy-desktop): paint the launch-time Steam placeholder when the daemon n...",
                          "timestamp":  "2026-10-01T01:36:57Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9776f82",
+                         "title":  "fix(chat): rank desktop picker hosts by harness evidence, not recency",
+                         "timestamp":  "2026-10-01T02:33:51Z",
                          "environment":  "production"
                      }
                  ]
