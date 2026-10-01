@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-19f347c",
-                         "title":  "fix(deploy): require RCLONE_CONFIG at the service-environment gate (fail closed)",
-                         "timestamp":  "2026-10-01T06:28:38Z",
+                         "version":  "build-0abb6d4",
+                         "title":  "feat(chat): persist the conversation-list width and expose session activity",
+                         "timestamp":  "2026-10-01T07:11:16Z",
                          "environment":  "production"
                      }
                  ]
