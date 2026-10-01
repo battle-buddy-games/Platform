@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-96ebcd1",
-                         "title":  "fix(buddy-desktop): make the harness OBS windows readable and movable; explai...",
-                         "timestamp":  "2026-09-30T02:07:05Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2b0373c",
                          "title":  "test(hub): put the slot-handoff fixture in the shared static-state collection...",
                          "timestamp":  "2026-09-30T02:38:25Z",
@@ -104,6 +98,12 @@
                          "version":  "build-fc8b834",
                          "title":  "fix(chat): re-resolve a stale desktop-capability target against the live hub ...",
                          "timestamp":  "2026-10-01T00:15:53Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a9e4e34",
+                         "title":  "fix(buddy-desktop): apply Steam Presence mode changes to the running daemon",
+                         "timestamp":  "2026-10-01T01:09:00Z",
                          "environment":  "production"
                      }
                  ]
