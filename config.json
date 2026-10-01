@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3bd0333",
-                         "title":  "fix(tests): give GitExecutableResolverTests a real non-parallel collection",
-                         "timestamp":  "2026-09-30T21:05:34Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ad393fd",
                          "title":  "fix(buddy-desktop): keep harness OBS windows fixed-size",
                          "timestamp":  "2026-09-30T21:50:11Z",
@@ -104,6 +98,12 @@
                          "version":  "build-b91f8b2",
                          "title":  "fix(ci-videos): post one speed per capture variant",
                          "timestamp":  "2026-10-01T05:46:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-19f347c",
+                         "title":  "fix(deploy): require RCLONE_CONFIG at the service-environment gate (fail closed)",
+                         "timestamp":  "2026-10-01T06:28:38Z",
                          "environment":  "production"
                      }
                  ]
