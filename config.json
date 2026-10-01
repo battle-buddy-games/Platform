@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2b0373c",
-                         "title":  "test(hub): put the slot-handoff fixture in the shared static-state collection...",
-                         "timestamp":  "2026-09-30T02:38:25Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a7bd29b",
                          "title":  "fix(deploy): remove the SDK-materialization drain gate now that the durable w...",
                          "timestamp":  "2026-09-30T03:31:19Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a9e4e34",
                          "title":  "fix(buddy-desktop): apply Steam Presence mode changes to the running daemon",
                          "timestamp":  "2026-10-01T01:09:00Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-42e11bb",
+                         "title":  "fix(buddy-desktop): paint the launch-time Steam placeholder when the daemon n...",
+                         "timestamp":  "2026-10-01T01:36:57Z",
                          "environment":  "production"
                      }
                  ]
