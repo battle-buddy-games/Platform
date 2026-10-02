@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-42e11bb",
-                         "title":  "fix(buddy-desktop): paint the launch-time Steam placeholder when the daemon n...",
-                         "timestamp":  "2026-10-01T01:36:57Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9776f82",
                          "title":  "fix(chat): rank desktop picker hosts by harness evidence, not recency",
                          "timestamp":  "2026-10-01T02:33:51Z",
@@ -104,6 +98,12 @@
                          "version":  "build-cc28d54",
                          "title":  "feat(chat): make the harness model/effort chips the clickable control",
                          "timestamp":  "2026-10-02T13:00:52Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-272d22e",
+                         "title":  "fix(sdk): escape the deep-link at-rules so the view compiles",
+                         "timestamp":  "2026-10-02T13:43:37Z",
                          "environment":  "production"
                      }
                  ]
