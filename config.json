@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-be6c1be",
-                         "title":  "Create news Platform activity update — 2026-10-01 07:26 UTC",
-                         "timestamp":  "2026-10-01T09:24:49Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e75f906",
                          "title":  "docs(chat): record the harness git fold-out status contract",
                          "timestamp":  "2026-10-01T09:50:32Z",
@@ -104,6 +98,12 @@
                          "version":  "build-48fd084",
                          "title":  "feat(themes): add the Daydream Bloom pastel cloud-and-sparkle theme",
                          "timestamp":  "2026-10-02T19:47:40Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-42198a6",
+                         "title":  "Create news Platform activity update — 2026-10-02 (21:31 UTC)",
+                         "timestamp":  "2026-10-02T23:06:28Z",
                          "environment":  "production"
                      }
                  ]
