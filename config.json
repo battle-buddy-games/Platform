@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-b91f8b2",
-                         "title":  "fix(ci-videos): post one speed per capture variant",
-                         "timestamp":  "2026-10-01T05:46:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-19f347c",
                          "title":  "fix(deploy): require RCLONE_CONFIG at the service-environment gate (fail closed)",
                          "timestamp":  "2026-10-01T06:28:38Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-eff8ad7",
-                         "title":  "feat(chat): link the workspace menu into the Editors tool, workspace preselected",
-                         "timestamp":  "2026-10-02T17:55:18Z",
+                         "version":  "build-5577b32",
+                         "title":  "Create news Platform activity update — 2026-10-02 (16:31 UTC)",
+                         "timestamp":  "2026-10-02T17:27:44Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2df1bf6",
+                         "title":  "feat(chat): voice-to-text mic in the harness composer, and chat-height hardening",
+                         "timestamp":  "2026-10-02T18:43:21Z",
                          "environment":  "production"
                      }
                  ]
