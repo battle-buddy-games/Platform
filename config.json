@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a9e4e34",
-                         "title":  "fix(buddy-desktop): apply Steam Presence mode changes to the running daemon",
-                         "timestamp":  "2026-10-01T01:09:00Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-42e11bb",
                          "title":  "fix(buddy-desktop): paint the launch-time Steam placeholder when the daemon n...",
                          "timestamp":  "2026-10-01T01:36:57Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3e7ed3b",
                          "title":  "fix(sdk): key registered hosts by machine, add workspace cleanup",
                          "timestamp":  "2026-10-01T12:07:29Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-cc28d54",
+                         "title":  "feat(chat): make the harness model/effort chips the clickable control",
+                         "timestamp":  "2026-10-02T13:00:52Z",
                          "environment":  "production"
                      }
                  ]
