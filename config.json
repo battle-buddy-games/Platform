@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-5577b32",
-                         "title":  "Create news Platform activity update — 2026-10-02 (16:31 UTC)",
-                         "timestamp":  "2026-10-02T17:27:44Z",
+                         "version":  "build-eff8ad7",
+                         "title":  "feat(chat): link the workspace menu into the Editors tool, workspace preselected",
+                         "timestamp":  "2026-10-02T17:55:18Z",
                          "environment":  "production"
                      }
                  ]
