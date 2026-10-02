@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9776f82",
-                         "title":  "fix(chat): rank desktop picker hosts by harness evidence, not recency",
-                         "timestamp":  "2026-10-01T02:33:51Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-de509ee",
                          "title":  "fix(buddy-desktop): stop the harness OBS drag bar from resizing the window",
                          "timestamp":  "2026-10-01T03:24:50Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-d6cd430",
-                         "title":  "fix(chat): restart a Pi session as Pi, and merge restart with recover",
-                         "timestamp":  "2026-10-02T14:05:38Z",
+                         "version":  "build-272d22e",
+                         "title":  "fix(sdk): escape the deep-link at-rules so the view compiles",
+                         "timestamp":  "2026-10-02T13:43:37Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ff130f8",
+                         "title":  "fix(docs): extension-scope the product-axes rows so JSON data stops announcin...",
+                         "timestamp":  "2026-10-02T15:52:13Z",
                          "environment":  "production"
                      }
                  ]
