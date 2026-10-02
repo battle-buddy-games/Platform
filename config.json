@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-2df1bf6",
-                         "title":  "feat(chat): voice-to-text mic in the harness composer, and chat-height hardening",
-                         "timestamp":  "2026-10-02T18:43:21Z",
+                         "version":  "build-c662976",
+                         "title":  "fix(chat): read the question state from the row the wire actually sends",
+                         "timestamp":  "2026-10-02T19:13:53Z",
                          "environment":  "production"
                      }
                  ]
