@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-272d22e",
-                         "title":  "fix(sdk): escape the deep-link at-rules so the view compiles",
-                         "timestamp":  "2026-10-02T13:43:37Z",
+                         "version":  "build-d6cd430",
+                         "title":  "fix(chat): restart a Pi session as Pi, and merge restart with recover",
+                         "timestamp":  "2026-10-02T14:05:38Z",
                          "environment":  "production"
                      }
                  ]
