@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-de509ee",
-                         "title":  "fix(buddy-desktop): stop the harness OBS drag bar from resizing the window",
-                         "timestamp":  "2026-10-01T03:24:50Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b91f8b2",
                          "title":  "fix(ci-videos): post one speed per capture variant",
                          "timestamp":  "2026-10-01T05:46:41Z",
@@ -104,6 +98,12 @@
                          "version":  "build-ff130f8",
                          "title":  "fix(docs): extension-scope the product-axes rows so JSON data stops announcin...",
                          "timestamp":  "2026-10-02T15:52:13Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5577b32",
+                         "title":  "Create news Platform activity update — 2026-10-02 (16:31 UTC)",
+                         "timestamp":  "2026-10-02T17:27:44Z",
                          "environment":  "production"
                      }
                  ]
