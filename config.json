@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-9804a4e",
-                         "title":  "feat(chat): drive-qualify the workspace, and move machine + git into its hover",
-                         "timestamp":  "2026-10-03T01:56:53Z",
+                         "version":  "build-8934024",
+                         "title":  "feat(commands): add +Voice bulletin to reach the news-bulletin readout",
+                         "timestamp":  "2026-10-03T02:20:19Z",
                          "environment":  "production"
                      }
                  ]
