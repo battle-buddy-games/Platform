@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-8fc6628",
-                         "title":  "feat(chat): attach a platform theme to a conversation",
-                         "timestamp":  "2026-10-03T00:52:49Z",
+                         "version":  "build-4c68a28",
+                         "title":  "feat(chat): one Refresh action that prefers a re-bind and restarts only when ...",
+                         "timestamp":  "2026-10-03T01:09:48Z",
                          "environment":  "production"
                      }
                  ]
