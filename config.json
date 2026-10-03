@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2d11182",
-                         "title":  "feat(discord): split the docs feed into seven documentation-scope channels",
-                         "timestamp":  "2026-10-01T10:15:47Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3e7ed3b",
                          "title":  "fix(sdk): key registered hosts by machine, add workspace cleanup",
                          "timestamp":  "2026-10-01T12:07:29Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-4c68a28",
-                         "title":  "feat(chat): one Refresh action that prefers a re-bind and restarts only when ...",
-                         "timestamp":  "2026-10-03T01:09:48Z",
+                         "version":  "build-8fc6628",
+                         "title":  "feat(chat): attach a platform theme to a conversation",
+                         "timestamp":  "2026-10-03T00:52:49Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9804a4e",
+                         "title":  "feat(chat): drive-qualify the workspace, and move machine + git into its hover",
+                         "timestamp":  "2026-10-03T01:56:53Z",
                          "environment":  "production"
                      }
                  ]
