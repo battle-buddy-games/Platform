@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e75f906",
-                         "title":  "docs(chat): record the harness git fold-out status contract",
-                         "timestamp":  "2026-10-01T09:50:32Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2d11182",
                          "title":  "feat(discord): split the docs feed into seven documentation-scope channels",
                          "timestamp":  "2026-10-01T10:15:47Z",
@@ -104,6 +98,12 @@
                          "version":  "build-42198a6",
                          "title":  "Create news Platform activity update — 2026-10-02 (21:31 UTC)",
                          "timestamp":  "2026-10-02T23:06:28Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8fc6628",
+                         "title":  "feat(chat): attach a platform theme to a conversation",
+                         "timestamp":  "2026-10-03T00:52:49Z",
                          "environment":  "production"
                      }
                  ]
