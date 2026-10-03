@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-cc28d54",
-                         "title":  "feat(chat): make the harness model/effort chips the clickable control",
-                         "timestamp":  "2026-10-02T13:00:52Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-272d22e",
                          "title":  "fix(sdk): escape the deep-link at-rules so the view compiles",
                          "timestamp":  "2026-10-02T13:43:37Z",
@@ -104,6 +98,12 @@
                          "version":  "build-9abeaef",
                          "title":  "feat(chat): run a session as a chosen studio agent (server + launcher)",
                          "timestamp":  "2026-10-03T03:19:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4952079",
+                         "title":  "fix(themes): satisfy the catalog contracts for the Natural Cycle themes (#230)",
+                         "timestamp":  "2026-10-03T20:26:38Z",
                          "environment":  "production"
                      }
                  ]
