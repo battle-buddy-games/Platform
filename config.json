@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2df1bf6",
-                         "title":  "feat(chat): voice-to-text mic in the harness composer, and chat-height hardening",
-                         "timestamp":  "2026-10-02T18:43:21Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-48fd084",
                          "title":  "feat(themes): add the Daydream Bloom pastel cloud-and-sparkle theme",
                          "timestamp":  "2026-10-02T19:47:40Z",
@@ -104,6 +98,12 @@
                          "version":  "build-8678094",
                          "title":  "fix(db): create RepoEventSubscriptions via raw ADO.NET, not ExecuteSqlRawAsyn...",
                          "timestamp":  "2026-10-04T12:55:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f4c5f9f",
+                         "title":  "fix(chat): move the header controls into the shared rail and stop the footer ...",
+                         "timestamp":  "2026-10-04T20:01:06Z",
                          "environment":  "production"
                      }
                  ]
