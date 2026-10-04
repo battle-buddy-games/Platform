@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-48fd084",
-                         "title":  "feat(themes): add the Daydream Bloom pastel cloud-and-sparkle theme",
-                         "timestamp":  "2026-10-02T19:47:40Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-42198a6",
                          "title":  "Create news Platform activity update — 2026-10-02 (21:31 UTC)",
                          "timestamp":  "2026-10-02T23:06:28Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f4c5f9f",
                          "title":  "fix(chat): move the header controls into the shared rail and stop the footer ...",
                          "timestamp":  "2026-10-04T20:01:06Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6617138",
+                         "title":  "fix(ci): target the app\u0027s own origin in the chat-store e2e spec (#267)",
+                         "timestamp":  "2026-10-04T20:37:01Z",
                          "environment":  "production"
                      }
                  ]
