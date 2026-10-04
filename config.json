@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5577b32",
-                         "title":  "Create news Platform activity update — 2026-10-02 (16:31 UTC)",
-                         "timestamp":  "2026-10-02T17:27:44Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2df1bf6",
                          "title":  "feat(chat): voice-to-text mic in the harness composer, and chat-height hardening",
                          "timestamp":  "2026-10-02T18:43:21Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-81556a8",
-                         "title":  "feat(asset-library): key-asset content-type families and the key-assets endpo...",
-                         "timestamp":  "2026-10-04T09:57:22Z",
+                         "version":  "build-c08c3e1",
+                         "title":  "feat(voice): scheduled daily and weekly voice bulletins, and fix the inert TT...",
+                         "timestamp":  "2026-10-04T07:39:35Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8678094",
+                         "title":  "fix(db): create RepoEventSubscriptions via raw ADO.NET, not ExecuteSqlRawAsyn...",
+                         "timestamp":  "2026-10-04T12:55:45Z",
                          "environment":  "production"
                      }
                  ]
