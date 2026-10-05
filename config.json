@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4952079",
-                         "title":  "fix(themes): satisfy the catalog contracts for the Natural Cycle themes (#230)",
-                         "timestamp":  "2026-10-03T20:26:38Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-de47637",
                          "title":  "fix(dashboard): keep the unified tool title inside the 43px header rail (#232)",
                          "timestamp":  "2026-10-04T01:02:10Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a15b478",
                          "title":  "Create news Platform activity update — 2026-10-05 (13:13 UTC)",
                          "timestamp":  "2026-10-05T15:15:47Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ed3eac8",
+                         "title":  "feat(home): sub-tab Game Factory, add Product Gallery/news, retire Workflows ...",
+                         "timestamp":  "2026-10-05T16:03:50Z",
                          "environment":  "production"
                      }
                  ]
