@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-de47637",
-                         "title":  "fix(dashboard): keep the unified tool title inside the 43px header rail (#232)",
-                         "timestamp":  "2026-10-04T01:02:10Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c08c3e1",
                          "title":  "feat(voice): scheduled daily and weekly voice bulletins, and fix the inert TT...",
                          "timestamp":  "2026-10-04T07:39:35Z",
@@ -104,6 +98,12 @@
                          "version":  "build-ed3eac8",
                          "title":  "feat(home): sub-tab Game Factory, add Product Gallery/news, retire Workflows ...",
                          "timestamp":  "2026-10-05T16:03:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3cc314f",
+                         "title":  "feat(discord): framework server order, framework access contract, report-only...",
+                         "timestamp":  "2026-10-05T17:57:16Z",
                          "environment":  "production"
                      }
                  ]
