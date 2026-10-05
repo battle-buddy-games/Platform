@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-7acceb8",
-                         "title":  "feat(chat): render inline images from platform-minted URLs in harness transcr...",
-                         "timestamp":  "2026-10-05T12:39:23Z",
+                         "version":  "build-49d737f",
+                         "title":  "fix(discord): release-stage prose correction + retire `bugs` (review round fo...",
+                         "timestamp":  "2026-10-05T13:15:50Z",
                          "environment":  "production"
                      }
                  ]
