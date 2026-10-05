@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c08c3e1",
-                         "title":  "feat(voice): scheduled daily and weekly voice bulletins, and fix the inert TT...",
-                         "timestamp":  "2026-10-04T07:39:35Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8678094",
                          "title":  "fix(db): create RepoEventSubscriptions via raw ADO.NET, not ExecuteSqlRawAsyn...",
                          "timestamp":  "2026-10-04T12:55:45Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-1a83bc6",
-                         "title":  "fix(buddy-desktop): unify window menu bar with the tray menu (#282)",
-                         "timestamp":  "2026-10-05T18:59:12Z",
+                         "version":  "build-3cc314f",
+                         "title":  "feat(discord): framework server order, framework access contract, report-only...",
+                         "timestamp":  "2026-10-05T17:57:16Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7732588",
+                         "title":  "fix(assets): scope the Assets browser to source assets, not final Unity files...",
+                         "timestamp":  "2026-10-05T19:49:27Z",
                          "environment":  "production"
                      }
                  ]
