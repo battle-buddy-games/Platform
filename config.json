@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-3cc314f",
-                         "title":  "feat(discord): framework server order, framework access contract, report-only...",
-                         "timestamp":  "2026-10-05T17:57:16Z",
+                         "version":  "build-1a83bc6",
+                         "title":  "fix(buddy-desktop): unify window menu bar with the tray menu (#282)",
+                         "timestamp":  "2026-10-05T18:59:12Z",
                          "environment":  "production"
                      }
                  ]
