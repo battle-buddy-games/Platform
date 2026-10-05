@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-f690c20",
-                         "title":  "feat(discord): framework server structure revision 2 (owner review) (#277)",
-                         "timestamp":  "2026-10-05T03:41:24Z",
+                         "version":  "build-3833aa4",
+                         "title":  "Release build-5478342: fix(ci): unblock the materializer deploy when its publ...",
+                         "timestamp":  "2026-10-05T03:10:10Z",
                          "environment":  "production"
                      }
                  ]
