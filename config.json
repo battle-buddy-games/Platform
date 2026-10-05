@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8fc6628",
-                         "title":  "feat(chat): attach a platform theme to a conversation",
-                         "timestamp":  "2026-10-03T00:52:49Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9804a4e",
                          "title":  "feat(chat): drive-qualify the workspace, and move machine + git into its hover",
                          "timestamp":  "2026-10-03T01:56:53Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-079bb3e",
-                         "title":  "fix(ci): bundle the whole config/ tree so RepoRootLocator consumers stop losi...",
-                         "timestamp":  "2026-10-05T01:29:15Z",
+                         "version":  "build-5478342",
+                         "title":  "fix(ci): unblock the materializer deploy when its publish directory is wedged...",
+                         "timestamp":  "2026-10-05T00:41:43Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3833aa4",
+                         "title":  "Release build-5478342: fix(ci): unblock the materializer deploy when its publ...",
+                         "timestamp":  "2026-10-05T03:10:10Z",
                          "environment":  "production"
                      }
                  ]
