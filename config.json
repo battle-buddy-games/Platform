@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-42198a6",
-                         "title":  "Create news Platform activity update — 2026-10-02 (21:31 UTC)",
-                         "timestamp":  "2026-10-02T23:06:28Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8fc6628",
                          "title":  "feat(chat): attach a platform theme to a conversation",
                          "timestamp":  "2026-10-03T00:52:49Z",
@@ -104,6 +98,12 @@
                          "version":  "build-6617138",
                          "title":  "fix(ci): target the app\u0027s own origin in the chat-store e2e spec (#267)",
                          "timestamp":  "2026-10-04T20:37:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5478342",
+                         "title":  "fix(ci): unblock the materializer deploy when its publish directory is wedged...",
+                         "timestamp":  "2026-10-05T00:41:43Z",
                          "environment":  "production"
                      }
                  ]
