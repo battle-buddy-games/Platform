@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9804a4e",
-                         "title":  "feat(chat): drive-qualify the workspace, and move machine + git into its hover",
-                         "timestamp":  "2026-10-03T01:56:53Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9abeaef",
                          "title":  "feat(chat): run a session as a chosen studio agent (server + launcher)",
                          "timestamp":  "2026-10-03T03:19:41Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3833aa4",
                          "title":  "Release build-5478342: fix(ci): unblock the materializer deploy when its publ...",
                          "timestamp":  "2026-10-05T03:10:10Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7acceb8",
+                         "title":  "feat(chat): render inline images from platform-minted URLs in harness transcr...",
+                         "timestamp":  "2026-10-05T12:39:23Z",
                          "environment":  "production"
                      }
                  ]
