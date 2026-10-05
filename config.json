@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-5478342",
-                         "title":  "fix(ci): unblock the materializer deploy when its publish directory is wedged...",
-                         "timestamp":  "2026-10-05T00:41:43Z",
+                         "version":  "build-079bb3e",
+                         "title":  "fix(ci): bundle the whole config/ tree so RepoRootLocator consumers stop losi...",
+                         "timestamp":  "2026-10-05T01:29:15Z",
                          "environment":  "production"
                      }
                  ]
