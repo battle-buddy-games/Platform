@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-9f1566b",
-                         "title":  "feat(chat): one options menu for the harness session, and its title in the ra...",
-                         "timestamp":  "2026-10-05T22:34:40Z",
+                         "version":  "build-e3fd541",
+                         "title":  "fix(discord): product-subject guard, and a rename counter that reports what a...",
+                         "timestamp":  "2026-10-05T22:57:18Z",
                          "environment":  "production"
                      }
                  ]
