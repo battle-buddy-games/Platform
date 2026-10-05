@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9abeaef",
-                         "title":  "feat(chat): run a session as a chosen studio agent (server + launcher)",
-                         "timestamp":  "2026-10-03T03:19:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4952079",
                          "title":  "fix(themes): satisfy the catalog contracts for the Natural Cycle themes (#230)",
                          "timestamp":  "2026-10-03T20:26:38Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-49d737f",
-                         "title":  "fix(discord): release-stage prose correction + retire `bugs` (review round fo...",
-                         "timestamp":  "2026-10-05T13:15:50Z",
+                         "version":  "build-7acceb8",
+                         "title":  "feat(chat): render inline images from platform-minted URLs in harness transcr...",
+                         "timestamp":  "2026-10-05T12:39:23Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a15b478",
+                         "title":  "Create news Platform activity update — 2026-10-05 (13:13 UTC)",
+                         "timestamp":  "2026-10-05T15:15:47Z",
                          "environment":  "production"
                      }
                  ]
