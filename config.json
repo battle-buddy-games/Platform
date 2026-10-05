@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f4c5f9f",
-                         "title":  "fix(chat): move the header controls into the shared rail and stop the footer ...",
-                         "timestamp":  "2026-10-04T20:01:06Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-6617138",
                          "title":  "fix(ci): target the app\u0027s own origin in the chat-store e2e spec (#267)",
                          "timestamp":  "2026-10-04T20:37:01Z",
@@ -104,6 +98,12 @@
                          "version":  "build-12c4237",
                          "title":  "fix(chat): make the harness transcript poll cursor inclusive so no entry is s...",
                          "timestamp":  "2026-10-05T20:17:22Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9f1566b",
+                         "title":  "feat(chat): one options menu for the harness session, and its title in the ra...",
+                         "timestamp":  "2026-10-05T22:34:40Z",
                          "environment":  "production"
                      }
                  ]
