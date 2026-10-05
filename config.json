@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8678094",
-                         "title":  "fix(db): create RepoEventSubscriptions via raw ADO.NET, not ExecuteSqlRawAsyn...",
-                         "timestamp":  "2026-10-04T12:55:45Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f4c5f9f",
                          "title":  "fix(chat): move the header controls into the shared rail and stop the footer ...",
                          "timestamp":  "2026-10-04T20:01:06Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7732588",
                          "title":  "fix(assets): scope the Assets browser to source assets, not final Unity files...",
                          "timestamp":  "2026-10-05T19:49:27Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-12c4237",
+                         "title":  "fix(chat): make the harness transcript poll cursor inclusive so no entry is s...",
+                         "timestamp":  "2026-10-05T20:17:22Z",
                          "environment":  "production"
                      }
                  ]
