@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5478342",
-                         "title":  "fix(ci): unblock the materializer deploy when its publish directory is wedged...",
-                         "timestamp":  "2026-10-05T00:41:43Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3833aa4",
                          "title":  "Release build-5478342: fix(ci): unblock the materializer deploy when its publ...",
                          "timestamp":  "2026-10-05T03:10:10Z",
@@ -104,6 +98,12 @@
                          "version":  "build-914d209",
                          "title":  "fix(chat): dictate through the platform\u0027s Whisper when the browser\u0027s speech b...",
                          "timestamp":  "2026-10-05T23:39:34Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3a2308f",
+                         "title":  "feat(games): teach every chat game its own controls, in one shared vocabulary...",
+                         "timestamp":  "2026-10-06T01:06:55Z",
                          "environment":  "production"
                      }
                  ]
