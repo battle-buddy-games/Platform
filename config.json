@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a15b478",
-                         "title":  "Create news Platform activity update — 2026-10-05 (13:13 UTC)",
-                         "timestamp":  "2026-10-05T15:15:47Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ed3eac8",
                          "title":  "feat(home): sub-tab Game Factory, add Product Gallery/news, retire Workflows ...",
                          "timestamp":  "2026-10-05T16:03:50Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-aea80c4",
-                         "title":  "feat(home): flatten Game Factory to two rows (#322)",
-                         "timestamp":  "2026-10-06T03:41:42Z",
+                         "version":  "build-9d2acac",
+                         "title":  "fix(discord): filter the roadmap channel\u0027s plan half by visibility (#315)",
+                         "timestamp":  "2026-10-06T03:07:26Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-cdaa0ba",
+                         "title":  "fix(discord): file the fun channel under Community, not a bespoke Fun categor...",
+                         "timestamp":  "2026-10-06T04:24:44Z",
                          "environment":  "production"
                      }
                  ]
