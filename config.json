@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7acceb8",
-                         "title":  "feat(chat): render inline images from platform-minted URLs in harness transcr...",
-                         "timestamp":  "2026-10-05T12:39:23Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a15b478",
                          "title":  "Create news Platform activity update — 2026-10-05 (13:13 UTC)",
                          "timestamp":  "2026-10-05T15:15:47Z",
@@ -104,6 +98,12 @@
                          "version":  "build-c469547",
                          "title":  "feat(home): collapse the six Products rows into two tabbed rows (#312)",
                          "timestamp":  "2026-10-06T02:17:07Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9d2acac",
+                         "title":  "fix(discord): filter the roadmap channel\u0027s plan half by visibility (#315)",
+                         "timestamp":  "2026-10-06T03:07:26Z",
                          "environment":  "production"
                      }
                  ]
