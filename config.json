@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3cc314f",
-                         "title":  "feat(discord): framework server order, framework access contract, report-only...",
-                         "timestamp":  "2026-10-05T17:57:16Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7732588",
                          "title":  "fix(assets): scope the Assets browser to source assets, not final Unity files...",
                          "timestamp":  "2026-10-05T19:49:27Z",
@@ -104,6 +98,12 @@
                          "version":  "build-67ac41a",
                          "title":  "fix(discord): skip the redundant re-parent when a feed channel is already in ...",
                          "timestamp":  "2026-10-06T05:20:12Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-843f5a4",
+                         "title":  "fix(buddy-desktop): make the Key Assets entry actionable and its failures leg...",
+                         "timestamp":  "2026-10-06T15:28:49Z",
                          "environment":  "production"
                      }
                  ]
