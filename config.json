@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ed3eac8",
-                         "title":  "feat(home): sub-tab Game Factory, add Product Gallery/news, retire Workflows ...",
-                         "timestamp":  "2026-10-05T16:03:50Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3cc314f",
                          "title":  "feat(discord): framework server order, framework access contract, report-only...",
                          "timestamp":  "2026-10-05T17:57:16Z",
@@ -104,6 +98,12 @@
                          "version":  "build-cdaa0ba",
                          "title":  "fix(discord): file the fun channel under Community, not a bespoke Fun categor...",
                          "timestamp":  "2026-10-06T04:24:44Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-67ac41a",
+                         "title":  "fix(discord): skip the redundant re-parent when a feed channel is already in ...",
+                         "timestamp":  "2026-10-06T05:20:12Z",
                          "environment":  "production"
                      }
                  ]
