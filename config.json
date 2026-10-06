@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-9d2acac",
-                         "title":  "fix(discord): filter the roadmap channel\u0027s plan half by visibility (#315)",
-                         "timestamp":  "2026-10-06T03:07:26Z",
+                         "version":  "build-aea80c4",
+                         "title":  "feat(home): flatten Game Factory to two rows (#322)",
+                         "timestamp":  "2026-10-06T03:41:42Z",
                          "environment":  "production"
                      }
                  ]
