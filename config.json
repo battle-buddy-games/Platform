@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7732588",
-                         "title":  "fix(assets): scope the Assets browser to source assets, not final Unity files...",
-                         "timestamp":  "2026-10-05T19:49:27Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-12c4237",
                          "title":  "fix(chat): make the harness transcript poll cursor inclusive so no entry is s...",
                          "timestamp":  "2026-10-05T20:17:22Z",
@@ -104,6 +98,12 @@
                          "version":  "build-843f5a4",
                          "title":  "fix(buddy-desktop): make the Key Assets entry actionable and its failures leg...",
                          "timestamp":  "2026-10-06T15:28:49Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-609f95f",
+                         "title":  "fix(db): stop the DeliveryCounters migration double-applying the Ensure\u0027s col...",
+                         "timestamp":  "2026-10-06T17:51:05Z",
                          "environment":  "production"
                      }
                  ]
