@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-8430306",
-                         "title":  "fix(ci): keep pipeline.yml\u0027s bundle step under GitHub\u0027s 21,000-char run limit...",
-                         "timestamp":  "2026-10-06T18:51:45Z",
+                         "version":  "build-609f95f",
+                         "title":  "fix(db): stop the DeliveryCounters migration double-applying the Ensure\u0027s col...",
+                         "timestamp":  "2026-10-06T17:51:05Z",
                          "environment":  "production"
                      }
                  ]
