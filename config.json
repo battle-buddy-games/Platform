@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-12c4237",
-                         "title":  "fix(chat): make the harness transcript poll cursor inclusive so no entry is s...",
-                         "timestamp":  "2026-10-05T20:17:22Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9f1566b",
                          "title":  "feat(chat): one options menu for the harness session, and its title in the ra...",
                          "timestamp":  "2026-10-05T22:34:40Z",
@@ -104,6 +98,12 @@
                          "version":  "build-609f95f",
                          "title":  "fix(db): stop the DeliveryCounters migration double-applying the Ensure\u0027s col...",
                          "timestamp":  "2026-10-06T17:51:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8aadcf6",
+                         "title":  "Create news Platform activity update — 2026-10-06 (18:09 UTC)",
+                         "timestamp":  "2026-10-06T20:22:41Z",
                          "environment":  "production"
                      }
                  ]
