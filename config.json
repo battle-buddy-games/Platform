@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-90f1bbb",
-                         "title":  "fix(deploy): assert the nginx router points at the deployed port (#343)",
-                         "timestamp":  "2026-10-06T21:06:42Z",
+                         "version":  "build-8aadcf6",
+                         "title":  "Create news Platform activity update — 2026-10-06 (18:09 UTC)",
+                         "timestamp":  "2026-10-06T20:22:41Z",
                          "environment":  "production"
                      }
                  ]
