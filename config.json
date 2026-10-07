@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-3525ed7",
-                         "title":  "feat(news): split News Discord delivery into one channel per type, with three...",
-                         "timestamp":  "2026-10-07T22:03:36Z",
+                         "version":  "build-81aa6a0",
+                         "title":  "feat(harness): show linked pull requests in the session git foldout (#352)",
+                         "timestamp":  "2026-10-07T22:39:47Z",
                          "environment":  "production"
                      }
                  ]
