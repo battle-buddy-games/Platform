@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-914d209",
-                         "title":  "fix(chat): dictate through the platform\u0027s Whisper when the browser\u0027s speech b...",
-                         "timestamp":  "2026-10-05T23:39:34Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3a2308f",
                          "title":  "feat(games): teach every chat game its own controls, in one shared vocabulary...",
                          "timestamp":  "2026-10-06T01:06:55Z",
@@ -104,6 +98,12 @@
                          "version":  "build-6817c16",
                          "title":  "feat(discord): emoji-prefix platform activity channels, adopting the live cha...",
                          "timestamp":  "2026-10-07T16:34:15Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3525ed7",
+                         "title":  "feat(news): split News Discord delivery into one channel per type, with three...",
+                         "timestamp":  "2026-10-07T22:03:36Z",
                          "environment":  "production"
                      }
                  ]
