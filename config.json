@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3a2308f",
-                         "title":  "feat(games): teach every chat game its own controls, in one shared vocabulary...",
-                         "timestamp":  "2026-10-06T01:06:55Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c469547",
                          "title":  "feat(home): collapse the six Products rows into two tabbed rows (#312)",
                          "timestamp":  "2026-10-06T02:17:07Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3525ed7",
                          "title":  "feat(news): split News Discord delivery into one channel per type, with three...",
                          "timestamp":  "2026-10-07T22:03:36Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1609af0",
+                         "title":  "fix(ci): type the health-check script\u0027s success verdict as exit 0 (#360)",
+                         "timestamp":  "2026-10-08T02:37:06Z",
                          "environment":  "production"
                      }
                  ]
