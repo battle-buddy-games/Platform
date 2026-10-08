@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c469547",
-                         "title":  "feat(home): collapse the six Products rows into two tabbed rows (#312)",
-                         "timestamp":  "2026-10-06T02:17:07Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9d2acac",
                          "title":  "fix(discord): filter the roadmap channel\u0027s plan half by visibility (#315)",
                          "timestamp":  "2026-10-06T03:07:26Z",
@@ -104,6 +98,12 @@
                          "version":  "build-1609af0",
                          "title":  "fix(ci): type the health-check script\u0027s success verdict as exit 0 (#360)",
                          "timestamp":  "2026-10-08T02:37:06Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-669076f",
+                         "title":  "test(ci): seed retention captures as DELIVERED so the sweep can actually prun...",
+                         "timestamp":  "2026-10-08T23:32:01Z",
                          "environment":  "production"
                      }
                  ]
