@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-609f95f",
-                         "title":  "fix(db): stop the DeliveryCounters migration double-applying the Ensure\u0027s col...",
-                         "timestamp":  "2026-10-06T17:51:05Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8aadcf6",
                          "title":  "Create news Platform activity update — 2026-10-06 (18:09 UTC)",
                          "timestamp":  "2026-10-06T20:22:41Z",
@@ -104,6 +98,12 @@
                          "version":  "build-5eb94f2",
                          "title":  "ci: re-land the pin split -- build-cloud and validate off `primary` (second a...",
                          "timestamp":  "2026-10-09T08:35:19Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d29c8de",
+                         "title":  "fix(chat): preserve composer caret arrow navigation",
+                         "timestamp":  "2026-10-09T09:11:05Z",
                          "environment":  "production"
                      }
                  ]
