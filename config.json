@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-67ac41a",
-                         "title":  "fix(discord): skip the redundant re-parent when a feed channel is already in ...",
-                         "timestamp":  "2026-10-06T05:20:12Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-843f5a4",
                          "title":  "fix(buddy-desktop): make the Key Assets entry actionable and its failures leg...",
                          "timestamp":  "2026-10-06T15:28:49Z",
@@ -104,6 +98,12 @@
                          "version":  "build-fedb294",
                          "title":  "feat: add Unity collaboration session protocol (#409)",
                          "timestamp":  "2026-10-09T05:28:10Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-80417a5",
+                         "title":  "feat(about): drive Products and What\u0027s Happening from Home, and tab Team | Jo...",
+                         "timestamp":  "2026-10-09T06:55:06Z",
                          "environment":  "production"
                      }
                  ]
