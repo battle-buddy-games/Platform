@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8aadcf6",
-                         "title":  "Create news Platform activity update — 2026-10-06 (18:09 UTC)",
-                         "timestamp":  "2026-10-06T20:22:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-6817c16",
                          "title":  "feat(discord): emoji-prefix platform activity channels, adopting the live cha...",
                          "timestamp":  "2026-10-07T16:34:15Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d29c8de",
                          "title":  "fix(chat): preserve composer caret arrow navigation",
                          "timestamp":  "2026-10-09T09:11:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-b144f60",
+                         "title":  "feat(buddy-desktop): add platform chat window",
+                         "timestamp":  "2026-10-09T09:41:23Z",
                          "environment":  "production"
                      }
                  ]
