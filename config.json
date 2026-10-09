@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-6817c16",
-                         "title":  "feat(discord): emoji-prefix platform activity channels, adopting the live cha...",
-                         "timestamp":  "2026-10-07T16:34:15Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3525ed7",
                          "title":  "feat(news): split News Discord delivery into one channel per type, with three...",
                          "timestamp":  "2026-10-07T22:03:36Z",
@@ -104,6 +98,12 @@
                          "version":  "build-b144f60",
                          "title":  "feat(buddy-desktop): add platform chat window",
                          "timestamp":  "2026-10-09T09:41:23Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-55ff648",
+                         "title":  "fix(harness): send attachment meta keys in the case the CLI reads (#431)",
+                         "timestamp":  "2026-10-09T18:18:32Z",
                          "environment":  "production"
                      }
                  ]
