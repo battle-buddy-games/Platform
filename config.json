@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9d2acac",
-                         "title":  "fix(discord): filter the roadmap channel\u0027s plan half by visibility (#315)",
-                         "timestamp":  "2026-10-06T03:07:26Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-cdaa0ba",
                          "title":  "fix(discord): file the fun channel under Community, not a bespoke Fun categor...",
                          "timestamp":  "2026-10-06T04:24:44Z",
@@ -104,6 +98,12 @@
                          "version":  "build-669076f",
                          "title":  "test(ci): seed retention captures as DELIVERED so the sweep can actually prun...",
                          "timestamp":  "2026-10-08T23:32:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8179365",
+                         "title":  "fix(hubs): move the git-state wire limit off BattleBuddyHub so the harness ca...",
+                         "timestamp":  "2026-10-09T01:08:53Z",
                          "environment":  "production"
                      }
                  ]
