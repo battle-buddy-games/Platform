@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-843f5a4",
-                         "title":  "fix(buddy-desktop): make the Key Assets entry actionable and its failures leg...",
-                         "timestamp":  "2026-10-06T15:28:49Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-609f95f",
                          "title":  "fix(db): stop the DeliveryCounters migration double-applying the Ensure\u0027s col...",
                          "timestamp":  "2026-10-06T17:51:05Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-25e3694",
-                         "title":  "fix(discord): retire the aoo-home channel, and correct two comments that hid ...",
-                         "timestamp":  "2026-10-09T07:57:00Z",
+                         "version":  "build-80417a5",
+                         "title":  "feat(about): drive Products and What\u0027s Happening from Home, and tab Team | Jo...",
+                         "timestamp":  "2026-10-09T06:55:06Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5eb94f2",
+                         "title":  "ci: re-land the pin split -- build-cloud and validate off `primary` (second a...",
+                         "timestamp":  "2026-10-09T08:35:19Z",
                          "environment":  "production"
                      }
                  ]
