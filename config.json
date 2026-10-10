@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3525ed7",
-                         "title":  "feat(news): split News Discord delivery into one channel per type, with three...",
-                         "timestamp":  "2026-10-07T22:03:36Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1609af0",
                          "title":  "fix(ci): type the health-check script\u0027s success verdict as exit 0 (#360)",
                          "timestamp":  "2026-10-08T02:37:06Z",
@@ -104,6 +98,12 @@
                          "version":  "build-55ff648",
                          "title":  "fix(harness): send attachment meta keys in the case the CLI reads (#431)",
                          "timestamp":  "2026-10-09T18:18:32Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-db1d2cc",
+                         "title":  "fix(tests): repair the restart-launch-options call sites and cover allowConst...",
+                         "timestamp":  "2026-10-10T17:20:40Z",
                          "environment":  "production"
                      }
                  ]
