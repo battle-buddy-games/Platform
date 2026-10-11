@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-bcccefb",
-                         "title":  "refactor(home): extract the products + Game Factory surface into one mount unit",
-                         "timestamp":  "2026-10-11T23:37:39Z",
+                         "version":  "build-dc2278d",
+                         "title":  "feat(discord): periodic captured-media digest for the #media news channel (#448)",
+                         "timestamp":  "2026-10-11T23:09:43Z",
                          "environment":  "production"
                      }
                  ]
