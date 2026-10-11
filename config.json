@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1609af0",
-                         "title":  "fix(ci): type the health-check script\u0027s success verdict as exit 0 (#360)",
-                         "timestamp":  "2026-10-08T02:37:06Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-669076f",
                          "title":  "test(ci): seed retention captures as DELIVERED so the sweep can actually prun...",
                          "timestamp":  "2026-10-08T23:32:01Z",
@@ -104,6 +98,12 @@
                          "version":  "build-db1d2cc",
                          "title":  "fix(tests): repair the restart-launch-options call sites and cover allowConst...",
                          "timestamp":  "2026-10-10T17:20:40Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f204355",
+                         "title":  "fix(chat): align the session action vocabulary in user-facing copy (#435)",
+                         "timestamp":  "2026-10-11T12:57:21Z",
                          "environment":  "production"
                      }
                  ]
