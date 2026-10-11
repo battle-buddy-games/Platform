@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-fedb294",
-                         "title":  "feat: add Unity collaboration session protocol (#409)",
-                         "timestamp":  "2026-10-09T05:28:10Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-80417a5",
                          "title":  "feat(about): drive Products and What\u0027s Happening from Home, and tab Team | Jo...",
                          "timestamp":  "2026-10-09T06:55:06Z",
@@ -104,6 +98,12 @@
                          "version":  "build-428df0b",
                          "title":  "fix(chat): preserve restart recovery outcomes",
                          "timestamp":  "2026-10-11T19:53:21Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-dbef226",
+                         "title":  "feat(about): rename the What\u0027s Happening row to Game Factory",
+                         "timestamp":  "2026-10-11T22:33:50Z",
                          "environment":  "production"
                      }
                  ]
