@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-80417a5",
-                         "title":  "feat(about): drive Products and What\u0027s Happening from Home, and tab Team | Jo...",
-                         "timestamp":  "2026-10-09T06:55:06Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5eb94f2",
                          "title":  "ci: re-land the pin split -- build-cloud and validate off `primary` (second a...",
                          "timestamp":  "2026-10-09T08:35:19Z",
@@ -104,6 +98,12 @@
                          "version":  "build-dbef226",
                          "title":  "feat(about): rename the What\u0027s Happening row to Game Factory",
                          "timestamp":  "2026-10-11T22:33:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-dc2278d",
+                         "title":  "feat(discord): periodic captured-media digest for the #media news channel (#448)",
+                         "timestamp":  "2026-10-11T23:09:43Z",
                          "environment":  "production"
                      }
                  ]
