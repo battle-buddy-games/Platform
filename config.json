@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d29c8de",
-                         "title":  "fix(chat): preserve composer caret arrow navigation",
-                         "timestamp":  "2026-10-09T09:11:05Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b144f60",
                          "title":  "feat(buddy-desktop): add platform chat window",
                          "timestamp":  "2026-10-09T09:41:23Z",
@@ -104,6 +98,12 @@
                          "version":  "build-50f36d2",
                          "title":  "fix(tests): correct six guards the 2026-10-12 promotion left stale (#485)",
                          "timestamp":  "2026-10-12T17:10:24Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-56da54a",
+                         "title":  "feat(readiness): gate the deploy on a service that is actually serving (#486)",
+                         "timestamp":  "2026-10-12T19:26:13Z",
                          "environment":  "production"
                      }
                  ]
