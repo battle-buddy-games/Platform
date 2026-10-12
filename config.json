@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-b144f60",
-                         "title":  "feat(buddy-desktop): add platform chat window",
-                         "timestamp":  "2026-10-09T09:41:23Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-55ff648",
                          "title":  "fix(harness): send attachment meta keys in the case the CLI reads (#431)",
                          "timestamp":  "2026-10-09T18:18:32Z",
@@ -104,6 +98,12 @@
                          "version":  "build-56da54a",
                          "title":  "feat(readiness): gate the deploy on a service that is actually serving (#486)",
                          "timestamp":  "2026-10-12T19:26:13Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-9923fdf",
+                         "title":  "Create news Platform activity update — 2026-10-12 (20:14 UTC)",
+                         "timestamp":  "2026-10-12T21:53:47Z",
                          "environment":  "production"
                      }
                  ]
