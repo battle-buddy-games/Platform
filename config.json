@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5eb94f2",
-                         "title":  "ci: re-land the pin split -- build-cloud and validate off `primary` (second a...",
-                         "timestamp":  "2026-10-09T08:35:19Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d29c8de",
                          "title":  "fix(chat): preserve composer caret arrow navigation",
                          "timestamp":  "2026-10-09T09:11:05Z",
@@ -104,6 +98,12 @@
                          "version":  "build-dc2278d",
                          "title":  "feat(discord): periodic captured-media digest for the #media news channel (#448)",
                          "timestamp":  "2026-10-11T23:09:43Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-50f36d2",
+                         "title":  "fix(tests): correct six guards the 2026-10-12 promotion left stale (#485)",
+                         "timestamp":  "2026-10-12T17:10:24Z",
                          "environment":  "production"
                      }
                  ]
