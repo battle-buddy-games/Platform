@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-50f36d2",
-                         "title":  "fix(tests): correct six guards the 2026-10-12 promotion left stale (#485)",
-                         "timestamp":  "2026-10-12T17:10:24Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-56da54a",
                          "title":  "feat(readiness): gate the deploy on a service that is actually serving (#486)",
                          "timestamp":  "2026-10-12T19:26:13Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-8c771dc",
-                         "title":  "feat(factory): add map search and selection",
-                         "timestamp":  "2026-10-13T20:23:42Z",
+                         "version":  "build-fb70ac5",
+                         "title":  "feat(chat): open prompt studio from the composer plus menu, not above it (#507)",
+                         "timestamp":  "2026-10-13T19:10:44Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-560041b",
+                         "title":  "fix(home): quiet the hero\u0027s Open Dashboard CTA (#525)",
+                         "timestamp":  "2026-10-13T21:54:56Z",
                          "environment":  "production"
                      }
                  ]
