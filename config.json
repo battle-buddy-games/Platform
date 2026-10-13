@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e481b86",
-                         "title":  "feat(discord): detect and re-assert channel visibility drift (#440)",
-                         "timestamp":  "2026-10-11T14:31:24Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-428df0b",
                          "title":  "fix(chat): preserve restart recovery outcomes",
                          "timestamp":  "2026-10-11T19:53:21Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2f82e6e",
                          "title":  "feat(about): fold The Studio into Explore and group The Platform under About",
                          "timestamp":  "2026-10-13T05:54:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ca09ed4",
+                         "title":  "feat(home): introduce a Featured Product | Welcome tab system on the hero row...",
+                         "timestamp":  "2026-10-13T06:27:09Z",
                          "environment":  "production"
                      }
                  ]
