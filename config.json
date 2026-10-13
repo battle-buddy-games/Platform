@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-520898d",
-                         "title":  "test(channel-spec): persist the seeded group so the gate test exercises its c...",
-                         "timestamp":  "2026-10-13T03:03:26Z",
+                         "version":  "build-73a6907",
+                         "title":  "Replace Go To and Actions accordions with tabs and subtabs",
+                         "timestamp":  "2026-10-13T03:38:23Z",
                          "environment":  "production"
                      }
                  ]
