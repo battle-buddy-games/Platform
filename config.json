@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-56da54a",
-                         "title":  "feat(readiness): gate the deploy on a service that is actually serving (#486)",
-                         "timestamp":  "2026-10-12T19:26:13Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-9923fdf",
                          "title":  "Create news Platform activity update — 2026-10-12 (20:14 UTC)",
                          "timestamp":  "2026-10-12T21:53:47Z",
@@ -104,6 +98,12 @@
                          "version":  "build-560041b",
                          "title":  "fix(home): quiet the hero\u0027s Open Dashboard CTA (#525)",
                          "timestamp":  "2026-10-13T21:54:56Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0b869bb",
+                         "title":  "feat(discord): studio audience for 7 unreachable studio channels",
+                         "timestamp":  "2026-10-13T23:05:29Z",
                          "environment":  "production"
                      }
                  ]
