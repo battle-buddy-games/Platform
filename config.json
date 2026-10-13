@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-dc2278d",
-                         "title":  "feat(discord): periodic captured-media digest for the #media news channel (#448)",
-                         "timestamp":  "2026-10-11T23:09:43Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-50f36d2",
                          "title":  "fix(tests): correct six guards the 2026-10-12 promotion left stale (#485)",
                          "timestamp":  "2026-10-12T17:10:24Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f162af5",
                          "title":  "fix(discord): judge a declared forum channel instead of reporting it missing ...",
                          "timestamp":  "2026-10-13T17:39:14Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-fb70ac5",
+                         "title":  "feat(chat): open prompt studio from the composer plus menu, not above it (#507)",
+                         "timestamp":  "2026-10-13T19:10:44Z",
                          "environment":  "production"
                      }
                  ]
