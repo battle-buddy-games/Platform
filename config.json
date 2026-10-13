@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-55ff648",
-                         "title":  "fix(harness): send attachment meta keys in the case the CLI reads (#431)",
-                         "timestamp":  "2026-10-09T18:18:32Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-db1d2cc",
                          "title":  "fix(tests): repair the restart-launch-options call sites and cover allowConst...",
                          "timestamp":  "2026-10-10T17:20:40Z",
@@ -104,6 +98,12 @@
                          "version":  "build-9923fdf",
                          "title":  "Create news Platform activity update — 2026-10-12 (20:14 UTC)",
                          "timestamp":  "2026-10-12T21:53:47Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-520898d",
+                         "title":  "test(channel-spec): persist the seeded group so the gate test exercises its c...",
+                         "timestamp":  "2026-10-13T03:03:26Z",
                          "environment":  "production"
                      }
                  ]
