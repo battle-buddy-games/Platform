@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-fb70ac5",
-                         "title":  "feat(chat): open prompt studio from the composer plus menu, not above it (#507)",
-                         "timestamp":  "2026-10-13T19:10:44Z",
+                         "version":  "build-8c771dc",
+                         "title":  "feat(factory): add map search and selection",
+                         "timestamp":  "2026-10-13T20:23:42Z",
                          "environment":  "production"
                      }
                  ]
