@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-520898d",
-                         "title":  "test(channel-spec): persist the seeded group so the gate test exercises its c...",
-                         "timestamp":  "2026-10-13T03:03:26Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f891b58",
                          "title":  "fix(discord): set ChannelSpec.GateKey in the object initializer, not the cons...",
                          "timestamp":  "2026-10-13T04:31:40Z",
@@ -104,6 +98,12 @@
                          "version":  "build-206649a",
                          "title":  "fix(guide): declare Home\u0027s shared rows under Home so the walk follows the nav...",
                          "timestamp":  "2026-10-13T23:58:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-b4f2f35",
+                         "title":  "feat(discord): declare the 2026-10-14 news streams and community channels (#530)",
+                         "timestamp":  "2026-10-14T02:28:24Z",
                          "environment":  "production"
                      }
                  ]
