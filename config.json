@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ca09ed4",
-                         "title":  "feat(home): introduce a Featured Product | Welcome tab system on the hero row...",
-                         "timestamp":  "2026-10-13T06:27:09Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2400790",
                          "title":  "Create news Platform activity update — 2026-10-13 (15:17 UTC)",
                          "timestamp":  "2026-10-13T17:06:27Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-3c408e4",
-                         "title":  "fix(home): make the hero value prop and tagline the Welcome tab\u0027s opening cop...",
-                         "timestamp":  "2026-10-15T15:17:22Z",
+                         "version":  "build-a5a234a",
+                         "title":  "Merge pull request #560 from frostebite/fix/voice-transcription-ci-expectation",
+                         "timestamp":  "2026-10-15T14:45:29Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8def651",
+                         "title":  "fix(chat): retire the orphaned agent-activity fallback portal (#565)",
+                         "timestamp":  "2026-10-15T16:54:48Z",
                          "environment":  "production"
                      }
                  ]
