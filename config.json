@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-7059ab5",
-                         "title":  "feat(home): improve theme support across home and about",
-                         "timestamp":  "2026-10-15T17:24:02Z",
+                         "version":  "build-8def651",
+                         "title":  "fix(chat): retire the orphaned agent-activity fallback portal (#565)",
+                         "timestamp":  "2026-10-15T16:54:48Z",
                          "environment":  "production"
                      }
                  ]
