@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-a5a234a",
-                         "title":  "Merge pull request #560 from frostebite/fix/voice-transcription-ci-expectation",
-                         "timestamp":  "2026-10-15T14:45:29Z",
+                         "version":  "build-3c408e4",
+                         "title":  "fix(home): make the hero value prop and tagline the Welcome tab\u0027s opening cop...",
+                         "timestamp":  "2026-10-15T15:17:22Z",
                          "environment":  "production"
                      }
                  ]
