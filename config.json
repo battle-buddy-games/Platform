@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f162af5",
-                         "title":  "fix(discord): judge a declared forum channel instead of reporting it missing ...",
-                         "timestamp":  "2026-10-13T17:39:14Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-fb70ac5",
                          "title":  "feat(chat): open prompt studio from the composer plus menu, not above it (#507)",
                          "timestamp":  "2026-10-13T19:10:44Z",
@@ -104,6 +98,12 @@
                          "version":  "build-43157e6",
                          "title":  "fix(discord): name `career` in the platform-group gate table (#580)",
                          "timestamp":  "2026-10-18T06:31:16Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-340dd28",
+                         "title":  "fix(discord): strip every declared emoji prefix, and move any channel kind in...",
+                         "timestamp":  "2026-10-18T18:10:01Z",
                          "environment":  "production"
                      }
                  ]
