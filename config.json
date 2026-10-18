@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2400790",
-                         "title":  "Create news Platform activity update — 2026-10-13 (15:17 UTC)",
-                         "timestamp":  "2026-10-13T17:06:27Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f162af5",
                          "title":  "fix(discord): judge a declared forum channel instead of reporting it missing ...",
                          "timestamp":  "2026-10-13T17:39:14Z",
@@ -104,6 +98,12 @@
                          "version":  "build-8def651",
                          "title":  "fix(chat): retire the orphaned agent-activity fallback portal (#565)",
                          "timestamp":  "2026-10-15T16:54:48Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-43157e6",
+                         "title":  "fix(discord): name `career` in the platform-group gate table (#580)",
+                         "timestamp":  "2026-10-18T06:31:16Z",
                          "environment":  "production"
                      }
                  ]
