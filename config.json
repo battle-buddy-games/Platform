@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://prague-embedded-propose-rush.trycloudflare.com"
+                                  "address":  "https://informal-roses-expense-coalition.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
