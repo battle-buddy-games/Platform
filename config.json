@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://subdivision-archives-wto-cancel.trycloudflare.com"
+                                  "address":  "https://prague-embedded-propose-rush.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
