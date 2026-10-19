@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-560041b",
-                         "title":  "fix(home): quiet the hero\u0027s Open Dashboard CTA (#525)",
-                         "timestamp":  "2026-10-13T21:54:56Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0b869bb",
                          "title":  "feat(discord): studio audience for 7 unreachable studio channels",
                          "timestamp":  "2026-10-13T23:05:29Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a8bfa1e",
                          "title":  "docs(discord): correct the category docs the Assets split left stale (#604)",
                          "timestamp":  "2026-10-19T19:35:57Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0a5908b",
+                         "title":  "feat(discord): standing cron-jobs, command and skill reference lists (#609)",
+                         "timestamp":  "2026-10-19T23:47:00Z",
                          "environment":  "production"
                      }
                  ]
