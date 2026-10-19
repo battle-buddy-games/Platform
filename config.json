@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-fb70ac5",
-                         "title":  "feat(chat): open prompt studio from the composer plus menu, not above it (#507)",
-                         "timestamp":  "2026-10-13T19:10:44Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-560041b",
                          "title":  "fix(home): quiet the hero\u0027s Open Dashboard CTA (#525)",
                          "timestamp":  "2026-10-13T21:54:56Z",
@@ -104,6 +98,12 @@
                          "version":  "build-340dd28",
                          "title":  "fix(discord): strip every declared emoji prefix, and move any channel kind in...",
                          "timestamp":  "2026-10-18T18:10:01Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a8bfa1e",
+                         "title":  "docs(discord): correct the category docs the Assets split left stale (#604)",
+                         "timestamp":  "2026-10-19T19:35:57Z",
                          "environment":  "production"
                      }
                  ]
