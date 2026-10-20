@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-206649a",
-                         "title":  "fix(guide): declare Home\u0027s shared rows under Home so the walk follows the nav...",
-                         "timestamp":  "2026-10-13T23:58:05Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b4f2f35",
                          "title":  "feat(discord): declare the 2026-10-14 news streams and community channels (#530)",
                          "timestamp":  "2026-10-14T02:28:24Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2770001",
                          "title":  "fix(discord): declare the server-channel gate explicitly (#612)",
                          "timestamp":  "2026-10-20T02:04:39Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-11225a8",
+                         "title":  "feat(meshy): list every asset in the studio Meshy account (#614)",
+                         "timestamp":  "2026-10-20T19:42:14Z",
                          "environment":  "production"
                      }
                  ]
