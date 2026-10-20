@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-b4f2f35",
-                         "title":  "feat(discord): declare the 2026-10-14 news streams and community channels (#530)",
-                         "timestamp":  "2026-10-14T02:28:24Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d7eeb59",
                          "title":  "feat(discord): wire the community issue-report publisher for the reports feed...",
                          "timestamp":  "2026-10-14T03:32:18Z",
@@ -104,6 +98,12 @@
                          "version":  "build-11225a8",
                          "title":  "feat(meshy): list every asset in the studio Meshy account (#614)",
                          "timestamp":  "2026-10-20T19:42:14Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-97e9225",
+                         "title":  "fix(discord): explicit studio audience list; one asset listing per channel (#...",
+                         "timestamp":  "2026-10-20T22:35:05Z",
                          "environment":  "production"
                      }
                  ]
