@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-340dd28",
-                         "title":  "fix(discord): strip every declared emoji prefix, and move any channel kind in...",
-                         "timestamp":  "2026-10-18T18:10:01Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a8bfa1e",
                          "title":  "docs(discord): correct the category docs the Assets split left stale (#604)",
                          "timestamp":  "2026-10-19T19:35:57Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7216522",
                          "title":  "feat(catalogue): preserve generated entity overviews",
                          "timestamp":  "2026-10-21T19:40:10Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-06f69dc",
+                         "title":  "fix(nav): raise global overlays above page UI",
+                         "timestamp":  "2026-10-21T20:27:55Z",
                          "environment":  "production"
                      }
                  ]
