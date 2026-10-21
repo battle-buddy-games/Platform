@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a5a234a",
-                         "title":  "Merge pull request #560 from frostebite/fix/voice-transcription-ci-expectation",
-                         "timestamp":  "2026-10-15T14:45:29Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8def651",
                          "title":  "fix(chat): retire the orphaned agent-activity fallback portal (#565)",
                          "timestamp":  "2026-10-15T16:54:48Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3f135fe",
                          "title":  "feat(assets): proxy one account task\u0027s Meshy model file (#618)",
                          "timestamp":  "2026-10-21T00:53:32Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-464e470",
+                         "title":  "fix(discord): make studio emoji writer recognise its own label (#625)",
+                         "timestamp":  "2026-10-21T17:55:17Z",
                          "environment":  "production"
                      }
                  ]
