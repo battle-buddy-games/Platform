@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8def651",
-                         "title":  "fix(chat): retire the orphaned agent-activity fallback portal (#565)",
-                         "timestamp":  "2026-10-15T16:54:48Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-43157e6",
                          "title":  "fix(discord): name `career` in the platform-group gate table (#580)",
                          "timestamp":  "2026-10-18T06:31:16Z",
@@ -104,6 +98,12 @@
                          "version":  "build-464e470",
                          "title":  "fix(discord): make studio emoji writer recognise its own label (#625)",
                          "timestamp":  "2026-10-21T17:55:17Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-20e91c5",
+                         "title":  "fix(buddy-desktop): auto-update the Blender addon on every launch path and on...",
+                         "timestamp":  "2026-10-21T18:49:41Z",
                          "environment":  "production"
                      }
                  ]
