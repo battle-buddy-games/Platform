@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d7eeb59",
-                         "title":  "feat(discord): wire the community issue-report publisher for the reports feed...",
-                         "timestamp":  "2026-10-14T03:32:18Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a5a234a",
                          "title":  "Merge pull request #560 from frostebite/fix/voice-transcription-ci-expectation",
                          "timestamp":  "2026-10-15T14:45:29Z",
@@ -104,6 +98,12 @@
                          "version":  "build-97e9225",
                          "title":  "fix(discord): explicit studio audience list; one asset listing per channel (#...",
                          "timestamp":  "2026-10-20T22:35:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3f135fe",
+                         "title":  "feat(assets): proxy one account task\u0027s Meshy model file (#618)",
+                         "timestamp":  "2026-10-21T00:53:32Z",
                          "environment":  "production"
                      }
                  ]
