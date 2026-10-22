@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0a5908b",
-                         "title":  "feat(discord): standing cron-jobs, command and skill reference lists (#609)",
-                         "timestamp":  "2026-10-19T23:47:00Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2770001",
                          "title":  "fix(discord): declare the server-channel gate explicitly (#612)",
                          "timestamp":  "2026-10-20T02:04:39Z",
@@ -104,6 +98,12 @@
                          "version":  "build-59c2ed8",
                          "title":  "fix(tests): assert the asset-thread label, not the whole rendered line (#634)",
                          "timestamp":  "2026-10-22T16:08:59Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d200cd5",
+                         "title":  "feat(ci): ingest capture declarations and project the DECLARED axis (#636)",
+                         "timestamp":  "2026-10-22T18:37:23Z",
                          "environment":  "production"
                      }
                  ]
