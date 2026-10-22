@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a8bfa1e",
-                         "title":  "docs(discord): correct the category docs the Assets split left stale (#604)",
-                         "timestamp":  "2026-10-19T19:35:57Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0a5908b",
                          "title":  "feat(discord): standing cron-jobs, command and skill reference lists (#609)",
                          "timestamp":  "2026-10-19T23:47:00Z",
@@ -104,6 +98,12 @@
                          "version":  "build-06f69dc",
                          "title":  "fix(nav): raise global overlays above page UI",
                          "timestamp":  "2026-10-21T20:27:55Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-59c2ed8",
+                         "title":  "fix(tests): assert the asset-thread label, not the whole rendered line (#634)",
+                         "timestamp":  "2026-10-22T16:08:59Z",
                          "environment":  "production"
                      }
                  ]
