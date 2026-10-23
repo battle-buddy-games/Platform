@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-11225a8",
-                         "title":  "feat(meshy): list every asset in the studio Meshy account (#614)",
-                         "timestamp":  "2026-10-20T19:42:14Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-97e9225",
                          "title":  "fix(discord): explicit studio audience list; one asset listing per channel (#...",
                          "timestamp":  "2026-10-20T22:35:05Z",
@@ -104,6 +98,12 @@
                          "version":  "build-31e7c76",
                          "title":  "feat(buddy-desktop): show Meshy account assets in the Assets tray (#658)",
                          "timestamp":  "2026-10-23T01:58:41Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4dc1959",
+                         "title":  "feat(player-stats): add the player-stats desk channel with measured playtime ...",
+                         "timestamp":  "2026-10-23T23:01:10Z",
                          "environment":  "production"
                      }
                  ]
