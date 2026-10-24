@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-20e91c5",
-                         "title":  "fix(buddy-desktop): auto-update the Blender addon on every launch path and on...",
-                         "timestamp":  "2026-10-21T18:49:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7216522",
                          "title":  "feat(catalogue): preserve generated entity overviews",
                          "timestamp":  "2026-10-21T19:40:10Z",
@@ -104,6 +98,12 @@
                          "version":  "build-881542c",
                          "title":  "Apply platform theme to execution explorer",
                          "timestamp":  "2026-10-24T16:30:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-bd3cd5b",
+                         "title":  "fix(ci): align catalog and summary contracts",
+                         "timestamp":  "2026-10-24T23:55:50Z",
                          "environment":  "production"
                      }
                  ]
