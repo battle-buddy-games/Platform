@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-464e470",
-                         "title":  "fix(discord): make studio emoji writer recognise its own label (#625)",
-                         "timestamp":  "2026-10-21T17:55:17Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-20e91c5",
                          "title":  "fix(buddy-desktop): auto-update the Blender addon on every launch path and on...",
                          "timestamp":  "2026-10-21T18:49:41Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d35a856",
                          "title":  "Add generated Endless Crusade area tree to Chat",
                          "timestamp":  "2026-10-24T14:52:22Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-881542c",
+                         "title":  "Apply platform theme to execution explorer",
+                         "timestamp":  "2026-10-24T16:30:20Z",
                          "environment":  "production"
                      }
                  ]
