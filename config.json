@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3f135fe",
-                         "title":  "feat(assets): proxy one account task\u0027s Meshy model file (#618)",
-                         "timestamp":  "2026-10-21T00:53:32Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-464e470",
                          "title":  "fix(discord): make studio emoji writer recognise its own label (#625)",
                          "timestamp":  "2026-10-21T17:55:17Z",
@@ -104,6 +98,12 @@
                          "version":  "build-b4732d5",
                          "title":  "Add personal conversation folder tree view",
                          "timestamp":  "2026-10-24T01:33:44Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d35a856",
+                         "title":  "Add generated Endless Crusade area tree to Chat",
+                         "timestamp":  "2026-10-24T14:52:22Z",
                          "environment":  "production"
                      }
                  ]
