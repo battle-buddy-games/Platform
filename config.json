@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7216522",
-                         "title":  "feat(catalogue): preserve generated entity overviews",
-                         "timestamp":  "2026-10-21T19:40:10Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-06f69dc",
                          "title":  "fix(nav): raise global overlays above page UI",
                          "timestamp":  "2026-10-21T20:27:55Z",
@@ -104,6 +98,12 @@
                          "version":  "build-bd3cd5b",
                          "title":  "fix(ci): align catalog and summary contracts",
                          "timestamp":  "2026-10-24T23:55:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-e9f2e1a",
+                         "title":  "ci: continue qualification after baseline failures",
+                         "timestamp":  "2026-10-25T02:07:59Z",
                          "environment":  "production"
                      }
                  ]
