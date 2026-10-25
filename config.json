@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d200cd5",
-                         "title":  "feat(ci): ingest capture declarations and project the DECLARED axis (#636)",
-                         "timestamp":  "2026-10-22T18:37:23Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-31e7c76",
                          "title":  "feat(buddy-desktop): show Meshy account assets in the Assets tray (#658)",
                          "timestamp":  "2026-10-23T01:58:41Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0b44550",
                          "title":  "ci: keep smoke tests within 12 minute ceiling",
                          "timestamp":  "2026-10-25T07:23:42Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-f57d88c",
+                         "title":  "fix(discord): reconcile duplicate managed threads",
+                         "timestamp":  "2026-10-25T21:54:10Z",
                          "environment":  "production"
                      }
                  ]
