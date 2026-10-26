@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-a364760",
-                         "title":  "feat(about): switch platform areas to tabs",
-                         "timestamp":  "2026-10-26T04:37:51Z",
+                         "version":  "build-755a59e",
+                         "title":  "feat(discord): add authenticated thread reconciliation API",
+                         "timestamp":  "2026-10-26T04:43:37Z",
                          "environment":  "production"
                      }
                  ]
