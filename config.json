@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0b44550",
-                         "title":  "ci: keep smoke tests within 12 minute ceiling",
-                         "timestamp":  "2026-10-25T07:23:42Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f57d88c",
                          "title":  "fix(discord): reconcile duplicate managed threads",
                          "timestamp":  "2026-10-25T21:54:10Z",
@@ -104,6 +98,12 @@
                          "version":  "build-8dfd851",
                          "title":  "test(chat): model DOM contains in chip row fixture",
                          "timestamp":  "2026-10-26T17:05:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-83d0527",
+                         "title":  "fix(navbar): load platform update status under path base",
+                         "timestamp":  "2026-10-26T23:23:54Z",
                          "environment":  "production"
                      }
                  ]
