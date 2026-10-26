@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4dc1959",
-                         "title":  "feat(player-stats): add the player-stats desk channel with measured playtime ...",
-                         "timestamp":  "2026-10-23T23:01:10Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b4732d5",
                          "title":  "Add personal conversation folder tree view",
                          "timestamp":  "2026-10-24T01:33:44Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-61080b8",
-                         "title":  "Remove Asset Engineer role from platform home",
-                         "timestamp":  "2026-10-26T02:57:58Z",
+                         "version":  "build-5ccfaa5",
+                         "title":  "ci: run baseline suite first in stable qualification",
+                         "timestamp":  "2026-10-26T02:17:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-635105e",
+                         "title":  "ci: dispatch stable qualification from hosted runner",
+                         "timestamp":  "2026-10-26T03:14:36Z",
                          "environment":  "production"
                      }
                  ]
