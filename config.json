@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d35a856",
-                         "title":  "Add generated Endless Crusade area tree to Chat",
-                         "timestamp":  "2026-10-24T14:52:22Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-881542c",
                          "title":  "Apply platform theme to execution explorer",
                          "timestamp":  "2026-10-24T16:30:20Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-755a59e",
-                         "title":  "feat(discord): add authenticated thread reconciliation API",
-                         "timestamp":  "2026-10-26T04:43:37Z",
+                         "version":  "build-21b2a03",
+                         "title":  "fix(home): match prefixed Endless Crusade product name",
+                         "timestamp":  "2026-10-26T04:20:09Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8cbd3a4",
+                         "title":  "fix(servers): publish rolling development server officially",
+                         "timestamp":  "2026-10-26T05:20:18Z",
                          "environment":  "production"
                      }
                  ]
