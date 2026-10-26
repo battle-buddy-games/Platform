@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-cf00b80",
-                         "title":  "ci: cap smoke tests at twelve minutes",
-                         "timestamp":  "2026-10-25T03:31:16Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0b44550",
                          "title":  "ci: keep smoke tests within 12 minute ceiling",
                          "timestamp":  "2026-10-25T07:23:42Z",
@@ -104,6 +98,12 @@
                          "version":  "build-b849c00",
                          "title":  "feat(home): make Endless Crusade hero cinematic",
                          "timestamp":  "2026-10-26T12:23:56Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8dfd851",
+                         "title":  "test(chat): model DOM contains in chip row fixture",
+                         "timestamp":  "2026-10-26T17:05:20Z",
                          "environment":  "production"
                      }
                  ]
