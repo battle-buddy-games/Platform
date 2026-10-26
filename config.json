@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-bd3cd5b",
-                         "title":  "fix(ci): align catalog and summary contracts",
-                         "timestamp":  "2026-10-24T23:55:50Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e9f2e1a",
                          "title":  "ci: continue qualification after baseline failures",
                          "timestamp":  "2026-10-25T02:07:59Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4e38417",
                          "title":  "ci: replace superseded waiting production pipelines",
                          "timestamp":  "2026-10-26T06:10:19Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a9ce73b",
+                         "title":  "ci: build qualification shards with mapped references",
+                         "timestamp":  "2026-10-26T11:52:08Z",
                          "environment":  "production"
                      }
                  ]
