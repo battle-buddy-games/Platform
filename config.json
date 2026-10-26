@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-21b2a03",
-                         "title":  "fix(home): match prefixed Endless Crusade product name",
-                         "timestamp":  "2026-10-26T04:20:09Z",
+                         "version":  "build-a364760",
+                         "title":  "feat(about): switch platform areas to tabs",
+                         "timestamp":  "2026-10-26T04:37:51Z",
                          "environment":  "production"
                      }
                  ]
