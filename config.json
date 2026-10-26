@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-31e7c76",
-                         "title":  "feat(buddy-desktop): show Meshy account assets in the Assets tray (#658)",
-                         "timestamp":  "2026-10-23T01:58:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4dc1959",
                          "title":  "feat(player-stats): add the player-stats desk channel with measured playtime ...",
                          "timestamp":  "2026-10-23T23:01:10Z",
@@ -104,6 +98,12 @@
                          "version":  "build-f57d88c",
                          "title":  "fix(discord): reconcile duplicate managed threads",
                          "timestamp":  "2026-10-25T21:54:10Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5ccfaa5",
+                         "title":  "ci: run baseline suite first in stable qualification",
+                         "timestamp":  "2026-10-26T02:17:05Z",
                          "environment":  "production"
                      }
                  ]
