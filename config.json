@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-b4732d5",
-                         "title":  "Add personal conversation folder tree view",
-                         "timestamp":  "2026-10-24T01:33:44Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d35a856",
                          "title":  "Add generated Endless Crusade area tree to Chat",
                          "timestamp":  "2026-10-24T14:52:22Z",
@@ -104,6 +98,12 @@
                          "version":  "build-635105e",
                          "title":  "ci: dispatch stable qualification from hosted runner",
                          "timestamp":  "2026-10-26T03:14:36Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-21b2a03",
+                         "title":  "fix(home): match prefixed Endless Crusade product name",
+                         "timestamp":  "2026-10-26T04:20:09Z",
                          "environment":  "production"
                      }
                  ]
