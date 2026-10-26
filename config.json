@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-5ccfaa5",
-                         "title":  "ci: run baseline suite first in stable qualification",
-                         "timestamp":  "2026-10-26T02:17:05Z",
+                         "version":  "build-61080b8",
+                         "title":  "Remove Asset Engineer role from platform home",
+                         "timestamp":  "2026-10-26T02:57:58Z",
                          "environment":  "production"
                      }
                  ]
