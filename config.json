@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-881542c",
-                         "title":  "Apply platform theme to execution explorer",
-                         "timestamp":  "2026-10-24T16:30:20Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-bd3cd5b",
                          "title":  "fix(ci): align catalog and summary contracts",
                          "timestamp":  "2026-10-24T23:55:50Z",
@@ -104,6 +98,12 @@
                          "version":  "build-8cbd3a4",
                          "title":  "fix(servers): publish rolling development server officially",
                          "timestamp":  "2026-10-26T05:20:18Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4e38417",
+                         "title":  "ci: replace superseded waiting production pipelines",
+                         "timestamp":  "2026-10-26T06:10:19Z",
                          "environment":  "production"
                      }
                  ]
