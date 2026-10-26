@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-8cbd3a4",
-                         "title":  "fix(servers): publish rolling development server officially",
-                         "timestamp":  "2026-10-26T05:20:18Z",
+                         "version":  "build-4b1ad2b",
+                         "title":  "ci: reuse cloud build for EF snapshot check",
+                         "timestamp":  "2026-10-26T05:43:19Z",
                          "environment":  "production"
                      }
                  ]
