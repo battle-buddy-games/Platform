@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-48f8ea4",
-                         "title":  "fix(discord): limit CI tool channels to technical roles",
-                         "timestamp":  "2026-10-27T22:16:08Z",
+                         "version":  "build-86639fc",
+                         "title":  "feat(discord): tighten persona channel access",
+                         "timestamp":  "2026-10-27T21:41:28Z",
                          "environment":  "production"
                      }
                  ]
