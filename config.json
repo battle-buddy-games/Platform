@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5ccfaa5",
-                         "title":  "ci: run baseline suite first in stable qualification",
-                         "timestamp":  "2026-10-26T02:17:05Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-635105e",
                          "title":  "ci: dispatch stable qualification from hosted runner",
                          "timestamp":  "2026-10-26T03:14:36Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3660b16",
                          "title":  "fix(chat): collapse shared header and theme status popover",
                          "timestamp":  "2026-10-27T00:10:54Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-32ca1a6",
+                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027 into codex/fix-release-cloud-razor...",
+                         "timestamp":  "2026-10-27T16:05:56Z",
                          "environment":  "production"
                      }
                  ]
