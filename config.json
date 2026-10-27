@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f57d88c",
-                         "title":  "fix(discord): reconcile duplicate managed threads",
-                         "timestamp":  "2026-10-25T21:54:10Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5ccfaa5",
                          "title":  "ci: run baseline suite first in stable qualification",
                          "timestamp":  "2026-10-26T02:17:05Z",
@@ -104,6 +98,12 @@
                          "version":  "build-83d0527",
                          "title":  "fix(navbar): load platform update status under path base",
                          "timestamp":  "2026-10-26T23:23:54Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3660b16",
+                         "title":  "fix(chat): collapse shared header and theme status popover",
+                         "timestamp":  "2026-10-27T00:10:54Z",
                          "environment":  "production"
                      }
                  ]
