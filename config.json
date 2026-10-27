@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-32ca1a6",
-                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027 into codex/fix-release-cloud-razor...",
-                         "timestamp":  "2026-10-27T16:05:56Z",
+                         "version":  "build-6cea1a4",
+                         "title":  "fix(news): require consent for scheduled AI drafting",
+                         "timestamp":  "2026-10-27T16:56:40Z",
                          "environment":  "production"
                      }
                  ]
