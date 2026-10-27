@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8cbd3a4",
-                         "title":  "fix(servers): publish rolling development server officially",
-                         "timestamp":  "2026-10-26T05:20:18Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4e38417",
                          "title":  "ci: replace superseded waiting production pipelines",
                          "timestamp":  "2026-10-26T06:10:19Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3136f92",
                          "title":  "fix(deploy): retire production green service",
                          "timestamp":  "2026-10-27T18:52:25Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8ffe992",
+                         "title":  "Create news Platform activity update — 2026-10-27 (19:32 UTC)",
+                         "timestamp":  "2026-10-27T20:08:45Z",
                          "environment":  "production"
                      }
                  ]
