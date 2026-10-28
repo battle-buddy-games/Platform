@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a9ce73b",
-                         "title":  "ci: build qualification shards with mapped references",
-                         "timestamp":  "2026-10-26T11:52:08Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b849c00",
                          "title":  "feat(home): make Endless Crusade hero cinematic",
                          "timestamp":  "2026-10-26T12:23:56Z",
@@ -104,6 +98,12 @@
                          "version":  "build-86639fc",
                          "title":  "feat(discord): tighten persona channel access",
                          "timestamp":  "2026-10-27T21:41:28Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5414d28",
+                         "title":  "feat(platform): maintain full GameClient agent checkout",
+                         "timestamp":  "2026-10-28T01:31:49Z",
                          "environment":  "production"
                      }
                  ]
