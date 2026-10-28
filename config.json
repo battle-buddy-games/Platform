@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-b849c00",
-                         "title":  "feat(home): make Endless Crusade hero cinematic",
-                         "timestamp":  "2026-10-26T12:23:56Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8dfd851",
                          "title":  "test(chat): model DOM contains in chip row fixture",
                          "timestamp":  "2026-10-26T17:05:20Z",
@@ -104,6 +98,12 @@
                          "version":  "build-5414d28",
                          "title":  "feat(platform): maintain full GameClient agent checkout",
                          "timestamp":  "2026-10-28T01:31:49Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d0cad09",
+                         "title":  "fix(discord): file pipeline and media feeds by category",
+                         "timestamp":  "2026-10-28T21:16:00Z",
                          "environment":  "production"
                      }
                  ]
