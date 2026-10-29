@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8ffe992",
-                         "title":  "Create news Platform activity update — 2026-10-27 (19:32 UTC)",
-                         "timestamp":  "2026-10-27T20:08:45Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-86639fc",
                          "title":  "feat(discord): tighten persona channel access",
                          "timestamp":  "2026-10-27T21:41:28Z",
@@ -104,6 +98,12 @@
                          "version":  "build-6eb75b7",
                          "title":  "Create news Platform activity update — 2026-10-29 (04:21 UTC)",
                          "timestamp":  "2026-10-29T04:39:50Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4790123",
+                         "title":  "Show cache lifecycle in build analytics",
+                         "timestamp":  "2026-10-29T05:40:39Z",
                          "environment":  "production"
                      }
                  ]
