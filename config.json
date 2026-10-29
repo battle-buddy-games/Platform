@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3136f92",
-                         "title":  "fix(deploy): retire production green service",
-                         "timestamp":  "2026-10-27T18:52:25Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8ffe992",
                          "title":  "Create news Platform activity update — 2026-10-27 (19:32 UTC)",
                          "timestamp":  "2026-10-27T20:08:45Z",
@@ -104,6 +98,12 @@
                          "version":  "build-bd02d09",
                          "title":  "chore: isolate shell-only runner label for maintenance jobs",
                          "timestamp":  "2026-10-29T03:44:59Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6eb75b7",
+                         "title":  "Create news Platform activity update — 2026-10-29 (04:21 UTC)",
+                         "timestamp":  "2026-10-29T04:39:50Z",
                          "environment":  "production"
                      }
                  ]
