@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8dfd851",
-                         "title":  "test(chat): model DOM contains in chip row fixture",
-                         "timestamp":  "2026-10-26T17:05:20Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-83d0527",
                          "title":  "fix(navbar): load platform update status under path base",
                          "timestamp":  "2026-10-26T23:23:54Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d0cad09",
                          "title":  "fix(discord): file pipeline and media feeds by category",
                          "timestamp":  "2026-10-28T21:16:00Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0ca7196",
+                         "title":  "fix: retain five production database backups (#673)",
+                         "timestamp":  "2026-10-29T01:00:09Z",
                          "environment":  "production"
                      }
                  ]
