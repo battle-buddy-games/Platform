@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-32ca1a6",
-                         "title":  "Merge remote-tracking branch \u0027origin/main\u0027 into codex/fix-release-cloud-razor...",
-                         "timestamp":  "2026-10-27T16:05:56Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3890744",
                          "title":  "fix(chat): restore full shared title toolbar",
                          "timestamp":  "2026-10-27T18:04:56Z",
@@ -104,6 +98,12 @@
                          "version":  "build-901f787",
                          "title":  "Create news Platform activity update — 2026-10-29 (02:15 UTC)",
                          "timestamp":  "2026-10-29T02:36:07Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-588c3d9",
+                         "title":  "Release build-901f787: Create news Platform activity update — 2026-10-29 (02:...",
+                         "timestamp":  "2026-10-29T03:15:44Z",
                          "environment":  "production"
                      }
                  ]
