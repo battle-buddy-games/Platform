@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-5414d28",
-                         "title":  "feat(platform): maintain full GameClient agent checkout",
-                         "timestamp":  "2026-10-28T01:31:49Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d0cad09",
                          "title":  "fix(discord): file pipeline and media feeds by category",
                          "timestamp":  "2026-10-28T21:16:00Z",
@@ -104,6 +98,12 @@
                          "version":  "build-760a25e",
                          "title":  "fix(tests): update the collapse/expand test to the two-control contract (#682)",
                          "timestamp":  "2026-10-29T18:00:18Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c3499fe",
+                         "title":  "feat(discord): post shared-workspace status and activity (#684)",
+                         "timestamp":  "2026-10-29T23:29:31Z",
                          "environment":  "production"
                      }
                  ]
