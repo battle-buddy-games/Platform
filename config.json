@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-0c3512a",
-                         "title":  "test(screenshare): cover logout connection cleanup",
-                         "timestamp":  "2026-10-30T17:07:48Z",
+                         "version":  "build-b68f128",
+                         "title":  "fix(screenshare): close capture races and bound frame work",
+                         "timestamp":  "2026-10-30T16:21:43Z",
                          "environment":  "production"
                      }
                  ]
