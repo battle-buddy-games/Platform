@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0ca7196",
-                         "title":  "fix: retain five production database backups (#673)",
-                         "timestamp":  "2026-10-29T01:00:09Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2a3ff6b",
                          "title":  "Create news Platform activity update — 2026-10-29 (01:14 UTC)",
                          "timestamp":  "2026-10-29T01:37:35Z",
@@ -104,6 +98,12 @@
                          "version":  "build-b68f128",
                          "title":  "fix(screenshare): close capture races and bound frame work",
                          "timestamp":  "2026-10-30T16:21:43Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d0503ea",
+                         "title":  "fix(agent): compile the bound agent desk (three type errors) (#688)",
+                         "timestamp":  "2026-11-02T16:57:13Z",
                          "environment":  "production"
                      }
                  ]
