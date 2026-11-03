@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-6eb75b7",
-                         "title":  "Create news Platform activity update — 2026-10-29 (04:21 UTC)",
-                         "timestamp":  "2026-10-29T04:39:50Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4790123",
                          "title":  "Show cache lifecycle in build analytics",
                          "timestamp":  "2026-10-29T05:40:39Z",
@@ -104,6 +98,12 @@
                          "version":  "build-624ca4b",
                          "title":  "fix(buddy-desktop): make the offline page\u0027s Retry now actually retry (#696)",
                          "timestamp":  "2026-11-03T00:59:07Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2904872",
+                         "title":  "ci: move service configuration checks into stable qualification",
+                         "timestamp":  "2026-11-03T01:56:44Z",
                          "environment":  "production"
                      }
                  ]
