@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c3499fe",
-                         "title":  "feat(discord): post shared-workspace status and activity (#684)",
-                         "timestamp":  "2026-10-29T23:29:31Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b68f128",
                          "title":  "fix(screenshare): close capture races and bound frame work",
                          "timestamp":  "2026-10-30T16:21:43Z",
@@ -104,6 +98,12 @@
                          "version":  "build-818ca8e",
                          "title":  "fix(ci): prove baseline cleanup ownership; document endpoint fallback precede...",
                          "timestamp":  "2026-11-03T12:12:23Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0d55d53",
+                         "title":  "fix(discord): report an open circuit breaker ahead of a stale Connecting stat...",
+                         "timestamp":  "2026-11-03T15:54:45Z",
                          "environment":  "production"
                      }
                  ]
