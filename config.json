@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4790123",
-                         "title":  "Show cache lifecycle in build analytics",
-                         "timestamp":  "2026-10-29T05:40:39Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-760a25e",
                          "title":  "fix(tests): update the collapse/expand test to the two-control contract (#682)",
                          "timestamp":  "2026-10-29T18:00:18Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2904872",
                          "title":  "ci: move service configuration checks into stable qualification",
                          "timestamp":  "2026-11-03T01:56:44Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-66e6340",
+                         "title":  "fix(buddy-desktop): stop pinning a fresh install to the localhost default",
+                         "timestamp":  "2026-11-03T10:57:45Z",
                          "environment":  "production"
                      }
                  ]
