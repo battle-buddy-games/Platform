@@ -807,15 +807,13 @@ window.handleSignIn = function handleSignIn(provider) {
     
     // CRITICAL: Use the exact URL - no encoding, no modifications
     // GitHub is very strict about redirect_uri matching exactly
-    // Use prompt=login to force GitHub to show login page and generate a completely new code
-    // This ensures we get a fresh code even if user was previously authorized
-    // prompt=login forces re-authentication, which generates a new authorization code
+    // Each authorization request returns a new one-time code. Do not force users
+    // to authenticate again when GitHub already has an active authorized session.
     const params = new URLSearchParams({
       client_id: CONFIG.github.clientId,
       redirect_uri: callbackUrl, // MUST be: https://battle-buddy-games.github.io/Platform/gateway-callback-github.html
       scope: CONFIG.github.scope || 'user:email', // Default scope if not configured
-      state: state,
-      prompt: 'login' // Force GitHub to show login page and generate completely new code
+      state: state
     });
 
     const githubAuthUrl = `https://github.com/login/oauth/authorize?${params.toString()}`;
@@ -1048,8 +1046,8 @@ window.handleSignIn = function handleSignIn(provider) {
       response_type: 'code',
       scope: scope,
       state: state,
-      access_type: 'offline',
-      prompt: 'consent'
+      // Preserve account selection without forcing users through consent on every sign-in.
+      prompt: 'select_account'
     });
 
     const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
@@ -3791,7 +3789,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     // For code_already_used, add a "Try Again" button that clears everything and starts fresh
     if (error === 'code_already_used') {
       // The error modal will be shown, and user can click the sign-in button again
-      // The prompt=consent parameter will force GitHub to generate a new code
+      // The next authorization request generates a fresh code; an existing provider session can be reused.
     }
     
     return; // Don't proceed with sign-in check
