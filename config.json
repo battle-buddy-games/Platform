@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-760a25e",
-                         "title":  "fix(tests): update the collapse/expand test to the two-control contract (#682)",
-                         "timestamp":  "2026-10-29T18:00:18Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c3499fe",
                          "title":  "feat(discord): post shared-workspace status and activity (#684)",
                          "timestamp":  "2026-10-29T23:29:31Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-95b34e9",
-                         "title":  "fix(ci): repair the four stale pins keeping Stable Qualification red",
-                         "timestamp":  "2026-11-03T11:30:34Z",
+                         "version":  "build-66e6340",
+                         "title":  "fix(buddy-desktop): stop pinning a fresh install to the localhost default",
+                         "timestamp":  "2026-11-03T10:57:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-818ca8e",
+                         "title":  "fix(ci): prove baseline cleanup ownership; document endpoint fallback precede...",
+                         "timestamp":  "2026-11-03T12:12:23Z",
                          "environment":  "production"
                      }
                  ]
