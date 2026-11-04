@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-818ca8e",
-                         "title":  "fix(ci): prove baseline cleanup ownership; document endpoint fallback precede...",
-                         "timestamp":  "2026-11-03T12:12:23Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0d55d53",
                          "title":  "fix(discord): report an open circuit breaker ahead of a stale Connecting stat...",
                          "timestamp":  "2026-11-03T15:54:45Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7ee2a74",
                          "title":  "feat(agent-desk): one Discord channel per conversation, sub-agent runs as thr...",
                          "timestamp":  "2026-11-04T20:02:23Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-27cdc3c",
+                         "title":  "refactor(chat): add ChatState namespace and externalise layout constants (#716)",
+                         "timestamp":  "2026-11-04T20:47:05Z",
                          "environment":  "production"
                      }
                  ]
