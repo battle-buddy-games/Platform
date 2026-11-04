@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2904872",
-                         "title":  "ci: move service configuration checks into stable qualification",
-                         "timestamp":  "2026-11-03T01:56:44Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-66e6340",
                          "title":  "fix(buddy-desktop): stop pinning a fresh install to the localhost default",
                          "timestamp":  "2026-11-03T10:57:45Z",
@@ -104,6 +98,12 @@
                          "version":  "build-fb4ec6c",
                          "title":  "fix(agent-desk): desk-channel matching and the #707 baseline test collision (...",
                          "timestamp":  "2026-11-04T17:46:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-4a1afe2",
+                         "title":  "fix(agent-desk): match the retired forum by the glyph its row no longer decla...",
+                         "timestamp":  "2026-11-04T18:59:15Z",
                          "environment":  "production"
                      }
                  ]
