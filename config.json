@@ -103,7 +103,7 @@
                      {
                          "version":  "build-d313037",
                          "title":  "fix(news): read the archive in chunked GraphQL batches so /News renders fast ...",
-                         "timestamp":  "2026-11-04T16:28:59Z",
+                         "timestamp":  "2026-11-04T17:14:26Z",
                          "environment":  "production"
                      }
                  ]
