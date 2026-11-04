@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-05784a1",
-                         "title":  "feat(discord): add the platform\u0027s only per-message delete route (#703)",
-                         "timestamp":  "2026-11-04T00:32:55Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-fc86d35",
                          "title":  "Create news Platform activity update — 2026-11-04 (12:44 UTC)",
                          "timestamp":  "2026-11-04T13:43:32Z",
@@ -104,6 +98,12 @@
                          "version":  "build-946b19c",
                          "title":  "refactor(chat): extract chat-layout.js from chat-tool.js (wave 1) (#717)",
                          "timestamp":  "2026-11-04T21:39:24Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-bf1f11e",
+                         "title":  "refactor(chat): extract the chat/forum view adapters into chat-forum-adapter....",
+                         "timestamp":  "2026-11-04T23:51:36Z",
                          "environment":  "production"
                      }
                  ]
