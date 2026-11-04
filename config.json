@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-624ca4b",
-                         "title":  "fix(buddy-desktop): make the offline page\u0027s Retry now actually retry (#696)",
-                         "timestamp":  "2026-11-03T00:59:07Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2904872",
                          "title":  "ci: move service configuration checks into stable qualification",
                          "timestamp":  "2026-11-03T01:56:44Z",
@@ -103,7 +97,13 @@
                      {
                          "version":  "build-d313037",
                          "title":  "fix(news): read the archive in chunked GraphQL batches so /News renders fast ...",
-                         "timestamp":  "2026-11-04T17:14:26Z",
+                         "timestamp":  "2026-11-04T16:28:59Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-fb4ec6c",
+                         "title":  "fix(agent-desk): desk-channel matching and the #707 baseline test collision (...",
+                         "timestamp":  "2026-11-04T17:46:20Z",
                          "environment":  "production"
                      }
                  ]
