@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-05784a1",
-                         "title":  "feat(discord): add the platform\u0027s only per-message delete route (#703)",
-                         "timestamp":  "2026-11-04T00:32:55Z",
+                         "version":  "build-ee8f70e",
+                         "title":  "fix(ci): record the ownership gap as latent, not live (#705)",
+                         "timestamp":  "2026-11-04T00:54:30Z",
                          "environment":  "production"
                      }
                  ]
