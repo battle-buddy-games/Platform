@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-40c95c8",
-                         "title":  "fix(tests): compile ChatAgentLaunchServiceTests against ISingleClientProxy (#...",
-                         "timestamp":  "2026-11-02T19:44:02Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-e47c4bb",
                          "title":  "refactor(discord): retire the private per-conversation agent desk (#695)",
                          "timestamp":  "2026-11-02T22:38:25Z",
@@ -104,6 +98,12 @@
                          "version":  "build-13142e5",
                          "title":  "fix(ci): unblock Stable Qualification\u0027s cleanup, News smoke, and anonymous po...",
                          "timestamp":  "2026-11-04T14:41:52Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-99ef484",
+                         "title":  "feat(agent-desk): per-conversation Discord channels and +agent (#707)",
+                         "timestamp":  "2026-11-04T15:45:38Z",
                          "environment":  "production"
                      }
                  ]
