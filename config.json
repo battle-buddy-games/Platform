@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3767f91",
-                         "title":  "fix(discord): resolve the profile thread host product by slug, not by id (#691)",
-                         "timestamp":  "2026-11-02T18:56:36Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-40c95c8",
                          "title":  "fix(tests): compile ChatAgentLaunchServiceTests against ISingleClientProxy (#...",
                          "timestamp":  "2026-11-02T19:44:02Z",
@@ -103,7 +97,13 @@
                      {
                          "version":  "build-fc86d35",
                          "title":  "Create news Platform activity update — 2026-11-04 (12:44 UTC)",
-                         "timestamp":  "2026-11-04T14:11:55Z",
+                         "timestamp":  "2026-11-04T13:43:32Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-13142e5",
+                         "title":  "fix(ci): unblock Stable Qualification\u0027s cleanup, News smoke, and anonymous po...",
+                         "timestamp":  "2026-11-04T14:41:52Z",
                          "environment":  "production"
                      }
                  ]
