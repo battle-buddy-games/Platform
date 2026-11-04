@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-946b19c",
-                         "title":  "refactor(chat): extract chat-layout.js from chat-tool.js (wave 1) (#717)",
-                         "timestamp":  "2026-11-04T21:39:24Z",
+                         "version":  "build-a2acf9c",
+                         "title":  "refactor(chat): extract the thread affix cluster into chat-threads.js (#720)",
+                         "timestamp":  "2026-11-04T22:48:00Z",
                          "environment":  "production"
                      }
                  ]
