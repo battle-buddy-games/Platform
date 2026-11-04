@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-66e6340",
-                         "title":  "fix(buddy-desktop): stop pinning a fresh install to the localhost default",
-                         "timestamp":  "2026-11-03T10:57:45Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-818ca8e",
                          "title":  "fix(ci): prove baseline cleanup ownership; document endpoint fallback precede...",
                          "timestamp":  "2026-11-03T12:12:23Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4a1afe2",
                          "title":  "fix(agent-desk): match the retired forum by the glyph its row no longer decla...",
                          "timestamp":  "2026-11-04T18:59:15Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7ee2a74",
+                         "title":  "feat(agent-desk): one Discord channel per conversation, sub-agent runs as thr...",
+                         "timestamp":  "2026-11-04T20:02:23Z",
                          "environment":  "production"
                      }
                  ]
