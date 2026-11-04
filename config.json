@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0d55d53",
-                         "title":  "fix(discord): report an open circuit breaker ahead of a stale Connecting stat...",
-                         "timestamp":  "2026-11-03T15:54:45Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-05784a1",
                          "title":  "feat(discord): add the platform\u0027s only per-message delete route (#703)",
                          "timestamp":  "2026-11-04T00:32:55Z",
@@ -104,6 +98,12 @@
                          "version":  "build-27cdc3c",
                          "title":  "refactor(chat): add ChatState namespace and externalise layout constants (#716)",
                          "timestamp":  "2026-11-04T20:47:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-946b19c",
+                         "title":  "refactor(chat): extract chat-layout.js from chat-tool.js (wave 1) (#717)",
+                         "timestamp":  "2026-11-04T21:39:24Z",
                          "environment":  "production"
                      }
                  ]
