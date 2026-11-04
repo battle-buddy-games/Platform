@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d0503ea",
-                         "title":  "fix(agent): compile the bound agent desk (three type errors) (#688)",
-                         "timestamp":  "2026-11-02T16:57:13Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3767f91",
                          "title":  "fix(discord): resolve the profile thread host product by slug, not by id (#691)",
                          "timestamp":  "2026-11-02T18:56:36Z",
@@ -104,6 +98,12 @@
                          "version":  "build-05784a1",
                          "title":  "feat(discord): add the platform\u0027s only per-message delete route (#703)",
                          "timestamp":  "2026-11-04T00:32:55Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-fc86d35",
+                         "title":  "Create news Platform activity update — 2026-11-04 (12:44 UTC)",
+                         "timestamp":  "2026-11-04T13:43:32Z",
                          "environment":  "production"
                      }
                  ]
