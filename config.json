@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a38d561",
-                         "title":  "fix(sdk): shorten the materialization staging root so nested submodules can c...",
-                         "timestamp":  "2026-11-05T01:01:07Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a90e29e",
                          "title":  "fix(test): load chat-tool.js\u0027s full module chain in the e2e harnesses (#727)",
                          "timestamp":  "2026-11-05T02:01:36Z",
@@ -104,6 +98,12 @@
                          "version":  "build-717c3c3",
                          "title":  "fix(chat): keep chat-search.js wiring alive when it loads before chat-tool.js...",
                          "timestamp":  "2026-11-05T12:16:51Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-b9d8d8b",
+                         "title":  "feat(catalogue): give world map views their own column set (#747)",
+                         "timestamp":  "2026-11-05T15:47:45Z",
                          "environment":  "production"
                      }
                  ]
