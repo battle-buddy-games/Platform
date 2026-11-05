@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ab12b17",
-                         "title":  "fix(voice): supply libdave so voice connections survive DAVE enforcement (#729)",
-                         "timestamp":  "2026-11-05T04:38:33Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-eea7ed9",
                          "title":  "fix(voice): bound the initial silence frame so a stalled write cannot hold th...",
                          "timestamp":  "2026-11-05T05:40:31Z",
@@ -104,6 +98,12 @@
                          "version":  "build-c88cbbc",
                          "title":  "Create news Platform activity update — 2026-11-05 (20:20 UTC)",
                          "timestamp":  "2026-11-05T20:52:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0e87209",
+                         "title":  "refactor(chat): extract channel admin into chat-channel-admin.js (#748)",
+                         "timestamp":  "2026-11-05T22:05:23Z",
                          "environment":  "production"
                      }
                  ]
