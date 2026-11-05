@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-47e3426",
-                         "title":  "fix(discord): strip a variation selector, and reconcile the emoji theory with...",
-                         "timestamp":  "2026-11-05T02:59:05Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ab12b17",
                          "title":  "fix(voice): supply libdave so voice connections survive DAVE enforcement (#729)",
                          "timestamp":  "2026-11-05T04:38:33Z",
@@ -104,6 +98,12 @@
                          "version":  "build-4e66f02",
                          "title":  "Create news Platform activity update — 2026-11-05 (16:20 UTC)",
                          "timestamp":  "2026-11-05T16:49:49Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c88cbbc",
+                         "title":  "Create news Platform activity update — 2026-11-05 (20:20 UTC)",
+                         "timestamp":  "2026-11-05T20:52:05Z",
                          "environment":  "production"
                      }
                  ]
