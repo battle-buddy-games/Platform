@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-fc86d35",
-                         "title":  "Create news Platform activity update — 2026-11-04 (12:44 UTC)",
-                         "timestamp":  "2026-11-04T13:43:32Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-13142e5",
                          "title":  "fix(ci): unblock Stable Qualification\u0027s cleanup, News smoke, and anonymous po...",
                          "timestamp":  "2026-11-04T14:41:52Z",
@@ -104,6 +98,12 @@
                          "version":  "build-bf1f11e",
                          "title":  "refactor(chat): extract the chat/forum view adapters into chat-forum-adapter....",
                          "timestamp":  "2026-11-04T23:51:36Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a38d561",
+                         "title":  "fix(sdk): shorten the materialization staging root so nested submodules can c...",
+                         "timestamp":  "2026-11-05T01:01:07Z",
                          "environment":  "production"
                      }
                  ]
