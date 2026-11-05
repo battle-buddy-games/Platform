@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-27cdc3c",
-                         "title":  "refactor(chat): add ChatState namespace and externalise layout constants (#716)",
-                         "timestamp":  "2026-11-04T20:47:05Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-946b19c",
                          "title":  "refactor(chat): extract chat-layout.js from chat-tool.js (wave 1) (#717)",
                          "timestamp":  "2026-11-04T21:39:24Z",
@@ -104,6 +98,12 @@
                          "version":  "build-81ea9be",
                          "title":  "Create news Platform activity update — 2026-11-05 (07:13 UTC)",
                          "timestamp":  "2026-11-05T08:43:03Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-de09b11",
+                         "title":  "fix(chat): count sidechain rows in a transcript-derived construct\u0027s entryCoun...",
+                         "timestamp":  "2026-11-05T09:51:28Z",
                          "environment":  "production"
                      }
                  ]
