@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-fb4ec6c",
-                         "title":  "fix(agent-desk): desk-channel matching and the #707 baseline test collision (...",
-                         "timestamp":  "2026-11-04T17:46:20Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4a1afe2",
                          "title":  "fix(agent-desk): match the retired forum by the glyph its row no longer decla...",
                          "timestamp":  "2026-11-04T18:59:15Z",
@@ -104,6 +98,12 @@
                          "version":  "build-ab12b17",
                          "title":  "fix(voice): supply libdave so voice connections survive DAVE enforcement (#729)",
                          "timestamp":  "2026-11-05T04:38:33Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-eea7ed9",
+                         "title":  "fix(voice): bound the initial silence frame so a stalled write cannot hold th...",
+                         "timestamp":  "2026-11-05T05:40:31Z",
                          "environment":  "production"
                      }
                  ]
