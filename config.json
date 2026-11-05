@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-99ef484",
-                         "title":  "feat(agent-desk): per-conversation Discord channels and +agent (#707)",
-                         "timestamp":  "2026-11-04T15:45:38Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d313037",
                          "title":  "fix(news): read the archive in chunked GraphQL batches so /News renders fast ...",
                          "timestamp":  "2026-11-04T16:28:59Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a90e29e",
                          "title":  "fix(test): load chat-tool.js\u0027s full module chain in the e2e harnesses (#727)",
                          "timestamp":  "2026-11-05T02:01:36Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-47e3426",
+                         "title":  "fix(discord): strip a variation selector, and reconcile the emoji theory with...",
+                         "timestamp":  "2026-11-05T02:59:05Z",
                          "environment":  "production"
                      }
                  ]
