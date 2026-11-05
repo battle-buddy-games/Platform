@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d313037",
-                         "title":  "fix(news): read the archive in chunked GraphQL batches so /News renders fast ...",
-                         "timestamp":  "2026-11-04T16:28:59Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-fb4ec6c",
                          "title":  "fix(agent-desk): desk-channel matching and the #707 baseline test collision (...",
                          "timestamp":  "2026-11-04T17:46:20Z",
@@ -104,6 +98,12 @@
                          "version":  "build-47e3426",
                          "title":  "fix(discord): strip a variation selector, and reconcile the emoji theory with...",
                          "timestamp":  "2026-11-05T02:59:05Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-ab12b17",
+                         "title":  "fix(voice): supply libdave so voice connections survive DAVE enforcement (#729)",
+                         "timestamp":  "2026-11-05T04:38:33Z",
                          "environment":  "production"
                      }
                  ]
