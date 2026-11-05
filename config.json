@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7ee2a74",
-                         "title":  "feat(agent-desk): one Discord channel per conversation, sub-agent runs as thr...",
-                         "timestamp":  "2026-11-04T20:02:23Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-27cdc3c",
                          "title":  "refactor(chat): add ChatState namespace and externalise layout constants (#716)",
                          "timestamp":  "2026-11-04T20:47:05Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d8e6099",
                          "title":  "fix(voice): bound every teardown call that touches the stalled PCM stream (#731)",
                          "timestamp":  "2026-11-05T06:53:58Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-81ea9be",
+                         "title":  "Create news Platform activity update — 2026-11-05 (07:13 UTC)",
+                         "timestamp":  "2026-11-05T08:43:03Z",
                          "environment":  "production"
                      }
                  ]
