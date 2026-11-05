@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-de09b11",
-                         "title":  "fix(chat): count sidechain rows in a transcript-derived construct\u0027s entryCoun...",
-                         "timestamp":  "2026-11-05T09:51:28Z",
+                         "version":  "build-3440e0d",
+                         "title":  "fix(test): give the slot-poll tests a wait that is not a latency measurement ...",
+                         "timestamp":  "2026-11-05T10:21:01Z",
                          "environment":  "production"
                      }
                  ]
