@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4a1afe2",
-                         "title":  "fix(agent-desk): match the retired forum by the glyph its row no longer decla...",
-                         "timestamp":  "2026-11-04T18:59:15Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7ee2a74",
                          "title":  "feat(agent-desk): one Discord channel per conversation, sub-agent runs as thr...",
                          "timestamp":  "2026-11-04T20:02:23Z",
@@ -104,6 +98,12 @@
                          "version":  "build-eea7ed9",
                          "title":  "fix(voice): bound the initial silence frame so a stalled write cannot hold th...",
                          "timestamp":  "2026-11-05T05:40:31Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d8e6099",
+                         "title":  "fix(voice): bound every teardown call that touches the stalled PCM stream (#731)",
+                         "timestamp":  "2026-11-05T06:53:58Z",
                          "environment":  "production"
                      }
                  ]
