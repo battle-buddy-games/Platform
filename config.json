@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-13142e5",
-                         "title":  "fix(ci): unblock Stable Qualification\u0027s cleanup, News smoke, and anonymous po...",
-                         "timestamp":  "2026-11-04T14:41:52Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-99ef484",
                          "title":  "feat(agent-desk): per-conversation Discord channels and +agent (#707)",
                          "timestamp":  "2026-11-04T15:45:38Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a38d561",
                          "title":  "fix(sdk): shorten the materialization staging root so nested submodules can c...",
                          "timestamp":  "2026-11-05T01:01:07Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a90e29e",
+                         "title":  "fix(test): load chat-tool.js\u0027s full module chain in the e2e harnesses (#727)",
+                         "timestamp":  "2026-11-05T02:01:36Z",
                          "environment":  "production"
                      }
                  ]
