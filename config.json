@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-81ea9be",
-                         "title":  "Create news Platform activity update — 2026-11-05 (07:13 UTC)",
-                         "timestamp":  "2026-11-05T08:43:03Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-de09b11",
                          "title":  "fix(chat): count sidechain rows in a transcript-derived construct\u0027s entryCoun...",
                          "timestamp":  "2026-11-05T09:51:28Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7906ce2",
                          "title":  "refactor(chat): extract the interactive component renderers (wave 2, cluster ...",
                          "timestamp":  "2026-11-06T16:49:55Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-721e8a0",
+                         "title":  "refactor(chat): extract the composer suggestion dropdown (wave 2, cluster 5) ...",
+                         "timestamp":  "2026-11-06T17:40:49Z",
                          "environment":  "production"
                      }
                  ]
