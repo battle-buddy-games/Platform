@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f30fe4f",
-                         "title":  "feat(chat): rebuild harness transcript blocks around wake calls and event ton...",
-                         "timestamp":  "2026-11-05T11:09:51Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-717c3c3",
                          "title":  "fix(chat): keep chat-search.js wiring alive when it loads before chat-tool.js...",
                          "timestamp":  "2026-11-05T12:16:51Z",
@@ -104,6 +98,12 @@
                          "version":  "build-8eb5064",
                          "title":  "refactor(chat): extract conversation hub addressing (wave 2, cluster 6) (#754)",
                          "timestamp":  "2026-11-06T18:38:23Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7372bca",
+                         "title":  "refactor(chat): extract group-chat participant management (#756)",
+                         "timestamp":  "2026-11-06T22:35:58Z",
                          "environment":  "production"
                      }
                  ]
