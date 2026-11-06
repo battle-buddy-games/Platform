@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-717c3c3",
-                         "title":  "fix(chat): keep chat-search.js wiring alive when it loads before chat-tool.js...",
-                         "timestamp":  "2026-11-05T12:16:51Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b9d8d8b",
                          "title":  "feat(catalogue): give world map views their own column set (#747)",
                          "timestamp":  "2026-11-05T15:47:45Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7372bca",
                          "title":  "refactor(chat): extract group-chat participant management (#756)",
                          "timestamp":  "2026-11-06T22:35:58Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8117c1a",
+                         "title":  "Release build-7372bca: refactor(chat): extract group-chat participant managem...",
+                         "timestamp":  "2026-11-06T23:04:45Z",
                          "environment":  "production"
                      }
                  ]
