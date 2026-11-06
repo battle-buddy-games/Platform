@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-eea7ed9",
-                         "title":  "fix(voice): bound the initial silence frame so a stalled write cannot hold th...",
-                         "timestamp":  "2026-11-05T05:40:31Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d8e6099",
                          "title":  "fix(voice): bound every teardown call that touches the stalled PCM stream (#731)",
                          "timestamp":  "2026-11-05T06:53:58Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0e87209",
                          "title":  "refactor(chat): extract channel admin into chat-channel-admin.js (#748)",
                          "timestamp":  "2026-11-05T22:05:23Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-28d996d",
+                         "title":  "refactor(chat): extract the conversation-admin surface (#750)",
+                         "timestamp":  "2026-11-06T15:35:26Z",
                          "environment":  "production"
                      }
                  ]
