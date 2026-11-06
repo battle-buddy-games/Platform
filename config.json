@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d8e6099",
-                         "title":  "fix(voice): bound every teardown call that touches the stalled PCM stream (#731)",
-                         "timestamp":  "2026-11-05T06:53:58Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-81ea9be",
                          "title":  "Create news Platform activity update — 2026-11-05 (07:13 UTC)",
                          "timestamp":  "2026-11-05T08:43:03Z",
@@ -104,6 +98,12 @@
                          "version":  "build-28d996d",
                          "title":  "refactor(chat): extract the conversation-admin surface (#750)",
                          "timestamp":  "2026-11-06T15:35:26Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7906ce2",
+                         "title":  "refactor(chat): extract the interactive component renderers (wave 2, cluster ...",
+                         "timestamp":  "2026-11-06T16:49:55Z",
                          "environment":  "production"
                      }
                  ]
