@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-de09b11",
-                         "title":  "fix(chat): count sidechain rows in a transcript-derived construct\u0027s entryCoun...",
-                         "timestamp":  "2026-11-05T09:51:28Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-f30fe4f",
                          "title":  "feat(chat): rebuild harness transcript blocks around wake calls and event ton...",
                          "timestamp":  "2026-11-05T11:09:51Z",
@@ -104,6 +98,12 @@
                          "version":  "build-721e8a0",
                          "title":  "refactor(chat): extract the composer suggestion dropdown (wave 2, cluster 5) ...",
                          "timestamp":  "2026-11-06T17:40:49Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-8eb5064",
+                         "title":  "refactor(chat): extract conversation hub addressing (wave 2, cluster 6) (#754)",
+                         "timestamp":  "2026-11-06T18:38:23Z",
                          "environment":  "production"
                      }
                  ]
