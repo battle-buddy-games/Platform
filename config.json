@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-b9d8d8b",
-                         "title":  "feat(catalogue): give world map views their own column set (#747)",
-                         "timestamp":  "2026-11-05T15:47:45Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-4e66f02",
                          "title":  "Create news Platform activity update — 2026-11-05 (16:20 UTC)",
                          "timestamp":  "2026-11-05T16:49:49Z",
@@ -104,6 +98,12 @@
                          "version":  "build-8117c1a",
                          "title":  "Release build-7372bca: refactor(chat): extract group-chat participant managem...",
                          "timestamp":  "2026-11-06T23:04:45Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-73be77a",
+                         "title":  "fix(chat): guarantee an unfurl control whenever the header is furled (#758)",
+                         "timestamp":  "2026-11-07T02:19:22Z",
                          "environment":  "production"
                      }
                  ]
