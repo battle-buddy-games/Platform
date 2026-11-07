@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c88cbbc",
-                         "title":  "Create news Platform activity update — 2026-11-05 (20:20 UTC)",
-                         "timestamp":  "2026-11-05T20:52:05Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0e87209",
                          "title":  "refactor(chat): extract channel admin into chat-channel-admin.js (#748)",
                          "timestamp":  "2026-11-05T22:05:23Z",
@@ -104,6 +98,12 @@
                          "version":  "build-3235b98",
                          "title":  "Create news Platform activity update — 2026-11-07 (17:33 UTC)",
                          "timestamp":  "2026-11-07T18:04:54Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a936d99",
+                         "title":  "fix(agents): show a group conversation\u0027s channel to the whole group (#759)",
+                         "timestamp":  "2026-11-07T19:21:58Z",
                          "environment":  "production"
                      }
                  ]
