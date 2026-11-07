@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-4e66f02",
-                         "title":  "Create news Platform activity update — 2026-11-05 (16:20 UTC)",
-                         "timestamp":  "2026-11-05T16:49:49Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c88cbbc",
                          "title":  "Create news Platform activity update — 2026-11-05 (20:20 UTC)",
                          "timestamp":  "2026-11-05T20:52:05Z",
@@ -104,6 +98,12 @@
                          "version":  "build-73be77a",
                          "title":  "fix(chat): guarantee an unfurl control whenever the header is furled (#758)",
                          "timestamp":  "2026-11-07T02:19:22Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-3235b98",
+                         "title":  "Create news Platform activity update — 2026-11-07 (17:33 UTC)",
+                         "timestamp":  "2026-11-07T18:04:54Z",
                          "environment":  "production"
                      }
                  ]
