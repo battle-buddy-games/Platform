@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0e87209",
-                         "title":  "refactor(chat): extract channel admin into chat-channel-admin.js (#748)",
-                         "timestamp":  "2026-11-05T22:05:23Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-28d996d",
                          "title":  "refactor(chat): extract the conversation-admin surface (#750)",
                          "timestamp":  "2026-11-06T15:35:26Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-33425e8",
-                         "title":  "feat(buddy-desktop): spawn the detached presence ghost (#760)",
-                         "timestamp":  "2026-11-07T20:12:17Z",
+                         "version":  "build-a936d99",
+                         "title":  "fix(agents): show a group conversation\u0027s channel to the whole group (#759)",
+                         "timestamp":  "2026-11-07T19:21:58Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1b1d87f",
+                         "title":  "fix(agents): give a group conversation its root before the agent replies (#761)",
+                         "timestamp":  "2026-11-07T20:53:15Z",
                          "environment":  "production"
                      }
                  ]
