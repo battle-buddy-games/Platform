@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-28d996d",
-                         "title":  "refactor(chat): extract the conversation-admin surface (#750)",
-                         "timestamp":  "2026-11-06T15:35:26Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7906ce2",
                          "title":  "refactor(chat): extract the interactive component renderers (wave 2, cluster ...",
                          "timestamp":  "2026-11-06T16:49:55Z",
@@ -104,6 +98,12 @@
                          "version":  "build-1b1d87f",
                          "title":  "fix(agents): give a group conversation its root before the agent replies (#761)",
                          "timestamp":  "2026-11-07T20:53:15Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c5ec487",
+                         "title":  "fix(tests): parameterise the Sprint schema probes instead of interpolating SQ...",
+                         "timestamp":  "2026-11-07T21:42:19Z",
                          "environment":  "production"
                      }
                  ]
