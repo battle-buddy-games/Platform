@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-a936d99",
-                         "title":  "fix(agents): show a group conversation\u0027s channel to the whole group (#759)",
-                         "timestamp":  "2026-11-07T19:21:58Z",
+                         "version":  "build-33425e8",
+                         "title":  "feat(buddy-desktop): spawn the detached presence ghost (#760)",
+                         "timestamp":  "2026-11-07T20:12:17Z",
                          "environment":  "production"
                      }
                  ]
