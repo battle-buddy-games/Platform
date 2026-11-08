@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8117c1a",
-                         "title":  "Release build-7372bca: refactor(chat): extract group-chat participant managem...",
-                         "timestamp":  "2026-11-06T23:04:45Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-73be77a",
                          "title":  "fix(chat): guarantee an unfurl control whenever the header is furled (#758)",
                          "timestamp":  "2026-11-07T02:19:22Z",
@@ -104,6 +98,12 @@
                          "version":  "build-6d46206",
                          "title":  "diag(agent-desk): report what each harness conversation actually is (#769)",
                          "timestamp":  "2026-11-08T18:54:02Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-0d41551",
+                         "title":  "fix(agent-desk): move the named-retirement members into AgentConversationChan...",
+                         "timestamp":  "2026-11-08T20:02:49Z",
                          "environment":  "production"
                      }
                  ]
