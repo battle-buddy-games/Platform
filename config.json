@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1b1d87f",
-                         "title":  "fix(agents): give a group conversation its root before the agent replies (#761)",
-                         "timestamp":  "2026-11-07T20:53:15Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-c5ec487",
                          "title":  "fix(tests): parameterise the Sprint schema probes instead of interpolating SQ...",
                          "timestamp":  "2026-11-07T21:42:19Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2c29c69",
                          "title":  "feat(useraccounts): add group creation to the admin API (#778)",
                          "timestamp":  "2026-11-08T23:07:26Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-80c2dc0",
+                         "title":  "fix(assets): let external contributors read the asset library, scoped to thei...",
+                         "timestamp":  "2026-11-08T23:52:48Z",
                          "environment":  "production"
                      }
                  ]
