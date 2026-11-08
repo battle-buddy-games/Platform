@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7372bca",
-                         "title":  "refactor(chat): extract group-chat participant management (#756)",
-                         "timestamp":  "2026-11-06T22:35:58Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8117c1a",
                          "title":  "Release build-7372bca: refactor(chat): extract group-chat participant managem...",
                          "timestamp":  "2026-11-06T23:04:45Z",
@@ -104,6 +98,12 @@
                          "version":  "build-092a0bf",
                          "title":  "fix(agent-desk): count only portal turns as human, and log the sweep\u0027s decisi...",
                          "timestamp":  "2026-11-08T18:14:57Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-6d46206",
+                         "title":  "diag(agent-desk): report what each harness conversation actually is (#769)",
+                         "timestamp":  "2026-11-08T18:54:02Z",
                          "environment":  "production"
                      }
                  ]
