@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-73be77a",
-                         "title":  "fix(chat): guarantee an unfurl control whenever the header is furled (#758)",
-                         "timestamp":  "2026-11-07T02:19:22Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-3235b98",
                          "title":  "Create news Platform activity update — 2026-11-07 (17:33 UTC)",
                          "timestamp":  "2026-11-07T18:04:54Z",
@@ -104,6 +98,12 @@
                          "version":  "build-0d41551",
                          "title":  "fix(agent-desk): move the named-retirement members into AgentConversationChan...",
                          "timestamp":  "2026-11-08T20:02:49Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-24add63",
+                         "title":  "fix(agent-desk): retire pi-deepseek too, on the owner\u0027s direct disavowal (#772)",
+                         "timestamp":  "2026-11-08T21:10:49Z",
                          "environment":  "production"
                      }
                  ]
