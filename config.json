@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8eb5064",
-                         "title":  "refactor(chat): extract conversation hub addressing (wave 2, cluster 6) (#754)",
-                         "timestamp":  "2026-11-06T18:38:23Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7372bca",
                          "title":  "refactor(chat): extract group-chat participant management (#756)",
                          "timestamp":  "2026-11-06T22:35:58Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a55ad07",
                          "title":  "feat(ci): one dispatch decision and one claim for CI-to-agent dispatch (#766)",
                          "timestamp":  "2026-11-08T17:17:13Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-092a0bf",
+                         "title":  "fix(agent-desk): count only portal turns as human, and log the sweep\u0027s decisi...",
+                         "timestamp":  "2026-11-08T18:14:57Z",
                          "environment":  "production"
                      }
                  ]
