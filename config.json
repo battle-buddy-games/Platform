@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3235b98",
-                         "title":  "Create news Platform activity update — 2026-11-07 (17:33 UTC)",
-                         "timestamp":  "2026-11-07T18:04:54Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a936d99",
                          "title":  "fix(agents): show a group conversation\u0027s channel to the whole group (#759)",
                          "timestamp":  "2026-11-07T19:21:58Z",
@@ -104,6 +98,12 @@
                          "version":  "build-24add63",
                          "title":  "fix(agent-desk): retire pi-deepseek too, on the owner\u0027s direct disavowal (#772)",
                          "timestamp":  "2026-11-08T21:10:49Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-b35f5bc",
+                         "title":  "feat(agent-desk): record who initiated a launch, on its own column (#776)",
+                         "timestamp":  "2026-11-08T22:04:09Z",
                          "environment":  "production"
                      }
                  ]
