@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://pilot-judicial-evaluations-tee.trycloudflare.com"
+                                  "address":  "https://continue-submissions-integrating-syndication.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
