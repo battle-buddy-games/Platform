@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d80a140",
-                         "title":  "fix(agent-desk): qualify Agents channels on human turns, not on agent text (#...",
-                         "timestamp":  "2026-11-08T16:05:53Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a55ad07",
                          "title":  "feat(ci): one dispatch decision and one claim for CI-to-agent dispatch (#766)",
                          "timestamp":  "2026-11-08T17:17:13Z",
@@ -101,9 +95,15 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-8982516",
-                         "title":  "fix(docs): publish the digital asset pipelines guide to its actual audience (...",
-                         "timestamp":  "2026-11-09T01:58:44Z",
+                         "version":  "build-44f1600",
+                         "title":  "fix(chat): honour sender provenance on every surface that shows an author (#782)",
+                         "timestamp":  "2026-11-09T01:17:17Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-56f07c3",
+                         "title":  "fix(engagement): resolve a claimed recurrence rule against its programme\u0027s ta...",
+                         "timestamp":  "2026-11-09T02:54:23Z",
                          "environment":  "production"
                      }
                  ]
