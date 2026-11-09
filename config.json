@@ -101,9 +101,9 @@
                          "environment":  "production"
                      },
                      {
-                         "version":  "build-44f1600",
-                         "title":  "fix(chat): honour sender provenance on every surface that shows an author (#782)",
-                         "timestamp":  "2026-11-09T01:17:17Z",
+                         "version":  "build-8982516",
+                         "title":  "fix(docs): publish the digital asset pipelines guide to its actual audience (...",
+                         "timestamp":  "2026-11-09T01:58:44Z",
                          "environment":  "production"
                      }
                  ]
