@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-092a0bf",
-                         "title":  "fix(agent-desk): count only portal turns as human, and log the sweep\u0027s decisi...",
-                         "timestamp":  "2026-11-08T18:14:57Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-6d46206",
                          "title":  "diag(agent-desk): report what each harness conversation actually is (#769)",
                          "timestamp":  "2026-11-08T18:54:02Z",
@@ -104,6 +98,12 @@
                          "version":  "build-175cf49",
                          "title":  "fix(services): retire staging dirs by rename and drain heartbeats off the ite...",
                          "timestamp":  "2026-11-09T17:29:18Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5505ad9",
+                         "title":  "Create news Platform activity update — 2026-11-09 (20:29 UTC)",
+                         "timestamp":  "2026-11-09T21:41:18Z",
                          "environment":  "production"
                      }
                  ]
