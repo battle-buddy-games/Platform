@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-6d46206",
-                         "title":  "diag(agent-desk): report what each harness conversation actually is (#769)",
-                         "timestamp":  "2026-11-08T18:54:02Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-0d41551",
                          "title":  "fix(agent-desk): move the named-retirement members into AgentConversationChan...",
                          "timestamp":  "2026-11-08T20:02:49Z",
@@ -104,6 +98,12 @@
                          "version":  "build-5505ad9",
                          "title":  "Create news Platform activity update — 2026-11-09 (20:29 UTC)",
                          "timestamp":  "2026-11-09T21:41:18Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-c2d2d2a",
+                         "title":  "Release build-5505ad9: Create news Platform activity update — 2026-11-09 (20:...",
+                         "timestamp":  "2026-11-09T22:32:10Z",
                          "environment":  "production"
                      }
                  ]
