@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a55ad07",
-                         "title":  "feat(ci): one dispatch decision and one claim for CI-to-agent dispatch (#766)",
-                         "timestamp":  "2026-11-08T17:17:13Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-092a0bf",
                          "title":  "fix(agent-desk): count only portal turns as human, and log the sweep\u0027s decisi...",
                          "timestamp":  "2026-11-08T18:14:57Z",
@@ -104,6 +98,12 @@
                          "version":  "build-56f07c3",
                          "title":  "fix(engagement): resolve a claimed recurrence rule against its programme\u0027s ta...",
                          "timestamp":  "2026-11-09T02:54:23Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-175cf49",
+                         "title":  "fix(services): retire staging dirs by rename and drain heartbeats off the ite...",
+                         "timestamp":  "2026-11-09T17:29:18Z",
                          "environment":  "production"
                      }
                  ]
