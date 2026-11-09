@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-c5ec487",
-                         "title":  "fix(tests): parameterise the Sprint schema probes instead of interpolating SQ...",
-                         "timestamp":  "2026-11-07T21:42:19Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d80a140",
                          "title":  "fix(agent-desk): qualify Agents channels on human turns, not on agent text (#...",
                          "timestamp":  "2026-11-08T16:05:53Z",
@@ -104,6 +98,12 @@
                          "version":  "build-80c2dc0",
                          "title":  "fix(assets): let external contributors read the asset library, scoped to thei...",
                          "timestamp":  "2026-11-08T23:52:48Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-44f1600",
+                         "title":  "fix(chat): honour sender provenance on every surface that shows an author (#782)",
+                         "timestamp":  "2026-11-09T01:17:17Z",
                          "environment":  "production"
                      }
                  ]
