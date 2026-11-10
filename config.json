@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-175cf49",
-                         "title":  "fix(services): retire staging dirs by rename and drain heartbeats off the ite...",
-                         "timestamp":  "2026-11-09T17:29:18Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5505ad9",
                          "title":  "Create news Platform activity update — 2026-11-09 (20:29 UTC)",
                          "timestamp":  "2026-11-09T21:41:18Z",
@@ -104,6 +98,12 @@
                          "version":  "build-ae3a2c7",
                          "title":  "fix(chat): keep the hide-header control in the rail\u0027s control cluster (#810)",
                          "timestamp":  "2026-11-10T15:33:02Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-df225a7",
+                         "title":  "feat(buddy-desktop): show other machines\u0027 workspaces in the tray (#811)",
+                         "timestamp":  "2026-11-10T16:25:41Z",
                          "environment":  "production"
                      }
                  ]
