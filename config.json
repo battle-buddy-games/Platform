@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2c29c69",
-                         "title":  "feat(useraccounts): add group creation to the admin API (#778)",
-                         "timestamp":  "2026-11-08T23:07:26Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-80c2dc0",
                          "title":  "fix(assets): let external contributors read the asset library, scoped to thei...",
                          "timestamp":  "2026-11-08T23:52:48Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2cb28d2",
                          "title":  "fix(host-agent): keep the self-update /TR command under 261 chars (#802)",
                          "timestamp":  "2026-11-10T05:29:59Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a6f737b",
+                         "title":  "Create news Platform activity update — 2026-11-10 (05:32 UTC)",
+                         "timestamp":  "2026-11-10T06:32:50Z",
                          "environment":  "production"
                      }
                  ]
