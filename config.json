@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-54c4461",
-                         "title":  "fix(host-agent): set AppKillProcessTree, not the non-existent AppStopMethodKi...",
-                         "timestamp":  "2026-11-10T04:46:49Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2cb28d2",
                          "title":  "fix(host-agent): keep the self-update /TR command under 261 chars (#802)",
                          "timestamp":  "2026-11-10T05:29:59Z",
@@ -104,6 +98,12 @@
                          "version":  "build-62c5083",
                          "title":  "ci(pipeline): compile the .NET test assemblies on every pull request (#815)",
                          "timestamp":  "2026-11-10T21:35:20Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-7e94ad8",
+                         "title":  "feat(dashboard): soft-navigate tool switches so tool DOM survives (#816)",
+                         "timestamp":  "2026-11-10T22:36:30Z",
                          "environment":  "production"
                      }
                  ]
