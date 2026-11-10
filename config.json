@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-44f1600",
-                         "title":  "fix(chat): honour sender provenance on every surface that shows an author (#782)",
-                         "timestamp":  "2026-11-09T01:17:17Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-56f07c3",
                          "title":  "fix(engagement): resolve a claimed recurrence rule against its programme\u0027s ta...",
                          "timestamp":  "2026-11-09T02:54:23Z",
@@ -104,6 +98,12 @@
                          "version":  "build-cf18925",
                          "title":  "fix(workspaces): seed the shared agent checkout from the local mirror (#806)",
                          "timestamp":  "2026-11-10T08:28:46Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-d15ed30",
+                         "title":  "fix(workspaces): don\u0027t discard a hydrated checkout when a submodule LFS re-pu...",
+                         "timestamp":  "2026-11-10T10:44:51Z",
                          "environment":  "production"
                      }
                  ]
