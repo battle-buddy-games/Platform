@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-58faf01",
-                         "title":  "refactor(chat): port the Manage Participants band to a Blazor island (#792)",
-                         "timestamp":  "2026-11-10T03:48:16Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-54c4461",
                          "title":  "fix(host-agent): set AppKillProcessTree, not the non-existent AppStopMethodKi...",
                          "timestamp":  "2026-11-10T04:46:49Z",
@@ -104,6 +98,12 @@
                          "version":  "build-1b1196f",
                          "title":  "fix(tests): import the Persona namespace the intake test file needs (#814)",
                          "timestamp":  "2026-11-10T19:51:19Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-62c5083",
+                         "title":  "ci(pipeline): compile the .NET test assemblies on every pull request (#815)",
+                         "timestamp":  "2026-11-10T21:35:20Z",
                          "environment":  "production"
                      }
                  ]
