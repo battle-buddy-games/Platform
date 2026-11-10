@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0d41551",
-                         "title":  "fix(agent-desk): move the named-retirement members into AgentConversationChan...",
-                         "timestamp":  "2026-11-08T20:02:49Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-24add63",
                          "title":  "fix(agent-desk): retire pi-deepseek too, on the owner\u0027s direct disavowal (#772)",
                          "timestamp":  "2026-11-08T21:10:49Z",
@@ -104,6 +98,12 @@
                          "version":  "build-c2d2d2a",
                          "title":  "Release build-5505ad9: Create news Platform activity update — 2026-11-09 (20:...",
                          "timestamp":  "2026-11-09T22:32:10Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-58faf01",
+                         "title":  "refactor(chat): port the Manage Participants band to a Blazor island (#792)",
+                         "timestamp":  "2026-11-10T03:48:16Z",
                          "environment":  "production"
                      }
                  ]
