@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-24add63",
-                         "title":  "fix(agent-desk): retire pi-deepseek too, on the owner\u0027s direct disavowal (#772)",
-                         "timestamp":  "2026-11-08T21:10:49Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-b35f5bc",
                          "title":  "feat(agent-desk): record who initiated a launch, on its own column (#776)",
                          "timestamp":  "2026-11-08T22:04:09Z",
@@ -104,6 +98,12 @@
                          "version":  "build-58faf01",
                          "title":  "refactor(chat): port the Manage Participants band to a Blazor island (#792)",
                          "timestamp":  "2026-11-10T03:48:16Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-54c4461",
+                         "title":  "fix(host-agent): set AppKillProcessTree, not the non-existent AppStopMethodKi...",
+                         "timestamp":  "2026-11-10T04:46:49Z",
                          "environment":  "production"
                      }
                  ]
