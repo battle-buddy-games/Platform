@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2cb28d2",
-                         "title":  "fix(host-agent): keep the self-update /TR command under 261 chars (#802)",
-                         "timestamp":  "2026-11-10T05:29:59Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a6f737b",
                          "title":  "Create news Platform activity update — 2026-11-10 (05:32 UTC)",
                          "timestamp":  "2026-11-10T06:32:50Z",
@@ -104,6 +98,12 @@
                          "version":  "build-7e94ad8",
                          "title":  "feat(dashboard): soft-navigate tool switches so tool DOM survives (#816)",
                          "timestamp":  "2026-11-10T22:36:30Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-1750c34",
+                         "title":  "fix(sdk): give ResolveTargetsAsync the serving root it enumerates (#820)",
+                         "timestamp":  "2026-11-11T01:59:03Z",
                          "environment":  "production"
                      }
                  ]
