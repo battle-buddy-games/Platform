@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a6f737b",
-                         "title":  "Create news Platform activity update — 2026-11-10 (05:32 UTC)",
-                         "timestamp":  "2026-11-10T06:32:50Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-cf18925",
                          "title":  "fix(workspaces): seed the shared agent checkout from the local mirror (#806)",
                          "timestamp":  "2026-11-10T08:28:46Z",
@@ -104,6 +98,12 @@
                          "version":  "build-1750c34",
                          "title":  "fix(sdk): give ResolveTargetsAsync the serving root it enumerates (#820)",
                          "timestamp":  "2026-11-11T01:59:03Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-dd3780b",
+                         "title":  "fix(chat): build the role-picker element id as one local (#825)",
+                         "timestamp":  "2026-11-11T03:56:31Z",
                          "environment":  "production"
                      }
                  ]
