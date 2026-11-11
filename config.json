@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-cf18925",
-                         "title":  "fix(workspaces): seed the shared agent checkout from the local mirror (#806)",
-                         "timestamp":  "2026-11-10T08:28:46Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-d15ed30",
                          "title":  "fix(workspaces): don\u0027t discard a hydrated checkout when a submodule LFS re-pu...",
                          "timestamp":  "2026-11-10T10:44:51Z",
@@ -104,6 +98,12 @@
                          "version":  "build-dd3780b",
                          "title":  "fix(chat): build the role-picker element id as one local (#825)",
                          "timestamp":  "2026-11-11T03:56:31Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-a6b4594",
+                         "title":  "Build 3D Labelling Studio in Editors (#683)",
+                         "timestamp":  "2026-11-11T04:41:55Z",
                          "environment":  "production"
                      }
                  ]
