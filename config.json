@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-8f8ded9",
-                         "title":  "feat(assets-hub): Meshy model intake and triage in Library \u003e Uploads (#812)",
-                         "timestamp":  "2026-11-10T18:21:10Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1b1196f",
                          "title":  "fix(tests): import the Persona namespace the intake test file needs (#814)",
                          "timestamp":  "2026-11-10T19:51:19Z",
@@ -104,6 +98,12 @@
                          "version":  "build-2c9244b",
                          "title":  "fix(ci): retry the Release-Cloud build once when Roslyn dies of OOM (#831)",
                          "timestamp":  "2026-11-11T15:52:06Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-5bf19f2",
+                         "title":  "fix(ui): raise sub-floor text sizes and fix muted-text contrast in dashboard ...",
+                         "timestamp":  "2026-11-11T18:49:22Z",
                          "environment":  "production"
                      }
                  ]
