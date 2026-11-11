@@ -195,7 +195,7 @@ window.switchStatusTab = function switchStatusTab(tabName) {
   tabs.forEach(function(tab) {
     if (tab.getAttribute('data-tab') === tabName) {
       tab.classList.add('active');
-      tab.style.borderBottomColor = 'rgba(102, 126, 234, 0.9)';
+      tab.style.borderBottomColor = 'rgba(91, 141, 239, 0.9)';
       tab.style.color = 'rgba(255, 255, 255, 0.9)';
     } else {
       tab.classList.remove('active');
@@ -303,10 +303,10 @@ function renderReleasesFeed() {
     // Older releases - compact style
     return '<div style="padding: 6px 8px; background: rgba(255, 255, 255, 0.03); border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.06);">'
       + '<div style="display: flex; justify-content: space-between; align-items: center; gap: 4px;">'
-      + '<span style="font-size: 10px; font-family: monospace; color: rgba(102, 126, 234, 0.9); font-weight: 600; white-space: nowrap;">' + version + '</span>'
-      + (timeStr ? '<span style="font-size: 9px; color: rgba(255, 255, 255, 0.35); white-space: nowrap;">' + timeStr + '</span>' : '')
+      + '<span style="font-size: 11px; font-family: monospace; color: rgba(91, 141, 239, 0.9); font-weight: 600; white-space: nowrap;">' + version + '</span>'
+      + (timeStr ? '<span style="font-size: 11px; color: rgba(255, 255, 255, 0.35); white-space: nowrap;">' + timeStr + '</span>' : '')
       + '</div>'
-      + (displayTitle ? '<div style="font-size: 10px; color: rgba(255, 255, 255, 0.55); margin-top: 2px; line-height: 1.3; word-break: break-word;" title="' + title.replace(/"/g, '&quot;') + '">' + displayTitle + '</div>' : '')
+      + (displayTitle ? '<div style="font-size: 11px; color: rgba(255, 255, 255, 0.55); margin-top: 2px; line-height: 1.3; word-break: break-word;" title="' + title.replace(/"/g, '&quot;') + '">' + displayTitle + '</div>' : '')
       + '</div>';
   }).join('');
 }

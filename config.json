@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-df225a7",
-                         "title":  "feat(buddy-desktop): show other machines\u0027 workspaces in the tray (#811)",
-                         "timestamp":  "2026-11-10T16:25:41Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-8f8ded9",
                          "title":  "feat(assets-hub): Meshy model intake and triage in Library \u003e Uploads (#812)",
                          "timestamp":  "2026-11-10T18:21:10Z",
@@ -104,6 +98,12 @@
                          "version":  "build-d97dfeb",
                          "title":  "fix(ci): rebuild the EF check\u0027s assemblies when the build handoff is lost (#829)",
                          "timestamp":  "2026-11-11T15:11:31Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-2c9244b",
+                         "title":  "fix(ci): retry the Release-Cloud build once when Roslyn dies of OOM (#831)",
+                         "timestamp":  "2026-11-11T15:52:06Z",
                          "environment":  "production"
                      }
                  ]

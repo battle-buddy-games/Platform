@@ -104,7 +104,7 @@
         </div>
 
         <div class="button-group" style="margin-top: 24px;">
-          <button id="swInstallBtn" class="auth-button" onclick="doServiceWorkerInstall()" style="background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%); border: none; width: 100%;">
+          <button id="swInstallBtn" class="auth-button" onclick="doServiceWorkerInstall()" style="background: #2e7d32; border: none; width: 100%;">
             <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor;">
               <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
             </svg>
@@ -218,7 +218,7 @@
       <div class="status-panel" style="position: absolute; top: 80px; right: 100%; margin-right: 12px; min-width: 240px; max-width: 280px; background: rgba(26, 26, 46, 0.9); border-radius: 16px; padding: 24px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); opacity: 0.9; z-index: 1000;">
         <!-- Tab Bar -->
         <div class="status-panel-tabs" style="display: flex; gap: 0; margin-bottom: 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-          <button class="status-panel-tab active" data-tab="releases" onclick="switchStatusTab('releases')" style="flex: 1; padding: 8px 4px; background: none; border: none; border-bottom: 2px solid rgba(102, 126, 234, 0.9); color: rgba(255, 255, 255, 0.9); font-size: 12px; font-weight: 600; cursor: pointer; text-transform: uppercase; letter-spacing: 0.03em; transition: all 0.2s;">Releases</button>
+          <button class="status-panel-tab active" data-tab="releases" onclick="switchStatusTab('releases')" style="flex: 1; padding: 8px 4px; background: none; border: none; border-bottom: 2px solid rgba(91, 141, 239, 0.9); color: rgba(255, 255, 255, 0.9); font-size: 12px; font-weight: 600; cursor: pointer; text-transform: uppercase; letter-spacing: 0.03em; transition: all 0.2s;">Releases</button>
           <button class="status-panel-tab" data-tab="health" onclick="switchStatusTab('health')" style="flex: 1; padding: 8px 4px; background: none; border: none; border-bottom: 2px solid transparent; color: rgba(255, 255, 255, 0.45); font-size: 12px; font-weight: 600; cursor: pointer; text-transform: uppercase; letter-spacing: 0.03em; transition: all 0.2s;">Health</button>
         </div>
 
@@ -251,9 +251,9 @@
               </div>
               <div style="flex: 1; min-width: 0;">
                 <div style="font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, 0.9);">Cloud Service</div>
-                <div style="font-size: 9px; color: rgba(255, 255, 255, 0.4); margin-top: 1px;">cloud tunnel</div>
+                <div style="font-size: 11px; color: rgba(255, 255, 255, 0.4); margin-top: 1px;">cloud tunnel</div>
                 <div id="cloudServiceStatusText" style="font-size: 11px; color: rgba(255, 255, 255, 0.6); margin-top: 2px;">Checking...</div>
-                <div id="cloudServiceVersion" style="font-size: 9px; color: rgba(255, 255, 255, 0.4); margin-top: 2px; font-family: monospace;"></div>
+                <div id="cloudServiceVersion" style="font-size: 11px; color: rgba(255, 255, 255, 0.4); margin-top: 2px; font-family: monospace;"></div>
               </div>
             </div>
             <div id="agentStatusHealth" style="display: flex; align-items: center; gap: 8px; padding: 10px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
@@ -264,7 +264,7 @@
               </div>
               <div style="flex: 1; min-width: 0;">
                 <div style="font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, 0.9);">Agent Service</div>
-                <div style="font-size: 9px; color: rgba(255, 255, 255, 0.4); margin-top: 1px;">cloud tunnel</div>
+                <div style="font-size: 11px; color: rgba(255, 255, 255, 0.4); margin-top: 1px;">cloud tunnel</div>
                 <div id="agentStatusStatusText" style="font-size: 11px; color: rgba(255, 255, 255, 0.6); margin-top: 2px;">Checking...</div>
               </div>
             </div>
@@ -276,9 +276,9 @@
               </div>
               <div style="flex: 1; min-width: 0;">
                 <div style="font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, 0.9);">SignalR Service</div>
-                <div style="font-size: 9px; color: rgba(255, 255, 255, 0.4); margin-top: 1px;">unified with Cloud</div>
+                <div style="font-size: 11px; color: rgba(255, 255, 255, 0.4); margin-top: 1px;">unified with Cloud</div>
                 <div id="signalrStatusText" style="font-size: 11px; color: rgba(255, 255, 255, 0.6); margin-top: 2px;">Checking...</div>
-                <div id="signalrConnectionCount" style="font-size: 10px; color: rgba(255, 255, 255, 0.5); margin-top: 2px; display: none; font-weight: 500;">Connections: -</div>
+                <div id="signalrConnectionCount" style="font-size: 11px; color: rgba(255, 255, 255, 0.5); margin-top: 2px; display: none; font-weight: 500;">Connections: -</div>
               </div>
             </div>
           </div>

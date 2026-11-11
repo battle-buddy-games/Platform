@@ -50,7 +50,7 @@ iframe {
   width: 50px;
   height: 50px;
   border: 4px solid rgba(255, 255, 255, 0.1);
-  border-top-color: #667eea;
+  border-top-color: #5b8def;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 24px;
@@ -84,13 +84,13 @@ iframe {
   border-radius: 4px;
   font-family: 'Courier New', monospace;
   font-size: 14px;
-  color: #667eea;
+  color: #5b8def;
 }
 
 .retry-button {
   margin-top: 20px;
   padding: 12px 24px;
-  background: #667eea;
+  background: #2563eb;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -101,7 +101,7 @@ iframe {
 }
 
 .retry-button:hover {
-  background: #5568d3;
+  background: #1d4ed8;
 }
 
 /* The requested path, echoed back so the person can see what the retry will target. */
@@ -170,14 +170,14 @@ iframe {
 }
 
 .framed-failure-retry {
-  background: #667eea;
+  background: #2563eb;
   color: #ffffff;
-  border-color: #667eea;
+  border-color: #2563eb;
 }
 
 .framed-failure-retry:hover {
-  background: #5568d3;
-  border-color: #5568d3;
+  background: #1d4ed8;
+  border-color: #1d4ed8;
 }
 
 .framed-failure-dismiss {
@@ -204,7 +204,7 @@ iframe {
 
 .toast {
   background: rgba(26, 26, 46, 0.95);
-  border: 1px solid rgba(102, 126, 234, 0.3);
+  border: 1px solid rgba(91, 141, 239, 0.3);
   border-radius: 8px;
   padding: 16px 20px;
   min-width: 300px;
@@ -227,7 +227,7 @@ iframe {
 }
 
 .toast.info {
-  border-color: rgba(102, 126, 234, 0.5);
+  border-color: rgba(91, 141, 239, 0.5);
 }
 
 .toast-title {
@@ -274,7 +274,7 @@ iframe {
 
 .countdown-content {
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-  border: 1px solid rgba(102, 126, 234, 0.3);
+  border: 1px solid rgba(91, 141, 239, 0.3);
   border-radius: 12px;
   padding: 32px;
   text-align: center;
@@ -286,7 +286,7 @@ iframe {
 .countdown-content h2 {
   font-size: 24px;
   margin-bottom: 16px;
-  color: #667eea;
+  color: #5b8def;
 }
 
 .countdown-content p {
@@ -304,7 +304,7 @@ iframe {
 #countdownSeconds {
   font-weight: 700;
   font-size: 24px;
-  color: #667eea;
+  color: #5b8def;
 }
 
 .countdown-buttons {
@@ -315,9 +315,9 @@ iframe {
 
 .countdown-button {
   padding: 10px 24px;
-  border: 1px solid rgba(102, 126, 234, 0.3);
+  border: 1px solid rgba(91, 141, 239, 0.3);
   border-radius: 6px;
-  background: rgba(102, 126, 234, 0.1);
+  background: rgba(91, 141, 239, 0.1);
   color: #ffffff;
   font-size: 14px;
   font-weight: 600;
@@ -326,18 +326,18 @@ iframe {
 }
 
 .countdown-button:hover {
-  background: rgba(102, 126, 234, 0.2);
-  border-color: rgba(102, 126, 234, 0.5);
+  background: rgba(91, 141, 239, 0.2);
+  border-color: rgba(91, 141, 239, 0.5);
 }
 
 .countdown-button.primary {
-  background: #667eea;
-  border-color: #667eea;
+  background: #2563eb;
+  border-color: #2563eb;
 }
 
 .countdown-button.primary:hover {
-  background: #5568d3;
-  border-color: #5568d3;
+  background: #1d4ed8;
+  border-color: #1d4ed8;
 }
 
 /* Platform updating overlay styles */
@@ -371,15 +371,8 @@ iframe {
 }
 
 @keyframes gradient-shift {
-  0% { stop-color: #667eea; }
-  50% { stop-color: #a78bfa; }
-  100% { stop-color: #667eea; }
-}
-
-@keyframes ripple-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4); }
-  70% { box-shadow: 0 0 0 10px rgba(102, 126, 234, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0); }
+  0% { stop-color: #5b8def; }
+  100% { stop-color: #5b8def; }
 }
 
 .spinner-time {
@@ -389,7 +382,7 @@ iframe {
   transform: translate(-50%, -50%);
   font-size: 22px;
   font-weight: 700;
-  color: #667eea;
+  color: #5b8def;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.02em;
 }
@@ -430,7 +423,7 @@ iframe {
 }
 
 .bar-segment .bar-range {
-  font-size: 10px;
+  font-size: 11px;
   margin-top: 2px;
   white-space: nowrap;
   color: rgba(255, 255, 255, 0.4);
@@ -439,7 +432,7 @@ iframe {
 
 /* Segment colors */
 .seg-fast .bar-fill    { background: #4caf50; }
-.seg-normal .bar-fill  { background: #667eea; }
+.seg-normal .bar-fill  { background: #2563eb; }
 .seg-slow .bar-fill    { background: #ffc107; }
 .seg-concern .bar-fill { background: #ff9800; }
 .seg-problem .bar-fill { background: #ff6b6b; }
@@ -498,7 +491,7 @@ iframe {
 }
 
 .updating-extra-message a {
-  color: #667eea;
+  color: #5b8def;
   text-decoration: underline;
 }
 
@@ -569,17 +562,16 @@ iframe {
   height: 11px;
   min-width: 11px;
   border-radius: 50%;
-  background: rgba(102, 126, 234, 0.3);
-  border: 2px solid rgba(102, 126, 234, 0.5);
+  background: rgba(91, 141, 239, 0.3);
+  border: 2px solid rgba(91, 141, 239, 0.5);
   margin-top: 3px;
   position: relative;
   z-index: 1;
 }
 
 .timeline-entry.current .timeline-dot {
-  background: #667eea;
-  border-color: #667eea;
-  box-shadow: 0 0 8px rgba(102, 126, 234, 0.5);
+  background: #2563eb;
+  border-color: #2563eb;
 }
 
 .timeline-body {
@@ -595,7 +587,7 @@ iframe {
 }
 
 .timeline-entry.current .timeline-version {
-  color: #667eea;
+  color: #5b8def;
 }
 
 .timeline-title {
@@ -612,7 +604,7 @@ iframe {
 }
 
 .timeline-time {
-  font-size: 10px;
+  font-size: 11px;
   color: rgba(255, 255, 255, 0.3);
   white-space: nowrap;
   margin-top: 1px;
@@ -632,13 +624,7 @@ iframe {
 }
 
 .updating-content.state-warning .bar-segment.active .bar-fill {
-  box-shadow: 0 0 14px rgba(255, 193, 7, 0.3);
-}
-
-@keyframes ripple-pulse-warning {
-  0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4); }
-  70% { box-shadow: 0 0 0 10px rgba(255, 193, 7, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
 }
 
 /* Offline state */
@@ -660,13 +646,7 @@ iframe {
 }
 
 .updating-content.state-offline .bar-segment.active .bar-fill {
-  box-shadow: 0 0 14px rgba(255, 107, 107, 0.3);
-}
-
-@keyframes ripple-pulse-offline {
-  0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4); }
-  70% { box-shadow: 0 0 0 10px rgba(255, 107, 107, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
 }
 
 /* Consumer-side "how do I open this link" chooser. Fixed to the bottom-left so it never collides
@@ -679,7 +659,7 @@ iframe {
   z-index: 9500;
   max-width: 380px;
   background: rgba(26, 26, 46, 0.92);
-  border: 1px solid rgba(102, 126, 234, 0.3);
+  border: 1px solid rgba(91, 141, 239, 0.3);
   border-radius: 12px;
   padding: 16px 18px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
@@ -717,9 +697,9 @@ iframe {
 
 .consumer-chooser-button {
   padding: 8px 16px;
-  border: 1px solid rgba(102, 126, 234, 0.3);
+  border: 1px solid rgba(91, 141, 239, 0.3);
   border-radius: 6px;
-  background: rgba(102, 126, 234, 0.1);
+  background: rgba(91, 141, 239, 0.1);
   color: #ffffff;
   font-size: 13px;
   font-weight: 600;
@@ -728,25 +708,25 @@ iframe {
 }
 
 .consumer-chooser-button:hover {
-  background: rgba(102, 126, 234, 0.2);
-  border-color: rgba(102, 126, 234, 0.5);
+  background: rgba(91, 141, 239, 0.2);
+  border-color: rgba(91, 141, 239, 0.5);
 }
 
 /* Both chooser buttons are keyboard reachable; the default focus ring is suppressed elsewhere in
    this sheet, so restore an explicit one. */
 .consumer-chooser-button:focus-visible {
-  outline: 2px solid #a78bfa;
+  outline: 2px solid #8ab4f8;
   outline-offset: 2px;
 }
 
 .consumer-chooser-button.primary {
-  background: #667eea;
-  border-color: #667eea;
+  background: #2563eb;
+  border-color: #2563eb;
 }
 
 .consumer-chooser-button.primary:hover {
-  background: #5568d3;
-  border-color: #5568d3;
+  background: #1d4ed8;
+  border-color: #1d4ed8;
 }
 
 .consumer-chooser-button:disabled {
@@ -762,7 +742,7 @@ iframe {
 }
 
 .consumer-chooser-note a {
-  color: #667eea;
+  color: #5b8def;
   text-decoration: underline;
 }
 

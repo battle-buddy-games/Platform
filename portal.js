@@ -281,7 +281,7 @@ function showSignInLoopError() {
     const openLink = document.createElement('a');
     openLink.textContent = 'Open the platform directly';
     openLink.href = tunnelUrl;
-    openLink.setAttribute('style', 'display:inline-block;margin:8px;padding:10px 20px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;');
+    openLink.setAttribute('style', 'display:inline-block;margin:8px;padding:10px 20px;background:#2563eb;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;');
     actions.appendChild(openLink);
   }
 

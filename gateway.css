@@ -98,11 +98,11 @@
 }
 
 .auth-button.google {
-  background: #4285f4;
+  background: #1565c0;
 }
 
 .auth-button.google:hover {
-  background: #357ae8;
+  background: #0d47a1;
 }
 
 .auth-button.discord {
@@ -411,30 +411,30 @@ body .quick-links-panel {
 
 .status-panel-tab.active {
   color: rgba(255, 255, 255, 0.9) !important;
-  border-bottom-color: rgba(102, 126, 234, 0.9) !important;
+  border-bottom-color: rgba(91, 141, 239, 0.9) !important;
 }
 
 /* Active Release Card */
 .release-card-active {
   padding: 10px;
-  background: rgba(102, 126, 234, 0.08);
+  background: rgba(91, 141, 239, 0.08);
   border-radius: 8px;
-  border: 1px solid rgba(102, 126, 234, 0.25);
+  border: 1px solid rgba(91, 141, 239, 0.25);
 }
 
 .release-card-active .release-active-label {
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: rgba(102, 126, 234, 0.85);
+  color: rgba(91, 141, 239, 0.85);
   margin-bottom: 4px;
 }
 
 .release-card-active .release-version {
   font-size: 12px;
   font-family: monospace;
-  color: rgba(102, 126, 234, 0.95);
+  color: rgba(91, 141, 239, 0.95);
   font-weight: 700;
 }
 
@@ -455,7 +455,7 @@ body .quick-links-panel {
 }
 
 .release-card-active .release-time {
-  font-size: 9px;
+  font-size: 11px;
   color: rgba(255, 255, 255, 0.35);
 }
 
@@ -465,7 +465,7 @@ body .quick-links-panel {
   gap: 4px;
   padding: 2px 7px;
   border-radius: 10px;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
