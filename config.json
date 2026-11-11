@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d15ed30",
-                         "title":  "fix(workspaces): don\u0027t discard a hydrated checkout when a submodule LFS re-pu...",
-                         "timestamp":  "2026-11-10T10:44:51Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-ae3a2c7",
                          "title":  "fix(chat): keep the hide-header control in the rail\u0027s control cluster (#810)",
                          "timestamp":  "2026-11-10T15:33:02Z",
@@ -104,6 +98,12 @@
                          "version":  "build-a6b4594",
                          "title":  "Build 3D Labelling Studio in Editors (#683)",
                          "timestamp":  "2026-11-11T04:41:55Z",
+                         "environment":  "production"
+                     },
+                     {
+                         "version":  "build-434e3f6",
+                         "title":  "fix(deploy): auto-revert a failed production update, and un-red the daily hea...",
+                         "timestamp":  "2026-11-11T14:27:26Z",
                          "environment":  "production"
                      }
                  ]
