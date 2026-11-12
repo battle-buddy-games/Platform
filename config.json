@@ -174,7 +174,7 @@
                          "title":  "refactor(chat): port the session linkage strip to a Blazor WASM island (band ...",
                          "timestamp":  "2026-11-12T17:44:12Z",
                          "environment":  "production",
-                         "status":  "deploying"
+                         "status":  "failed"
                      }
                  ]
 }
