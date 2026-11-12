@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-62c5083",
-                         "title":  "ci(pipeline): compile the .NET test assemblies on every pull request (#815)",
-                         "timestamp":  "2026-11-10T21:35:20Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-7e94ad8",
                          "title":  "feat(dashboard): soft-navigate tool switches so tool DOM survives (#816)",
                          "timestamp":  "2026-11-10T22:36:30Z",
@@ -174,6 +168,13 @@
                          "version":  "build-28b75d6",
                          "title":  "refactor(chat): move the derived agent-activity status into C# (band 21) (#926)",
                          "timestamp":  "2026-11-12T18:46:30Z",
+                         "environment":  "production",
+                         "status":  "failed"
+                     },
+                     {
+                         "version":  "build-b71c261",
+                         "title":  "ci: use the shared compiler everywhere, and cover the hang it guarded (#927)",
+                         "timestamp":  "2026-11-12T19:14:15Z",
                          "environment":  "production",
                          "status":  "deploying"
                      }
