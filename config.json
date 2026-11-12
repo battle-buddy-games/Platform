@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://funny-tribes-bryan-key.trycloudflare.com"
+                                  "address":  "https://expected-testing-critical-advances.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
