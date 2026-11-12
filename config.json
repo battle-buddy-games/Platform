@@ -140,6 +140,13 @@
                          "timestamp":  "2026-11-12T08:04:39Z",
                          "environment":  "production",
                          "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-c06a5bd",
+                         "title":  "refactor(user-accounts): port the API tokens and cloud saves tabs to Blazor i...",
+                         "timestamp":  "2026-11-12T09:21:22Z",
+                         "environment":  "production",
+                         "status":  "failed"
                      }
                  ]
 }
