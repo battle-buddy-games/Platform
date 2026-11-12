@@ -153,7 +153,14 @@
                          "title":  "refactor(chat): port the plugin panel\u0027s git dropdown to a Blazor WASM island ...",
                          "timestamp":  "2026-11-12T11:07:01Z",
                          "environment":  "production",
-                         "status":  "deploying"
+                         "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-0e2c562",
+                         "title":  "fix(build): bump the Logging pins to 9.0.22 so the test projects restore (#922)",
+                         "timestamp":  "2026-11-12T11:54:43Z",
+                         "environment":  "production",
+                         "status":  "deployed"
                      }
                  ]
 }
