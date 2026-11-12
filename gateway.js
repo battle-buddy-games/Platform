@@ -249,6 +249,98 @@ function updateActiveReleaseHealthBadge() {
   badge.innerHTML = '<span class="release-health-dot"></span>' + state.label;
 }
 
+// Release entries carry a lifecycle status once the pipeline started writing them at run
+// start: the announce-release job writes "deploying", finalize-release rewrites it to
+// "deployed" or "failed". Rows written before that carry no status at all -- they were only
+// ever appended by the pre-deploy job, immediately before a deploy, so a missing status means
+// "deployed". getReleaseStatus() itself lives in gateway-shared.js because portal.js needs it too.
+function escapeReleaseHtml(value) {
+  return String(value === null || value === undefined ? '' : value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// "5m ago" / "3h ago" / "2d ago" for a release timestamp
+function formatReleaseAge(ts) {
+  if (!ts || isNaN(ts.getTime())) return '';
+  const diffMs = Date.now() - ts.getTime();
+  const diffMin = Math.floor(diffMs / 60000);
+  const diffHr = Math.floor(diffMs / 3600000);
+  const diffDay = Math.floor(diffMs / 86400000);
+  if (diffMin < 1) return 'just now';
+  if (diffMin < 60) return diffMin + 'm ago';
+  if (diffHr < 24) return diffHr + 'h ago';
+  return diffDay + 'd ago';
+}
+
+function truncateReleaseTitle(title) {
+  return title.length > 50 ? title.substring(0, 47) + '...' : title;
+}
+
+// An update that is rolling out right now -- the row that used to be missing entirely,
+// because config.json had no entry for it until pre-deploy ran.
+function renderReleaseInFlight(rel) {
+  const version = escapeReleaseHtml(rel.version || 'unknown');
+  const title = rel.title || '';
+  const displayTitle = truncateReleaseTitle(title);
+  const timeStr = formatReleaseAge(rel.timestamp ? new Date(rel.timestamp) : null);
+
+  return '<div style="padding: 8px; margin-bottom: 6px; background: rgba(91, 141, 239, 0.12); border-radius: 8px; border: 1px solid rgba(91, 141, 239, 0.45);">'
+    + '<div style="display: flex; justify-content: space-between; align-items: center; gap: 4px;">'
+    + '<span style="font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(91, 141, 239, 0.95);">In progress</span>'
+    + (timeStr ? '<span style="font-size: 11px; color: rgba(255, 255, 255, 0.45); white-space: nowrap;">' + timeStr + '</span>' : '')
+    + '</div>'
+    + '<div style="font-size: 11px; font-family: monospace; color: rgba(255, 255, 255, 0.9); font-weight: 600; margin-top: 2px;">' + version + '</div>'
+    + (displayTitle ? '<div style="font-size: 11px; color: rgba(255, 255, 255, 0.7); margin-top: 2px; line-height: 1.3; word-break: break-word;" title="' + escapeReleaseHtml(title) + '">' + escapeReleaseHtml(displayTitle) + '</div>' : '')
+    + '<div style="font-size: 11px; color: rgba(255, 255, 255, 0.5); margin-top: 3px;">Deploying now &mdash; the platform may be briefly unavailable.</div>'
+    + '</div>';
+}
+
+function renderActiveRelease(rel) {
+  const version = escapeReleaseHtml(rel.version || 'unknown');
+  const title = rel.title || '';
+  const displayTitle = truncateReleaseTitle(title);
+  const timeStr = formatReleaseAge(rel.timestamp ? new Date(rel.timestamp) : null);
+  const state = getHealthBadgeState();
+
+  return '<div class="release-card-active">'
+    + '<div class="release-active-label">Active Release</div>'
+    + '<div class="release-version">' + version + '</div>'
+    + (displayTitle ? '<div class="release-title" title="' + escapeReleaseHtml(title) + '">' + escapeReleaseHtml(displayTitle) + '</div>' : '')
+    + '<div class="release-meta">'
+    + (timeStr ? '<span class="release-time">' + timeStr + '</span>' : '<span></span>')
+    + '<span id="activeReleaseHealthBadge" class="release-health-badge ' + state.cssClass + '"><span class="release-health-dot"></span>' + state.label + '</span>'
+    + '</div>'
+    + '</div>';
+}
+
+function renderReleaseHistoryRow(rel) {
+  const version = escapeReleaseHtml(rel.version || 'unknown');
+  const title = rel.title || '';
+  const displayTitle = truncateReleaseTitle(title);
+  const timeStr = formatReleaseAge(rel.timestamp ? new Date(rel.timestamp) : null);
+  const status = getReleaseStatus(rel);
+
+  // Only a non-deployed status needs calling out; "deployed" is the unspoken default.
+  let tag = '';
+  if (status === 'failed') {
+    tag = '<span style="font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255, 140, 140, 0.9);">Failed</span>';
+  } else if (status === 'deploying') {
+    tag = '<span style="font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255, 255, 255, 0.35);">Superseded</span>';
+  }
+
+  return '<div style="padding: 6px 8px; background: rgba(255, 255, 255, 0.03); border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.06);">'
+    + '<div style="display: flex; justify-content: space-between; align-items: center; gap: 4px;">'
+    + '<span style="font-size: 11px; font-family: monospace; color: rgba(91, 141, 239, 0.9); font-weight: 600; white-space: nowrap;">' + version + '</span>'
+    + tag
+    + (timeStr ? '<span style="font-size: 11px; color: rgba(255, 255, 255, 0.35); white-space: nowrap;">' + timeStr + '</span>' : '')
+    + '</div>'
+    + (displayTitle ? '<div style="font-size: 11px; color: rgba(255, 255, 255, 0.55); margin-top: 2px; line-height: 1.3; word-break: break-word;" title="' + escapeReleaseHtml(title) + '">' + escapeReleaseHtml(displayTitle) + '</div>' : '')
+    + '</div>';
+}
+
 // Render recent releases feed in the status panel
 function renderReleasesFeed() {
   const container = document.getElementById('releasesFeedContainer');
@@ -260,55 +352,39 @@ function renderReleasesFeed() {
     return;
   }
 
-  // Show last 5 releases, newest first
-  const recent = releases.slice(-5).reverse();
-  const now = Date.now();
+  // The newest entry can be an update that is still rolling out. "Active Release" has to stay
+  // the newest entry that is actually LIVE, so find that first: anything recorded after it is
+  // in flight, anything before it is history.
+  let activeIndex = -1;
+  for (let i = releases.length - 1; i >= 0; i--) {
+    if (getReleaseStatus(releases[i]) === 'deployed') { activeIndex = i; break; }
+  }
 
-  container.innerHTML = recent.map(function(rel, index) {
-    const version = rel.version || 'unknown';
-    const title = rel.title || '';
-    const ts = rel.timestamp ? new Date(rel.timestamp) : null;
-    const isActive = index === 0;
+  const parts = [];
 
-    // Format relative time
-    let timeStr = '';
-    if (ts && !isNaN(ts.getTime())) {
-      const diffMs = now - ts.getTime();
-      const diffMin = Math.floor(diffMs / 60000);
-      const diffHr = Math.floor(diffMs / 3600000);
-      const diffDay = Math.floor(diffMs / 86400000);
-      if (diffMin < 1) timeStr = 'just now';
-      else if (diffMin < 60) timeStr = diffMin + 'm ago';
-      else if (diffHr < 24) timeStr = diffHr + 'h ago';
-      else timeStr = diffDay + 'd ago';
-    }
+  if (activeIndex === -1) {
+    // Nothing recorded as deployed yet (a brand-new feed). Keep the old shape: newest first,
+    // no active card, so the panel still says something useful.
+    releases.slice(-5).reverse().forEach(function(rel) {
+      parts.push(getReleaseStatus(rel) === 'deploying' ? renderReleaseInFlight(rel) : renderReleaseHistoryRow(rel));
+    });
+    container.innerHTML = parts.join('');
+    return;
+  }
 
-    // Truncate long titles
-    const displayTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
+  // In-flight rows sit ABOVE the active card: during an outage the gateway's whole job is to
+  // name the update that is happening right now, not the last one that finished.
+  releases.slice(activeIndex + 1).reverse().forEach(function(rel) {
+    parts.push(getReleaseStatus(rel) === 'deploying' ? renderReleaseInFlight(rel) : renderReleaseHistoryRow(rel));
+  });
 
-    if (isActive) {
-      // Active release - prominent card with health badge
-      var state = getHealthBadgeState();
-      return '<div class="release-card-active">'
-        + '<div class="release-active-label">Active Release</div>'
-        + '<div class="release-version">' + version + '</div>'
-        + (displayTitle ? '<div class="release-title" title="' + title.replace(/"/g, '&quot;') + '">' + displayTitle + '</div>' : '')
-        + '<div class="release-meta">'
-        + (timeStr ? '<span class="release-time">' + timeStr + '</span>' : '<span></span>')
-        + '<span id="activeReleaseHealthBadge" class="release-health-badge ' + state.cssClass + '"><span class="release-health-dot"></span>' + state.label + '</span>'
-        + '</div>'
-        + '</div>';
-    }
+  parts.push(renderActiveRelease(releases[activeIndex]));
 
-    // Older releases - compact style
-    return '<div style="padding: 6px 8px; background: rgba(255, 255, 255, 0.03); border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.06);">'
-      + '<div style="display: flex; justify-content: space-between; align-items: center; gap: 4px;">'
-      + '<span style="font-size: 11px; font-family: monospace; color: rgba(91, 141, 239, 0.9); font-weight: 600; white-space: nowrap;">' + version + '</span>'
-      + (timeStr ? '<span style="font-size: 11px; color: rgba(255, 255, 255, 0.35); white-space: nowrap;">' + timeStr + '</span>' : '')
-      + '</div>'
-      + (displayTitle ? '<div style="font-size: 11px; color: rgba(255, 255, 255, 0.55); margin-top: 2px; line-height: 1.3; word-break: break-word;" title="' + title.replace(/"/g, '&quot;') + '">' + displayTitle + '</div>' : '')
-      + '</div>';
-  }).join('');
+  releases.slice(0, activeIndex).reverse().slice(0, 4).forEach(function(rel) {
+    parts.push(renderReleaseHistoryRow(rel));
+  });
+
+  container.innerHTML = parts.join('');
 }
 
 // Save original sign-in HTML on page load

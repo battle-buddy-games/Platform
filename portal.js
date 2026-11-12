@@ -707,12 +707,22 @@ function renderUpdatesTimeline() {
 
   // Show most recent 5 releases, newest first
   const recent = releases.slice(-5).reverse();
-  const latestVersion = recent[0] ? recent[0].version : null;
+
+  // The newest entry can be an update that is still rolling out, so "current" has to mean the
+  // newest entry that is actually LIVE rather than simply index 0. Anything recorded after it is
+  // in flight and is called out as such below.
+  let currentVersion = null;
+  for (let i = 0; i < recent.length; i++) {
+    if (getReleaseStatus(recent[i]) === 'deployed') { currentVersion = recent[i].version; break; }
+  }
 
   entriesEl.innerHTML = '';
   recent.forEach((release) => {
+    const status = getReleaseStatus(release);
     const entry = document.createElement('div');
-    entry.className = 'timeline-entry' + (release.version === latestVersion ? ' current' : '');
+    entry.className = 'timeline-entry'
+      + (release.version === currentVersion ? ' current' : '')
+      + (status === 'deploying' ? ' deploying' : '');
 
     const dot = document.createElement('div');
     dot.className = 'timeline-dot';
@@ -732,6 +742,11 @@ function renderUpdatesTimeline() {
     const time = document.createElement('div');
     time.className = 'timeline-time';
     time.textContent = formatReleaseTime(release.timestamp);
+    if (status === 'deploying') {
+      time.textContent += ' · deploying now';
+    } else if (status === 'failed') {
+      time.textContent += ' · did not deploy';
+    }
 
     body.appendChild(version);
     body.appendChild(title);

@@ -15,6 +15,17 @@ if (typeof CONFIG === 'undefined') {
   };
 }
 
+// Lifecycle status of a CONFIG.releases entry.
+//
+// The pipeline's announce-release job records an entry with status "deploying" as soon as a
+// production run starts, and finalize-release rewrites it to "deployed" or "failed" once Deploy
+// Production reaches a terminal state. Entries written before that scheme carry no status at all
+// -- they were only ever appended by the pre-deploy job, moments before a deploy -- so a missing
+// status means "deployed". Shared by gateway.js and portal.js.
+function getReleaseStatus(rel) {
+  return (rel && rel.status) ? rel.status : 'deployed';
+}
+
 // Load configuration from config.json
 async function loadConfig() {
   try {
