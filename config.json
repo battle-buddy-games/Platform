@@ -147,6 +147,13 @@
                          "timestamp":  "2026-11-12T09:21:22Z",
                          "environment":  "production",
                          "status":  "deploying"
+                     },
+                     {
+                         "version":  "build-66217ba",
+                         "title":  "refactor(chat): port the plugin panel\u0027s git dropdown to a Blazor WASM island ...",
+                         "timestamp":  "2026-11-12T11:07:01Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
