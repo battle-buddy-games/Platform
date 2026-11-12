@@ -107,16 +107,6 @@ function storeGatewayToken(token) {
   }
 }
 
-// Get gateway token from localStorage
-function getGatewayToken() {
-  try {
-    return localStorage.getItem(GATEWAY_TOKEN_KEY);
-  } catch (error) {
-    console.error('Failed to get gateway token:', error);
-    return null;
-  }
-}
-
 // Clean URL by removing sensitive parameters
 function cleanUrl() {
   try {

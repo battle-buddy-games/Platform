@@ -625,6 +625,103 @@ iframe {
   margin-top: 1px;
 }
 
+/* Release history peek, shown while the space bar is held.
+   Top-LEFT: toasts own the top-right corner and the updating overlay is centred, so this is the
+   one corner free of both. Fixed rather than absolute so it does not depend on page scroll, and
+   pointer-events:none so a panel you cannot click never eats a click meant for the page under it. */
+.history-panel {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  min-width: 220px;
+  max-width: 260px;
+  padding: 20px 22px;
+  background: rgba(26, 26, 46, 0.92);
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 10000;
+  pointer-events: none;
+}
+
+.history-panel-title {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.history-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.history-empty {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.history-entry {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.history-entry-dot {
+  width: 7px;
+  height: 7px;
+  min-width: 7px;
+  border-radius: 50%;
+  background: rgba(91, 141, 239, 0.3);
+  align-self: center;
+}
+
+.history-entry.current .history-entry-dot {
+  background: #2563eb;
+}
+
+.history-entry.deploying .history-entry-dot {
+  background: #f59e0b;
+  animation: timeline-deploying-pulse 1.6s ease-in-out infinite;
+}
+
+.history-entry.failed .history-entry-dot {
+  background: #ef4444;
+}
+
+.history-entry-body {
+  min-width: 0;
+}
+
+.history-entry-version {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Courier New', monospace;
+}
+
+.history-entry.current .history-entry-version {
+  color: #5b8def;
+}
+
+.history-entry.deploying .history-entry-version {
+  color: #f59e0b;
+}
+
+.history-entry.failed .history-entry-version {
+  color: #ef4444;
+}
+
+.history-entry-meta {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.32);
+  margin-top: 1px;
+}
+
 /* Warning state */
 .updating-content.state-warning .spinner-arc {
   stroke: #ffc107;

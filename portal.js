@@ -675,15 +675,11 @@ let isCountdownPaused = false;
 let currentTunnelAddress = '';
 
 // Connection failure retry system
-let retryCountdownInterval = null;
-let retryCountdownSeconds = 10;
-let isRetryPaused = false;
 let connectionFailureDetected = false;
 
 // Platform updating staged countdown system
 let updatingTimerInterval = null;
 let updatingStartTime = null;       // When the updating flow started
-let updatingTotalSeconds = 300;     // Current estimate in seconds (starts at 5 min)
 let updatingElapsedSeconds = 0;     // How many seconds have elapsed
 const UPDATING_STAGES = [
   { threshold: 0,    label: 'Platform Updating',         state: 'updating', barIndex: 0 },   // Fast: 0-2 min
@@ -1140,20 +1136,6 @@ async function pollConfigAndHealth() {
   }
 }
 
-// Start polling when 404 is detected
-function startPolling() {
-  if (pollingInterval) return; // Already polling
-  
-  console.log('Starting config polling...');
-  showToast('Page Not Found', 'Searching for a new tunnel address...', 'error');
-  
-  // Poll every 5 seconds
-  pollingInterval = setInterval(pollConfigAndHealth, 5000);
-  
-  // Also poll immediately
-  pollConfigAndHealth();
-}
-
 // Start polling specifically for cloud address (used when connection fails)
 function startPollingForCloudAddress() {
   if (pollingInterval) return; // Already polling
@@ -1431,12 +1413,6 @@ function retryConnection() {
   const overlay = document.getElementById('connectionFailureOverlay');
   if (overlay) {
     overlay.classList.add('hidden');
-  }
-
-  // Clear retry countdown
-  if (retryCountdownInterval) {
-    clearInterval(retryCountdownInterval);
-    retryCountdownInterval = null;
   }
 
   // Reset flags and clear persisted failure state
@@ -1923,11 +1899,6 @@ function showLoadingError(failureKind) {
   overlay.classList.remove('hidden');
 }
 
-// Manual retry from the error button
-function manualRetryLoading() {
-  retryRequestedPage(requestedSubpagePath());
-}
-
 // ---------------------------------------------------------------------------
 // Framed platform-failure recovery
 // ---------------------------------------------------------------------------
@@ -2322,10 +2293,6 @@ async function loadTunnel() {
       if (failureOverlay) {
         failureOverlay.classList.add('hidden');
       }
-      if (retryCountdownInterval) {
-        clearInterval(retryCountdownInterval);
-        retryCountdownInterval = null;
-      }
     }
 
     // Check if iframe navigated to gateway.html
@@ -2634,45 +2601,122 @@ async function loadTunnel() {
   });
 }
 
-// Space bar detection for showing history panel
+// How many release entries the peek panel lists before summarising the rest.
+const HISTORY_PANEL_LIMIT = 12;
+
+// Space bar peeks at the release history. Holding space shows it, releasing puts it away.
 function initSpaceBarHoldDetection() {
   document.addEventListener('keydown', function(e) {
-    // Only trigger if space is pressed and not in an input field
-    if (e.key === ' ' || e.key === 'Spacebar') {
-      const target = e.target;
-      // Space activates a focused button/link natively and scrolls the page elsewhere, so it is
-      // only ours to take when the focus is on nothing interactive.
-      const isInteractive = target.isContentEditable ||
-        /^(INPUT|TEXTAREA|SELECT|BUTTON|A|SUMMARY)$/.test(target.tagName || '') ||
-        (typeof target.closest === 'function' && target.closest('[role="button"]'));
+    if (e.key !== ' ' && e.key !== 'Spacebar') return;
 
-      if (!isInteractive) {
-        e.preventDefault(); // Prevent page scroll
-        
-        // Show history panel immediately
-        showHistoryPanel();
-      }
-    }
+    const target = e.target;
+    // Space activates a focused button/link natively and scrolls the page elsewhere, so it is
+    // only ours to take when the focus is on nothing interactive.
+    const isInteractive = target.isContentEditable ||
+      /^(INPUT|TEXTAREA|SELECT|BUTTON|A|SUMMARY)$/.test(target.tagName || '') ||
+      (typeof target.closest === 'function' && target.closest('[role="button"]'));
+
+    if (isInteractive) return;
+
+    e.preventDefault(); // Prevent page scroll
+    if (e.repeat) return; // Key held down: the panel is already up
+    showHistoryPanel();
   });
+
+  document.addEventListener('keyup', function(e) {
+    if (e.key === ' ' || e.key === 'Spacebar') hideHistoryPanel();
+  });
+
+  // Space released while another window has focus never reaches us as a keyup, which would
+  // leave the panel stuck on screen.
+  window.addEventListener('blur', hideHistoryPanel);
 }
 
-// Show history panel
 function showHistoryPanel() {
   const historyPanel = document.querySelector('.history-panel');
-  if (historyPanel) {
-    historyPanel.style.display = 'block';
-    // Render history content
-    if (typeof renderHistoryPanel === 'function') {
-      renderHistoryPanel();
-    }
-  }
+  if (!historyPanel) return;
+
+  renderHistoryPanel();
+  historyPanel.style.display = 'block';
+  historyPanel.setAttribute('aria-hidden', 'false');
 }
 
-// Hide history panel
 function hideHistoryPanel() {
   const historyPanel = document.querySelector('.history-panel');
-  if (historyPanel) {
-    historyPanel.style.display = 'none';
+  if (!historyPanel) return;
+
+  historyPanel.style.display = 'none';
+  historyPanel.setAttribute('aria-hidden', 'true');
+}
+
+// Fill the peek panel from CONFIG.releases -- the same feed the "Recent Updates" timeline uses,
+// which stops at five entries. Nothing here fetches; before CONFIG lands the panel says so.
+function renderHistoryPanel() {
+  const container = document.getElementById('historyContainer');
+  if (!container) return;
+
+  const releases = (CONFIG && Array.isArray(CONFIG.releases)) ? CONFIG.releases : [];
+
+  while (container.firstChild) container.removeChild(container.firstChild);
+
+  if (releases.length === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'history-empty';
+    empty.textContent = 'No releases recorded yet';
+    container.appendChild(empty);
+    return;
+  }
+
+  // Newest first. "Current" is the newest entry that is actually LIVE rather than simply the
+  // newest: anything recorded after it is still rolling out.
+  const ordered = releases.slice().reverse();
+  let currentVersion = null;
+  for (const rel of ordered) {
+    if (getReleaseStatus(rel) === 'deployed') { currentVersion = rel.version; break; }
+  }
+
+  const shown = ordered.slice(0, HISTORY_PANEL_LIMIT);
+
+  for (const rel of shown) {
+    const status = getReleaseStatus(rel);
+
+    const entry = document.createElement('div');
+    entry.className = 'history-entry'
+      + (rel.version === currentVersion ? ' current' : '')
+      + (status === 'deploying' ? ' deploying' : '')
+      + (status === 'failed' ? ' failed' : '');
+
+    const dot = document.createElement('span');
+    dot.className = 'history-entry-dot';
+
+    const body = document.createElement('div');
+    body.className = 'history-entry-body';
+
+    const version = document.createElement('div');
+    version.className = 'history-entry-version';
+    version.textContent = rel.version || 'unknown';
+
+    let metaText = formatReleaseTime(rel.timestamp);
+    if (status === 'deploying') metaText = metaText ? metaText + ' / deploying now' : 'deploying now';
+    else if (status === 'failed') metaText = metaText ? metaText + ' / did not deploy' : 'did not deploy';
+
+    const meta = document.createElement('div');
+    meta.className = 'history-entry-meta';
+    meta.textContent = metaText;
+
+    body.appendChild(version);
+    body.appendChild(meta);
+    entry.appendChild(dot);
+    entry.appendChild(body);
+    container.appendChild(entry);
+  }
+
+  const hidden = ordered.length - shown.length;
+  if (hidden > 0) {
+    const more = document.createElement('div');
+    more.className = 'history-empty';
+    more.textContent = hidden + (hidden === 1 ? ' earlier update' : ' earlier updates');
+    container.appendChild(more);
   }
 }
 

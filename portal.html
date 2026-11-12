@@ -117,14 +117,10 @@
     </div>
   </div>
 
-  <!-- History Panel (shown when holding space) -->
-  <div class="history-panel" style="display: none; position: absolute; top: 80px; right: 100%; margin-right: 12px; min-width: 220px; max-width: 260px; background: rgba(26, 26, 46, 0.9); border-radius: 16px; padding: 24px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); opacity: 0.9; z-index: 10000;">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-      <h3 style="margin: 0; font-size: 14px; font-weight: 600; color: rgba(255, 255, 255, 0.85); letter-spacing: 0.03em; text-transform: uppercase;">History</h3>
-    </div>
-    <div id="historyContainer" style="display: flex; flex-direction: column; gap: 8px;">
-      <!-- History entries will be rendered here -->
-    </div>
+  <!-- Release history peek, held open with the space bar (initSpaceBarHoldDetection). -->
+  <div class="history-panel" style="display: none;" role="dialog" aria-label="Release history" aria-hidden="true">
+    <h3 class="history-panel-title">History</h3>
+    <div id="historyContainer" class="history-container"></div>
   </div>
 
   <script src="./gateway-shared.js"></script>

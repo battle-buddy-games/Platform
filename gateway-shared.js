@@ -222,39 +222,6 @@ function generateState() {
   return `${randomHex}-${timestamp}-${randomSuffix}`;
 }
 
-// Generate state with provider encoded in it
-// Format: {provider}:{randomState} - this way provider is preserved through OAuth redirect
-// 
-// NOTE: This is only used for GitHub OAuth, which redirects directly to gateway-callback.html.
-// GitHub supports custom state parameters per OAuth 2.0 spec (RFC 6749) - providers MUST return
-// the state parameter unchanged. Google/Discord/Steam go through the backend first, so the
-// backend knows the provider and includes it in the redirect to gateway-callback.html.
-function generateStateWithProvider(provider) {
-  const randomState = generateState();
-  return `${provider}:${randomState}`;
-}
-
-// Extract provider and state from encoded state parameter
-// Returns { provider: string, state: string } or null if invalid
-// 
-// This is used to identify the OAuth provider when GitHub redirects directly with code/state.
-// The state format is: "github:{randomState}" where randomState is the CSRF token.
-function parseStateWithProvider(encodedState) {
-  if (!encodedState || typeof encodedState !== 'string') {
-    return null;
-  }
-  
-  const parts = encodedState.split(':');
-  if (parts.length !== 2) {
-    return null;
-  }
-  
-  return {
-    provider: parts[0],
-    state: parts[1]
-  };
-}
-
 // Error Modal Functions
 let currentErrorText = '';
 

@@ -1951,18 +1951,6 @@ function storeToken(token) {
   return addRememberedToken(token);
 }
 
-// Remove stored authentication token (backward compatibility - removes all)
-function removeStoredToken() {
-  try {
-    localStorage.removeItem(REMEMBERED_TOKENS_KEY);
-    console.log('All tokens removed successfully');
-    return true;
-  } catch (e) {
-    console.warn('Failed to remove stored tokens:', e);
-    return false;
-  }
-}
-
 // Calculate days old
 function getDaysOld(dateString) {
   const date = new Date(dateString);
@@ -2651,101 +2639,11 @@ window.handleSignInWithStoredToken = function handleSignInWithStoredToken() {
   signInWithRememberedToken(mostRecentToken.id);
 };
 
-// Auto sign-in with countdown
-let countdownInterval = null;
-let countdownTimeout = null;
-
-function startAutoSignIn() {
-  // Check if skip countdown is enabled
-  const skipCountdown = localStorage.getItem('skipCountdown') === 'true';
-  if (skipCountdown) {
-    console.log('Skip countdown enabled, redirecting immediately...');
-    // Redirect based on preferPortal setting
-    const preferPortal = localStorage.getItem('preferPortal') !== 'false';
-    const productionTunnel = getTunnelForPreferredEnvironment() || CONFIG.cloudflareTunnels?.find(t => t.name === 'cloud');
-    if (preferPortal) {
-      if (productionTunnel && productionTunnel.address) {
-        const cleanTunnelUrl = productionTunnel.address.replace(/\/$/, '');
-        const portalUrl = new URL('./portal.html', window.location.href);
-        portalUrl.searchParams.set('tunnelUrl', cleanTunnelUrl);
-        window.location.href = portalUrl.toString();
-      } else {
-        window.location.href = './portal.html';
-      }
-    } else {
-      if (productionTunnel && productionTunnel.address) {
-        const cleanTunnelUrl = productionTunnel.address.replace(/\/$/, '');
-        window.location.href = cleanTunnelUrl;
-      } else {
-        window.location.href = './portal.html';
-      }
-    }
-    return;
-  }
-
-  const previousSignInContainer = document.getElementById('previousSignInContainer');
-  const noSignInContainer = document.getElementById('noSignInContainer');
-  const countdownText = document.getElementById('countdownText');
-
-  if (!previousSignInContainer || !noSignInContainer || !countdownText) {
-    return;
-  }
-
-  // Show countdown container, hide sign-in options
-  previousSignInContainer.style.display = 'block';
-  noSignInContainer.style.display = 'none';
-
-  let countdown = 5;
-  countdownText.textContent = countdown.toString();
-  
-  // Update countdown every second
-  countdownInterval = setInterval(() => {
-    countdown--;
-    if (countdown > 0) {
-      countdownText.textContent = countdown.toString();
-    } else {
-      countdownText.textContent = '0';
-      clearInterval(countdownInterval);
-      // Redirect based on preferPortal setting
-      const preferPortal = localStorage.getItem('preferPortal') !== 'false';
-      const productionTunnel = getTunnelForPreferredEnvironment() || CONFIG.cloudflareTunnels?.find(t => t.name === 'cloud');
-      if (preferPortal) {
-        // If prefer portal is checked, go to portal.html with tunnel URL parameter
-        if (productionTunnel && productionTunnel.address) {
-          const cleanTunnelUrl = productionTunnel.address.replace(/\/$/, '');
-          const portalUrl = new URL('./portal.html', window.location.href);
-          portalUrl.searchParams.set('tunnelUrl', cleanTunnelUrl);
-          window.location.href = portalUrl.toString();
-        } else {
-          window.location.href = './portal.html';
-        }
-      } else {
-        // If prefer portal is not checked, go to tunnel directly (use preferred environment)
-        if (productionTunnel && productionTunnel.address) {
-          const cleanTunnelUrl = productionTunnel.address.replace(/\/$/, '');
-          window.location.href = cleanTunnelUrl;
-        } else {
-          window.location.href = './portal.html';
-        }
-      }
-    }
-  }, 1000);
-}
-
 // Cancel auto sign-in
 window.cancelAutoSignIn = function cancelAutoSignIn() {
-  if (countdownInterval) {
-    clearInterval(countdownInterval);
-    countdownInterval = null;
-  }
-  if (countdownTimeout) {
-    clearTimeout(countdownTimeout);
-    countdownTimeout = null;
-  }
-  
   const previousSignInContainer = document.getElementById('previousSignInContainer');
   const noSignInContainer = document.getElementById('noSignInContainer');
-  
+
   if (previousSignInContainer && noSignInContainer) {
     previousSignInContainer.style.display = 'none';
     noSignInContainer.style.display = 'block';
