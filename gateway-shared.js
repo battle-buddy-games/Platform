@@ -258,6 +258,18 @@ function parseStateWithProvider(encodedState) {
 // Error Modal Functions
 let currentErrorText = '';
 
+// Escapes text destined for innerHTML. Callers pass values that can originate from the URL
+// (an unknown `provider`, an exception message) or from config.json (release titles written by
+// whoever pushed), so they must never be trusted as markup.
+function escapeHtml(value) {
+  return String(value === null || value === undefined ? '' : value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 function showErrorModal(title, message, detailedMessage = null) {
   // Use detailed message for clipboard if provided, otherwise use regular message
   currentErrorText = detailedMessage || message;
@@ -275,14 +287,17 @@ function showErrorModal(title, message, detailedMessage = null) {
     modalTitle.textContent = title || 'Error';
   }
   if (modalBody) {
-    // Format message with line breaks and highlight debug information
-    let formattedMessage = message.replace(/\n/g, '<br>');
+    // Format message with line breaks and highlight debug information. Escape before the
+    // transforms below: they add the only markup this body is allowed to contain.
+    let formattedMessage = escapeHtml(message).replace(/\n/g, '<br>');
     
     // Highlight backend debug information section if present
     if (formattedMessage.includes('=== Backend Debug Information')) {
-      // Style the debug section with a distinct background and monospace font
+      // Style the debug section with a distinct background and monospace font.
+      // `[^=]+` here could never match: the header is itself delimited by `===`, so the
+      // character class hit a `=` immediately and the wrapper was never applied.
       formattedMessage = formattedMessage.replace(
-        /(=== Backend Debug Information[^=]+=== End Backend Debug Information ===)/g,
+        /(=== Backend Debug Information[^]*?=== End Backend Debug Information ===)/g,
         '<div style="background: rgba(255, 200, 100, 0.1); border: 1px solid rgba(255, 200, 100, 0.3); border-radius: 8px; padding: 12px; margin: 12px 0; font-family: monospace; font-size: 11px; white-space: pre-wrap; overflow-x: auto; color: rgba(255, 255, 255, 0.9);">$1</div>'
       );
       // Also highlight the section header

@@ -1429,9 +1429,13 @@ function initSpaceBarHoldDetection() {
     // Only trigger if space is pressed and not in an input field
     if (e.key === ' ' || e.key === 'Spacebar') {
       const target = e.target;
-      const isInput = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable;
+      // Space activates a focused button/link natively and scrolls the page elsewhere, so it is
+      // only ours to take when the focus is on nothing interactive.
+      const isInteractive = target.isContentEditable ||
+        /^(INPUT|TEXTAREA|SELECT|BUTTON|A|SUMMARY)$/.test(target.tagName || '') ||
+        (typeof target.closest === 'function' && target.closest('[role="button"]'));
 
-      if (!isInput) {
+      if (!isInteractive) {
         e.preventDefault(); // Prevent page scroll
 
         // Toggle developer options on spacebar press
@@ -3144,37 +3148,6 @@ function initializeFoldoutMenus() {
   });
 }
 
-function initQuickLinksTabs() {
-  const tabButtons = document.querySelectorAll('.quick-links-tab-button');
-  const tabPanels = document.querySelectorAll('.quick-links-tab-panel');
-
-  if (!tabButtons.length || !tabPanels.length) {
-    return;
-  }
-
-  const activateTab = (tabName) => {
-    tabButtons.forEach((button) => {
-      const isActive = button.dataset.quickLinksTab === tabName;
-      button.classList.toggle('active', isActive);
-      button.setAttribute('aria-selected', isActive ? 'true' : 'false');
-    });
-
-    tabPanels.forEach((panel) => {
-      const isActive = panel.dataset.quickLinksPanel === tabName;
-      panel.classList.toggle('active', isActive);
-    });
-  };
-
-  tabButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      activateTab(button.dataset.quickLinksTab);
-    });
-  });
-
-  const initiallyActive = document.querySelector('.quick-links-tab-button.active');
-  activateTab(initiallyActive ? initiallyActive.dataset.quickLinksTab : tabButtons[0].dataset.quickLinksTab);
-}
-
 /**
  * Resolve a quick link ID to a target URL.
  * Supports bbsdk launches, portal subpages, and external links.
@@ -3336,9 +3309,6 @@ window.addEventListener('DOMContentLoaded', async () => {
   // Intercept bbsdk:// launch links to store launch history
   interceptBbsdkLaunchLinks();
 
-  // Initialize quick links tabs
-  initQuickLinksTabs();
-  
   // Update tunnel links from config
   updateTunnelLinks();
 
@@ -3748,7 +3718,10 @@ window.addEventListener('DOMContentLoaded', async () => {
       }
     }
     
-    const errorDetails = [
+    // `let`, not `const`: the token-failure branch below replaces this with a provider-specific
+    // cause list. It used to be `const`, so the reassignment threw before showErrorModal() and
+    // before the `return`, leaving an expired-token user with no error UI at all.
+    let errorDetails = [
       `${providerName} Authentication Error: ${finalError || 'unknown_error'}`,
       decodedErrorDescription ? `Description: ${decodedErrorDescription}` : '',
       '',
@@ -4222,31 +4195,11 @@ async function checkCloudServiceHealth() {
   }
   
   try {
-    // Suppress console errors for expected health check failures
-    const originalConsoleError = console.error;
-    const suppressHealthCheckErrors = () => {
-      console.error = (...args) => {
-        const errorStr = args.join(' ');
-        // Suppress CORS, 502, and network errors during health checks
-        if (errorStr.includes('CORS') || 
-            errorStr.includes('Access-Control-Allow-Origin') ||
-            errorStr.includes('502') ||
-            errorStr.includes('Bad Gateway') ||
-            errorStr.includes('ERR_FAILED') ||
-            errorStr.includes('ERR_ABORTED') ||
-            errorStr.includes('Failed to fetch')) {
-          // Suppress these expected errors - they're handled as health check failures
-          return;
-        }
-        originalConsoleError.apply(console, args);
-      };
-    };
-    const restoreConsoleError = () => {
-      console.error = originalConsoleError;
-    };
-    
-    suppressHealthCheckErrors();
-    try {
+    // No console.error suppression here. Saving the reference and restoring it in `finally` is
+    // wrong when two checks overlap: the outer call restores the real logger, then the inner one
+    // reinstalls the outer's now-dead wrapper, and that filter silently drops real errors for
+    // good. The catch below already fails silently, and the browser logs a failed fetch itself.
+    {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
 
@@ -4342,8 +4295,6 @@ async function checkCloudServiceHealth() {
         updateSignInButtonStates();
         return false;
       }
-    } finally {
-      restoreConsoleError();
     }
   } catch (error) {
     // Network error, timeout, or abort - always resolve to "Not available"
@@ -4411,49 +4362,24 @@ async function checkAgentStatus() {
   }
   
   try {
-    // Suppress console errors for expected health check failures
-    const originalConsoleError = console.error;
-    const suppressHealthCheckErrors = () => {
-      console.error = (...args) => {
-        const errorStr = args.join(' ');
-        // Suppress CORS, 502, and network errors during health checks
-        if (errorStr.includes('CORS') || 
-            errorStr.includes('Access-Control-Allow-Origin') ||
-            errorStr.includes('502') ||
-            errorStr.includes('Bad Gateway') ||
-            errorStr.includes('ERR_FAILED') ||
-            errorStr.includes('ERR_ABORTED') ||
-            errorStr.includes('Failed to fetch')) {
-          // Suppress these expected errors - they're handled as health check failures
-          return;
-        }
-        originalConsoleError.apply(console, args);
-      };
-    };
-    const restoreConsoleError = () => {
-      console.error = originalConsoleError;
-    };
-    
-    suppressHealthCheckErrors();
-    let response;
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+    // No console.error suppression here. Saving the reference and restoring it in `finally` is
+    // wrong when two checks overlap: the outer call restores the real logger, then the inner one
+    // reinstalls the outer's now-dead wrapper, and that filter silently drops real errors for
+    // good. The catch below already fails silently, and the browser logs a failed fetch itself.
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
 
-      response = await fetch(healthUrl, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json, text/plain, */*'
-        },
-        signal: controller.signal,
-        mode: 'cors',
-        cache: 'no-store'
-      });
+    const response = await fetch(healthUrl, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json, text/plain, */*'
+      },
+      signal: controller.signal,
+      mode: 'cors',
+      cache: 'no-store'
+    });
 
-      clearTimeout(timeoutId);
-    } finally {
-      restoreConsoleError();
-    }
+    clearTimeout(timeoutId);
     
     if (response.ok) {
       // Try to parse JSON response to get agent service status
@@ -4730,31 +4656,11 @@ async function checkSignalRHealth() {
   }
   
   try {
-    // Suppress console errors for expected health check failures
-    const originalConsoleError = console.error;
-    const suppressHealthCheckErrors = () => {
-      console.error = (...args) => {
-        const errorStr = args.join(' ');
-        // Suppress CORS, 502, and network errors during health checks
-        if (errorStr.includes('CORS') || 
-            errorStr.includes('Access-Control-Allow-Origin') ||
-            errorStr.includes('502') ||
-            errorStr.includes('Bad Gateway') ||
-            errorStr.includes('ERR_FAILED') ||
-            errorStr.includes('ERR_ABORTED') ||
-            errorStr.includes('Failed to fetch')) {
-          // Suppress these expected errors - they're handled as health check failures
-          return;
-        }
-        originalConsoleError.apply(console, args);
-      };
-    };
-    const restoreConsoleError = () => {
-      console.error = originalConsoleError;
-    };
-    
-    suppressHealthCheckErrors();
-    try {
+    // No console.error suppression here. Saving the reference and restoring it in `finally` is
+    // wrong when two checks overlap: the outer call restores the real logger, then the inner one
+    // reinstalls the outer's now-dead wrapper, and that filter silently drops real errors for
+    // good. The catch below already fails silently, and the browser logs a failed fetch itself.
+    {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
 
@@ -4876,8 +4782,6 @@ async function checkSignalRHealth() {
         }
         return false;
       }
-    } finally {
-      restoreConsoleError();
     }
   } catch (error) {
     // Network error, timeout, or abort - always resolve to "Not available"

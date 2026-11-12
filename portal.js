@@ -636,6 +636,40 @@ async function registerTunnelsWithServiceWorker() {
 // 404 detection, config polling, and health checking
 let pollingInterval = null;
 let countdownInterval = null;
+
+// loadTunnel() runs again on every retry, and iframe.onload fires again on every reload, so the
+// bindings each pass creates must be released before the next one. Without this, every retry
+// added another `message`/`popstate`/`online`/`offline` listener, another MutationObserver, and
+// two more 1-second timers, none of which were ever removed -- after N retries a single platform
+// postMessage was handled N times.
+const tunnelWindowHandlers = { message: null, popstate: null, online: null, offline: null };
+let iframeSrcObserver = null;
+let srcCheckInterval = null;
+let urlUpdateInterval = null;
+
+function releaseTunnelTimers() {
+  if (iframeSrcObserver) { iframeSrcObserver.disconnect(); iframeSrcObserver = null; }
+  if (srcCheckInterval) { clearInterval(srcCheckInterval); srcCheckInterval = null; }
+  if (urlUpdateInterval) { clearInterval(urlUpdateInterval); urlUpdateInterval = null; }
+}
+
+// Registers a window listener and keeps the reference so a later pass can remove it. Releasing
+// the previous handler for the same type here means a bind can never silently stack, even if a
+// future edit adds one without a matching explicit release.
+function bindTunnelListener(type, handler) {
+  const previous = tunnelWindowHandlers[type];
+  if (previous) window.removeEventListener(type, previous);
+  window.addEventListener(type, handler);
+  tunnelWindowHandlers[type] = handler;
+}
+
+function releaseTunnelWindowListeners() {
+  for (const type of Object.keys(tunnelWindowHandlers)) {
+    const handler = tunnelWindowHandlers[type];
+    if (handler) window.removeEventListener(type, handler);
+    tunnelWindowHandlers[type] = null;
+  }
+}
 let countdownSeconds = 10;
 let isCountdownPaused = false;
 let currentTunnelAddress = '';
@@ -896,22 +930,12 @@ async function checkTunnelHealth(address) {
   const cleanBaseUrl = address.replace(/\/$/, '');
   const healthUrl = `${cleanBaseUrl}/api/HealthCheck/system`;
 
-  // Suppress console errors during health check to avoid noise
-  const originalConsoleError = console.error;
-  console.error = (...args) => {
-    const errorStr = args.join(' ');
-    if (errorStr.includes('CORS') ||
-        errorStr.includes('Access-Control-Allow-Origin') ||
-        errorStr.includes('502') ||
-        errorStr.includes('Bad Gateway') ||
-        errorStr.includes('ERR_FAILED') ||
-        errorStr.includes('ERR_ABORTED') ||
-        errorStr.includes('Failed to fetch')) {
-      return; // Suppress expected health check errors
-    }
-    originalConsoleError.apply(console, args);
-  };
-
+  // No console.error suppression here. It used to replace console.error for the duration of the
+  // request and restore it in `finally`, which is wrong whenever two checks overlap: the second
+  // captured the first's wrapper and the first restored the real logger, so the second then
+  // reinstalled a dead filter permanently -- silently dropping later errors. It also suppressed
+  // unrelated errors for as long as any check was in flight, and bought nothing: the catch below
+  // already fails silently, and the browser logs a failed fetch itself regardless.
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
@@ -928,8 +952,6 @@ async function checkTunnelHealth(address) {
   } catch (e) {
     // Network error, timeout, or abort
     return false;
-  } finally {
-    console.error = originalConsoleError;
   }
 }
 
@@ -1003,8 +1025,8 @@ function updateUpdatingUI() {
       if (detectedRelease && isReleaseRecent(detectedRelease)) {
         const releaseLabel = detectedRelease.version || '';
         const releaseDesc = detectedRelease.title || '';
-        messageEl.innerHTML = 'Deploying update' + (releaseLabel ? ' <strong>' + releaseLabel + '</strong>' : '')
-          + (releaseDesc ? ' &mdash; ' + releaseDesc : '') + '. Please wait...';
+        messageEl.innerHTML = 'Deploying update' + (releaseLabel ? ' <strong>' + escapeHtml(releaseLabel) + '</strong>' : '')
+          + (releaseDesc ? ' &mdash; ' + escapeHtml(releaseDesc) : '') + '. Please wait...';
       } else {
         messageEl.textContent = 'An update may be in progress. Retrying automatically...';
       }
@@ -1375,8 +1397,8 @@ function showConnectionFailure(title, message) {
     if (messageEl) {
       const releaseLabel = detectedRelease.version || '';
       const releaseDesc = detectedRelease.title || '';
-      messageEl.innerHTML = 'Deploying update' + (releaseLabel ? ' <strong>' + releaseLabel + '</strong>' : '')
-        + (releaseDesc ? ' &mdash; ' + releaseDesc : '') + '. Please wait...';
+      messageEl.innerHTML = 'Deploying update' + (releaseLabel ? ' <strong>' + escapeHtml(releaseLabel) + '</strong>' : '')
+        + (releaseDesc ? ' &mdash; ' + escapeHtml(releaseDesc) : '') + '. Please wait...';
     }
   }
 
@@ -2219,7 +2241,9 @@ async function loadTunnel() {
     }
   }
   
-  const iframeSrcObserver = new MutationObserver(() => {
+  releaseTunnelTimers();
+
+  iframeSrcObserver = new MutationObserver(() => {
     checkIframeSrcChange();
   });
   
@@ -2231,7 +2255,7 @@ async function loadTunnel() {
   
   // Also poll for src changes periodically (in case MutationObserver misses some)
   // Reduced frequency to prevent flickering
-  const srcCheckInterval = setInterval(checkIframeSrcChange, 1000);
+  srcCheckInterval = setInterval(checkIframeSrcChange, 1000);
 
   // Function to check if iframe navigated to gateway.html and redirect whole page
   function checkForSignInRedirect() {
@@ -2360,7 +2384,7 @@ async function loadTunnel() {
     startPeriodicHealthChecks();
 
     // Set up periodic URL updates and sign-in detection (for cross-origin iframes)
-    const urlUpdateInterval = setInterval(() => {
+    urlUpdateInterval = setInterval(() => {
       if (checkForSignInRedirect()) {
         clearInterval(urlUpdateInterval);
         clearInterval(srcCheckInterval);
@@ -2406,7 +2430,8 @@ async function loadTunnel() {
   iframeLoadCompleted = false;
 
   // Listen for postMessage from iframe (if the iframe content supports it)
-  window.addEventListener('message', (event) => {
+  releaseTunnelWindowListeners();
+  bindTunnelListener('message', (event) => {
     // Verify origin for security (allow messages from tunnel or same origin)
     const isTunnelOrigin = tunnelBaseUrl && (event.origin === tunnelBaseUrl || event.origin.startsWith(tunnelBaseUrl));
     const isSameOrigin = event.origin === window.location.origin;
@@ -2529,7 +2554,7 @@ async function loadTunnel() {
   });
 
   // Handle browser back/forward buttons
-  window.addEventListener('popstate', (event) => {
+  bindTunnelListener('popstate', (event) => {
     // Prevent handling popstate during URL updates to avoid loops
     if (isUpdatingUrl) {
       return;
@@ -2596,13 +2621,13 @@ async function loadTunnel() {
   }, 5000);
 
   // Monitor for network connectivity issues
-  window.addEventListener('online', () => {
+  bindTunnelListener('online', () => {
     showToast('Connection Restored', 'Network connection restored. Running health check...', 'info');
     // Run an immediate health check when coming back online
     performPeriodicHealthCheck();
   });
 
-  window.addEventListener('offline', () => {
+  bindTunnelListener('offline', () => {
     if (!connectionFailureDetected) {
       showConnectionFailure('Connection Lost', 'Network connection has been lost. Please check your internet connection.');
     }
@@ -2615,9 +2640,13 @@ function initSpaceBarHoldDetection() {
     // Only trigger if space is pressed and not in an input field
     if (e.key === ' ' || e.key === 'Spacebar') {
       const target = e.target;
-      const isInput = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable;
-      
-      if (!isInput) {
+      // Space activates a focused button/link natively and scrolls the page elsewhere, so it is
+      // only ours to take when the focus is on nothing interactive.
+      const isInteractive = target.isContentEditable ||
+        /^(INPUT|TEXTAREA|SELECT|BUTTON|A|SUMMARY)$/.test(target.tagName || '') ||
+        (typeof target.closest === 'function' && target.closest('[role="button"]'));
+
+      if (!isInteractive) {
         e.preventDefault(); // Prevent page scroll
         
         // Show history panel immediately
