@@ -133,13 +133,6 @@
                          "timestamp":  "2026-11-12T03:20:07Z",
                          "environment":  "production",
                          "status":  "deployed"
-                     },
-                     {
-                         "version":  "build-45ddbb2",
-                         "title":  "refactor(assets): port the uploads intake surface to Blazor islands (#914)",
-                         "timestamp":  "2026-11-12T08:04:39Z",
-                         "environment":  "production",
-                         "status":  "deploying"
                      }
                  ]
 }
