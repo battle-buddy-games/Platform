@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-7e94ad8",
-                         "title":  "feat(dashboard): soft-navigate tool switches so tool DOM survives (#816)",
-                         "timestamp":  "2026-11-10T22:36:30Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-1750c34",
                          "title":  "fix(sdk): give ResolveTargetsAsync the serving root it enumerates (#820)",
                          "timestamp":  "2026-11-11T01:59:03Z",
@@ -175,6 +169,13 @@
                          "version":  "build-b71c261",
                          "title":  "ci: use the shared compiler everywhere, and cover the hang it guarded (#927)",
                          "timestamp":  "2026-11-12T19:14:15Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-3e28cef",
+                         "title":  "Create news Platform activity update — 2026-11-13 (03:12 UTC)",
+                         "timestamp":  "2026-11-13T03:28:12Z",
                          "environment":  "production",
                          "status":  "deployed"
                      }
