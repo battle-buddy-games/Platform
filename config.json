@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1750c34",
-                         "title":  "fix(sdk): give ResolveTargetsAsync the serving root it enumerates (#820)",
-                         "timestamp":  "2026-11-11T01:59:03Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-dd3780b",
                          "title":  "fix(chat): build the role-picker element id as one local (#825)",
                          "timestamp":  "2026-11-11T03:56:31Z",
@@ -178,6 +172,13 @@
                          "timestamp":  "2026-11-13T03:28:12Z",
                          "environment":  "production",
                          "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-e6de15c",
+                         "title":  "fix(blazor): boot the island runtime from an app-root URI, not the page URL (...",
+                         "timestamp":  "2026-11-13T18:02:25Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
