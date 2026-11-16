@@ -181,7 +181,7 @@
                          "title":  "fix(chat): merge group chats into the unified conversation list (#933)",
                          "timestamp":  "2026-11-16T15:39:20Z",
                          "environment":  "production",
-                         "status":  "deploying"
+                         "status":  "deployed"
                      }
                  ]
 }
