@@ -47,6 +47,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-434e3f6",
+                         "title":  "fix(deploy): auto-revert a failed production update, and un-red the daily hea...",
+                         "timestamp":  "2026-11-11T14:27:26Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-d97dfeb",
                          "title":  "fix(ci): rebuild the EF check\u0027s assemblies when the build handoff is lost (#829)",
                          "timestamp":  "2026-11-11T15:11:31Z",
@@ -175,13 +181,6 @@
                          "timestamp":  "2026-11-16T13:51:33Z",
                          "environment":  "production",
                          "status":  "deployed"
-                     },
-                     {
-                         "version":  "build-e620178",
-                         "title":  "fix(chat): merge group chats into the unified conversation list (#933)",
-                         "timestamp":  "2026-11-16T15:39:20Z",
-                         "environment":  "production",
-                         "status":  "deploying"
                      }
                  ]
 }
