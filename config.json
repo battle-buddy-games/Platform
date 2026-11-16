@@ -47,6 +47,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-a6b4594",
+                         "title":  "Build 3D Labelling Studio in Editors (#683)",
+                         "timestamp":  "2026-11-11T04:41:55Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-434e3f6",
                          "title":  "fix(deploy): auto-revert a failed production update, and un-red the daily hea...",
                          "timestamp":  "2026-11-11T14:27:26Z",
@@ -174,13 +180,6 @@
                          "timestamp":  "2026-11-16T13:00:58Z",
                          "environment":  "production",
                          "status":  "deployed"
-                     },
-                     {
-                         "version":  "build-6d322b6",
-                         "title":  "fix(chat): never let the conversations sidebar render an empty pane (#930)",
-                         "timestamp":  "2026-11-16T13:51:33Z",
-                         "environment":  "production",
-                         "status":  "deploying"
                      }
                  ]
 }
