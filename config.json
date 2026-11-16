@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-dd3780b",
-                         "title":  "fix(chat): build the role-picker element id as one local (#825)",
-                         "timestamp":  "2026-11-11T03:56:31Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-a6b4594",
                          "title":  "Build 3D Labelling Studio in Editors (#683)",
                          "timestamp":  "2026-11-11T04:41:55Z",
@@ -179,6 +173,13 @@
                          "timestamp":  "2026-11-13T18:02:25Z",
                          "environment":  "production",
                          "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-2202c75",
+                         "title":  "fix(screens): report a picker that could not mount to the incident store (#931)",
+                         "timestamp":  "2026-11-16T13:00:58Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
