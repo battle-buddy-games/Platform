@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2c9244b",
-                         "title":  "fix(ci): retry the Release-Cloud build once when Roslyn dies of OOM (#831)",
-                         "timestamp":  "2026-11-11T15:52:06Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-5bf19f2",
                          "title":  "fix(ui): raise sub-floor text sizes and fix muted-text contrast in dashboard ...",
                          "timestamp":  "2026-11-11T18:49:22Z",
@@ -183,6 +177,13 @@
                          "timestamp":  "2026-11-17T11:43:39Z",
                          "environment":  "production",
                          "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-5bf15d1",
+                         "title":  "Create news Platform activity update — 2026-11-17 (21:04 UTC)",
+                         "timestamp":  "2026-11-17T21:25:09Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
