@@ -47,12 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d97dfeb",
-                         "title":  "fix(ci): rebuild the EF check\u0027s assemblies when the build handoff is lost (#829)",
-                         "timestamp":  "2026-11-11T15:11:31Z",
-                         "environment":  "production"
-                     },
-                     {
                          "version":  "build-2c9244b",
                          "title":  "fix(ci): retry the Release-Cloud build once when Roslyn dies of OOM (#831)",
                          "timestamp":  "2026-11-11T15:52:06Z",
@@ -182,6 +176,13 @@
                          "timestamp":  "2026-11-16T15:39:20Z",
                          "environment":  "production",
                          "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-a9f83dc",
+                         "title":  "fix(chat): report island mount failures and stop a failed init unmounting the...",
+                         "timestamp":  "2026-11-17T11:43:39Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
