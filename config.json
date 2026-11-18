@@ -47,6 +47,12 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-5bf19f2",
+                         "title":  "fix(ui): raise sub-floor text sizes and fix muted-text contrast in dashboard ...",
+                         "timestamp":  "2026-11-11T18:49:22Z",
+                         "environment":  "production"
+                     },
+                     {
                          "version":  "build-4ba7c37",
                          "title":  "fix(ci): stop the production-order gate waiting on runs that cannot start (#847)",
                          "timestamp":  "2026-11-12T00:56:30Z",
@@ -178,13 +184,6 @@
                          "timestamp":  "2026-11-17T21:25:09Z",
                          "environment":  "production",
                          "status":  "failed"
-                     },
-                     {
-                         "version":  "build-d4d070b",
-                         "title":  "fix(deploy): publish the Blazor client manifest-last so it can never name a m...",
-                         "timestamp":  "2026-11-18T21:13:35Z",
-                         "environment":  "production",
-                         "status":  "deploying"
                      }
                  ]
 }
