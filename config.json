@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-45ddbb2",
-                         "title":  "refactor(assets): port the uploads intake surface to Blazor islands (#914)",
-                         "timestamp":  "2026-11-12T08:04:39Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-c06a5bd",
                          "title":  "refactor(user-accounts): port the API tokens and cloud saves tabs to Blazor i...",
                          "timestamp":  "2026-11-12T09:21:22Z",
@@ -184,7 +177,14 @@
                          "title":  "refactor(chat): extract the message poll and its cursors into a module (#942)",
                          "timestamp":  "2026-11-19T02:19:15Z",
                          "environment":  "production",
-                         "status":  "deploying"
+                         "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-df99365",
+                         "title":  "feat(chat): account-scoped list view, keyboard-reachable row menu, threads su...",
+                         "timestamp":  "2026-11-19T03:03:26Z",
+                         "environment":  "production",
+                         "status":  "deployed"
                      }
                  ]
 }
