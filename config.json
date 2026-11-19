@@ -184,7 +184,7 @@
                          "title":  "Release build-9e6afb5: Create news Platform activity update — 2026-11-19 (14:...",
                          "timestamp":  "2026-11-19T15:42:16Z",
                          "environment":  "production",
-                         "status":  "deploying"
+                         "status":  "failed"
                      }
                  ]
 }
