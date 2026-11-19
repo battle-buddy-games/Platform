@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-b71c261",
-                         "title":  "ci: use the shared compiler everywhere, and cover the hang it guarded (#927)",
-                         "timestamp":  "2026-11-12T19:14:15Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-3e28cef",
                          "title":  "Create news Platform activity update — 2026-11-13 (03:12 UTC)",
                          "timestamp":  "2026-11-13T03:28:12Z",
@@ -185,6 +178,13 @@
                          "timestamp":  "2026-11-19T21:21:06Z",
                          "environment":  "production",
                          "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-88d443f",
+                         "title":  "fix(deploy): retire blue-green deployment in every environment (#948)",
+                         "timestamp":  "2026-11-19T21:53:18Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
