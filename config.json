@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://changelog-digest-dont-hotels.trycloudflare.com"
+                                  "address":  "https://deborah-van-responded-routing.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -46,13 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-405550e",
-                         "title":  "Release build-50dcbda: Release build-4ba7c37: fix(ci): stop the production-or...",
-                         "timestamp":  "2026-11-12T01:59:37Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
                      {
                          "version":  "build-0912ff1",
                          "title":  "feat(screens): negotiate the codec, and stop inventing a held button (#863)",
@@ -184,7 +177,14 @@
                          "title":  "fix(chat): say what happened when the message view does not mount (#940)",
                          "timestamp":  "2026-11-19T00:25:36Z",
                          "environment":  "production",
-                         "status":  "deploying"
+                         "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-a1857b2",
+                         "title":  "perf(chat): one cache read, a parallel group-chat load, and a live poll curso...",
+                         "timestamp":  "2026-11-19T01:51:14Z",
+                         "environment":  "production",
+                         "status":  "failed"
                      }
                  ]
 }
