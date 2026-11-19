@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d0832ee",
-                         "title":  "refactor(chat): port the session linkage strip to a Blazor WASM island (band ...",
-                         "timestamp":  "2026-11-12T17:44:12Z",
-                         "environment":  "production",
-                         "status":  "failed"
-                     },
-                     {
                          "version":  "build-28b75d6",
                          "title":  "refactor(chat): move the derived agent-activity status into C# (band 21) (#926)",
                          "timestamp":  "2026-11-12T18:46:30Z",
@@ -185,6 +178,13 @@
                          "timestamp":  "2026-11-19T18:36:15Z",
                          "environment":  "production",
                          "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-1417dd7",
+                         "title":  "feat(chat): show which account pays for a launch in the New Chat picker (#946)",
+                         "timestamp":  "2026-11-19T19:29:14Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
