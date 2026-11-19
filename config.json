@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-66217ba",
-                         "title":  "refactor(chat): port the plugin panel\u0027s git dropdown to a Blazor WASM island ...",
-                         "timestamp":  "2026-11-12T11:07:01Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-0e2c562",
                          "title":  "fix(build): bump the Logging pins to 9.0.22 so the test projects restore (#922)",
                          "timestamp":  "2026-11-12T11:54:43Z",
@@ -185,6 +178,13 @@
                          "timestamp":  "2026-11-19T15:22:37Z",
                          "environment":  "production",
                          "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-438b40a",
+                         "title":  "Release build-9e6afb5: Create news Platform activity update — 2026-11-19 (14:...",
+                         "timestamp":  "2026-11-19T15:42:16Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
