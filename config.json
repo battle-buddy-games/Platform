@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-3e28cef",
-                         "title":  "Create news Platform activity update — 2026-11-13 (03:12 UTC)",
-                         "timestamp":  "2026-11-13T03:28:12Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-e6de15c",
                          "title":  "fix(blazor): boot the island runtime from an app-root URI, not the page URL (...",
                          "timestamp":  "2026-11-13T18:02:25Z",
@@ -185,6 +178,13 @@
                          "timestamp":  "2026-11-19T21:53:18Z",
                          "environment":  "production",
                          "status":  "failed"
+                     },
+                     {
+                         "version":  "build-84d7884",
+                         "title":  "Create news Platform activity update — 2026-11-19 (22:21 UTC)",
+                         "timestamp":  "2026-11-19T22:37:32Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
