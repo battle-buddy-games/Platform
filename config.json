@@ -184,7 +184,7 @@
                          "title":  "fix(chat): say what happened when the message view does not mount (#940)",
                          "timestamp":  "2026-11-19T00:25:36Z",
                          "environment":  "production",
-                         "status":  "deploying"
+                         "status":  "deployed"
                      }
                  ]
 }
