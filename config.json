@@ -47,6 +47,13 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-28b75d6",
+                         "title":  "refactor(chat): move the derived agent-activity status into C# (band 21) (#926)",
+                         "timestamp":  "2026-11-12T18:46:30Z",
+                         "environment":  "production",
+                         "status":  "failed"
+                     },
+                     {
                          "version":  "build-b71c261",
                          "title":  "ci: use the shared compiler everywhere, and cover the hang it guarded (#927)",
                          "timestamp":  "2026-11-12T19:14:15Z",
@@ -178,13 +185,6 @@
                          "timestamp":  "2026-11-19T19:29:14Z",
                          "environment":  "production",
                          "status":  "deployed"
-                     },
-                     {
-                         "version":  "build-097c582",
-                         "title":  "perf(cd): run Stable Qualification off the production deploy runner (#950)",
-                         "timestamp":  "2026-11-19T21:21:06Z",
-                         "environment":  "production",
-                         "status":  "deploying"
                      }
                  ]
 }
