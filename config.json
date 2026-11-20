@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d4d070b",
-                         "title":  "fix(deploy): publish the Blazor client manifest-last so it can never name a m...",
-                         "timestamp":  "2026-11-18T21:13:35Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-0cf9e9e",
                          "title":  "perf(chat): batch the message pane and give the runtime a watchdog (#939)",
                          "timestamp":  "2026-11-18T22:47:26Z",
@@ -185,6 +178,13 @@
                          "timestamp":  "2026-11-20T21:34:44Z",
                          "environment":  "production",
                          "status":  "failed"
+                     },
+                     {
+                         "version":  "build-6a35b99",
+                         "title":  "chore: update tunnel URL for cloud [skip ci]",
+                         "timestamp":  "2026-11-20T21:56:47Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
