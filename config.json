@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://deborah-van-responded-routing.trycloudflare.com"
+                                  "address":  "https://diamonds-types-puts-mixer.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
