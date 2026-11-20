@@ -20,7 +20,7 @@
     "cloudflareTunnels":  [
                               {
                                   "name":  "cloud",
-                                  "address":  "https://diamonds-types-puts-mixer.trycloudflare.com"
+                                  "address":  "https://shown-speeds-encyclopedia-anyway.trycloudflare.com"
                               },
                               {
                                   "name":  "local-cloud",
@@ -46,13 +46,6 @@
                               }
                           ],
     "releases":  [
-                     {
-                         "version":  "build-5bf15d1",
-                         "title":  "Create news Platform activity update — 2026-11-17 (21:04 UTC)",
-                         "timestamp":  "2026-11-17T21:25:09Z",
-                         "environment":  "production",
-                         "status":  "failed"
-                     },
                      {
                          "version":  "build-d4d070b",
                          "title":  "fix(deploy): publish the Blazor client manifest-last so it can never name a m...",
@@ -184,7 +177,14 @@
                          "title":  "Create news Platform activity update — 2026-11-20 (19:26 UTC)",
                          "timestamp":  "2026-11-20T20:27:28Z",
                          "environment":  "production",
-                         "status":  "deploying"
+                         "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-159edc7",
+                         "title":  "Release build-b45361c: Create news Platform activity update — 2026-11-20 (19:...",
+                         "timestamp":  "2026-11-20T21:34:44Z",
+                         "environment":  "production",
+                         "status":  "failed"
                      }
                  ]
 }
