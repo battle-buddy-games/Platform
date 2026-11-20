@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-6d322b6",
-                         "title":  "fix(chat): never let the conversations sidebar render an empty pane (#930)",
-                         "timestamp":  "2026-11-16T13:51:33Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-e620178",
                          "title":  "fix(chat): merge group chats into the unified conversation list (#933)",
                          "timestamp":  "2026-11-16T15:39:20Z",
@@ -183,6 +176,13 @@
                          "version":  "build-47b00de",
                          "title":  "Create news Platform activity update — 2026-11-10 (05:24 UTC)",
                          "timestamp":  "2026-11-20T06:23:31Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-0582deb",
+                         "title":  "fix(chat): retry a start-up-window island mount instead of reporting it (#954)",
+                         "timestamp":  "2026-11-20T18:10:29Z",
                          "environment":  "production",
                          "status":  "deployed"
                      }
