@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-2202c75",
-                         "title":  "fix(screens): report a picker that could not mount to the incident store (#931)",
-                         "timestamp":  "2026-11-16T13:00:58Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-6d322b6",
                          "title":  "fix(chat): never let the conversations sidebar render an empty pane (#930)",
                          "timestamp":  "2026-11-16T13:51:33Z",
@@ -183,6 +176,13 @@
                          "version":  "build-1261593",
                          "title":  "fix(chat): restore the session panel\u0027s feed notes the sidebar port dropped (#...",
                          "timestamp":  "2026-11-19T22:54:14Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-47b00de",
+                         "title":  "Create news Platform activity update — 2026-11-10 (05:24 UTC)",
+                         "timestamp":  "2026-11-20T06:23:31Z",
                          "environment":  "production",
                          "status":  "deployed"
                      }
