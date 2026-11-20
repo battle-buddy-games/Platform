@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-a9f83dc",
-                         "title":  "fix(chat): report island mount failures and stop a failed init unmounting the...",
-                         "timestamp":  "2026-11-17T11:43:39Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-5bf15d1",
                          "title":  "Create news Platform activity update — 2026-11-17 (21:04 UTC)",
                          "timestamp":  "2026-11-17T21:25:09Z",
@@ -183,6 +176,13 @@
                          "version":  "build-4948e19",
                          "title":  "fix(screens): keep trying past the mount budget so a late runtime lands the p...",
                          "timestamp":  "2026-11-20T18:45:37Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-b45361c",
+                         "title":  "Create news Platform activity update — 2026-11-20 (19:26 UTC)",
+                         "timestamp":  "2026-11-20T20:27:28Z",
                          "environment":  "production",
                          "status":  "deployed"
                      }
