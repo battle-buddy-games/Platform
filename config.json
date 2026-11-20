@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-e620178",
-                         "title":  "fix(chat): merge group chats into the unified conversation list (#933)",
-                         "timestamp":  "2026-11-16T15:39:20Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-a9f83dc",
                          "title":  "fix(chat): report island mount failures and stop a failed init unmounting the...",
                          "timestamp":  "2026-11-17T11:43:39Z",
@@ -185,6 +178,13 @@
                          "timestamp":  "2026-11-20T18:10:29Z",
                          "environment":  "production",
                          "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-4948e19",
+                         "title":  "fix(screens): keep trying past the mount budget so a late runtime lands the p...",
+                         "timestamp":  "2026-11-20T18:45:37Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
