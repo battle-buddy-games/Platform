@@ -184,7 +184,7 @@
                          "title":  "Create news Platform activity update — 2026-11-21 (22:37 UTC)",
                          "timestamp":  "2026-11-21T23:25:10Z",
                          "environment":  "production",
-                         "status":  "deploying"
+                         "status":  "deployed"
                      }
                  ]
 }
