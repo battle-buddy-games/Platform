@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0cf9e9e",
-                         "title":  "perf(chat): batch the message pane and give the runtime a watchdog (#939)",
-                         "timestamp":  "2026-11-18T22:47:26Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-2074c52",
                          "title":  "fix(chat): say what happened when the message view does not mount (#940)",
                          "timestamp":  "2026-11-19T00:25:36Z",
@@ -185,6 +178,13 @@
                          "timestamp":  "2026-11-20T21:56:47Z",
                          "environment":  "production",
                          "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-27f115b",
+                         "title":  "Create news Platform activity update — 2026-11-21 (22:37 UTC)",
+                         "timestamp":  "2026-11-21T23:25:10Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
