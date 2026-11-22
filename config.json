@@ -47,6 +47,13 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-9ce0939",
+                         "title":  "refactor(chat): extract the message poll and its cursors into a module (#942)",
+                         "timestamp":  "2026-11-19T02:19:15Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
                          "version":  "build-df99365",
                          "title":  "feat(chat): account-scoped list view, keyboard-reachable row menu, threads su...",
                          "timestamp":  "2026-11-19T03:03:26Z",
@@ -178,13 +185,6 @@
                          "timestamp":  "2026-11-22T04:45:06Z",
                          "environment":  "production",
                          "status":  "deployed"
-                     },
-                     {
-                         "version":  "build-3fdb1f6",
-                         "title":  "Create news Platform activity update — 2026-11-22 (20:40 UTC)",
-                         "timestamp":  "2026-11-22T21:13:55Z",
-                         "environment":  "production",
-                         "status":  "deploying"
                      }
                  ]
 }
