@@ -47,6 +47,13 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-a1857b2",
+                         "title":  "perf(chat): one cache read, a parallel group-chat load, and a live poll curso...",
+                         "timestamp":  "2026-11-19T01:51:14Z",
+                         "environment":  "production",
+                         "status":  "failed"
+                     },
+                     {
                          "version":  "build-9ce0939",
                          "title":  "refactor(chat): extract the message poll and its cursors into a module (#942)",
                          "timestamp":  "2026-11-19T02:19:15Z",
@@ -178,13 +185,6 @@
                          "timestamp":  "2026-11-22T03:44:03Z",
                          "environment":  "production",
                          "status":  "deployed"
-                     },
-                     {
-                         "version":  "build-f27abf6",
-                         "title":  "Create news Platform activity update — 2026-11-22 (04:38 UTC)",
-                         "timestamp":  "2026-11-22T04:45:06Z",
-                         "environment":  "production",
-                         "status":  "deploying"
                      }
                  ]
 }
