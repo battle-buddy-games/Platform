@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1de3028",
-                         "title":  "fix(blazor): wait for the renderer, not for rootComponents, before mounting a...",
-                         "timestamp":  "2026-11-19T18:36:15Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-1417dd7",
                          "title":  "feat(chat): show which account pays for a launch in the New Chat picker (#946)",
                          "timestamp":  "2026-11-19T19:29:14Z",
@@ -185,6 +178,13 @@
                          "timestamp":  "2026-11-23T22:29:25Z",
                          "environment":  "production",
                          "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-37cf8ff",
+                         "title":  "Create news Platform activity update — 2026-11-23 (22:43 UTC)",
+                         "timestamp":  "2026-11-23T23:14:12Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
