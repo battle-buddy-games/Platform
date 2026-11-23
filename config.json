@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-df99365",
-                         "title":  "feat(chat): account-scoped list view, keyboard-reachable row menu, threads su...",
-                         "timestamp":  "2026-11-19T03:03:26Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-9e6afb5",
                          "title":  "Create news Platform activity update — 2026-11-19 (14:20 UTC)",
                          "timestamp":  "2026-11-19T15:22:37Z",
@@ -183,6 +176,13 @@
                          "version":  "build-3fdb1f6",
                          "title":  "Create news Platform activity update — 2026-11-22 (20:40 UTC)",
                          "timestamp":  "2026-11-22T21:13:55Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-0b2bd33",
+                         "title":  "Create news Daily development heartbeat — 2026-11-22",
+                         "timestamp":  "2026-11-23T00:27:59Z",
                          "environment":  "production",
                          "status":  "deployed"
                      }
