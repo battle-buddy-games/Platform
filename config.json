@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-9e6afb5",
-                         "title":  "Create news Platform activity update — 2026-11-19 (14:20 UTC)",
-                         "timestamp":  "2026-11-19T15:22:37Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-438b40a",
                          "title":  "Release build-9e6afb5: Create news Platform activity update — 2026-11-19 (14:...",
                          "timestamp":  "2026-11-19T15:42:16Z",
@@ -183,6 +176,13 @@
                          "version":  "build-0b2bd33",
                          "title":  "Create news Daily development heartbeat — 2026-11-22",
                          "timestamp":  "2026-11-23T00:27:59Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-ef029f8",
+                         "title":  "Create news Platform activity update — 2026-11-23 (13:42 UTC)",
+                         "timestamp":  "2026-11-23T14:13:24Z",
                          "environment":  "production",
                          "status":  "deployed"
                      }
