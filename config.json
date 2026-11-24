@@ -47,6 +47,13 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-097c582",
+                         "title":  "perf(cd): run Stable Qualification off the production deploy runner (#950)",
+                         "timestamp":  "2026-11-19T21:21:06Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
                          "version":  "build-88d443f",
                          "title":  "fix(deploy): retire blue-green deployment in every environment (#948)",
                          "timestamp":  "2026-11-19T21:53:18Z",
@@ -178,13 +185,6 @@
                          "timestamp":  "2026-11-24T04:21:39Z",
                          "environment":  "production",
                          "status":  "deployed"
-                     },
-                     {
-                         "version":  "build-0c6679e",
-                         "title":  "Create news Platform activity update — 2026-11-24 (12:46 UTC)",
-                         "timestamp":  "2026-11-24T13:34:03Z",
-                         "environment":  "production",
-                         "status":  "deploying"
                      }
                  ]
 }
