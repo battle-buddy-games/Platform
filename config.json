@@ -47,6 +47,13 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-88d443f",
+                         "title":  "fix(deploy): retire blue-green deployment in every environment (#948)",
+                         "timestamp":  "2026-11-19T21:53:18Z",
+                         "environment":  "production",
+                         "status":  "failed"
+                     },
+                     {
                          "version":  "build-84d7884",
                          "title":  "Create news Platform activity update — 2026-11-19 (22:21 UTC)",
                          "timestamp":  "2026-11-19T22:37:32Z",
@@ -178,13 +185,6 @@
                          "timestamp":  "2026-11-24T13:34:03Z",
                          "environment":  "production",
                          "status":  "deployed"
-                     },
-                     {
-                         "version":  "build-6edcffd",
-                         "title":  "Create news Platform activity update — 2026-11-24 (22:47 UTC)",
-                         "timestamp":  "2026-11-24T23:53:37Z",
-                         "environment":  "production",
-                         "status":  "deploying"
                      }
                  ]
 }
