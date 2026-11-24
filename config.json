@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-1417dd7",
-                         "title":  "feat(chat): show which account pays for a launch in the New Chat picker (#946)",
-                         "timestamp":  "2026-11-19T19:29:14Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-097c582",
                          "title":  "perf(cd): run Stable Qualification off the production deploy runner (#950)",
                          "timestamp":  "2026-11-19T21:21:06Z",
@@ -183,6 +176,13 @@
                          "version":  "build-37cf8ff",
                          "title":  "Create news Platform activity update — 2026-11-23 (22:43 UTC)",
                          "timestamp":  "2026-11-23T23:14:12Z",
+                         "environment":  "production",
+                         "status":  "deploying"
+                     },
+                     {
+                         "version":  "build-d9df26f",
+                         "title":  "Create news Platform activity update — 2026-11-24 (03:44 UTC)",
+                         "timestamp":  "2026-11-24T04:21:39Z",
                          "environment":  "production",
                          "status":  "deploying"
                      }
