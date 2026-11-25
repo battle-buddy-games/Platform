@@ -47,6 +47,13 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-47b00de",
+                         "title":  "Create news Platform activity update — 2026-11-10 (05:24 UTC)",
+                         "timestamp":  "2026-11-20T06:23:31Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
                          "version":  "build-0582deb",
                          "title":  "fix(chat): retry a start-up-window island mount instead of reporting it (#954)",
                          "timestamp":  "2026-11-20T18:10:29Z",
@@ -178,13 +185,6 @@
                          "timestamp":  "2026-11-25T14:41:07Z",
                          "environment":  "production",
                          "status":  "deployed"
-                     },
-                     {
-                         "version":  "build-d4f5480",
-                         "title":  "Create news Platform activity update — 2026-11-25 (16:50 UTC)",
-                         "timestamp":  "2026-11-25T17:28:04Z",
-                         "environment":  "production",
-                         "status":  "deploying"
                      }
                  ]
 }
