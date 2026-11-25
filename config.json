@@ -184,7 +184,7 @@
                          "title":  "Release build-134dc44: Create news Platform activity update — 2026-11-25 (21:...",
                          "timestamp":  "2026-11-25T23:00:33Z",
                          "environment":  "production",
-                         "status":  "deploying"
+                         "status":  "deployed"
                      }
                  ]
 }
