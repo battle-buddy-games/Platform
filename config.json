@@ -47,6 +47,13 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-52f24e7",
+                         "title":  "Create news Platform activity update — 2026-11-22 (02:38 UTC)",
+                         "timestamp":  "2026-11-22T03:44:03Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
                          "version":  "build-f27abf6",
                          "title":  "Create news Platform activity update — 2026-11-22 (04:38 UTC)",
                          "timestamp":  "2026-11-22T04:45:06Z",
@@ -176,13 +183,6 @@
                          "version":  "build-0c1f100",
                          "title":  "Release build-134dc44: Create news Platform activity update — 2026-11-25 (21:...",
                          "timestamp":  "2026-11-25T23:00:33Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
-                         "version":  "build-3d95faf",
-                         "title":  "fix(playtest): post the daily digest once per day, not once per hour (#957)",
-                         "timestamp":  "2026-11-25T23:30:34Z",
                          "environment":  "production",
                          "status":  "deploying"
                      }
