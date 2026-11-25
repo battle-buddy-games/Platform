@@ -47,6 +47,13 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-4948e19",
+                         "title":  "fix(screens): keep trying past the mount budget so a late runtime lands the p...",
+                         "timestamp":  "2026-11-20T18:45:37Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
                          "version":  "build-b45361c",
                          "title":  "Create news Platform activity update — 2026-11-20 (19:26 UTC)",
                          "timestamp":  "2026-11-20T20:27:28Z",
@@ -178,13 +185,6 @@
                          "timestamp":  "2026-11-25T18:32:40Z",
                          "environment":  "production",
                          "status":  "deployed"
-                     },
-                     {
-                         "version":  "build-656da4a",
-                         "title":  "Release build-83054d8: Create news Platform activity update — 2026-11-25 (17:...",
-                         "timestamp":  "2026-11-25T18:59:23Z",
-                         "environment":  "production",
-                         "status":  "deploying"
                      }
                  ]
 }
