@@ -184,7 +184,7 @@
                          "title":  "Release build-83054d8: Create news Platform activity update — 2026-11-25 (17:...",
                          "timestamp":  "2026-11-25T18:59:23Z",
                          "environment":  "production",
-                         "status":  "deploying"
+                         "status":  "deployed"
                      }
                  ]
 }
