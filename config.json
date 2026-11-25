@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-84d7884",
-                         "title":  "Create news Platform activity update — 2026-11-19 (22:21 UTC)",
-                         "timestamp":  "2026-11-19T22:37:32Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-1261593",
                          "title":  "fix(chat): restore the session panel\u0027s feed notes the sidebar port dropped (#...",
                          "timestamp":  "2026-11-19T22:54:14Z",
@@ -185,6 +178,13 @@
                          "timestamp":  "2026-11-24T23:53:37Z",
                          "environment":  "production",
                          "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-5aa20cf",
+                         "title":  "Release build-6edcffd: Create news Platform activity update — 2026-11-24 (22:...",
+                         "timestamp":  "2026-11-25T00:11:37Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
