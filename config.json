@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0582deb",
-                         "title":  "fix(chat): retry a start-up-window island mount instead of reporting it (#954)",
-                         "timestamp":  "2026-11-20T18:10:29Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-4948e19",
                          "title":  "fix(screens): keep trying past the mount budget so a late runtime lands the p...",
                          "timestamp":  "2026-11-20T18:45:37Z",
@@ -183,6 +176,13 @@
                          "version":  "build-d4f5480",
                          "title":  "Create news Platform activity update — 2026-11-25 (16:50 UTC)",
                          "timestamp":  "2026-11-25T17:28:04Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-83054d8",
+                         "title":  "Create news Platform activity update — 2026-11-25 (17:51 UTC)",
+                         "timestamp":  "2026-11-25T18:32:40Z",
                          "environment":  "production",
                          "status":  "deployed"
                      }
