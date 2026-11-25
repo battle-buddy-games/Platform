@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-6a35b99",
-                         "title":  "chore: update tunnel URL for cloud [skip ci]",
-                         "timestamp":  "2026-11-20T21:56:47Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-27f115b",
                          "title":  "Create news Platform activity update — 2026-11-21 (22:37 UTC)",
                          "timestamp":  "2026-11-21T23:25:10Z",
@@ -183,6 +176,13 @@
                          "version":  "build-2b8e4f0",
                          "title":  "Release build-10ce5c4: Release build-656da4a: Release build-83054d8: Create n...",
                          "timestamp":  "2026-11-25T20:50:29Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-134dc44",
+                         "title":  "Create news Platform activity update — 2026-11-25 (21:51 UTC)",
+                         "timestamp":  "2026-11-25T22:43:55Z",
                          "environment":  "production",
                          "status":  "deployed"
                      }
