@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-0c6679e",
-                         "title":  "Create news Platform activity update — 2026-11-24 (12:46 UTC)",
-                         "timestamp":  "2026-11-24T13:34:03Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-6edcffd",
                          "title":  "Create news Platform activity update — 2026-11-24 (22:47 UTC)",
                          "timestamp":  "2026-11-24T23:53:37Z",
@@ -185,6 +178,13 @@
                          "timestamp":  "2026-11-26T14:39:44Z",
                          "environment":  "production",
                          "status":  "failed"
+                     },
+                     {
+                         "version":  "build-29eab07",
+                         "title":  "fix(platform): read the Meshy finish time via DateTimeOffset (#964)",
+                         "timestamp":  "2026-11-26T15:29:55Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
