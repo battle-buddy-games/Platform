@@ -47,20 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-f27abf6",
-                         "title":  "Create news Platform activity update — 2026-11-22 (04:38 UTC)",
-                         "timestamp":  "2026-11-22T04:45:06Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
-                         "version":  "build-3fdb1f6",
-                         "title":  "Create news Platform activity update — 2026-11-22 (20:40 UTC)",
-                         "timestamp":  "2026-11-22T21:13:55Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-0b2bd33",
                          "title":  "Create news Daily development heartbeat — 2026-11-22",
                          "timestamp":  "2026-11-23T00:27:59Z",
@@ -183,6 +169,20 @@
                          "version":  "build-3d95faf",
                          "title":  "fix(playtest): post the daily digest once per day, not once per hour (#957)",
                          "timestamp":  "2026-11-25T23:30:34Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-d76846e",
+                         "title":  "Release build-3d95faf: fix(playtest): post the daily digest once per day, not...",
+                         "timestamp":  "2026-11-26T00:17:47Z",
+                         "environment":  "production",
+                         "status":  "deploying"
+                     },
+                     {
+                         "version":  "build-1d9579a",
+                         "title":  "Create news Daily development heartbeat — 2026-11-25",
+                         "timestamp":  "2026-11-26T00:46:59Z",
                          "environment":  "production",
                          "status":  "deploying"
                      }
