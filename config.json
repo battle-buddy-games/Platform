@@ -184,7 +184,7 @@
                          "title":  "Release build-8ae21f8: Create news Platform activity update — 2026-11-26 (12:...",
                          "timestamp":  "2026-11-26T12:58:48Z",
                          "environment":  "production",
-                         "status":  "deploying"
+                         "status":  "deployed"
                      }
                  ]
 }
