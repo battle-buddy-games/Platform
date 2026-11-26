@@ -184,7 +184,7 @@
                          "title":  "fix(platform): order release candidates, Meshy generations and Blender plugin...",
                          "timestamp":  "2026-11-26T14:39:44Z",
                          "environment":  "production",
-                         "status":  "deploying"
+                         "status":  "failed"
                      }
                  ]
 }
