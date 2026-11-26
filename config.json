@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d9df26f",
-                         "title":  "Create news Platform activity update — 2026-11-24 (03:44 UTC)",
-                         "timestamp":  "2026-11-24T04:21:39Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-0c6679e",
                          "title":  "Create news Platform activity update — 2026-11-24 (12:46 UTC)",
                          "timestamp":  "2026-11-24T13:34:03Z",
@@ -185,6 +178,13 @@
                          "timestamp":  "2026-11-26T13:31:58Z",
                          "environment":  "production",
                          "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-988270c",
+                         "title":  "fix(platform): order release candidates, Meshy generations and Blender plugin...",
+                         "timestamp":  "2026-11-26T14:39:44Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
