@@ -47,20 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-ce6fa6b",
-                         "title":  "Create news Platform activity update — 2026-11-23 (21:43 UTC)",
-                         "timestamp":  "2026-11-23T22:29:25Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
-                         "version":  "build-37cf8ff",
-                         "title":  "Create news Platform activity update — 2026-11-23 (22:43 UTC)",
-                         "timestamp":  "2026-11-23T23:14:12Z",
-                         "environment":  "production",
-                         "status":  "deploying"
-                     },
-                     {
                          "version":  "build-d9df26f",
                          "title":  "Create news Platform activity update — 2026-11-24 (03:44 UTC)",
                          "timestamp":  "2026-11-24T04:21:39Z",
@@ -183,6 +169,20 @@
                          "version":  "build-8ae21f8",
                          "title":  "Create news Platform activity update — 2026-11-26 (12:09 UTC)",
                          "timestamp":  "2026-11-26T12:37:20Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-d660f4f",
+                         "title":  "Release build-8ae21f8: Create news Platform activity update — 2026-11-26 (12:...",
+                         "timestamp":  "2026-11-26T12:58:48Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-024f987",
+                         "title":  "fix(releases): order deploy and audit listings on DateTime, not DateTimeOffse...",
+                         "timestamp":  "2026-11-26T13:31:58Z",
                          "environment":  "production",
                          "status":  "deployed"
                      }
