@@ -47,6 +47,13 @@
                           ],
     "releases":  [
                      {
+                         "version":  "build-83054d8",
+                         "title":  "Create news Platform activity update — 2026-11-25 (17:51 UTC)",
+                         "timestamp":  "2026-11-25T18:32:40Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
                          "version":  "build-656da4a",
                          "title":  "Release build-83054d8: Create news Platform activity update — 2026-11-25 (17:...",
                          "timestamp":  "2026-11-25T18:59:23Z",
@@ -178,13 +185,6 @@
                          "timestamp":  "2026-11-27T15:10:26Z",
                          "environment":  "production",
                          "status":  "deployed"
-                     },
-                     {
-                         "version":  "build-44f2669",
-                         "title":  "Create news Platform activity update — 2026-11-27 (16:12 UTC)",
-                         "timestamp":  "2026-11-27T17:10:22Z",
-                         "environment":  "production",
-                         "status":  "deploying"
                      }
                  ]
 }
