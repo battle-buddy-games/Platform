@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d76846e",
-                         "title":  "Release build-3d95faf: fix(playtest): post the daily digest once per day, not...",
-                         "timestamp":  "2026-11-26T00:17:47Z",
-                         "environment":  "production",
-                         "status":  "deploying"
-                     },
-                     {
                          "version":  "build-1d9579a",
                          "title":  "Create news Daily development heartbeat — 2026-11-25",
                          "timestamp":  "2026-11-26T00:46:59Z",
@@ -183,6 +176,13 @@
                          "version":  "build-10a2c9f",
                          "title":  "Release build-9a58227: Create news Platform activity update — 2026-11-27 (20:...",
                          "timestamp":  "2026-11-27T21:36:20Z",
+                         "environment":  "production",
+                         "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-bd4d24d",
+                         "title":  "Create news Platform activity update — 2026-11-27 (22:12 UTC)",
+                         "timestamp":  "2026-11-27T22:33:57Z",
                          "environment":  "production",
                          "status":  "deployed"
                      }
