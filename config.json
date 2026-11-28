@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-024f987",
-                         "title":  "fix(releases): order deploy and audit listings on DateTime, not DateTimeOffse...",
-                         "timestamp":  "2026-11-26T13:31:58Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-988270c",
                          "title":  "fix(platform): order release candidates, Meshy generations and Blender plugin...",
                          "timestamp":  "2026-11-26T14:39:44Z",
@@ -185,6 +178,13 @@
                          "timestamp":  "2026-11-28T03:55:30Z",
                          "environment":  "production",
                          "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-0a7084e",
+                         "title":  "Create news Platform activity update — 2026-11-28 (15:21 UTC)",
+                         "timestamp":  "2026-11-28T15:46:45Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
