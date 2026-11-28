@@ -47,13 +47,6 @@
                           ],
     "releases":  [
                      {
-                         "version":  "build-d660f4f",
-                         "title":  "Release build-8ae21f8: Create news Platform activity update — 2026-11-26 (12:...",
-                         "timestamp":  "2026-11-26T12:58:48Z",
-                         "environment":  "production",
-                         "status":  "deployed"
-                     },
-                     {
                          "version":  "build-024f987",
                          "title":  "fix(releases): order deploy and audit listings on DateTime, not DateTimeOffse...",
                          "timestamp":  "2026-11-26T13:31:58Z",
@@ -185,6 +178,13 @@
                          "timestamp":  "2026-11-28T02:55:22Z",
                          "environment":  "production",
                          "status":  "deployed"
+                     },
+                     {
+                         "version":  "build-89f7fcb",
+                         "title":  "Create news Platform activity update — 2026-11-28 (03:19 UTC)",
+                         "timestamp":  "2026-11-28T03:55:30Z",
+                         "environment":  "production",
+                         "status":  "deploying"
                      }
                  ]
 }
